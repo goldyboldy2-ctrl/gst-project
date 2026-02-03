@@ -3,7 +3,7 @@
 A professional fintech platform designed to help Indian Small Businesses (MSMEs) navigate GST compliance and tax planning. This project focuses on "Compliance Peace" for the 2026-2030 tax regime.
 
 ## 🚀 Live Site
-Check out the tools here: [Your Netlify URL Goes Here]
+Check out the tools here: gst-compliance-pro.netlify.app
 
 ## 🛠️ Current Tools
 * **GST Smart Auditor:** A risk-assessment tool that checks for Rule 10A bank compliance and 15-day survival clocks.
