@@ -1,0 +1,61 @@
+/* style.css - The Design Engine */
+:root {
+    --primary: #2e7d32; /* GST Green */
+    --dark: #1a1a1a;
+    --light: #ffffff;
+    --gray: #f5f5f5;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--gray);
+    margin: 0; padding: 0;
+    color: var(--dark);
+}
+
+/* Navbar Style */
+.nav-header {
+    background: var(--light);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.logo { font-weight: 800; color: var(--primary); text-decoration: none; font-size: 1.2rem; }
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+/* Card & Layout Styles */
+.container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+
+.card {
+    background: var(--light);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}

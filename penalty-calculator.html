@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Penalty & Interest Calculator | Budget 2026</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" href="https://img.icons8.com/fluency/48/shield-with-checkmark.png" type="image/png">
+</head>
+<body>
+
+<nav class="nav-header">
+    <a href="index.html" class="logo">GST Smart Auditor 🦞</a>
+    <div class="nav-links">
+        <a href="index.html">Auditor</a>
+        <a href="penalty-calculator.html" style="color: var(--primary);">Penalty Calc</a>
+        <a href="budget-2026-changes.html">Budget 2026</a>
+    </div>
+</nav>
+
+<div class="container" style="display: flex; justify-content: center;">
+    <div class="card" style="width: 100%; max-width: 500px;">
+        <h2>Penalty & Interest Calculator</h2>
+        <p style="font-size: 0.9rem; color: #666;">Calculate Section 50 Interest (18% p.a.) and Late Fees.</p>
+        
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Tax Amount Pending (₹):</label>
+            <input type="number" id="taxAmount" placeholder="e.g. 50000" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Days Delayed:</label>
+            <input type="number" id="daysDelayed" placeholder="e.g. 30" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+        </div>
+
+        <button onclick="calculatePenalty()" class="btn-primary" style="width: 100%; border: none; cursor: pointer; font-size: 1rem;">Calculate Liability</button>
+
+        <div id="resultBox" style="display: none; margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; border-left: 5px solid var(--primary);">
+            <p><strong>Interest (18%):</strong> ₹<span id="interestOut">0</span></p>
+            <p><strong>Estimated Late Fee:</strong> ₹<span id="feeOut">0</span></p>
+            <hr>
+            <p><strong>Total Extra Liability:</strong> <strong>₹<span id="totalOut">0</span></strong></p>
+        </div>
+        
+        <p style="font-size: 0.7rem; color: #999; margin-top: 15px;">*Late fees vary by return type (GSTR-3B/1). Minimum penalty for non-payment is ₹10,000 or 10% of tax.</p>
+    </div>
+</div>
+
+<script>
+    function calculatePenalty() {
+        const tax = parseFloat(document.getElementById('taxAmount').value);
+        const days = parseInt(document.getElementById('daysDelayed').value);
+        
+        if (!tax || !days) {
+            alert("Please enter both Tax Amount and Days.");
+            return;
+        }
+
+        // Section 50: 18% per annum interest
+        const interest = (tax * 0.18 * days) / 365;
+        
+        // Simplified Late Fee (₹50/day for most regular taxpayers)
+        let lateFee = days * 50; 
+        
+        // Section 122: Minimum penalty for tax not paid is 10% or 10k
+        const minPenalty = Math.max(10000, tax * 0.10);
+
+        document.getElementById('interestOut').innerText = interest.toFixed(2);
+        document.getElementById('feeOut').innerText = lateFee.toFixed(2);
+        document.getElementById('totalOut').innerText = (interest + lateFee).toFixed(2);
+        
+        document.getElementById('resultBox').style.display = 'block';
+    }
+</script>
+
+<footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #888;">
+    Mission: Helping MSMEs save on penalties. 🦞
+</footer>
+
+</body>
+</html>

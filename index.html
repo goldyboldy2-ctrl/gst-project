@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Smart Assistant 2026 | Risk Auditor</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" href="https://img.icons8.com/fluency/48/shield-with-checkmark.png" type="image/png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://strong-sorbet-1b78f2.netlify.app">
+
+    <meta property="og:title" content="GST 15-Day Survival Clock | Budget 2026 Ready">
+    <meta property="og:description" content="Calculate your GST notice deadline and check Rule 10A risks instantly.">
+    <meta property="og:url" content="https://strong-sorbet-1b78f2.netlify.app">
+    <meta name="google-site-verification" content="-K5Y9W7NHtN1alvaLE5Rd69iPF1BasthX_3wuvQ5JUA" />
+</head>
+<body>
+
+<nav class="nav-header">
+    <a href="index.html" class="logo">GST Smart Auditor 🦞</a>
+    <div class="nav-links">
+        <a href="index.html" style="color: var(--primary);">Auditor</a>
+        <a href="penalty-calculator.html">Penalty Calc</a>
+        <a href="budget-2026-changes.html">Budget 2026</a>
+    </div>
+</nav>
+
+<div class="ticker-bar" style="background: #ffd700; color: #000; padding: 10px; text-align: center; font-weight: bold; border-bottom: 2px solid #000;">
+    <marquee>🚨 BUDGET 2026: GST Appeal Pre-deposit slashed to 10%. Automated Nil-TDS Certificates live for MSMEs. 🦞</marquee>
+</div>
+
+<div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 70vh;">
+    <div class="card" style="width: 100%; max-width: 450px;">
+        <h2 style="margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px;">GST Smart Auditor</h2>
+        
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Date Notice Received:</label>
+            <input type="date" id="noticeDate" onchange="runAudit()" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1.2rem;">
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Bank Details Updated on Portal? (Rule 10A)</label>
+            <select id="rule10a" onchange="runAudit()" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
+                <option value="yes">Yes, verified</option>
+                <option value="no">No/Not Sure</option>
+            </select>
+        </div>
+
+        <div id="riskMeter" class="risk-meter" style="display: none; margin-top: 1.5rem; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <div id="statusLabel" class="risk-status" style="font-size: 1.5rem; font-weight: 800; text-transform: uppercase;">Analyzing...</div>
+            <div id="deadlineNote" style="font-weight: bold;"></div>
+            <div id="planBox" class="action-plan" style="text-align: left; margin-top: 1rem; font-size: 0.9rem; background: rgba(255,255,255,0.7); padding: 10px; border-radius: 5px;"></div>
+        </div>
+
+        <a href="budget-2026-changes.html" class="btn-primary" style="display: block; margin-top: 20px;">
+            Read Expert Guide: Budget 2026 GST Changes →
+        </a>
+
+        <div class="footer" style="font-size: 0.7rem; color: #888; text-align: center; margin-top: 1.5rem;">
+            *Assistant provides logic-based guidance per CGST Act 2017 & Budget 2026. 🦞
+        </div>
+    </div>
+</div>
+
+<script>
+    function runAudit() {
+        const dateVal = document.getElementById('noticeDate').value;
+        const bankUpdated = document.getElementById('rule10a').value;
+        const meter = document.getElementById('riskMeter');
+        const status = document.getElementById('statusLabel');
+        const deadlineNote = document.getElementById('deadlineNote');
+        const plan = document.getElementById('planBox');
+
+        if (!dateVal) return;
+
+        const noticeDate = new Date(dateVal);
+        const today = new Date();
+        const diffDays = Math.ceil((today - noticeDate) / (1000 * 60 * 60 * 24));
+        
+        meter.style.display = 'block';
+        meter.className = 'risk-meter'; 
+
+        if (bankUpdated === 'no') {
+            meter.style.background = '#ffebee'; meter.style.border = '2px solid #d32f2f'; meter.style.color = '#d32f2f';
+            status.innerText = "CRITICAL RISK";
+            deadlineNote.innerText = "RULE 10A VIOLATION";
+            plan.innerHTML = "<b>Action:</b> Update Bank details on GST portal NOW or your GSTIN will be auto-suspended.";
+            return;
+        }
+
+        if (diffDays <= 7) {
+            meter.style.background = '#e8f5e9'; meter.style.border = '2px solid #2e7d32'; meter.style.color = '#2e7d32';
+            status.innerText = "SAFE ZONE";
+            deadlineNote.innerText = "Deadline: " + addDays(noticeDate, 15);
+            plan.innerHTML = "<b>Action:</b> You have time. File GSTR-3B/1 or pay via DRC-03 to stop interest.";
+        } else if (diffDays <= 15) {
+            meter.style.background = '#fff3e0'; meter.style.border = '2px solid #f57c00'; meter.style.color = '#f57c00';
+            status.innerText = "WARNING ZONE";
+            deadlineNote.innerText = "Deadline: " + addDays(noticeDate, 15);
+            plan.innerHTML = "<b>Action:</b> Prepare DRC-06 reply immediately to avoid bank attachment.";
+        } else {
+            meter.style.background = '#ffebee'; meter.style.border = '2px solid #d32f2f'; meter.style.color = '#d32f2f';
+            status.innerText = "DANGER ZONE";
+            deadlineNote.innerText = "15-Day Window Expired";
+            plan.innerHTML = "<b>Action:</b> Notice turned into Demand. <b>Budget 2026 Win:</b> Pay only 10% to file appeal.";
+        }
+    }
+
+    function addDays(date, days) {
+        const result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+    }
+</script>
+
+</body>
+</html>
