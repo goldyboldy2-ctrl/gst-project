@@ -1,83 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GST Penalty & Interest Calculator | Budget 2026</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="icon" href="https://img.icons8.com/fluency/48/shield-with-checkmark.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GST Penalty Calculator | GST Compliance Pro</title>
+  <meta name="description" content="Calculate your exact GST late fees and penalties. Free online calculator for Indian MSMEs covering GSTR-1, GSTR-3B and more." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav class="nav-header">
-    <a href="index.html" class="logo">GST Smart Auditor 🦞</a>
-    <div class="nav-links">
-        <a href="index.html">Auditor</a>
-        <a href="penalty-calculator.html" style="color: var(--primary);">Penalty Calc</a>
-        <a href="budget-2026-changes.html">Budget 2026</a>
-    </div>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">G</div>
+    <span class="logo-text">GST <em>Compliance Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="penalty-calculator.html" class="active">Penalty Calc</a></li>
+    <li><a href="budget-2026-changes.html">Budget 2026</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
 </nav>
 
-<div class="container" style="display: flex; justify-content: center;">
-    <div class="card" style="width: 100%; max-width: 500px;">
-        <h2>Penalty & Interest Calculator</h2>
-        <p style="font-size: 0.9rem; color: #666;">Calculate Section 50 Interest (18% p.a.) and Late Fees.</p>
-        
-        <div class="form-group" style="margin-bottom: 1.2rem;">
-            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Tax Amount Pending (₹):</label>
-            <input type="number" id="taxAmount" placeholder="e.g. 50000" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">💰 Free Tool</div>
+  <h1>GST Penalty <em>Calculator</em></h1>
+  <p>Find out exactly how much you owe in late fees. Enter your details and get an instant breakdown.</p>
+  <div class="hero-meta">Updated with Budget 2026 rules</div>
+</section>
 
-        <div class="form-group" style="margin-bottom: 1.2rem;">
-            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Days Delayed:</label>
-            <input type="number" id="daysDelayed" placeholder="e.g. 30" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 6px;">
-        </div>
+<!-- CALCULATOR -->
+<div class="container-sm" style="padding: 48px 40px;">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span class="sep">›</span> Penalty Calculator
+  </div>
 
-        <button onclick="calculatePenalty()" class="btn-primary" style="width: 100%; border: none; cursor: pointer; font-size: 1rem;">Calculate Liability</button>
-
-        <div id="resultBox" style="display: none; margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; border-left: 5px solid var(--primary);">
-            <p><strong>Interest (18%):</strong> ₹<span id="interestOut">0</span></p>
-            <p><strong>Estimated Late Fee:</strong> ₹<span id="feeOut">0</span></p>
-            <hr>
-            <p><strong>Total Extra Liability:</strong> <strong>₹<span id="totalOut">0</span></strong></p>
-        </div>
-        
-        <p style="font-size: 0.7rem; color: #999; margin-top: 15px;">*Late fees vary by return type (GSTR-3B/1). Minimum penalty for non-payment is ₹10,000 or 10% of tax.</p>
+  <div class="info-box blue">
+    <div class="info-box-icon">💡</div>
+    <div class="info-box-content">
+      <h4>How It Works</h4>
+      <p>GST late fees are ₹500/day for CGST + ₹500/day for SGST (total ₹1,000/day) for taxpayers with nil returns. For non-nil returns, it's ₹500 CGST + ₹500 SGST per day, capped at ₹10,000 per return.</p>
     </div>
+  </div>
+
+  <div class="card" style="margin-top: 28px;">
+    <div class="card-body">
+      <div class="form-group">
+        <label>📄 Which return was filed late?</label>
+        <select id="returnType">
+          <option value="gstr1">GSTR-1 (Outward Supplies)</option>
+          <option value="gstr3b">GSTR-3B (Monthly Summary)</option>
+          <option value="gstr9">GSTR-9 (Annual Return)</option>
+          <option value="gstr4">GSTR-4 (Composition Scheme)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>📅 Due date of the return</label>
+        <input type="date" id="dueDate" />
+      </div>
+
+      <div class="form-group">
+        <label>📅 Date you actually filed</label>
+        <input type="date" id="filedDate" />
+      </div>
+
+      <div class="form-group">
+        <label>💵 Was this a Nil Return? (No sales / no purchases)</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="nilReturn" value="yes" /> Yes — Nil return
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="nilReturn" value="no" checked /> No — Had transactions
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>📊 Your IGST liability for this period (₹)</label>
+        <input type="number" id="iGSTAmount" placeholder="Enter amount, e.g. 15000" />
+      </div>
+
+      <button class="btn btn-primary" onclick="calculatePenalty()" style="width:100%; justify-content:center; margin-top:8px;">
+        💰 Calculate Penalty
+      </button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="penaltyResult" style="display:none; margin-top: 28px;">
+    <div class="card">
+      <div class="card-body">
+        <h3 style="font-family:'Playfair Display',serif; color:var(--navy); text-align:center; margin-bottom:20px;">📊 Penalty Breakdown</h3>
+
+        <table class="styled-table">
+          <tr>
+            <th>Component</th>
+            <th style="text-align:right;">Amount</th>
+          </tr>
+          <tr>
+            <td>Return Type</td>
+            <td style="text-align:right; font-weight:600;" id="res-returnType">—</td>
+          </tr>
+          <tr>
+            <td>Days Late</td>
+            <td style="text-align:right; font-weight:600;" id="res-daysLate">—</td>
+          </tr>
+          <tr>
+            <td>CGST Late Fee</td>
+            <td style="text-align:right;" id="res-cgst">—</td>
+          </tr>
+          <tr>
+            <td>SGST Late Fee</td>
+            <td style="text-align:right;" id="res-sgst">—</td>
+          </tr>
+          <tr>
+            <td>Interest on Tax (18% p.a.)</td>
+            <td style="text-align:right;" id="res-interest">—</td>
+          </tr>
+          <tr style="background: #fef6ec;">
+            <td><strong>🔴 Total Penalty</strong></td>
+            <td style="text-align:right; font-weight:700; color:var(--red); font-size:1.15rem;" id="res-total">—</td>
+          </tr>
+        </table>
+
+        <div class="info-box orange" style="margin-top:20px;">
+          <div class="info-box-icon">⚠️</div>
+          <div class="info-box-content">
+            <h4>Important Note</h4>
+            <p>This is an estimate only. Actual penalties may vary based on specific circumstances. If you have received a formal notice, consult a CA immediately.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GENERAL INFO -->
+  <div style="margin-top: 48px;">
+    <div style="text-align:center; margin-bottom:20px;">
+      <div class="section-label">📘 Know Your Penalties</div>
+      <h2 class="section-title">Late Fee <em>Reference</em></h2>
+    </div>
+
+    <table class="styled-table">
+      <tr>
+        <th>Return</th>
+        <th>Nil Return Fee/Day</th>
+        <th>Non-Nil Fee/Day</th>
+        <th>Max Cap</th>
+      </tr>
+      <tr>
+        <td><strong>GSTR-1</strong></td>
+        <td>₹500</td>
+        <td>₹1,000</td>
+        <td>₹10,000</td>
+      </tr>
+      <tr>
+        <td><strong>GSTR-3B</strong></td>
+        <td>₹500</td>
+        <td>₹1,000</td>
+        <td>₹10,000</td>
+      </tr>
+      <tr>
+        <td><strong>GSTR-9</strong></td>
+        <td>₹200</td>
+        <td>₹200</td>
+        <td>₹20,000</td>
+      </tr>
+      <tr>
+        <td><strong>GSTR-4</strong></td>
+        <td>₹500</td>
+        <td>₹500</td>
+        <td>₹10,000</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Want to Check Overall Compliance?</h2>
+    <p>Run our free Risk Auditor to catch issues before the department does.</p>
+    <a href="index.html" class="btn btn-primary">🛡️ Run Free Audit</a>
+  </div>
 </div>
 
-<script>
-    function calculatePenalty() {
-        const tax = parseFloat(document.getElementById('taxAmount').value);
-        const days = parseInt(document.getElementById('daysDelayed').value);
-        
-        if (!tax || !days) {
-            alert("Please enter both Tax Amount and Days.");
-            return;
-        }
-
-        // Section 50: 18% per annum interest
-        const interest = (tax * 0.18 * days) / 365;
-        
-        // Simplified Late Fee (₹50/day for most regular taxpayers)
-        let lateFee = days * 50; 
-        
-        // Section 122: Minimum penalty for tax not paid is 10% or 10k
-        const minPenalty = Math.max(10000, tax * 0.10);
-
-        document.getElementById('interestOut').innerText = interest.toFixed(2);
-        document.getElementById('feeOut').innerText = lateFee.toFixed(2);
-        document.getElementById('totalOut').innerText = (interest + lateFee).toFixed(2);
-        
-        document.getElementById('resultBox').style.display = 'block';
-    }
-</script>
-
-<footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #888;">
-    Mission: Helping MSMEs save on penalties. 🦞
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>GST Compliance Pro</h4>
+      <p>India's free GST toolkit built for MSMEs and small business owners.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="index.html">Risk Auditor</a></li>
+        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+        <li><a href="budget-2026-changes.html">Budget 2026</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="blog/what-is-gst.html">What is GST?</a></li>
+        <li><a href="blog/how-to-get-gst-number.html">How to Register</a></li>
+        <li><a href="blog/common-gst-mistakes.html">Common Mistakes</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 GST Compliance Pro. All rights reserved.</span>
+    <span>Disclaimer: For informational purposes only. Consult a CA for professional advice.</span>
+  </div>
 </footer>
+
+<script>
+function calculatePenalty() {
+  const returnType = document.getElementById('returnType').value;
+  const dueDate = new Date(document.getElementById('dueDate').value);
+  const filedDate = new Date(document.getElementById('filedDate').value);
+  const isNil = document.querySelector('input[name="nilReturn"]:checked').value === 'yes';
+  const igstAmount = parseFloat(document.getElementById('iGSTAmount').value) || 0;
+
+  if (isNaN(dueDate.getTime()) || isNaN(filedDate.getTime())) {
+    alert('Please enter both due date and filed date.');
+    return;
+  }
+
+  const daysLate = Math.max(0, Math.round((filedDate - dueDate) / (1000*60*60*24)));
+
+  // Fee logic
+  let dailyFee, cap;
+  if (returnType === 'gstr9') {
+    dailyFee = 200; cap = 20000;
+  } else if (returnType === 'gstr4') {
+    dailyFee = 500; cap = 10000;
+  } else {
+    dailyFee = isNil ? 500 : 1000;
+    cap = 10000;
+  }
+
+  const totalLateFee = Math.min(dailyFee * daysLate, cap);
+  const cgst = Math.round(totalLateFee / 2);
+  const sgst = totalLateFee - cgst;
+
+  // Interest on unpaid tax (18% p.a.)
+  const interest = Math.round(igstAmount * 0.18 * (daysLate / 365));
+
+  const grandTotal = totalLateFee + interest;
+
+  // Labels
+  const returnLabels = { gstr1:'GSTR-1', gstr3b:'GSTR-3B', gstr9:'GSTR-9', gstr4:'GSTR-4' };
+
+  // Show result
+  document.getElementById('penaltyResult').style.display = 'block';
+  document.getElementById('res-returnType').textContent = returnLabels[returnType];
+  document.getElementById('res-daysLate').textContent = daysLate + ' days';
+  document.getElementById('res-cgst').textContent = '₹' + cgst.toLocaleString();
+  document.getElementById('res-sgst').textContent = '₹' + sgst.toLocaleString();
+  document.getElementById('res-interest').textContent = igstAmount > 0 ? '₹' + interest.toLocaleString() : '—';
+  document.getElementById('res-total').textContent = '₹' + grandTotal.toLocaleString();
+
+  document.getElementById('penaltyResult').scrollIntoView({ behavior:'smooth', block:'center' });
+}
+</script>
 
 </body>
 </html>
