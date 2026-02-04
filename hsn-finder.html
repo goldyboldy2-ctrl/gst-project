@@ -3,55 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HSN Code Finder — Find Your Product HSN Code | GST Compliance Pro</title>
-  <meta name="description" content="Free HSN code finder for GST. Search by product name and get your 4-digit or 6-digit HSN code instantly." />
+  <title>HSN Code Finder | GST Compliance Pro</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="hsn-data.js"></script>
 </head>
 <body>
 
-<nav class="navbar">
-  <a href="index.html" class="nav-logo">
-    <div class="logo-mark">G</div>
-    <span class="logo-text">GST <em>Compliance Pro</em></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="penalty-calculator.html">Penalty Calc</a></li>
-    <li><a href="budget-2026-changes.html">Budget 2026</a></li>
-    <li><a href="blog/index.html">Blog</a></li>
-  </ul>
-</nav>
-
-<section class="hero">
-  <div class="hero-badge anim-up">🔍 Free Tool</div>
-  <h1 class="anim-up delay-1">HSN Code <em>Finder</em></h1>
-  <p class="anim-up delay-2">Search by product name and find your correct HSN code for GST invoices. Works for goods and services.</p>
-  <div class="hero-meta anim-up delay-3">Updated February 2026 • Covers 21,000+ products</div>
-</section>
-
 <div class="container-sm" style="padding: 48px 40px;">
-  <div class="breadcrumb">
-    <a href="index.html">Home</a><span class="sep">›</span> HSN Code Finder
-  </div>
-
-  <div class="info-box blue">
-    <div class="info-box-icon">💡</div>
-    <div class="info-box-content">
-      <h4>What is HSN Code?</h4>
-      <p>HSN (Harmonized System of Nomenclature) is a 6-digit code used globally to classify products. In India, GST requires you to mention HSN on all invoices. Wrong HSN code = ₹10,000 penalty + potential audit.</p>
-    </div>
-  </div>
-
   <div class="card" style="margin-top: 28px;">
     <div class="card-body">
       <div class="form-group">
-        <label>🔍 Search for your product (Official Database)</label>
-        <input type="text" id="searchInput" placeholder="E.g., mobile phone, sugar, cement, consulting" style="font-size:1rem;" />
+        <label>🔍 Search product or HSN code</label>
+        <input type="text" id="searchInput" placeholder="Try 'Parachute', 'Mobile', or '8517'" style="font-size:1rem;" />
       </div>
-      
-      <button class="btn btn-primary" onclick="searchHSN()" style="width:100%; justify-content:center;">
-        Find HSN Code
-      </button>
+      <button class="btn btn-primary" onclick="searchHSN()" style="width:100%; justify-content:center;">Find HSN Code</button>
     </div>
   </div>
 
@@ -60,137 +25,43 @@
     <div id="resultsList"></div>
   </div>
 
-  <div style="margin-top:48px;">
-    <div style="text-align:center; margin-bottom:24px;">
-      <div class="section-label">📊 Most Searched</div>
-      <h2 class="section-title">Popular HSN <em>Codes</em></h2>
-    </div>
-
-    <table class="styled-table">
-      <tr>
-        <th>Product/Service</th>
-        <th>HSN/SAC Code</th>
-        <th>GST Rate</th>
-      </tr>
-      <tr>
-        <td>Mobile Phones</td>
-        <td>8517</td>
-        <td>12%</td>
-      </tr>
-      <tr>
-        <td>Rice</td>
-        <td>1006</td>
-        <td>0%</td>
-      </tr>
-      <tr>
-        <td>Consulting Services</td>
-        <td>998314</td>
-        <td>18%</td>
-      </tr>
-    </table>
   </div>
-
-  <div class="info-box orange" style="margin-top:32px;">
-    <div class="info-box-icon">⚠️</div>
-    <div class="info-box-content">
-      <h4>Important</h4>
-      <p>HSN codes must be mentioned on all invoices if your turnover > ₹5 crore (6-digit). Verify codes on the official GST portal before use.</p>
-    </div>
-  </div>
-
-  <div class="cta-section">
-    <h2>Need Full GST <em>Compliance Check?</em></h2>
-    <p>Use our Risk Auditor to check your overall compliance status in 60 seconds.</p>
-    <a href="index.html#auditor" class="btn btn-primary">🛡️ Run Free Audit</a>
-  </div>
-</div>
-
-<footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <h4>GST Compliance Pro</h4>
-      <p>India's free GST toolkit built for MSMEs and small business owners.</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 GST Compliance Pro. All rights reserved. 🦞</span>
-  </div>
-</footer>
 
 <script>
-/**
- * PRO API SEARCH STRATEGY WITH CORS BYPASS
- * Uses AllOrigins proxy to fetch official Razorpay HSN dataset.
- */
-async function searchHSN() {
+function searchHSN() {
   const query = document.getElementById('searchInput').value.toLowerCase().trim();
   const list = document.getElementById('resultsList');
   const box = document.getElementById('results');
 
-  if (!query || query.length < 3) {
-    alert('Please enter at least 3 characters for an accurate search.');
+  if (query.length < 2) {
+    alert('Please enter at least 2 characters.');
     return;
   }
 
-  // Show Loading State
-  list.innerHTML = `<div class="info-box blue">🔍 Scanning official 2026 database...</div>`;
-  box.style.display = 'block';
-  box.scrollIntoView({behavior:'smooth', block:'center'});
+  // Instant local search
+  const matches = Object.keys(HSN_DATABASE).filter(code => 
+    code.includes(query) || HSN_DATABASE[code].toLowerCase().includes(query)
+  );
 
-  try {
-    // CORS Proxy + Target URL
-    const proxy = 'https://api.allorigins.win/raw?url=';
-    const target = 'https://raw.githubusercontent.com/razorpay/ifsc/master/hsn.json';
-    
-    const response = await fetch(proxy + encodeURIComponent(target));
-    
-    if (!response.ok) throw new Error('Network issues');
-    
-    const data = await response.json();
-
-    // Filter logic
-    const matches = Object.keys(data)
-      .filter(code => 
-        code.includes(query) || 
-        data[code].toLowerCase().includes(query)
-      )
-      .slice(0, 20);
-
-    if (matches.length === 0) {
-      list.innerHTML = `
-        <div class="info-box orange">
-          <div class="info-box-content">
-            <h4>No matches found for "${query}"</h4>
-            <p>Try a different keyword or check the official CBIC portal.</p>
-          </div>
-        </div>`;
-    } else {
-      list.innerHTML = matches.map(code => `
-        <div class="card" style="margin-bottom:12px;">
-          <div class="card-body" style="padding:20px;">
-            <h4 style="margin:0 0 8px; color:var(--navy, #1a365d); text-transform:capitalize;">${data[code].toLowerCase()}</h4>
-            <p style="margin:0; font-size:0.9rem;">
-              <strong>HSN Code:</strong> <span style="color:var(--blue, #2563eb);">${code}</span>
-            </p>
-          </div>
+  if (matches.length === 0) {
+    list.innerHTML = `<div class="info-box orange">No local match found. For rare items, visit the official CBIC portal.</div>`;
+  } else {
+    list.innerHTML = matches.map(code => `
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-body" style="padding:20px;">
+          <h4 style="margin:0 0 8px; color:#1a365d; text-transform:capitalize;">${HSN_DATABASE[code].toLowerCase()}</h4>
+          <p style="margin:0; font-size:0.9rem;">
+            <strong>HSN Code:</strong> <span style="color:#2563eb;">${code}</span>
+          </p>
         </div>
-      `).join('');
-    }
-  } catch (error) {
-    console.error("HSN API Error:", error);
-    list.innerHTML = `
-      <div class="info-box danger">
-        <h4>Connection Error</h4>
-        <p>The database is currently unreachable. This is usually a temporary CORS block or network issue. Please try again in a few moments.</p>
-      </div>`;
+      </div>
+    `).join('');
   }
+  box.style.display = 'block';
+  box.scrollIntoView({behavior:'smooth'});
 }
 
-// Enter key support
-document.getElementById('searchInput').addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') searchHSN();
-});
+document.getElementById('searchInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') searchHSN(); });
 </script>
-
 </body>
 </html>
