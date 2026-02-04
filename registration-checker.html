@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <a href="index.html" class="nav-logo">
     <div class="logo-mark">G</div>
@@ -17,11 +18,12 @@
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="penalty-calculator.html">Penalty Calc</a></li>
-    <li><a href="blog/budget-2026-changes.html">Budget 2026</a></li>
+    <li><a href="budget-2026-changes.html">Budget 2026</a></li>
     <li><a href="blog/index.html">Blog</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-badge anim-up">🪪 Free Checker</div>
   <h1 class="anim-up delay-1">Do I Need GST <em>Registration?</em></h1>
@@ -38,14 +40,13 @@
     <div class="info-box-icon">💡</div>
     <div class="info-box-content">
       <h4>Quick Facts</h4>
-      <p>GST registration is mandatory for businesses with turnover above ₹40 lakhs (goods) or ₹20 lakhs (services). Special states have lower thresholds.</p>
+      <p>GST registration is mandatory for businesses with turnover above ₹40 lakhs (goods) or ₹20 lakhs (services). Special states and certain business types have different rules.</p>
     </div>
   </div>
 
-  
-
   <div class="card" style="margin-top: 28px;">
     <div class="card-body">
+      <!-- Q1: Business Type -->
       <div class="form-group">
         <label>📦 What type of business do you run?</label>
         <div class="radio-group">
@@ -53,14 +54,18 @@
             <input type="radio" name="businessType" value="goods" /> Selling Goods (products, merchandise)
           </label>
           <label class="radio-option">
-            <input type="radio" name="businessType" value="services" /> Providing Services (consulting, freelance, software)
+            <input type="radio" name="businessType" value="services" /> Providing Services (consulting, software, etc.)
           </label>
           <label class="radio-option">
-            <input type="radio" name="businessType" value="ecommerce" /> E-commerce Seller (Amazon/Flipkart/Social Media)
+            <input type="radio" name="businessType" value="both" /> Both Goods & Services
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="businessType" value="ecommerce" /> E-commerce Seller (Amazon/Flipkart)
           </label>
         </div>
       </div>
 
+      <!-- Q2: Turnover -->
       <div class="form-group">
         <label>💰 What is your annual turnover (approximate)?</label>
         <select id="turnover">
@@ -72,24 +77,26 @@
         </select>
       </div>
 
+      <!-- Q3: Interstate -->
       <div class="form-group">
         <label>🗺️ Do you sell across state borders?</label>
         <div class="radio-group">
           <label class="radio-option">
-            <input type="radio" name="interstate" value="yes" /> Yes (Inter-state supply)
+            <input type="radio" name="interstate" value="yes" /> Yes (inter-state supply)
           </label>
           <label class="radio-option">
-            <input type="radio" name="interstate" value="no" /> No (Only within my state)
+            <input type="radio" name="interstate" value="no" /> No (only within my state)
           </label>
         </div>
       </div>
 
+      <!-- Q4: Special State -->
       <div class="form-group">
         <label>📍 Where is your business located?</label>
         <select id="location">
-          <option value="">-- Select Region --</option>
+          <option value="">-- Select State --</option>
           <option value="special">North-East States / Himachal / Uttarakhand</option>
-          <option value="normal">Rest of India</option>
+          <option value="normal">Other States</option>
         </select>
       </div>
 
@@ -99,51 +106,78 @@
     </div>
   </div>
 
+  <!-- RESULT -->
   <div id="resultBox" class="result-box" style="display:none;"></div>
 
+  <!-- INFO SECTION -->
   <div style="margin-top:48px;">
-    <h2 class="section-title">Threshold <em>Quick-Reference</em></h2>
+    <div style="text-align:center; margin-bottom:24px;">
+      <div class="section-label">📋 Quick Reference</div>
+      <h2 class="section-title">Registration <em>Thresholds</em></h2>
+    </div>
+
     <table class="styled-table">
-      <thead>
-        <tr>
-          <th>Category</th>
-          <th>Normal States</th>
-          <th>Special Category*</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Goods Only</td>
-          <td>₹40 Lakhs</td>
-          <td>₹20 Lakhs</td>
-        </tr>
-        <tr>
-          <td>Services Only</td>
-          <td>₹20 Lakhs</td>
-          <td>₹10 Lakhs</td>
-        </tr>
-      </tbody>
+      <tr>
+        <th>Business Type</th>
+        <th>Normal States</th>
+        <th>Special States*</th>
+      </tr>
+      <tr>
+        <td>Goods Only</td>
+        <td>₹40 lakhs</td>
+        <td>₹20 lakhs</td>
+      </tr>
+      <tr>
+        <td>Services Only</td>
+        <td>₹20 lakhs</td>
+        <td>₹10 lakhs</td>
+      </tr>
+      <tr>
+        <td>E-commerce</td>
+        <td colspan="2">Mandatory (any turnover)</td>
+      </tr>
+      <tr>
+        <td>Inter-state Supply</td>
+        <td colspan="2">Mandatory (any turnover)</td>
+      </tr>
     </table>
+
+    <p style="margin-top:12px; font-size:0.88rem; color:var(--muted);">
+      *Special states: Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Himachal Pradesh, Uttarakhand
+    </p>
   </div>
 
+  <div class="info-box orange" style="margin-top:32px;">
+    <div class="info-box-icon">⚠️</div>
+    <div class="info-box-content">
+      <h4>Important Notes</h4>
+      <p><strong>Voluntary Registration:</strong> Even if not mandatory, you can register voluntarily to claim input tax credit.<br>
+      <strong>Casual Traders:</strong> If you sell temporarily at exhibitions/fairs, registration is mandatory regardless of turnover.<br>
+      <strong>Reverse Charge:</strong> If you receive goods/services under reverse charge, registration may be mandatory.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
   <div class="cta-section">
-    <h2>Ready to <em>Register?</em></h2>
-    <p>Read our step-by-step guide to getting your GSTIN without paying huge consultant fees.</p>
+    <h2>Need Help with <em>Registration?</em></h2>
+    <p>Read our step-by-step guide on how to get your GST number online in 7 simple steps.</p>
     <a href="blog/how-to-get-gst-number.html" class="btn btn-primary">📖 Read Registration Guide</a>
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
     <div>
       <h4>GST Compliance Pro</h4>
-      <p>Supporting India's small businesses with transparent, free tax tools. Our mission is to make compliance simple for every MSME.</p>
+      <p>India's free GST toolkit built for MSMEs and small business owners.</p>
     </div>
     <div>
       <h4>Tools</h4>
       <ul>
         <li><a href="index.html">Risk Auditor</a></li>
         <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+        <li><a href="hsn-finder.html">HSN Finder</a></li>
         <li><a href="registration-checker.html">Registration Checker</a></li>
       </ul>
     </div>
@@ -152,47 +186,88 @@
       <ul>
         <li><a href="blog/what-is-gst.html">What is GST?</a></li>
         <li><a href="blog/how-to-get-gst-number.html">How to Register</a></li>
-        <li><a href="blog/index.html">All Blog Posts</a></li>
+        <li><a href="blog/common-gst-mistakes.html">Common Mistakes</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 GST Compliance Pro. Dedicated to helping small businesses. 🦞</span>
+    <span>© 2026 GST Compliance Pro. All rights reserved.</span>
+    <span>Disclaimer: For informational purposes only. Consult a CA for professional advice.</span>
   </div>
 </footer>
 
 <script>
 function checkEligibility() {
-  const bizType = document.querySelector('input[name="businessType"]:checked');
+  const businessType = document.querySelector('input[name="businessType"]:checked');
   const turnover = document.getElementById('turnover').value;
   const interstate = document.querySelector('input[name="interstate"]:checked');
   const location = document.getElementById('location').value;
   const box = document.getElementById('resultBox');
 
-  if (!bizType || !turnover || !interstate || !location) {
-    alert('Please answer all 4 questions.');
+  if (!businessType || !turnover || !interstate || !location) {
+    alert('Please answer all questions');
     return;
   }
 
-  let isRequired = false;
-  let text = '';
+  let required = false;
+  let reason = '';
 
-  if (bizType.value === 'ecommerce' || interstate.value === 'yes') {
-    isRequired = true;
-    text = 'Registration is <strong>Mandatory</strong> regardless of turnover for E-commerce or Inter-state supply.';
-  } else {
-    const isSpecial = (location === 'special');
-    if (bizType.value === 'goods') {
-      if (turnover === '40plus' || (isSpecial && (turnover === '20to40' || turnover === '40plus'))) isRequired = true;
-    } else {
-      if (turnover === '20to40' || turnover === '40plus' || (isSpecial && turnover === '10to20')) isRequired = true;
+  // E-commerce = always mandatory
+  if (businessType.value === 'ecommerce') {
+    required = true;
+    reason = 'E-commerce sellers must register for GST <strong>regardless of turnover</strong>. This is mandatory as per Section 24 of CGST Act.';
+  }
+  // Interstate = always mandatory
+  else if (interstate.value === 'yes') {
+    required = true;
+    reason = 'Inter-state supply requires GST registration <strong>regardless of turnover</strong>. You cannot sell across states without GSTIN.';
+  }
+  // Turnover check
+  else {
+    const isSpecial = location === 'special';
+    
+    if (businessType.value === 'goods') {
+      const threshold = isSpecial ? 20 : 40;
+      if (turnover === '40plus' || (isSpecial && (turnover === '20to40' || turnover === '40plus'))) {
+        required = true;
+        reason = `Your turnover exceeds ₹${threshold} lakhs threshold for goods in ${isSpecial ? 'special' : 'normal'} states. Registration is <strong>mandatory</strong>.`;
+      }
+    } else if (businessType.value === 'services') {
+      const threshold = isSpecial ? 10 : 20;
+      if ((turnover === '20to40' || turnover === '40plus') || (isSpecial && (turnover === '10to20' || turnover === '20to40' || turnover === '40plus'))) {
+        required = true;
+        reason = `Your turnover exceeds ₹${threshold} lakhs threshold for services in ${isSpecial ? 'special' : 'normal'} states. Registration is <strong>mandatory</strong>.`;
+      }
+    } else if (businessType.value === 'both') {
+      const threshold = isSpecial ? 20 : 40;
+      if (turnover === '40plus' || (isSpecial && (turnover === '20to40' || turnover === '40plus'))) {
+        required = true;
+        reason = `For mixed businesses, the ₹${threshold} lakhs threshold applies. Your turnover requires <strong>mandatory</strong> registration.`;
+      }
     }
-    text = isRequired ? 'Your turnover exceeds the limit. Registration is <strong>Mandatory</strong>.' : 'You are currently below the threshold. Registration is <strong>Optional</strong>.';
   }
 
-  box.className = isRequired ? 'result-box danger' : 'result-box safe';
-  box.innerHTML = `<h3>${isRequired ? '🚨 Required' : '✅ Not Required'}</h3><p>${text}</p>`;
+  // Display result
+  if (required) {
+    box.className = 'result-box danger';
+    box.innerHTML = `
+      <div class="result-icon">🚨</div>
+      <h3>Registration Required</h3>
+      <p>${reason}</p>
+      <a href="blog/how-to-get-gst-number.html" class="btn btn-primary" style="margin-top:16px;">Learn How to Register →</a>
+    `;
+  } else {
+    box.className = 'result-box safe';
+    box.innerHTML = `
+      <div class="result-icon">✅</div>
+      <h3>Registration Not Mandatory</h3>
+      <p>Based on your answers, GST registration is <strong>not mandatory</strong> for you right now. However, you can register <strong>voluntarily</strong> to claim input tax credit and appear more professional to buyers.</p>
+      <a href="blog/how-to-get-gst-number.html" class="btn btn-outline" style="margin-top:16px; color:var(--navy); border-color:var(--navy);">Learn About Voluntary Registration →</a>
+    `;
+  }
+
   box.style.display = 'block';
+  box.scrollIntoView({behavior:'smooth', block:'center'});
 }
 </script>
 
