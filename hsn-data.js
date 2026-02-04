@@ -1,0 +1,22 @@
+const HSN_DATABASE = {
+  "8804": "Parachutes (including dirigible parachutes and paragliders) and rotochutes",
+  "6601": "Umbrellas and sun umbrellas (including walking-stick umbrellas, garden umbrellas)",
+  "9004": "Spectacles, goggles and the like, corrective, protective or other",
+  "0409": "Natural honey",
+  "8517": "Mobile telephones / Smartphones and other wireless networks",
+  "8471": "Laptops, Tablets, and Data Processing Units",
+  "2523": "Portland cement, aluminous cement, slag cement",
+  "1006": "Rice (Pre-packaged and labeled)",
+  "1101": "Wheat or meslin flour",
+  "9983": "IT Services, Software Development, and Consulting",
+  "9982": "Legal and Accounting Services",
+  "6403": "Footwear with outer soles of rubber, plastics, leather",
+  "6204": "Women's or girls' suits, ensembles, jackets, blazers, dresses",
+  "7308": "Structures and parts of structures of iron or steel",
+  "8541": "Solar cells, Solar panels, and Diodes",
+  "8507": "Electric Vehicle (EV) Batteries / Lithium-ion batteries",
+  "3004": "Medicaments (Medicines) for therapeutic or prophylactic uses",
+  "9403": "Other furniture and parts thereof (Wooden/Metal)",
+  "3917": "Tubes, pipes and hoses, and fittings thereof, of plastics",
+  "4802": "Uncoated paper and paperboard, of a kind used for writing"
+};
