@@ -232,16 +232,19 @@ function calculatePenalty() {
 
   const daysLate = Math.max(0, Math.round((filedDate - dueDate) / (1000*60*60*24)));
 
-  // Fee logic
-  let dailyFee, cap;
-  if (returnType === 'gstr9') {
-    dailyFee = 200; cap = 20000;
-  } else if (returnType === 'gstr4') {
-    dailyFee = 500; cap = 10000;
-  } else {
-    dailyFee = isNil ? 500 : 1000;
-    cap = 10000;
-  }
+  // Accurate 2026 Fee Logic
+let dailyFee, cap;
+if (returnType === 'gstr9') {
+    dailyFee = 200; 
+    cap = 20000; // Simplified; ideally 0.04% of turnover for small biz
+} else if (isNil) {
+    dailyFee = 20; 
+    cap = 500;
+} else {
+    dailyFee = 50;
+    // Assuming MSME turnover < 1.5cr for safety; otherwise 5000 for < 5cr
+    cap = 2000; 
+}
 
   const totalLateFee = Math.min(dailyFee * daysLate, cap);
   const cgst = Math.round(totalLateFee / 2);
