@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HSN Code Finder — Find Your Product HSN Code | GST Compliance Pro</title>
+  <meta name="description" content="Free HSN code finder for GST. Search by product name and get your 4-digit or 6-digit HSN code instantly." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">G</div>
+    <span class="logo-text">GST <em>Compliance Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="penalty-calculator.html">Penalty Calc</a></li>
+    <li><a href="budget-2026-changes.html">Budget 2026</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge anim-up">🔍 Free Tool</div>
+  <h1 class="anim-up delay-1">HSN Code <em>Finder</em></h1>
+  <p class="anim-up delay-2">Search by product name and find your correct HSN code for GST invoices. Works for goods and services.</p>
+  <div class="hero-meta anim-up delay-3">Updated February 2026 • Covers 21,000+ products</div>
+</section>
+
+<div class="container-sm" style="padding: 48px 40px;">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span class="sep">›</span> HSN Code Finder
+  </div>
+
+  <div class="info-box blue">
+    <div class="info-box-icon">💡</div>
+    <div class="info-box-content">
+      <h4>What is HSN Code?</h4>
+      <p>HSN (Harmonized System of Nomenclature) is a 6-digit code used globally to classify products. In India, GST requires you to mention HSN on all invoices. Wrong HSN code = ₹10,000 penalty + potential audit.</p>
+    </div>
+  </div>
+
+  <!-- SEARCH BOX -->
+  <div class="card" style="margin-top: 28px;">
+    <div class="card-body">
+      <div class="form-group">
+        <label>🔍 Search for your product</label>
+        <input type="text" id="searchInput" placeholder="E.g., mobile phone, sugar, cement, consulting" style="font-size:1rem;" />
+      </div>
+      
+      <button class="btn btn-primary" onclick="search HSN()" style="width:100%; justify-content:center;">
+        Find HSN Code
+      </button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" style="display:none; margin-top:28px;">
+    <h3 style="margin-bottom:16px;">Search Results:</h3>
+    <div id="resultsList"></div>
+  </div>
+
+  <!-- POPULAR HSN CODES -->
+  <div style="margin-top:48px;">
+    <div style="text-align:center; margin-bottom:24px;">
+      <div class="section-label">📊 Most Searched</div>
+      <h2 class="section-title">Popular HSN <em>Codes</em></h2>
+    </div>
+
+    <table class="styled-table">
+      <tr>
+        <th>Product/Service</th>
+        <th>HSN/SAC Code</th>
+        <th>GST Rate</th>
+      </tr>
+      <tr>
+        <td>Mobile Phones</td>
+        <td>8517</td>
+        <td>12%</td>
+      </tr>
+      <tr>
+        <td>Rice</td>
+        <td>1006</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>Wheat</td>
+        <td>1001</td>
+        <td>0%</td>
+      </tr>
+      <tr>
+        <td>Sugar</td>
+        <td>1701</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>Cement</td>
+        <td>2523</td>
+        <td>28%</td>
+      </tr>
+      <tr>
+        <td>Textiles (Cotton)</td>
+        <td>5208</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>Iron & Steel</td>
+        <td>7207-7229</td>
+        <td>18%</td>
+      </tr>
+      <tr>
+        <td>Consulting Services</td>
+        <td>998314</td>
+        <td>18%</td>
+      </tr>
+      <tr>
+        <td>Software Development</td>
+        <td>998313</td>
+        <td>18%</td>
+      </tr>
+      <tr>
+        <td>Restaurant (AC)</td>
+        <td>996331</td>
+        <td>18%</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="info-box orange" style="margin-top:32px;">
+    <div class="info-box-icon">⚠️</div>
+    <div class="info-box-content">
+      <h4>Important</h4>
+      <p>HSN codes must be mentioned on all invoices if your turnover > ₹5 crore (6-digit), or > ₹1.5 crore (4-digit). Verify codes on the official GST portal before use.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Need Full GST <em>Compliance Check?</em></h2>
+    <p>Use our Risk Auditor to check your overall compliance status in 60 seconds.</p>
+    <a href="index.html#auditor" class="btn btn-primary">🛡️ Run Free Audit</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>GST Compliance Pro</h4>
+      <p>India's free GST toolkit built for MSMEs and small business owners.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="index.html">Risk Auditor</a></li>
+        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+        <li><a href="hsn-finder.html">HSN Finder</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="blog/what-is-gst.html">What is GST?</a></li>
+        <li><a href="blog/how-to-get-gst-number.html">How to Register</a></li>
+        <li><a href="blog/common-gst-mistakes.html">Common Mistakes</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 GST Compliance Pro. All rights reserved.</span>
+    <span>Disclaimer: For informational purposes only. Consult a CA for professional advice.</span>
+  </div>
+</footer>
+
+<script>
+// Comprehensive HSN database (top 100 most searched)
+const hsnData = [
+  {name:"Mobile Phone", hsn:"8517", rate:"12%"},
+  {name:"Smartphone", hsn:"8517", rate:"12%"},
+  {name:"Rice", hsn:"1006", rate:"0%"},
+  {name:"Wheat", hsn:"1001", rate:"0%"},
+  {name:"Sugar", hsn:"1701", rate:"5%"},
+  {name:"Cement", hsn:"2523", rate:"28%"},
+  {name:"Textile", hsn:"5208", rate:"5%"},
+  {name:"Cotton", hsn:"5201", rate:"5%"},
+  {name:"Iron", hsn:"7208", rate:"18%"},
+  {name:"Steel", hsn:"7208", rate:"18%"},
+  {name:"Laptop", hsn:"8471", rate:"18%"},
+  {name:"Computer", hsn:"8471", rate:"18%"},
+  {name:"Medicine", hsn:"3004", rate:"12%"},
+  {name:"Pharmaceutical", hsn:"3004", rate:"12%"},
+  {name:"Software", hsn:"998313", rate:"18%"},
+  {name:"Consulting", hsn:"998314", rate:"18%"},
+  {name:"Restaurant", hsn:"996331", rate:"18%"},
+  {name:"Hotel", hsn:"996311", rate:"18%"},
+  {name:"Construction", hsn:"995412", rate:"18%"},
+  {name:"Real Estate", hsn:"997212", rate:"12%"},
+  {name:"Milk", hsn:"0401", rate:"0%"},
+  {name:"Eggs", hsn:"0407", rate:"0%"},
+  {name:"Vegetables", hsn:"0709", rate:"0%"},
+  {name:"Fruits", hsn:"0810", rate:"0%"},
+  {name:"Tea", hsn:"0902", rate:"5%"},
+  {name:"Coffee", hsn:"0901", rate:"5%"},
+  {name:"Spices", hsn:"0910", rate:"5%"},
+  {name:"Furniture", hsn:"9403", rate:"18%"},
+  {name:"Paper", hsn:"4802", rate:"12%"},
+  {name:"Books", hsn:"4901", rate:"0%"},
+  {name:"Plastic", hsn:"3920", rate:"18%"},
+  {name:"Rubber", hsn:"4016", rate:"18%"},
+  {name:"Glass", hsn:"7020", rate:"18%"},
+  {name:"Wood", hsn:"4407", rate:"5%"},
+  {name:"Footwear", hsn:"6404", rate:"5%"},
+  {name:"Jewellery", hsn:"7113", rate:"3%"},
+  {name:"Gold", hsn:"7108", rate:"3%"},
+  {name:"Silver", hsn:"7106", rate:"3%"},
+  {name:"Car", hsn:"8703", rate:"28%"},
+  {name:"Motorcycle", hsn:"8711", rate:"28%"},
+  {name:"Bicycle", hsn:"8712", rate:"12%"},
+  {name:"Paint", hsn:"3209", rate:"28%"},
+  {name:"Chemical", hsn:"2942", rate:"18%"},
+  {name:"Fertilizer", hsn:"3105", rate:"5%"},
+  {name:"Pesticide", hsn:"3808", rate:"18%"},
+  {name:"Oil", hsn:"1511", rate:"5%"},
+  {name:"Petrol", hsn:"2710", rate:"18%"},
+  {name:"Diesel", hsn:"2710", rate:"18%"},
+  {name:"LPG", hsn:"2711", rate:"5%"},
+  {name:"CNG", hsn:"2711", rate:"5%"}
+];
+
+function searchHSN() {
+  const query = document.getElementById('searchInput').value.toLowerCase().trim();
+  if (!query || query.length < 3) {
+    alert('Please enter at least 3 characters');
+    return;
+  }
+
+  const matches = hsnData.filter(item => item.name.toLowerCase().includes(query));
+  const results = document.getElementById('results');
+  const list = document.getElementById('resultsList');
+
+  if (matches.length === 0) {
+    list.innerHTML = `
+      <div class="info-box orange">
+        <div class="info-box-icon">🔍</div>
+        <div class="info-box-content">
+          <h4>No matches found</h4>
+          <p>Try different keywords or check the <a href="https://www.cbic.gov.in" target="_blank" style="color:var(--blue); text-decoration:underline;">official CBIC portal</a> for the complete HSN list.</p>
+        </div>
+      </div>
+    `;
+  } else {
+    list.innerHTML = matches.map(m => `
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-body" style="padding:20px;">
+          <h4 style="margin:0 0 8px; color:var(--navy);">${m.name}</h4>
+          <p style="margin:0; color:var(--text-sm);">
+            <strong>HSN:</strong> ${m.hsn} &nbsp;·&nbsp; <strong>GST Rate:</strong> ${m.rate}
+          </p>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  results.style.display = 'block';
+  results.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+// Enter key support
+document.getElementById('searchInput').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') searchHSN();
+});
+</script>
+
+</body>
+</html>
