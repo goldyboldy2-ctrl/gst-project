@@ -1,0 +1,10 @@
+# robots.txt for GST Compliance Pro
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gst-compliance-pro.netlify.app/sitemap.xml
+
+# Crawl delay (optional, helps with smaller sites)
+Crawl-delay: 1
