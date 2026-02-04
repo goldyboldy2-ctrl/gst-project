@@ -1,0 +1,10 @@
+# robots.txt for My GST India
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mygstindia.in/sitemap.xml
+
+# Crawl delay (optional, helps with smaller sites)
+Crawl-delay: 1
