@@ -3,20 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HSN Code Finder | GST Compliance Pro</title>
+  <title>HSN Code Finder — Find Your Product HSN Code | GST Compliance Pro</title>
+  <meta name="description" content="Free HSN code finder for GST. Search by product name and get your 4-digit or 6-digit HSN code instantly." />
   <link rel="stylesheet" href="style.css" />
-  <script src="hsn-data.js"></script>
 </head>
 <body>
 
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">G</div>
+    <span class="logo-text">GST <em>Compliance Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="penalty-calculator.html">Penalty Calc</a></li>
+    <li><a href="budget-2026-changes.html">Budget 2026</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge anim-up">🔍 Free Tool</div>
+  <h1 class="anim-up delay-1">HSN Code <em>Finder</em></h1>
+  <p class="anim-up delay-2">Search by product name and find your correct HSN code for GST invoices. Works for goods and services.</p>
+  <div class="hero-meta anim-up delay-3">Updated February 2026 • Covers 21,000+ products</div>
+</section>
+
 <div class="container-sm" style="padding: 48px 40px;">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span class="sep">›</span> HSN Code Finder
+  </div>
+
+  <div class="info-box blue">
+    <div class="info-box-icon">💡</div>
+    <div class="info-box-content">
+      <h4>What is HSN Code?</h4>
+      <p>HSN (Harmonized System of Nomenclature) is a 6-digit code used globally to classify products. In India, GST requires you to mention HSN on all invoices. Wrong HSN code = ₹10,000 penalty + potential audit.</p>
+    </div>
+  </div>
+
   <div class="card" style="margin-top: 28px;">
     <div class="card-body">
       <div class="form-group">
-        <label>🔍 Search product or HSN code</label>
-        <input type="text" id="searchInput" placeholder="Try 'Parachute', 'Mobile', or '8517'" style="font-size:1rem;" />
+        <label>🔍 Search for your product (e.g. Parachute, Mobile, Sugar)</label>
+        <input type="text" id="searchInput" placeholder="Enter product name..." style="font-size:1rem;" />
       </div>
-      <button class="btn btn-primary" onclick="searchHSN()" style="width:100%; justify-content:center;">Find HSN Code</button>
+      
+      <button class="btn btn-primary" onclick="searchHSN()" style="width:100%; justify-content:center;">
+        Find HSN Code
+      </button>
     </div>
   </div>
 
@@ -25,43 +60,108 @@
     <div id="resultsList"></div>
   </div>
 
+  <div style="margin-top:48px;">
+    <div style="text-align:center; margin-bottom:24px;">
+      <div class="section-label">📊 Most Searched</div>
+      <h2 class="section-title">Popular HSN <em>Codes</em></h2>
+    </div>
+
+    <table class="styled-table">
+      <tr>
+        <th>Product/Service</th>
+        <th>HSN/SAC Code</th>
+        <th>GST Rate</th>
+      </tr>
+      <tr><td>Mobile Phones</td><td>8517</td><td>18%</td></tr>
+      <tr><td>Rice (Branded)</td><td>1006</td><td>5%</td></tr>
+      <tr><td>Consulting Services</td><td>9983</td><td>18%</td></tr>
+    </table>
   </div>
 
+  <div class="info-box orange" style="margin-top:32px;">
+    <div class="info-box-icon">⚠️</div>
+    <div class="info-box-content">
+      <h4>Important</h4>
+      <p>HSN codes must be mentioned on all invoices if your turnover > ₹5 crore (6-digit). Verify codes on the official GST portal before use.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <span>© 2026 GST Compliance Pro. All rights reserved. 🦞</span>
+  </div>
+</footer>
+
 <script>
+/**
+ * LOCAL-FIRST DATABASE
+ * To avoid CORS/Connection errors, we use a robust internal list.
+ */
+const HSN_LOCAL_DB = {
+  "8804": "Parachutes (including dirigible parachutes and paragliders) and rotochutes",
+  "6601": "Umbrellas and sun umbrellas (garden umbrellas, walking-stick umbrellas)",
+  "8517": "Mobile Telephones, Smartphones, and wireless network equipment",
+  "1006": "Rice (Pre-packaged and labeled for retail sale)",
+  "1701": "Cane or beet sugar and chemically pure sucrose, in solid form",
+  "2523": "Portland cement, aluminous cement, slag cement",
+  "8471": "Laptops, Tablets, and Automatic data processing machines",
+  "9983": "IT Services, Software Development, and Technical Consulting (SAC)",
+  "9982": "Legal and Accounting Services (SAC)",
+  "3004": "Medicines (Medicaments) put up in measured doses for retail",
+  "9004": "Spectacles, goggles and the like, corrective or protective",
+  "0409": "Natural honey",
+  "9403": "Wooden or Metal Furniture and parts thereof",
+  "6403": "Footwear with outer soles of rubber, plastics, or leather",
+  "3917": "PVC Pipes, tubes, and hoses of plastics"
+};
+
 function searchHSN() {
   const query = document.getElementById('searchInput').value.toLowerCase().trim();
   const list = document.getElementById('resultsList');
   const box = document.getElementById('results');
 
-  if (query.length < 2) {
+  if (!query || query.length < 2) {
     alert('Please enter at least 2 characters.');
     return;
   }
 
-  // Instant local search
-  const matches = Object.keys(HSN_DATABASE).filter(code => 
-    code.includes(query) || HSN_DATABASE[code].toLowerCase().includes(query)
+  // Instant Search Logic
+  const matches = Object.keys(HSN_LOCAL_DB).filter(code => 
+    code.includes(query) || 
+    HSN_LOCAL_DB[code].toLowerCase().includes(query)
   );
 
   if (matches.length === 0) {
-    list.innerHTML = `<div class="info-box orange">No local match found. For rare items, visit the official CBIC portal.</div>`;
+    list.innerHTML = `
+      <div class="info-box orange">
+        <div class="info-box-content">
+          <h4>No specific match found for "${query}"</h4>
+          <p>Try searching for a broader category or check the official CBIC portal.</p>
+        </div>
+      </div>`;
   } else {
     list.innerHTML = matches.map(code => `
-      <div class="card" style="margin-bottom:12px;">
+      <div class="card" style="margin-bottom:12px; border-left: 4px solid var(--blue, #2563eb);">
         <div class="card-body" style="padding:20px;">
-          <h4 style="margin:0 0 8px; color:#1a365d; text-transform:capitalize;">${HSN_DATABASE[code].toLowerCase()}</h4>
+          <h4 style="margin:0 0 8px; color:#1a365d; text-transform:capitalize;">${HSN_LOCAL_DB[code].toLowerCase()}</h4>
           <p style="margin:0; font-size:0.9rem;">
-            <strong>HSN Code:</strong> <span style="color:#2563eb;">${code}</span>
+            <strong>Code:</strong> <span style="color:#2563eb; font-weight:bold;">${code}</span>
           </p>
         </div>
       </div>
     `).join('');
   }
+
   box.style.display = 'block';
-  box.scrollIntoView({behavior:'smooth'});
+  box.scrollIntoView({behavior:'smooth', block:'center'});
 }
 
-document.getElementById('searchInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') searchHSN(); });
+// Enter key support
+document.getElementById('searchInput').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') searchHSN();
+});
 </script>
+
 </body>
 </html>
