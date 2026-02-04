@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GST Compliance Pro — India's Free GST Toolkit for MSMEs</title>
   <meta name="description" content="Free GST compliance tools, risk auditor, penalty calculator and beginner guides for Indian MSMEs. Stay compliant, avoid penalties." />
-  <meta property="og:title" content="GST Compliance Pro — India's Free GST Toolkit" />
-  <meta property="og:description" content="Free GST compliance tools for Indian MSMEs. Risk auditor, penalty calculator, guides." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
   <a href="index.html" class="nav-logo">
     <div class="logo-mark">G</div>
@@ -20,12 +17,11 @@
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="penalty-calculator.html">Penalty Calc</a></li>
-    <li><a href="budget-2026-changes.html">Budget 2026</a></li>
+    <li><a href="blog/budget-2026-changes.html">Budget 2026</a></li>
     <li><a href="blog/index.html">Blog</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-badge anim-up">🇮🇳 Built for Indian MSMEs</div>
   <h1 class="anim-up delay-1">Stay GST Compliant.<br><em>Effortlessly.</em></h1>
@@ -37,25 +33,25 @@
   <div class="hero-meta anim-up delay-4" style="margin-top:28px;">Updated February 2026 &nbsp;·&nbsp; Budget 2026 changes included</div>
 </section>
 
-<!-- STATS -->
 <div class="container">
   <div class="stats-row">
     <div class="stat-card anim-up delay-1">
       <div class="stat-num">17+</div>
-      <div class="stat-label">Taxes Replaced by GST</div>
+      <div class="stat-label">Taxes Replaced</div>
     </div>
     <div class="stat-card anim-up delay-2">
       <div class="stat-num">₹40L</div>
-      <div class="stat-label">Registration Threshold</div>
+      <div class="stat-label">GST Threshold</div>
     </div>
     <div class="stat-card anim-up delay-3">
       <div class="stat-num">15 Days</div>
-      <div class="stat-label">Notice Response Window</div>
+      <div class="stat-label">Notice Window</div>
     </div>
   </div>
 </div>
 
-<!-- AUDITOR TOOL -->
+
+
 <section id="auditor" style="padding: 56px 0;">
   <div class="container-sm">
     <div style="text-align:center; margin-bottom:32px;">
@@ -66,172 +62,101 @@
 
     <div class="card" style="max-width:560px; margin:0 auto;">
       <div class="card-body">
-
-        <!-- Question 1: Date -->
         <div class="form-group">
-          <label>📅 When did you receive the GST notice?</label>
+          <label>📅 Notice Date (Leave blank if none)</label>
           <input type="date" id="noticeDate" />
         </div>
 
-        <!-- Question 2: Bank Details -->
         <div class="form-group">
-          <label>🏦 Have you updated bank details on the GST portal? (Rule 10A)</label>
+          <label>🏦 Are bank details verified on portal? (Rule 10A)</label>
           <div class="radio-group">
-            <label class="radio-option">
-              <input type="radio" name="bankDetails" value="yes" /> Yes, bank details are updated and verified
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="bankDetails" value="no" /> No / Not sure
-            </label>
+            <label class="radio-option"><input type="radio" name="bankDetails" value="yes" /> Yes</label>
+            <label class="radio-option"><input type="radio" name="bankDetails" value="no" /> No / Not Sure</label>
           </div>
         </div>
 
-        <!-- Question 3: Returns Filed -->
         <div class="form-group">
-          <label>📄 Are your last 3 GST returns filed on time?</label>
+          <label>📄 Last 3 returns filed on time?</label>
           <div class="radio-group">
-            <label class="radio-option">
-              <input type="radio" name="returnsFiled" value="yes" /> Yes, all filed on time
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="returnsFiled" value="partial" /> Some filed, some pending
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="returnsFiled" value="no" /> No, not filed
-            </label>
+            <label class="radio-option"><input type="radio" name="returnsFiled" value="yes" /> Yes</label>
+            <label class="radio-option"><input type="radio" name="returnsFiled" value="partial" /> Partial</label>
+            <label class="radio-option"><input type="radio" name="returnsFiled" value="no" /> No</label>
           </div>
         </div>
 
         <button class="btn btn-primary" onclick="runAudit()" style="width:100%; justify-content:center; margin-top:8px;">
-          🛡️ Check My Risk Level
+          🛡️ Check Risk Level
         </button>
 
-        <!-- Risk Meter -->
-        <div style="margin-top:24px;">
-          <div class="risk-labels">
-            <span>✅ Safe</span>
-            <span>⚠️ Warning</span>
-            <span>🚨 Danger</span>
-          </div>
-          <div class="risk-meter">
-            <div class="safe"></div>
-            <div class="warn"></div>
-            <div class="danger"></div>
-          </div>
-        </div>
-
-        <!-- Result Box -->
-        <div class="result-box" id="resultBox">
-          <div class="result-icon" id="resultIcon"></div>
-          <h3 id="resultTitle"></h3>
-          <p id="resultDesc"></p>
+        <div class="result-box" id="resultBox" style="display:none; margin-top:24px;">
+          <div class="result-icon" id="resultIcon" style="font-size:2rem; margin-bottom:10px;"></div>
+          <h3 id="resultTitle" style="margin-bottom:8px;"></h3>
+          <p id="resultDesc" style="font-size:0.95rem; line-height:1.5;"></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TOOLS GRID -->
 <section style="padding: 56px 0; background: var(--white);">
   <div class="container">
-    <div style="text-align:center; margin-bottom:12px;">
+    <div style="text-align:center; margin-bottom:32px;">
       <div class="section-label">🛠️ Free Tools</div>
-      <h2 class="section-title">Everything You Need<br><em>In One Place</em></h2>
+      <h2 class="section-title">Everything You Need</h2>
     </div>
     <div class="tools-grid">
-      <a href="penalty-calculator.html" class="card" style="text-decoration:none;">
+      <a href="penalty-calculator.html" class="card tool-link">
         <div class="card-body">
           <div class="card-icon orange">💰</div>
-          <h3>Penalty Calculator</h3>
-          <p>Calculate exact GST late fees and penalties based on your situation.</p>
-          <span class="read-more">Calculate now →</span>
+          <h3>Penalty Calc</h3>
+          <p>Calculate exact late fees and interest for 2026.</p>
         </div>
       </a>
-      <a href="hsn-finder.html" class="card" style="text-decoration:none;">
+      <a href="hsn-finder.html" class="card tool-link">
         <div class="card-body">
           <div class="card-icon blue">🔍</div>
-          <h3>HSN Code Finder</h3>
-          <p>Search 21,000+ products and get the correct HSN code for your invoices.</p>
-          <span class="read-more">Find HSN →</span>
+          <h3>HSN Finder</h3>
+          <p>Correct HSN codes for your GST invoices.</p>
         </div>
       </a>
-      <a href="registration-checker.html" class="card" style="text-decoration:none;">
+      <a href="registration-checker.html" class="card tool-link">
         <div class="card-body">
           <div class="card-icon green">🪪</div>
-          <h3>Registration Checker</h3>
-          <p>Find out if you need GST registration based on your turnover and business.</p>
-          <span class="read-more">Check now →</span>
+          <h3>Reg. Checker</h3>
+          <p>Find out if your turnover requires registration.</p>
         </div>
       </a>
-      <a href="return-deadlines.html" class="card" style="text-decoration:none;">
+      <a href="return-deadlines.html" class="card tool-link">
         <div class="card-body">
           <div class="card-icon orange">📅</div>
-          <h3>Return Deadlines 2026</h3>
-          <p>Never miss a filing date. Track all GST return deadlines with countdowns.</p>
-          <span class="read-more">View calendar →</span>
-        </div>
-      </a>
-      <a href="budget-2026-changes.html" class="card" style="text-decoration:none;">
-        <div class="card-body">
-          <div class="card-icon blue">📋</div>
-          <h3>Budget 2026 Changes</h3>
-          <p>All GST changes from Union Budget 2026 explained in simple terms.</p>
-          <span class="read-more">See changes →</span>
-        </div>
-      </a>
-      <a href="blog/index.html" class="card" style="text-decoration:none;">
-        <div class="card-body">
-          <div class="card-icon green">📚</div>
-          <h3>Knowledge Hub</h3>
-          <p>Beginner guides, step-by-step tutorials, and compliance tips.</p>
-          <span class="read-more">Browse articles →</span>
+          <h3>Deadlines</h3>
+          <p>Live countdowns for GSTR-1 and GSTR-3B.</p>
         </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<div class="container">
-  <div class="cta-section">
-    <h2>Don't Wait for a Notice.<br>Check Now.</h2>
-    <p>Most GST penalties are avoidable. Our free auditor catches issues before the department does.</p>
-    <a href="#auditor" class="btn btn-primary">🛡️ Run Free Audit Now</a>
-  </div>
-</div>
-
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
     <div>
       <h4>GST Compliance Pro</h4>
-      <p>India's free GST toolkit built for MSMEs and small business owners. Stay compliant without the stress.</p>
+      <p>Protecting Indian small businesses from compliance risks. 🦞</p>
     </div>
     <div>
-      <h4>Tools</h4>
+      <h4>Quick Links</h4>
       <ul>
-        <li><a href="index.html">Risk Auditor</a></li>
-        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
-        <li><a href="budget-2026-changes.html">Budget 2026</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Learn</h4>
-      <ul>
-        <li><a href="blog/what-is-gst.html">What is GST?</a></li>
-        <li><a href="blog/how-to-get-gst-number.html">How to Register</a></li>
-        <li><a href="blog/common-gst-mistakes.html">Common Mistakes</a></li>
-        <li><a href="blog/index.html">All Blog Posts</a></li>
+        <li><a href="penalty-calculator.html">Penalty Calc</a></li>
+        <li><a href="blog/budget-2026-changes.html">Budget Changes</a></li>
+        <li><a href="blog/index.html">Knowledge Hub</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 GST Compliance Pro. All rights reserved.</span>
-    <span>Disclaimer: For informational purposes only. Consult a CA for professional advice.</span>
+    <span>© 2026 GST Compliance Pro. Built for MSMEs.</span>
   </div>
 </footer>
 
-<!-- AUDITOR JS -->
 <script>
 function runAudit() {
   const dateInput = document.getElementById('noticeDate').value;
@@ -240,55 +165,34 @@ function runAudit() {
   const box = document.getElementById('resultBox');
 
   if (!bank || !returns) {
-    alert('Please answer all questions first.');
+    alert('Please answer the questions to protect your business.');
     return;
   }
 
-  let score = 0; // 0=safe, 1=warn, 2=danger
+  let score = 0;
+  if (bank.value === 'no') score += 3;
+  if (returns.value === 'no') score += 3;
+  if (returns.value === 'partial') score += 1;
 
-  // Bank details check (Rule 10A) — most critical
-  if (bank.value === 'no') score += 2;
-
-  // Returns check
-  if (returns.value === 'no') score += 2;
-  else if (returns.value === 'partial') score += 1;
-
-  // Date check — days remaining in 15-day window
   if (dateInput) {
-    const notice = new Date(dateInput);
-    const today = new Date();
-    const diff = Math.round((today - notice) / (1000*60*60*24));
-    if (diff >= 15) score += 2;
-    else if (diff >= 10) score += 1;
+    const diff = Math.round((new Date() - new Date(dateInput)) / (1000*60*60*24));
+    if (diff >= 10) score += 2;
   }
 
-  // Determine level
-  let level, icon, title, desc;
-  if (score <= 1) {
-    level = 'safe';
-    icon = '✅';
-    title = 'You Look Safe!';
-    desc = 'Based on your answers, your GST compliance looks good. Keep filing on time and updating your details. Stay proactive!';
-  } else if (score <= 3) {
-    level = 'warn';
-    icon = '⚠️';
-    title = 'Warning — Act Soon';
-    desc = 'There are some gaps in your compliance. Fix the issues flagged above before the deadline. Consider consulting a CA if you received a notice.';
-  } else {
-    level = 'danger';
-    icon = '🚨';
-    title = 'High Risk — Act Immediately';
-    desc = 'Your situation is urgent. Bank details or returns may be missing. Contact a CA today. Use our Penalty Calculator to understand your exposure.';
-  }
+  let level = score < 2 ? 'safe' : score < 5 ? 'warn' : 'danger';
+  let data = {
+    safe: ['✅', 'Low Risk', 'Your compliance is strong. Keep filing on time!'],
+    warn: ['⚠️', 'Moderate Risk', 'Fix bank details or pending returns immediately.'],
+    danger: ['🚨', 'High Risk', 'Critical issues detected. Consult a CA immediately.']
+  }[level];
 
   box.className = 'result-box ' + level;
   box.style.display = 'block';
-  document.getElementById('resultIcon').textContent = icon;
-  document.getElementById('resultTitle').textContent = title;
-  document.getElementById('resultDesc').textContent = desc;
-  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  document.getElementById('resultIcon').textContent = data[0];
+  document.getElementById('resultTitle').textContent = data[1];
+  document.getElementById('resultDesc').textContent = data[2];
+  box.scrollIntoView({ behavior: 'smooth' });
 }
 </script>
-
 </body>
 </html>
