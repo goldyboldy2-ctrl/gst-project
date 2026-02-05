@@ -130,10 +130,13 @@ d.line(10,92,200,92);
 
 // Values
 d.text("Goods / Services",12,102);
+  
+let lineTotal = amt + tax;
 
-d.text(amt.toFixed(2), right,102,{align:"right"});
+d.text(amt.toFixed(2), right-40,102,{align:"right"});
 d.text(gst+"%",150,102);
-d.text(total.toFixed(2), right,102,{align:"right"});
+d.text(lineTotal.toFixed(2), right,102,{align:"right"});
+
 
 // Totals section
 let y = 150;
