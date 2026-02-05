@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 
-<title>GST Invoice Generator</title>
+<title>GST Invoice Generator – Free PDF Invoice</title>
 
-<meta name="description" content="Free GST Invoice Generator. Create basic GST invoices instantly.">
+<meta name="description" content="Free GST Invoice Generator. Create GST invoices with tax breakup and download PDF instantly.">
 
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </head>
 
@@ -18,40 +20,66 @@
 <h1>GST Invoice Generator</h1>
 
 <label>Business Name</label>
-<input id="b">
+<input id="biz">
 
 <label>Customer Name</label>
-<input id="c">
+<input id="cust">
 
 <label>Invoice Amount (₹)</label>
-<input id="a">
+<input id="amt" type="number">
+
+<label>GST %</label>
+<select id="gst">
+<option value="5">5%</option>
+<option value="12">12%</option>
+<option value="18" selected>18%</option>
+<option value="28">28%</option>
+</select>
 
 <br><br>
 
-<button class="btn btn-primary" onclick="gen()">Generate Invoice</button>
+<button class="btn btn-primary" onclick="generate()">Generate Invoice</button>
 
-<pre id="i" style="margin-top:20px;padding:15px;background:#f5f5f5"></pre>
+<div id="preview" style="margin-top:20px"></div>
 
 </div>
 
 <script>
-function gen(){
+function generate(){
 
- let b=document.getElementById("b").value;
- let c=document.getElementById("c").value;
- let a=document.getElementById("a").value;
+let biz=document.getElementById("biz").value;
+let cust=document.getElementById("cust").value;
+let amt=parseFloat(document.getElementById("amt").value);
+let gst=parseFloat(document.getElementById("gst").value);
 
- if(!b || !a){
-  alert("Enter required fields");
-  return;
- }
+if(!biz||!amt){alert("Enter required fields");return;}
 
- document.getElementById("i").innerText=
- "GST INVOICE\n\nBusiness: "+b+
- "\nCustomer: "+c+
- "\nAmount: ₹"+a+
- "\n\nThank you for your business.";
+let tax=amt*gst/100;
+let total=amt+tax;
 
+document.getElementById("preview").innerHTML=
+`<h3>Invoice Preview</h3>
+Business: ${biz}<br>
+Customer: ${cust}<br>
+Amount: ₹${amt.toFixed(2)}<br>
+GST (${gst}%): ₹${tax.toFixed(2)}<br>
+<b>Total: ₹${total.toFixed(2)}</b><br><br>
+<button onclick="pdf('${biz}','${cust}',${amt},${tax},${total})">Download PDF</button>`;
+}
+
+function pdf(b,c,a,t,tot){
+
+const { jsPDF } = window.jspdf;
+const doc=new jsPDF();
+
+doc.text("GST INVOICE",20,20);
+doc.text("Business: "+b,20,35);
+doc.text("Customer: "+c,20,45);
+doc.text("Amount: ₹"+a.toFixed(2),20,55);
+doc.text("GST: ₹"+t.toFixed(2),20,65);
+doc.text("Total: ₹"+tot.toFixed(2),20,75);
+
+doc.save("gst-invoice.pdf");
 }
 </script>
 
