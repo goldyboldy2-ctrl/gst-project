@@ -93,24 +93,26 @@ function bizv(id){return document.getElementById(id).value;}
 function pdf(inv,date,biz,bg,cust,cg,amt,tax,total,gst){
 
 const { jsPDF } = window.jspdf;
-const d=new jsPDF();
+const d = new jsPDF();
+
+d.setFont("courier");   // monospace = no ghost digits
 
 d.setFontSize(18);
-d.text("TAX INVOICE",105,15,null,null,"center");
+d.text("TAX INVOICE",105,15,{align:"center"});
 
 d.setFontSize(11);
 d.rect(10,20,190,55);
 
-d.text("Invoice #: "+inv,12,28);
-d.text("Date: "+date,150,28);
+d.text(`Invoice #: ${inv}`,12,28);
+d.text(`Date: ${date}`,150,28);
 
 d.text("Seller:",12,38);
 d.text(biz,12,44);
-d.text("GSTIN: "+(bg||"-"),12,50);
+d.text(`GSTIN: ${bg||"-"}`,12,50);
 
 d.text("Bill To:",110,38);
 d.text(cust,110,44);
-d.text("GSTIN: "+(cg||"-"),110,50);
+d.text(`GSTIN: ${cg||"-"}`,110,50);
 
 d.rect(10,80,190,60);
 
@@ -122,27 +124,25 @@ d.text("Total",175,88);
 d.line(10,92,200,92);
 
 d.text("Goods / Services",12,102);
-d.text("₹"+amt.toFixed(2),120,102);
-d.text(gst+"%",150,102);
-d.text("₹"+total.toFixed(2),175,102);
+
+d.text(`₹ ${amt.toFixed(2)}`,120,102);
+d.text(`${gst}%`,150,102);
+d.text(`₹ ${total.toFixed(2)}`,175,102);
 
 d.line(10,115,200,115);
 
-d.text("Subtotal:",120,125);
-d.text("₹"+amt.toFixed(2),175,125);
-
-d.text("GST:",120,132);
-d.text("₹"+tax.toFixed(2),175,132);
+d.text(`Subtotal: ₹ ${amt.toFixed(2)}`,120,125);
+d.text(`GST: ₹ ${tax.toFixed(2)}`,120,132);
 
 d.setFontSize(12);
-d.text("Grand Total:",120,142);
-d.text("₹"+total.toFixed(2),175,142);
+d.text(`Grand Total: ₹ ${total.toFixed(2)}`,120,142);
 
 d.setFontSize(10);
-d.text("This is a system generated invoice.",105,170,null,null,"center");
+d.text("System generated invoice.",105,170,{align:"center"});
 
-d.save("gst-invoice-"+inv+".pdf");
+d.save(`gst-invoice-${inv}.pdf`);
 }
+
 </script>
 
 </body>
