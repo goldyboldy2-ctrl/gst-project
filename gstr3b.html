@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>GSTR-3B Late Fee Calculator</title>
+
+<meta name="description" content="Free GSTR-3B Late Fee Calculator. Calculate late filing penalty instantly.">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container-sm">
+
+<h1>GSTR-3B Late Fee Calculator</h1>
+
+<label>Number of Days Late</label>
+<input id="days" type="number">
+
+<br><br>
+
+<button class="btn btn-primary" onclick="calc()">Calculate</button>
+
+<h2 id="out"></h2>
+
+<p>Maximum late fee capped at ₹10,000.</p>
+
+</div>
+
+<script>
+function calc(){
+
+ let d = document.getElementById("days").value;
+
+ if(!d){
+  alert("Enter days");
+  return;
+ }
+
+ let fee = d * 50;
+
+ if(fee > 10000) fee = 10000;
+
+ document.getElementById("out").innerHTML =
+ "Late Fee: ₹" + fee;
+
+}
+</script>
+
+</body>
+</html>
