@@ -95,14 +95,18 @@ function pdf(inv,date,biz,bg,cust,cg,amt,tax,total,gst){
 const { jsPDF } = window.jspdf;
 const d = new jsPDF();
 
-d.setFont("courier");   // monospace = no ghost digits
+d.setFont("helvetica");
 
+const right = 195;
+
+// Header
 d.setFontSize(18);
 d.text("TAX INVOICE",105,15,{align:"center"});
 
-d.setFontSize(11);
+// Seller / Buyer box
 d.rect(10,20,190,55);
 
+d.setFontSize(11);
 d.text(`Invoice #: ${inv}`,12,28);
 d.text(`Date: ${date}`,150,28);
 
@@ -114,35 +118,47 @@ d.text("Bill To:",110,38);
 d.text(cust,110,44);
 d.text(`GSTIN: ${cg||"-"}`,110,50);
 
+// Table box
 d.rect(10,80,190,60);
 
+// Table header
 d.text("Description",12,88);
 d.text("Amount",120,88);
 d.text("GST",150,88);
 d.text("Total",175,88);
-
 d.line(10,92,200,92);
 
+// Values
 d.text("Goods / Services",12,102);
 
-d.text(`₹ ${amt.toFixed(2)}`,120,102);
-d.text(`${gst}%`,150,102);
-d.text(`₹ ${total.toFixed(2)}`,175,102);
+d.text(amt.toFixed(2), right,102,{align:"right"});
+d.text(gst+"%",150,102);
+d.text(total.toFixed(2), right,102,{align:"right"});
 
-d.line(10,115,200,115);
+// Totals section
+let y = 150;
 
-d.text(`Subtotal: ₹ ${amt.toFixed(2)}`,120,125);
-d.text(`GST: ₹ ${tax.toFixed(2)}`,120,132);
+d.rect(110,y-10,90,35);
 
+d.text("Subtotal:",115,y);
+d.text(amt.toFixed(2), right,y,{align:"right"});
+
+y+=8;
+d.text("GST:",115,y);
+d.text(tax.toFixed(2), right,y,{align:"right"});
+
+y+=10;
 d.setFontSize(12);
-d.text(`Grand Total: ₹ ${total.toFixed(2)}`,120,142);
+d.text("Grand Total:",115,y);
+d.text(total.toFixed(2), right,y,{align:"right"});
 
+// Footer
 d.setFontSize(10);
-d.text("System generated invoice.",105,170,{align:"center"});
+d.text("System generated GST invoice.",105,190,{align:"center"});
 
 d.save(`gst-invoice-${inv}.pdf`);
 }
-
+  
 </script>
 
 </body>
