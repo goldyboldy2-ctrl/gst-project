@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GST Interest Calculator – 18% Per Annum</title>
+
+<meta name="description" content="Free GST Interest Calculator. Calculate 18% interest on delayed GST payments instantly.">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container-sm">
+
+<h1>GST Interest Calculator</h1>
+
+<p>Calculate 18% interest on delayed GST tax payment.</p>
+
+<label>Tax Amount (₹)</label>
+<input id="tax" type="number">
+
+<label>Days Delayed</label>
+<input id="days" type="number">
+
+<br><br>
+
+<button class="btn btn-primary" onclick="calc()">Calculate Interest</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calc(){
+ let tax = document.getElementById("tax").value;
+ let days = document.getElementById("days").value;
+
+ if(!tax || !days){
+   alert("Enter all values");
+   return;
+ }
+
+ let interest = tax * 0.18 * days / 365;
+
+ document.getElementById("result").innerHTML =
+ "Interest Payable: ₹" + interest.toFixed(2);
+}
+</script>
+
+</body>
+</html>
