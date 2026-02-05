@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 
-<title>GST Invoice Generator – Free PDF Invoice</title>
+<title>GST Invoice Generator – Free Professional PDF</title>
 
-<meta name="description" content="Free GST Invoice Generator. Create GST invoices with tax breakup and download PDF instantly.">
+<meta name="description" content="Free GST Invoice Generator with GSTIN, tax breakup and downloadable PDF.">
 
 <link rel="stylesheet" href="style.css">
 
@@ -22,8 +22,14 @@
 <label>Business Name</label>
 <input id="biz">
 
+<label>Business GSTIN (optional)</label>
+<input id="bgstin">
+
 <label>Customer Name</label>
 <input id="cust">
+
+<label>Customer GSTIN (optional)</label>
+<input id="cgstin">
 
 <label>Invoice Amount (₹)</label>
 <input id="amt" type="number">
@@ -47,39 +53,95 @@
 <script>
 function generate(){
 
-let biz=document.getElementById("biz").value;
-let cust=document.getElementById("cust").value;
-let amt=parseFloat(document.getElementById("amt").value);
-let gst=parseFloat(document.getElementById("gst").value);
+let biz=bizv("biz");
+let bg=bizv("bgstin");
+let cust=bizv("cust");
+let cg=bizv("cgstin");
+let amt=parseFloat(bizv("amt"));
+let gst=parseFloat(bizv("gst"));
 
-if(!biz||!amt){alert("Enter required fields");return;}
+if(!biz || !amt){alert("Business name and amount required");return;}
 
 let tax=amt*gst/100;
 let total=amt+tax;
 
+let inv="INV"+Date.now().toString().slice(-6);
+let date=new Date().toLocaleDateString("en-IN");
+
 document.getElementById("preview").innerHTML=
-`<h3>Invoice Preview</h3>
-Business: ${biz}<br>
+`
+<h3>Invoice Preview</h3>
+Invoice #: ${inv}<br>
+Date: ${date}<br><br>
+<b>${biz}</b><br>
+GSTIN: ${bg || "—"}<br><br>
 Customer: ${cust}<br>
-Amount: ₹${amt.toFixed(2)}<br>
+GSTIN: ${cg || "—"}<br><br>
+
+Subtotal: ₹${amt.toFixed(2)}<br>
 GST (${gst}%): ₹${tax.toFixed(2)}<br>
 <b>Total: ₹${total.toFixed(2)}</b><br><br>
-<button onclick="pdf('${biz}','${cust}',${amt},${tax},${total})">Download PDF</button>`;
+
+<button onclick="pdf('${inv}','${date}','${biz}','${bg}','${cust}','${cg}',${amt},${tax},${total},${gst})">
+Download Professional PDF
+</button>
+`;
 }
 
-function pdf(b,c,a,t,tot){
+function bizv(id){return document.getElementById(id).value;}
+
+function pdf(inv,date,biz,bg,cust,cg,amt,tax,total,gst){
 
 const { jsPDF } = window.jspdf;
-const doc=new jsPDF();
+const d=new jsPDF();
 
-doc.text("GST INVOICE",20,20);
-doc.text("Business: "+b,20,35);
-doc.text("Customer: "+c,20,45);
-doc.text("Amount: ₹"+a.toFixed(2),20,55);
-doc.text("GST: ₹"+t.toFixed(2),20,65);
-doc.text("Total: ₹"+tot.toFixed(2),20,75);
+d.setFontSize(18);
+d.text("TAX INVOICE",105,15,null,null,"center");
 
-doc.save("gst-invoice.pdf");
+d.setFontSize(11);
+d.rect(10,20,190,55);
+
+d.text("Invoice #: "+inv,12,28);
+d.text("Date: "+date,150,28);
+
+d.text("Seller:",12,38);
+d.text(biz,12,44);
+d.text("GSTIN: "+(bg||"-"),12,50);
+
+d.text("Bill To:",110,38);
+d.text(cust,110,44);
+d.text("GSTIN: "+(cg||"-"),110,50);
+
+d.rect(10,80,190,60);
+
+d.text("Description",12,88);
+d.text("Amount",120,88);
+d.text("GST",150,88);
+d.text("Total",175,88);
+
+d.line(10,92,200,92);
+
+d.text("Goods / Services",12,102);
+d.text("₹"+amt.toFixed(2),120,102);
+d.text(gst+"%",150,102);
+d.text("₹"+total.toFixed(2),175,102);
+
+d.line(10,115,200,115);
+
+d.text("Subtotal:",120,125);
+d.text("₹"+amt.toFixed(2),175,125);
+
+d.text("GST:",120,132);
+d.text("₹"+tax.toFixed(2),175,132);
+
+d.setFontSize(12);
+d.text("Grand Total:",120,142);
+d.text("₹"+total.toFixed(2),175,142);
+
+d.setFontSize(10);
+d.text("This is a system generated invoice.",105,170,null,null,"center");
+
+d.save("gst-invoice-"+inv+".pdf");
 }
 </script>
 
