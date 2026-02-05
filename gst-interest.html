@@ -2,50 +2,58 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>GST Interest Calculator – 18% Per Annum</title>
-
-<meta name="description" content="Free GST Interest Calculator. Calculate 18% interest on delayed GST payments instantly.">
-
+<title>GST Interest Calculator</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
+<section class="hero">
+<h1>GST Interest Calculator</h1>
+<p>Calculate 18% interest on delayed GST payments instantly.</p>
+</section>
+
 <div class="container-sm">
 
-<h1>GST Interest Calculator</h1>
+<div class="card">
+<div class="card-body">
 
-<p>Calculate 18% interest on delayed GST tax payment.</p>
+<h3>Enter Details</h3>
 
+<div class="form-group">
 <label>Tax Amount (₹)</label>
 <input id="tax" type="number">
+</div>
 
+<div class="form-group">
 <label>Days Delayed</label>
 <input id="days" type="number">
+</div>
 
-<br><br>
+<button class="btn btn-primary" onclick="calc()">Calculate</button>
 
-<button class="btn btn-primary" onclick="calc()">Calculate Interest</button>
+</div>
+</div>
 
-<h2 id="result"></h2>
+<div class="card" style="margin-top:20px">
+<div class="card-body">
+
+<h3>Result</h3>
+<h2 id="result">—</h2>
+
+</div>
+</div>
 
 </div>
 
 <script>
 function calc(){
- let tax = document.getElementById("tax").value;
- let days = document.getElementById("days").value;
+ let tax=document.getElementById("tax").value;
+ let days=document.getElementById("days").value;
+ if(!tax||!days)return alert("Enter values");
 
- if(!tax || !days){
-   alert("Enter all values");
-   return;
- }
-
- let interest = tax * 0.18 * days / 365;
-
- document.getElementById("result").innerHTML =
- "Interest Payable: ₹" + interest.toFixed(2);
+ let i=tax*0.18*days/365;
+ document.getElementById("result").innerText="₹ "+i.toFixed(2);
 }
 </script>
 
