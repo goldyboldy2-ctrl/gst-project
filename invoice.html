@@ -1,168 +1,448 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-
-<title>GST Invoice Generator – Free Professional PDF</title>
-
-<meta name="description" content="Free GST Invoice Generator with GSTIN, tax breakup and downloadable PDF.">
-
-<link rel="stylesheet" href="style.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GST Invoice Generator — Create Free GST Bills | My GST India</title>
+  <meta name="description" content="Free GST invoice generator. Create GST-compliant invoices with CGST, SGST, IGST. Download as PDF. No signup required." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<div class="container-sm">
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">G</div>
+    <span class="logo-text">GST <em>Compliance Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="penalty-calculator.html">Penalty Calc</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
+</nav>
 
-<h1>GST Invoice Generator</h1>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge anim-up">📄 Invoice Generator</div>
+  <h1 class="anim-up delay-1">GST Invoice <em>Generator</em></h1>
+  <p class="anim-up delay-2">Create GST-compliant invoices instantly. Free, professional, download as PDF.</p>
+  <div class="hero-meta anim-up delay-3">No Signup Required • 100% Free</div>
+</section>
 
-<label>Business Name</label>
-<input id="biz">
+<div class="container-sm" style="padding: 48px 40px;">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span class="sep">›</span> Invoice Generator
+  </div>
 
-<label>Business GSTIN (optional)</label>
-<input id="bgstin">
+  <div class="info-box blue">
+    <div class="info-box-icon">📋</div>
+    <div class="info-box-content">
+      <h4>GST Invoice Mandatory Fields</h4>
+      <p>Every GST invoice must contain: Supplier GSTIN, Invoice number & date, Customer details, HSN/SAC code, Taxable value, GST rate & amount, Place of supply, Supplier signature. This generator includes all mandatory fields.</p>
+    </div>
+  </div>
 
-<label>Customer Name</label>
-<input id="cust">
+  <!-- INVOICE FORM -->
+  <div class="card" style="margin-top: 28px;">
+    <div class="card-body">
+      <h2 style="margin-top:0;">Create Your GST Invoice</h2>
+      
+      <!-- SELLER DETAILS -->
+      <h3 style="margin:24px 0 16px; color:var(--navy); font-size:1.1rem;">📤 Your Details (Seller)</h3>
+      
+      <div class="form-group">
+        <label>Business Name</label>
+        <input type="text" id="sellerName" placeholder="Your business name" />
+      </div>
 
-<label>Customer GSTIN (optional)</label>
-<input id="cgstin">
+      <div class="form-group">
+        <label>GSTIN</label>
+        <input type="text" id="sellerGSTIN" placeholder="e.g., 27AABCU9603R1ZX" maxlength="15" style="text-transform:uppercase;" />
+      </div>
 
-<label>Invoice Amount (₹)</label>
-<input id="amt" type="number">
+      <div class="form-group">
+        <label>Address</label>
+        <textarea id="sellerAddress" rows="2" placeholder="Your business address"></textarea>
+      </div>
 
-<label>GST %</label>
-<select id="gst">
-<option value="5">5%</option>
-<option value="12">12%</option>
-<option value="18" selected>18%</option>
-<option value="28">28%</option>
-</select>
+      <!-- BUYER DETAILS -->
+      <h3 style="margin:32px 0 16px; color:var(--navy); font-size:1.1rem;">📥 Customer Details (Buyer)</h3>
+      
+      <div class="form-group">
+        <label>Customer Name</label>
+        <input type="text" id="buyerName" placeholder="Customer/business name" />
+      </div>
 
-<br><br>
+      <div class="form-group">
+        <label>Customer GSTIN (Optional for B2C)</label>
+        <input type="text" id="buyerGSTIN" placeholder="Leave blank for retail customers" maxlength="15" style="text-transform:uppercase;" />
+      </div>
 
-<button class="btn btn-primary" onclick="generate()">Generate Invoice</button>
+      <div class="form-group">
+        <label>Address</label>
+        <textarea id="buyerAddress" rows="2" placeholder="Customer address"></textarea>
+      </div>
 
-<div id="preview" style="margin-top:20px"></div>
+      <!-- INVOICE DETAILS -->
+      <h3 style="margin:32px 0 16px; color:var(--navy); font-size:1.1rem;">📄 Invoice Details</h3>
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div class="form-group">
+          <label>Invoice Number</label>
+          <input type="text" id="invoiceNo" placeholder="e.g., INV-001" />
+        </div>
 
+        <div class="form-group">
+          <label>Invoice Date</label>
+          <input type="date" id="invoiceDate" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Transaction Type</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="txnType" value="intra" checked /> 
+            <strong>Intra-State</strong> (CGST + SGST)
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="txnType" value="inter" /> 
+            <strong>Inter-State</strong> (IGST)
+          </label>
+        </div>
+      </div>
+
+      <!-- ITEMS -->
+      <h3 style="margin:32px 0 16px; color:var(--navy); font-size:1.1rem;">🛍️ Items/Services</h3>
+      
+      <div id="itemsContainer">
+        <div class="item-row" style="background:#f9fafb; padding:16px; border-radius:8px; margin-bottom:12px;">
+          <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+            <div class="form-group" style="margin:0;">
+              <label style="font-size:0.85rem;">Item/Service</label>
+              <input type="text" class="item-desc" placeholder="Description" />
+            </div>
+            <div class="form-group" style="margin:0;">
+              <label style="font-size:0.85rem;">HSN/SAC</label>
+              <input type="text" class="item-hsn" placeholder="Code" />
+            </div>
+            <div class="form-group" style="margin:0;">
+              <label style="font-size:0.85rem;">Qty</label>
+              <input type="number" class="item-qty" value="1" min="1" />
+            </div>
+            <div class="form-group" style="margin:0;">
+              <label style="font-size:0.85rem;">Rate (₹)</label>
+              <input type="number" class="item-rate" value="1000" min="0" step="0.01" />
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            <div class="form-group" style="margin:0;">
+              <label style="font-size:0.85rem;">GST Rate (%)</label>
+              <select class="item-gst">
+                <option value="0">0%</option>
+                <option value="5">5%</option>
+                <option value="12">12%</option>
+                <option value="18" selected>18%</option>
+                <option value="28">28%</option>
+              </select>
+            </div>
+            <div style="align-self:end;">
+              <button class="btn" style="width:100%; background:var(--red); padding:8px;" onclick="removeItem(this)">Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn" onclick="addItem()" style="margin-top:12px;">+ Add Another Item</button>
+
+      <button class="btn btn-primary" onclick="generateInvoice()" style="width:100%; justify-content:center; margin-top:24px;">
+        📄 Generate Invoice Preview
+      </button>
+    </div>
+  </div>
+
+  <!-- INVOICE PREVIEW -->
+  <div id="invoicePreview" style="display:none; margin-top:28px;">
+    <div style="background:white; border:2px solid var(--border); border-radius:12px; padding:40px; max-width:800px; margin:0 auto;" id="invoiceContent">
+      <!-- Invoice will be rendered here -->
+    </div>
+    <div style="text-align:center; margin-top:24px;">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Print Invoice</button>
+      <p style="margin-top:12px; color:var(--muted); font-size:0.9rem;">Use browser's Print function and save as PDF</p>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div style="margin-top:48px;">
+    <h2 class="section-title">Invoice <em>Requirements</em></h2>
+    
+    <div class="step-box">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Mandatory for B2B</h4>
+        <p>For business-to-business sales: Customer GSTIN, HSN/SAC code, supplier signature are mandatory. Invoice must be issued within 30 days of supply.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Retail/B2C Invoices</h4>
+        <p>For retail customers: GSTIN not required if invoice value < ₹50,000. Simplified invoice allowed for sales < ₹50,000.</p>
+      </div>
+    </div>
+
+    <div class="step-box">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>HSN Code Requirement</h4>
+        <p>Mandatory for all registered taxpayers. Use 4-digit HSN for turnover < ₹5 Cr, 6-digit for > ₹5 Cr. Find codes on our <a href="hsn-finder.html" style="color:var(--blue); text-decoration:underline;">HSN Finder</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Need More <em>GST Tools?</em></h2>
+    <p>Explore all our free calculators and compliance tools.</p>
+    <a href="index.html#tools" class="btn btn-primary">🛠️ View All Tools</a>
+  </div>
 </div>
 
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>GST Compliance Pro</h4>
+      <p>India's free GST toolkit built for MSMEs and small business owners.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="index.html">Risk Auditor</a></li>
+        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+        <li><a href="invoice.html">Invoice Generator</a></li>
+        <li><a href="hsn-finder.html">HSN Finder</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="blog/what-is-gst.html">What is GST?</a></li>
+        <li><a href="blog/how-to-get-gst-number.html">How to Register</a></li>
+        <li><a href="blog/common-gst-mistakes.html">Common Mistakes</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 GST Compliance Pro. All rights reserved.</span>
+    <span>Disclaimer: For informational purposes only. Consult a CA for professional advice.</span>
+  </div>
+</footer>
+
 <script>
-function generate(){
+let itemCounter = 1;
 
-let biz=bizv("biz");
-let bg=bizv("bgstin");
-let cust=bizv("cust");
-let cg=bizv("cgstin");
-let amt=parseFloat(bizv("amt"));
-let gst=parseFloat(bizv("gst"));
-
-if(!biz || !amt){alert("Business name and amount required");return;}
-
-let tax=amt*gst/100;
-let total=amt+tax;
-
-let inv="INV"+Date.now().toString().slice(-6);
-let date=new Date().toLocaleDateString("en-IN");
-
-document.getElementById("preview").innerHTML=
-`
-<h3>Invoice Preview</h3>
-Invoice #: ${inv}<br>
-Date: ${date}<br><br>
-<b>${biz}</b><br>
-GSTIN: ${bg || "—"}<br><br>
-Customer: ${cust}<br>
-GSTIN: ${cg || "—"}<br><br>
-
-Subtotal: ₹${amt.toFixed(2)}<br>
-GST (${gst}%): ₹${tax.toFixed(2)}<br>
-<b>Total: ₹${total.toFixed(2)}</b><br><br>
-
-<button onclick="pdf('${inv}','${date}','${biz}','${bg}','${cust}','${cg}',${amt},${tax},${total},${gst})">
-Download Professional PDF
-</button>
-`;
+function addItem() {
+  const container = document.getElementById('itemsContainer');
+  const newItem = container.firstElementChild.cloneNode(true);
+  
+  // Clear values
+  newItem.querySelectorAll('input').forEach(input => {
+    if (input.type === 'number') {
+      if (input.classList.contains('item-qty')) input.value = 1;
+      else if (input.classList.contains('item-rate')) input.value = 1000;
+    } else {
+      input.value = '';
+    }
+  });
+  
+  container.appendChild(newItem);
 }
 
-function bizv(id){return document.getElementById(id).value;}
-
-function pdf(inv,date,biz,bg,cust,cg,amt,tax,total,gst){
-
-const { jsPDF } = window.jspdf;
-const d = new jsPDF();
-
-d.setFont("helvetica");
-
-const right = 195;
-
-// Header
-d.setFontSize(18);
-d.text("TAX INVOICE",105,15,{align:"center"});
-
-// Seller / Buyer box
-d.rect(10,20,190,55);
-
-d.setFontSize(11);
-d.text(`Invoice #: ${inv}`,12,28);
-d.text(`Date: ${date}`,150,28);
-
-d.text("Seller:",12,38);
-d.text(biz,12,44);
-d.text(`GSTIN: ${bg||"-"}`,12,50);
-
-d.text("Bill To:",110,38);
-d.text(cust,110,44);
-d.text(`GSTIN: ${cg||"-"}`,110,50);
-
-// Table box
-d.rect(10,80,190,60);
-
-// Table header
-d.text("Description",12,88);
-d.text("Amount",120,88);
-d.text("GST",150,88);
-d.text("Total",175,88);
-d.line(10,92,200,92);
-
-// Values
-d.text("Goods / Services",12,102);
-  
-let lineTotal = amt + tax;
-
-d.text(amt.toFixed(2), right-40,102,{align:"right"});
-d.text(gst+"%",150,102);
-d.text(lineTotal.toFixed(2), right,102,{align:"right"});
-
-
-// Totals section
-let y = 150;
-
-d.rect(110,y-10,90,35);
-
-d.text("Subtotal:",115,y);
-d.text(amt.toFixed(2), right,y,{align:"right"});
-
-y+=8;
-d.text("GST:",115,y);
-d.text(tax.toFixed(2), right,y,{align:"right"});
-
-y+=10;
-d.setFontSize(12);
-d.text("Grand Total:",115,y);
-d.text(total.toFixed(2), right,y,{align:"right"});
-
-// Footer
-d.setFontSize(10);
-d.text("System generated GST invoice.",105,190,{align:"center"});
-
-d.save(`gst-invoice-${inv}.pdf`);
+function removeItem(button) {
+  const container = document.getElementById('itemsContainer');
+  if (container.children.length > 1) {
+    button.closest('.item-row').remove();
+  } else {
+    alert('At least one item is required');
+  }
 }
+
+function generateInvoice() {
+  // Get form values
+  const sellerName = document.getElementById('sellerName').value;
+  const sellerGSTIN = document.getElementById('sellerGSTIN').value;
+  const sellerAddress = document.getElementById('sellerAddress').value;
+  const buyerName = document.getElementById('buyerName').value;
+  const buyerGSTIN = document.getElementById('buyerGSTIN').value;
+  const buyerAddress = document.getElementById('buyerAddress').value;
+  const invoiceNo = document.getElementById('invoiceNo').value;
+  const invoiceDate = document.getElementById('invoiceDate').value;
+  const txnType = document.querySelector('input[name="txnType"]:checked').value;
+
+  if (!sellerName || !sellerGSTIN || !buyerName || !invoiceNo || !invoiceDate) {
+    alert('Please fill in all required fields');
+    return;
+  }
+
+  // Get items
+  const itemRows = document.querySelectorAll('.item-row');
+  let items = [];
+  let subtotal = 0;
   
+  itemRows.forEach(row => {
+    const desc = row.querySelector('.item-desc').value;
+    const hsn = row.querySelector('.item-hsn').value;
+    const qty = parseFloat(row.querySelector('.item-qty').value);
+    const rate = parseFloat(row.querySelector('.item-rate').value);
+    const gstRate = parseFloat(row.querySelector('.item-gst').value);
+    
+    if (desc && qty && rate) {
+      const amount = qty * rate;
+      const gstAmount = (amount * gstRate) / 100;
+      const total = amount + gstAmount;
+      
+      items.push({desc, hsn, qty, rate, amount, gstRate, gstAmount, total});
+      subtotal += amount;
+    }
+  });
+
+  if (items.length === 0) {
+    alert('Please add at least one item');
+    return;
+  }
+
+  // Calculate totals
+  let totalGST = 0;
+  items.forEach(item => totalGST += item.gstAmount);
+  const grandTotal = subtotal + totalGST;
+
+  // Generate invoice HTML
+  const invoiceHTML = `
+    <div style="border-bottom:2px solid #000; padding-bottom:16px; margin-bottom:20px; text-align:center;">
+      <h1 style="margin:0 0 8px; font-size:1.8rem; color:#000;">TAX INVOICE</h1>
+      <p style="margin:0; font-size:0.9rem; color:#666;">GST Compliant Invoice</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+      <div>
+        <h3 style="margin:0 0 8px; font-size:1rem; color:#000; border-bottom:1px solid #ddd; padding-bottom:4px;">SELLER DETAILS</h3>
+        <p style="margin:4px 0; font-weight:600;">${sellerName}</p>
+        <p style="margin:2px 0; font-size:0.9rem;">${sellerAddress}</p>
+        <p style="margin:4px 0; font-size:0.9rem;"><strong>GSTIN:</strong> ${sellerGSTIN}</p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px; font-size:1rem; color:#000; border-bottom:1px solid #ddd; padding-bottom:4px;">BUYER DETAILS</h3>
+        <p style="margin:4px 0; font-weight:600;">${buyerName}</p>
+        <p style="margin:2px 0; font-size:0.9rem;">${buyerAddress}</p>
+        ${buyerGSTIN ? `<p style="margin:4px 0; font-size:0.9rem;"><strong>GSTIN:</strong> ${buyerGSTIN}</p>` : '<p style="margin:4px 0; font-size:0.9rem; color:#999;">Unregistered Customer</p>'}
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px; background:#f9fafb; padding:12px; border-radius:6px;">
+      <div><strong>Invoice No:</strong> ${invoiceNo}</div>
+      <div><strong>Date:</strong> ${new Date(invoiceDate).toLocaleDateString('en-IN')}</div>
+      <div><strong>Transaction:</strong> ${txnType === 'intra' ? 'Intra-State' : 'Inter-State'}</div>
+      <div><strong>Place of Supply:</strong> ${sellerGSTIN.substring(0,2)}</div>
+    </div>
+
+    <table style="width:100%; border-collapse:collapse; margin-bottom:20px; font-size:0.9rem;">
+      <thead>
+        <tr style="background:#1e3a8a; color:white;">
+          <th style="padding:10px; text-align:left; border:1px solid #ddd;">#</th>
+          <th style="padding:10px; text-align:left; border:1px solid #ddd;">Description</th>
+          <th style="padding:10px; text-align:center; border:1px solid #ddd;">HSN</th>
+          <th style="padding:10px; text-align:right; border:1px solid #ddd;">Qty</th>
+          <th style="padding:10px; text-align:right; border:1px solid #ddd;">Rate</th>
+          <th style="padding:10px; text-align:right; border:1px solid #ddd;">Amount</th>
+          <th style="padding:10px; text-align:right; border:1px solid #ddd;">GST %</th>
+          <th style="padding:10px; text-align:right; border:1px solid #ddd;">GST Amt</th>
+          <th style="padding:10px; text-align:right; border:1px solid #ddd;">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${items.map((item, idx) => `
+          <tr>
+            <td style="padding:8px; border:1px solid #ddd;">${idx + 1}</td>
+            <td style="padding:8px; border:1px solid #ddd;">${item.desc}</td>
+            <td style="padding:8px; border:1px solid #ddd; text-align:center;">${item.hsn}</td>
+            <td style="padding:8px; border:1px solid #ddd; text-align:right;">${item.qty}</td>
+            <td style="padding:8px; border:1px solid #ddd; text-align:right;">₹${item.rate.toFixed(2)}</td>
+            <td style="padding:8px; border:1px solid #ddd; text-align:right;">₹${item.amount.toFixed(2)}</td>
+            <td style="padding:8px; border:1px solid #ddd; text-align:right;">${item.gstRate}%</td>
+            <td style="padding:8px; border:1px solid #ddd; text-align:right;">₹${item.gstAmount.toFixed(2)}</td>
+            <td style="padding:8px; border:1px solid #ddd; text-align:right; font-weight:600;">₹${item.total.toFixed(2)}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+      <tfoot>
+        <tr style="background:#f9fafb;">
+          <td colspan="5" style="padding:10px; border:1px solid #ddd; text-align:right; font-weight:600;">Subtotal:</td>
+          <td style="padding:10px; border:1px solid #ddd; text-align:right; font-weight:600;">₹${subtotal.toFixed(2)}</td>
+          <td colspan="3" style="padding:10px; border:1px solid #ddd;"></td>
+        </tr>
+        <tr style="background:#f9fafb;">
+          <td colspan="5" style="padding:10px; border:1px solid #ddd; text-align:right; font-weight:600;">Total GST (${txnType === 'intra' ? 'CGST + SGST' : 'IGST'}):</td>
+          <td colspan="4" style="padding:10px; border:1px solid #ddd; text-align:right; font-weight:600;">₹${totalGST.toFixed(2)}</td>
+        </tr>
+        <tr style="background:#1e3a8a; color:white;">
+          <td colspan="5" style="padding:12px; border:1px solid #ddd; text-align:right; font-weight:700; font-size:1.1rem;">GRAND TOTAL:</td>
+          <td colspan="4" style="padding:12px; border:1px solid #ddd; text-align:right; font-weight:700; font-size:1.2rem;">₹${grandTotal.toFixed(2)}</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div style="margin-top:24px; padding-top:16px; border-top:1px solid #ddd;">
+      <p style="margin:4px 0; font-size:0.85rem; color:#666;"><strong>Terms & Conditions:</strong></p>
+      <ol style="margin:8px 0; padding-left:20px; font-size:0.85rem; color:#666;">
+        <li>Payment due within 30 days of invoice date</li>
+        <li>Goods once sold will not be taken back</li>
+        <li>Subject to ${sellerGSTIN.substring(0,2)} jurisdiction</li>
+      </ol>
+    </div>
+
+    <div style="margin-top:32px; text-align:right;">
+      <p style="margin:0; font-size:0.9rem; color:#666;">Authorized Signatory</p>
+      <div style="border-top:1px solid #000; width:200px; margin:40px 0 8px auto;"></div>
+      <p style="margin:0; font-weight:600;">${sellerName}</p>
+    </div>
+
+    <div style="margin-top:24px; text-align:center; font-size:0.8rem; color:#999; border-top:1px solid #ddd; padding-top:12px;">
+      This is a computer-generated invoice | Generated by GST Compliance Pro
+    </div>
+  `;
+
+  document.getElementById('invoiceContent').innerHTML = invoiceHTML;
+  document.getElementById('invoicePreview').style.display = 'block';
+  document.getElementById('invoicePreview').scrollIntoView({behavior:'smooth'});
+}
+
+// Set today's date as default
+window.addEventListener('load', () => {
+  document.getElementById('invoiceDate').value = new Date().toISOString().split('T')[0];
+});
 </script>
+
+<style>
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #invoiceContent, #invoiceContent * {
+    visibility: visible;
+  }
+  #invoiceContent {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .navbar, .footer, .breadcrumb, .btn {
+    display: none !important;
+  }
+}
+</style>
 
 </body>
 </html>
