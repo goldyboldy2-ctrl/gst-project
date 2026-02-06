@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- ENHANCED NAVBAR WITH DROPDOWN -->
 <nav class="navbar">
   <a href="index.html" class="nav-logo">
     <div class="logo-mark">G</div>
@@ -16,8 +17,35 @@
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="penalty-calculator.html">Penalty Calc</a></li>
-    <li><a href="budget-2026-changes.html">Budget 2026</a></li>
+    <li class="dropdown">
+      <a href="index.html#tools" class="dropdown-toggle">Tools <span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-menu">
+        <div class="dropdown-section">
+          <div class="dropdown-header">📊 Calculators</div>
+          <a href="penalty-calculator.html">Penalty Calculator</a>
+          <a href="gst-calculator.html">GST Calculator</a>
+          <a href="gst-interest.html">Interest Calculator</a>
+          <a href="itc-calculator.html">ITC Calculator</a>
+          <a href="msme-payment-calculator.html">MSME Payment</a>
+          <a href="gstr3b.html">GSTR-3B Fee</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-header">📋 Compliance</div>
+          <a href="return-deadlines.html">Return Deadlines</a>
+          <a href="registration-checker.html">Registration Check</a>
+          <a href="budget-2026-changes.html">Budget 2026</a>
+          <a href="gstin-verification.html">GSTIN Verification</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-header">🔍 Utilities</div>
+          <a href="hsn-finder.html">HSN Finder</a>
+          <a href="invoice.html">Invoice Generator</a>
+        </div>
+        <div class="dropdown-footer">
+          <a href="index.html#tools" class="view-all">View All Tools →</a>
+        </div>
+      </div>
+    </li>
     <li><a href="blog/index.html">Blog</a></li>
   </ul>
 </nav>
@@ -30,7 +58,19 @@
 </section>
 
 <div class="container-sm" style="padding: 48px 40px;">
+    <!-- BREADCRUMB NAVIGATION -->
   <div class="breadcrumb">
+    <a href="index.html">Home</a><span class="sep">›</span>
+    <a href="index.html#tools">Tools</a><span class="sep">›</span>
+    <span>HSN Finder</span>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <a href="index.html#tools" class="back-button">
+    ← Back to All Tools
+  </a>
+
+<div class="breadcrumb">
     <a href="index.html">Home</a><span class="sep">›</span> HSN Code Finder
   </div>
 
@@ -85,6 +125,29 @@
       <p>HSN codes must be mentioned on all invoices if your turnover > ₹5 crore (6-digit). Verify codes on the official GST portal before use.</p>
     </div>
   </div>
+
+  <!-- RELATED TOOLS SECTION -->
+  <div class="related-tools">
+    <h3>You Might Also Need</h3>
+    <div class="related-tools-grid">
+      <a href="invoice.html" class="related-tool-card">
+        <h4>Invoice Generator</h4>
+        <p>Create invoices with HSN codes.</p>
+        <span class="arrow">Try now →</span>
+      </a>
+      <a href="gst-calculator.html" class="related-tool-card">
+        <h4>GST Calculator</h4>
+        <p>Calculate GST on products.</p>
+        <span class="arrow">Try now →</span>
+      </a>
+      <a href="registration-checker.html" class="related-tool-card">
+        <h4>Registration Checker</h4>
+        <p>Check registration requirements.</p>
+        <span class="arrow">Try now →</span>
+      </a>
+    </div>
+  </div>
+
 </div>
 
 <footer class="footer">
