@@ -158,73 +158,81 @@
 
 <script>
 /**
- * LOCAL-FIRST DATABASE
- * To avoid CORS/Connection errors, we use a robust internal list.
- */
+* GLOBAL MASTER DATA
+* Pulls 21,000+ codes from external JSON
+*/
+let HSN_MASTER_DB = {};
 const HSN_LOCAL_DB = {
-  "8804": "Parachutes (including dirigible parachutes and paragliders) and rotochutes",
-  "6601": "Umbrellas and sun umbrellas (garden umbrellas, walking-stick umbrellas)",
-  "8517": "Mobile Telephones, Smartphones, and wireless network equipment",
-  "1006": "Rice (Pre-packaged and labeled for retail sale)",
-  "1701": "Cane or beet sugar and chemically pure sucrose, in solid form",
-  "2523": "Portland cement, aluminous cement, slag cement",
-  "8471": "Laptops, Tablets, and Automatic data processing machines",
-  "9983": "IT Services, Software Development, and Technical Consulting (SAC)",
-  "9982": "Legal and Accounting Services (SAC)",
-  "3004": "Medicines (Medicaments) put up in measured doses for retail",
-  "9004": "Spectacles, goggles and the like, corrective or protective",
-  "0409": "Natural honey",
-  "9403": "Wooden or Metal Furniture and parts thereof",
-  "6403": "Footwear with outer soles of rubber, plastics, or leather",
-  "3917": "PVC Pipes, tubes, and hoses of plastics"
+"8517": "Mobile Telephones, Smartphones, and wireless network gear",
+"1006": "Rice (Pre-packaged and labeled for retail sale)",
+"9983": "IT Services, Software Development, and Consulting (SAC)"
 };
 
+// Load the 21,000+ entries from hsn-data.json
+fetch('hsn-data.json')
+.then(response => response.json())
+.then(data => {
+// Convert array to object format for faster search
+data.forEach(item => {
+HSN_MASTER_DB[item.hsn] = item.desc;
+});
+console.log('✅ HSN Database (21k+) Loaded');
+})
+.catch(err => console.error('Note: hsn-data.json not found, using local fallback.'));
+
 function searchHSN() {
-  const query = document.getElementById('searchInput').value.toLowerCase().trim();
-  const list = document.getElementById('resultsList');
-  const box = document.getElementById('results');
+const query = document.getElementById('searchInput').value.toLowerCase().trim();
+const list = document.getElementById('resultsList');
+const box = document.getElementById('results');
 
-  if (!query || query.length < 2) {
-    alert('Please enter at least 2 characters.');
-    return;
-  }
-
-  // Instant Search Logic
-  const matches = Object.keys(HSN_LOCAL_DB).filter(code => 
-    code.includes(query) || 
-    HSN_LOCAL_DB[code].toLowerCase().includes(query)
-  );
-
-  if (matches.length === 0) {
-    list.innerHTML = `
-      <div class="info-box orange">
-        <div class="info-box-content">
-          <h4>No specific match found for "${query}"</h4>
-          <p>Try searching for a broader category or check the official CBIC portal.</p>
-        </div>
-      </div>`;
-  } else {
-    list.innerHTML = matches.map(code => `
-      <div class="card" style="margin-bottom:12px; border-left: 4px solid var(--blue, #2563eb);">
-        <div class="card-body" style="padding:20px;">
-          <h4 style="margin:0 0 8px; color:#1a365d; text-transform:capitalize;">${HSN_LOCAL_DB[code].toLowerCase()}</h4>
-          <p style="margin:0; font-size:0.9rem;">
-            <strong>Code:</strong> <span style="color:#2563eb; font-weight:bold;">${code}</span>
-          </p>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  box.style.display = 'block';
-  box.scrollIntoView({behavior:'smooth', block:'center'});
+if (!query || query.length < 2) {
+alert('Please enter at least 2 characters.');
+return;
 }
 
-// Enter key support
+// Use Master DB if available, else fallback to Local
+const searchSource = Object.keys(HSN_MASTER_DB).length > 0 ? HSN_MASTER_DB : HSN_LOCAL_DB;
+
+const matches = Object.keys(searchSource).filter(code =>
+code.includes(query) || searchSource[code].toLowerCase().includes(query)
+);
+
+if (matches.length === 0) {
+list.innerHTML = `
+<div class="info-box orange">
+<div class="info-box-content">
+<h4>No specific match found for "${query}"</h4>
+<p>Try searching for a broader category or check the official CBIC portal.</p>
+</div>
+</div>`;
+} else {
+// Limit results to 50 for performance
+const limitedMatches = matches.slice(0, 50);
+list.innerHTML = limitedMatches.map(code => `
+<div class="card" style="margin-bottom:12px; border-left: 4px solid #2563eb;">
+<div class="card-body" style="padding:20px;">
+<h4 style="margin:0 0 8px; color:#1a365d; text-transform:capitalize;">${searchSource[code].toLowerCase()}</h4>
+<p style="margin:0; font-size:0.9rem;">
+<strong>Code:</strong> <span style="color:#2563eb; font-weight:bold;">${code}</span>
+</p>
+</div>
+</div>`).join('');
+
+if (matches.length > 50) {
+list.innerHTML += `<p style="text-align:center; color:#666; font-size:0.8rem;">Showing first 50 of ${matches.length} results...</p>`;
+}
+}
+
+box.style.display = 'block';
+box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 document.getElementById('searchInput').addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') searchHSN();
+if (e.key === 'Enter') searchHSN();
 });
 </script>
 
+
 </body>
 </html>
+
