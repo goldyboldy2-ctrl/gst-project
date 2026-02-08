@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSN Code Finder - 21,000+ Codes with GST Rates | GST Compliance Pro</title>
+  <meta name="description" content="Search 21,000+ HSN codes with accurate GST rates. Find HSN codes for laptops, mobiles, clothes, vehicles, and more. Free, fast, always updated.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">G</div>
+    <span class="logo-text">GST <em>Compliance Pro</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a href="index.html#tools" class="dropdown-toggle">Tools <span class="dropdown-arrow">▼</span></a>
+      <div class="dropdown-menu">
+        <div class="dropdown-section">
+          <div class="dropdown-header">📊 CALCULATORS</div>
+          <a href="penalty-calculator.html">Penalty Calculator</a>
+          <a href="gst-calculator.html">GST Calculator</a>
+          <a href="gst-interest.html">Interest Calculator</a>
+          <a href="itc-calculator.html">ITC Calculator</a>
+          <a href="msme-payment-calculator.html">MSME Payment</a>
+          <a href="gstr3b.html">GSTR-3B Fee</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-header">📋 COMPLIANCE</div>
+          <a href="return-deadlines.html">Return Deadlines</a>
+          <a href="registration-checker.html">Registration Check</a>
+          <a href="budget-2026-changes.html">Budget 2026</a>
+          <a href="gstin-verification.html">GSTIN Verification</a>
+        </div>
+        <div class="dropdown-section">
+          <div class="dropdown-header">🔍 UTILITIES</div>
+          <a href="hsn-finder.html">HSN Finder</a>
+          <a href="invoice.html">Invoice Generator</a>
+        </div>
+        <div class="dropdown-footer">
+          <a href="index.html#tools" class="view-all">View All Tools →</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="blog/index.html">Blog</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>HSN Code <em>Finder</em></h1>
+  <p>Search 21,000+ official HSN codes with accurate GST rates</p>
+</section>
+
+<div class="container-sm">
+  
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span class="sep">›</span>
+    <a href="index.html#tools">Tools</a><span class="sep">›</span>
+    <span>HSN Finder</span>
+  </div>
+
+  <a href="index.html#tools" class="back-button">← Back to All Tools</a>
+
+  <!-- SEARCH TIPS -->
+  <div class="info-box blue">
+    <div class="info-box-icon">💡</div>
+    <div class="info-box-content">
+      <h4>How to Search</h4>
+      <p><strong>Easy search:</strong> Type common product names like "laptop", "mobile", "rice", "shirt" or direct HSN code like "8471"</p>
+    </div>
+  </div>
+
+  <!-- SEARCH BOX -->
+  <div class="card">
+    <div class="card-body">
+      <h2 style="margin-top:0;">🔍 Search HSN Code</h2>
+      
+      <div class="form-group">
+        <label>Product Name or HSN Code</label>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Try: laptop, mobile, rice, car, shirt, or 8471..." 
+          autocomplete="off"
+          style="font-size: 1.1rem; padding: 14px 16px;"
+        />
+        <small style="color:var(--text-secondary); display:block; margin-top:8px;">
+          💡 Quick examples: laptop, mobile phone, rice, car, t-shirt, gold jewelry
+        </small>
+      </div>
+
+      <div id="resultsCount" style="margin: 16px 0; color: var(--text-secondary); font-weight: 600;"></div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="searchResults"></div>
+
+  <!-- POPULAR SEARCHES -->
+  <div style="margin-top: 48px;">
+    <h2 class="section-title">Popular <em>Searches</em></h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+      <button class="btn" onclick="quickSearch('laptop')" style="justify-content: center; padding: 12px;">💻 Laptop</button>
+      <button class="btn" onclick="quickSearch('mobile')" style="justify-content: center; padding: 12px;">📱 Mobile</button>
+      <button class="btn" onclick="quickSearch('car')" style="justify-content: center; padding: 12px;">🚗 Car</button>
+      <button class="btn" onclick="quickSearch('rice')" style="justify-content: center; padding: 12px;">🍚 Rice</button>
+      <button class="btn" onclick="quickSearch('shirt')" style="justify-content: center; padding: 12px;">👕 Shirt</button>
+      <button class="btn" onclick="quickSearch('gold')" style="justify-content: center; padding: 12px;">💍 Gold</button>
+      <button class="btn" onclick="quickSearch('tv')" style="justify-content: center; padding: 12px;">📺 TV</button>
+      <button class="btn" onclick="quickSearch('furniture')" style="justify-content: center; padding: 12px;">🪑 Furniture</button>
+    </div>
+  </div>
+
+  <!-- RELATED TOOLS -->
+  <div class="related-tools">
+    <h3>You Might Also Need</h3>
+    <div class="related-tools-grid">
+      <a href="invoice.html" class="related-tool-card">
+        <h4>Invoice Generator</h4>
+        <p>Create GST invoices with HSN codes.</p>
+        <span class="arrow">Create →</span>
+      </a>
+      <a href="gst-calculator.html" class="related-tool-card">
+        <h4>GST Calculator</h4>
+        <p>Calculate GST on products.</p>
+        <span class="arrow">Calculate →</span>
+      </a>
+      <a href="gstin-verification.html" class="related-tool-card">
+        <h4>GSTIN Verification</h4>
+        <p>Verify GST numbers.</p>
+        <span class="arrow">Verify →</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>GST Compliance Pro</h4>
+      <p>India's free GST toolkit for MSMEs.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="index.html">All Tools</a></li>
+        <li><a href="penalty-calculator.html">Penalty</a></li>
+        <li><a href="hsn-finder.html">HSN Finder</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="blog/index.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 GST Compliance Pro
+  </div>
+</footer>
+
+<!-- LOAD ALL DATA FILES -->
+<script src="hsn-data.js"></script>
+<script src="search-keywords.js"></script>
+<script src="gst-rates.js"></script>
+
+<!-- MAIN SEARCH SCRIPT -->
+<script>
+window.addEventListener('load', function() {
+  const searchInput = document.getElementById('searchInput');
+  const resultsDiv = document.getElementById('searchResults');
+  const countDiv = document.getElementById('resultsCount');
+
+  function performSearch() {
+    let query = searchInput.value.trim().toLowerCase();
+    
+    if (!query) {
+      showWelcome();
+      return;
+    }
+    
+    // Step 1: Check if query matches a keyword
+    const hsnCodes = findHSNFromKeyword(query);
+    let results = [];
+    
+    if (hsnCodes && hsnCodes.length > 0) {
+      // Found keyword match - search by HSN codes
+      results = hsnDatabase.filter(item => {
+        return hsnCodes.some(code => 
+          item.code === code || item.code.startsWith(code)
+        );
+      });
+    } else {
+      // Direct search in database
+      results = hsnDatabase.filter(item => {
+        const code = (item.code || '').toLowerCase();
+        const desc = (item.description || '').toLowerCase();
+        
+        // Match by code
+        if (code === query || code.startsWith(query)) return true;
+        
+        // Match by description words
+        const words = query.split(' ');
+        return words.every(word => desc.includes(word));
+      });
+    }
+    
+    if (results.length === 0) {
+      showNoResults(query);
+      return;
+    }
+    
+    // Sort results - shorter codes first (more specific)
+    results.sort((a, b) => {
+      if (a.code.length !== b.code.length) {
+        return a.code.length - b.code.length;
+      }
+      return a.code.localeCompare(b.code);
+    });
+    
+    displayResults(results, query);
+  }
+
+  function showWelcome() {
+    resultsDiv.innerHTML = `
+      <div class="info-box blue" style="margin-top:20px;">
+        <div class="info-box-icon">👋</div>
+        <div class="info-box-content">
+          <h4>Welcome to HSN Code Finder!</h4>
+          <p>Search 21,000+ official HSN codes with accurate GST rates. Just type a product name like "laptop", "mobile", or "rice" above, or click on popular searches below.</p>
+        </div>
+      </div>
+    `;
+    countDiv.textContent = '';
+  }
+
+  function showNoResults(query) {
+    resultsDiv.innerHTML = `
+      <div class="info-box orange" style="margin-top:20px;">
+        <div class="info-box-icon">😕</div>
+        <div class="info-box-content">
+          <h4>No Results Found for "${query}"</h4>
+          <p><strong>Try:</strong> Different keywords, HSN code directly (e.g., 8471), or click popular searches below.</p>
+        </div>
+      </div>
+    `;
+    countDiv.textContent = '';
+  }
+
+  function displayResults(results, query) {
+    countDiv.innerHTML = `✓ Found <strong>${results.length}</strong> result${results.length > 1 ? 's' : ''}`;
+    
+    let html = '<div style="display:grid; gap:16px; margin-top:20px;">';
+    
+    // Show top 25 results
+    const displayCount = Math.min(results.length, 25);
+    
+    for (let i = 0; i < displayCount; i++) {
+      const item = results[i];
+      
+      // Get GST rate
+      const gstRate = getGSTRate(item.code);
+      const hasGSTRate = gstRate !== null;
+      
+      let gstDisplay, gstColor, gstBadge;
+      if (hasGSTRate) {
+        const gstNum = parseFloat(gstRate);
+        gstColor = 
+          gstNum === 0 ? '#22c55e' : 
+          gstNum <= 5 ? '#3b82f6' : 
+          gstNum <= 12 ? '#f59e0b' : 
+          gstNum <= 18 ? '#f97316' : 
+          '#ef4444';
+        gstDisplay = gstRate;
+        gstBadge = `<span style="background:${gstColor}; color:white; padding:8px 16px; border-radius:8px; font-weight:700; font-size:1rem; white-space:nowrap;">GST ${gstRate}</span>`;
+      } else {
+        gstColor = '#94a3b8';
+        gstDisplay = 'Varies';
+        gstBadge = `<span style="background:#f1f5f9; color:#64748b; padding:8px 16px; border-radius:8px; font-weight:600; font-size:0.875rem; white-space:nowrap;">Rate varies*</span>`;
+      }
+      
+      // Highlight search term in description
+      let description = item.description || 'No description';
+      if (query && query.length > 2) {
+        const regex = new RegExp(`(${query})`, 'gi');
+        description = description.replace(regex, '<mark style="background:#fef3c7; padding:2px 4px; border-radius:3px;">$1</mark>');
+      }
+      
+      html += `
+        <div class="card">
+          <div class="card-body">
+            <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; flex-wrap:wrap;">
+              <div style="flex:1; min-width:200px;">
+                <h3 style="margin:0 0 8px; font-size:1.5rem; color:var(--navy-900); font-weight:700;">
+                  HSN ${item.code}
+                </h3>
+                <p style="margin:0 0 12px; color:var(--text-primary); font-size:0.95rem; line-height:1.6;">
+                  ${description}
+                </p>
+                ${!hasGSTRate ? '<p style="margin:0; color:var(--text-muted); font-size:0.875rem;"><em>*GST rate varies by specification. Consult a CA for exact rate.</em></p>' : ''}
+              </div>
+              <div style="text-align:right; flex-shrink:0;">
+                ${gstBadge}
+                <button onclick="copyCode('${item.code}')" style="display:block; margin-top:8px; width:100%; padding:8px 16px; background:var(--blue-50); color:var(--blue-600); border:1px solid var(--blue-200); border-radius:6px; cursor:pointer; font-size:0.875rem; font-weight:600; transition: all 0.2s;">
+                  📋 Copy HSN
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    html += '</div>';
+    
+    if (results.length > 25) {
+      html += `
+        <div class="info-box blue" style="margin-top:20px;">
+          <div class="info-box-icon">ℹ️</div>
+          <div class="info-box-content">
+            <p><strong>Showing top 25 of ${results.length} results.</strong> Use more specific keywords or exact HSN code for better results.</p>
+          </div>
+        </div>
+      `;
+    }
+    
+    resultsDiv.innerHTML = html;
+  }
+
+  window.copyCode = function(code) {
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = event.target;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '✓ Copied!';
+      btn.style.background = '#f0fdf4';
+      btn.style.color = '#22c55e';
+      btn.style.borderColor = '#86efac';
+      
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.style.borderColor = '';
+      }, 2000);
+    }).catch(() => {
+      prompt('Copy this HSN code:', code);
+    });
+  };
+
+  window.quickSearch = function(term) {
+    searchInput.value = term;
+    performSearch();
+    searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  searchInput.addEventListener('input', performSearch);
+  searchInput.focus();
+  performSearch();
+});
+</script>
+
+</body>
+</html>
