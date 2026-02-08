@@ -1077,6 +1077,7 @@ html {
 /* ===== HOMEPAGE TOOLS SECTION - ADD TO style.css ===== */
 
 /* Tool Cards with Visual Borders */
+{
 .tool-card,
 a.tool-card {
   display: block;
