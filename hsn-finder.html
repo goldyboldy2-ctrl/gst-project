@@ -153,23 +153,23 @@ window.addEventListener('load', function() {
   const countDiv = document.getElementById('resultsCount');
 
   function performSearch() {
-    // 1. Check if hsnDatabase exists (Error protection)
-    if (typeof hsnDatabase === 'undefined') {
-      resultsDiv.innerHTML = `<div class="info-box orange"><p>Loading database... please wait a moment.</p></div>`;
+    // 1. Error Protection: Ensure database is loaded
+    if (typeof hsnDatabase === 'undefined' || !Array.isArray(hsnDatabase)) {
+      resultsDiv.innerHTML = `<div class="info-box orange"><p>Database is still loading or not found. Please check hsn-data.js.</p></div>`;
       return;
     }
 
     const query = searchInput.value.trim().toLowerCase();
     const selectedCategory = categoryFilter.value;
     
-    // 2. Default view if no search is performed
+    // 2. Initial state
     if (!query && !selectedCategory) {
       resultsDiv.innerHTML = `
         <div class="info-box blue" style="margin-top:20px;">
           <div class="info-box-icon">👋</div>
           <div class="info-box-content">
-            <h4>Welcome to HSN Code Finder!</h4>
-            <p>Start typing a product name or HSN/SAC code above. We have 21,000+ entries ready.</p>
+            <h4>Ready to help!</h4>
+            <p>Start typing to find HSN codes. We have 21,000+ entries indexed.</p>
           </div>
         </div>
       `;
@@ -177,41 +177,38 @@ window.addEventListener('load', function() {
       return;
     }
     
-    // 3. Robust Filter logic for large datasets
+    // 3. Robust Search Logic
     let results = hsnDatabase.filter(item => {
-      const matchesQuery = !query || 
-                           (item.description && item.description.toLowerCase().includes(query)) || 
-                           (item.code && item.code.toString().includes(query));
+      // Check for laptop/mobile in description or code
+      const itemDesc = (item.description || "").toLowerCase();
+      const itemCode = (item.code || "").toString();
       
+      const matchesQuery = !query || itemDesc.includes(query) || itemCode.includes(query);
+      
+      // Category check (Matches "Electronics", "Goods", etc.)
       const matchesCategory = !selectedCategory || item.category === selectedCategory;
       
       return matchesQuery && matchesCategory;
     });
     
-    // 4. Handle No Results
     if (results.length === 0) {
-      resultsDiv.innerHTML = `
-        <div class="info-box orange" style="margin-top:20px;">
-          <div class="info-box-icon">😕</div>
-          <div class="info-box-content">
-            <h4>No Results Found</h4>
-            <p>Try different keywords or switch between Goods and Services.</p>
-          </div>
-        </div>
-      `;
+      resultsDiv.innerHTML = `<div class="info-box orange"><h4>No Results Found</h4><p>Try searching for "Computer" or "8471".</p></div>`;
       countDiv.textContent = '';
       return;
     }
     
-    countDiv.textContent = `Found ${results.length} result${results.length > 1 ? 's' : ''}`;
+    countDiv.textContent = `Showing ${Math.min(results.length, 50)} of ${results.length} matches`;
     
-    // 5. Render top 50 results (Performance protection)
+    // 4. Render with dynamic GST colors
     let html = '<div style="display:grid; gap:16px; margin-top:20px;">';
     results.slice(0, 50).forEach(item => {
-      const gstColor = item.gst === '0%' ? '#22c55e' : 
-                       item.gst === '5%' ? '#3b82f6' : 
-                       item.gst === '12%' ? '#f59e0b' : 
-                       item.gst === '18%' ? '#f97316' : '#ef4444';
+      // Fix: Ensure we use the exact GST from the JS file
+      const displayGst = item.gst || "Check Portal";
+      
+      const gstColor = displayGst.includes('0%') ? '#22c55e' : 
+                       displayGst.includes('5%') ? '#3b82f6' : 
+                       displayGst.includes('12%') ? '#f59e0b' : 
+                       displayGst.includes('18%') ? '#f97316' : '#ef4444';
       
       html += `
         <div class="card">
@@ -219,13 +216,15 @@ window.addEventListener('load', function() {
             <div style="display:flex; justify-content:space-between; align-items:start; gap:16px; flex-wrap:wrap;">
               <div>
                 <h3 style="margin:0 0 8px; font-size:1.5rem;">${item.code}</h3>
-                <p style="margin:0; color:var(--text-primary);">${item.description}</p>
+                <p style="margin:0; color:var(--text-primary); font-weight:500;">${item.description}</p>
                 <div style="margin-top:8px;">
                   <span style="background:var(--gray-100); padding:4px 10px; border-radius:6px; font-size:0.875rem;">${item.category}</span>
                 </div>
               </div>
               <div>
-                <span style="background:${gstColor}; color:white; padding:8px 16px; border-radius:8px; font-weight:700;">${item.gst}</span>
+                <span style="background:${gstColor}; color:white; padding:8px 16px; border-radius:8px; font-weight:700; min-width:60px; text-align:center; display:inline-block;">
+                  ${displayGst}
+                </span>
               </div>
             </div>
           </div>
@@ -233,23 +232,13 @@ window.addEventListener('load', function() {
       `;
     });
     html += '</div>';
-    
-    if (results.length > 50) {
-      html += `<div class="info-box blue" style="margin-top:20px;"><div class="info-box-content"><p>Showing first 50 results. Please refine your search to see specific codes.</p></div></div>`;
-    }
-    
     resultsDiv.innerHTML = html;
   }
 
-  // Event Listeners
   searchInput.addEventListener('input', performSearch);
   categoryFilter.addEventListener('change', performSearch);
-  
-  // Set initial focus
-  searchInput.focus();
   performSearch();
 });
 </script>
-
 </body>
 </html>
