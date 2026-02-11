@@ -36,23 +36,6 @@
   </div>
 </nav>
 
-<!-- LEGAL DISCLAIMER BANNER -->
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <div class="disclaimer-icon">⚖️</div>
-    <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> 
-      This website provides <strong>general information only</strong> and is 
-      <strong>not professional tax or legal advice</strong>. GST rules change frequently. 
-      Always verify with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> 
-      and <strong>consult a qualified Chartered Accountant</strong> before making any decisions. 
-      We accept no liability for errors, omissions, or consequences of using this information.
-      <a href="disclaimer.html" class="learn-more">Read Full Disclaimer →</a>
-    </div>
-  </div>
-</div>
-
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-badge anim-up">💳 Claim Your Credit</div>
@@ -145,28 +128,7 @@
         </div>
       </div>
 
-      
-<!-- TOOL DISCLAIMER -->
-<div class="tool-disclaimer">
-  <div class="disclaimer-box warning">
-    <h4>⚠️ Important Legal Notice</h4>
-    <ul>
-      <li>This tool provides <strong>estimates only</strong> based on information you provide.</li>
-      <li>GST rates, rules, and penalties change frequently. Results may not reflect latest updates.</li>
-      <li>We are <strong>NOT tax advisors or Chartered Accountants</strong>.</li>
-      <li><strong>Always verify</strong> with the 
-          <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> 
-          or consult a qualified CA before filing returns or making payments.</li>
-      <li>We are not liable for any financial loss, penalties, or legal consequences arising from 
-          use of this tool.</li>
-    </ul>
-    <p class="disclaimer-footer">
-      <strong>By using this tool, you acknowledge this disclaimer.</strong>
-    </p>
-  </div>
-</div>
-
-<button class="btn btn-primary" onclick="calculateITC()" style="width:100%; justify-content:center;">
+      <button class="btn btn-primary" onclick="calculateITC()" style="width:100%; justify-content:center;">
         Calculate Net GST Liability
       </button>
     </div>

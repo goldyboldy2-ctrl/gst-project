@@ -34,23 +34,6 @@
   </div>
 </nav>
 
-<!-- LEGAL DISCLAIMER BANNER -->
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <div class="disclaimer-icon">⚖️</div>
-    <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> 
-      This website provides <strong>general information only</strong> and is 
-      <strong>not professional tax or legal advice</strong>. GST rules change frequently. 
-      Always verify with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> 
-      and <strong>consult a qualified Chartered Accountant</strong> before making any decisions. 
-      We accept no liability for errors, omissions, or consequences of using this information.
-      <a href="disclaimer.html" class="learn-more">Read Full Disclaimer →</a>
-    </div>
-  </div>
-</div>
-
-
 <section class="hero">
   <h1>GST <em>Blog</em></h1>
   <p>Expert guides, tips, and updates on GST compliance</p>
