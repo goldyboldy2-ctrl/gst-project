@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSTR-1 vs GSTR-3B: Key Differences Explained (2026 Guide)</title>
+  <meta name="description" content="Complete comparison of GSTR-1 and GSTR-3B returns. Learn differences in filing dates, contents, penalties, and how to reconcile both GST returns.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">GST <em>Compliance Pro</em></span>
+    </a>
+    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">Tools</a></li>
+      <li><a href="index.html">Blog</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="../registration-checker.html" class="btn-primary-small">Check Registration</a>
+    </div>
+  </div>
+</nav>
+
+<div class="legal-disclaimer-banner">
+  <div class="disclaimer-container">
+    <div class="disclaimer-icon">⚖️</div>
+    <div class="disclaimer-content">
+      <strong>Legal Disclaimer:</strong> This website provides <strong>general information only</strong> and is <strong>not professional tax or legal advice</strong>. Always verify with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> and <strong>consult a qualified Chartered Accountant</strong>.
+      <a href="../disclaimer.html" class="learn-more">Read Full Disclaimer →</a>
+    </div>
+  </div>
+</div>
+
+<article class="container blog-post">
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › <span>GSTR-1 vs GSTR-3B</span>
+  </div>
+
+  <header class="post-header">
+    <h1>GSTR-1 vs GSTR-3B: Key Differences Explained (2026)</h1>
+    <div class="post-meta">
+      <span class="reading-time">⏱️ 10 min read</span>
+      <span class="post-date">📅 Updated: February 11, 2026</span>
+    </div>
+  </header>
+
+  <div class="info-box blue">
+    <p><strong>Quick Summary:</strong> GSTR-1 is for reporting outward supplies (sales) filed by 11th. GSTR-3B is a summary return with tax payment filed by 20th. Both are monthly/quarterly. GSTR-1 data auto-populates in recipient's GSTR-2B. Mismatch between them causes ITC issues.</p>
+  </div>
+
+  <nav class="table-of-contents">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#quick-comparison">Quick Comparison Table</a></li>
+      <li><a href="#what-is-gstr1">What is GSTR-1?</a></li>
+      <li><a href="#what-is-gstr3b">What is GSTR-3B?</a></li>
+      <li><a href="#key-differences">10 Key Differences</a></li>
+      <li><a href="#filing-order">Which to File First?</a></li>
+      <li><a href="#reconciliation">How to Reconcile</a></li>
+      <li><a href="#common-mistakes">Common Mistakes</a></li>
+      <li><a href="#faq">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <section id="quick-comparison">
+    <h2>GSTR-1 vs GSTR-3B: Quick Comparison</h2>
+
+```
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>GSTR-1</th>
+      <th>GSTR-3B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Purpose</strong></td>
+      <td>Details of outward supplies (sales)</td>
+      <td>Summary return with tax payment</td>
+    </tr>
+    <tr>
+      <td><strong>Due Date (Monthly)</strong></td>
+      <td>11th of next month</td>
+      <td>20th of next month</td>
+    </tr>
+    <tr>
+      <td><strong>Due Date (Quarterly)</strong></td>
+      <td>13th of month after quarter</td>
+      <td>22nd/24th of month after quarter</td>
+    </tr>
+    <tr>
+      <td><strong>Contains</strong></td>
+      <td>Invoice-level details</td>
+      <td>Summarized figures only</td>
+    </tr>
+    <tr>
+      <td><strong>Tax Payment</strong></td>
+      <td>No payment required</td>
+      <td>Payment mandatory</td>
+    </tr>
+    <tr>
+      <td><strong>ITC Claim</strong></td>
+      <td>Not applicable</td>
+      <td>ITC claimed here</td>
+    </tr>
+    <tr>
+      <td><strong>Editable After Filing</strong></td>
+      <td>No (except in next return)</td>
+      <td>No (cannot be revised)</td>
+    </tr>
+    <tr>
+      <td><strong>Late Fee</strong></td>
+      <td>₹50/day (CGST+SGST = ₹100)</td>
+      <td>₹50/day (CGST+SGST = ₹100)</td>
+    </tr>
+    <tr>
+      <td><strong>Auto-populate</strong></td>
+      <td>Data goes to buyer's GSTR-2B</td>
+      <td>Uses GSTR-2B for ITC</td>
+    </tr>
+    <tr>
+      <td><strong>Format</strong></td>
+      <td>Multiple tables (4A, 4B, 6, 7, etc.)</td>
+      <td>Single consolidated form</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+  </section>
+
+  <section id="what-is-gstr1">
+    <h2>What is GSTR-1?</h2>
+
+```
+<h3>Definition</h3>
+<p>GSTR-1 is a monthly or quarterly return containing details of all outward supplies (sales) made by a registered taxpayer. It includes invoice-level information of all B2B, B2C, and export transactions.</p>
+
+<h3>Who Must File?</h3>
+<ul>
+  <li><strong>Monthly filers:</strong> Turnover > ₹5 crores</li>
+  <li><strong>Quarterly filers:</strong> Turnover ≤ ₹5 crores (QRMP scheme)</li>
+  <li><strong>Exempt:</strong> Composition dealers, Input Service Distributors</li>
+</ul>
+
+<h3>What's Included in GSTR-1?</h3>
+<div class="numbered-cards">
+  <div class="card">
+    <div class="card-number">1</div>
+    <h4>B2B Invoices</h4>
+    <p>All taxable sales to registered businesses (with GSTIN)</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">2</div>
+    <h4>B2C Large Invoices</h4>
+    <p>Sales >₹2.5 lakhs to consumers (invoice-wise)</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">3</div>
+    <h4>B2C Small Invoices</h4>
+    <p>Consolidated sales <₹2.5 lakhs (state-wise summary)</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">4</div>
+    <h4>Exports</h4>
+    <p>With and without payment of IGST</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">5</div>
+    <h4>Credit/Debit Notes</h4>
+    <p>For amendments to previously issued invoices</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">6</div>
+    <h4>Nil Rated/Exempt Sales</h4>
+    <p>Supplies with 0% GST or exempt items</p>
+  </div>
+</div>
+
+<h3>GSTR-1 Tables Explained</h3>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Table 4A</strong></td>
+      <td>B2B invoices (sales to registered persons)</td>
+    </tr>
+    <tr>
+      <td><strong>Table 4B</strong></td>
+      <td>B2B invoices (SEZ with/without payment)</td>
+    </tr>
+    <tr>
+      <td><strong>Table 5</strong></td>
+      <td>B2C large invoices (>₹2.5 lakhs)</td>
+    </tr>
+    <tr>
+      <td><strong>Table 6</strong></td>
+      <td>Exports (with/without IGST payment)</td>
+    </tr>
+    <tr>
+      <td><strong>Table 7</strong></td>
+      <td>B2C small invoices (consolidated)</td>
+    </tr>
+    <tr>
+      <td><strong>Table 9</strong></td>
+      <td>Credit/Debit notes (amendments)</td>
+    </tr>
+    <tr>
+      <td><strong>Table 10</strong></td>
+      <td>Nil rated, exempt, non-GST supplies</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="info-box green">
+  <p><strong>💡 Purpose:</strong> GSTR-1 data flows to your buyers' GSTR-2B, enabling them to claim Input Tax Credit (ITC). Accuracy is crucial!</p>
+</div>
+```
+
+  </section>
+
+  <section id="what-is-gstr3b">
+    <h2>What is GSTR-3B?</h2>
+
+```
+<h3>Definition</h3>
+<p>GSTR-3B is a simplified summary return where taxpayers declare their total outward supplies, ITC claimed, and pay GST. Unlike GSTR-1, it doesn't require invoice-level details—just consolidated figures.</p>
+
+<h3>Who Must File?</h3>
+<ul>
+  <li><strong>Monthly filers:</strong> Turnover > ₹5 crores</li>
+  <li><strong>Quarterly filers:</strong> Turnover ≤ ₹5 crores (with monthly tax payment)</li>
+  <li><strong>Exempt:</strong> Composition dealers file GSTR-4 instead</li>
+</ul>
+
+<h3>What's Included in GSTR-3B?</h3>
+<div class="numbered-cards">
+  <div class="card">
+    <div class="card-number">1</div>
+    <h4>Outward Supplies</h4>
+    <p>Total taxable value + GST (summarized)</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">2</div>
+    <h4>ITC Claimed</h4>
+    <p>Input Tax Credit on purchases (as per GSTR-2B)</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">3</div>
+    <h4>ITC Reversed</h4>
+    <p>Credit reversed due to ineligible conditions</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">4</div>
+    <h4>Net GST Liability</h4>
+    <p>Tax payable after ITC adjustment</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">5</div>
+    <h4>Interest & Late Fee</h4>
+    <p>If applicable for delayed filing/payment</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">6</div>
+    <h4>Payment</h4>
+    <p>Tax, interest, penalty paid via cash or credit ledger</p>
+  </div>
+</div>
+
+<h3>GSTR-3B Tables Explained</h3>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Table 3.1</strong></td>
+      <td>Tax on outward supplies (total sales)</td>
+    </tr>
+    <tr>
+      <td><strong>Table 3.2</strong></td>
+      <td>Inter-state supplies to unregistered persons</td>
+    </tr>
+    <tr>
+      <td><strong>Table 4</strong></td>
+      <td>Eligible ITC (from GSTR-2B)</td>
+    </tr>
+    <tr>
+      <td><strong>Table 5</strong></td>
+      <td>Values of exempt, nil-rated, non-GST supplies</td>
+    </tr>
+    <tr>
+      <td><strong>Table 6.1</strong></td>
+      <td>Net tax liability + payment details</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="info-box orange">
+  <p><strong>⚠️ Critical:</strong> GSTR-3B cannot be revised once filed. Errors must be corrected in the next month's return. Always double-check before submission!</p>
+</div>
+```
+
+  </section>
+
+  <section id="key-differences">
+    <h2>10 Key Differences Between GSTR-1 and GSTR-3B</h2>
+
+```
+<div class="comparison-section">
+  <h3>1. Nature of Return</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>Detailed Return</strong></p>
+      <p>Contains invoice-by-invoice breakdown of all sales transactions.</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>Summary Return</strong></p>
+      <p>Only consolidated totals, no invoice-level details required.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>2. Purpose</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>Information Sharing</strong></p>
+      <p>To inform buyers about their purchases so they can claim ITC.</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>Tax Payment</strong></p>
+      <p>To declare liability and pay GST to the government.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>3. Payment Required?</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>No Payment</strong></p>
+      <p>Just declaration of sales. No tax payment involved.</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>Payment Mandatory</strong></p>
+      <p>Must pay tax liability before filing. Cannot file without payment.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>4. Filing Sequence</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>File First</strong></p>
+      <p>Due 11th (monthly) or 13th (quarterly). Should ideally be filed before GSTR-3B.</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>File Second</strong></p>
+      <p>Due 20th (monthly) or 22nd/24th (quarterly). Filed after GSTR-1.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>5. Impact on Buyers</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>Direct Impact</strong></p>
+      <p>Your GSTR-1 invoices appear in buyer's GSTR-2B. If wrong, they can't claim ITC.</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>No Direct Impact</strong></p>
+      <p>Doesn't affect buyers. It's your own tax declaration to the government.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>6. Data Source</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>Your Sales Register</strong></p>
+      <p>Manual entry from your sales invoices and accounts.</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>Multiple Sources</strong></p>
+      <p>Outward supplies from books, ITC from GSTR-2B, payments from ledgers.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>7. Revision Allowed?</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>Partial Revision</strong></p>
+      <p>Can amend invoices in next GSTR-1 via credit/debit notes (Table 9).</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>No Revision</strong></p>
+      <p>Cannot be revised once filed. Correct errors in next month's return.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>8. Penalty for Non-Filing</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>₹100/day</strong></p>
+      <p>(₹50 CGST + ₹50 SGST)</p>
+      <p>Capped at ₹5,000</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>₹100/day + 18% interest</strong></p>
+      <p>(₹50 CGST + ₹50 SGST late fee)</p>
+      <p>Capped at ₹5,000 + interest on unpaid tax (no cap)</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>9. Can File NIL Return?</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>Yes (SMS/Portal)</strong></p>
+      <p>If no outward supplies, file NIL return via SMS or portal.</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>Yes (Portal Only)</strong></p>
+      <p>Must file on portal even if NIL. SMS not allowed.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-section">
+  <h3>10. Blocking Impact</h3>
+  <div class="comparison-cards">
+    <div class="card">
+      <h4>GSTR-1</h4>
+      <p><strong>ITC Blocked for Buyer</strong></p>
+      <p>If you don't file, buyers can't claim ITC on your invoices.</p>
+    </div>
+    <div class="card">
+      <h4>GSTR-3B</h4>
+      <p><strong>Registration at Risk</strong></p>
+      <p>Continuous non-filing may lead to GST registration cancellation.</p>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section id="filing-order">
+    <h2>Which Should You File First?</h2>
+
+```
+<h3>Recommended Filing Order</h3>
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-marker">1</div>
+    <div class="timeline-content">
+      <h4>File GSTR-1 First (by 11th)</h4>
+      <p>Declare all your sales for the month</p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker">2</div>
+    <div class="timeline-content">
+      <h4>Check GSTR-2B (by 14th)</h4>
+      <p>Review auto-populated purchases for ITC eligibility</p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="timeline-marker">3</div>
+    <div class="timeline-content">
+      <h4>File GSTR-3B (by 20th)</h4>
+      <p>Declare liability and pay tax</p>
+    </div>
+  </div>
+</div>
+
+<h3>Why File GSTR-1 Before GSTR-3B?</h3>
+<ul>
+  <li>✅ <strong>Better accuracy:</strong> GSTR-3B figures should ideally match GSTR-1 totals</li>
+  <li>✅ <strong>Helps buyers:</strong> Your customers can see invoices in their GSTR-2B sooner</li>
+  <li>✅ <strong>Easier reconciliation:</strong> You can match both returns before final submission</li>
+  <li>✅ <strong>ITC clarity:</strong> Suppliers' GSTR-1 data reflects in your GSTR-2B by 14th</li>
+</ul>
+
+<div class="info-box orange">
+  <p><strong>⚠️ Reality Check:</strong> Many businesses file GSTR-3B first (by 20th) and then GSTR-1 later. While allowed, this can create mismatches and reconciliation headaches.</p>
+</div>
+```
+
+  </section>
+
+  <section id="reconciliation">
+    <h2>How to Reconcile GSTR-1 and GSTR-3B</h2>
+
+```
+<h3>Why Reconciliation Matters</h3>
+<p>Ideally, <strong>outward supplies in GSTR-3B (Table 3.1) = total sales in GSTR-1</strong>. Mismatches trigger notices from GST department and can block ITC for your buyers.</p>
+
+<h3>Common Mismatch Reasons</h3>
+<ul>
+  <li>Invoices included in GSTR-3B but missed in GSTR-1</li>
+  <li>Credit/debit notes not adjusted properly</li>
+  <li>B2C sales reported differently in both returns</li>
+  <li>Export values not matching</li>
+  <li>Amendments not carried forward correctly</li>
+</ul>
+
+<h3>Step-by-Step Reconciliation</h3>
+<div class="numbered-cards">
+  <div class="card">
+    <div class="card-number">1</div>
+    <h4>Download Returns</h4>
+    <p>Export GSTR-1 and GSTR-3B for the month in Excel/JSON format</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">2</div>
+    <h4>Compare Totals</h4>
+    <p>Match "Total Taxable Value" and "Total Tax" in both returns</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">3</div>
+    <h4>Check Table-Wise</h4>
+    <p>Compare GSTR-3B Table 3.1 with sum of all GSTR-1 tables</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">4</div>
+    <h4>Identify Differences</h4>
+    <p>Note down missing invoices, wrong values, or rate mismatches</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">5</div>
+    <h4>Correct Errors</h4>
+    <p>Amend GSTR-1 in next return. Adjust GSTR-3B in next return.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-number">6</div>
+    <h4>Document Reasons</h4>
+    <p>Maintain reconciliation workings for audits and GST notices</p>
+  </div>
+</div>
+
+<h3>Reconciliation Formula</h3>
+<div class="formula-box">
+  <p><strong>GSTR-3B Outward Supplies (Table 3.1)</strong></p>
+  <p>=</p>
+  <p><strong>Total of all GSTR-1 tables</strong></p>
+  <p>(Tables 4A + 4B + 5 + 6 + 7 + 10)</p>
+  <p>+/- Amendments (Table 9)</p>
+</div>
+
+<div class="info-box green">
+  <p><strong>💡 Tool Recommendation:</strong> Use reconciliation software or Excel templates to automate matching. Manual reconciliation is error-prone for businesses with 100+ invoices.</p>
+</div>
+```
+
+  </section>
+
+  <section id="common-mistakes">
+    <h2>Common Mistakes to Avoid</h2>
+
+```
+<div class="mistake-grid">
+  <div class="mistake-card">
+    <h4>❌ Mistake #1: Filing GSTR-3B Without GSTR-1</h4>
+    <p><strong>Problem:</strong> Buyers can't see invoices in GSTR-2B, ITC blocked</p>
+    <p><strong>Solution:</strong> Always file GSTR-1 before or alongside GSTR-3B</p>
+  </div>
+
+  <div class="mistake-card">
+    <h4>❌ Mistake #2: Not Matching Totals</h4>
+    <p><strong>Problem:</strong> GST notices for mismatch, possible tax demand</p>
+    <p><strong>Solution:</strong> Reconcile both returns before final submission</p>
+  </div>
+
+  <div class="mistake-card">
+    <h4>❌ Mistake #3: Forgetting Credit/Debit Notes</h4>
+    <p><strong>Problem:</strong> Wrong taxable value, excess tax payment</p>
+    <p><strong>Solution:</strong> Report all amendments in GSTR-1 Table 9 and adjust GSTR-3B</p>
+  </div>
+
+  <div class="mistake-card">
+    <h4>❌ Mistake #4: Claiming ITC Before Supplier Files GSTR-1</h4>
+    <p><strong>Problem:</strong> ITC reversal risk, interest liability</p>
+    <p><strong>Solution:</strong> Only claim ITC visible in GSTR-2B (after supplier files GSTR-1)</p>
+  </div>
+
+  <div class="mistake-card">
+    <h4>❌ Mistake #5: Not Reversing Ineligible ITC</h4>
+    <p><strong>Problem:</strong> Wrong ITC claim, penalty, interest</p>
+    <p><strong>Solution:</strong> Use GSTR-3B Table 4(B) to reverse ineligible ITC</p>
+  </div>
+
+  <div class="mistake-card">
+    <h4>❌ Mistake #6: Filing NIL GSTR-3B When Sales Exist</h4>
+    <p><strong>Problem:</strong> Tax evasion charge, heavy penalty</p>
+    <p><strong>Solution:</strong> Declare all supplies even if small, never file fake NIL returns</p>
+  </div>
+</div>
+```
+
+  </section>
+
+  <section id="faq" class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+```
+<div class="faq-item">
+  <h3>Can I file GSTR-3B before GSTR-1?</h3>
+  <p>Yes, technically you can. There's no system restriction. However, it's NOT recommended because your buyers won't see invoices in their GSTR-2B until you file GSTR-1, which blocks their ITC claims.</p>
+</div>
+
+<div class="faq-item">
+  <h3>What if GSTR-1 and GSTR-3B values don't match?</h3>
+  <p>Mismatches trigger GST department notices. You'll need to explain the difference and correct errors in subsequent returns. Keep reconciliation documents ready. Persistent mismatches may lead to scrutiny and audits.</p>
+</div>
+
+<div class="faq-item">
+  <h3>Do I need to file both returns every month?</h3>
+  <p>If turnover > ₹5 crores: Yes, both monthly. If turnover ≤ ₹5 crores and enrolled in QRMP: GSTR-1 quarterly, GSTR-3B quarterly, but monthly tax payment via PMT-06.</p>
+</div>
+
+<div class="faq-item">
+  <h3>Can I skip GSTR-1 if I only have B2C sales?</h3>
+  <p>No. GSTR-1 is mandatory for all registered taxpayers (except composition dealers). You must report B2C sales in Table 7 even if no B2B transactions.</p>
+</div>
+
+<div class="faq-item">
+  <h3>Is GSTR-2 still required?</h3>
+  <p>No. GSTR-2 (purchase return) has been suspended since 2017. Instead, use auto-populated GSTR-2B to claim ITC. GSTR-2B is a read-only statement—you can't edit it.</p>
+</div>
+
+<div class="faq-item">
+  <h3>What happens if I file GSTR-1 late but GSTR-3B on time?</h3>
+  <p>You'll pay late fee for GSTR-1 (₹100/day, max ₹5,000). Your buyers may complain because their ITC is delayed. Your GSTR-3B is safe if filed on time.</p>
+</div>
+```
+
+  </section>
+
+  <div class="related-posts">
+    <h3>Related Articles</h3>
+    <div class="post-grid">
+      <a href="how-to-file-gst-return.html" class="post-card">
+        <h4>How to File GST Return Step-by-Step</h4>
+        <p>Complete filing guide for GSTR-1 and GSTR-3B</p>
+      </a>
+      <a href="input-tax-credit-guide.html" class="post-card">
+        <h4>Input Tax Credit Complete Guide</h4>
+        <p>How to claim and reconcile ITC</p>
+      </a>
+      <a href="common-gst-mistakes.html" class="post-card">
+        <h4>Common GST Mistakes</h4>
+        <p>Top 10 mistakes and how to avoid them</p>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <div class="footer-logo">
+          <div class="logo-mark">G</div>
+          <span>GST Compliance Pro</span>
+        </div>
+        <p>India's most trusted free GST toolkit for MSMEs, freelancers, and small businesses.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#tools">Tools</a></li>
+          <li><a href="index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../terms-of-service.html">Terms of Service</a></li>
+          <li><a href="../disclaimer.html">Disclaimer</a></li>
+          <li><a href="../dmca.html">DMCA</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li>📧 contact@mygstindia.in</li>
+          <li>📱 Support (9 AM - 6 PM IST)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="copyright">
+        <p><strong>© 2024-2026 GST Compliance Pro. All Rights Reserved.</strong></p>
+        <p class="copyright-details">All content protected by Indian Copyright Act, 1957.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
