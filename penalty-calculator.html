@@ -56,11 +56,7 @@
 <div class="container-sm" style="padding: 48px 40px;">
   
     <!-- BREADCRUMB NAVIGATION -->
-  <div class="breadcrumb">
-    <a href="index.html">Home</a><span class="sep">›</span>
-    <a href="index.html#tools">Tools</a><span class="sep">›</span>
-    <span>Penalty Calculator</span>
-  </div>
+  
 
   <!-- BACK BUTTON -->
   <a href="index.html#tools" class="back-button">
@@ -242,39 +238,72 @@
 function calculatePenalty() {
   const returnType = document.getElementById('returnType').value;
   const daysLate = parseInt(document.getElementById('daysLate').value);
-  const taxAmount = parseFloat(document.getElementById('taxAmount').value);
+  const taxAmount = parseFloat(document.getElementById('taxAmount').value) || 0;
+  const hasLiability = document.getElementById('hasLiability') ? 
+                       document.getElementById('hasLiability').checked : 
+                       (taxAmount > 0);
 
-  if (!daysLate || !taxAmount) {
-    alert('Please fill in all fields');
+  if (!daysLate || daysLate < 1) {
+    alert('Please enter valid number of days late');
     return;
   }
 
-  // Simplified penalty calculation (example)
-  let lateFee = 0;
-  let interest = 0;
-
-  if (returnType === 'gstr3b') {
-    lateFee = Math.min(daysLate * 50, 5000); // ₹50/day, max ₹5000
-  } else if (returnType === 'gstr1') {
-    lateFee = Math.min(daysLate * 100, 10000); // ₹100/day, max ₹10000
+  let dailyLateFee;
+  let maxLateFee;
+  
+  if (!hasLiability || taxAmount === 0) {
+    dailyLateFee = 20;
+    maxLateFee = 2000;
   } else {
-    lateFee = Math.min(daysLate * 200, 25000); // ₹200/day, max ₹25000
+    dailyLateFee = returnType === 'gstr1' ? 100 : 100;
+    maxLateFee = 5000;
   }
 
-  interest = (taxAmount * 0.18 * daysLate) / 365;
-  
-  const total = lateFee + interest;
+  let lateFee = Math.min(daysLate * dailyLateFee, maxLateFee);
 
-  document.getElementById('totalPenalty').textContent = '₹' + total.toLocaleString('en-IN', {minimumFractionDigits:2});
-  document.getElementById('penaltyBreakdown').innerHTML = `
-    <strong>Late Fee:</strong> ₹${lateFee.toLocaleString('en-IN')}<br>
-    <strong>Interest (18% p.a.):</strong> ₹${interest.toLocaleString('en-IN', {minimumFractionDigits:2})}<br>
-    <strong>Days Late:</strong> ${daysLate} days<br>
-    <strong>Return Type:</strong> ${returnType.toUpperCase()}
-  `;
-  
-  document.getElementById('resultBox').style.display = 'block';
-  document.getElementById('resultBox').scrollIntoView({behavior:'smooth', block:'center'});
+  let interest = 0;
+  if (taxAmount > 0) {
+    const interestRate = 0.18;
+    const dailyInterest = (taxAmount * interestRate * daysLate) / 365;
+    interest = Math.round(dailyInterest * 100) / 100;
+  }
+
+  const totalPenalty = lateFee + interest;
+
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('lateFeeAmount').textContent = '₹' + lateFee.toLocaleString('en-IN');
+  document.getElementById('interestAmount').textContent = '₹' + interest.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  document.getElementById('totalPenalty').textContent = '₹' + totalPenalty.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+  const explanation = document.getElementById('penaltyExplanation');
+  if (explanation) {
+    if (!hasLiability || taxAmount === 0) {
+      explanation.innerHTML = `
+        <div class="info-box blue">
+          <p><strong>NIL Return Penalty (Section 47):</strong></p>
+          <p>Since this is a NIL return, late fee is ₹20/day (₹10 CGST + ₹10 SGST), capped at ₹2,000.</p>
+        </div>
+      `;
+    } else {
+      explanation.innerHTML = `
+        <div class="info-box orange">
+          <p><strong>Regular Return Penalty:</strong></p>
+          <p>Late fee: ₹${dailyLateFee}/day (₹${dailyLateFee/2} CGST + ₹${dailyLateFee/2} SGST), capped at ₹${maxLateFee.toLocaleString('en-IN')}.</p>
+          <p>Interest: 18% p.a. on ₹${taxAmount.toLocaleString('en-IN')}.</p>
+        </div>
+      `;
+    }
+  }
+
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function resetCalculator() {
+  document.getElementById('penaltyForm').reset();
+  document.getElementById('results').style.display = 'none';
+  if (document.getElementById('penaltyExplanation')) {
+    document.getElementById('penaltyExplanation').innerHTML = '';
+  }
 }
 
 // Auto-calculate on page load
