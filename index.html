@@ -5,74 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free GST Tools for India - Calculators, Compliance & More | GST Compliance Pro</title>
   <meta name="description" content="Free GST calculators and tools for Indian businesses. Calculate penalties, GST, interest, ITC. Find HSN codes, generate invoices. Simple, fast, always free.">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="premium.css">
+  <link rel="stylesheet" href="master-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-container">
     <a href="index.html" class="nav-logo">
       <div class="logo-mark">G</div>
       <span class="logo-text">GST <em>Compliance Pro</em></span>
     </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
+    
+    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
+    
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
+    
     <div class="nav-cta">
       <a href="registration-checker.html" class="btn-primary-small">Check Registration</a>
     </div>
   </div>
 </nav>
 
+<!-- LEGAL DISCLAIMER BANNER -->
 <div class="legal-disclaimer-banner">
   <div class="disclaimer-container">
     <div class="disclaimer-icon">⚖️</div>
     <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> This website provides <strong>general information only</strong> and is <strong>not professional tax or legal advice</strong>. Always verify with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> and <strong>consult a qualified Chartered Accountant</strong>.
-      <a href="disclaimer.html" class="learn-more">Read Full Disclaimer →</a>
+      <strong>Legal Disclaimer:</strong> This website provides <strong>general information only</strong> and is <strong>not professional tax or legal advice</strong>. Always verify with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> and <strong>consult a qualified Chartered Accountant</strong>. <a href="disclaimer.html" class="learn-more">Read Full Disclaimer →</a>
     </div>
   </div>
 </div>
 
+<!-- HERO SECTION -->
 <section class="hero-premium">
   <div class="hero-container">
     <div class="hero-content">
       <div class="hero-badge">🇮🇳 Made for India</div>
-      <h1 class="hero-title">India's Free <span class="gradient-text">GST Toolkit</span> for MSMEs</h1>
-      <p class="hero-subtitle">Calculate penalties, GST, interest, ITC. Find HSN codes, generate invoices. Simple, fast, always free.</p>
+      <h1 class="hero-title">
+        India's Free <span class="gradient-text">GST Toolkit</span> for MSMEs
+      </h1>
+      <p class="hero-subtitle">
+        Calculate penalties, GST, interest, ITC. Find HSN codes, generate invoices. Simple, fast, always free.
+      </p>
       <div class="hero-cta">
         <a href="#tools" class="btn-hero-primary">Explore Free Tools →</a>
         <a href="blog/index.html" class="btn-hero-secondary">Learn GST</a>
       </div>
       <div class="trust-indicators">
-        <div class="trust-item"><div class="trust-number">12+</div><div class="trust-label">Free Tools</div></div>
-        <div class="trust-item"><div class="trust-number">100%</div><div class="trust-label">Free Forever</div></div>
-        <div class="trust-item"><div class="trust-number">2026</div><div class="trust-label">Always Updated</div></div>
+        <div class="trust-item">
+          <div class="trust-number">12+</div>
+          <div class="trust-label">Free Tools</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">100%</div>
+          <div class="trust-label">Free Forever</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-number">2026</div>
+          <div class="trust-label">Always Updated</div>
+        </div>
       </div>
     </div>
   </div>
   <div class="hero-bg-gradient"></div>
 </section>
 
+<!-- MAIN CONTENT -->
 <div class="container main-content">
-  <section id="tools">
+
+  <!-- ALL TOOLS SECTION -->
+  <section id="tools" class="section">
     <div class="section-header">
       <h2 class="section-title">All GST <span class="gradient-text">Tools</span></h2>
       <p class="section-subtitle">12 free tools organized by category. Everything you need for GST compliance.</p>
     </div>
 
+    <!-- CALCULATORS -->
     <div class="tool-category">
       <div class="category-header">
         <div class="category-icon">📊</div>
         <h3 class="category-title">Calculators</h3>
         <span class="category-count">6 tools</span>
       </div>
+      
       <div class="tools-grid">
         <a href="penalty-calculator.html" class="tool-card featured">
           <div class="tool-icon gradient-yellow">🔥</div>
@@ -83,6 +110,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="gst-calculator.html" class="tool-card featured">
           <div class="tool-icon gradient-blue">💰</div>
           <div class="tool-content">
@@ -92,6 +120,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="gst-interest.html" class="tool-card">
           <div class="tool-icon gradient-pink">📈</div>
           <div class="tool-content">
@@ -100,6 +129,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="itc-calculator.html" class="tool-card">
           <div class="tool-icon gradient-green">⭐</div>
           <div class="tool-content">
@@ -109,6 +139,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="msme-payment-calculator.html" class="tool-card">
           <div class="tool-icon gradient-yellow">⏰</div>
           <div class="tool-content">
@@ -118,6 +149,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="gstr3b.html" class="tool-card">
           <div class="tool-icon gradient-purple">📋</div>
           <div class="tool-content">
@@ -129,12 +161,14 @@
       </div>
     </div>
 
+    <!-- COMPLIANCE TOOLS -->
     <div class="tool-category">
       <div class="category-header">
         <div class="category-icon">📋</div>
         <h3 class="category-title">Compliance Tools</h3>
         <span class="category-count">4 tools</span>
       </div>
+      
       <div class="tools-grid">
         <a href="return-deadlines.html" class="tool-card">
           <div class="tool-icon gradient-pink">📅</div>
@@ -144,6 +178,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="registration-checker.html" class="tool-card">
           <div class="tool-icon gradient-green">✅</div>
           <div class="tool-content">
@@ -152,6 +187,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="budget-2026-changes.html" class="tool-card">
           <div class="tool-icon gradient-yellow">📰</div>
           <div class="tool-content">
@@ -160,6 +196,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="gstin-verification.html" class="tool-card">
           <div class="tool-icon gradient-blue">🔍</div>
           <div class="tool-content">
@@ -172,12 +209,14 @@
       </div>
     </div>
 
+    <!-- UTILITIES -->
     <div class="tool-category">
       <div class="category-header">
         <div class="category-icon">🔍</div>
         <h3 class="category-title">Utilities</h3>
         <span class="category-count">2 tools</span>
       </div>
+      
       <div class="tools-grid">
         <a href="hsn-finder.html" class="tool-card">
           <div class="tool-icon gradient-purple">🔢</div>
@@ -187,6 +226,7 @@
           </div>
           <div class="tool-arrow">→</div>
         </a>
+
         <a href="invoice.html" class="tool-card">
           <div class="tool-icon gradient-green">📄</div>
           <div class="tool-content">
@@ -197,29 +237,35 @@
         </a>
       </div>
     </div>
+
   </section>
 
+  <!-- WHY CHOOSE US -->
   <section class="why-section">
     <div class="section-header">
       <h2 class="section-title">Why <span class="gradient-text">GST Compliance Pro?</span></h2>
       <p class="section-subtitle">Built for Indian MSMEs who need simple, accurate GST compliance tools</p>
     </div>
+
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">💯</div>
         <h3 class="feature-title">100% Free</h3>
         <p class="feature-description">All tools free. No hidden charges, subscriptions, or ads.</p>
       </div>
+
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <h3 class="feature-title">Lightning Fast</h3>
         <p class="feature-description">Instant calculations. No signup required.</p>
       </div>
+
       <div class="feature-card">
         <div class="feature-icon">✅</div>
         <h3 class="feature-title">Always Accurate</h3>
         <p class="feature-description">Updated with latest GST laws.</p>
       </div>
+
       <div class="feature-card">
         <div class="feature-icon">📱</div>
         <h3 class="feature-title">Mobile Friendly</h3>
@@ -228,6 +274,7 @@
     </div>
   </section>
 
+  <!-- CTA SECTION -->
   <section class="cta-section">
     <div class="cta-container">
       <h2 class="cta-title">Ready to Simplify Your <span class="gradient-text-light">GST Compliance?</span></h2>
@@ -238,8 +285,10 @@
       </div>
     </div>
   </section>
+
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-grid">
@@ -248,9 +297,10 @@
           <div class="logo-mark">G</div>
           <span>GST Compliance Pro</span>
         </div>
-        <p class="footer-description">India's free GST toolkit for MSMEs.</p>
+        <p class="footer-description">India's free GST toolkit for MSMEs. Simple tools for complex compliance.</p>
         <div class="footer-copyright">© 2026 GST Compliance Pro. All rights reserved.</div>
       </div>
+
       <div class="footer-column">
         <h4 class="footer-heading">📊 Calculators</h4>
         <ul class="footer-links">
@@ -259,21 +309,26 @@
           <li><a href="itc-calculator.html">ITC Calculator</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h4 class="footer-heading">📋 Compliance</h4>
         <ul class="footer-links">
           <li><a href="return-deadlines.html">Deadlines</a></li>
           <li><a href="registration-checker.html">Registration</a></li>
+          <li><a href="hsn-finder.html">HSN Finder</a></li>
         </ul>
       </div>
+
       <div class="footer-column">
         <h4 class="footer-heading">⚖️ Legal</h4>
         <ul class="footer-links">
           <li><a href="disclaimer.html">Disclaimer</a></li>
           <li><a href="privacy-policy.html">Privacy</a></li>
+          <li><a href="terms-of-service.html">Terms</a></li>
         </ul>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>For informational purposes only. Consult a CA for professional advice.</p>
     </div>
@@ -281,11 +336,23 @@
 </footer>
 
 <script>
+// Mobile menu toggle
+document.querySelector('.mobile-menu-toggle')?.addEventListener('click', () => {
+  document.querySelector('.nav-links')?.classList.toggle('active');
+});
+
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelector('.nav-links')?.classList.remove('active');
+      }
+    }
   });
 });
 </script>
