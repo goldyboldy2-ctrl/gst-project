@@ -1210,3 +1210,5 @@ main,
     font-size: var(--text-2xl);
   }
 }
+document.querySelector('.hero').style.textAlign = 'center';
+document.querySelector('.hero').style.alignItems = 'center';
