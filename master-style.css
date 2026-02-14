@@ -895,3 +895,21 @@ function shareWhatsApp(text) {
     const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
 }
+
+/* High-Contrast Focus for Power Users */
+input:focus, select:focus, textarea:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2) !important;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+/* Numeric keypad optimization for mobile */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
