@@ -1,17 +1,17 @@
 /* ============================================================
-   GST COMPLIANCE PRO - NUCLEAR OVERRIDE BENTO GRID SYSTEM
-   Strategic !important Usage for Absolute Control
-   Version: 4.0 NUCLEAR (February 2026)
+   GST COMPLIANCE PRO - NUCLEAR RESET CSS
+   "Center Everything" Mandate - Override All Inline Styles
+   Version: 5.0 FINAL (February 2026)
    ============================================================ */
 
 /* ============================================================
-   NUCLEAR RESET - OVERRIDE EVERYTHING
+   GLOBAL NUCLEAR RESET
    ============================================================ */
 
 * {
+  margin: 0 !important;
+  padding: 0 !important;
   box-sizing: border-box !important;
-  margin: 0;
-  padding: 0;
 }
 
 *::before,
@@ -20,26 +20,23 @@
 }
 
 html {
-  font-size: 16px !important;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-weight: 400 !important;
-  line-height: 1.6 !important;
-  color: #0f172a !important;
-  background: #f1f5f9 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #0f172a;
+  background: #f8fafc !important;
   min-height: 100vh;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
 /* ============================================================
-   FORCE TOOL-CARD-WRAPPER ALIGNMENT
+   CENTER EVERYTHING MANDATE - THE MASTER CONTAINER
    ============================================================ */
 
 .tool-card-wrapper {
@@ -48,32 +45,63 @@ body {
   align-items: center !important;
   justify-content: center !important;
   width: 100% !important;
-  max-width: 100% !important;
   padding: 2rem 1rem !important;
-  margin: 0 auto !important;
-  text-align: center !important;
+  margin: 0 !important;
 }
 
 .tool-card-wrapper > div {
+  max-width: 800px !important;
+  margin: 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+  text-align: center !important;
   width: 100% !important;
-  max-width: 1200px !important;
   padding: 3rem !important;
-  margin: 0 auto !important;
-  background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%) !important;
+  background: #ffffff !important;
   border-radius: 24px !important;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-  border: 1px solid #e2e8f0 !important;
-  text-align: center !important;
+  
+  /* Gradient Border Effect */
+  border: 1px solid transparent !important;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, #6366f1, #a5a6f6) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
+  position: relative !important;
 }
 
-/* Force ALL content inside to center */
+/* Force ALL direct children to center */
 .tool-card-wrapper > div > * {
   margin-left: auto !important;
   margin-right: auto !important;
-  max-width: 100% !important;
+}
+
+/* ============================================================
+   NO-STRETCH RULE - PREVENT SPREADING
+   ============================================================ */
+
+#calculator,
+#resultBox,
+#invoicePreview,
+.input-section,
+.calculator-section,
+.result-section {
+  width: 100% !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+/* Additional specific targeting */
+[id*="Box"],
+[id*="Preview"],
+[id*="Result"],
+[id*="Calculator"] {
+  width: 100% !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* ============================================================
@@ -83,94 +111,103 @@ body {
 .container,
 .container-sm,
 .container-narrow {
-  width: 100% !important;
-  max-width: 1280px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
   padding-left: 1.5rem !important;
   padding-right: 1.5rem !important;
-}
-
-.container-sm {
-  max-width: 960px !important;
-}
-
-.container-narrow {
-  max-width: 800px !important;
+  width: 100% !important;
 }
 
 /* ============================================================
-   TYPOGRAPHY - INTER + POPPINS WITH FORCE
+   TYPOGRAPHY - INTER + POPPINS
    ============================================================ */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-weight: 700 !important;
-  line-height: 1.2 !important;
-  letter-spacing: -0.02em !important;
-  color: #0f172a !important;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  text-align: center !important;
   margin-top: 0 !important;
   margin-bottom: 1rem !important;
-  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem) !important;
-  font-weight: 800 !important;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
-  text-align: center !important;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem) !important;
-}
-
-h4 {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
 }
 
 p {
   margin-bottom: 1rem !important;
-  color: #475569 !important;
-  font-weight: 400 !important;
+  color: #475569;
+  text-align: center !important;
 }
 
 a {
-  color: #6366f1 !important;
-  text-decoration: none !important;
-  transition: color 0.2s ease !important;
+  color: #6366f1;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: #4f46e5 !important;
+  color: #4f46e5;
 }
 
 /* Gradient text */
 em {
-  font-style: normal !important;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  font-weight: 700 !important;
-  color: #6366f1 !important; /* Fallback */
+  font-style: normal;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  color: #6366f1; /* Fallback */
 }
 
 /* ============================================================
-   FORM & INPUT NUCLEAR OVERRIDE
+   FORM ALIGNMENT - LEFT-ALIGNED LABELS, CENTERED CONTAINER
    ============================================================ */
 
-form,
-.input-group,
-.form-container {
+form {
   width: 100% !important;
   max-width: 600px !important;
-  margin: 0 auto 1.5rem auto !important;
+  margin: 0 auto !important;
   display: block !important;
 }
+
+.form-group {
+  text-align: left !important;
+  width: 100% !important;
+  display: block !important;
+  margin-bottom: 1.5rem !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 600px !important;
+}
+
+.form-group label {
+  display: block !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  margin-bottom: 0.5rem !important;
+  text-align: left !important;
+}
+
+/* ============================================================
+   INPUT ELEMENTS - FORCE 100% WIDTH
+   ============================================================ */
 
 input[type="text"],
 input[type="email"],
@@ -182,11 +219,9 @@ input[type="search"],
 input[type="url"],
 select,
 textarea {
-  display: block !important;
   width: 100% !important;
-  max-width: 100% !important;
+  box-sizing: border-box !important;
   padding: 14px !important;
-  margin: 0 auto !important;
   font-size: 1rem !important;
   font-family: 'Inter', sans-serif !important;
   font-weight: 500 !important;
@@ -196,6 +231,9 @@ textarea {
   border-radius: 12px !important;
   outline: none !important;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: block !important;
 }
 
 input:focus,
@@ -208,35 +246,17 @@ textarea:focus {
 input::placeholder,
 textarea::placeholder {
   color: #94a3b8 !important;
-  font-weight: 400 !important;
 }
 
-/* Form Groups */
-.form-group {
-  width: 100% !important;
-  max-width: 600px !important;
-  margin: 0 auto 1.5rem auto !important;
-  text-align: left !important;
-}
-
-.form-group label {
-  display: block !important;
-  font-size: 0.875rem !important;
-  font-weight: 600 !important;
-  color: #334155 !important;
-  margin-bottom: 0.5rem !important;
-  text-align: left !important;
-}
-
-/* Radio Groups */
+/* Radio and checkbox groups */
 .radio-group,
 .checkbox-group {
   width: 100% !important;
-  max-width: 600px !important;
-  margin: 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 0.75rem !important;
+  text-align: left !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .radio-option,
@@ -248,22 +268,25 @@ textarea::placeholder {
   border: 1px solid #e2e8f0 !important;
   border-radius: 12px !important;
   cursor: pointer !important;
-  transition: all 0.2s ease !important;
   text-align: left !important;
 }
 
+.radio-option:hover,
+.checkbox-option:hover {
+  background: #f8fafc !important;
+}
+
 /* ============================================================
-   BUTTON NUCLEAR OVERRIDE
+   BUTTON STYLING - CENTERED, GRADIENT
    ============================================================ */
 
 .btn,
 button,
 input[type="submit"],
-input[type="button"],
-a.btn {
-  display: block !important;
+input[type="button"] {
   width: 100% !important;
   max-width: 400px !important;
+  box-sizing: border-box !important;
   margin: 0 auto !important;
   padding: 0.875rem 1.75rem !important;
   font-size: 1rem !important;
@@ -277,8 +300,7 @@ a.btn {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
   box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2), 0 2px 4px -1px rgba(99, 102, 241, 0.1) !important;
   text-align: center !important;
-  text-decoration: none !important;
-  line-height: 1.5 !important;
+  display: block !important;
 }
 
 .btn:hover,
@@ -292,7 +314,7 @@ button:active {
   transform: scale(0.98) !important;
 }
 
-/* Button Variants */
+/* Button variants */
 .btn-secondary {
   background: #f1f5f9 !important;
   color: #334155 !important;
@@ -305,44 +327,85 @@ button:active {
 }
 
 /* ============================================================
-   RESULT BOX NUCLEAR STYLING
+   RESULT BOX - PREMIUM SUCCESS TILE WITH INDIGO GLOW
    ============================================================ */
 
 #resultBox,
 #invoicePreview,
 .result-box,
 [id*="result"],
-[id*="Result"],
-[id*="preview"],
-[id*="Preview"],
-[id*="Box"] {
+[id*="Result"] {
   display: none !important;
   width: 100% !important;
-  max-width: 700px !important;
+  max-width: 600px !important;
   margin: 2rem auto !important;
   padding: 2rem !important;
-  background: #f8fafc !important;
-  border: 1px solid #e2e8f0 !important;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+  border: 2px solid #6366f1 !important;
   border-radius: 24px !important;
   text-align: center !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 
+              0 10px 15px -3px rgba(99, 102, 241, 0.2) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-/* When shown via JS */
+/* Indigo glow effect */
+#resultBox::before,
+#invoicePreview::before,
+.result-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+  animation: shimmer 3s infinite linear;
+}
+
+/* When shown */
 #resultBox[style*="block"],
 #invoicePreview[style*="block"],
-.result-box[style*="block"],
-[id*="result"][style*="block"],
-[id*="Result"][style*="block"],
-[id*="preview"][style*="block"],
-[id*="Preview"][style*="block"],
-[id*="Box"][style*="block"] {
+.result-box[style*="block"] {
   display: block !important;
 }
 
 .result-icon {
   font-size: 3rem !important;
   margin-bottom: 1rem !important;
+  display: block !important;
+}
+
+.result-box h3,
+#resultBox h3 {
+  color: #1e40af !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Safe/Success variant */
+.result-box.safe,
+#resultBox.safe {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%) !important;
+  border-color: #22c55e !important;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1), 
+              0 10px 15px -3px rgba(34, 197, 94, 0.2) !important;
+}
+
+/* Warning variant */
+.result-box.warning {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%) !important;
+  border-color: #eab308 !important;
+  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.1), 
+              0 10px 15px -3px rgba(234, 179, 8, 0.2) !important;
+}
+
+/* Danger variant */
+.result-box.danger {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%) !important;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1), 
+              0 10px 15px -3px rgba(239, 68, 68, 0.2) !important;
 }
 
 /* ============================================================
@@ -351,13 +414,13 @@ button:active {
 
 .card {
   width: 100% !important;
-  max-width: 800px !important;
+  max-width: 600px !important;
   margin: 0 auto 1.5rem auto !important;
   background: white !important;
   border: 1px solid #e2e8f0 !important;
   border-radius: 24px !important;
   padding: 2rem !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
 }
 
 .card-body {
@@ -366,19 +429,15 @@ button:active {
 }
 
 /* ============================================================
-   TABLES - FORCE CLEAN STYLING
+   TABLES
    ============================================================ */
 
 table {
   width: 100% !important;
-  max-width: 100% !important;
+  max-width: 600px !important;
   margin: 1.5rem auto !important;
   border-collapse: separate !important;
   border-spacing: 0 8px !important;
-}
-
-thead tr {
-  background: #f8fafc !important;
 }
 
 th {
@@ -388,15 +447,13 @@ th {
   text-align: left !important;
   color: #475569 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  border: none !important;
+  background: #f8fafc !important;
 }
 
 td {
   padding: 1rem !important;
   background: white !important;
   border: 1px solid #e2e8f0 !important;
-  font-size: 0.9375rem !important;
   color: #334155 !important;
 }
 
@@ -414,94 +471,12 @@ td {
 }
 
 /* ============================================================
-   LISTS
-   ============================================================ */
-
-ul, ol {
-  margin: 1rem 0 !important;
-  padding-left: 1.5rem !important;
-}
-
-ul {
-  list-style: none !important;
-  padding-left: 0 !important;
-}
-
-ul li {
-  position: relative !important;
-  padding-left: 1.5rem !important;
-  margin-bottom: 0.5rem !important;
-}
-
-ul li::before {
-  content: '•' !important;
-  position: absolute !important;
-  left: 0 !important;
-  color: #6366f1 !important;
-  font-weight: bold !important;
-}
-
-/* ============================================================
-   TOOL CARDS GRID
-   ============================================================ */
-
-.tools-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 1.5rem !important;
-  max-width: 1280px !important;
-  margin: 2rem auto !important;
-  width: 100% !important;
-}
-
-.tool-card {
-  width: 100% !important;
-  background: white !important;
-  border: 1px solid #e2e8f0 !important;
-  border-radius: 24px !important;
-  padding: 2rem !important;
-  text-decoration: none !important;
-  display: flex !important;
-  flex-direction: column !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-.tool-card::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 4px !important;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899) !important;
-  transform: scaleX(0) !important;
-  transition: transform 0.3s ease !important;
-}
-
-.tool-card:hover::before {
-  transform: scaleX(1) !important;
-}
-
-.tool-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
-}
-
-.tool-icon {
-  font-size: 3rem !important;
-  margin-bottom: 1rem !important;
-  display: block !important;
-}
-
-/* ============================================================
    INFO BOXES
    ============================================================ */
 
 .info-box {
   width: 100% !important;
-  max-width: 700px !important;
+  max-width: 600px !important;
   margin: 1.5rem auto !important;
   display: flex !important;
   gap: 1rem !important;
@@ -509,7 +484,6 @@ ul li::before {
   border-radius: 16px !important;
   border-left: 4px solid !important;
   background: white !important;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
 }
 
 .info-box-icon {
@@ -549,12 +523,13 @@ ul li::before {
 .navbar {
   background: rgba(255, 255, 255, 0.8) !important;
   backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
   border-bottom: 1px solid #e2e8f0 !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 1000 !important;
   width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .navbar-container {
@@ -573,7 +548,6 @@ ul li::before {
   font-size: 1.25rem !important;
   font-weight: 800 !important;
   color: #0f172a !important;
-  text-decoration: none !important;
   font-family: 'Poppins', sans-serif !important;
 }
 
@@ -637,15 +611,6 @@ ul li::before {
 
 .footer ul {
   list-style: none !important;
-  padding: 0 !important;
-}
-
-.footer ul li::before {
-  display: none !important;
-}
-
-.footer ul li {
-  padding-left: 0 !important;
 }
 
 .footer a {
@@ -662,7 +627,6 @@ ul li::before {
   padding-top: 2rem !important;
   border-top: 1px solid #334155 !important;
   text-align: center !important;
-  color: #64748b !important;
 }
 
 /* ============================================================
@@ -673,9 +637,7 @@ ul li::before {
   text-align: center !important;
   padding: 5rem 1.5rem 4rem !important;
   background: linear-gradient(180deg, #eff6ff 0%, transparent 100%) !important;
-  position: relative !important;
-  overflow: hidden !important;
-  width: 100% !important;
+  margin: 0 !important;
 }
 
 .hero h1 {
@@ -686,8 +648,22 @@ ul li::before {
 .hero p {
   max-width: 600px !important;
   margin: 0 auto 2rem auto !important;
-  font-size: 1.25rem !important;
-  text-align: center !important;
+}
+
+.hero-badge {
+  display: inline-block !important;
+  padding: 0.5rem 1rem !important;
+  background: #dbeafe !important;
+  color: #3b82f6 !important;
+  border-radius: 9999px !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+.hero-meta {
+  font-size: 0.9375rem !important;
+  color: #94a3b8 !important;
 }
 
 /* ============================================================
@@ -699,7 +675,7 @@ ul li::before {
   color: #cbd5e1 !important;
   padding: 1rem 1.5rem !important;
   border-bottom: 1px solid rgba(99, 102, 241, 0.2) !important;
-  width: 100% !important;
+  margin: 0 !important;
 }
 
 .disclaimer-container {
@@ -710,12 +686,34 @@ ul li::before {
   gap: 1rem !important;
 }
 
-.disclaimer-content strong {
-  color: white !important;
+/* ============================================================
+   TOOLS GRID
+   ============================================================ */
+
+.tools-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem !important;
+  max-width: 1280px !important;
+  margin: 2rem auto !important;
 }
 
-.disclaimer-content a {
-  color: #a5b4fc !important;
+.tool-card {
+  background: white !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 24px !important;
+  padding: 2rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.tool-icon {
+  font-size: 3rem !important;
+  margin-bottom: 1rem !important;
 }
 
 /* ============================================================
@@ -747,24 +745,14 @@ ul li::before {
   }
 }
 
-.shimmer-success {
-  animation: shimmer 2s infinite linear !important;
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #6366f1 100%) !important;
-  background-size: 200% 100% !important;
-  color: white !important;
-  padding: 0.5rem 1rem !important;
-  border-radius: 9999px !important;
-  font-weight: 600 !important;
-}
-
 /* ============================================================
-   MOBILE RESPONSIVENESS - BELOW 768PX
+   MOBILE RESPONSIVENESS
    ============================================================ */
 
 @media (max-width: 768px) {
   .tool-card-wrapper > div {
     padding: 1.5rem !important;
-    border-radius: 16px !important;
+    max-width: 100% !important;
   }
   
   .tools-grid {
@@ -775,31 +763,13 @@ ul li::before {
     padding: 3rem 1rem 2rem !important;
   }
   
-  .hero h1 {
-    font-size: 2rem !important;
-  }
-  
-  .btn,
-  button {
-    max-width: 100% !important;
-  }
-  
-  .card {
-    padding: 1.5rem !important;
-  }
-  
   table {
-    display: block !important;
-    overflow-x: auto !important;
+    font-size: 0.875rem !important;
   }
   
   .nav-links {
     flex-direction: column !important;
     gap: 0.5rem !important;
-  }
-  
-  .footer-grid {
-    grid-template-columns: 1fr !important;
   }
 }
 
@@ -814,87 +784,40 @@ ul li::before {
    ============================================================ */
 
 ::-webkit-scrollbar {
-  width: 8px !important;
-  height: 8px !important;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9 !important;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1 !important;
-  border-radius: 9999px !important;
+  background: #cbd5e1;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6366f1 !important;
+  background: #6366f1;
 }
 
 /* ============================================================
-   ANIMATIONS
+   SECTION TITLES
    ============================================================ */
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.anim-up {
-  animation: fadeInUp 0.6s ease-out !important;
-}
-
-/* ============================================================
-   STAT CARDS
-   ============================================================ */
-
-.stat-card {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
-  border-radius: 24px !important;
-  padding: 2rem !important;
-  text-align: center !important;
-}
-
-.stat-number {
-  font-size: 3rem !important;
-  font-weight: 900 !important;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  font-family: 'Poppins', sans-serif !important;
-}
-
-.stat-label {
-  font-size: 0.875rem !important;
-  text-transform: uppercase !important;
-  color: #94a3b8 !important;
-}
-
-/* ============================================================
-   SECTION LABELS & TITLES
-   ============================================================ */
-
-.section-label {
-  font-size: 0.875rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  color: #6366f1 !important;
-  font-weight: 600 !important;
-  text-align: center !important;
-  margin-bottom: 0.5rem !important;
-}
 
 .section-title {
-  font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
-  font-weight: 700 !important;
   text-align: center !important;
+  font-size: clamp(1.75rem, 4vw, 2.25rem) !important;
   margin-bottom: 1.5rem !important;
+}
+
+.section-label {
+  text-align: center !important;
+  font-size: 0.875rem !important;
+  text-transform: uppercase !important;
+  color: #6366f1 !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
 }
 
 /* ============================================================
@@ -908,12 +831,6 @@ ul li::before {
   color: #6366f1 !important;
   border: 1px solid #e2e8f0 !important;
   border-radius: 8px !important;
-  font-weight: 500 !important;
-  transition: all 0.2s ease !important;
-}
-
-.back-button:hover {
-  background: #f1f5f9 !important;
 }
 
 /* ============================================================
@@ -924,11 +841,6 @@ ul li::before {
   width: 100% !important;
   max-width: 800px !important;
   margin: 3rem auto !important;
-}
-
-.related-tools h3 {
-  text-align: center !important;
-  margin-bottom: 1.5rem !important;
 }
 
 .related-tools-grid {
@@ -942,44 +854,6 @@ ul li::before {
   background: white !important;
   border: 1px solid #e2e8f0 !important;
   border-radius: 16px !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease !important;
-}
-
-.related-tool-card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* ============================================================
-   STEP BOXES
-   ============================================================ */
-
-.step-box {
-  display: flex !important;
-  gap: 1rem !important;
-  margin-bottom: 1.5rem !important;
-  padding: 1.5rem !important;
-  background: white !important;
-  border: 1px solid #e2e8f0 !important;
-  border-radius: 16px !important;
-}
-
-.step-num {
-  width: 40px !important;
-  height: 40px !important;
-  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
-  color: white !important;
-  border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-weight: 700 !important;
-  flex-shrink: 0 !important;
-}
-
-.step-content {
-  flex: 1 !important;
 }
 
 /* ============================================================
@@ -993,12 +867,4 @@ ul li::before {
   border-radius: 24px !important;
   margin: 3rem auto !important;
   max-width: 800px !important;
-}
-
-.cta-section h2 {
-  margin-bottom: 1rem !important;
-}
-
-.cta-section p {
-  margin-bottom: 1.5rem !important;
 }
