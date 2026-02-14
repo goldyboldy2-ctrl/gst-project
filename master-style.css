@@ -1,12 +1,9 @@
 /* ============================================================
-   GST COMPLIANCE PRO - NUCLEAR RESET CSS
-   "Center Everything" Mandate - Override All Inline Styles
-   Version: 5.1 (Cleaned & Optimized)
+   GST COMPLIANCE PRO - PREMIUM BENTO RESTORATION
+   Version: 5.2 - RESTORED COLORS & FONTS
    ============================================================ */
 
-/* ============================================================
-   GLOBAL NUCLEAR RESET
-   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@700;800&display=swap');
 
 * {
   margin: 0 !important;
@@ -14,111 +11,41 @@
   box-sizing: border-box !important;
 }
 
-*::before,
-*::after {
-  box-sizing: border-box !important;
-}
-
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc !important;
   color: #0f172a;
-  background: #f8fafc !important;
-  min-height: 100vh;
+  line-height: 1.6;
 }
 
 /* ============================================================
-   CENTER EVERYTHING MANDATE - THE MASTER CONTAINER
+   THE BENTO CARD (RESTORED)
    ============================================================ */
-
-.tool-card-wrapper {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  padding: 2rem 1rem !important;
-  margin: 0 !important;
-}
 
 .tool-card-wrapper > div {
   max-width: 800px !important;
-  margin: 0 auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  width: 100% !important;
+  margin: 2rem auto !important;
   padding: 3rem !important;
   background: #ffffff !important;
   border-radius: 24px !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-  
-  /* Gradient Border Effect */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05) !important;
   border: 1px solid transparent !important;
   background-image: linear-gradient(white, white), linear-gradient(135deg, #6366f1, #a5a6f6) !important;
   background-origin: border-box !important;
   background-clip: content-box, border-box !important;
-  position: relative !important;
-}
-
-.tool-card-wrapper > div > * {
-  margin-left: auto !important;
-  margin-right: auto !important;
+  text-align: center !important;
 }
 
 /* ============================================================
-   NO-STRETCH RULE - PREVENT SPREADING
+   TYPOGRAPHY (RESTORED)
    ============================================================ */
 
-#calculator,
-#resultBox,
-#invoicePreview,
-.input-section,
-.calculator-section,
-.result-section {
-  width: 100% !important;
-  max-width: 600px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block !important;
-}
-
-[id*="Box"],
-[id*="Preview"],
-[id*="Result"],
-[id*="Calculator"] {
-  width: 100% !important;
-  max-width: 600px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* ============================================================
-   TYPOGRAPHY
-   ============================================================ */
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #0f172a;
-  text-align: center !important;
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  color: #0f172a !important;
   margin-bottom: 1rem !important;
-}
-
-p {
-  margin-bottom: 1rem !important;
-  color: #475569;
-  text-align: center !important;
 }
 
 em {
@@ -126,129 +53,49 @@ em {
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* ============================================================
-   FORM & INPUTS
-   ============================================================ */
-
-form {
-  width: 100% !important;
-  max-width: 600px !important;
-  margin: 0 auto !important;
-}
-
-.form-group {
-  text-align: left !important;
-  margin-bottom: 1.5rem !important;
-}
-
-input, select, textarea {
-  width: 100% !important;
-  padding: 14px !important;
-  border-radius: 12px !important;
-  border: 1px solid #e2e8f0 !important;
-  font-family: 'Inter', sans-serif !important;
-}
-
-/* High-Contrast Focus for Power Users */
-input:focus, select:focus, textarea:focus {
-    border-color: #6366f1 !important;
-    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2) !important;
-    transform: translateY(-1px);
-    transition: all 0.2s ease;
-    outline: none !important;
-}
-
-/* Numeric keypad optimization */
-input[type="number"] { -moz-appearance: textfield; }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-
-/* ============================================================
-   BUTTONS
+   BUTTONS (RESTORED GRADIENT)
    ============================================================ */
 
 .btn, button {
-  width: 100% !important;
-  max-width: 400px !important;
-  padding: 0.875rem 1.75rem !important;
-  font-weight: 600 !important;
-  color: white !important;
   background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 1rem 2rem !important;
   border-radius: 12px !important;
   border: none !important;
-  cursor: pointer !important;
-  display: block !important;
-  margin: 0 auto !important;
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3) !important;
+  transition: transform 0.2s ease !important;
+  cursor: pointer;
 }
 
-.btn-secondary {
-  background: #f1f5f9 !important;
-  color: #334155 !important;
-}
+.btn:hover { transform: translateY(-2px) !important; }
 
 /* ============================================================
-   RESULT BOX
+   THE RESULT BOX GLOW (RESTORED)
    ============================================================ */
 
-#resultBox, .result-box {
-  display: none !important;
-  width: 100% !important;
-  max-width: 600px !important;
-  margin: 2rem auto !important;
-  padding: 2rem !important;
+#resultBox {
   background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
   border: 2px solid #6366f1 !important;
   border-radius: 24px !important;
-  text-align: center !important;
-  position: relative !important;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2) !important;
+  padding: 2rem !important;
+  margin-top: 2rem !important;
 }
 
 /* ============================================================
-   NAVBAR & FOOTER
+   NAVBAR GLASSMORPHISM
    ============================================================ */
 
 .navbar {
   background: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid #e2e8f0 !important;
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 1000 !important;
-}
-
-.navbar-container {
-  max-width: 1280px !important;
-  margin: 0 auto !important;
-  padding: 1rem 1.5rem !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-}
-
-.logo-mark {
-  width: 40px !important; height: 40px !important;
-  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
-  border-radius: 12px !important;
-  display: flex !important; justify-content: center !important; align-items: center !important;
-  color: white !important; font-weight: 900 !important;
-}
-
-.nav-links { display: flex !important; list-style: none !important; gap: 2rem !important; }
-
-/* ============================================================
-   MOBILE RESPONSIVENESS
-   ============================================================ */
-
-@media (max-width: 768px) {
-    .btn {
-        height: 54px !important;
-        font-size: 1.1rem !important;
-    }
-    .tool-card-wrapper { padding: 1rem 0.5rem !important; }
-    .tool-card-wrapper > div { padding: 1.5rem !important; }
-    .nav-links { display: none !important; } /* Simplified for mobile */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
