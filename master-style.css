@@ -1017,3 +1017,196 @@ textarea::placeholder {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   ALIGNMENT & CLUTTER FIX - ADD TO END OF master-style.css
+   Fixes: Left sidebar disclaimer, HSN button grid, tools page
+   ============================================================ */
+
+/* ============================================================
+   FIX 1: REMOVE/HIDE THE CLUTTERED LEFT SIDEBAR DISCLAIMER
+   ============================================================ */
+
+/* Hide the tool-disclaimer box that appears on left side */
+.tool-disclaimer {
+  display: none !important;
+}
+
+/* Alternative: If you want to keep it but make it less intrusive */
+.tool-disclaimer-minimal {
+  background: var(--indigo-50);
+  border-left: 3px solid var(--indigo-600);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  margin: var(--space-6) 0;
+  font-size: var(--text-sm);
+}
+
+.tool-disclaimer-minimal h4 {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-2);
+  color: var(--indigo-600);
+}
+
+.tool-disclaimer-minimal ul {
+  margin: 0;
+  padding-left: var(--space-5);
+}
+
+.tool-disclaimer-minimal li {
+  margin-bottom: var(--space-1);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   FIX 2: HSN FINDER - POPULAR SEARCHES BUTTON GRID
+   ============================================================ */
+
+/* Fix the Popular Searches section on HSN Finder */
+.popular-searches-grid,
+div[style*="display: grid"][style*="minmax(180px"] {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important; /* 4 columns on desktop */
+  gap: var(--space-3) !important;
+  margin-top: var(--space-4) !important;
+  justify-items: stretch !important;
+}
+
+/* Make sure buttons inside take full width */
+.popular-searches-grid button,
+.popular-searches-grid .btn {
+  width: 100% !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: var(--space-3) var(--space-4) !important;
+  margin: 0 !important;
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 640px) {
+  .popular-searches-grid,
+  div[style*="display: grid"][style*="minmax(180px"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Tablet: 3 columns */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .popular-searches-grid,
+  div[style*="display: grid"][style*="minmax(180px"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* ============================================================
+   FIX 3: CLEAN UP TOOLS INDEX PAGE HEADER
+   ============================================================ */
+
+/* Reduce spacing in tools section header */
+.tools-section-header {
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
+/* Make category headers less prominent */
+.section-label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--indigo-600);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.section-title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   FIX 4: GENERAL LAYOUT IMPROVEMENTS
+   ============================================================ */
+
+/* Ensure proper spacing for tool pages */
+.container-tool-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+/* Better spacing for cards */
+.card {
+  background: white;
+  border: 2px solid var(--ink-100);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Fix any inline styles that might cause alignment issues */
+div[style*="display: grid"] {
+  justify-items: stretch;
+}
+
+/* Ensure buttons don't have weird margins */
+button,
+.btn {
+  margin: 0;
+}
+
+/* ============================================================
+   FIX 5: REMOVE EXCESSIVE WHITESPACE
+   ============================================================ */
+
+/* Reduce padding in hero if too much */
+.hero {
+  padding: var(--space-16) var(--space-6) var(--space-12);
+}
+
+/* Tighter spacing for form groups */
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================================
+   FIX 6: ENSURE CONTENT CENTERING
+   ============================================================ */
+
+/* All main content should be centered */
+main,
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+/* Tool cards should fill their container */
+.tool-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Reduce hero padding on mobile */
+  .hero {
+    padding: var(--space-12) var(--space-4) var(--space-8);
+  }
+  
+  /* Stack tools in single column */
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Smaller section titles */
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+}
