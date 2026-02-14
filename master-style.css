@@ -868,3 +868,30 @@ td {
   margin: 3rem auto !important;
   max-width: 800px !important;
 }
+function addResultUtilities(textToCopy) {
+    const resultBox = document.querySelector('#resultBox');
+    if (!resultBox) return;
+
+    // Check if buttons already exist to avoid duplicates
+    if (document.getElementById('result-actions')) return;
+
+    const actionDiv = document.createElement('div');
+    actionDiv.id = 'result-actions';
+    actionDiv.style = "margin-top: 20px; display: flex; gap: 10px; justify-content: center;";
+
+    actionDiv.innerHTML = `
+        <button onclick="copyResult('${textToCopy}')" class="btn btn-secondary" style="width: auto; padding: 10px 20px;">📋 Copy</button>
+        <button onclick="shareWhatsApp('${textToCopy}')" class="btn" style="width: auto; padding: 10px 20px; background: #25D366 !important;">WhatsApp</button>
+    `;
+    resultBox.appendChild(actionDiv);
+}
+
+function copyResult(text) {
+    navigator.clipboard.writeText(text);
+    alert("Copied to clipboard! 🦞");
+}
+
+function shareWhatsApp(text) {
+    const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+}
