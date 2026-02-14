@@ -913,3 +913,13 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+@media (max-width: 768px) {
+    .btn {
+        height: 54px !important; /* Larger touch target */
+        font-size: 1.1rem !important;
+    }
+    
+    .tool-card-wrapper {
+        padding: 1rem 0.5rem !important;
+    }
+}
