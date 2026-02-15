@@ -197,6 +197,7 @@
         <p style="color: #78350f; margin-top: var(--space-3);"><strong>Maximum Late Fee (Turnover-Based):</strong></p>
         <ul style="color: #78350f; margin-left: var(--space-5); margin-top: var(--space-2);">
           <li>Nil returns: ₹500 (₹250 + ₹250)</li>
+          <li><strong>GSTR-4 (Composition):</strong> ₹2,000 fixed (regardless of turnover)</li>
           <li>Turnover &lt; ₹1.5 Cr: ₹2,000 (₹1,000 + ₹1,000)</li>
           <li>Turnover ₹1.5-5 Cr: ₹5,000 (₹2,500 + ₹2,500)</li>
           <li>Turnover &gt; ₹5 Cr: ₹10,000 (₹5,000 + ₹5,000)</li>
@@ -329,8 +330,12 @@ function calculatePenalty(event) {
     // Nil return - NEW RATIONALIZED CAP
     lateFeePerDay = 20; // ₹10 CGST + ₹10 SGST
     maxLateFee = 500; // ₹250 CGST + ₹250 SGST (REDUCED from ₹2,000!)
+  } else if (returnType === 'gstr4') {
+    // GSTR-4 (Composition) - SPECIAL CAP regardless of turnover
+    lateFeePerDay = 50; // ₹25 CGST + ₹25 SGST
+    maxLateFee = 2000; // Fixed ₹2,000 cap for composition dealers
   } else {
-    // Returns with tax liability
+    // Returns with tax liability (GSTR-1/3B/9/9C)
     lateFeePerDay = 50; // ₹25 CGST + ₹25 SGST
     
     // Turnover-based caps (RATIONALIZED)
@@ -441,7 +446,7 @@ function calculatePenalty(event) {
       <div class="info-box" style="background: #d1fae5; border-color: #10b981; margin: 0;">
         <div class="info-box-icon" style="color: #059669;">✅</div>
         <div class="info-box-content">
-          <p style="margin: 0; color: #065f46;"><strong>Rationalized Cap Applied!</strong> Your late fee is capped at ₹${maxLateFee.toLocaleString('en-IN')} based on ${turnoverLabel} turnover. This is ${maxLateFee === 2000 ? '80%' : maxLateFee === 5000 ? '50%' : '0%'} lower than the old ₹10,000 cap!</p>
+          <p style="margin: 0; color: #065f46;"><strong>${returnType === 'gstr4' ? 'Composition Scheme Cap Applied!' : 'Rationalized Cap Applied!'}</strong> ${returnType === 'gstr4' ? 'GSTR-4 has a fixed ₹2,000 cap regardless of turnover.' : `Your late fee is capped at ₹${maxLateFee.toLocaleString('en-IN')} based on ${turnoverLabel} turnover. This is ${maxLateFee === 2000 ? '80%' : maxLateFee === 5000 ? '50%' : '0%'} lower than the old ₹10,000 cap!`}</p>
         </div>
       </div>
       ` : ''}
