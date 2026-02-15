@@ -1,0 +1,479 @@
+/* ============================================================
+   TOOL HUB - BENTO GRID SYSTEM FOR CALCULATORS
+   Rigid, centered, card-based layouts
+   ============================================================ */
+
+/* ============================================================
+   TOOL PAGE WRAPPER
+   ============================================================ */
+
+.tool-page {
+  min-height: 100vh;
+  padding: var(--space-8) 0;
+}
+
+.tool-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ============================================================
+   TOOL HEADER
+   ============================================================ */
+
+.tool-header {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.tool-header h1 {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-3);
+  color: var(--slate-900);
+}
+
+.tool-header p {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tool-badge {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  background: var(--indigo-bg);
+  color: var(--indigo-primary);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-4);
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.breadcrumb a {
+  color: var(--indigo-primary);
+  transition: color var(--transition-base);
+}
+
+.breadcrumb a:hover {
+  color: var(--indigo-hover);
+}
+
+.breadcrumb .sep {
+  color: var(--slate-300);
+}
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--indigo-primary);
+  background: var(--indigo-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.back-button:hover {
+  background: var(--indigo-primary);
+  color: white;
+  border-color: var(--indigo-primary);
+}
+
+/* ============================================================
+   TOOL CARD - MAIN CALCULATOR
+   ============================================================ */
+
+.tool-card-main {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-8);
+}
+
+.tool-card-main h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+/* ============================================================
+   RESULT BOX - OUTPUT DISPLAY
+   ============================================================ */
+
+.result-box {
+  display: none;
+  background: linear-gradient(135deg, var(--indigo-bg) 0%, #dbeafe 100%);
+  border: 2px solid var(--indigo-primary);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  margin-top: var(--space-8);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-box.show {
+  display: block;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--indigo-primary), var(--green-success));
+}
+
+.result-box h3 {
+  font-size: var(--text-2xl);
+  color: var(--indigo-primary);
+  margin-bottom: var(--space-4);
+}
+
+.result-value {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  color: var(--slate-900);
+  font-family: var(--font-display);
+}
+
+.result-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+}
+
+/* Result Variants */
+.result-box.success {
+  background: linear-gradient(135deg, var(--green-bg) 0%, #d1fae5 100%);
+  border-color: var(--green-success);
+}
+
+.result-box.success h3 {
+  color: var(--green-success);
+}
+
+.result-box.warning {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #f59e0b;
+}
+
+.result-box.warning h3 {
+  color: #d97706;
+}
+
+/* ============================================================
+   BENTO GRID - TOOLS LISTING
+   ============================================================ */
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+@media (max-width: 1024px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   RELATED TOOLS SECTION
+   ============================================================ */
+
+.related-tools {
+  margin-top: var(--space-16);
+}
+
+.related-tools h3 {
+  font-size: var(--text-2xl);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.related-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-4);
+}
+
+.related-tool-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  transition: all var(--transition-base);
+}
+
+.related-tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--indigo-primary);
+}
+
+.related-tool-card h4 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+  color: var(--slate-900);
+}
+
+.related-tool-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.related-tool-card .arrow {
+  font-size: var(--text-sm);
+  color: var(--indigo-primary);
+  font-weight: var(--weight-semibold);
+}
+
+/* ============================================================
+   QUICK ACTION CHIPS (Mobile)
+   ============================================================ */
+
+.quick-actions {
+  display: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  margin-bottom: var(--space-6);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.quick-actions::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-action-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--slate-700);
+  transition: all var(--transition-base);
+}
+
+.quick-action-chip:hover,
+.quick-action-chip.active {
+  background: var(--indigo-primary);
+  color: white;
+  border-color: var(--indigo-primary);
+}
+
+/* ============================================================
+   STICKY BOTTOM ACTION BAR (Mobile)
+   ============================================================ */
+
+.mobile-action-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-4);
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 900;
+}
+
+.mobile-action-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mobile-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  background: none;
+  border: none;
+  color: var(--slate-600);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.mobile-action-btn .icon {
+  font-size: var(--text-2xl);
+}
+
+.mobile-action-btn:hover,
+.mobile-action-btn.active {
+  color: var(--indigo-primary);
+}
+
+/* ============================================================
+   TABLE STYLING (For Results)
+   ============================================================ */
+
+.result-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: var(--space-6) 0;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.result-table thead {
+  background: var(--slate-100);
+}
+
+.result-table th {
+  padding: var(--space-4);
+  text-align: left;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--slate-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.result-table td {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-border-light);
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
+.result-table tr:hover td {
+  background: var(--slate-50);
+}
+
+/* ============================================================
+   DISCLAIMER BOX
+   ============================================================ */
+
+.tool-disclaimer {
+  background: #fff7ed;
+  border: 2px solid #fed7aa;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin: var(--space-8) 0;
+}
+
+.tool-disclaimer h4 {
+  color: #c2410c;
+  margin-bottom: var(--space-3);
+  font-size: var(--text-lg);
+}
+
+.tool-disclaimer ul {
+  list-style: disc;
+  padding-left: var(--space-6);
+  color: #7c2d12;
+}
+
+.tool-disclaimer ul li {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+/* ============================================================
+   MOBILE OPTIMIZATIONS
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .tool-container {
+    padding: 0 var(--space-4);
+  }
+  
+  .tool-card-main {
+    padding: var(--space-6);
+  }
+  
+  .result-box {
+    padding: var(--space-6);
+  }
+  
+  .quick-actions {
+    display: flex;
+  }
+  
+  .mobile-action-bar {
+    display: block;
+  }
+  
+  /* Add bottom padding to prevent content from hiding behind action bar */
+  .tool-page {
+    padding-bottom: 80px;
+  }
+  
+  .result-table {
+    font-size: var(--text-sm);
+  }
+  
+  .result-table th,
+  .result-table td {
+    padding: var(--space-3);
+  }
+}
