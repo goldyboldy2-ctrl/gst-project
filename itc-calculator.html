@@ -191,6 +191,22 @@
             💡 If you supply exempt goods/services, enter percentage of total turnover. Leave 0 if all supplies are taxable.
           </small>
         </div>
+
+        <!-- RULE 37 WARNING -->
+        <div style="background: #fff7ed; border: 2px solid #fed7aa; border-radius: var(--radius-xl); padding: var(--space-5); margin: var(--space-6) 0;">
+          <div style="display: flex; align-items: start; gap: var(--space-3);">
+            <input 
+              type="checkbox" 
+              id="rule37Check" 
+              style="width: 24px; height: 24px; min-height: 24px; margin-top: 2px; cursor: pointer;"
+            />
+            <label for="rule37Check" style="cursor: pointer; color: #92400e; line-height: 1.6; font-size: var(--text-sm);">
+              <strong style="color: #78350f;">⚠️ Rule 37 Confirmation (180-Day Rule)</strong><br>
+              I confirm that I have <strong>paid all suppliers within 180 days</strong> from the invoice date. If payment is not made within 180 days, ITC must be reversed with 18% interest.
+              <button type="button" class="help-icon" onclick="showHelp('rule37')" style="margin-left: var(--space-2);">ℹ️</button>
+            </label>
+          </div>
+        </div>
         
         <!-- Calculate Button -->
         <button type="submit" class="btn" style="width: 100%; max-width: 100%;">
@@ -228,7 +244,8 @@
           <li>Goods/services for personal consumption</li>
           <li>Works contract for construction of immovable property (except plant & machinery)</li>
         </ul>
-        <p style="color: #78350f; margin: var(--space-3) 0 0;"><strong>Note:</strong> There are specific exceptions. Always verify eligibility with your CA based on your actual use case.</p>
+        <p style="color: #78350f; margin: var(--space-3) 0;"><strong>Rule 37 (180-Day Rule):</strong> If payment to supplier is not made within 180 days from invoice date, ITC must be reversed with 18% interest. This is a common audit trigger!</p>
+        <p style="color: #78350f; margin: var(--space-2) 0 0;"><strong>Note:</strong> There are specific exceptions. Always verify eligibility with your CA based on your actual use case.</p>
       </div>
     </div>
     
@@ -355,6 +372,10 @@ const helpContent = {
   exempt: {
     title: '📊 Exempt Supply Proportion',
     content: 'Under Rule 42 & 43, if you supply BOTH taxable and exempt goods/services:<br><br><strong>Eligible ITC = Total ITC × (Taxable Turnover ÷ Total Turnover)</strong><br><br>Example: If 20% of your supplies are exempt, enter "20" here. The calculator will reduce your eligible ITC proportionately.<br><br>If ALL your supplies are taxable, leave this as 0.'
+  },
+  rule37: {
+    title: '⚠️ Rule 37 - 180 Day Payment Rule',
+    content: '<strong>Critical Compliance Requirement:</strong><br><br>If you do NOT pay your supplier within <strong>180 days</strong> from the invoice date, you MUST:<br><br>1. <strong>Reverse the ITC</strong> in the month following 180 days<br>2. Pay <strong>18% interest</strong> on the reversed amount<br><br><strong>Why this matters:</strong> Even if the invoice is in your GSTR-2B and you claimed ITC, if payment is delayed beyond 180 days, the ITC becomes invalid.<br><br><strong>How to avoid:</strong><br>• Maintain payment tracker with invoice dates<br>• Pay suppliers within 150 days (buffer)<br>• Review aged payables monthly<br><br>This is one of the most common ITC reversal triggers in audits!'
   }
 };
 
@@ -478,7 +499,8 @@ function calculateITC(event) {
       <div class="info-box blue" style="margin: 0;">
         <div class="info-box-icon">✅</div>
         <div class="info-box-content">
-          <p style="margin: 0;"><strong>Important:</strong> Ensure all supplier invoices are reflected in GSTR-2B and suppliers have filed their returns. Reversal under Rule 37/42/43 may be required in certain cases.</p>
+          <p style="margin: 0 0 var(--space-3);"><strong>GSTR-2B Compliance (Rule 36(4)):</strong><br>Ensure ALL supplier invoices are reflected in your GSTR-2B before claiming ITC. ITC can only be claimed on invoices where the supplier has filed their return.</p>
+          <p style="margin: 0;"><strong>Rule 37 Reminder (180-Day Rule):</strong><br>If you haven't paid any supplier within 180 days from invoice date, you must reverse that ITC with 18% interest. Track payment dates carefully!</p>
         </div>
       </div>
       
