@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ITC Calculator — Input Tax Credit Calculator | My GST India</title>
-  <meta name="description" content="Free Input Tax Credit (ITC) calculator. Calculate your net GST liability or refund. Know how much GST credit you can claim." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITC Calculator - Input Tax Credit Calculator | GST Compliance Pro</title>
+  <meta name="description" content="Calculate GST Input Tax Credit (ITC) with blocked credits under Section 17(5). Check eligibility, handle Rule 42/43 proportions. Free ITC calculator.">
+  
+  <!-- Optimized Font Loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Architecture -->
   <link rel="stylesheet" href="master-style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tool-hub.css">
+  
+  <!-- OpenGraph -->
+  <meta property="og:title" content="ITC Calculator - Free Tool">
+  <meta property="og:description" content="Calculate Input Tax Credit with blocked credits and exempt supply proportion.">
+  <meta property="og:type" content="website">
 </head>
 <body>
-    <!-- NAVBAR -->
-<!-- ENHANCED NAVBAR WITH DROPDOWN -->
+
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-container">
     <a href="index.html" class="nav-logo">
       <div class="logo-mark">G</div>
-      <span class="logo-text">GST <em>Compliance Pro</em></span>
+      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
     </a>
     
-    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
       <span></span>
       <span></span>
       <span></span>
@@ -26,387 +38,502 @@
     
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="gst-calculator.html">GST Calc</a></li>
-      <li><a href="itc-calculator.html">ITC Calc</a></li>
-      <li><a href="hsn-finder.html">HSN Finder</a></li>
-      <li><a href="registration-checker.html" class="btn btn-primary" style="color: white !important; padding: 0.5rem 1rem !important; max-width: 200px;">Check Registration</a></li>
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- LEGAL DISCLAIMER BANNER -->
+<!-- LEGAL DISCLAIMER -->
 <div class="legal-disclaimer-banner">
   <div class="disclaimer-container">
     <div class="disclaimer-icon">⚖️</div>
     <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> 
-      This website provides <strong>general information only</strong> and is 
-      <strong>not professional tax or legal advice</strong>. GST rules change frequently. 
-      Always verify with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> 
-      and <strong>consult a qualified Chartered Accountant</strong> before making any decisions. 
-      We accept no liability for errors, omissions, or consequences of using this information.
-      <a href="disclaimer.html" class="learn-more">Read Full Disclaimer →</a>
+      <strong>Legal Disclaimer:</strong> ITC calculations are estimates based on information provided. Actual eligibility depends on invoice compliance, supplier status, and specific transactions. Always verify with <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST portal</a> and consult a qualified CA.
     </div>
   </div>
 </div>
 
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge anim-up">💳 Claim Your Credit</div>
-  <h1 class="anim-up delay-1">ITC <em>Calculator</em></h1>
-  <p class="anim-up delay-2">Calculate your Input Tax Credit and net GST liability. Know how much you owe or can claim as refund.</p>
-  <div class="hero-meta anim-up delay-3">Free Tool • Instant Results</div>
-</section>
-
-<div class="container-sm" style="padding: 48px 40px;">
-    <!-- BREADCRUMB NAVIGATION -->
-  <div class="breadcrumb">
-    <a href="index.html">Home</a><span class="sep">›</span>
-    <a href="index.html#tools">Tools</a><span class="sep">›</span>
-    <span>ITC Calculator</span>
-  </div>
-
-  <!-- BACK BUTTON -->
-  <a href="index.html#tools" class="back-button">
-    ← Back to All Tools
-  </a>
-
-
-
-  <div class="info-box blue">
-    <div class="info-box-icon">💡</div>
-    <div class="info-box-content">
-      <h4>What is Input Tax Credit (ITC)?</h4>
-      <p>ITC is the GST you paid on purchases (inputs). You can deduct this from the GST you collected on sales (output). <strong>Pay only the difference</strong> to the government. If input > output, you can claim a refund!</p>
-    </div>
-  </div>
-
-  <!-- CALCULATOR -->
-  <div class="card" style="margin-top: 28px;">
-    <div class="card-body">
-      <h2 style="margin-top:0;">Calculate Your Net GST Liability</h2>
-      
-      <!-- OUTPUT TAX (Sales) -->
-      <div style="background:rgba(239,68,68,0.05); border-radius:8px; padding:20px; margin-bottom:20px;">
-        <h3 style="margin:0 0 16px; color:var(--red); font-size:1.1rem;">📤 Output Tax (Sales)</h3>
-        
-        <div class="form-group">
-          <label>Total Sales Amount (₹)</label>
-          <input type="number" id="salesAmount" placeholder="Enter total sales" min="0" step="0.01" value="500000" />
-        </div>
-
-        <div class="form-group">
-          <label>GST Collected on Sales (%)</label>
-          <select id="salesGST">
-            <option value="5">5%</option>
-            <option value="12">12%</option>
-            <option value="18" selected>18%</option>
-            <option value="28">28%</option>
-          </select>
-        </div>
-
-        <div id="outputTaxCalc" style="margin-top:12px; padding:12px; background:white; border-radius:6px;">
-          <div style="display:flex; justify-content:space-between;">
-            <span style="font-weight:600;">Output Tax Collected:</span>
-            <span id="outputTax" style="font-weight:700; color:var(--red);">₹0.00</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- INPUT TAX (Purchases) -->
-      <div style="background:rgba(34,197,94,0.05); border-radius:8px; padding:20px; margin-bottom:20px;">
-        <h3 style="margin:0 0 16px; color:var(--green); font-size:1.1rem;">📥 Input Tax (Purchases)</h3>
-        
-        <div class="form-group">
-          <label>Total Purchase Amount (₹)</label>
-          <input type="number" id="purchaseAmount" placeholder="Enter total purchases" min="0" step="0.01" value="300000" />
-        </div>
-
-        <div class="form-group">
-          <label>GST Paid on Purchases (%)</label>
-          <select id="purchaseGST">
-            <option value="5">5%</option>
-            <option value="12">12%</option>
-            <option value="18" selected>18%</option>
-            <option value="28">28%</option>
-          </select>
-        </div>
-
-        <div id="inputTaxCalc" style="margin-top:12px; padding:12px; background:white; border-radius:6px;">
-          <div style="display:flex; justify-content:space-between;">
-            <span style="font-weight:600;">Input Tax Credit Available:</span>
-            <span id="inputTax" style="font-weight:700; color:var(--green);">₹0.00</span>
-          </div>
-        </div>
-      </div>
-
-      
-<!-- TOOL DISCLAIMER -->
-<div class="tool-disclaimer">
-  <div class="disclaimer-box warning">
-    <h4>⚠️ Important Legal Notice</h4>
-    <ul>
-      <li>This tool provides <strong>estimates only</strong> based on information you provide.</li>
-      <li>GST rates, rules, and penalties change frequently. Results may not reflect latest updates.</li>
-      <li>We are <strong>NOT tax advisors or Chartered Accountants</strong>.</li>
-      <li><strong>Always verify</strong> with the 
-          <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> 
-          or consult a qualified CA before filing returns or making payments.</li>
-      <li>We are not liable for any financial loss, penalties, or legal consequences arising from 
-          use of this tool.</li>
-    </ul>
-    <p class="disclaimer-footer">
-      <strong>By using this tool, you acknowledge this disclaimer.</strong>
-    </p>
-  </div>
-</div>
-
-<button class="btn btn-primary" onclick="calculateITC()" style="width:100%; justify-content:center;">
-        Calculate Net GST Liability
-      </button>
-    </div>
-  </div>
-
-  <!-- RESULT -->
-  <div id="resultBox" style="display:none; margin-top:28px;"></div>
-
-  <!-- INFO SECTIONS -->
-  <div style="margin-top:48px;">
-    <h2 class="section-title">ITC <em>Rules</em></h2>
+<!-- TOOL PAGE -->
+<div class="tool-page">
+  <div class="tool-container">
     
-    <div class="step-box">
-      <div class="step-num">1</div>
-      <div class="step-content">
-        <h4>Eligible for ITC</h4>
-        <p><strong>You CAN claim ITC on:</strong> Raw materials, goods for resale, machinery/equipment, office supplies, professional services, transportation (if documented), inputs used in business.</p>
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="index.html#tools">Tools</a>
+      <span class="sep">›</span>
+      <span>ITC Calculator</span>
+    </div>
+    
+    <!-- BACK BUTTON -->
+    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
+    
+    <!-- TOOL HEADER -->
+    <div class="tool-header">
+      <div class="tool-badge">💰 Calculator</div>
+      <h1>ITC Calculator</h1>
+      <p>Calculate eligible Input Tax Credit (ITC) after blocked credits and exempt supply proportion. Know your exact claimable ITC.</p>
+    </div>
+    
+    <!-- INFO BOX -->
+    <div class="info-box blue">
+      <div class="info-box-icon">💡</div>
+      <div class="info-box-content">
+        <h4>How to Use</h4>
+        <p><strong>Step 1:</strong> Enter total ITC from GSTR-2B<br>
+        <strong>Step 2:</strong> Add blocked credits (Section 17(5))<br>
+        <strong>Step 3:</strong> Enter exempt supply percentage if applicable<br>
+        <strong>Step 4:</strong> Get net claimable ITC instantly</p>
       </div>
     </div>
+    
+    <!-- MAIN CALCULATOR CARD -->
+    <div class="tool-card-main">
+      <h2>💰 Calculate ITC</h2>
+      
+      <form id="itcCalculator" onsubmit="calculateITC(event)">
+        
+        <!-- Total ITC -->
+        <div class="form-group">
+          <label for="totalITC">Total ITC as per GSTR-2B (₹)</label>
+          <input 
+            type="number" 
+            id="totalITC" 
+            placeholder="Enter total ITC (e.g., 100000)"
+            required
+            min="0"
+            step="0.01"
+          />
+          <small style="display: block; margin-top: var(--space-2); color: var(--color-text-muted); font-size: var(--text-sm);">
+            💡 Total input tax credit as shown in your GSTR-2B for the period
+          </small>
+        </div>
 
-    <div class="step-box">
-      <div class="step-num">2</div>
-      <div class="step-content">
-        <h4>Blocked Credits (Cannot Claim)</h4>
-        <p><strong>You CANNOT claim ITC on:</strong> Motor vehicles (except for specific business use), Food/beverages, Health services, Rent-a-cab/travel, Club memberships, Personal expenses, Works contract services (for immovable property).</p>
+        <!-- BLOCKED CREDITS SECTION -->
+        <div style="background: var(--slate-50); padding: var(--space-6); border-radius: var(--radius-xl); margin: var(--space-6) 0;">
+          <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+            ❌ Blocked Credits (Section 17(5))
+          </h3>
+          
+          <!-- Motor Vehicles -->
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: var(--space-2);">
+              Motor Vehicles (₹)
+              <button type="button" class="help-icon" onclick="showHelp('motor')">ℹ️</button>
+            </label>
+            <input type="number" id="blockedMotor" placeholder="0" min="0" step="0.01" value="0" />
+          </div>
+
+          <!-- Food & Beverages -->
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: var(--space-2);">
+              Food & Beverages (₹)
+              <button type="button" class="help-icon" onclick="showHelp('food')">ℹ️</button>
+            </label>
+            <input type="number" id="blockedFood" placeholder="0" min="0" step="0.01" value="0" />
+          </div>
+
+          <!-- Outdoor Catering -->
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: var(--space-2);">
+              Outdoor Catering (₹)
+              <button type="button" class="help-icon" onclick="showHelp('catering')">ℹ️</button>
+            </label>
+            <input type="number" id="blockedCatering" placeholder="0" min="0" step="0.01" value="0" />
+          </div>
+
+          <!-- Membership/Health/Fitness -->
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: var(--space-2);">
+              Membership, Health & Fitness (₹)
+              <button type="button" class="help-icon" onclick="showHelp('health')">ℹ️</button>
+            </label>
+            <input type="number" id="blockedHealth" placeholder="0" min="0" step="0.01" value="0" />
+          </div>
+
+          <!-- Life Insurance/Pension -->
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: var(--space-2);">
+              Life Insurance & Pension (₹)
+              <button type="button" class="help-icon" onclick="showHelp('insurance')">ℹ️</button>
+            </label>
+            <input type="number" id="blockedInsurance" placeholder="0" min="0" step="0.01" value="0" />
+          </div>
+
+          <!-- Personal Use -->
+          <div class="form-group">
+            <label style="display: flex; align-items: center; gap: var(--space-2);">
+              Personal Use Goods/Services (₹)
+              <button type="button" class="help-icon" onclick="showHelp('personal')">ℹ️</button>
+            </label>
+            <input type="number" id="blockedPersonal" placeholder="0" min="0" step="0.01" value="0" />
+          </div>
+        </div>
+
+        <!-- EXEMPT SUPPLY PROPORTION -->
+        <div class="form-group">
+          <label style="display: flex; align-items: center; gap: var(--space-2);">
+            Exempt Supply Percentage (Rule 42/43)
+            <button type="button" class="help-icon" onclick="showHelp('exempt')">ℹ️</button>
+          </label>
+          <input 
+            type="number" 
+            id="exemptPercent" 
+            placeholder="0"
+            min="0"
+            max="100"
+            step="0.01"
+            value="0"
+          />
+          <small style="display: block; margin-top: var(--space-2); color: var(--color-text-muted); font-size: var(--text-sm);">
+            💡 If you supply exempt goods/services, enter percentage of total turnover. Leave 0 if all supplies are taxable.
+          </small>
+        </div>
+        
+        <!-- Calculate Button -->
+        <button type="submit" class="btn" style="width: 100%; max-width: 100%;">
+          Calculate ITC
+        </button>
+        
+      </form>
+    </div>
+    
+    <!-- RESULT BOX -->
+    <div id="resultBox" class="result-box">
+      <h3>ITC Calculation Result</h3>
+      <div id="resultContent"></div>
+    </div>
+    
+    <!-- HELP MODAL -->
+    <div id="helpModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center; padding: var(--space-4);">
+      <div style="background: white; border-radius: var(--radius-2xl); padding: var(--space-8); max-width: 500px; width: 100%; position: relative;">
+        <button onclick="closeHelp()" style="position: absolute; top: var(--space-4); right: var(--space-4); background: none; border: none; font-size: var(--text-2xl); cursor: pointer; color: var(--slate-600);">×</button>
+        <div id="helpContent"></div>
       </div>
     </div>
-
-    <div class="step-box">
-      <div class="step-num">3</div>
-      <div class="step-content">
-        <h4>Conditions to Claim ITC</h4>
-        <p>✅ You must have a valid tax invoice<br>
-        ✅ Goods/services must be received<br>
-        ✅ Supplier must have filed their GSTR-1<br>
-        ✅ You must have paid your supplier (within 180 days)<br>
-        ✅ Your GSTR-3B must be filed</p>
+    
+    <!-- ITC RULES INFO -->
+    <div class="info-box" style="margin-top: var(--space-8); background: #fff7ed; border-color: #fed7aa;">
+      <div class="info-box-icon" style="color: #f59e0b;">📋</div>
+      <div class="info-box-content">
+        <h4 style="color: #92400e;">Section 17(5) - Blocked ITC</h4>
+        <p style="color: #78350f;"><strong>ITC is NOT available on:</strong></p>
+        <ul style="color: #78350f; margin-left: var(--space-5); margin-top: var(--space-2);">
+          <li>Motor vehicles (except for specific business use)</li>
+          <li>Food, beverages, and outdoor catering</li>
+          <li>Membership of clubs, health & fitness centers</li>
+          <li>Life insurance and pension fund management</li>
+          <li>Goods/services for personal consumption</li>
+          <li>Works contract for construction of immovable property (except plant & machinery)</li>
+        </ul>
+        <p style="color: #78350f; margin: var(--space-3) 0 0;"><strong>Note:</strong> There are specific exceptions. Always verify eligibility with your CA based on your actual use case.</p>
       </div>
     </div>
-  </div>
-
-  <div class="info-box orange" style="margin-top:32px;">
-    <div class="info-box-icon">⚠️</div>
-    <div class="info-box-content">
-      <h4>Time Limit to Claim ITC</h4>
-      <p><strong>Critical Deadline:</strong> You can claim ITC up to the <strong>earlier of</strong>:<br>
-      1. Due date of filing GSTR-3B for September of next financial year, OR<br>
-      2. Date of filing annual return (GSTR-9)<br>
-      <br>
-      <strong>Example:</strong> For FY 2025-26 purchases, claim ITC by September 2027 (when filing GSTR-3B for Aug 2027).</p>
+    
+    <!-- RELATED TOOLS -->
+    <div class="related-tools">
+      <h3>Related Tools</h3>
+      <div class="related-tools-grid">
+        <a href="gst-calculator.html" class="related-tool-card">
+          <h4>🧮 GST Calculator</h4>
+          <p>Calculate GST on purchases</p>
+          <span class="arrow">Calculate →</span>
+        </a>
+        <a href="penalty-calculator.html" class="related-tool-card">
+          <h4>💸 Penalty Calculator</h4>
+          <p>Calculate late fees</p>
+          <span class="arrow">Calculate →</span>
+        </a>
+        <a href="hsn-finder.html" class="related-tool-card">
+          <h4>🔍 HSN Finder</h4>
+          <p>Find HSN codes with rates</p>
+          <span class="arrow">Search →</span>
+        </a>
+      </div>
     </div>
+    
   </div>
-
-  <!-- CTA -->
-  <div class="cta-section">
-    <h2>Check Your Overall <em>Compliance</em></h2>
-    <p>Use our Risk Auditor to identify all GST compliance issues in 60 seconds.</p>
-    <a href="index.html#auditor" class="btn btn-primary">🛡️ Run Free Audit</a>
-  </div>
-
-  <!-- RELATED TOOLS SECTION -->
-  <div class="related-tools">
-    <h3>You Might Also Need</h3>
-    <div class="related-tools-grid">
-      <a href="gst-calculator.html" class="related-tool-card">
-        <h4>GST Calculator</h4>
-        <p>Add or remove GST from amounts.</p>
-        <span class="arrow">Try now →</span>
-      </a>
-      <a href="penalty-calculator.html" class="related-tool-card">
-        <h4>Penalty Calculator</h4>
-        <p>Calculate late filing penalties.</p>
-        <span class="arrow">Try now →</span>
-      </a>
-      <a href="gstin-verification.html" class="related-tool-card">
-        <h4>GSTIN Verification</h4>
-        <p>Verify vendor GST numbers.</p>
-        <span class="arrow">Try now →</span>
-      </a>
-    </div>
-  </div>
-
 </div>
 
-<!-- FOOTER --><footer class="footer">
+<!-- FOOTER -->
+<footer class="footer">
   <div class="footer-grid">
     <div>
       <h4>GST Compliance Pro</h4>
-      <p>India's free GST toolkit built for MSMEs and small business owners.</p>
+      <p>India's free GST toolkit for MSMEs.</p>
     </div>
     <div>
       <h4>Tools</h4>
       <ul>
-        <li><a href="index.html">Risk Auditor</a></li>
-        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
-        <li><a href="itc-calculator.html">ITC Calculator</a></li>
         <li><a href="gst-calculator.html">GST Calculator</a></li>
+        <li><a href="hsn-finder.html">HSN Finder</a></li>
+        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
       </ul>
     </div>
     <div>
-      <h4>Learn</h4>
+      <h4>Resources</h4>
       <ul>
-        <li><a href="blog/what-is-gst.html">What is GST?</a></li>
-        <li><a href="blog/how-to-get-gst-number.html">How to Register</a></li>
-        <li><a href="blog/common-gst-mistakes.html">Common Mistakes</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 GST Compliance Pro. All rights reserved.</span>
-    <span>Disclaimer: For informational purposes only. Consult a CA for professional advice.</span>
+    © 2026 GST Compliance Pro
   </div>
 </footer>
 
-<script>
-function updateLiveTotals() {
-  const salesAmount = parseFloat(document.getElementById('salesAmount').value) || 0;
-  const salesGST = parseFloat(document.getElementById('salesGST').value);
-  const purchaseAmount = parseFloat(document.getElementById('purchaseAmount').value) || 0;
-  const purchaseGST = parseFloat(document.getElementById('purchaseGST').value);
+<!-- MOBILE ACTION BAR -->
+<div class="mobile-action-bar">
+  <div class="mobile-action-buttons">
+    <button class="mobile-action-btn" onclick="window.location.href='index.html#tools'">
+      <span class="icon">🧮</span>
+      <span>Tools</span>
+    </button>
+    <button class="mobile-action-btn active">
+      <span class="icon">🔍</span>
+      <span>Calculate</span>
+    </button>
+    <button class="mobile-action-btn" onclick="window.location.href='return-deadlines.html'">
+      <span class="icon">📅</span>
+      <span>Deadlines</span>
+    </button>
+  </div>
+</div>
 
-  const outputTax = (salesAmount * salesGST) / 100;
-  const inputTax = (purchaseAmount * purchaseGST) / 100;
-
-  document.getElementById('outputTax').textContent = '₹' + outputTax.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
-  document.getElementById('inputTax').textContent = '₹' + inputTax.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+<style>
+.help-icon {
+  background: var(--indigo-bg);
+  color: var(--indigo-primary);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
 }
 
-function calculateITC() {
-  const salesAmount = parseFloat(document.getElementById('salesAmount').value) || 0;
-  const salesGST = parseFloat(document.getElementById('salesGST').value);
-  const purchaseAmount = parseFloat(document.getElementById('purchaseAmount').value) || 0;
-  const purchaseGST = parseFloat(document.getElementById('purchaseGST').value);
+.help-icon:hover {
+  background: var(--indigo-primary);
+  color: white;
+  transform: scale(1.1);
+}
+</style>
 
-  if (salesAmount === 0 && purchaseAmount === 0) {
-    alert('Please enter sales and purchase amounts');
+<!-- CALCULATOR LOGIC -->
+<script>
+// Help content database
+const helpContent = {
+  motor: {
+    title: '🚗 Motor Vehicles',
+    content: 'ITC on motor vehicles is blocked under Section 17(5)(a) EXCEPT when:<br><br>• Used for further supply of motor vehicles<br>• Used for passenger transportation<br>• Used for imparting training on driving/flying/navigating<br><br>If your vehicle qualifies for these exceptions, do NOT enter it as blocked credit.'
+  },
+  food: {
+    title: '🍽️ Food & Beverages',
+    content: 'ITC on food and beverages is blocked under Section 17(5)(b) EXCEPT when:<br><br>• Used for further supply of same category (restaurants, caterers)<br>• Provided by employer to employees at work premises as statutory obligation<br><br>Personal consumption food/beverages are always blocked.'
+  },
+  catering: {
+    title: '🎪 Outdoor Catering',
+    content: 'ITC on outdoor catering services is blocked under Section 17(5)(b) EXCEPT when:<br><br>• Used for further supply of same service (if you are a caterer)<br>• Provided to employees as statutory obligation<br><br>Corporate events, client entertainment catering is blocked.'
+  },
+  health: {
+    title: '💪 Membership, Health & Fitness',
+    content: 'ITC is blocked on:<br><br>• Club memberships<br>• Health & fitness center fees<br>• Beauty treatment services<br><br>This applies under Section 17(5)(b). There are NO common exceptions to this block. Always blocked for personal/employee use.'
+  },
+  insurance: {
+    title: '🛡️ Life Insurance & Pension',
+    content: 'ITC is blocked on:<br><br>• Life insurance premiums<br>• Pension fund management fees<br><br>Covered under Section 17(5)(b). Group insurance for employees is also blocked. However, health insurance may be eligible in specific cases - consult your CA.'
+  },
+  personal: {
+    title: '👤 Personal Use',
+    content: 'ITC is blocked on goods or services used for personal consumption by any person.<br><br>Examples:<br>• Personal mobile bills<br>• Personal vehicle expenses<br>• Personal travel/entertainment<br>• Gifts to employees (personal in nature)<br><br>Always blocked under Section 17(5)(h).'
+  },
+  exempt: {
+    title: '📊 Exempt Supply Proportion',
+    content: 'Under Rule 42 & 43, if you supply BOTH taxable and exempt goods/services:<br><br><strong>Eligible ITC = Total ITC × (Taxable Turnover ÷ Total Turnover)</strong><br><br>Example: If 20% of your supplies are exempt, enter "20" here. The calculator will reduce your eligible ITC proportionately.<br><br>If ALL your supplies are taxable, leave this as 0.'
+  }
+};
+
+function showHelp(category) {
+  const modal = document.getElementById('helpModal');
+  const content = document.getElementById('helpContent');
+  const help = helpContent[category];
+  
+  content.innerHTML = `
+    <h3 style="margin-bottom: var(--space-4); color: var(--indigo-primary);">${help.title}</h3>
+    <div style="line-height: 1.8; color: var(--slate-700);">${help.content}</div>
+  `;
+  
+  modal.style.display = 'flex';
+}
+
+function closeHelp() {
+  document.getElementById('helpModal').style.display = 'none';
+}
+
+// Close modal on outside click
+document.getElementById('helpModal')?.addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeHelp();
+  }
+});
+
+function calculateITC(event) {
+  event.preventDefault();
+  
+  const totalITC = parseFloat(document.getElementById('totalITC').value) || 0;
+  const blockedMotor = parseFloat(document.getElementById('blockedMotor').value) || 0;
+  const blockedFood = parseFloat(document.getElementById('blockedFood').value) || 0;
+  const blockedCatering = parseFloat(document.getElementById('blockedCatering').value) || 0;
+  const blockedHealth = parseFloat(document.getElementById('blockedHealth').value) || 0;
+  const blockedInsurance = parseFloat(document.getElementById('blockedInsurance').value) || 0;
+  const blockedPersonal = parseFloat(document.getElementById('blockedPersonal').value) || 0;
+  const exemptPercent = parseFloat(document.getElementById('exemptPercent').value) || 0;
+  
+  if (totalITC <= 0) {
+    alert('Please enter a valid Total ITC amount');
     return;
   }
-
-  const outputTax = (salesAmount * salesGST) / 100;
-  const inputTax = (purchaseAmount * purchaseGST) / 100;
-  const netLiability = outputTax - inputTax;
-
+  
+  // Calculate total blocked credits
+  const totalBlocked = blockedMotor + blockedFood + blockedCatering + blockedHealth + blockedInsurance + blockedPersonal;
+  
+  // Calculate ITC after blocked credits
+  const itcAfterBlocked = totalITC - totalBlocked;
+  
+  // Apply exempt supply proportion (Rule 42/43)
+  const exemptReduction = (itcAfterBlocked * exemptPercent) / 100;
+  const eligibleITC = itcAfterBlocked - exemptReduction;
+  
+  // Store for copy function
+  window.lastITCCalc = {
+    totalITC: totalITC,
+    totalBlocked: totalBlocked,
+    itcAfterBlocked: itcAfterBlocked,
+    exemptPercent: exemptPercent,
+    exemptReduction: exemptReduction,
+    eligibleITC: eligibleITC,
+    breakdown: {
+      motor: blockedMotor,
+      food: blockedFood,
+      catering: blockedCatering,
+      health: blockedHealth,
+      insurance: blockedInsurance,
+      personal: blockedPersonal
+    }
+  };
+  
+  // Display results using main.js utilities
   const resultBox = document.getElementById('resultBox');
-
-  if (netLiability > 0) {
-    // Pay to government
-    resultBox.className = 'result-box warn';
-    resultBox.innerHTML = `
-      <div class="result-icon">💰</div>
-      <h3>Net GST Payable to Government</h3>
-      <div style="background:white; border-radius:8px; padding:24px; margin-top:20px;">
-        <table style="width:100%; border-collapse:collapse;">
-          <tr style="border-bottom:2px solid var(--border);">
-            <td style="padding:14px 0; font-weight:600;">Total Sales:</td>
-            <td style="padding:14px 0; text-align:right;">₹${salesAmount.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0;">Output Tax Collected @ ${salesGST}%:</td>
-            <td style="padding:12px 0; text-align:right; color:var(--red);">₹${outputTax.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="border-bottom:2px solid var(--border);">
-            <td style="padding:14px 0; font-weight:600;">Total Purchases:</td>
-            <td style="padding:14px 0; text-align:right;">₹${purchaseAmount.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0;">Input Tax Credit (ITC) @ ${purchaseGST}%:</td>
-            <td style="padding:12px 0; text-align:right; color:var(--green);">- ₹${inputTax.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="background:rgba(251,146,60,0.1);">
-            <td style="padding:16px 0; font-weight:700; font-size:1.1rem;">Net GST Liability:</td>
-            <td style="padding:16px 0; text-align:right; font-weight:700; font-size:1.4rem; color:var(--orange);">₹${netLiability.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-        </table>
-      </div>
-      <p style="margin-top:16px; font-size:0.9rem; color:var(--text-sm);">
-        You need to pay ₹${netLiability.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})} to the government when filing GSTR-3B. This is Output Tax minus Input Tax Credit.
-      </p>
-    `;
-  } else if (netLiability < 0) {
-    // Refund available
-    const refund = Math.abs(netLiability);
-    resultBox.className = 'result-box safe';
-    resultBox.innerHTML = `
-      <div class="result-icon">✅</div>
-      <h3>ITC Refund Available</h3>
-      <div style="background:white; border-radius:8px; padding:24px; margin-top:20px;">
-        <table style="width:100%; border-collapse:collapse;">
-          <tr style="border-bottom:2px solid var(--border);">
-            <td style="padding:14px 0; font-weight:600;">Total Sales:</td>
-            <td style="padding:14px 0; text-align:right;">₹${salesAmount.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0;">Output Tax Collected @ ${salesGST}%:</td>
-            <td style="padding:12px 0; text-align:right; color:var(--red);">₹${outputTax.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="border-bottom:2px solid var(--border);">
-            <td style="padding:14px 0; font-weight:600;">Total Purchases:</td>
-            <td style="padding:14px 0; text-align:right;">₹${purchaseAmount.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0;">Input Tax Credit (ITC) @ ${purchaseGST}%:</td>
-            <td style="padding:12px 0; text-align:right; color:var(--green);">₹${inputTax.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="background:rgba(34,197,94,0.1);">
-            <td style="padding:16px 0; font-weight:700; font-size:1.1rem;">Excess ITC (Refund):</td>
-            <td style="padding:16px 0; text-align:right; font-weight:700; font-size:1.4rem; color:var(--green);">₹${refund.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-        </table>
-      </div>
-      <div style="background:#d1fae5; border:1px solid #10b981; border-radius:8px; padding:16px; margin-top:20px;">
-        <h4 style="margin:0 0 8px; color:#065f46;">✅ Good News!</h4>
-        <p style="margin:0; color:#065f46; font-size:0.9rem;">
-          Your Input Tax Credit exceeds Output Tax. You can carry forward ₹${refund.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})} to next month or apply for refund (in certain cases like exports, inverted duty structure).
-        </p>
-      </div>
-    `;
-  } else {
-    // Exactly zero
-    resultBox.className = 'result-box safe';
-    resultBox.innerHTML = `
-      <div class="result-icon">✅</div>
-      <h3>Zero Net Liability</h3>
-      <p>Your Output Tax and Input Tax Credit are exactly equal. No payment or refund this period.</p>
-    `;
+  const resultContent = document.getElementById('resultContent');
+  
+  let blockedBreakdown = '';
+  if (totalBlocked > 0) {
+    blockedBreakdown = '<div style="background: var(--slate-50); padding: var(--space-4); border-radius: var(--radius-lg); margin-top: var(--space-4);"><div style="font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-2); color: var(--slate-700);">Blocked Credits Breakdown:</div><div style="font-size: var(--text-sm); color: var(--slate-600); line-height: 1.8;">';
+    
+    if (blockedMotor > 0) blockedBreakdown += `• Motor Vehicles: ${window.gstTools.formatINR(blockedMotor)}<br>`;
+    if (blockedFood > 0) blockedBreakdown += `• Food & Beverages: ${window.gstTools.formatINR(blockedFood)}<br>`;
+    if (blockedCatering > 0) blockedBreakdown += `• Outdoor Catering: ${window.gstTools.formatINR(blockedCatering)}<br>`;
+    if (blockedHealth > 0) blockedBreakdown += `• Health & Fitness: ${window.gstTools.formatINR(blockedHealth)}<br>`;
+    if (blockedInsurance > 0) blockedBreakdown += `• Insurance & Pension: ${window.gstTools.formatINR(blockedInsurance)}<br>`;
+    if (blockedPersonal > 0) blockedBreakdown += `• Personal Use: ${window.gstTools.formatINR(blockedPersonal)}<br>`;
+    
+    blockedBreakdown += '</div></div>';
   }
-
-  resultBox.style.display = 'block';
-  resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+  
+  resultContent.innerHTML = `
+    <div style="display: grid; gap: var(--space-6); text-align: left; max-width: 600px; margin: 0 auto;">
+      
+      <div style="background: white; padding: var(--space-5); border-radius: var(--radius-xl); border: 2px solid var(--color-border);">
+        <div style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">Total ITC (GSTR-2B)</div>
+        <div style="font-size: var(--text-3xl); font-weight: var(--weight-bold); color: var(--slate-900); font-family: var(--font-display);">${window.gstTools.formatINR(totalITC)}</div>
+      </div>
+      
+      ${totalBlocked > 0 ? `
+      <div style="background: #fee2e2; padding: var(--space-5); border-radius: var(--radius-xl); border: 2px solid #ef4444;">
+        <div style="font-size: var(--text-sm); color: #dc2626; margin-bottom: var(--space-2); font-weight: var(--weight-semibold);">Less: Blocked Credits (Sec 17(5))</div>
+        <div style="font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--slate-900); font-family: var(--font-display);">- ${window.gstTools.formatINR(totalBlocked)}</div>
+        ${blockedBreakdown}
+      </div>
+      ` : ''}
+      
+      ${exemptPercent > 0 ? `
+      <div style="background: #fef3c7; padding: var(--space-5); border-radius: var(--radius-xl); border: 2px solid #f59e0b;">
+        <div style="font-size: var(--text-sm); color: #d97706; margin-bottom: var(--space-2); font-weight: var(--weight-semibold);">Less: Exempt Supply Proportion (${exemptPercent}%)</div>
+        <div style="font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--slate-900); font-family: var(--font-display);">- ${window.gstTools.formatINR(exemptReduction)}</div>
+        <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-2);">Rule 42/43 applied</div>
+      </div>
+      ` : ''}
+      
+      <div style="background: linear-gradient(135deg, var(--green-success), var(--green-hover)); padding: var(--space-6); border-radius: var(--radius-xl); text-align: center;">
+        <div style="font-size: var(--text-sm); color: white; opacity: 0.9; margin-bottom: var(--space-2);">Net Eligible ITC</div>
+        <div style="font-size: var(--text-4xl); font-weight: var(--weight-bold); color: white; font-family: var(--font-display);">${window.gstTools.formatINR(eligibleITC)}</div>
+        <div style="font-size: var(--text-sm); color: white; opacity: 0.8; margin-top: var(--space-2);">Claimable in GSTR-3B</div>
+      </div>
+      
+      <div class="info-box blue" style="margin: 0;">
+        <div class="info-box-icon">✅</div>
+        <div class="info-box-content">
+          <p style="margin: 0;"><strong>Important:</strong> Ensure all supplier invoices are reflected in GSTR-2B and suppliers have filed their returns. Reversal under Rule 37/42/43 may be required in certain cases.</p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-6); flex-wrap: wrap; justify-content: center;">
+      <button onclick="copyITCResults()" class="btn btn-secondary" style="max-width: 200px;">
+        📋 Copy Results
+      </button>
+      <button onclick="window.print()" class="btn btn-secondary" style="max-width: 200px;">
+        🖨️ Print Result
+      </button>
+    </div>
+  `;
+  
+  window.gstTools.showResultBox('resultBox');
 }
 
-// Live updates
-['salesAmount', 'salesGST', 'purchaseAmount', 'purchaseGST'].forEach(id => {
-  document.getElementById(id).addEventListener('input', updateLiveTotals);
-  document.getElementById(id).addEventListener('change', updateLiveTotals);
-});
+function copyITCResults() {
+  const calc = window.lastITCCalc;
+  if (!calc) return;
+  
+  let text = `ITC CALCULATION RESULT
+━━━━━━━━━━━━━━━━━━━━
+Total ITC (GSTR-2B): ${window.gstTools.formatINR(calc.totalITC)}
 
-// Initial calculation
-window.addEventListener('load', () => {
-  updateLiveTotals();
-  calculateITC();
-});
+`;
+
+  if (calc.totalBlocked > 0) {
+    text += `Blocked Credits (Sec 17(5)): -${window.gstTools.formatINR(calc.totalBlocked)}\n`;
+    if (calc.breakdown.motor > 0) text += `  • Motor: ${window.gstTools.formatINR(calc.breakdown.motor)}\n`;
+    if (calc.breakdown.food > 0) text += `  • Food: ${window.gstTools.formatINR(calc.breakdown.food)}\n`;
+    if (calc.breakdown.catering > 0) text += `  • Catering: ${window.gstTools.formatINR(calc.breakdown.catering)}\n`;
+    if (calc.breakdown.health > 0) text += `  • Health: ${window.gstTools.formatINR(calc.breakdown.health)}\n`;
+    if (calc.breakdown.insurance > 0) text += `  • Insurance: ${window.gstTools.formatINR(calc.breakdown.insurance)}\n`;
+    if (calc.breakdown.personal > 0) text += `  • Personal: ${window.gstTools.formatINR(calc.breakdown.personal)}\n`;
+    text += `\n`;
+  }
+
+  if (calc.exemptPercent > 0) {
+    text += `Exempt Supply (${calc.exemptPercent}%): -${window.gstTools.formatINR(calc.exemptReduction)}\n\n`;
+  }
+
+  text += `━━━━━━━━━━━━━━━━━━━━
+NET ELIGIBLE ITC: ${window.gstTools.formatINR(calc.eligibleITC)}
+
+Calculated via GST Compliance Pro
+mygstindia.in`;
+
+  window.gstTools.copyToClipboard(text, event.target);
+}
 </script>
+
+<!-- MAIN JAVASCRIPT -->
+<script src="main.js"></script>
 
 </body>
 </html>
-
