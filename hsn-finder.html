@@ -290,7 +290,7 @@ window.addEventListener('load', function() {
       const item = results[i];
       
       // Get GST rate
-      const gstRate = getGSTRate(item.code);
+     const gstRate = item.gst || getGSTRate(item.code);
       const hasGSTRate = gstRate !== null;
       
       let gstDisplay, gstColor, gstBadge;
@@ -392,3 +392,4 @@ window.addEventListener('load', function() {
 
 </body>
 </html>
+
