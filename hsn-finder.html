@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   
   <!-- CSS Architecture -->
-  <link rel="stylesheet" href="master-style.css">
+  <link rel="stylesheet" href="master-style-v3.css">
   <link rel="stylesheet" href="tool-hub.css">
   
   <!-- OpenGraph -->
@@ -306,8 +306,14 @@ window.addEventListener('load', function() {
       const item = results[i];
       
       // Get GST rate from item.gst or fallback to getGSTRate
-      const gstRate = item.gst || getGSTRate(item.code);
-      const hasGSTRate = gstRate !== null && gstRate !== undefined;
+      let gstRate = item.gst; // Try database first
+      
+      // If not in database or invalid, try the lookup function
+      if (!gstRate || gstRate === '0%' || gstRate === 'null') {
+        gstRate = getGSTRate(item.code);
+      }
+      
+      const hasGSTRate = gstRate !== null && gstRate !== undefined && gstRate !== '0%';
       
       let gstColor, gstBadge;
       if (hasGSTRate) {
