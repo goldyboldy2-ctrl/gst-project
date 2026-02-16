@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSN Finder - Simple Test</title>
+  <link rel="stylesheet" href="master-style.css">
+  <style>
+    .search-box {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    #searchInput {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+    }
+    .result-item {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+    .result-item h3 {
+      margin: 0 0 5px 0;
+      color: #1e293b;
+    }
+    .result-item p {
+      margin: 0;
+      color: #64748b;
+    }
+    .gst-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-box">
+    <h1>HSN Finder - Test Version</h1>
+    <p>Database has <span id="dbCount">loading...</span> entries</p>
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search by product name or HSN code..."
+      onkeyup="doSearch()"
+    />
+    <div id="searchResults" style="margin-top: 20px;"></div>
+  </div>
+
+  <script src="hsn-data.js"></script>
+  <script src="search-keywords.js"></script>
+  <script src="gst-rates.js"></script>
+  <script src="main.js"></script>
+
+  <script>
+    // Check if data loaded
+    if (typeof hsnDatabase !== 'undefined') {
+      document.getElementById('dbCount').textContent = hsnDatabase.length.toLocaleString();
+      console.log('✅ Database loaded:', hsnDatabase.length, 'entries');
+    } else {
+      document.getElementById('dbCount').textContent = 'ERROR - not loaded!';
+      console.error('❌ hsnDatabase not found');
+    }
+
+    function doSearch() {
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      const resultsDiv = document.getElementById('searchResults');
+      
+      if (!query || query.length < 2) {
+        resultsDiv.innerHTML = '<p style="color: #94a3b8;">Start typing to search...</p>';
+        return;
+      }
+
+      console.log('Searching for:', query);
+
+      // Search in database
+      const results = hsnDatabase.filter(item => {
+        const code = (item.code || '').toLowerCase();
+        const desc = (item.description || '').toLowerCase();
+        return code.includes(query) || desc.includes(query);
+      });
+
+      console.log('Found', results.length, 'results');
+
+      if (results.length === 0) {
+        resultsDiv.innerHTML = '<p style="color: #ef4444;">No results found for "' + query + '"</p>';
+        return;
+      }
+
+      // Show top 10 results
+      let html = '<p style="color: #10b981; font-weight: 600;">Found ' + results.length + ' results (showing top 10)</p>';
+      
+      results.slice(0, 10).forEach(item => {
+        const gstRate = item.gst || 'varies';
+        let badgeColor = '#94a3b8';
+        if (gstRate === '0%') badgeColor = '#10b981';
+        else if (gstRate === '5%') badgeColor = '#3b82f6';
+        else if (gstRate === '12%') badgeColor = '#f59e0b';
+        else if (gstRate === '18%') badgeColor = '#f97316';
+        else if (gstRate === '28%') badgeColor = '#ef4444';
+
+        html += `
+          <div class="result-item">
+            <h3>HSN ${item.code}</h3>
+            <p>${item.description || 'No description'}</p>
+            <span class="gst-badge" style="background: ${badgeColor}; color: white;">
+              GST ${gstRate}
+            </span>
+          </div>
+        `;
+      });
+
+      resultsDiv.innerHTML = html;
+    }
+  </script>
+</body>
+</html>
