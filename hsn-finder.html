@@ -359,9 +359,17 @@ window.addEventListener('load', function() {
       
       const hasGSTRate = gstRate !== null && gstRate !== undefined && gstRate !== '0%';
       
-      // CHECK RATE RELIABILITY
+      // Format description FIRST (needed for isPlaceholder check)
+      let description = item.description || 'No description';
+      
+      // CHECK FOR PLACEHOLDER DATA
+      const isPlaceholder = description.includes('HSN Description for') || 
+                           description.includes('Description for HSN') ||
+                           description === 'No description' ||
+                           description.length < 10;
+      
+      // CHECK RATE RELIABILITY (uses isPlaceholder, so must come after)
       let rateWarning = '';
-      const rateValue = parseFloat(gstRate);
       
       // Flag suspicious or placeholder scenarios
       if (isPlaceholder) {
@@ -371,6 +379,15 @@ window.addEventListener('load', function() {
         rateWarning = '<div style="background: #eff6ff; padding: var(--space-2); border-radius: var(--radius-sm); margin-top: var(--space-2); font-size: var(--text-xs); color: #1e40af;">ℹ️ Rate shown is common for this category. Actual rate may vary by specific product.</div>';
       }
       
+      // Format description with highlighting
+      if (isPlaceholder) {
+        description = `<span style="color: var(--slate-500); font-style: italic;">Official description not available - verify product classification with CA or on <a href="https://www.cbic.gov.in/" target="_blank" style="color: var(--indigo-primary);">CBIC portal</a></span>`;
+      } else if (query && query.length > 2) {
+        const regex = new RegExp(`(${query})`, 'gi');
+        description = description.replace(regex, '<mark style="background: var(--indigo-bg); color: var(--indigo-primary); padding: 2px 4px; border-radius: var(--radius-sm); font-weight: var(--weight-semibold);">$1</mark>');
+      }
+      
+      // Generate GST badge
       let gstColor, gstBadge;
       if (hasGSTRate) {
         const rateStr = gstRate.toString().replace('%', '');
@@ -384,22 +401,6 @@ window.addEventListener('load', function() {
         gstBadge = `<span style="background: ${gstColor}; color: white; padding: var(--space-2) var(--space-4); border-radius: var(--radius-lg); font-weight: var(--weight-bold); font-size: var(--text-base); white-space: nowrap;">GST ${gstRate}</span>`;
       } else {
         gstBadge = `<span style="background: var(--slate-100); color: var(--slate-600); padding: var(--space-2) var(--space-4); border-radius: var(--radius-lg); font-weight: var(--weight-semibold); font-size: var(--text-sm); white-space: nowrap;">Rate varies*</span>`;
-      }
-      
-      // Highlight search term in description
-      let description = item.description || 'No description';
-      
-      // CHECK FOR PLACEHOLDER DATA
-      const isPlaceholder = description.includes('HSN Description for') || 
-                           description.includes('Description for HSN') ||
-                           description === 'No description' ||
-                           description.length < 10;
-      
-      if (isPlaceholder) {
-        description = `<span style="color: var(--slate-500); font-style: italic;">Official description not available - verify product classification with CA or on <a href="https://www.cbic.gov.in/" target="_blank" style="color: var(--indigo-primary);">CBIC portal</a></span>`;
-      } else if (query && query.length > 2) {
-        const regex = new RegExp(`(${query})`, 'gi');
-        description = description.replace(regex, '<mark style="background: var(--indigo-bg); color: var(--indigo-primary); padding: 2px 4px; border-radius: var(--radius-sm); font-weight: var(--weight-semibold);">$1</mark>');
       }
       
       html += `
