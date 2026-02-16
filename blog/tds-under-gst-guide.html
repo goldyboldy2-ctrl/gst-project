@@ -1,614 +1,119 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TDS Under GST: Complete Guide to Section 51 & 194O (2026)</title>
-  <meta name="description" content="Complete guide to TDS under GST: 2% deduction under Section 51, 1% under Section 194O for e-commerce, who deducts, compliance, and how to claim credit.">
+  <title>TDS Under GST - Section 51 Guide 2026 | GST Compliance Pro</title>
+  <meta name="description" content="TDS under GST Section 51 - who deducts, rate, compliance, filing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../master-style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../knowledge-hub.css">
 </head>
 <body>
-    <nav class="navbar">
+<div class="reading-progress-bar"></div>
+<nav class="navbar">
   <div class="navbar-container">
     <a href="../index.html" class="nav-logo">
       <div class="logo-mark">G</div>
-      <span class="logo-text">GST <em>Compliance Pro</em></span>
+      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
     </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
       <li><a href="../index.html#tools">Tools</a></li>
-      <li><a href="index.html">Blog</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="../registration-checker.html" class="btn-primary-small">Check Registration</a>
-    </div>
   </div>
 </nav>
-
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <div class="disclaimer-icon">⚖️</div>
-    <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> This website provides <strong>general information only</strong> and is <strong>not professional tax or legal advice</strong>. Always verify with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> and <strong>consult a qualified Chartered Accountant</strong>.
-      <a href="../disclaimer.html" class="learn-more">Read Full Disclaimer →</a>
+<article class="blog-post">
+  <div class="blog-container">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">›</span>
+      <a href="index.html">Blog</a><span class="sep">›</span>
+      <span>TDS Under GST</span>
     </div>
-  </div>
-</div>
-
-<article class="container blog-post">
-  <div class="breadcrumb">
-    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › <span>TDS Under GST</span>
-  </div>
-
-  <header class="post-header">
-    <h1>TDS Under GST: Complete Guide to Tax Deduction at Source (2026)</h1>
-    <div class="post-meta">
-      <span class="reading-time">⏱️ 12 min read</span>
-      <span class="post-date">📅 Updated: February 11, 2026</span>
-    </div>
-  </header>
-
-  <div class="info-box blue">
-    <p><strong>Quick Summary:</strong> TDS under GST means deducting 2% (1% CGST + 1% SGST/UTGST) or 2% IGST from payments to suppliers. Applicable when govt/specified entities pay contractors above ₹2.5 lakhs. Deductor deposits TDS, supplier claims credit in electronic ledger.</p>
-  </div>
-
-  <nav class="table-of-contents">
-    <h2>Table of Contents</h2>
-    <ul>
-      <li><a href="#what-is-tds">What is TDS Under GST?</a></li>
-      <li><a href="#who-deducts">Who Must Deduct TDS?</a></li>
-      <li><a href="#when-deduct">When to Deduct TDS?</a></li>
-      <li><a href="#tds-rate">TDS Rate & Calculation</a></li>
-      <li><a href="#how-to-deposit">How to Deposit TDS</a></li>
-      <li><a href="#how-to-claim">How Supplier Claims TDS Credit</a></li>
-      <li><a href="#compliance">Compliance & Returns</a></li>
-      <li><a href="#faq">FAQs</a></li>
-    </ul>
-  </nav>
-
-  <section id="what-is-tds">
-    <h2>What is TDS Under GST?</h2>
-
-```
-<p><strong>Tax Deduction at Source (TDS)</strong> under GST is a mechanism where certain notified persons deduct a percentage of GST from payments made to suppliers and deposit it with the government on behalf of the supplier.</p>
-
-<h3>How It Works</h3>
-<div class="flow-diagram">
-  <div class="flow-step">
-    <div class="step-number">1</div>
-    <p>Government body places order for ₹10,00,000</p>
-  </div>
-  <div class="arrow">→</div>
-  <div class="flow-step">
-    <div class="step-number">2</div>
-    <p>Supplier bills ₹10,00,000 + ₹1,80,000 GST = ₹11,80,000</p>
-  </div>
-  <div class="arrow">→</div>
-  <div class="flow-step">
-    <div class="step-number">3</div>
-    <p>Deductor deducts 2% TDS on ₹10,00,000 = ₹20,000</p>
-  </div>
-  <div class="arrow">→</div>
-  <div class="flow-step">
-    <div class="step-number">4</div>
-    <p>Deductor pays supplier: ₹11,80,000 - ₹20,000 = ₹11,60,000</p>
-  </div>
-  <div class="arrow">→</div>
-  <div class="flow-step">
-    <div class="step-number">5</div>
-    <p>Deductor deposits ₹20,000 TDS to government</p>
-  </div>
-  <div class="arrow">→</div>
-  <div class="flow-step">
-    <div class="step-number">6</div>
-    <p>Supplier claims ₹20,000 credit in GST portal</p>
-  </div>
-</div>
-
-<h3>Legal Provisions</h3>
-<ul>
-  <li><strong>Section 51:</strong> TDS on government contracts (2%)</li>
-  <li><strong>Section 194O:</strong> TDS by e-commerce operators (1% on certain sales)</li>
-  <li><strong>Notification 50/2018:</strong> Threshold and conditions</li>
-</ul>
-
-<div class="info-box green">
-  <p><strong>💡 Purpose:</strong> Ensures tax compliance by large contractors and creates audit trail for government spending.</p>
-</div>
-```
-
-  </section>
-
-  <section id="who-deducts">
-    <h2>Who Must Deduct TDS Under GST?</h2>
-
-```
-<h3>Section 51: Government & Specified Entities</h3>
-
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>Entity Type</th>
-      <th>Examples</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Central Government</strong></td>
-      <td>Ministries, departments, offices</td>
-    </tr>
-    <tr>
-      <td><strong>State Government</strong></td>
-      <td>State departments, secretariat</td>
-    </tr>
-    <tr>
-      <td><strong>Local Authorities</strong></td>
-      <td>Municipal corporations, gram panchayats, development authorities</td>
-    </tr>
-    <tr>
-      <td><strong>Government Agencies</strong></td>
-      <td>Public sector undertakings, autonomous bodies</td>
-    </tr>
-    <tr>
-      <td><strong>Others Notified</strong></td>
-      <td>As specified by government (currently none beyond above)</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Section 194O: E-commerce Operators</h3>
-<p>E-commerce operators like Amazon, Flipkart must deduct 1% TDS on payments to sellers for:</p>
-<ul>
-  <li>Sale of goods</li>
-  <li>Provision of services</li>
-  <li>Through their platform</li>
-</ul>
-
-<h3>Who is NOT Required to Deduct TDS?</h3>
-<ul>
-  <li>❌ Private companies (unless notified)</li>
-  <li>❌ Individuals</li>
-  <li>❌ Partnership firms</li>
-  <li>❌ Small government purchases (below threshold)</li>
-</ul>
-```
-
-  </section>
-
-  <section id="when-deduct">
-    <h2>When to Deduct TDS?</h2>
-
-```
-<h3>Threshold Limit (Section 51)</h3>
-<p>TDS must be deducted when:</p>
-<ul>
-  <li>Total value of taxable supply <strong>exceeds ₹2,50,000</strong></li>
-  <li>Under a single contract</li>
-  <li>By notified person (govt/local authority)</li>
-</ul>
-
-<div class="example-box">
-  <h4>Example: Below Threshold</h4>
-  <p><strong>Contract value:</strong> ₹2,00,000</p>
-  <p><strong>GST @ 18%:</strong> ₹36,000</p>
-  <p><strong>Total:</strong> ₹2,36,000</p>
-  <p><strong>TDS deduction:</strong> NO (below ₹2.5 lakh threshold)</p>
-</div>
-
-<div class="example-box">
-  <h4>Example: Above Threshold</h4>
-  <p><strong>Contract value:</strong> ₹5,00,000</p>
-  <p><strong>GST @ 18%:</strong> ₹90,000</p>
-  <p><strong>Total:</strong> ₹5,90,000</p>
-  <p><strong>TDS deduction:</strong> YES (above ₹2.5 lakh)</p>
-  <p><strong>TDS amount:</strong> ₹5,00,000 × 2% = ₹10,000</p>
-</div>
-
-<h3>Timing of Deduction</h3>
-<p>TDS must be deducted at the time of:</p>
-<ul>
-  <li>Making payment to supplier, OR</li>
-  <li>Crediting supplier's account</li>
-  <li><strong>Whichever is earlier</strong></li>
-</ul>
-
-<h3>Exemptions (No TDS)</h3>
-<ul>
-  <li>✅ Supply value ≤ ₹2.5 lakhs</li>
-  <li>✅ Supplier is government department itself</li>
-  <li>✅ Advance payments (TDS on final payment only)</li>
-</ul>
-```
-
-  </section>
-
-  <section id="tds-rate">
-    <h2>TDS Rate & Calculation</h2>
-
-```
-<h3>TDS Rates</h3>
-
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>Supply Type</th>
-      <th>TDS Rate</th>
-      <th>Breakup</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Intra-State Supply</strong></td>
-      <td>2%</td>
-      <td>1% CGST + 1% SGST/UTGST</td>
-    </tr>
-    <tr>
-      <td><strong>Inter-State Supply</strong></td>
-      <td>2%</td>
-      <td>2% IGST</td>
-    </tr>
-    <tr>
-      <td><strong>E-commerce (Sec 194O)</strong></td>
-      <td>1%</td>
-      <td>0.5% CGST + 0.5% SGST (or 1% IGST)</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Calculation Method</h3>
-<div class="formula-box">
-  <p><strong>TDS Amount = Taxable Value × TDS Rate</strong></p>
-  <p><em>Note: TDS is calculated on taxable value (excluding GST)</em></p>
-</div>
-
-<h3>Detailed Example</h3>
-
-<div class="example-box">
-  <p><strong>Contract Details:</strong></p>
-  <ul>
-    <li>Municipal Corporation (Deductor) hires contractor</li>
-    <li>Contract value: ₹10,00,000</li>
-    <li>GST rate: 18%</li>
-    <li>Supply: Intra-state</li>
-  </ul>
-
-  <p><strong>Calculation:</strong></p>
-  <table class="calc-table">
-    <tr>
-      <td>Taxable value:</td>
-      <td>₹10,00,000</td>
-    </tr>
-    <tr>
-      <td>CGST @ 9%:</td>
-      <td>₹90,000</td>
-    </tr>
-    <tr>
-      <td>SGST @ 9%:</td>
-      <td>₹90,000</td>
-    </tr>
-    <tr>
-      <td><strong>Total invoice:</strong></td>
-      <td><strong>₹11,80,000</strong></td>
-    </tr>
-    <tr class="highlight">
-      <td>TDS @ 2% (on ₹10 lakh):</td>
-      <td>₹20,000</td>
-    </tr>
-    <tr>
-      <td>CGST TDS @ 1%:</td>
-      <td>₹10,000</td>
-    </tr>
-    <tr>
-      <td>SGST TDS @ 1%:</td>
-      <td>₹10,000</td>
-    </tr>
-    <tr class="highlight">
-      <td><strong>Net payment to contractor:</strong></td>
-      <td><strong>₹11,60,000</strong></td>
-    </tr>
-  </table>
-</div>
-```
-
-  </section>
-
-  <section id="how-to-deposit">
-    <h2>How to Deposit TDS (For Deductors)</h2>
-
-```
-<h3>Step-by-Step Process</h3>
-
-<div class="numbered-cards">
-  <div class="card">
-    <div class="card-number">1</div>
-    <h4>Deduct TDS</h4>
-    <p>At time of payment or credit to supplier's account</p>
-  </div>
-
-  <div class="card">
-    <div class="card-number">2</div>
-    <h4>Login to GST Portal</h4>
-    <p>Visit gst.gov.in with deductor credentials</p>
-  </div>
-
-  <div class="card">
-    <div class="card-number">3</div>
-    <h4>Go to Services > Payments</h4>
-    <p>Select "Create Challan"</p>
-  </div>
-
-  <div class="card">
-    <div class="card-number">4</div>
-    <h4>Select TDS</h4>
-    <p>Choose tax head as "Tax Deducted at Source"</p>
-  </div>
-
-  <div class="card">
-    <div class="card-number">5</div>
-    <h4>Enter Details</h4>
-    <p>CGST/SGST/IGST amounts, supplier GSTIN</p>
-  </div>
-
-  <div class="card">
-    <div class="card-number">6</div>
-    <h4>Pay Online</h4>
-    <p>Net banking/debit card/NEFT/RTGS</p>
-  </div>
-</div>
-
-<h3>Payment Deadline</h3>
-<p>TDS must be deposited to government by <strong>10th of next month</strong></p>
-
-<div class="example-box">
-  <p><strong>Example:</strong></p>
-  <p>TDS deducted in January 2026</p>
-  <p>Must deposit by: <strong>10th February 2026</strong></p>
-</div>
-
-<h3>Late Payment Consequences</h3>
-<ul>
-  <li>Interest @ 18% per annum from due date</li>
-  <li>Late fee: ₹100/day (₹50 CGST + ₹50 SGST)</li>
-  <li>Maximum late fee: ₹5,000</li>
-</ul>
-```
-
-  </section>
-
-  <section id="how-to-claim">
-    <h2>How Supplier Claims TDS Credit</h2>
-
-```
-<h3>Credit Reflection Process</h3>
-
-<div class="numbered-cards">
-  <div class="card">
-    <div class="card-number">1</div>
-    <h4>Deductor Files GSTR-7</h4>
-    <p>TDS return filed by deductor by 10th of next month</p>
-  </div>
-
-  <div class="card">
-    <div class="card-number">2</div>
-    <h4>Credit Auto-Reflects</h4>
-    <p>TDS credit appears in supplier's electronic credit ledger</p>
-  </div>
-
-  <div class="card">
-    <div class="card-number">3</div>
-    <h4>Supplier Checks GSTR-7A</h4>
-    <p>View TDS deducted on supplies in GSTR-7A (auto-populated)</p>
-  </div>
-
-  <div class="card">
-    <div class="card-number">4</div>
-    <h4>Supplier Uses Credit</h4>
-    <p>Use TDS credit to pay GST liability in GSTR-3B</p>
-  </div>
-</div>
-
-<h3>Where to Check TDS Credit</h3>
-<ol>
-  <li>Login to GST Portal</li>
-  <li>Go to Services > Returns > GSTR-7A</li>
-  <li>Select month and view TDS deducted by various deductors</li>
-  <li>Check Electronic Credit Ledger for available balance</li>
-</ol>
-
-<h3>Using TDS Credit</h3>
-<p>TDS credit in electronic credit ledger can be used to pay:</p>
-<ul>
-  <li>✅ CGST liability</li>
-  <li>✅ SGST/UTGST liability</li>
-  <li>✅ IGST liability</li>
-  <li>✅ Interest</li>
-  <li>✅ Penalty</li>
-  <li>✅ Late fee</li>
-</ul>
-
-<div class="info-box green">
-  <p><strong>💡 Benefit:</strong> Unlike Input Tax Credit, TDS credit can be used to pay interest, penalty, and late fee also.</p>
-</div>
-```
-
-  </section>
-
-  <section id="compliance">
-    <h2>Compliance & Returns</h2>
-
-```
-<h3>For Deductors (Who Deduct TDS)</h3>
-
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>Return</th>
-      <th>Frequency</th>
-      <th>Due Date</th>
-      <th>Contents</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>GSTR-7</strong></td>
-      <td>Monthly</td>
-      <td>10th of next month</td>
-      <td>Details of TDS deducted, deposited, and supplier details</td>
-    </tr>
-    <tr>
-      <td><strong>GSTR-7A</strong></td>
-      <td>Auto-generated</td>
-      <td>N/A</td>
-      <td>Shown to suppliers (view-only)</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>For Suppliers (From Whom TDS Deducted)</h3>
-
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>Action</th>
-      <th>When</th>
-      <th>How</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Check TDS</strong></td>
-      <td>Monthly</td>
-      <td>View GSTR-7A</td>
-    </tr>
-    <tr>
-      <td><strong>Reconcile</strong></td>
-      <td>Before GSTR-3B filing</td>
-      <td>Match TDS in GSTR-7A with payment received</td>
-    </tr>
-    <tr>
-      <td><strong>Use Credit</strong></td>
-      <td>While filing GSTR-3B</td>
-      <td>System auto-uses from credit ledger</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>TDS Certificate</h3>
-<p>Deductors should issue TDS certificate to suppliers containing:</p>
-<ul>
-  <li>Deductor GSTIN and name</li>
-  <li>Supplier GSTIN and name</li>
-  <li>Invoice details</li>
-  <li>TDS amount deducted</li>
-  <li>Date of deposit</li>
-</ul>
-```
-
-  </section>
-
-  <section id="faq" class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-
-```
-<div class="faq-item">
-  <h3>Is TDS under GST same as TDS under Income Tax?</h3>
-  <p>No. They are completely different. TDS under GST is on supply value and credited to GST ledger. TDS under Income Tax is on salary/professional fees and credited to Income Tax. Both can apply simultaneously on same transaction.</p>
-</div>
-
-<div class="faq-item">
-  <h3>Can I claim refund of TDS if I have no GST liability?</h3>
-  <p>Yes. If TDS credit exceeds your GST liability for a particular period, you can file refund claim for the excess credit. Refund is processed like normal GST refund.</p>
-</div>
-
-<div class="faq-item">
-  <h3>What if deductor does not deposit TDS to government?</h3>
-  <p>Deductor is liable for interest and penalty. Supplier should follow up with deductor and check GSTR-7A. If TDS not deposited, credit won't reflect in supplier's ledger.</p>
-</div>
-
-<div class="faq-item">
-  <h3>Is TDS applicable on advance payments?</h3>
-  <p>No. TDS is deducted only on final payment after supply is made. Not applicable on advances.</p>
-</div>
-
-<div class="faq-item">
-  <h3>Can composition dealers claim TDS credit?</h3>
-  <p>Yes. Even composition dealers can claim TDS credit in electronic credit ledger and use it to pay their quarterly composition tax.</p>
-</div>
-
-<div class="faq-item">
-  <h3>What if wrong TDS amount is deducted?</h3>
-  <p>Deductor can correct in next month's GSTR-7. If excess TDS deducted, can be adjusted. If less TDS deducted, balance must be deposited with interest.</p>
-</div>
-```
-
-  </section>
-
-  <div class="related-posts">
-    <h3>Related Articles</h3>
-    <div class="post-grid">
-      <a href="reverse-charge-mechanism-rcm.html" class="post-card">
-        <h4>Reverse Charge Mechanism Guide</h4>
-        <p>Learn about RCM under GST</p>
-      </a>
-      <a href="input-tax-credit-guide.html" class="post-card">
-        <h4>Input Tax Credit Guide</h4>
-        <p>Complete ITC claiming process</p>
-      </a>
-      <a href="how-to-file-gst-return.html" class="post-card">
-        <h4>How to File GST Returns</h4>
-        <p>Step-by-step filing guide</p>
-      </a>
-    </div>
-  </div>
-
-</article><footer class="footer">
-  <div class="footer-container">
-    <div class="footer-grid">
-      <div class="footer-section">
-        <div class="footer-logo">
-          <div class="logo-mark">G</div>
-          <span>GST Compliance Pro</span>
-        </div>
-        <p>India's most trusted free GST toolkit for MSMEs, freelancers, and small businesses.</p>
+    <header class="blog-header">
+      <h1>TDS Under GST - Section 51 Complete Guide</h1>
+      <div class="blog-meta">
+        <span>📅 February 17, 2026</span>
+        <span>⏱️ 8 min read</span>
       </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../index.html#tools">Tools</a></li>
-          <li><a href="index.html">Blog</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="../privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="../terms-of-service.html">Terms of Service</a></li>
-          <li><a href="../disclaimer.html">Disclaimer</a></li>
-          <li><a href="../dmca.html">DMCA</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li>📧 contact@mygstindia.in</li>
-          <li>📱 Support (9 AM - 6 PM IST)</li>
-        </ul>
+    </header>
+    <div class="callout info">
+      <div class="callout-icon">💡</div>
+      <div class="callout-content">
+        <h4>Quick Summary</h4>
+        <p>Government departments & specified entities deduct 2% TDS on payments > ₹2.5 lakh under Section 51.</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="copyright">
-        <p><strong>© 2024-2026 GST Compliance Pro. All Rights Reserved.</strong></p>
-        <p class="copyright-details">All content protected by Indian Copyright Act, 1957.</p>
+    <section>
+      <h2>What is TDS Under GST?</h2>
+      <p>Section 51 requires certain entities to deduct 2% GST (1% CGST + 1% SGST or 2% IGST) from payments to suppliers.</p>
+    </section>
+    <section>
+      <h2>Who Deducts TDS?</h2>
+      <ul>
+        <li>Central Government departments</li>
+        <li>State Government departments</li>
+        <li>Local authorities</li>
+        <li>Government agencies</li>
+        <li>PSUs (as notified)</li>
+      </ul>
+    </section>
+    <section>
+      <h2>When to Deduct?</h2>
+      <p><strong>Threshold:</strong> Total contract value > ₹2.5 lakh</p>
+      <p><strong>Rate:</strong> 2% (1% CGST + 1% SGST or 2% IGST)</p>
+      <p><strong>On:</strong> Payment amount (excluding GST)</p>
+    </section>
+    <section>
+      <h2>How It Works</h2>
+      <p><strong>Invoice:</strong> ₹1,00,000 + ₹18,000 GST = ₹1,18,000</p>
+      <p><strong>TDS:</strong> 2% of ₹1,00,000 = ₹2,000</p>
+      <p><strong>Payment:</strong> ₹1,18,000 - ₹2,000 = ₹1,16,000</p>
+      <p><strong>Supplier claims:</strong> ₹2,000 TDS credit</p>
+    </section>
+    <section>
+      <h2>Compliance</h2>
+      <ol>
+        <li>Deduct TDS at time of payment</li>
+        <li>Deposit to government by 10th next month</li>
+        <li>File GSTR-7 monthly</li>
+        <li>Issue TDS certificate (GSTR-7A)</li>
+      </ol>
+    </section>
+    <div class="related-tools">
+      <h3>Related Tools</h3>
+      <div class="related-tools-grid">
+        <a href="../gst-calculator.html" class="related-tool-card">
+          <h4>🧮 GST Calculator</h4>
+          <p>Calculate TDS</p>
+          <span class="arrow">Calculate →</span>
+        </a>
+        <a href="../itc-calculator.html" class="related-tool-card">
+          <h4>💰 ITC Calculator</h4>
+          <p>Calculate ITC</p>
+          <span class="arrow">Calculate →</span>
+        </a>
+        <a href="../penalty-calculator.html" class="related-tool-card">
+          <h4>💸 Penalty Calculator</h4>
+          <p>Check penalties</p>
+          <span class="arrow">Calculate →</span>
+        </a>
       </div>
     </div>
   </div>
+</article>
+<footer class="footer">
+  <div class="footer-grid">
+    <div><h4>GST Compliance Pro</h4></div>
+    <div><h4>Tools</h4><ul><li><a href="../gst-calculator.html">GST Calculator</a></li></ul></div>
+    <div><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
 </footer>
-
+<script src="../main.js"></script>
 </body>
 </html>
