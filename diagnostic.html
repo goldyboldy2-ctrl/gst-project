@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Pro - System Diagnostic</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f8fafc;
+    }
+    .test {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      border-left: 4px solid #94a3b8;
+    }
+    .test.pass {
+      border-left-color: #22c55e;
+    }
+    .test.fail {
+      border-left-color: #ef4444;
+    }
+    .test h3 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+    }
+    .test p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #475569;
+    }
+    .code {
+      background: #f1f5f9;
+      padding: 10px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 13px;
+      overflow-x: auto;
+    }
+    .status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .status.pass {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .status.fail {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 GST Compliance Pro - System Diagnostic</h1>
+  <p>This page will check what's working and what's broken.</p>
+  
+  <div id="results"></div>
+  
+  <!-- Load scripts -->
+  <script src="main.js"></script>
+  <script src="hsn-data.js"></script>
+  <script src="search-keywords.js"></script>
+  <script src="gst-rates.js"></script>
+  
+  <script>
+    const results = document.getElementById('results');
+    
+    function addTest(name, passed, details) {
+      const div = document.createElement('div');
+      div.className = `test ${passed ? 'pass' : 'fail'}`;
+      div.innerHTML = `
+        <h3>${name} <span class="status ${passed ? 'pass' : 'fail'}">${passed ? 'PASS' : 'FAIL'}</span></h3>
+        <p>${details}</p>
+      `;
+      results.appendChild(div);
+    }
+    
+    // TEST 1: Main.js loaded
+    setTimeout(() => {
+      const mainJsLoaded = typeof window.gstTools !== 'undefined';
+      addTest(
+        'Test 1: main.js Loading',
+        mainJsLoaded,
+        mainJsLoaded 
+          ? 'main.js loaded successfully. gstTools object found.' 
+          : '<strong>CRITICAL:</strong> main.js not loaded or gstTools not defined. Check if main.js file exists and is in the same directory.'
+      );
+      
+      // TEST 2: gstTools functions
+      if (mainJsLoaded) {
+        const hasCopy = typeof window.gstTools.copyToClipboard === 'function';
+        const hasFormat = typeof window.gstTools.formatINR === 'function';
+        const hasShowResult = typeof window.gstTools.showResultBox === 'function';
+        
+        const allFunctions = hasCopy && hasFormat && hasShowResult;
+        
+        addTest(
+          'Test 2: gstTools Functions',
+          allFunctions,
+          allFunctions
+            ? 'All required functions found: copyToClipboard ✓, formatINR ✓, showResultBox ✓'
+            : `Missing functions: ${!hasCopy ? 'copyToClipboard ' : ''}${!hasFormat ? 'formatINR ' : ''}${!hasShowResult ? 'showResultBox' : ''}`
+        );
+        
+        // TEST 3: formatINR working
+        if (hasFormat) {
+          try {
+            const result = window.gstTools.formatINR(10000);
+            const works = result.includes('10,000') || result.includes('10000');
+            addTest(
+              'Test 3: formatINR Function Test',
+              works,
+              works
+                ? `formatINR(10000) = "${result}" ✓`
+                : `formatINR returned unexpected: "${result}"`
+            );
+          } catch (e) {
+            addTest('Test 3: formatINR Function Test', false, `Error: ${e.message}`);
+          }
+        }
+      }
+      
+      // TEST 4: HSN Database
+      const hsnExists = typeof hsnDatabase !== 'undefined';
+      const hsnIsArray = hsnExists && Array.isArray(hsnDatabase);
+      const hsnLength = hsnIsArray ? hsnDatabase.length : 0;
+      
+      addTest(
+        'Test 4: HSN Database (hsn-data.js)',
+        hsnIsArray && hsnLength > 0,
+        hsnIsArray
+          ? `Database loaded with ${hsnLength.toLocaleString()} entries ${hsnLength > 0 ? '✓' : '(EMPTY!)'}`
+          : hsnExists
+            ? `hsnDatabase exists but is not an array. Type: ${typeof hsnDatabase}`
+            : '<strong>CRITICAL:</strong> hsnDatabase not found. Check if hsn-data.js exists and defines window.hsnDatabase or const hsnDatabase.'
+      );
+      
+      // TEST 5: Sample HSN entry structure
+      if (hsnIsArray && hsnLength > 0) {
+        const sample = hsnDatabase[0];
+        const hasCode = sample && typeof sample.code !== 'undefined';
+        const hasDesc = sample && typeof sample.description !== 'undefined';
+        const hasGst = sample && typeof sample.gst !== 'undefined';
+        
+        const validStructure = hasCode && hasDesc;
+        
+        addTest(
+          'Test 5: HSN Data Structure',
+          validStructure,
+          validStructure
+            ? `<div class="code">Sample entry:<br>{ code: "${sample.code}", description: "${sample.description?.substring(0, 50)}...", gst: "${sample.gst || 'not set'}" }</div>`
+            : `Invalid structure. First entry: ${JSON.stringify(sample)}`
+        );
+      }
+      
+      // TEST 6: findHSNFromKeyword function
+      const hasKeywordFunc = typeof findHSNFromKeyword === 'function';
+      addTest(
+        'Test 6: findHSNFromKeyword Function (search-keywords.js)',
+        hasKeywordFunc,
+        hasKeywordFunc
+          ? 'Function exists ✓'
+          : 'Function not found. Check if search-keywords.js exists and defines window.findHSNFromKeyword or function findHSNFromKeyword().'
+      );
+      
+      // TEST 7: getGSTRate function
+      const hasRateFunc = typeof getGSTRate === 'function';
+      addTest(
+        'Test 7: getGSTRate Function (gst-rates.js)',
+        hasRateFunc,
+        hasRateFunc
+          ? 'Function exists ✓'
+          : 'Function not found. Check if gst-rates.js exists and defines window.getGSTRate or function getGSTRate().'
+      );
+      
+      // TEST 8: Search functionality test
+      if (hsnIsArray && hsnLength > 0) {
+        try {
+          const testResults = hsnDatabase.filter(item => {
+            const desc = (item.description || '').toLowerCase();
+            return desc.includes('laptop') || desc.includes('computer');
+          });
+          
+          addTest(
+            'Test 8: Search Test (looking for "laptop" or "computer")',
+            testResults.length > 0,
+            testResults.length > 0
+              ? `Found ${testResults.length} results. Example: ${testResults[0].code} - ${testResults[0].description}`
+              : 'No results found. This suggests data might not be in expected format or search terms don\'t match.'
+          );
+        } catch (e) {
+          addTest('Test 8: Search Test', false, `Error during search: ${e.message}`);
+        }
+      }
+      
+      // FINAL SUMMARY
+      const allTests = document.querySelectorAll('.test');
+      const passedTests = document.querySelectorAll('.test.pass');
+      const summary = document.createElement('div');
+      summary.style.cssText = 'background: #1e293b; color: white; padding: 20px; border-radius: 8px; margin-top: 30px; font-weight: 600;';
+      summary.innerHTML = `
+        <h2 style="margin: 0 0 10px 0;">📊 Summary: ${passedTests.length}/${allTests.length} Tests Passed</h2>
+        <p style="margin: 0; opacity: 0.9;">${passedTests.length === allTests.length ? '✅ All systems operational!' : '⚠️ Issues detected. Review failed tests above.'}</p>
+      `;
+      results.appendChild(summary);
+      
+    }, 500); // Wait for scripts to load
+  </script>
+</body>
+</html>
