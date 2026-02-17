@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Composition Scheme Calculator - Regular vs Composition Tax | GST Compliance Pro</title>
+  <meta name="description" content="Compare GST regular scheme vs composition scheme. Calculate tax savings, check eligibility. Free calculator for small businesses 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="master-style.css">
+  <link rel="stylesheet" href="tool-hub.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+    </a>
+    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="legal-disclaimer-banner">
+  <div class="disclaimer-container">
+    <div class="disclaimer-icon">⚖️</div>
+    <div class="disclaimer-content">
+      <strong>Legal Disclaimer:</strong> Composition scheme eligibility is subject to specific conditions. Always verify with <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST portal</a> and consult a qualified CA before opting.
+    </div>
+  </div>
+</div>
+<div class="tool-page">
+  <div class="tool-container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">›</span><a href="index.html#tools">Tools</a><span class="sep">›</span><span>Composition Calculator</span>
+    </div>
+    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
+    <div class="tool-header">
+      <div class="tool-badge">🧮 Calculator</div>
+      <h1>Composition Scheme Calculator</h1>
+      <p>Compare <strong>Regular GST vs Composition Scheme</strong>. Calculate tax savings and check eligibility instantly.</p>
+    </div>
+    <div class="info-box blue">
+      <div class="info-box-icon">💡</div>
+      <div class="info-box-content">
+        <h4>How to Use</h4>
+        <p>Select business type, enter turnover and purchase details. Get instant comparison of tax under both schemes.</p>
+      </div>
+    </div>
+    <div class="tool-card-main">
+      <h2>🧮 Compare Schemes</h2>
+      <form id="compositionForm" onsubmit="calculateComposition(event)">
+        <div class="form-group">
+          <label for="businessType">Business Type</label>
+          <select id="businessType" required onchange="updateRateHint()">
+            <option value="">Select Business Type</option>
+            <option value="1">Trader (Goods) — 1%</option>
+            <option value="1m">Manufacturer — 1%</option>
+            <option value="5">Restaurant (no AC/liquor) — 5%</option>
+            <option value="6">Service Provider — 6%</option>
+            <option value="6m">Mixed (Goods + Services) — 6%</option>
+          </select>
+          <small id="rateHint" style="color:#2563eb;font-weight:600;margin-top:0.5rem;display:block;"></small>
+        </div>
+        <div class="form-group">
+          <label for="turnover">Annual Turnover (₹)</label>
+          <div class="input-with-prefix">
+            <span class="prefix">₹</span>
+            <input type="number" id="turnover" placeholder="e.g. 7500000 for 75 lakh" min="0" step="1" required>
+          </div>
+          <small>Composition limit: ₹1.5 Crore (₹75 lakh for special category states)</small>
+        </div>
+        <div class="form-group">
+          <label style="display:flex;align-items:flex-start;gap:0.75rem;cursor:pointer;background:#f8fafc;padding:1rem;border-radius:8px;border:2px solid #e2e8f0;">
+            <input type="checkbox" id="specialState" style="width:20px;height:20px;min-width:20px;margin-top:2px;">
+            <span>
+              <strong style="display:block;margin-bottom:0.25rem;">Special Category State</strong>
+              <span style="font-size:0.875rem;color:#64748b;">Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Himachal Pradesh, Uttarakhand, J&amp;K</span>
+            </span>
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="purchases">Annual Purchases with GST (₹)</label>
+          <div class="input-with-prefix">
+            <span class="prefix">₹</span>
+            <input type="number" id="purchases" placeholder="Total value of purchases" min="0" step="1" required>
+          </div>
+          <small>Used to calculate ITC benefit under regular scheme</small>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="purchaseGSTRate">Avg GST on Purchases (%)</label>
+            <select id="purchaseGSTRate" required>
+              <option value="">Select Rate</option>
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+              <option value="18">18%</option>
+              <option value="28">28%</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="salesGSTRate">Avg GST on Sales (%)</label>
+            <select id="salesGSTRate" required>
+              <option value="">Select Rate</option>
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+              <option value="18">18%</option>
+              <option value="28">28%</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">Compare Schemes →</button>
+      </form>
+    </div>
+    <div id="result" class="result-card" style="display:none;">
+      <div class="result-header">
+        <span class="result-icon">📊</span>
+        <h3>Scheme Comparison</h3>
+      </div>
+      <div class="result-body" id="resultBody"></div>
+      <div class="result-actions">
+        <button onclick="location.reload()" class="btn btn-secondary">Calculate Again</button>
+        <a href="blog/composition-scheme-guide.html" class="btn btn-primary">Full Guide →</a>
+      </div>
+    </div>
+    <div class="info-section">
+      <h3>📋 Composition Scheme - Key Restrictions</h3>
+      <ul>
+        <li>❌ Cannot charge GST on invoices to customers</li>
+        <li>❌ Cannot claim Input Tax Credit (ITC)</li>
+        <li>❌ Cannot make inter-state sales</li>
+        <li>❌ Cannot sell on e-commerce (Amazon, Flipkart)</li>
+        <li>✅ Simple quarterly return (GSTR-4)</li>
+        <li>✅ Pay tax quarterly, not monthly</li>
+        <li>⚠️ Must still pay RCM on purchases from unregistered dealers</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-grid">
+    <div><h4>GST Compliance Pro</h4><p>India's free GST toolkit for MSMEs.</p></div>
+    <div><h4>Tools</h4><ul>
+      <li><a href="gst-calculator.html">GST Calculator</a></li>
+      <li><a href="itc-calculator.html">ITC Calculator</a></li>
+      <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+    </ul></div>
+    <div><h4>Resources</h4><ul>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
+</footer>
+<script>
+function getRate(val) {
+  if (val === '1' || val === '1m') return 1;
+  if (val === '5') return 5;
+  return 6;
+}
+
+function fmt(n) {
+return ‘₹’ + parseFloat(n).toLocaleString(‘en-IN’, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function updateRateHint() {
+const val = document.getElementById(‘businessType’).value;
+const hint = document.getElementById(‘rateHint’);
+if (val) {
+hint.textContent = ’Composition rate: ’ + getRate(val) + ‘% of total turnover (no ITC available)’;
+} else {
+hint.textContent = ‘’;
+}
+}
+
+function calculateComposition(e) {
+e.preventDefault();
+
+const btVal = document.getElementById(‘businessType’).value;
+const compRate = getRate(btVal);
+const turnover = parseFloat(document.getElementById(‘turnover’).value) || 0;
+const isSpecial = document.getElementById(‘specialState’).checked;
+const purchases = parseFloat(document.getElementById(‘purchases’).value) || 0;
+const purchaseRate = parseFloat(document.getElementById(‘purchaseGSTRate’).value) || 0;
+const salesRate = parseFloat(document.getElementById(‘salesGSTRate’).value) || 0;
+
+const limit = isSpecial ? 7500000 : 15000000;
+const limitText = isSpecial ? ‘₹75 Lakh’ : ‘₹1.5 Crore’;
+const eligible = turnover <= limit;
+
+// Composition tax = compRate% of turnover
+const compTax = (turnover * compRate) / 100;
+
+// Regular scheme
+const baseTurnover = turnover / (1 + salesRate / 100);
+const outputTax = (baseTurnover * salesRate) / 100;
+const inputTax = (purchases * purchaseRate) / 100;
+const netRegularTax = Math.max(0, outputTax - inputTax);
+
+const savings = netRegularTax - compTax;
+const betterScheme = savings > 0 ? ‘Composition’ : ‘Regular’;
+
+document.getElementById(‘resultBody’).innerHTML = `
+<div style="display:grid;gap:1.5rem;">
+
+```
+  <div style="background:${eligible ? '#d1fae5' : '#fee2e2'};padding:1rem;border-radius:8px;border-left:4px solid ${eligible ? '#10b981' : '#ef4444'};">
+    <p style="margin:0;font-weight:700;color:${eligible ? '#065f46' : '#991b1b'};">${eligible ? '✅ Eligible for Composition Scheme' : '❌ Not Eligible for Composition Scheme'}</p>
+    <p style="margin:0.4rem 0 0;font-size:0.875rem;color:${eligible ? '#064e3b' : '#7f1d1d'};">Turnover ${fmt(turnover)} ${eligible ? 'is within' : 'exceeds'} the ${limitText} limit.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div style="background:${savings > 0 ? '#d1fae5' : '#f8fafc'};padding:1.25rem;border-radius:12px;border:2px solid ${savings > 0 ? '#10b981' : '#e2e8f0'};text-align:center;">
+      <p style="margin:0 0 0.5rem;font-size:0.8rem;font-weight:700;color:${savings > 0 ? '#059669' : '#64748b'};">COMPOSITION</p>
+      <p style="margin:0;font-size:1.75rem;font-weight:800;color:#0f172a;">${fmt(compTax)}</p>
+      <p style="margin:0.25rem 0 0;font-size:0.75rem;color:#64748b;">${compRate}% of turnover</p>
+      ${savings > 0 ? '<p style="margin:0.5rem 0 0;font-size:0.75rem;font-weight:700;color:#059669;">⭐ BETTER OPTION</p>' : ''}
+    </div>
+    <div style="background:${savings <= 0 ? '#d1fae5' : '#f8fafc'};padding:1.25rem;border-radius:12px;border:2px solid ${savings <= 0 ? '#10b981' : '#e2e8f0'};text-align:center;">
+      <p style="margin:0 0 0.5rem;font-size:0.8rem;font-weight:700;color:${savings <= 0 ? '#059669' : '#64748b'};">REGULAR</p>
+      <p style="margin:0;font-size:1.75rem;font-weight:800;color:#0f172a;">${fmt(netRegularTax)}</p>
+      <p style="margin:0.25rem 0 0;font-size:0.75rem;color:#64748b;">Output − ITC</p>
+      ${savings <= 0 ? '<p style="margin:0.5rem 0 0;font-size:0.75rem;font-weight:700;color:#059669;">⭐ BETTER OPTION</p>' : ''}
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,${savings > 0 ? '#059669,#10b981' : '#1d4ed8,#3b82f6'});padding:1.5rem;border-radius:12px;text-align:center;color:white;">
+    <p style="margin:0 0 0.25rem;font-size:0.875rem;opacity:0.9;">${savings > 0 ? '💰 Annual Savings with Composition' : '⚠️ Extra Cost if Switching to Composition'}</p>
+    <p style="margin:0;font-size:2.5rem;font-weight:800;">${fmt(Math.abs(savings))}</p>
+    <p style="margin:0.5rem 0 0;font-size:0.9rem;opacity:0.9;"><strong>${betterScheme} Scheme</strong> is better for your business</p>
+  </div>
+
+  <div style="background:#f8fafc;padding:1rem;border-radius:8px;font-size:0.875rem;">
+    <div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid #e2e8f0;">
+      <span>Output Tax (Sales at ${salesRate}%):</span><span style="font-weight:600;">${fmt(outputTax)}</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid #e2e8f0;">
+      <span>Input Tax Credit (ITC):</span><span style="font-weight:600;color:#059669;">− ${fmt(inputTax)}</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid #e2e8f0;">
+      <span style="font-weight:600;">Net Regular Tax:</span><span style="font-weight:700;">${fmt(netRegularTax)}</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;padding:0.4rem 0;">
+      <span style="font-weight:600;">Composition Tax (${compRate}%):</span><span style="font-weight:700;">${fmt(compTax)}</span>
+    </div>
+  </div>
+
+  ${savings > 0 && eligible ? `<div class="info-box blue"><div class="info-box-content"><p style="margin:0;"><strong>Before opting:</strong> Confirm you do NOT make inter-state sales and do NOT sell on e-commerce platforms — both are disqualifying conditions.</p></div></div>` : ''}
+
+</div>
+```
+
+`;
+
+document.getElementById(‘result’).style.display = ‘block’;
+document.getElementById(‘result’).scrollIntoView({ behavior: ‘smooth’ });
+}
+</script>
+
+<script src="main.js"></script>
+
+<!-- MOBILE ACTION BAR -->
+
+<div class="mobile-action-bar">
+  <div class="mobile-action-buttons">
+    <button class="mobile-action-btn" onclick="window.location.href='index.html#tools'">
+      <span class="icon">🧮</span>
+      <span>Tools</span>
+    </button>
+    <button class="mobile-action-btn active" onclick="window.location.href='index.html#tools'">
+      <span class="icon">🔍</span>
+      <span>Search</span>
+    </button>
+    <button class="mobile-action-btn" onclick="window.location.href='return-deadlines.html'">
+      <span class="icon">📅</span>
+      <span>Deadlines</span>
+    </button>
+  </div>
+</div>
+
+</body>
+</html>
