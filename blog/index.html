@@ -5,18 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GST Blog - Free Guides & Compliance Updates | GST Compliance Pro</title>
 <meta name="description" content="Free expert guides on GST compliance. Learn about filing returns, ITC, penalties, HSN codes. Updated for 2026.">
-<link rel="stylesheet" href="../master-style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../master-style.css">
+<link rel="stylesheet" href="../tool-hub.css">
 </head>
 <body>
+
 <nav class="navbar">
 <div class="navbar-container">
 <a href="../index.html" class="nav-logo">
 <div class="logo-mark">G</div>
 <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
 </a>
-<button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+<button class="mobile-menu-toggle">
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-links">
@@ -26,6 +28,7 @@
 </ul>
 </div>
 </nav>
+
 <div class="legal-disclaimer-banner">
 <div class="disclaimer-container">
 <div class="disclaimer-icon">⚖️</div>
@@ -35,18 +38,21 @@
 </div>
 </div>
 </div>
+
 <section class="hero">
 <div class="hero-badge">📚 Knowledge Hub</div>
 <h1>GST Compliance <em>Blog</em></h1>
 <p>Free expert guides to simplify compliance for Indian businesses</p>
 <div class="hero-meta">16 Guides • Updated Feb 2026 • 100% Free</div>
 </section>
+
 <div class="container">
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:4rem">
 <div class="stat-card"><div class="stat-number">16</div><div class="stat-label">Expert Guides</div></div>
 <div class="stat-card"><div class="stat-number">45k+</div><div class="stat-label">Words Written</div></div>
 <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Free Access</div></div>
 </div>
+
 <div style="margin-bottom:4rem">
 <div style="text-align:center;margin-bottom:2rem">
 <div class="section-label">🚀 New to GST?</div>
@@ -71,6 +77,7 @@
 </a>
 </div>
 </div>
+
 <div style="margin-bottom:4rem">
 <div style="text-align:center;margin-bottom:2rem">
 <div class="section-label">📅 Returns</div>
@@ -89,6 +96,7 @@
 </a>
 </div>
 </div>
+
 <div style="margin-bottom:4rem">
 <div style="text-align:center;margin-bottom:2rem">
 <div class="section-label">⚡ Advanced</div>
@@ -117,6 +125,7 @@
 </a>
 </div>
 </div>
+
 <div style="margin-bottom:4rem">
 <div style="text-align:center;margin-bottom:2rem">
 <div class="section-label">🏷️ Rates</div>
@@ -135,6 +144,7 @@
 </a>
 </div>
 </div>
+
 <div style="margin-bottom:4rem">
 <div style="text-align:center;margin-bottom:2rem">
 <div class="section-label">⚠️ Penalties</div>
@@ -158,6 +168,7 @@
 </a>
 </div>
 </div>
+
 <div style="margin-bottom:4rem">
 <div style="text-align:center;margin-bottom:2rem">
 <div class="section-label">🆕 Latest</div>
@@ -176,18 +187,21 @@
 </a>
 </div>
 </div>
+
 <div class="cta-section">
 <h2>Need GST <em>Tools?</em></h2>
 <p>Free calculators - no signup required.</p>
 <a href="../index.html#tools" class="btn btn-primary">🧮 View Tools</a>
 </div>
 </div>
+
 <footer class="footer">
 <div class="footer-grid">
 <div><h4>GST Compliance Pro</h4><p>Free GST toolkit for MSMEs.</p></div>
 <div><h4>Tools</h4><ul>
 <li><a href="../gst-calculator.html">GST Calculator</a></li>
 <li><a href="../hsn-finder.html">HSN Finder</a></li>
+<li><a href="../penalty-calculator.html">Penalty Calculator</a></li>
 </ul></div>
 <div><h4>Learn</h4><ul>
 <li><a href="index.html">Blog</a></li>
@@ -196,6 +210,7 @@
 </div>
 <div class="footer-bottom">© 2026 GST Compliance Pro</div>
 </footer>
+
 <style>
 .stat-card{background:linear-gradient(135deg,#1e293b,#334155);padding:2rem;border-radius:12px;text-align:center;color:white;box-shadow:0 4px 6px rgba(0,0,0,0.1)}
 .stat-number{font-size:2.5rem;font-weight:900;color:#fbbf24;margin-bottom:0.5rem}
@@ -203,6 +218,25 @@
 .tool-card.featured{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd}
 .tool-badge{display:inline-block;background:#2563eb;color:white;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:700;margin-top:12px}
 </style>
+
+<!-- MOBILE ACTION BAR -->
+<div class="mobile-action-bar">
+  <div class="mobile-action-buttons">
+    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
+      <span class="icon">🧮</span>
+      <span>Tools</span>
+    </button>
+    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
+      <span class="icon">🔍</span>
+      <span>Search</span>
+    </button>
+    <button class="mobile-action-btn active">
+      <span class="icon">📚</span>
+      <span>Blog</span>
+    </button>
+  </div>
+</div>
+
 <script src="../main.js"></script>
 </body>
 </html>
