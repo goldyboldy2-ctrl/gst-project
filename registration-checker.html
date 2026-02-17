@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Registration Checker - Do You Need GST Registration? | GST Compliance Pro</title>
+  <meta name="description" content="Check if GST registration is mandatory for your business. Free eligibility checker based on turnover, business type, and state.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="master-style.css">
+  <link rel="stylesheet" href="tool-hub.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+    </a>
+    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="legal-disclaimer-banner">
+  <div class="disclaimer-container">
+    <div class="disclaimer-icon">⚖️</div>
+    <div class="disclaimer-content">
+      <strong>Legal Disclaimer:</strong> This is guidance only. Consult a qualified CA for your specific situation.
+    </div>
+  </div>
+</div>
+<div class="tool-page">
+  <div class="tool-container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">›</span><a href="index.html#tools">Tools</a><span class="sep">›</span><span>Registration Checker</span>
+    </div>
+    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
+    <div class="tool-header">
+      <div class="tool-badge">✅ Checker</div>
+      <h1>GST Registration Checker</h1>
+      <p>Find out if GST registration is <strong>mandatory</strong> for your business. Instant results based on turnover and business type.</p>
+    </div>
+    <div class="info-box blue">
+      <div class="info-box-icon">💡</div>
+      <div class="info-box-content">
+        <h4>How to Use</h4>
+        <p>Answer 4 questions about your business. Get instant determination if GST registration is mandatory or optional.</p>
+      </div>
+    </div>
+    <div class="tool-card-main">
+      <h2>✅ Check Registration Requirement</h2>
+      <form id="registrationChecker" onsubmit="checkRegistration(event)">
+        <div class="form-group">
+          <label for="businessType">Business Type</label>
+          <select id="businessType" required>
+            <option value="">Select Business Type</option>
+            <option value="goods">Trading/Manufacturing (Goods)</option>
+            <option value="services">Service Provider</option>
+            <option value="both">Goods + Services</option>
+            <option value="ecommerce">E-commerce Seller</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="turnover">Annual Turnover</label>
+          <div class="input-with-prefix">
+            <span class="prefix">₹</span>
+            <input type="number" id="turnover" placeholder="Enter amount" min="0" step="1000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="stateType">State Category</label>
+          <select id="stateType" required>
+            <option value="">Select Category</option>
+            <option value="regular">Regular State</option>
+            <option value="special">Special Category State</option>
+          </select>
+          <small>Special: AP, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, HP, Uttarakhand, J&K</small>
+        </div>
+        <div class="form-group">
+          <label>Interstate Supply</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="interstate" value="yes" required>
+              <span>Yes, I make inter-state sales</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="interstate" value="no">
+              <span>No, only intra-state</span>
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">Check Status →</button>
+      </form>
+    </div>
+    <div id="result" class="result-card" style="display: none;">
+      <div class="result-header">
+        <span class="result-icon" id="resultIcon">✅</span>
+        <h3 id="resultTitle">Status</h3>
+      </div>
+      <div class="result-body" id="resultBody"></div>
+      <div class="result-actions">
+        <button onclick="location.reload()" class="btn btn-secondary">Check Again</button>
+        <a href="blog/gst-registration-process.html" class="btn btn-primary">Registration Guide →</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-grid">
+    <div><h4>GST Compliance Pro</h4></div>
+    <div><h4>Tools</h4><ul><li><a href="gst-calculator.html">GST Calculator</a></li></ul></div>
+    <div><h4>Resources</h4><ul><li><a href="blog/index.html">Blog</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
+</footer>
+<script>
+function checkRegistration(e) {
+  e.preventDefault();
+  const type = document.getElementById('businessType').value;
+  const turnover = parseFloat(document.getElementById('turnover').value);
+  const state = document.getElementById('stateType').value;
+  const interstate = document.querySelector('input[name="interstate"]:checked').value;
+
+let mandatory = false;
+let reason = ‘’;
+let threshold = 0;
+
+if (type === ‘ecommerce’) {
+mandatory = true;
+reason = ‘E-commerce sellers must register regardless of turnover.’;
+} else if (interstate === ‘yes’) {
+mandatory = true;
+reason = ‘Inter-state supply makes registration mandatory.’;
+} else {
+if (type === ‘goods’ || type === ‘both’) {
+threshold = state === ‘special’ ? 2000000 : 4000000;
+} else {
+threshold = state === ‘special’ ? 1000000 : 2000000;
+}
+if (turnover > threshold) {
+mandatory = true;
+reason = `Turnover ₹${(turnover/100000).toFixed(2)}L exceeds ₹${(threshold/100000)}L threshold.`;
+}
+}
+
+const result = document.getElementById(‘result’);
+const icon = document.getElementById(‘resultIcon’);
+const title = document.getElementById(‘resultTitle’);
+const body = document.getElementById(‘resultBody’);
+
+if (mandatory) {
+icon.textContent = ‘✅’;
+icon.style.background = ‘var(–green-success)’;
+title.textContent = ‘Registration MANDATORY’;
+body.innerHTML = `<p style="font-size:1.1rem;font-weight:600;color:var(--green-success)">You must register for GST</p><p><strong>Reason:</strong> ${reason}</p><p>Visit <a href="https://www.gst.gov.in" target="_blank">www.gst.gov.in</a> to register.</p>`;
+} else {
+icon.textContent = ‘✓’;
+icon.style.background = ‘var(–indigo-primary)’;
+title.textContent = ‘Registration Optional’;
+body.innerHTML = `<p style="font-size:1.1rem;font-weight:600;color:var(--indigo-primary)">Registration not mandatory</p><p>Your turnover ₹${(turnover/100000).toFixed(2)}L is below ₹${(threshold/100000)}L threshold.</p><p><strong>But you can register voluntarily</strong> to claim ITC and sell B2B.</p>`;
+}
+
+result.style.display = ‘block’;
+result.scrollIntoView({ behavior: ‘smooth’ });
+}
+</script>
+
+<!-- MOBILE ACTION BAR -->
+
+<div class="mobile-action-bar">
+  <div class="mobile-action-buttons">
+    <button class="mobile-action-btn" onclick="window.location.href='index.html#tools'">
+      <span class="icon">🧮</span>
+      <span>Tools</span>
+    </button>
+    <button class="mobile-action-btn active" onclick="window.location.href='index.html#tools'">
+      <span class="icon">🔍</span>
+      <span>Search</span>
+    </button>
+    <button class="mobile-action-btn" onclick="window.location.href='return-deadlines.html'">
+      <span class="icon">📅</span>
+      <span>Deadlines</span>
+    </button>
+  </div>
+</div>
+
+</body>
+</html>
