@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITC Calculator - Input Tax Credit Calculator | GST Compliance Pro</title>
+  <meta name="description" content="Calculate GST Input Tax Credit (ITC) with blocked credits under Section 17(5). Check eligibility, handle Rule 42/43 proportions. Free ITC calculator.">
+
+  <!-- Optimized Font Loading -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS Architecture -->
+
+  <link rel="stylesheet" href="master-style.css">
+  <link rel="stylesheet" href="tool-hub.css">
+
+  <!-- OpenGraph -->
+
+  <meta property="og:title" content="ITC Calculator - Free Tool">
+  <meta property="og:description" content="Calculate Input Tax Credit with blocked credits and exempt supply proportion.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+    </a>
+
+```
+<button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html#tools">Tools</a></li>
+  <li><a href="blog/index.html">Blog</a></li>
+</ul>
+```
+
+  </div>
+</nav>
+
+<!-- LEGAL DISCLAIMER -->
+
+<div class="legal-disclaimer-banner">
+  <div class="disclaimer-container">
+    <div class="disclaimer-icon">⚖️</div>
+    <div class="disclaimer-content">
+      <strong>Legal Disclaimer:</strong> ITC calculations are estimates based on information provided. Actual eligibility depends on invoice compliance, supplier status, and specific transactions. Always verify with <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST portal</a> and consult a qualified CA.
+    </div>
+  </div>
+</div>
+
+<!-- TOOL PAGE -->
+
+<div class="tool-page">
+  <div class="tool-container">
+
+```
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="sep">›</span>
+  <a href="index.html#tools">Tools</a>
+  <span class="sep">›</span>
+  <span>ITC Calculator</span>
+</div>
+
+<!-- BACK BUTTON -->
+<a href="index.html#tools" class="back-button">← Back to All Tools</a>
+
+<!-- TOOL HEADER -->
+<div class="tool-header">
+  <div class="tool-badge">💰 Calculator</div>
+  <h1>ITC Calculator</h1>
+  <p>Calculate eligible Input Tax Credit (ITC) after blocked credits and exempt supply proportion. Know your exact claimable ITC.</p>
+</div>
+
+<!-- INFO BOX -->
+<div class="info-box blue">
+  <div class="info-box-icon">💡</div>
+  <div class="info-box-content">
+    <h4>How to Use</h4>
+    <p><strong>Step 1:</strong> Enter total ITC from GSTR-2B<br>
+    <strong>Step 2:</strong> Add blocked credits (Section 17(5))<br>
+    <strong>Step 3:</strong> Enter exempt supply percentage if applicable<br>
+    <strong>Step 4:</strong> Get net claimable ITC instantly</p>
+  </div>
+</div>
+
+<!-- MAIN CALCULATOR CARD -->
+<div class="tool-card-main">
+  <h2>💰 Calculate ITC</h2>
+  
+  <form id="itcCalculator" onsubmit="calculateITC(event)">
+    
+    <!-- Total ITC -->
+    <div class="form-group">
+      <label for="totalITC">Total ITC as per GSTR-2B (₹)</label>
+      <input 
+        type="number" 
+        id="totalITC" 
+        placeholder="Enter total ITC (e.g., 100000)"
+        required
+        min="0"
+        step="0.01"
+      />
+      <small style="display: block; margin-top: var(--space-2); color: var(--color-text-muted); font-size: var(--text-sm);">
+        💡 Total input tax credit as shown in your GSTR-2B for the period
+      </small>
+    </div>
+
+    <!-- BLOCKED CREDITS SECTION -->
+    <div style="background: var(--slate-50); padding: var(--space-6); border-radius: var(--radius-xl); margin: var(--space-6) 0;">
+      <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+        ❌ Blocked Credits (Section 17(5))
+      </h3>
+      
+      <!-- Motor Vehicles -->
+      <div class="form-group">
+        <label style="display: flex; align-items: center; gap: var(--space-2);">
+          Motor Vehicles (₹)
+          <button type="button" class="help-icon" onclick="showHelp('motor')">ℹ️</button>
+        </label>
+        <input type="number" id="blockedMotor" placeholder="0" min="0" step="0.01" value="0" />
+      </div>
+
+      <!-- Food & Beverages -->
+      <div class="form-group">
+        <label style="display: flex; align-items: center; gap: var(--space-2);">
+          Food & Beverages (₹)
+          <button type="button" class="help-icon" onclick="showHelp('food')">ℹ️</button>
+        </label>
+        <input type="number" id="blockedFood" placeholder="0" min="0" step="0.01" value="0" />
+      </div>
+
+      <!-- Outdoor Catering -->
+      <div class="form-group">
+        <label style="display: flex; align-items: center; gap: var(--space-2);">
+          Outdoor Catering (₹)
+          <button type="button" class="help-icon" onclick="showHelp('catering')">ℹ️</button>
+        </label>
+        <input type="number" id="blockedCatering" placeholder="0" min="0" step="0.01" value="0" />
+      </div>
+
+      <!-- Membership/Health/Fitness -->
+      <div class="form-group">
+        <label style="display: flex; align-items: center; gap: var(--space-2);">
+          Membership, Health & Fitness (₹)
+          <button type="button" class="help-icon" onclick="showHelp('health')">ℹ️</button>
+        </label>
+        <input type="number" id="blockedHealth" placeholder="0" min="0" step="0.01" value="0" />
+      </div>
+
+      <!-- Life Insurance/Pension -->
+      <div class="form-group">
+        <label style="display: flex; align-items: center; gap: var(--space-2);">
+          Life Insurance & Pension (₹)
+          <button type="button" class="help-icon" onclick="showHelp('insurance')">ℹ️</button>
+        </label>
+        <input type="number" id="blockedInsurance" placeholder="0" min="0" step="0.01" value="0" />
+      </div>
+
+      <!-- Personal Use -->
+      <div class="form-group">
+        <label style="display: flex; align-items: center; gap: var(--space-2);">
+          Personal Use Goods/Services (₹)
+          <button type="button" class="help-icon" onclick="showHelp('personal')">ℹ️</button>
+        </label>
+        <input type="number" id="blockedPersonal" placeholder="0" min="0" step="0.01" value="0" />
+      </div>
+    </div>
+
+    <!-- EXEMPT SUPPLY PROPORTION -->
+    <div class="form-group">
+      <label style="display: flex; align-items: center; gap: var(--space-2);">
+        Exempt Supply Percentage (Rule 42/43)
+        <button type="button" class="help-icon" onclick="showHelp('exempt')">ℹ️</button>
+      </label>
+      <input 
+        type="number" 
+        id="exemptPercent" 
+        placeholder="0"
+        min="0"
+        max="100"
+        step="0.01"
+        value="0"
+      />
+      <small style="display: block; margin-top: var(--space-2); color: var(--color-text-muted); font-size: var(--text-sm);">
+        💡 If you supply exempt goods/services, enter percentage of total turnover. Leave 0 if all supplies are taxable.
+      </small>
+    </div>
+
+    <!-- RULE 37 WARNING -->
+    <div style="background: #fff7ed; border: 2px solid #fed7aa; border-radius: var(--radius-xl); padding: var(--space-5); margin: var(--space-6) 0;">
+      <div style="display: flex; align-items: start; gap: var(--space-3);">
+        <input 
+          type="checkbox" 
+          id="rule37Check" 
+          style="width: 24px; height: 24px; min-height: 24px; margin-top: 2px; cursor: pointer;"
+        />
+        <label for="rule37Check" style="cursor: pointer; color: #92400e; line-height: 1.6; font-size: var(--text-sm);">
+          <strong style="color: #78350f;">⚠️ Rule 37 Confirmation (180-Day Rule)</strong><br>
+          I confirm that I have <strong>paid all suppliers within 180 days</strong> from the invoice date. If payment is not made within 180 days, ITC must be reversed with 18% interest.
+          <button type="button" class="help-icon" onclick="showHelp('rule37')" style="margin-left: var(--space-2);">ℹ️</button>
+        </label>
+      </div>
+    </div>
+    
+    <!-- Calculate Button -->
+    <button type="submit" class="btn" style="width: 100%; max-width: 100%;">
+      Calculate ITC
+    </button>
+    
+  </form>
+</div>
+
+<!-- RESULT BOX -->
+<div id="resultBox" class="result-box">
+  <h3>ITC Calculation Result</h3>
+  <div id="resultContent"></div>
+</div>
+
+<!-- HELP MODAL -->
+<div id="helpModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center; padding: var(--space-4);">
+  <div style="background: white; border-radius: var(--radius-2xl); padding: var(--space-8); max-width: 500px; width: 100%; position: relative;">
+    <button onclick="closeHelp()" style="position: absolute; top: var(--space-4); right: var(--space-4); background: none; border: none; font-size: var(--text-2xl); cursor: pointer; color: var(--slate-600);">×</button>
+    <div id="helpContent"></div>
+  </div>
+</div>
+
+<!-- ITC RULES INFO -->
+<div class="info-box" style="margin-top: var(--space-8); background: #fff7ed; border-color: #fed7aa;">
+  <div class="info-box-icon" style="color: #f59e0b;">📋</div>
+  <div class="info-box-content">
+    <h4 style="color: #92400e;">Section 17(5) - Blocked ITC</h4>
+    <p style="color: #78350f;"><strong>ITC is NOT available on:</strong></p>
+    <ul style="color: #78350f; margin-left: var(--space-5); margin-top: var(--space-2);">
+      <li>Motor vehicles (except for specific business use)</li>
+      <li>Food, beverages, and outdoor catering</li>
+      <li>Membership of clubs, health & fitness centers</li>
+      <li>Life insurance and pension fund management</li>
+      <li>Goods/services for personal consumption</li>
+      <li>Works contract for construction of immovable property (except plant & machinery)</li>
+    </ul>
+    <p style="color: #78350f; margin: var(--space-3) 0;"><strong>Rule 37 (180-Day Rule):</strong> If payment to supplier is not made within 180 days from invoice date, ITC must be reversed with 18% interest. This is a common audit trigger!</p>
+    <p style="color: #78350f; margin: var(--space-2) 0 0;"><strong>Note:</strong> There are specific exceptions. Always verify eligibility with your CA based on your actual use case.</p>
+  </div>
+</div>
+
+<!-- RELATED TOOLS -->
+<div class="related-tools">
+  <h3>Related Tools</h3>
+  <div class="related-tools-grid">
+    <a href="gst-calculator.html" class="related-tool-card">
+      <h4>🧮 GST Calculator</h4>
+      <p>Calculate GST on purchases</p>
+      <span class="arrow">Calculate →</span>
+    </a>
+    <a href="penalty-calculator.html" class="related-tool-card">
+      <h4>💸 Penalty Calculator</h4>
+      <p>Calculate late fees</p>
+      <span class="arrow">Calculate →</span>
+    </a>
+    <a href="hsn-finder.html" class="related-tool-card">
+      <h4>🔍 HSN Finder</h4>
+      <p>Find HSN codes with rates</p>
+      <span class="arrow">Search →</span>
+    </a>
+  </div>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h4>GST Compliance Pro</h4>
+      <p>India's free GST toolkit for MSMEs.</p>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="gst-calculator.html">GST Calculator</a></li>
+        <li><a href="hsn-finder.html">HSN Finder</a></li>
+        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 GST Compliance Pro
+  </div>
+</footer>
+
+<!-- MOBILE ACTION BAR -->
+
+<div class="mobile-action-bar">
+  <div class="mobile-action-buttons">
+    <button class="mobile-action-btn" onclick="window.location.href='index.html#tools'">
+      <span class="icon">🧮</span>
+      <span>Tools</span>
+    </button>
+    <button class="mobile-action-btn active" onclick="window.location.href='index.html#tools'">
+      <span class="icon">🔍</span>
+      <span>Search</span>
+    </button>
+    <button class="mobile-action-btn" onclick="window.location.href='return-deadlines.html'">
+      <span class="icon">📅</span>
+      <span>Deadlines</span>
+    </button>
+  </div>
+</div>
+
+<style>
+.help-icon {
+  background: var(--indigo-bg);
+  color: var(--indigo-primary);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.help-icon:hover {
+  background: var(--indigo-primary);
+  color: white;
+  transform: scale(1.1);
+}
+</style>
+
+<!-- CALCULATOR LOGIC -->
+
+<script>
+// Help content database
+const helpContent = {
+  motor: {
+    title: '🚗 Motor Vehicles',
+    content: 'ITC on motor vehicles is blocked under Section 17(5)(a) EXCEPT when:<br><br>• Used for further supply of motor vehicles<br>• Used for passenger transportation<br>• Used for imparting training on driving/flying/navigating<br><br>If your vehicle qualifies for these exceptions, do NOT enter it as blocked credit.'
+  },
+  food: {
+    title: '🍽️ Food & Beverages',
+    content: 'ITC on food and beverages is blocked under Section 17(5)(b) EXCEPT when:<br><br>• Used for further supply of same category (restaurants, caterers)<br>• Provided by employer to employees at work premises as statutory obligation<br><br>Personal consumption food/beverages are always blocked.'
+  },
+  catering: {
+    title: '🎪 Outdoor Catering',
+    content: 'ITC on outdoor catering services is blocked under Section 17(5)(b) EXCEPT when:<br><br>• Used for further supply of same service (if you are a caterer)<br>• Provided to employees as statutory obligation<br><br>Corporate events, client entertainment catering is blocked.'
+  },
+  health: {
+    title: '💪 Membership, Health & Fitness',
+    content: 'ITC is blocked on:<br><br>• Club memberships<br>• Health & fitness center fees<br>• Beauty treatment services<br><br>This applies under Section 17(5)(b). There are NO common exceptions to this block. Always blocked for personal/employee use.'
+  },
+  insurance: {
+    title: '🛡️ Life Insurance & Pension',
+    content: 'ITC is blocked on:<br><br>• Life insurance premiums<br>• Pension fund management fees<br><br>Covered under Section 17(5)(b). Group insurance for employees is also blocked. However, health insurance may be eligible in specific cases - consult your CA.'
+  },
+  personal: {
+    title: '👤 Personal Use',
+    content: 'ITC is blocked on goods or services used for personal consumption by any person.<br><br>Examples:<br>• Personal mobile bills<br>• Personal vehicle expenses<br>• Personal travel/entertainment<br>• Gifts to employees (personal in nature)<br><br>Always blocked under Section 17(5)(h).'
+  },
+  exempt: {
+    title: '📊 Exempt Supply Proportion',
+    content: 'Under Rule 42 & 43, if you supply BOTH taxable and exempt goods/services:<br><br><strong>Eligible ITC = Total ITC × (Taxable Turnover ÷ Total Turnover)</strong><br><br>Example: If 20% of your supplies are exempt, enter "20" here. The calculator will reduce your eligible ITC proportionately.<br><br>If ALL your supplies are taxable, leave this as 0.'
+  },
+  rule37: {
+    title: '⚠️ Rule 37 - 180 Day Payment Rule',
+    content: '<strong>Critical Compliance Requirement:</strong><br><br>If you do NOT pay your supplier within <strong>180 days</strong> from the invoice date, you MUST:<br><br>1. <strong>Reverse the ITC</strong> in the month following 180 days<br>2. Pay <strong>18% interest</strong> on the reversed amount<br><br><strong>Why this matters:</strong> Even if the invoice is in your GSTR-2B and you claimed ITC, if payment is delayed beyond 180 days, the ITC becomes invalid.<br><br><strong>How to avoid:</strong><br>• Maintain payment tracker with invoice dates<br>• Pay suppliers within 150 days (buffer)<br>• Review aged payables monthly<br><br>This is one of the most common ITC reversal triggers in audits!'
+  }
+};
+
+function showHelp(category) {
+  const modal = document.getElementById('helpModal');
+  const content = document.getElementById('helpContent');
+  const help = helpContent[category];
+  
+  content.innerHTML = `
+    <h3 style="margin-bottom: var(--space-4); color: var(--indigo-primary);">${help.title}</h3>
+    <div style="line-height: 1.8; color: var(--slate-700);">${help.content}</div>
+  `;
+  
+  modal.style.display = 'flex';
+}
+
+function closeHelp() {
+  document.getElementById('helpModal').style.display = 'none';
+}
+
+// Close modal on outside click
+document.getElementById('helpModal')?.addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeHelp();
+  }
+});
+
+function calculateITC(event) {
+  event.preventDefault();
+  
+  const totalITC = parseFloat(document.getElementById('totalITC').value) || 0;
+  const blockedMotor = parseFloat(document.getElementById('blockedMotor').value) || 0;
+  const blockedFood = parseFloat(document.getElementById('blockedFood').value) || 0;
+  const blockedCatering = parseFloat(document.getElementById('blockedCatering').value) || 0;
+  const blockedHealth = parseFloat(document.getElementById('blockedHealth').value) || 0;
+  const blockedInsurance = parseFloat(document.getElementById('blockedInsurance').value) || 0;
+  const blockedPersonal = parseFloat(document.getElementById('blockedPersonal').value) || 0;
+  const exemptPercent = parseFloat(document.getElementById('exemptPercent').value) || 0;
+  
+  if (totalITC <= 0) {
+    alert('Please enter a valid Total ITC amount');
+    return;
+  }
+  
+  // Calculate total blocked credits
+  const totalBlocked = blockedMotor + blockedFood + blockedCatering + blockedHealth + blockedInsurance + blockedPersonal;
+  
+  // Calculate ITC after blocked credits
+  const itcAfterBlocked = totalITC - totalBlocked;
+  
+  // Apply exempt supply proportion (Rule 42/43)
+  const exemptReduction = (itcAfterBlocked * exemptPercent) / 100;
+  const eligibleITC = itcAfterBlocked - exemptReduction;
+  
+  // Store for copy function
+  window.lastITCCalc = {
+    totalITC: totalITC,
+    totalBlocked: totalBlocked,
+    itcAfterBlocked: itcAfterBlocked,
+    exemptPercent: exemptPercent,
+    exemptReduction: exemptReduction,
+    eligibleITC: eligibleITC,
+    breakdown: {
+      motor: blockedMotor,
+      food: blockedFood,
+      catering: blockedCatering,
+      health: blockedHealth,
+      insurance: blockedInsurance,
+      personal: blockedPersonal
+    }
+  };
+  
+  // Display results using main.js utilities
+  const resultBox = document.getElementById('resultBox');
+  const resultContent = document.getElementById('resultContent');
+  
+  let blockedBreakdown = '';
+  if (totalBlocked > 0) {
+    blockedBreakdown = '<div style="background: var(--slate-50); padding: var(--space-4); border-radius: var(--radius-lg); margin-top: var(--space-4);"><div style="font-size: var(--text-sm); font-weight: var(--weight-semibold); margin-bottom: var(--space-2); color: var(--slate-700);">Blocked Credits Breakdown:</div><div style="font-size: var(--text-sm); color: var(--slate-600); line-height: 1.8;">';
+    
+    if (blockedMotor > 0) blockedBreakdown += `• Motor Vehicles: ${window.gstTools.formatINR(blockedMotor)}<br>`;
+    if (blockedFood > 0) blockedBreakdown += `• Food & Beverages: ${window.gstTools.formatINR(blockedFood)}<br>`;
+    if (blockedCatering > 0) blockedBreakdown += `• Outdoor Catering: ${window.gstTools.formatINR(blockedCatering)}<br>`;
+    if (blockedHealth > 0) blockedBreakdown += `• Health & Fitness: ${window.gstTools.formatINR(blockedHealth)}<br>`;
+    if (blockedInsurance > 0) blockedBreakdown += `• Insurance & Pension: ${window.gstTools.formatINR(blockedInsurance)}<br>`;
+    if (blockedPersonal > 0) blockedBreakdown += `• Personal Use: ${window.gstTools.formatINR(blockedPersonal)}<br>`;
+    
+    blockedBreakdown += '</div></div>';
+  }
+  
+  resultContent.innerHTML = `
+    <div style="display: grid; gap: var(--space-6); text-align: left; max-width: 600px; margin: 0 auto;">
+      
+      <div style="background: white; padding: var(--space-5); border-radius: var(--radius-xl); border: 2px solid var(--color-border);">
+        <div style="font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-2);">Total ITC (GSTR-2B)</div>
+        <div style="font-size: var(--text-3xl); font-weight: var(--weight-bold); color: var(--slate-900); font-family: var(--font-display);">${window.gstTools.formatINR(totalITC)}</div>
+      </div>
+      
+      ${totalBlocked > 0 ? `
+      <div style="background: #fee2e2; padding: var(--space-5); border-radius: var(--radius-xl); border: 2px solid #ef4444;">
+        <div style="font-size: var(--text-sm); color: #dc2626; margin-bottom: var(--space-2); font-weight: var(--weight-semibold);">Less: Blocked Credits (Sec 17(5))</div>
+        <div style="font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--slate-900); font-family: var(--font-display);">- ${window.gstTools.formatINR(totalBlocked)}</div>
+        ${blockedBreakdown}
+      </div>
+      ` : ''}
+      
+      ${exemptPercent > 0 ? `
+      <div style="background: #fef3c7; padding: var(--space-5); border-radius: var(--radius-xl); border: 2px solid #f59e0b;">
+        <div style="font-size: var(--text-sm); color: #d97706; margin-bottom: var(--space-2); font-weight: var(--weight-semibold);">Less: Exempt Supply Proportion (${exemptPercent}%)</div>
+        <div style="font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--slate-900); font-family: var(--font-display);">- ${window.gstTools.formatINR(exemptReduction)}</div>
+        <div style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-2);">Rule 42/43 applied</div>
+      </div>
+      ` : ''}
+      
+      <div style="background: linear-gradient(135deg, var(--green-success), var(--green-hover)); padding: var(--space-6); border-radius: var(--radius-xl); text-align: center;">
+        <div style="font-size: var(--text-sm); color: white; opacity: 0.9; margin-bottom: var(--space-2);">Net Eligible ITC</div>
+        <div style="font-size: var(--text-4xl); font-weight: var(--weight-bold); color: white; font-family: var(--font-display);">${window.gstTools.formatINR(eligibleITC)}</div>
+        <div style="font-size: var(--text-sm); color: white; opacity: 0.8; margin-top: var(--space-2);">Claimable in GSTR-3B</div>
+      </div>
+      
+      <div class="info-box blue" style="margin: 0;">
+        <div class="info-box-icon">✅</div>
+        <div class="info-box-content">
+          <p style="margin: 0 0 var(--space-3);"><strong>GSTR-2B Compliance (Rule 36(4)):</strong><br>Ensure ALL supplier invoices are reflected in your GSTR-2B before claiming ITC. ITC can only be claimed on invoices where the supplier has filed their return.</p>
+          <p style="margin: 0;"><strong>Rule 37 Reminder (180-Day Rule):</strong><br>If you haven't paid any supplier within 180 days from invoice date, you must reverse that ITC with 18% interest. Track payment dates carefully!</p>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-6); flex-wrap: wrap; justify-content: center;">
+      <button onclick="copyITCResults()" class="btn btn-secondary" style="max-width: 200px;">
+        📋 Copy Results
+      </button>
+      <button onclick="window.print()" class="btn btn-secondary" style="max-width: 200px;">
+        🖨️ Print Result
+      </button>
+    </div>
+  `;
+  
+  window.gstTools.showResultBox('resultBox');
+}
+
+function copyITCResults() {
+  const calc = window.lastITCCalc;
+  if (!calc) return;
+  
+  let text = `ITC CALCULATION RESULT
+━━━━━━━━━━━━━━━━━━━━
+Total ITC (GSTR-2B): ${window.gstTools.formatINR(calc.totalITC)}
+
+`;
+
+  if (calc.totalBlocked > 0) {
+    text += `Blocked Credits (Sec 17(5)): -${window.gstTools.formatINR(calc.totalBlocked)}\n`;
+    if (calc.breakdown.motor > 0) text += `  • Motor: ${window.gstTools.formatINR(calc.breakdown.motor)}\n`;
+    if (calc.breakdown.food > 0) text += `  • Food: ${window.gstTools.formatINR(calc.breakdown.food)}\n`;
+    if (calc.breakdown.catering > 0) text += `  • Catering: ${window.gstTools.formatINR(calc.breakdown.catering)}\n`;
+    if (calc.breakdown.health > 0) text += `  • Health: ${window.gstTools.formatINR(calc.breakdown.health)}\n`;
+    if (calc.breakdown.insurance > 0) text += `  • Insurance: ${window.gstTools.formatINR(calc.breakdown.insurance)}\n`;
+    if (calc.breakdown.personal > 0) text += `  • Personal: ${window.gstTools.formatINR(calc.breakdown.personal)}\n`;
+    text += `\n`;
+  }
+
+  if (calc.exemptPercent > 0) {
+    text += `Exempt Supply (${calc.exemptPercent}%): -${window.gstTools.formatINR(calc.exemptReduction)}\n\n`;
+  }
+
+  text += `━━━━━━━━━━━━━━━━━━━━
+NET ELIGIBLE ITC: ${window.gstTools.formatINR(calc.eligibleITC)}
+
+Calculated via GST Compliance Pro
+mygstindia.in`;
+
+  window.gstTools.copyToClipboard(text, event.target);
+}
+</script>
+
+<!-- MAIN JAVASCRIPT -->
+
+<script src="main.js"></script>
+
+</body>
+</html>
