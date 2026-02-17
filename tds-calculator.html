@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TDS Calculator Under GST - Section 51 TDS | GST Compliance Pro</title>
+  <meta name="description" content="Calculate TDS under GST Section 51. 2% TDS on payments > ₹2.5 lakh to suppliers. Free calculator for government entities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="master-style.css">
+  <link rel="stylesheet" href="tool-hub.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">G</div>
+      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+    </a>
+    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="legal-disclaimer-banner">
+  <div class="disclaimer-container">
+    <div class="disclaimer-icon">⚖️</div>
+    <div class="disclaimer-content">
+      <strong>Legal Disclaimer:</strong> TDS calculations are estimates. Verify with GST portal and consult CA for compliance.
+    </div>
+  </div>
+</div>
+<div class="tool-page">
+  <div class="tool-container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">›</span><a href="index.html#tools">Tools</a><span class="sep">›</span><span>TDS Calculator</span>
+    </div>
+    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
+    <div class="tool-header">
+      <div class="tool-badge">💳 Calculator</div>
+      <h1>TDS Calculator Under GST</h1>
+      <p>Calculate <strong>TDS (Section 51)</strong> on payments to suppliers. 2% TDS applicable on contract value exceeding ₹2.5 lakh.</p>
+    </div>
+    <div class="info-box blue">
+      <div class="info-box-icon">💡</div>
+      <div class="info-box-content">
+        <h4>Who Deducts TDS?</h4>
+        <p>Central/State Government, Local Authorities, Government agencies, PSUs (as notified). Rate: 2% (1% CGST + 1% SGST or 2% IGST).</p>
+      </div>
+    </div>
+    <div class="tool-card-main">
+      <h2>💳 Calculate TDS</h2>
+      <form id="tdsCalculator" onsubmit="calculateTDS(event)">
+        <div class="form-group">
+          <label for="supplyType">Supply Type</label>
+          <select id="supplyType" required>
+            <option value="">Select Type</option>
+            <option value="intrastate">Intra-State (CGST + SGST)</option>
+            <option value="interstate">Inter-State (IGST)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="contractValue">Total Contract Value</label>
+          <div class="input-with-prefix">
+            <span class="prefix">₹</span>
+            <input type="number" id="contractValue" placeholder="Enter contract value" min="0" step="0.01" required>
+          </div>
+          <small>Total value of contract (excluding GST)</small>
+        </div>
+        <div class="form-group">
+          <label for="gstAmount">GST Amount on Invoice</label>
+          <div class="input-with-prefix">
+            <span class="prefix">₹</span>
+            <input type="number" id="gstAmount" placeholder="GST amount" min="0" step="0.01" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="paymentAmount">Payment Amount (Excl. GST)</label>
+          <div class="input-with-prefix">
+            <span class="prefix">₹</span>
+            <input type="number" id="paymentAmount" placeholder="Enter payment amount" min="0" step="0.01" required>
+          </div>
+          <small>Amount being paid now (excluding GST)</small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">Calculate TDS →</button>
+      </form>
+    </div>
+    <div id="result" class="result-card" style="display: none;">
+      <div class="result-header">
+        <span class="result-icon">💳</span>
+        <h3>TDS Calculation</h3>
+      </div>
+      <div class="result-body" id="resultBody"></div>
+      <div class="result-actions">
+        <button onclick="location.reload()" class="btn btn-secondary">Calculate Again</button>
+        <a href="blog/tds-under-gst-guide.html" class="btn btn-primary">TDS Guide →</a>
+      </div>
+    </div>
+    <div class="info-section">
+      <h3>📋 TDS Under GST - Key Points</h3>
+      <ul>
+        <li><strong>Threshold:</strong> Total contract value > ₹2.5 lakh</li>
+        <li><strong>Rate:</strong> 2% of payment amount (1% CGST + 1% SGST or 2% IGST)</li>
+        <li><strong>Calculated on:</strong> Payment amount excluding GST</li>
+        <li><strong>Deposit:</strong> By 10th of next month</li>
+        <li><strong>Form:</strong> File GSTR-7 monthly</li>
+        <li><strong>Certificate:</strong> Issue GSTR-7A to supplier</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-grid">
+    <div><h4>GST Compliance Pro</h4></div>
+    <div><h4>Tools</h4><ul><li><a href="gst-calculator.html">GST Calculator</a></li></ul></div>
+    <div><h4>Resources</h4><ul><li><a href="blog/index.html">Blog</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
+</footer>
+<script>
+function calculateTDS(e) {
+  e.preventDefault();
+
+const supplyType = document.getElementById(‘supplyType’).value;
+const contractValue = parseFloat(document.getElementById(‘contractValue’).value) || 0;
+const gstAmount = parseFloat(document.getElementById(‘gstAmount’).value) || 0;
+const paymentAmount = parseFloat(document.getElementById(‘paymentAmount’).value) || 0;
+
+const threshold = 250000;
+let tdsToBeDeducted = 0;
+let cgst = 0, sgst = 0, igst = 0;
+let eligible = contractValue > threshold;
+
+if (eligible) {
+const tdsRate = 0.02; // 2%
+tdsToBeDeducted = paymentAmount * tdsRate;
+
+```
+if (supplyType === 'intrastate') {
+  cgst = tdsToBeDeducted / 2;
+  sgst = tdsToBeDeducted / 2;
+} else {
+  igst = tdsToBeDeducted;
+}
+```
+
+}
+
+const totalInvoice = paymentAmount + gstAmount;
+const netPayment = totalInvoice - tdsToBeDeducted;
+
+const body = document.getElementById(‘resultBody’);
+body.innerHTML = `
+<div style="display: grid; gap: 1.5rem;">
+${!eligible ? ‘<div class="info-box blue"><div class="info-box-content"><p style="margin: 0;"><strong>TDS Not Applicable:</strong> Contract value ₹’ + contractValue.toLocaleString(‘en-IN’, {minimumFractionDigits: 2}) + ’ is below ₹2,50,000 threshold.</p></div></div>’ : ‘’}
+
+```
+  <div>
+    <h4 style="margin: 0 0 0.75rem 0; color: var(--slate-600); font-size: 0.875rem; text-transform: uppercase;">Payment Breakdown</h4>
+    <div style="display: grid; gap: 0.5rem;">
+      <div style="display: flex; justify-content: space-between;">
+        <span>Payment Amount (Excl. GST):</span>
+        <span style="font-weight: 600;">₹${paymentAmount.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div style="display: flex; justify-content: space-between;">
+        <span>GST on Invoice:</span>
+        <span style="font-weight: 600;">₹${gstAmount.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 1px solid var(--slate-200);">
+        <span>Total Invoice Value:</span>
+        <span style="font-weight: 600;">₹${totalInvoice.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+      </div>
+    </div>
+  </div>
+  
+  ${eligible ? `
+  <div style="background: var(--amber-50); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--amber-500);">
+    <h4 style="margin: 0 0 0.5rem 0; color: var(--amber-700); font-size: 0.875rem;">TDS Deduction (2%)</h4>
+    <div style="display: grid; gap: 0.25rem; font-size: 0.875rem;">
+      ${supplyType === 'intrastate' ? `
+        <div style="display: flex; justify-content: space-between;">
+          <span>CGST (1%):</span>
+          <span style="font-weight: 600;">₹${cgst.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span>SGST (1%):</span>
+          <span style="font-weight: 600;">₹${sgst.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+        </div>
+      ` : `
+        <div style="display: flex; justify-content: space-between;">
+          <span>IGST (2%):</span>
+          <span style="font-weight: 600;">₹${igst.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+        </div>
+      `}
+      <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 1px solid var(--amber-300);">
+        <span style="font-weight: 600;">Total TDS:</span>
+        <span style="font-weight: 700; color: var(--amber-700);">₹${tdsToBeDeducted.toLocaleString('en-IN', {minimumFractionDigits: 2})}</span>
+      </div>
+    </div>
+  </div>
+  ` : ''}
+  
+  <div style="background: linear-gradient(135deg, var(--indigo-50) 0%, var(--blue-50) 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid var(--indigo-200);">
+    <h4 style="margin: 0 0 0.5rem 0; color: var(--indigo-primary); font-size: 0.875rem; text-transform: uppercase;">Net Payment to Supplier</h4>
+    <p style="margin: 0; font-size: 2rem; font-weight: 800; color: var(--indigo-primary);">₹${netPayment.toLocaleString('en-IN', {minimumFractionDigits: 2})}</p>
+    <p style="margin: 0.5rem 0 0 0; font-size: 0.875rem; color: var(--slate-600);">Total Invoice - TDS Deducted</p>
+  </div>
+  
+  ${eligible ? '<div class="info-box blue"><div class="info-box-content"><h4>Next Steps</h4><ol style="margin: 0; padding-left: 20px;"><li>Deduct ₹' + tdsToBeDeducted.toLocaleString('en-IN', {minimumFractionDigits: 2}) + ' from payment</li><li>Deposit TDS to government by 10th of next month</li><li>File GSTR-7 monthly return</li><li>Issue GSTR-7A certificate to supplier</li></ol></div></div>' : ''}
+</div>
+```
+
+`;
+
+document.getElementById(‘result’).style.display = ‘block’;
+document.getElementById(‘result’).scrollIntoView({ behavior: ‘smooth’ });
+}
+</script>
+
+</body>
+</html>
