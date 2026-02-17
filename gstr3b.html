@@ -1,433 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GSTR-3B Late Fee Calculator — Calculate Filing Penalty | My GST India</title>
-  <meta name="description" content="Free GSTR-3B late fee calculator. Calculate exact penalty for late filing of GSTR-3B return. Know fees for nil and non-nil returns." />
-  <link rel="stylesheet" href="master-style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSTR-3B Helper - Calculate Tax Liability | GST Compliance Pro</title>
+  <meta name="description" content="Calculate GSTR-3B tax liability. Enter sales, ITC, and get instant output tax, input credit, and net tax payable. Free helper tool.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="master-style-v3.css">
+  <link rel="stylesheet" href="tool-hub.css">
 </head>
 <body>
-    <!-- NAVBAR -->
-<!-- ENHANCED NAVBAR WITH DROPDOWN -->
 <nav class="navbar">
   <div class="navbar-container">
     <a href="index.html" class="nav-logo">
       <div class="logo-mark">G</div>
-      <span class="logo-text">GST <em>Compliance Pro</em></span>
+      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
     </a>
-    
     <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-    
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="gst-calculator.html">GST Calculator</a></li>
-      <li><a href="hsn-finder.html">HSN Finder</a></li>
-      <li><a href="gstr3b.html" class="active">GSTR-3B</a></li>
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge anim-up">📋 GSTR-3B</div>
-  <h1 class="anim-up delay-1">GSTR-3B <em>Late Fee Calculator</em></h1>
-  <p class="anim-up delay-2">Calculate late filing penalty for GSTR-3B returns. Know exact fees for nil and non-nil returns.</p>
-  <div class="hero-meta anim-up delay-3">Section 47 of CGST Act • Updated February 2026</div>
-</section>
-
-<div class="container-sm" style="padding: 48px 40px;">
-    <!-- BREADCRUMB NAVIGATION -->
-  <div class="breadcrumb">
-    <a href="index.html">Home</a><span class="sep">›</span>
-    <a href="index.html#tools">Tools</a><span class="sep">›</span>
-    <span>GSTR-3B Late Fee</span>
-  </div>
-
-  <!-- BACK BUTTON -->
-  <a href="index.html#tools" class="back-button">
-    ← Back to All Tools
-  </a>
-
-
-
-  <div class="info-box blue">
-    <div class="info-box-icon">📋</div>
-    <div class="info-box-content">
-      <h4>GSTR-3B Late Fee Structure</h4>
-      <p><strong>Non-Nil Returns:</strong> ₹50/day (₹25 CGST + ₹25 SGST), max ₹5,000<br>
-      <strong>Nil Returns:</strong> ₹20/day (₹10 CGST + ₹10 SGST), max ₹2,000<br>
-      Fee applies from day after due date (usually 20th of next month).</p>
+<div class="legal-disclaimer-banner">
+  <div class="disclaimer-container">
+    <div class="disclaimer-icon">⚖️</div>
+    <div class="disclaimer-content">
+      <strong>Legal Disclaimer:</strong> This is a helper tool. Always verify calculations with your CA and reconcile with GSTR-2B before filing.
     </div>
   </div>
-
-  <!-- CALCULATOR -->
-  <div class="card" style="margin-top: 28px;">
-    <div class="card-body">
-      <h2 style="margin-top:0;">Calculate GSTR-3B Late Fee</h2>
-      
-      <div class="form-group">
-        <label>📅 GSTR-3B Due Date</label>
-        <input type="date" id="dueDate" />
-        <small style="color:var(--muted); display:block; margin-top:4px;">Usually 20th of next month after return period</small>
+</div>
+<div class="tool-page">
+  <div class="tool-container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span class="sep">›</span><a href="index.html#tools">Tools</a><span class="sep">›</span><span>GSTR-3B Helper</span>
+    </div>
+    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
+    <div class="tool-header">
+      <div class="tool-badge">📊 Helper</div>
+      <h1>GSTR-3B Helper</h1>
+      <p>Calculate your <strong>tax liability</strong> for GSTR-3B filing. Enter sales and ITC to get net tax payable instantly.</p>
+    </div>
+    <div class="info-box blue">
+      <div class="info-box-icon">💡</div>
+      <div class="info-box-content">
+        <h4>How to Use</h4>
+        <p>Enter your <strong>total sales</strong> and <strong>eligible ITC</strong> (from GSTR-2B). Get instant calculation of tax payable.</p>
       </div>
-
-      <div class="form-group">
-        <label>📆 Actual Filing Date</label>
-        <input type="date" id="filingDate" />
-        <small style="color:var(--muted); display:block; margin-top:4px;">Leave blank to calculate till today</small>
+    </div>
+    <div class="tool-card-main">
+      <h2>📊 Calculate Tax Liability</h2>
+      <form id="gstr3bCalculator" onsubmit="calculateGSTR3B(event)">
+        <h3 style="margin-top: 0;">Table 3.1 - Outward Supplies</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cgstSales">CGST on Sales</label>
+            <div class="input-with-prefix">
+              <span class="prefix">₹</span>
+              <input type="number" id="cgstSales" placeholder="0" min="0" step="0.01" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sgstSales">SGST on Sales</label>
+            <div class="input-with-prefix">
+              <span class="prefix">₹</span>
+              <input type="number" id="sgstSales" placeholder="0" min="0" step="0.01" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="igstSales">IGST on Sales</label>
+          <div class="input-with-prefix">
+            <span class="prefix">₹</span>
+            <input type="number" id="igstSales" placeholder="0" min="0" step="0.01" required>
+          </div>
+        </div>
+        
+        <h3 style="margin-top: 2rem;">Table 4 - Eligible ITC</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cgstITC">CGST ITC</label>
+            <div class="input-with-prefix">
+              <span class="prefix">₹</span>
+              <input type="number" id="cgstITC" placeholder="0" min="0" step="0.01" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sgstITC">SGST ITC</label>
+            <div class="input-with-prefix">
+              <span class="prefix">₹</span>
+              <input type="number" id="sgstITC" placeholder="0" min="0" step="0.01" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="igstITC">IGST ITC</label>
+          <div class="input-with-prefix">
+            <span class="prefix">₹</span>
+            <input type="number" id="igstITC" placeholder="0" min="0" step="0.01" required>
+          </div>
+          <small>Enter ITC as per GSTR-2B only</small>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-large">Calculate Tax Payable →</button>
+      </form>
+    </div>
+    <div id="result" class="result-card" style="display: none;">
+      <div class="result-header">
+        <span class="result-icon">📊</span>
+        <h3>Tax Liability Summary</h3>
       </div>
-
-      <div class="form-group">
-        <label>📊 Return Type</label>
-        <div class="radio-group">
-          <label class="radio-option">
-            <input type="radio" name="returnType" value="nonnil" checked /> 
-            <strong>Non-Nil Return</strong> (Has tax liability) — ₹50/day late fee
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="returnType" value="nil" /> 
-            <strong>Nil Return</strong> (No tax liability) — ₹20/day late fee
-          </label>
+      <div class="result-body" id="resultBody"></div>
+      <div class="result-actions">
+        <button onclick="location.reload()" class="btn btn-secondary">Calculate Again</button>
+        <a href="blog/how-to-file-gst-return.html" class="btn btn-primary">Filing Guide →</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-grid">
+    <div><h4>GST Compliance Pro</h4></div>
+    <div><h4>Tools</h4><ul><li><a href="gst-calculator.html">GST Calculator</a></li></ul></div>
+    <div><h4>Resources</h4><ul><li><a href="blog/index.html">Blog</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
+</footer>
+<script>
+function calculateGSTR3B(e) {
+  e.preventDefault();
+  
+  const cgstSales = parseFloat(document.getElementById('cgstSales').value) || 0;
+  const sgstSales = parseFloat(document.getElementById('sgstSales').value) || 0;
+  const igstSales = parseFloat(document.getElementById('igstSales').value) || 0;
+  
+  const cgstITC = parseFloat(document.getElementById('cgstITC').value) || 0;
+  const sgstITC = parseFloat(document.getElementById('sgstITC').value) || 0;
+  const igstITC = parseFloat(document.getElementById('igstITC').value) || 0;
+  
+  // Set-off logic (simplified)
+  let cgstPayable = Math.max(0, cgstSales - cgstITC);
+  let sgstPayable = Math.max(0, sgstSales - sgstITC);
+  let igstPayable = Math.max(0, igstSales - igstITC);
+  
+  // IGST can be set-off against CGST/SGST
+  const totalITC = cgstITC + sgstITC + igstITC;
+  const totalOutput = cgstSales + sgstSales + igstSales;
+  
+  const netTax = Math.max(0, totalOutput - totalITC);
+  
+  const body = document.getElementById('resultBody');
+  body.innerHTML = `
+    <div style="display: grid; gap: 1.5rem;">
+      <div>
+        <h4 style="margin: 0 0 0.5rem 0; color: var(--slate-600); font-size: 0.875rem; text-transform: uppercase;">Output Tax (Sales)</h4>
+        <div style="display: grid; gap: 0.5rem;">
+          <div style="display: flex; justify-content: space-between;">
+            <span>CGST:</span>
+            <span style="font-weight: 600;">₹${cgstSales.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>SGST:</span>
+            <span style="font-weight: 600;">₹${sgstSales.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>IGST:</span>
+            <span style="font-weight: 600;">₹${igstSales.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 2px solid var(--slate-200);">
+            <span style="font-weight: 600;">Total Output Tax:</span>
+            <span style="font-weight: 700; font-size: 1.125rem; color: var(--indigo-primary);">₹${totalOutput.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
         </div>
       </div>
-
-      <button class="btn btn-primary" onclick="calculateGSTR3B()" style="width:100%; justify-content:center;">
-        Calculate Late Fee
-      </button>
-    </div>
-  </div>
-
-  <!-- RESULT -->
-  <div id="resultBox" style="display:none; margin-top:28px;"></div>
-
-  <!-- DUE DATES REFERENCE -->
-  <div style="margin-top:48px;">
-    <h2 class="section-title">GSTR-3B Due <em>Dates 2026</em></h2>
-    
-    <table class="styled-table">
-      <tr>
-        <th>Month/Quarter</th>
-        <th>Return Period</th>
-        <th>Due Date</th>
-      </tr>
-      <tr>
-        <td>January 2026</td>
-        <td>Jan 2026</td>
-        <td>20 Feb 2026</td>
-      </tr>
-      <tr>
-        <td>February 2026</td>
-        <td>Feb 2026</td>
-        <td>20 Mar 2026</td>
-      </tr>
-      <tr>
-        <td>March 2026</td>
-        <td>Mar 2026</td>
-        <td>20 Apr 2026</td>
-      </tr>
-      <tr>
-        <td>Q1 (Jan-Mar)</td>
-        <td>Q4 FY 2025-26</td>
-        <td>22/24 Apr 2026</td>
-      </tr>
-      <tr>
-        <td>April 2026</td>
-        <td>Apr 2026</td>
-        <td>20 May 2026</td>
-      </tr>
-      <tr>
-        <td>May 2026</td>
-        <td>May 2026</td>
-        <td>20 Jun 2026</td>
-      </tr>
-    </table>
-    
-    <p style="margin-top:16px; color:var(--muted); font-size:0.9rem;">
-      <strong>Note:</strong> Monthly filers (turnover > ₹5 Cr): Due on 20th of next month<br>
-      <strong>Quarterly filers</strong> (turnover < ₹5 Cr under QRMP): Due on 22nd/24th of month following quarter
-    </p>
-  </div>
-
-  <div style="margin-top:48px;">
-    <h2 class="section-title">Late Fee <em>Examples</em></h2>
-    
-    <table class="styled-table">
-      <tr>
-        <th>Return Type</th>
-        <th>Days Late</th>
-        <th>CGST Fee</th>
-        <th>SGST Fee</th>
-        <th>Total Fee</th>
-      </tr>
-      <tr>
-        <td>Non-Nil</td>
-        <td>10 days</td>
-        <td>₹250</td>
-        <td>₹250</td>
-        <td>₹500</td>
-      </tr>
-      <tr>
-        <td>Non-Nil</td>
-        <td>30 days</td>
-        <td>₹750</td>
-        <td>₹750</td>
-        <td>₹1,500</td>
-      </tr>
-      <tr>
-        <td>Non-Nil</td>
-        <td>100+ days</td>
-        <td>₹2,500 (max)</td>
-        <td>₹2,500 (max)</td>
-        <td>₹5,000</td>
-      </tr>
-      <tr>
-        <td>Nil</td>
-        <td>10 days</td>
-        <td>₹100</td>
-        <td>₹100</td>
-        <td>₹200</td>
-      </tr>
-      <tr>
-        <td>Nil</td>
-        <td>30 days</td>
-        <td>₹300</td>
-        <td>₹300</td>
-        <td>₹600</td>
-      </tr>
-      <tr>
-        <td>Nil</td>
-        <td>100+ days</td>
-        <td>₹1,000 (max)</td>
-        <td>₹1,000 (max)</td>
-        <td>₹2,000</td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="info-box orange" style="margin-top:32px;">
-    <div class="info-box-icon">⚠️</div>
-    <div class="info-box-content">
-      <h4>Additional Consequences of Late Filing</h4>
-      <p>
-        💰 <strong>Interest:</strong> If tax paid late, 18% interest on tax amount (separate from late fee)<br>
-        🚫 <strong>ITC Blocked:</strong> Cannot claim Input Tax Credit till return filed<br>
-        📧 <strong>Notices:</strong> Automated reminders and compliance notices from GST portal<br>
-        ⚖️ <strong>Penalty:</strong> Persistent non-filing can attract penalty up to ₹10,000 under Section 47<br>
-        🔒 <strong>Account Suspension:</strong> E-way bill generation may be blocked
-      </p>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <div class="cta-section">
-    <h2>Track All <em>GST Deadlines</em></h2>
-    <p>Never miss a filing date. Use our Return Deadlines tracker with countdown timers.</p>
-    <a href="return-deadlines.html" class="btn btn-primary">📅 View Deadlines</a>
-  </div>
-
-  <!-- RELATED TOOLS SECTION -->
-  <div class="related-tools">
-    <h3>You Might Also Need</h3>
-    <div class="related-tools-grid">
-      <a href="penalty-calculator.html" class="related-tool-card">
-        <h4>Penalty Calculator</h4>
-        <p>General GST penalty calculator.</p>
-        <span class="arrow">Try now →</span>
-      </a>
-      <a href="gst-interest.html" class="related-tool-card">
-        <h4>Interest Calculator</h4>
-        <p>Calculate interest on late payments.</p>
-        <span class="arrow">Try now →</span>
-      </a>
-      <a href="return-deadlines.html" class="related-tool-card">
-        <h4>Return Deadlines</h4>
-        <p>Track GSTR-3B due dates.</p>
-        <span class="arrow">Try now →</span>
-      </a>
-    </div>
-  </div>
-
-</div>
-
-<!-- FOOTER --><footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <h4>GST Compliance Pro</h4>
-      <p>India's free GST toolkit built for MSMEs and small business owners.</p>
-    </div>
-    <div>
-      <h4>Tools</h4>
-      <ul>
-        <li><a href="index.html">Risk Auditor</a></li>
-        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
-        <li><a href="gstr3b.html">GSTR-3B Fee</a></li>
-        <li><a href="return-deadlines.html">Deadlines</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Learn</h4>
-      <ul>
-        <li><a href="blog/what-is-gst.html">What is GST?</a></li>
-        <li><a href="blog/how-to-get-gst-number.html">How to Register</a></li>
-        <li><a href="blog/common-gst-mistakes.html">Common Mistakes</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 GST Compliance Pro. All rights reserved.</span>
-    <span>Disclaimer: For informational purposes only. Consult a CA for professional advice.</span>
-  </div>
-</footer>
-
-<script>
-function calculateGSTR3B() {
-  const dueDate = document.getElementById('dueDate').value;
-  const filingDate = document.getElementById('filingDate').value;
-  const returnType = document.querySelector('input[name="returnType"]:checked').value;
-
-  if (!dueDate) {
-    alert('Please enter the due date');
-    return;
-  }
-
-  const due = new Date(dueDate);
-  const filed = filingDate ? new Date(filingDate) : new Date();
-
-  // Calculate days late
-  const timeDiff = filed - due;
-  const daysLate = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-  const resultBox = document.getElementById('resultBox');
-
-  if (daysLate <= 0) {
-    resultBox.className = 'result-box safe';
-    resultBox.innerHTML = `
-      <div class="result-icon">✅</div>
-      <h3>Filed On Time — No Late Fee</h3>
-      <p>GSTR-3B was filed on or before the due date. No late fee is applicable.</p>
-      <div style="background:white; border-radius:8px; padding:20px; margin-top:16px;">
-        <table style="width:100%; border-collapse:collapse;">
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0; font-weight:600;">Due Date:</td>
-            <td style="padding:12px 0; text-align:right;">${due.toLocaleDateString('en-IN')}</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0; font-weight:600;">Filing Date:</td>
-            <td style="padding:12px 0; text-align:right;">${filed.toLocaleDateString('en-IN')}</td>
-          </tr>
-          <tr style="background:rgba(34,197,94,0.1);">
-            <td style="padding:14px 0; font-weight:700;">Late Fee:</td>
-            <td style="padding:14px 0; text-align:right; font-weight:700; color:var(--green);">₹0</td>
-          </tr>
-        </table>
+      
+      <div>
+        <h4 style="margin: 0 0 0.5rem 0; color: var(--slate-600); font-size: 0.875rem; text-transform: uppercase;">Input Tax Credit</h4>
+        <div style="display: grid; gap: 0.5rem;">
+          <div style="display: flex; justify-content: space-between;">
+            <span>CGST:</span>
+            <span style="font-weight: 600;">₹${cgstITC.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>SGST:</span>
+            <span style="font-weight: 600;">₹${sgstITC.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>IGST:</span>
+            <span style="font-weight: 600;">₹${igstITC.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 2px solid var(--slate-200);">
+            <span style="font-weight: 600;">Total ITC:</span>
+            <span style="font-weight: 700; font-size: 1.125rem; color: var(--green-success);">₹${totalITC.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+        </div>
       </div>
-    `;
-    resultBox.style.display = 'block';
-    resultBox.scrollIntoView({behavior:'smooth', block:'center'});
-    return;
-  }
-
-  // Calculate late fee
-  const feePerDay = returnType === 'nil' ? 20 : 50;
-  const maxFee = returnType === 'nil' ? 2000 : 5000;
-  const cgstPerDay = returnType === 'nil' ? 10 : 25;
-  const sgstPerDay = returnType === 'nil' ? 10 : 25;
-  
-  let totalFee = daysLate * feePerDay;
-  let cgstFee = daysLate * cgstPerDay;
-  let sgstFee = daysLate * sgstPerDay;
-  
-  // Apply maximum cap
-  if (totalFee > maxFee) {
-    totalFee = maxFee;
-    cgstFee = maxFee / 2;
-    sgstFee = maxFee / 2;
-  }
-
-  const returnTypeLabel = returnType === 'nil' ? 'Nil Return' : 'Non-Nil Return';
-
-  resultBox.className = 'result-box danger';
-  resultBox.innerHTML = `
-    <div class="result-icon">💰</div>
-    <h3>GSTR-3B Late Fee Payable</h3>
-    <div style="background:white; border-radius:8px; padding:24px; margin-top:20px;">
-      <table style="width:100%; border-collapse:collapse;">
-        <tr style="border-bottom:2px solid var(--border);">
-          <td style="padding:14px 0; font-weight:600;">Return Type:</td>
-          <td style="padding:14px 0; text-align:right;">${returnTypeLabel}</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Due Date:</td>
-          <td style="padding:12px 0; text-align:right;">${due.toLocaleDateString('en-IN')}</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Filing Date:</td>
-          <td style="padding:12px 0; text-align:right;">${filed.toLocaleDateString('en-IN')}</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Days Late:</td>
-          <td style="padding:12px 0; text-align:right; color:var(--red); font-weight:600;">${daysLate} days</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Fee Per Day:</td>
-          <td style="padding:12px 0; text-align:right;">₹${feePerDay} (₹${cgstPerDay} CGST + ₹${sgstPerDay} SGST)</td>
-        </tr>
-        <tr style="border-bottom:2px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Calculation:</td>
-          <td style="padding:12px 0; text-align:right; font-size:0.9rem; color:var(--muted);">${daysLate} days × ₹${feePerDay}/day = ₹${(daysLate * feePerDay).toLocaleString('en-IN')}</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">CGST Late Fee:</td>
-          <td style="padding:12px 0; text-align:right; color:var(--red);">₹${cgstFee.toLocaleString('en-IN')}</td>
-        </tr>
-        <tr style="border-bottom:2px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">SGST Late Fee:</td>
-          <td style="padding:12px 0; text-align:right; color:var(--red);">₹${sgstFee.toLocaleString('en-IN')}</td>
-        </tr>
-        <tr style="background:rgba(239,68,68,0.1);">
-          <td style="padding:16px 0; font-weight:700; font-size:1.1rem;">Total Late Fee:</td>
-          <td style="padding:16px 0; text-align:right; font-weight:700; font-size:1.4rem; color:var(--red);">₹${totalFee.toLocaleString('en-IN')}</td>
-        </tr>
-      </table>
-      ${totalFee >= maxFee ? `
-      <div style="margin-top:16px; padding:12px; background:#fee2e2; border-radius:6px;">
-        <p style="margin:0; color:#991b1b; font-size:0.9rem;">
-          ⚠️ <strong>Maximum fee cap reached:</strong> ₹${maxFee.toLocaleString('en-IN')} for ${returnTypeLabel}
-        </p>
+      
+      <div style="background: linear-gradient(135deg, var(--indigo-50) 0%, var(--blue-50) 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid var(--indigo-200);">
+        <h4 style="margin: 0 0 0.75rem 0; color: var(--indigo-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Net Tax Payable</h4>
+        <p style="margin: 0; font-size: 2rem; font-weight: 800; color: var(--indigo-primary);">₹${netTax.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+        <p style="margin: 0.5rem 0 0 0; font-size: 0.875rem; color: var(--slate-600);">Amount to pay via cash ledger</p>
       </div>
-      ` : ''}
-    </div>
-    <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:16px; margin-top:20px;">
-      <h4 style="margin:0 0 8px; color:#856404;">⚠️ Important:</h4>
-      <ul style="margin:0; padding-left:20px; color:#856404; font-size:0.9rem;">
-        <li>Late fee is <strong>auto-calculated</strong> when you file GSTR-3B on portal</li>
-        <li>You must pay the fee along with any tax due</li>
-        <li>If tax was paid late, you'll also owe <strong>18% interest</strong> (separate from late fee)</li>
-        <li>File immediately to avoid accumulating more fees</li>
-      </ul>
+      
+      ${netTax > 0 ? '<div class="info-box blue"><div class="info-box-content"><p style="margin: 0;"><strong>Next Step:</strong> Pay this amount via challan before filing GSTR-3B. After payment, file return on GST portal.</p></div></div>' : '<div class="info-box green"><div class="info-box-content"><p style="margin: 0;"><strong>No payment required!</strong> Your ITC covers the output tax. File GSTR-3B directly.</p></div></div>'}
     </div>
   `;
-
-  resultBox.style.display = 'block';
-  resultBox.scrollIntoView({behavior:'smooth', block:'center'});
-}
-
-// Set default dates (20 days late scenario)
-window.addEventListener('load', () => {
-  const today = new Date();
-  const twentyDaysAgo = new Date(today);
-  twentyDaysAgo.setDate(twentyDaysAgo.getDate() - 20);
   
-  document.getElementById('dueDate').value = twentyDaysAgo.toISOString().split('T')[0];
-  document.getElementById('filingDate').value = today.toISOString().split('T')[0];
-});
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+}
 </script>
-
 </body>
 </html>
-
