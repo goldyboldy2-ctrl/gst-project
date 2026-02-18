@@ -179,12 +179,13 @@
     .trust-icon {
       width: 32px;
       height: 32px;
-      background: #d1fae5;
+      background: linear-gradient(135deg, #d1fae5, #a7f3d0);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.25rem;
+      color: #059669;
     }
     
     .hero h1 {
@@ -278,9 +279,12 @@
     .stat-number {
       font-size: 2rem;
       font-weight: 800;
-      color: var(--blue);
       font-family: 'Poppins', sans-serif;
     }
+    
+    .stat:nth-child(1) .stat-number { color: var(--blue); }
+    .stat:nth-child(2) .stat-number { color: #10b981; } /* Green */
+    .stat:nth-child(3) .stat-number { color: var(--amber-dark); } /* Amber */
     
     .stat-label {
       font-size: 0.875rem;
@@ -326,6 +330,12 @@
       border-color: var(--blue);
     }
     
+    .category-btn:nth-child(1).active { background: var(--blue); border-color: var(--blue); }
+    .category-btn:nth-child(2):hover, .category-btn:nth-child(2).active { background: #10b981; border-color: #10b981; }
+    .category-btn:nth-child(3):hover, .category-btn:nth-child(3).active { background: #8b5cf6; border-color: #8b5cf6; } /* Purple */
+    .category-btn:nth-child(4):hover, .category-btn:nth-child(4).active { background: var(--amber-dark); border-color: var(--amber-dark); }
+    .category-btn:nth-child(5):hover, .category-btn:nth-child(5).active { background: #10b981; border-color: #10b981; }
+    
     /* TOOLS GRID */
     .section-title {
       text-align: center;
@@ -356,6 +366,10 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.1);
       border-color: var(--blue);
     }
+    
+    .tool-card:nth-child(3n+1):hover { border-color: var(--blue); }
+    .tool-card:nth-child(3n+2):hover { border-color: #10b981; } /* Green */
+    .tool-card:nth-child(3n+3):hover { border-color: var(--amber); } /* Amber */
     
     .tool-icon {
       font-size: 2.5rem;
