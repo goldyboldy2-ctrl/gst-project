@@ -3,190 +3,803 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MyGSTIndia - Free GST Tools & Compliance for Indian Businesses</title>
-  <meta name="description" content="Free GST calculators, HSN finder, penalty calculator, and compliance tools for Indian MSMEs. Fast, accurate, always updated.">
+  <title>MyGSTIndia - Free GST Toolkit for Indian Businesses</title>
+  <meta name="description" content="Free GST calculators, HSN finder, penalty calculator, and compliance tools for Indian MSMEs. Fast, accurate, always free.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="master-style.css">
-  <link rel="stylesheet" href="tool-hub.css">
-  <meta property="og:title" content="MyGSTIndia - Free GST Tools for Indian Businesses">
-  <meta property="og:description" content="Calculate GST, find HSN codes, check penalties. Free tools for MSMEs.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mygstindia.in">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --amber: #fbbf24;
+      --amber-dark: #f59e0b;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    /* DISCLAIMER BANNER */
+    .disclaimer {
+      background: #fef3c7;
+      border-bottom: 2px solid var(--amber);
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    
+    .disclaimer a {
+      color: #92400e;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    
+    /* HERO */
+    .hero {
+      background: linear-gradient(180deg, #eff6ff 0%, white 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      border: 2px solid var(--gray-200);
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .trust-icon {
+      width: 32px;
+      height: 32px;
+      background: #d1fae5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-desc {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* SEARCH */
+    .search-box {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      position: relative;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3.5rem;
+      font-size: 1rem;
+      border: 3px solid var(--blue);
+      border-radius: 12px;
+      outline: none;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--blue);
+    }
+    
+    #searchResults {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 2px solid var(--blue);
+      border-radius: 12px;
+      margin-top: 0.5rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    
+    .search-result {
+      display: block;
+      padding: 1rem;
+      border-bottom: 1px solid var(--gray-100);
+      text-decoration: none;
+      color: var(--gray-900);
+      transition: background 0.2s;
+    }
+    
+    .search-result:hover { background: #eff6ff; }
+    .search-result:last-child { border-bottom: none; }
+    
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blue);
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+    
+    /* CATEGORIES */
+    .categories {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .categories::-webkit-scrollbar { height: 4px; }
+    .categories::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 2px; }
+    
+    .category-btn {
+      padding: 0.75rem 1.5rem;
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+      font-size: 0.875rem;
+    }
+    
+    .category-btn:hover, .category-btn.active {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+    
+    /* TOOLS GRID */
+    .section-title {
+      text-align: center;
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+      color: var(--navy);
+    }
+    
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .tool-card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+      display: block;
+    }
+    
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      border-color: var(--blue);
+    }
+    
+    .tool-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .tool-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    
+    .tool-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .footer ul {
+      list-style: none;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    
+    .footer a:hover { color: white; }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .footer-disclaimer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.875rem;
+    }
+    
+    .footer-disclaimer a {
+      display: inline;
+      margin: 0 0.5rem;
+    }
+    
+    /* MOBILE BOTTOM NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+    
+    .mobile-nav-btn.active {
+      color: var(--blue);
+    }
+    
+    .mobile-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .hero h1 { font-size: 3rem; }
+      .container { padding: 4rem 1rem; }
+    }
+    
+    /* UTILITY */
+    .hidden { display: none; }
+  </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
       <div class="logo-mark">M</div>
       <span class="logo-text">MyGSTIndia</span>
     </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
       <li><a href="#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
 
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <strong>Disclaimer:</strong> General info only — not professional tax advice. Verify on <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST portal</a> & consult a CA. <a href="disclaimer.html">Full details →</a>
-  </div>
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
 </div>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="container">
-    <div class="trust-badge">
-      <span>✓ Trusted by 50,000+ Indian Businesses</span>
+  <div class="trust-badge">
+    <div class="trust-icon">✓</div>
+    <span style="font-weight:600;color:#334155;">Trusted by 50,000+ Indian Businesses</span>
+  </div>
+  
+  <h1>Free GST Tools for <span class="highlight">Indian Businesses</span></h1>
+  <p class="hero-desc">Calculate GST, find HSN codes, check penalties. Fast, accurate, always free.</p>
+  
+  <!-- SEARCH -->
+  <div class="search-box">
+    <div class="search-icon">🔍</div>
+    <input 
+      type="text" 
+      id="globalSearch" 
+      class="search-input"
+      placeholder="Search tools, HSN codes, or guides... (Try: 'laptop HSN' or 'penalty')"
+      autocomplete="off"
+    />
+    <div id="searchResults"></div>
+  </div>
+  
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">15</div>
+      <div class="stat-label">Free Tools</div>
     </div>
-    <h1>Free GST Tools for Indian Businesses</h1>
-    <p>Calculate GST, find HSN codes, check penalties. Fast, accurate, always free.</p>
-
-    <div class="search-wrapper">
-      <input
-        type="text"
-        id="globalSearch"
-        placeholder="Search tools, HSN codes, guides... (e.g. 'laptop HSN' or 'penalty')"
-        autocomplete="off"
-      />
-      <span class="search-icon">🔍</span>
-      <div id="searchResults" class="search-dropdown"></div>
+    <div class="stat">
+      <div class="stat-number">21K+</div>
+      <div class="stat-label">HSN Codes</div>
     </div>
-
-    <div class="stats">
-      <div><strong>15</strong><span>Free Tools</span></div>
-      <div><strong>21K+</strong><span>HSN Codes</span></div>
-      <div><strong>100%</strong><span>Always Free</span></div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Always Free</div>
     </div>
   </div>
 </section>
 
-<div class="quick-filters">
-  <button class="filter-btn active" data-category="all">All Tools</button>
-  <button class="filter-btn" data-category="calculators">Calculators</button>
-  <button class="filter-btn" data-category="codes">Codes & Rates</button>
-  <button class="filter-btn" data-category="filing">Filing & Returns</button>
-  <button class="filter-btn" data-category="verification">Verification</button>
+<!-- CATEGORIES -->
+<div class="container">
+  <div class="categories">
+    <button class="category-btn active" onclick="filterTools('all')">🎯 All Tools</button>
+    <button class="category-btn" onclick="filterTools('calculators')">🧮 Calculators</button>
+    <button class="category-btn" onclick="filterTools('codes')">🔢 Codes & Rates</button>
+    <button class="category-btn" onclick="filterTools('filing')">📅 Filing</button>
+    <button class="category-btn" onclick="filterTools('verification')">✅ Verification</button>
+  </div>
+
+  <!-- TOOLS -->
+  <h2 class="section-title" id="tools">All Tools</h2>
+  <div class="tools-grid" id="toolsGrid">
+    
+    <a href="gst-calculator.html" class="tool-card" data-category="calculators">
+      <div class="tool-icon">🧮</div>
+      <h3>GST Calculator</h3>
+      <p>Calculate GST inclusive/exclusive prices instantly.</p>
+    </a>
+    
+    <a href="hsn-finder.html" class="tool-card" data-category="codes">
+      <div class="tool-icon">🔍</div>
+      <h3>HSN Code Finder</h3>
+      <p>Search 21,000+ HSN codes with GST rates.</p>
+    </a>
+    
+    <a href="penalty-calculator.html" class="tool-card" data-category="calculators">
+      <div class="tool-icon">💸</div>
+      <h3>Penalty Calculator</h3>
+      <p>Calculate late filing fees and interest.</p>
+    </a>
+    
+    <a href="itc-calculator.html" class="tool-card" data-category="calculators">
+      <div class="tool-icon">💰</div>
+      <h3>ITC Calculator</h3>
+      <p>Calculate Input Tax Credit eligibility.</p>
+    </a>
+    
+    <a href="composition-calculator.html" class="tool-card" data-category="calculators">
+      <div class="tool-icon">📦</div>
+      <h3>Composition Calculator</h3>
+      <p>Check eligibility for composition scheme.</p>
+    </a>
+    
+    <a href="invoice.html" class="tool-card" data-category="filing">
+      <div class="tool-icon">📄</div>
+      <h3>Invoice Generator</h3>
+      <p>Create GST-compliant invoices instantly.</p>
+    </a>
+    
+    <a href="gstin-verification.html" class="tool-card" data-category="verification">
+      <div class="tool-icon">✅</div>
+      <h3>GSTIN Verification</h3>
+      <p>Verify GST numbers instantly.</p>
+    </a>
+    
+    <a href="return-deadlines.html" class="tool-card" data-category="filing">
+      <div class="tool-icon">📅</div>
+      <h3>Return Deadlines</h3>
+      <p>Check GSTR-1, GSTR-3B due dates.</p>
+    </a>
+    
+    <a href="blog/gst-rates-india-2026.html" class="tool-card" data-category="codes">
+      <div class="tool-icon">📊</div>
+      <h3>GST Rates 2026</h3>
+      <p>Complete GST rate slabs by category.</p>
+    </a>
+    
+    <a href="eway-bill-calculator.html" class="tool-card" data-category="filing">
+      <div class="tool-icon">🚚</div>
+      <h3>E-Way Bill Calculator</h3>
+      <p>Calculate e-way bill validity period.</p>
+    </a>
+    
+    <a href="tds-calculator.html" class="tool-card" data-category="calculators">
+      <div class="tool-icon">💳</div>
+      <h3>TDS Calculator</h3>
+      <p>Calculate TDS under GST (Section 51).</p>
+    </a>
+    
+    <a href="registration-checker.html" class="tool-card" data-category="verification">
+      <div class="tool-icon">🔐</div>
+      <h3>Registration Checker</h3>
+      <p>Check if GST registration is mandatory.</p>
+    </a>
+    
+    <a href="gstr3b-helper.html" class="tool-card" data-category="filing">
+      <div class="tool-icon">📊</div>
+      <h3>GSTR-3B Helper</h3>
+      <p>Calculate tax liability for filing.</p>
+    </a>
+    
+    <a href="refund-calculator.html" class="tool-card" data-category="calculators">
+      <div class="tool-icon">💵</div>
+      <h3>Refund Calculator</h3>
+      <p>Calculate GST refund eligibility.</p>
+    </a>
+    
+    <a href="tcs-calculator.html" class="tool-card" data-category="calculators">
+      <div class="tool-icon">💼</div>
+      <h3>TCS Calculator</h3>
+      <p>Calculate TCS for e-commerce (Section 52).</p>
+    </a>
+    
+  </div>
 </div>
 
-<section id="tools" class="tools-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="badge">🛠️ Tools</span>
-      <h2>Everything for GST Compliance</h2>
-      <p>Professional tools used by CAs, accountants & business owners across India.</p>
-    </div>
-
-    <div class="tools-grid" id="toolsGrid">
-      <!-- Tool cards remain the same as your original - just ensure data-category is set -->
-      <a href="gst-calculator.html" class="tool-card" data-category="calculators">
-        <div class="tool-icon">🧮</div>
-        <h3>GST Calculator</h3>
-        <p>Calculate GST inclusive/exclusive prices instantly.</p>
-      </a>
-      <a href="hsn-finder.html" class="tool-card" data-category="codes">
-        <div class="tool-icon">🔍</div>
-        <h3>HSN Code Finder</h3>
-        <p>Search 21,000+ HSN codes with GST rates.</p>
-      </a>
-      <!-- ... remaining tool cards unchanged for brevity; copy from your original ... -->
-    </div>
-  </div>
-</section>
-
-<section class="knowledge-section">
-  <div class="container">
-    <div class="section-header">
-      <span class="badge">📚 Knowledge Hub</span>
-      <h2>Learn GST Compliance</h2>
-      <p>Expert guides, latest updates & practical tips for Indian businesses.</p>
-      <a href="blog/index.html" class="btn primary">View All Guides →</a>
-    </div>
-    <div class="guides-grid">
-      <!-- Your original guide cards unchanged -->
-      <a href="blog/gst-amendments-updates-2026.html" class="guide-card">
-        <div class="emoji">🆕</div>
-        <h3>GST Amendments 2026</h3>
-        <p>Latest changes in GST law and what they mean for your business.</p>
-      </a>
-      <!-- ... other two ... -->
-    </div>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-grid">
     <div>
       <h4>MyGSTIndia</h4>
-      <p>India's free GST toolkit for MSMEs. Trusted by 50,000+ businesses.</p>
+      <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
     </div>
-    <!-- Rest unchanged -->
+    <div>
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="gst-calculator.html">GST Calculator</a></li>
+        <li><a href="hsn-finder.html">HSN Finder</a></li>
+        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+        <li><a href="itc-calculator.html">ITC Calculator</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="disclaimer.html">Legal Disclaimer</a></li>
+        <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+      </ul>
+    </div>
   </div>
+  
+  <div class="footer-disclaimer">
+    <a href="disclaimer.html">Legal Disclaimer</a> • 
+    <a href="https://www.gst.gov.in" target="_blank">GST Portal</a>
+  </div>
+  
   <div class="footer-bottom">
-    © 2026 MyGSTIndia | Free Professional GST Tools for Indian Businesses
+    © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
   </div>
 </footer>
 
-<div class="mobile-action-bar">
-  <a href="#tools" class="mobile-action-btn active">
-    <span class="icon">🧮</span>
-    <span>Tools</span>
+<!-- MOBILE BOTTOM NAV -->
+<div class="mobile-nav">
+  <a href="#tools" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
   </a>
-  <button class="mobile-action-btn" onclick="document.getElementById('globalSearch').focus()">
-    <span class="icon">🔍</span>
-    <span>Search</span>
-  </button>
-  <a href="return-deadlines.html" class="mobile-action-btn">
-    <span class="icon">📅</span>
-    <span>Deadlines</span>
+  <a href="#" class="mobile-nav-btn" onclick="document.getElementById('globalSearch').focus(); return false;">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="return-deadlines.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">📅</div>
+    <div>Deadlines</div>
   </a>
 </div>
 
+<!-- JAVASCRIPT -->
 <script>
-// Search functionality (simplified, kept similar)
-const searchData = [ /* your original array unchanged */ ];
-const globalSearch = document.getElementById('globalSearch');
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+
+// Search data
+const searchData = [
+  { name: 'GST Calculator', url: 'gst-calculator.html', keywords: 'calculate gst tax inclusive exclusive' },
+  { name: 'HSN Code Finder', url: 'hsn-finder.html', keywords: 'hsn code laptop mobile rice car' },
+  { name: 'Penalty Calculator', url: 'penalty-calculator.html', keywords: 'penalty late fee interest fine' },
+  { name: 'ITC Calculator', url: 'itc-calculator.html', keywords: 'itc input tax credit' },
+  { name: 'Composition Calculator', url: 'composition-calculator.html', keywords: 'composition scheme small business' },
+  { name: 'Invoice Generator', url: 'invoice.html', keywords: 'invoice bill generate create' },
+  { name: 'GSTIN Verification', url: 'gstin-verification.html', keywords: 'gstin verify check validation' },
+  { name: 'Return Deadlines', url: 'return-deadlines.html', keywords: 'deadline due date gstr filing' },
+  { name: 'GST Rates 2026', url: 'blog/gst-rates-india-2026.html', keywords: 'rate 5% 12% 18% 28%' },
+  { name: 'E-Way Bill Calculator', url: 'eway-bill-calculator.html', keywords: 'eway bill transport' },
+  { name: 'TDS Calculator', url: 'tds-calculator.html', keywords: 'tds section 51' },
+  { name: 'Registration Checker', url: 'registration-checker.html', keywords: 'registration mandatory' },
+  { name: 'GSTR-3B Helper', url: 'gstr3b-helper.html', keywords: 'gstr3b filing tax liability' },
+  { name: 'Refund Calculator', url: 'refund-calculator.html', keywords: 'refund export itc' },
+  { name: 'TCS Calculator', url: 'tcs-calculator.html', keywords: 'tcs section 52 ecommerce' }
+];
+
+// Search functionality
+const searchInput = document.getElementById('globalSearch');
 const searchResults = document.getElementById('searchResults');
 
-globalSearch.addEventListener('input', function() {
+searchInput.addEventListener('input', function() {
   const query = this.value.toLowerCase().trim();
+  
   if (query.length < 2) {
     searchResults.style.display = 'none';
     return;
   }
-  const results = searchData.filter(item =>
-    item.name.toLowerCase().includes(query) || item.keywords.toLowerCase().includes(query)
+  
+  const results = searchData.filter(item => 
+    item.name.toLowerCase().includes(query) || 
+    item.keywords.toLowerCase().includes(query)
   );
-  searchResults.innerHTML = results.length > 0
-    ? results.map(item => `<a href="${item.url}">${item.name}</a>`).join('')
-    : '<div>No results found</div>';
-  searchResults.style.display = 'block';
+  
+  if (results.length > 0) {
+    searchResults.innerHTML = results.map(item => `
+      <a href="${item.url}" class="search-result">
+        <strong>${item.name}</strong>
+      </a>
+    `).join('');
+    searchResults.style.display = 'block';
+  } else {
+    searchResults.innerHTML = '<div style="padding:1rem;text-align:center;color:#64748b;">No results found</div>';
+    searchResults.style.display = 'block';
+  }
 });
 
-document.addEventListener('click', e => {
-  if (!globalSearch.contains(e.target) && !searchResults.contains(e.target)) {
+// Close search results when clicking outside
+document.addEventListener('click', function(e) {
+  if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
     searchResults.style.display = 'none';
   }
 });
 
-// Filter (updated to data-category)
+// Filter tools
 function filterTools(category) {
-  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-  event?.currentTarget?.classList.add('active');
-  document.querySelectorAll('.tool-card').forEach(card => {
-    card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
+  const tools = document.querySelectorAll('.tool-card');
+  const buttons = document.querySelectorAll('.category-btn');
+  
+  // Update active button
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  // Filter tools
+  tools.forEach(tool => {
+    if (category === 'all') {
+      tool.style.display = 'block';
+    } else {
+      const toolCategory = tool.getAttribute('data-category');
+      tool.style.display = toolCategory === category ? 'block' : 'none';
+    }
   });
 }
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => filterTools(btn.dataset.category));
-});
 </script>
-<script src="main.js"></script>
+
 </body>
 </html>
