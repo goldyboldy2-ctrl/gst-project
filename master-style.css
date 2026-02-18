@@ -479,7 +479,7 @@ textarea::placeholder {
 .logo-mark {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, var(--indigo-primary), var(--indigo-light));
+  background: linear-gradient(135deg, #f59e0b, #d97706);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
