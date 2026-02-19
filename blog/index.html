@@ -1,242 +1,763 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GST Blog - Free Guides & Compliance Updates | GST Compliance Pro</title>
-<meta name="description" content="Free expert guides on GST compliance. Learn about filing returns, ITC, penalties, HSN codes. Updated for 2026.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../master-style.css">
-<link rel="stylesheet" href="../tool-hub.css">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Blog - Free Guides & Compliance Updates 2026 | MyGSTIndia</title>
+  <meta name="description" content="Free expert guides on GST compliance in India. Learn about filing returns, ITC, penalties, HSN codes. Updated for 2026.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    /* HERO */
+    .hero {
+      background: linear-gradient(180deg, #eff6ff 0%, white 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .stat {
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--blue);
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+    
+    /* SECTION */
+    .section {
+      margin-bottom: 4rem;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    
+    .section h2 em {
+      font-style: italic;
+      color: var(--blue);
+    }
+    
+    /* BLOG GRID */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .blog-card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+      display: block;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      border-color: var(--blue);
+    }
+    
+    .blog-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .blog-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+    
+    .blog-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    .blog-meta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--gray-600);
+    }
+    
+    .featured-card {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      border-color: var(--blue);
+    }
+    
+    @media (max-width: 768px) {
+      .featured-card {
+        grid-column: span 1;
+      }
+    }
+    
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy), var(--gray-700));
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-section h2 em {
+      color: var(--orange);
+    }
+    
+    .cta-section p {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .btn:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .footer ul {
+      list-style: none;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    
+    .footer a:hover { color: white; }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+    
+    .mobile-nav-btn.active {
+      color: var(--blue);
+    }
+    
+    .mobile-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .hero h1 { font-size: 3rem; }
+    }
+  </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-<div class="navbar-container">
-<a href="../index.html" class="nav-logo">
-<div class="logo-mark">G</div>
-<span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
-</a>
-<button class="mobile-menu-toggle">
-<span></span><span></span><span></span>
-</button>
-<ul class="nav-links">
-<li><a href="../index.html">Home</a></li>
-<li><a href="../index.html#tools">Tools</a></li>
-<li><a href="index.html" class="active">Blog</a></li>
-</ul>
-</div>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">Tools</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+    </ul>
+  </div>
 </nav>
 
-<div class="legal-disclaimer-banner">
-<div class="disclaimer-container">
-<div class="disclaimer-icon">⚖️</div>
-<div class="disclaimer-content">
-<strong>Legal Disclaimer:</strong> This website provides <strong>general information only</strong> and is <strong>not professional tax or legal advice</strong>. Always verify with the <a href="https://www.gst.gov.in" target="_blank">official GST portal</a> and <strong>consult a qualified CA</strong>.
-<a href="../disclaimer.html">Read Full Disclaimer →</a>
-</div>
-</div>
-</div>
-
+<!-- HERO -->
 <section class="hero">
-<div class="hero-badge">📚 Knowledge Hub</div>
-<h1>GST Compliance <em>Blog</em></h1>
-<p>Free expert guides to simplify compliance for Indian businesses</p>
-<div class="hero-meta">16 Guides • Updated Feb 2026 • 100% Free</div>
+  <div class="hero-badge">📚 Knowledge Hub</div>
+  <h1>MyGSTIndia <em>Blog</em></h1>
+  <p>Free expert guides to simplify compliance for Indian businesses</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">16</div>
+      <div class="stat-label">Expert Guides</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">2026</div>
+      <div class="stat-label">Updated</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label">Free</div>
+    </div>
+  </div>
 </section>
 
+<!-- MAIN CONTENT -->
 <div class="container">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:4rem">
-<div class="stat-card"><div class="stat-number">16</div><div class="stat-label">Expert Guides</div></div>
-<div class="stat-card"><div class="stat-number">45k+</div><div class="stat-label">Words Written</div></div>
-<div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Free Access</div></div>
+  
+  <!-- Getting Started -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-badge">🚀 Getting Started</div>
+      <h2>New to <em>GST?</em></h2>
+    </div>
+    <div class="blog-grid">
+      <a href="what-is-gst-in-india.html" class="blog-card featured">
+        <div class="blog-icon">📖</div>
+        <h3>What is GST in India?</h3>
+        <p>Complete beginner's guide to understanding GST, tax slabs, and how it works.</p>
+        <div class="blog-meta">
+          <span>⏱️ 8 min</span>
+          <span>🎯 START HERE</span>
+        </div>
+      </a>
+      <a href="gst-registration-process.html" class="blog-card">
+        <div class="blog-icon">📝</div>
+        <h3>GST Registration Process</h3>
+        <p>Step-by-step guide to getting your GSTIN in 2026.</p>
+        <div class="blog-meta">
+          <span>⏱️ 6 min</span>
+        </div>
+      </a>
+      <a href="common-gst-mistakes.html" class="blog-card">
+        <div class="blog-icon">⚠️</div>
+        <h3>10 Common GST Mistakes</h3>
+        <p>Top mistakes businesses make and how to avoid penalties.</p>
+        <div class="blog-meta">
+          <span>⏱️ 5 min</span>
+        </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Returns & Filing -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-badge">📅 Returns & Filing</div>
+      <h2>Filing <em>Returns</em></h2>
+    </div>
+    <div class="blog-grid">
+      <a href="how-to-file-gst-return.html" class="blog-card">
+        <div class="blog-icon">📊</div>
+        <h3>How to File GST Returns</h3>
+        <p>Complete walkthrough of GSTR-1, GSTR-3B filing process.</p>
+        <div class="blog-meta">
+          <span>⏱️ 10 min</span>
+        </div>
+      </a>
+      <a href="gstr1-vs-gstr3b-differences.html" class="blog-card">
+        <div class="blog-icon">⚖️</div>
+        <h3>GSTR-1 vs GSTR-3B</h3>
+        <p>Key differences and how to reconcile both returns.</p>
+        <div class="blog-meta">
+          <span>⏱️ 7 min</span>
+        </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Advanced Topics -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-badge">⚡ Advanced</div>
+      <h2>Advanced <em>Compliance</em></h2>
+    </div>
+    <div class="blog-grid">
+      <a href="input-tax-credit-guide.html" class="blog-card">
+        <div class="blog-icon">💰</div>
+        <h3>Input Tax Credit (ITC)</h3>
+        <p>Master ITC eligibility and avoid common Section 17(5) mistakes.</p>
+        <div class="blog-meta">
+          <span>⏱️ 12 min</span>
+        </div>
+      </a>
+      <a href="reverse-charge-mechanism-rcm.html" class="blog-card">
+        <div class="blog-icon">🔄</div>
+        <h3>Reverse Charge Mechanism</h3>
+        <p>Complete RCM guide and when it applies.</p>
+        <div class="blog-meta">
+          <span>⏱️ 8 min</span>
+        </div>
+      </a>
+      <a href="composition-scheme-guide.html" class="blog-card">
+        <div class="blog-icon">📦</div>
+        <h3>Composition Scheme</h3>
+        <p>₹1.5 Cr turnover limit, benefits, and restrictions.</p>
+        <div class="blog-meta">
+          <span>⏱️ 7 min</span>
+        </div>
+      </a>
+      <a href="tds-under-gst-guide.html" class="blog-card">
+        <div class="blog-icon">💳</div>
+        <h3>TDS Under GST</h3>
+        <p>Section 51: 2% TDS rate and how to claim credit.</p>
+        <div class="blog-meta">
+          <span>⏱️ 6 min</span>
+        </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Rates & Codes -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-badge">🏷️ Rates & Codes</div>
+      <h2>Rates & <em>HSN</em></h2>
+    </div>
+    <div class="blog-grid">
+      <a href="gst-rates-india-2026.html" class="blog-card">
+        <div class="blog-icon">📊</div>
+        <h3>GST Rates India 2026</h3>
+        <p>Complete list: 0%, 5%, 12%, 18%, 28% slabs explained.</p>
+        <div class="blog-meta">
+          <span>⏱️ 9 min</span>
+        </div>
+      </a>
+      <a href="hsn-code-complete-guide.html" class="blog-card">
+        <div class="blog-icon">🔢</div>
+        <h3>HSN Code Guide</h3>
+        <p>What HSN codes are and how to find them for your products.</p>
+        <div class="blog-meta">
+          <span>⏱️ 8 min</span>
+        </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Compliance & Penalties -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-badge">⚠️ Compliance</div>
+      <h2>Penalties & <em>E-Way</em></h2>
+    </div>
+    <div class="blog-grid">
+      <a href="gst-penalty-calculator-guide.html" class="blog-card">
+        <div class="blog-icon">💸</div>
+        <h3>GST Penalty Guide</h3>
+        <p>Late fees, interest rates, and how penalties are calculated.</p>
+        <div class="blog-meta">
+          <span>⏱️ 7 min</span>
+        </div>
+      </a>
+      <a href="eway-bill-rules-2026.html" class="blog-card">
+        <div class="blog-icon">🚚</div>
+        <h3>E-Way Bill Rules 2026</h3>
+        <p>₹50,000 threshold, validity period, and generation process.</p>
+        <div class="blog-meta">
+          <span>⏱️ 6 min</span>
+        </div>
+      </a>
+      <a href="e-invoicing-guide-2026.html" class="blog-card">
+        <div class="blog-icon">📄</div>
+        <h3>E-Invoicing Guide</h3>
+        <p>Mandatory for ₹5 Cr+ turnover businesses from April 2025.</p>
+        <div class="blog-meta">
+          <span>⏱️ 8 min</span>
+        </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- Latest Updates -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-badge">🆕 Latest</div>
+      <h2>2026 <em>Updates</em></h2>
+    </div>
+    <div class="blog-grid">
+      <a href="gst-amendments-updates-2026.html" class="blog-card">
+        <div class="blog-icon">🔔</div>
+        <h3>GST Amendments 2026</h3>
+        <p>Recent changes, new rules, and important notifications.</p>
+        <div class="blog-meta">
+          <span>⏱️ 7 min</span>
+        </div>
+      </a>
+      <a href="gst-audit-process-guide.html" class="blog-card">
+        <div class="blog-icon">🔍</div>
+        <h3>GST Audit Process</h3>
+        <p>Preparation checklist and how to handle audit notices.</p>
+        <div class="blog-meta">
+          <span>⏱️ 9 min</span>
+        </div>
+      </a>
+    </div>
+  </section>
+  
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Need GST <em>Tools?</em></h2>
+    <p>Free calculators, HSN finder, penalty checker. No signup required.</p>
+    <a href="../index.html#tools" class="btn">🧮 View All Tools →</a>
+  </div>
+  
 </div>
 
-<div style="margin-bottom:4rem">
-<div style="text-align:center;margin-bottom:2rem">
-<div class="section-label">🚀 New to GST?</div>
-<h2 class="section-title">Getting <em>Started</em></h2>
-</div>
-<div class="tools-grid">
-<a href="what-is-gst-in-india.html" class="tool-card featured">
-<div class="tool-icon">📖</div>
-<h3>What is GST in India?</h3>
-<p>Complete beginner's guide to understanding GST.</p>
-<span class="tool-badge">START HERE</span>
-</a>
-<a href="gst-registration-process.html" class="tool-card">
-<div class="tool-icon">📝</div>
-<h3>GST Registration Process</h3>
-<p>Step-by-step guide to getting your GSTIN.</p>
-</a>
-<a href="common-gst-mistakes.html" class="tool-card">
-<div class="tool-icon">⚠️</div>
-<h3>10 Common GST Mistakes</h3>
-<p>Top mistakes to avoid and save penalties.</p>
-</a>
-</div>
-</div>
-
-<div style="margin-bottom:4rem">
-<div style="text-align:center;margin-bottom:2rem">
-<div class="section-label">📅 Returns</div>
-<h2 class="section-title">Filing <em>Returns</em></h2>
-</div>
-<div class="tools-grid">
-<a href="how-to-file-gst-return.html" class="tool-card">
-<div class="tool-icon">📊</div>
-<h3>How to File GST Returns</h3>
-<p>Complete walkthrough of GSTR-1, GSTR-3B.</p>
-</a>
-<a href="gstr1-vs-gstr3b-differences.html" class="tool-card">
-<div class="tool-icon">⚖️</div>
-<h3>GSTR-1 vs GSTR-3B</h3>
-<p>Key differences and how to reconcile.</p>
-</a>
-</div>
-</div>
-
-<div style="margin-bottom:4rem">
-<div style="text-align:center;margin-bottom:2rem">
-<div class="section-label">⚡ Advanced</div>
-<h2 class="section-title">Advanced <em>Compliance</em></h2>
-</div>
-<div class="tools-grid">
-<a href="input-tax-credit-guide.html" class="tool-card">
-<div class="tool-icon">💰</div>
-<h3>Input Tax Credit (ITC)</h3>
-<p>Master ITC eligibility and Section 17(5).</p>
-</a>
-<a href="reverse-charge-mechanism-rcm.html" class="tool-card">
-<div class="tool-icon">🔄</div>
-<h3>Reverse Charge Mechanism</h3>
-<p>Complete RCM guide and payment rules.</p>
-</a>
-<a href="composition-scheme-guide.html" class="tool-card">
-<div class="tool-icon">📦</div>
-<h3>Composition Scheme</h3>
-<p>₹1.5 Cr turnover limit, benefits, restrictions.</p>
-</a>
-<a href="tds-under-gst-guide.html" class="tool-card">
-<div class="tool-icon">💳</div>
-<h3>TDS Under GST</h3>
-<p>2% TDS rate and how to claim credit.</p>
-</a>
-</div>
-</div>
-
-<div style="margin-bottom:4rem">
-<div style="text-align:center;margin-bottom:2rem">
-<div class="section-label">🏷️ Rates</div>
-<h2 class="section-title">Rates & <em>HSN</em></h2>
-</div>
-<div class="tools-grid">
-<a href="gst-rates-india-2026.html" class="tool-card">
-<div class="tool-icon">📊</div>
-<h3>GST Rates 2026</h3>
-<p>0%, 5%, 12%, 18%, 28% slabs explained.</p>
-</a>
-<a href="hsn-code-complete-guide.html" class="tool-card">
-<div class="tool-icon">🔢</div>
-<h3>HSN Code Guide</h3>
-<p>What they are and how to find them.</p>
-</a>
-</div>
-</div>
-
-<div style="margin-bottom:4rem">
-<div style="text-align:center;margin-bottom:2rem">
-<div class="section-label">⚠️ Penalties</div>
-<h2 class="section-title">Penalties & <em>E-Way</em></h2>
-</div>
-<div class="tools-grid">
-<a href="gst-penalty-calculator-guide.html" class="tool-card">
-<div class="tool-icon">💸</div>
-<h3>Penalty Guide</h3>
-<p>Late fees and interest calculation.</p>
-</a>
-<a href="eway-bill-rules-2026.html" class="tool-card">
-<div class="tool-icon">🚚</div>
-<h3>E-Way Bill Rules</h3>
-<p>₹50,000 threshold and validity.</p>
-</a>
-<a href="e-invoicing-guide-2026.html" class="tool-card">
-<div class="tool-icon">📄</div>
-<h3>E-Invoicing</h3>
-<p>Mandatory for ₹5 Cr+ turnover.</p>
-</a>
-</div>
-</div>
-
-<div style="margin-bottom:4rem">
-<div style="text-align:center;margin-bottom:2rem">
-<div class="section-label">🆕 Latest</div>
-<h2 class="section-title">2026 <em>Updates</em></h2>
-</div>
-<div class="tools-grid">
-<a href="gst-amendments-updates-2026.html" class="tool-card">
-<div class="tool-icon">🆕</div>
-<h3>Amendments 2026</h3>
-<p>Recent changes and updates.</p>
-</a>
-<a href="gst-audit-process-guide.html" class="tool-card">
-<div class="tool-icon">🔍</div>
-<h3>Audit Process</h3>
-<p>Preparation and handling notices.</p>
-</a>
-</div>
-</div>
-
-<div class="cta-section">
-<h2>Need GST <em>Tools?</em></h2>
-<p>Free calculators - no signup required.</p>
-<a href="../index.html#tools" class="btn btn-primary">🧮 View Tools</a>
-</div>
-</div>
-
+<!-- FOOTER -->
 <footer class="footer">
-<div class="footer-grid">
-<div><h4>GST Compliance Pro</h4><p>Free GST toolkit for MSMEs.</p></div>
-<div><h4>Tools</h4><ul>
-<li><a href="../gst-calculator.html">GST Calculator</a></li>
-<li><a href="../hsn-finder.html">HSN Finder</a></li>
-<li><a href="../penalty-calculator.html">Penalty Calculator</a></li>
-</ul></div>
-<div><h4>Learn</h4><ul>
-<li><a href="index.html">Blog</a></li>
-<li><a href="what-is-gst-in-india.html">What is GST?</a></li>
-</ul></div>
-</div>
-<div class="footer-bottom">© 2026 GST Compliance Pro</div>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyGSTIndia</h4>
+        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="../gst-calculator.html">GST Calculator</a></li>
+          <li><a href="../hsn-finder.html">HSN Finder</a></li>
+          <li><a href="../penalty-calculator.html">Penalty Calculator</a></li>
+          <li><a href="../itc-calculator.html">ITC Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../disclaimer.html">Legal Disclaimer</a></li>
+          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
+    </div>
+  </div>
 </footer>
 
-<style>
-.stat-card{background:linear-gradient(135deg,#1e293b,#334155);padding:2rem;border-radius:12px;text-align:center;color:white;box-shadow:0 4px 6px rgba(0,0,0,0.1)}
-.stat-number{font-size:2.5rem;font-weight:900;color:#fbbf24;margin-bottom:0.5rem}
-.stat-label{text-transform:uppercase;font-size:0.75rem;letter-spacing:0.1em;opacity:0.9;font-weight:600}
-.tool-card.featured{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:2px solid #93c5fd}
-.tool-badge{display:inline-block;background:#2563eb;color:white;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:700;margin-top:12px}
-</style>
-
-<!-- MOBILE ACTION BAR -->
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn active">
-      <span class="icon">📚</span>
-      <span>Blog</span>
-    </button>
-  </div>
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a href="../index.html#tools" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="../index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
 </div>
 
-<script src="../main.js"></script>
+<!-- JAVASCRIPT -->
+<script>
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
 </body>
 </html>
