@@ -1,318 +1,909 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GST Invoice Generator - Create GST Compliant Invoices | GST Compliance Pro</title>
-  <meta name="description" content="Create GST compliant invoices instantly. Free invoice generator with GSTIN, HSN codes, tax calculation. Download PDF. 2026 format.">
+  <title>GST Invoice Generator - Free Tax Invoice Maker India 2026 | MyGSTIndia</title>
+  <meta name="description" content="Free GST invoice generator. Create GST-compliant tax invoices with GSTIN, HSN codes, automatic calculations. Download and print instantly.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="master-style.css">
-  <link rel="stylesheet" href="tool-hub.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --indigo: #6366f1;
+      --indigo-dark: #4f46e5;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    /* DISCLAIMER */
+    .disclaimer {
+      background: #fef3c7;
+      border-bottom: 2px solid var(--orange);
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    
+    .disclaimer a {
+      color: #92400e;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    
+    /* BREADCRUMB */
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    /* MAIN CONTENT */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-badge {
+      display: inline-block;
+      background: var(--indigo);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+    
+    .page-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* CARD */
+    .card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+    }
+    
+    /* FORM */
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    small {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+    
+    .section-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+    }
+    
+    /* INVOICE PREVIEW */
+    .invoice-preview {
+      display: none;
+      background: white;
+      border: 3px solid var(--indigo);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .invoice-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 3px solid var(--indigo);
+    }
+    
+    .invoice-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--indigo);
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    
+    .invoice-subtitle {
+      color: var(--gray-600);
+      font-size: 0.875rem;
+    }
+    
+    .invoice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .invoice-section h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    
+    .invoice-section p {
+      margin: 0.25rem 0;
+      font-size: 0.875rem;
+    }
+    
+    .invoice-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+    }
+    
+    .invoice-table th {
+      background: var(--indigo);
+      color: white;
+      padding: 0.75rem;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    
+    .invoice-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 0.875rem;
+    }
+    
+    .invoice-total {
+      text-align: right;
+      margin-top: 1rem;
+    }
+    
+    .invoice-total-row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 3rem;
+      padding: 0.5rem 0;
+      font-size: 0.875rem;
+    }
+    
+    .invoice-total-row.grand {
+      background: var(--indigo);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1.125rem;
+      font-weight: 800;
+      margin-top: 0.5rem;
+    }
+    
+    .invoice-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    
+    .btn-secondary {
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gray-200);
+    }
+    
+    /* INFO BOX */
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .info-box h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    
+    .info-box p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    .info-box ul {
+      margin: 0.5rem 0 0 1.25rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .footer ul {
+      list-style: none;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    
+    .footer a:hover { color: white; }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+    
+    .mobile-nav-btn.active {
+      color: var(--blue);
+    }
+    
+    .mobile-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .page-header h1 { font-size: 2.5rem; }
+      .container { margin: 3rem auto; }
+    }
+    
+    @media print {
+      .navbar, .disclaimer, .breadcrumb, .footer, .mobile-nav, .card, .info-box, .invoice-actions {
+        display: none !important;
+      }
+      .invoice-preview {
+        display: block !important;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
 <body>
+
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <div class="disclaimer-icon">⚖️</div>
-    <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> This is a basic invoice generator. For businesses requiring e-invoicing (turnover > ₹5 Cr), use official IRP portal.
-    </div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> › <a href="index.html#tools">Tools</a> › Invoice Generator
   </div>
 </div>
-<div class="tool-page">
-  <div class="tool-container">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a><span class="sep">›</span><a href="index.html#tools">Tools</a><span class="sep">›</span><span>Invoice Generator</span>
-    </div>
-    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
-    <div class="tool-header">
-      <div class="tool-badge">📄 Generator</div>
-      <h1>GST Invoice Generator</h1>
-      <p>Create <strong>GST compliant invoices</strong> with all mandatory fields. Quick, easy, and format-compliant for small businesses.</p>
-    </div>
-    <div class="info-box blue">
-      <div class="info-box-icon">💡</div>
-      <div class="info-box-content">
-        <h4>How to Use</h4>
-        <p>Fill in your business details, customer details, and item information. Click generate to create a downloadable GST invoice.</p>
-      </div>
-    </div>
-    <div class="tool-card-main">
-      <h2>📄 Create Invoice</h2>
-      <form id="invoiceGenerator" onsubmit="generateInvoice(event)">
 
-```
-    <h3>Your Business Details</h3>
-    <div class="form-group">
-      <label for="businessName">Business Name</label>
-      <input type="text" id="businessName" placeholder="Enter business name" required>
-    </div>
-    <div class="form-group">
-      <label for="gstin">GSTIN</label>
-      <input type="text" id="gstin" placeholder="22AAAAA0000A1Z5" pattern="[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}" required>
-    </div>
-    <div class="form-group">
-      <label for="businessAddress">Business Address</label>
-      <textarea id="businessAddress" rows="2" placeholder="Enter address" required></textarea>
-    </div>
+<!-- MAIN CONTENT -->
+<div class="container">
+  
+  <div class="page-header">
+    <div class="page-badge">📄 Invoice</div>
+    <h1>GST Invoice Generator</h1>
+    <p>Create GST-compliant tax invoices instantly. Free, no signup required.</p>
+  </div>
+  
+  <div class="card">
+    <h2>Create Invoice</h2>
     
-    <h3 style="margin-top: 2rem;">Customer Details</h3>
-    <div class="form-group">
-      <label for="customerName">Customer Name</label>
-      <input type="text" id="customerName" placeholder="Enter customer name" required>
-    </div>
-    <div class="form-group">
-      <label for="customerGSTIN">Customer GSTIN (optional for B2C)</label>
-      <input type="text" id="customerGSTIN" placeholder="22AAAAA0000A1Z5">
-    </div>
-    
-    <h3 style="margin-top: 2rem;">Invoice Details</h3>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="invoiceNumber">Invoice Number</label>
-        <input type="text" id="invoiceNumber" placeholder="INV-001" required>
-      </div>
-      <div class="form-group">
-        <label for="invoiceDate">Invoice Date</label>
-        <input type="date" id="invoiceDate" required>
-      </div>
-    </div>
-    
-    <h3 style="margin-top: 2rem;">Item Details</h3>
-    <div class="form-group">
-      <label for="itemName">Item/Service Description</label>
-      <input type="text" id="itemName" placeholder="Enter item description" required>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" placeholder="1" min="1" step="1" required>
-      </div>
-      <div class="form-group">
-        <label for="rate">Rate per Unit</label>
-        <div class="input-with-prefix">
-          <span class="prefix">₹</span>
-          <input type="number" id="rate" placeholder="0" min="0" step="0.01" required>
+    <form id="invoiceForm" onsubmit="generateInvoice(event)">
+      
+      <div class="section-title">📋 Invoice Details</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="invoiceNumber">Invoice Number *</label>
+          <input type="text" id="invoiceNumber" placeholder="INV-001" required>
+        </div>
+        <div class="form-group">
+          <label for="invoiceDate">Invoice Date *</label>
+          <input type="date" id="invoiceDate" required>
         </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="gstRate">GST Rate (%)</label>
-      <select id="gstRate" required>
-        <option value="">Select GST Rate</option>
-        <option value="0">0% (Exempted)</option>
-        <option value="5">5%</option>
-        <option value="12">12%</option>
-        <option value="18">18%</option>
-        <option value="28">28%</option>
-      </select>
+      
+      <div class="section-title">🏢 Seller Details</div>
+      <div class="form-group">
+        <label for="sellerName">Business Name *</label>
+        <input type="text" id="sellerName" placeholder="Your Business Name" required>
+      </div>
+      <div class="form-group">
+        <label for="sellerGSTIN">GSTIN *</label>
+        <input type="text" id="sellerGSTIN" placeholder="29XXXXXXXXXXXZ1" maxlength="15" required>
+      </div>
+      <div class="form-group">
+        <label for="sellerAddress">Address</label>
+        <textarea id="sellerAddress" placeholder="Street, City, State - PIN"></textarea>
+      </div>
+      
+      <div class="section-title">👤 Buyer Details</div>
+      <div class="form-group">
+        <label for="buyerName">Customer Name *</label>
+        <input type="text" id="buyerName" placeholder="Customer Name" required>
+      </div>
+      <div class="form-group">
+        <label for="buyerGSTIN">Customer GSTIN</label>
+        <input type="text" id="buyerGSTIN" placeholder="Optional" maxlength="15">
+        <small>Leave blank if customer is unregistered</small>
+      </div>
+      <div class="form-group">
+        <label for="buyerAddress">Address</label>
+        <textarea id="buyerAddress" placeholder="Street, City, State - PIN"></textarea>
+      </div>
+      
+      <div class="section-title">🛍️ Item Details</div>
+      <div class="form-group">
+        <label for="itemDescription">Item Description *</label>
+        <input type="text" id="itemDescription" placeholder="Product/Service name" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="hsnCode">HSN/SAC Code</label>
+          <input type="text" id="hsnCode" placeholder="8471">
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity *</label>
+          <input type="number" id="quantity" placeholder="1" step="1" min="1" value="1" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="rate">Rate (₹) *</label>
+          <input type="number" id="rate" placeholder="1000" step="0.01" min="0" required>
+        </div>
+        <div class="form-group">
+          <label for="gstRate">GST Rate (%) *</label>
+          <select id="gstRate" required>
+            <option value="0">0%</option>
+            <option value="5">5%</option>
+            <option value="12">12%</option>
+            <option value="18" selected>18%</option>
+            <option value="28">28%</option>
+          </select>
+        </div>
+      </div>
+      
+      <button type="submit" class="btn">Generate Invoice →</button>
+      
+    </form>
+    
+  </div>
+  
+  <div id="invoicePreview" class="invoice-preview">
+    <div class="invoice-header">
+      <div class="invoice-title">TAX INVOICE</div>
+      <div class="invoice-subtitle">GST Compliant Invoice</div>
     </div>
     
-    <button type="submit" class="btn btn-primary btn-large">Generate Invoice →</button>
-  </form>
+    <div style="display:flex;justify-content:space-between;margin-bottom:2rem;">
+      <div>
+        <strong>Invoice No:</strong> <span id="previewInvoiceNo"></span><br>
+        <strong>Date:</strong> <span id="previewDate"></span>
+      </div>
+    </div>
+    
+    <div class="invoice-grid">
+      <div class="invoice-section">
+        <h4>Seller Details</h4>
+        <p><strong id="previewSellerName"></strong></p>
+        <p>GSTIN: <span id="previewSellerGSTIN"></span></p>
+        <p id="previewSellerAddress"></p>
+      </div>
+      <div class="invoice-section">
+        <h4>Buyer Details</h4>
+        <p><strong id="previewBuyerName"></strong></p>
+        <p id="previewBuyerGSTIN"></p>
+        <p id="previewBuyerAddress"></p>
+      </div>
+    </div>
+    
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>HSN/SAC</th>
+          <th>Qty</th>
+          <th>Rate</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody id="invoiceItems">
+      </tbody>
+    </table>
+    
+    <div class="invoice-total">
+      <div class="invoice-total-row">
+        <span>Taxable Amount:</span>
+        <span id="taxableAmount">₹0.00</span>
+      </div>
+      <div class="invoice-total-row">
+        <span id="gstLabel">CGST + SGST:</span>
+        <span id="gstAmount">₹0.00</span>
+      </div>
+      <div class="invoice-total-row grand">
+        <span>Total Amount:</span>
+        <span id="grandTotal">₹0.00</span>
+      </div>
+    </div>
+    
+    <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:1rem;border-radius:8px;margin-top:2rem;">
+      <p style="margin:0;font-size:0.875rem;color:#92400e;">
+        <strong>⚠️ Sample invoice only.</strong> Please verify all details, GST rates, and compliance requirements before use. This is a simplified template - consult CA for business-specific invoice requirements.
+      </p>
+    </div>
+    
+    <div class="invoice-actions">
+      <button class="btn btn-secondary" onclick="resetForm()">Create New Invoice</button>
+      <button class="btn" onclick="window.print()">Print / Download PDF</button>
+    </div>
+  </div>
+  
+  <div class="info-box">
+    <h4>💡 GST Invoice Requirements (2026)</h4>
+    <ul>
+      <li><strong>Tax Invoice:</strong> For taxable supplies (B2B, B2C above ₹200)</li>
+      <li><strong>Mandatory Fields:</strong> Invoice no., date, GSTIN (seller), customer details, HSN/SAC, taxable value, GST amount</li>
+      <li><strong>Serial Number:</strong> Must be sequential and unique</li>
+      <li><strong>HSN Code:</strong> 4-digit (turnover < ₹5 Cr) or 6-digit (≥ ₹5 Cr)</li>
+      <li><strong>E-Invoicing:</strong> Mandatory for ₹5 Cr+ turnover from April 2025</li>
+    </ul>
+  </div>
+  
 </div>
 
-<div id="invoicePreview" class="result-card" style="display: none;">
-  <div class="result-header">
-    <span class="result-icon">📄</span>
-    <h3>Invoice Preview</h3>
-  </div>
-  <div id="invoiceContent" style="background: white; padding: 2rem; border: 2px solid var(--slate-200); border-radius: 8px;"></div>
-  <div class="result-actions">
-    <button onclick="window.print()" class="btn btn-primary">Print Invoice</button>
-    <button onclick="location.reload()" class="btn btn-secondary">Create New</button>
-  </div>
-</div>
-
-<div class="info-section">
-  <h3>📋 Mandatory Invoice Fields</h3>
-  <p>GST compliant invoices must include:</p>
-  <ul>
-    <li>Invoice number (unique, sequential)</li>
-    <li>Invoice date</li>
-    <li>Supplier GSTIN and address</li>
-    <li>Customer name and GSTIN (for B2B)</li>
-    <li>HSN/SAC code</li>
-    <li>Taxable value</li>
-    <li>GST rate and amount (CGST/SGST or IGST)</li>
-    <li>Total invoice value</li>
-  </ul>
-</div>
-```
-
-  </div>
-</div>
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-grid">
-    <div><h4>GST Compliance Pro</h4></div>
-    <div><h4>Tools</h4><ul><li><a href="gst-calculator.html">GST Calculator</a></li></ul></div>
-    <div><h4>Resources</h4><ul><li><a href="blog/index.html">Blog</a></li></ul></div>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyGSTIndia</h4>
+        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="gst-calculator.html">GST Calculator</a></li>
+          <li><a href="hsn-finder.html">HSN Finder</a></li>
+          <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+          <li><a href="itc-calculator.html">ITC Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="disclaimer.html">Legal Disclaimer</a></li>
+          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
+    </div>
   </div>
-  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
 </footer>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a href="index.html#tools" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="blog/index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
+</div>
+
+<!-- JAVASCRIPT -->
 <script>
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+
+// Set today's date as default
+document.getElementById('invoiceDate').valueAsDate = new Date();
+
 function generateInvoice(e) {
   e.preventDefault();
-
-const businessName = document.getElementById(‘businessName’).value;
-const gstin = document.getElementById(‘gstin’).value;
-const businessAddress = document.getElementById(‘businessAddress’).value;
-const customerName = document.getElementById(‘customerName’).value;
-const customerGSTIN = document.getElementById(‘customerGSTIN’).value;
-const invoiceNumber = document.getElementById(‘invoiceNumber’).value;
-const invoiceDate = document.getElementById(‘invoiceDate’).value;
-const itemName = document.getElementById(‘itemName’).value;
-const quantity = parseFloat(document.getElementById(‘quantity’).value);
-const rate = parseFloat(document.getElementById(‘rate’).value);
-const gstRate = parseFloat(document.getElementById(‘gstRate’).value);
-
-const taxableValue = quantity * rate;
-const gstAmount = (taxableValue * gstRate) / 100;
-const totalValue = taxableValue + gstAmount;
-
-// Assume intra-state for simplicity
-const cgst = gstAmount / 2;
-const sgst = gstAmount / 2;
-
-const invoiceHTML = `
-<div style="font-family: Arial, sans-serif;">
-<div style="text-align: center; border-bottom: 3px solid #333; padding-bottom: 1rem; margin-bottom: 1.5rem;">
-<h2 style="margin: 0; color: #1e40af;">TAX INVOICE</h2>
-</div>
-
-```
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem;">
-    <div>
-      <h4 style="margin: 0 0 0.5rem 0; color: #64748b; font-size: 0.875rem;">FROM</h4>
-      <p style="margin: 0; font-weight: 700; font-size: 1.125rem;">${businessName}</p>
-      <p style="margin: 0.25rem 0; font-size: 0.875rem;">GSTIN: ${gstin}</p>
-      <p style="margin: 0.25rem 0; font-size: 0.875rem; line-height: 1.4;">${businessAddress}</p>
-    </div>
-    <div style="text-align: right;">
-      <p style="margin: 0 0 0.5rem 0;"><strong>Invoice No:</strong> ${invoiceNumber}</p>
-      <p style="margin: 0;"><strong>Date:</strong> ${new Date(invoiceDate).toLocaleDateString('en-IN')}</p>
-    </div>
-  </div>
   
-  <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f8fafc; border-radius: 6px;">
-    <h4 style="margin: 0 0 0.5rem 0; color: #64748b; font-size: 0.875rem;">TO</h4>
-    <p style="margin: 0; font-weight: 700;">${customerName}</p>
-    ${customerGSTIN ? `<p style="margin: 0.25rem 0; font-size: 0.875rem;">GSTIN: ${customerGSTIN}</p>` : ''}
-  </div>
+  // Get form values
+  const invoiceNumber = document.getElementById('invoiceNumber').value;
+  const invoiceDate = document.getElementById('invoiceDate').value;
+  const sellerName = document.getElementById('sellerName').value;
+  const sellerGSTIN = document.getElementById('sellerGSTIN').value;
+  const sellerAddress = document.getElementById('sellerAddress').value;
+  const buyerName = document.getElementById('buyerName').value;
+  const buyerGSTIN = document.getElementById('buyerGSTIN').value;
+  const buyerAddress = document.getElementById('buyerAddress').value;
+  const itemDescription = document.getElementById('itemDescription').value;
+  const hsnCode = document.getElementById('hsnCode').value;
+  const quantity = parseFloat(document.getElementById('quantity').value);
+  const rate = parseFloat(document.getElementById('rate').value);
+  const gstRate = parseFloat(document.getElementById('gstRate').value);
   
-  <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">
-    <thead>
-      <tr style="background: #1e40af; color: white;">
-        <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Description</th>
-        <th style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">Qty</th>
-        <th style="padding: 0.75rem; text-align: right; border: 1px solid #ddd;">Rate</th>
-        <th style="padding: 0.75rem; text-align: right; border: 1px solid #ddd;">Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="padding: 0.75rem; border: 1px solid #ddd;">${itemName}</td>
-        <td style="padding: 0.75rem; text-align: center; border: 1px solid #ddd;">${quantity}</td>
-        <td style="padding: 0.75rem; text-align: right; border: 1px solid #ddd;">₹${rate.toFixed(2)}</td>
-        <td style="padding: 0.75rem; text-align: right; border: 1px solid #ddd;">₹${taxableValue.toFixed(2)}</td>
-      </tr>
-    </tbody>
-  </table>
+  // Calculate amounts
+  const amount = quantity * rate;
+  const gstAmount = amount * (gstRate / 100);
+  const totalAmount = amount + gstAmount;
   
-  <div style="margin-left: auto; width: 300px;">
-    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">
-      <span>Taxable Value:</span>
-      <span style="font-weight: 600;">₹${taxableValue.toFixed(2)}</span>
-    </div>
-    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">
-      <span>CGST (${(gstRate/2).toFixed(2)}%):</span>
-      <span style="font-weight: 600;">₹${cgst.toFixed(2)}</span>
-    </div>
-    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">
-      <span>SGST (${(gstRate/2).toFixed(2)}%):</span>
-      <span style="font-weight: 600;">₹${sgst.toFixed(2)}</span>
-    </div>
-    <div style="display: flex; justify-content: space-between; padding: 0.75rem 0; border-top: 2px solid #1e40af; margin-top: 0.5rem;">
-      <span style="font-weight: 700; font-size: 1.125rem;">Total:</span>
-      <span style="font-weight: 700; font-size: 1.125rem; color: #1e40af;">₹${totalValue.toFixed(2)}</span>
-    </div>
-  </div>
+  // Populate preview
+  document.getElementById('previewInvoiceNo').textContent = invoiceNumber;
+  document.getElementById('previewDate').textContent = new Date(invoiceDate).toLocaleDateString('en-IN');
+  document.getElementById('previewSellerName').textContent = sellerName;
+  document.getElementById('previewSellerGSTIN').textContent = sellerGSTIN;
+  document.getElementById('previewSellerAddress').textContent = sellerAddress || '-';
+  document.getElementById('previewBuyerName').textContent = buyerName;
+  document.getElementById('previewBuyerGSTIN').textContent = buyerGSTIN ? `GSTIN: ${buyerGSTIN}` : 'Unregistered Customer';
+  document.getElementById('previewBuyerAddress').textContent = buyerAddress || '-';
   
-  <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e8f0;">
-    <p style="margin: 0; font-size: 0.875rem; color: #64748b;">This is a computer-generated invoice</p>
-  </div>
-</div>
-```
-
-`;
-
-document.getElementById(‘invoiceContent’).innerHTML = invoiceHTML;
-document.getElementById(‘invoicePreview’).style.display = ‘block’;
-document.getElementById(‘invoicePreview’).scrollIntoView({ behavior: ‘smooth’ });
+  // Populate items table
+  const itemsHTML = `
+    <tr>
+      <td>${itemDescription}</td>
+      <td>${hsnCode || '-'}</td>
+      <td>${quantity}</td>
+      <td>₹${rate.toFixed(2)}</td>
+      <td>₹${amount.toFixed(2)}</td>
+    </tr>
+  `;
+  document.getElementById('invoiceItems').innerHTML = itemsHTML;
+  
+  // Populate totals
+  document.getElementById('taxableAmount').textContent = '₹' + amount.toFixed(2);
+  document.getElementById('gstLabel').textContent = `GST @ ${gstRate}%:`;
+  document.getElementById('gstAmount').textContent = '₹' + gstAmount.toFixed(2);
+  document.getElementById('grandTotal').textContent = '₹' + totalAmount.toFixed(2);
+  
+  // Show preview
+  document.getElementById('invoicePreview').style.display = 'block';
+  document.getElementById('invoicePreview').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// Set today’s date as default
-document.addEventListener(‘DOMContentLoaded’, function() {
-document.getElementById(‘invoiceDate’).valueAsDate = new Date();
-});
+function resetForm() {
+  document.getElementById('invoiceForm').reset();
+  document.getElementById('invoiceDate').valueAsDate = new Date();
+  document.getElementById('invoicePreview').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 </script>
-
-<style>
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #invoiceContent, #invoiceContent * {
-    visibility: visible;
-  }
-  #invoiceContent {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-  }
-  .result-actions {
-    display: none !important;
-  }
-}
-</style>
-
-<!-- MOBILE ACTION BAR -->
-
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn active" onclick="window.location.href='index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='return-deadlines.html'">
-      <span class="icon">📅</span>
-      <span>Deadlines</span>
-    </button>
-  </div>
-</div>
 
 </body>
 </html>
