@@ -1,290 +1,922 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Composition Scheme Calculator - Regular vs Composition Tax | GST Compliance Pro</title>
-  <meta name="description" content="Compare GST regular scheme vs composition scheme. Calculate tax savings, check eligibility. Free calculator for small businesses 2026.">
+  <title>Composition Scheme Calculator - Check Eligibility & Tax 2026 | MyGSTIndia</title>
+  <meta name="description" content="Free Composition Scheme calculator. Check eligibility for GST composition scheme, calculate tax at 1%, 2%, 5%. ₹1.5 Cr turnover limit India 2026.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="master-style.css">
-  <link rel="stylesheet" href="tool-hub.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --green-dark: #059669;
+      --purple: #8b5cf6;
+      --red: #ef4444;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    /* DISCLAIMER */
+    .disclaimer {
+      background: #fef3c7;
+      border-bottom: 2px solid var(--orange);
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    
+    .disclaimer a {
+      color: #92400e;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    
+    /* BREADCRUMB */
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    /* MAIN CONTENT */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-badge {
+      display: inline-block;
+      background: var(--purple);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+    
+    .page-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* CARD */
+    .card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+    }
+    
+    /* FORM */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    small {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+    
+    /* ACCEPTANCE BOX */
+    .acceptance-box {
+      background: #fef3c7;
+      border: 2px solid var(--orange);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .acceptance-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    
+    .acceptance-label input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    
+    .acceptance-text {
+      color: #92400e;
+      line-height: 1.5;
+    }
+    
+    .acceptance-text strong {
+      color: #78350f;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+    }
+    
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    /* RESULT */
+    .result {
+      display: none;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    .result.eligible {
+      background: linear-gradient(135deg, #f3e8ff, white);
+      border: 3px solid var(--purple);
+    }
+    
+    .result.not-eligible {
+      background: linear-gradient(135deg, #fef2f2, white);
+      border: 3px solid var(--red);
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .result h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+      text-align: center;
+    }
+    
+    .verdict {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .verdict.eligible {
+      background: linear-gradient(135deg, var(--purple), #7c3aed);
+      color: white;
+    }
+    
+    .verdict.not-eligible {
+      background: linear-gradient(135deg, var(--red), #dc2626);
+      color: white;
+    }
+    
+    .verdict-icon {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .verdict-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    
+    .verdict-subtitle {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .result-grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+    }
+    
+    .result-label {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    
+    .result-value {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    
+    .reason-box {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 2px solid var(--gray-200);
+      margin-bottom: 1.5rem;
+    }
+    
+    .reason-box h4 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    
+    .reason-box ul {
+      margin-left: 1.5rem;
+      color: var(--gray-700);
+      font-size: 0.875rem;
+    }
+    
+    .reason-box li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .result-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-secondary {
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gray-200);
+    }
+    
+    /* INFO BOX */
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .info-box h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    
+    .info-box p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    .info-box ul {
+      margin: 0.5rem 0 0 1.25rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .footer ul {
+      list-style: none;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    
+    .footer a:hover { color: white; }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+    
+    .mobile-nav-btn.active {
+      color: var(--blue);
+    }
+    
+    .mobile-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .page-header h1 { font-size: 2.5rem; }
+      .container { margin: 3rem auto; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <div class="disclaimer-icon">⚖️</div>
-    <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> Composition scheme eligibility is subject to specific conditions. Always verify with <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST portal</a> and consult a qualified CA before opting.
-    </div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> › <a href="index.html#tools">Tools</a> › Composition Calculator
   </div>
 </div>
-<div class="tool-page">
-  <div class="tool-container">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a><span class="sep">›</span><a href="index.html#tools">Tools</a><span class="sep">›</span><span>Composition Calculator</span>
-    </div>
-    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
-    <div class="tool-header">
-      <div class="tool-badge">🧮 Calculator</div>
-      <h1>Composition Scheme Calculator</h1>
-      <p>Compare <strong>Regular GST vs Composition Scheme</strong>. Calculate tax savings and check eligibility instantly.</p>
-    </div>
-    <div class="info-box blue">
-      <div class="info-box-icon">💡</div>
-      <div class="info-box-content">
-        <h4>How to Use</h4>
-        <p>Select business type, enter turnover and purchase details. Get instant comparison of tax under both schemes.</p>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  
+  <div class="page-header">
+    <div class="page-badge">📦 Composition</div>
+    <h1>Composition Scheme Calculator</h1>
+    <p>Check eligibility for GST composition scheme and calculate tax at reduced rates.</p>
+  </div>
+  
+  <div class="card">
+    <h2>Check Eligibility & Calculate Tax</h2>
+    
+    <form id="compositionForm" onsubmit="calculate(event)">
+      
+      <div class="form-group">
+        <label for="turnover">Annual Turnover (₹)</label>
+        <input type="number" id="turnover" placeholder="Enter annual turnover" step="0.01" min="0" required>
+        <small>Total turnover in the previous financial year</small>
       </div>
-    </div>
-    <div class="tool-card-main">
-      <h2>🧮 Compare Schemes</h2>
-      <form id="compositionForm" onsubmit="calculateComposition(event)">
-        <div class="form-group">
-          <label for="businessType">Business Type</label>
-          <select id="businessType" required onchange="updateRateHint()">
-            <option value="">Select Business Type</option>
-            <option value="1">Trader (Goods) — 1%</option>
-            <option value="1m">Manufacturer — 1%</option>
-            <option value="5">Restaurant (no AC/liquor) — 5%</option>
-            <option value="6">Service Provider — 6%</option>
-            <option value="6m">Mixed (Goods + Services) — 6%</option>
-          </select>
-          <small id="rateHint" style="color:#2563eb;font-weight:600;margin-top:0.5rem;display:block;"></small>
-        </div>
-        <div class="form-group">
-          <label for="turnover">Annual Turnover (₹)</label>
-          <div class="input-with-prefix">
-            <span class="prefix">₹</span>
-            <input type="number" id="turnover" placeholder="e.g. 7500000 for 75 lakh" min="0" step="1" required>
-          </div>
-          <small>Composition limit: ₹1.5 Crore (₹75 lakh for special category states)</small>
-        </div>
-        <div class="form-group">
-          <label style="display:flex;align-items:flex-start;gap:0.75rem;cursor:pointer;background:#f8fafc;padding:1rem;border-radius:8px;border:2px solid #e2e8f0;">
-            <input type="checkbox" id="specialState" style="width:20px;height:20px;min-width:20px;margin-top:2px;">
-            <span>
-              <strong style="display:block;margin-bottom:0.25rem;">Special Category State</strong>
-              <span style="font-size:0.875rem;color:#64748b;">Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Himachal Pradesh, Uttarakhand, J&amp;K</span>
-            </span>
-          </label>
-        </div>
-        <div class="form-group">
-          <label for="purchases">Annual Purchases with GST (₹)</label>
-          <div class="input-with-prefix">
-            <span class="prefix">₹</span>
-            <input type="number" id="purchases" placeholder="Total value of purchases" min="0" step="1" required>
-          </div>
-          <small>Used to calculate ITC benefit under regular scheme</small>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="purchaseGSTRate">Avg GST on Purchases (%)</label>
-            <select id="purchaseGSTRate" required>
-              <option value="">Select Rate</option>
-              <option value="5">5%</option>
-              <option value="12">12%</option>
-              <option value="18">18%</option>
-              <option value="28">28%</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="salesGSTRate">Avg GST on Sales (%)</label>
-            <select id="salesGSTRate" required>
-              <option value="">Select Rate</option>
-              <option value="5">5%</option>
-              <option value="12">12%</option>
-              <option value="18">18%</option>
-              <option value="28">28%</option>
-            </select>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-large">Compare Schemes →</button>
-      </form>
-    </div>
-    <div id="result" class="result-card" style="display:none;">
-      <div class="result-header">
-        <span class="result-icon">📊</span>
-        <h3>Scheme Comparison</h3>
+      
+      <div class="form-group">
+        <label for="businessType">Business Type</label>
+        <select id="businessType" required>
+          <option value="">Select Business Type</option>
+          <option value="manufacturer">Manufacturer</option>
+          <option value="trader">Trader</option>
+          <option value="restaurant">Restaurant (without AC/bar)</option>
+          <option value="services">Service Provider</option>
+        </select>
       </div>
-      <div class="result-body" id="resultBody"></div>
+      
+      <div class="form-group">
+        <label for="interstate">Inter-State Supply?</label>
+        <select id="interstate" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <small>Do you supply goods/services to other states?</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="ecommerce">Selling via E-commerce?</label>
+        <select id="ecommerce" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <small>Selling through platforms like Amazon, Flipkart, etc.</small>
+      </div>
+      
+      <!-- TIER 3: MANDATORY ACCEPTANCE -->
+      <div class="acceptance-box">
+        <label class="acceptance-label">
+          <input type="checkbox" id="acceptance" required>
+          <span class="acceptance-text">
+            <strong>I understand this is a general estimate, not professional tax advice.</strong> Composition scheme eligibility depends on specific business activities, compliance history, and restrictions. I will verify with <a href="https://www.gst.gov.in" target="_blank" style="color:#92400e;text-decoration:underline;font-weight:600;">gst.gov.in</a> and consult my CA before opting for composition scheme.
+          </span>
+        </label>
+      </div>
+      
+      <button type="submit" class="btn" id="submitBtn">Check Eligibility →</button>
+      
+    </form>
+    
+    <div id="result" class="result">
+      <h3>Eligibility Result</h3>
+      
+      <div class="verdict" id="verdict">
+        <div class="verdict-icon" id="verdictIcon"></div>
+        <div class="verdict-title" id="verdictTitle"></div>
+        <div class="verdict-subtitle" id="verdictSubtitle"></div>
+      </div>
+      
+      <div class="result-grid" id="taxGrid" style="display:none;">
+        <div class="result-item">
+          <span class="result-label">Annual Turnover</span>
+          <span class="result-value" id="turnoverDisplay">₹0.00</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Composition Tax Rate</span>
+          <span class="result-value" id="taxRate">-</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Estimated Annual Tax</span>
+          <span class="result-value" id="annualTax">₹0.00</span>
+        </div>
+      </div>
+      
+      <div class="reason-box">
+        <h4>📋 Analysis</h4>
+        <ul id="reasonList"></ul>
+      </div>
+      
+      <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:1rem;border-radius:8px;margin-top:1.5rem;">
+        <p style="margin:0;font-size:0.875rem;color:#92400e;">
+          <strong>⚠️ Estimate only.</strong> Actual eligibility depends on nature of business, compliance status, and specific restrictions under composition scheme. Always verify with <a href="https://www.gst.gov.in" target="_blank" style="color:#92400e;text-decoration:underline;font-weight:600;">gst.gov.in</a> and consult CA before opting in.
+        </p>
+      </div>
+      
       <div class="result-actions">
-        <button onclick="location.reload()" class="btn btn-secondary">Calculate Again</button>
-        <a href="blog/composition-scheme-guide.html" class="btn btn-primary">Full Guide →</a>
+        <button class="btn btn-secondary" onclick="resetForm()">Check Again</button>
+        <button class="btn" onclick="window.print()">Print Result</button>
       </div>
     </div>
-    <div class="info-section">
-      <h3>📋 Composition Scheme - Key Restrictions</h3>
-      <ul>
-        <li>❌ Cannot charge GST on invoices to customers</li>
-        <li>❌ Cannot claim Input Tax Credit (ITC)</li>
-        <li>❌ Cannot make inter-state sales</li>
-        <li>❌ Cannot sell on e-commerce (Amazon, Flipkart)</li>
-        <li>✅ Simple quarterly return (GSTR-4)</li>
-        <li>✅ Pay tax quarterly, not monthly</li>
-        <li>⚠️ Must still pay RCM on purchases from unregistered dealers</li>
-      </ul>
-    </div>
+    
   </div>
+  
+  <div class="info-box">
+    <h4>💡 Composition Scheme (2026)</h4>
+    <ul>
+      <li><strong>Turnover Limit:</strong> Up to ₹1.5 Crore (₹75 Lakh for some states)</li>
+      <li><strong>Tax Rates:</strong> Manufacturer/Trader (1%), Restaurant (5%), Services (6%)</li>
+      <li><strong>Benefits:</strong> Lower tax, simpler compliance, quarterly return (GSTR-4)</li>
+      <li><strong>Restrictions:</strong> No inter-state supply, no e-commerce, no ITC claim</li>
+      <li><strong>Not Eligible:</strong> Ice cream, pan masala, tobacco manufacturers</li>
+    </ul>
+  </div>
+  
 </div>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-grid">
-    <div><h4>GST Compliance Pro</h4><p>India's free GST toolkit for MSMEs.</p></div>
-    <div><h4>Tools</h4><ul>
-      <li><a href="gst-calculator.html">GST Calculator</a></li>
-      <li><a href="itc-calculator.html">ITC Calculator</a></li>
-      <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
-    </ul></div>
-    <div><h4>Resources</h4><ul>
-      <li><a href="blog/index.html">Blog</a></li>
-      <li><a href="disclaimer.html">Disclaimer</a></li>
-    </ul></div>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyGSTIndia</h4>
+        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="gst-calculator.html">GST Calculator</a></li>
+          <li><a href="hsn-finder.html">HSN Finder</a></li>
+          <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+          <li><a href="itc-calculator.html">ITC Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="disclaimer.html">Legal Disclaimer</a></li>
+          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
+    </div>
   </div>
-  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
 </footer>
-<script>
-function getRate(val) {
-  if (val === '1' || val === '1m') return 1;
-  if (val === '5') return 5;
-  return 6;
-}
 
-function fmt(n) {
-return ‘₹’ + parseFloat(n).toLocaleString(‘en-IN’, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
-
-function updateRateHint() {
-const val = document.getElementById(‘businessType’).value;
-const hint = document.getElementById(‘rateHint’);
-if (val) {
-hint.textContent = ’Composition rate: ’ + getRate(val) + ‘% of total turnover (no ITC available)’;
-} else {
-hint.textContent = ‘’;
-}
-}
-
-function calculateComposition(e) {
-e.preventDefault();
-
-const btVal = document.getElementById(‘businessType’).value;
-const compRate = getRate(btVal);
-const turnover = parseFloat(document.getElementById(‘turnover’).value) || 0;
-const isSpecial = document.getElementById(‘specialState’).checked;
-const purchases = parseFloat(document.getElementById(‘purchases’).value) || 0;
-const purchaseRate = parseFloat(document.getElementById(‘purchaseGSTRate’).value) || 0;
-const salesRate = parseFloat(document.getElementById(‘salesGSTRate’).value) || 0;
-
-const limit = isSpecial ? 7500000 : 15000000;
-const limitText = isSpecial ? ‘₹75 Lakh’ : ‘₹1.5 Crore’;
-const eligible = turnover <= limit;
-
-// Composition tax = compRate% of turnover
-const compTax = (turnover * compRate) / 100;
-
-// Regular scheme
-const baseTurnover = turnover / (1 + salesRate / 100);
-const outputTax = (baseTurnover * salesRate) / 100;
-const inputTax = (purchases * purchaseRate) / 100;
-const netRegularTax = Math.max(0, outputTax - inputTax);
-
-const savings = netRegularTax - compTax;
-const betterScheme = savings > 0 ? ‘Composition’ : ‘Regular’;
-
-document.getElementById(‘resultBody’).innerHTML = `
-<div style="display:grid;gap:1.5rem;">
-
-```
-  <div style="background:${eligible ? '#d1fae5' : '#fee2e2'};padding:1rem;border-radius:8px;border-left:4px solid ${eligible ? '#10b981' : '#ef4444'};">
-    <p style="margin:0;font-weight:700;color:${eligible ? '#065f46' : '#991b1b'};">${eligible ? '✅ Eligible for Composition Scheme' : '❌ Not Eligible for Composition Scheme'}</p>
-    <p style="margin:0.4rem 0 0;font-size:0.875rem;color:${eligible ? '#064e3b' : '#7f1d1d'};">Turnover ${fmt(turnover)} ${eligible ? 'is within' : 'exceeds'} the ${limitText} limit.</p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-    <div style="background:${savings > 0 ? '#d1fae5' : '#f8fafc'};padding:1.25rem;border-radius:12px;border:2px solid ${savings > 0 ? '#10b981' : '#e2e8f0'};text-align:center;">
-      <p style="margin:0 0 0.5rem;font-size:0.8rem;font-weight:700;color:${savings > 0 ? '#059669' : '#64748b'};">COMPOSITION</p>
-      <p style="margin:0;font-size:1.75rem;font-weight:800;color:#0f172a;">${fmt(compTax)}</p>
-      <p style="margin:0.25rem 0 0;font-size:0.75rem;color:#64748b;">${compRate}% of turnover</p>
-      ${savings > 0 ? '<p style="margin:0.5rem 0 0;font-size:0.75rem;font-weight:700;color:#059669;">⭐ BETTER OPTION</p>' : ''}
-    </div>
-    <div style="background:${savings <= 0 ? '#d1fae5' : '#f8fafc'};padding:1.25rem;border-radius:12px;border:2px solid ${savings <= 0 ? '#10b981' : '#e2e8f0'};text-align:center;">
-      <p style="margin:0 0 0.5rem;font-size:0.8rem;font-weight:700;color:${savings <= 0 ? '#059669' : '#64748b'};">REGULAR</p>
-      <p style="margin:0;font-size:1.75rem;font-weight:800;color:#0f172a;">${fmt(netRegularTax)}</p>
-      <p style="margin:0.25rem 0 0;font-size:0.75rem;color:#64748b;">Output − ITC</p>
-      ${savings <= 0 ? '<p style="margin:0.5rem 0 0;font-size:0.75rem;font-weight:700;color:#059669;">⭐ BETTER OPTION</p>' : ''}
-    </div>
-  </div>
-
-  <div style="background:linear-gradient(135deg,${savings > 0 ? '#059669,#10b981' : '#1d4ed8,#3b82f6'});padding:1.5rem;border-radius:12px;text-align:center;color:white;">
-    <p style="margin:0 0 0.25rem;font-size:0.875rem;opacity:0.9;">${savings > 0 ? '💰 Annual Savings with Composition' : '⚠️ Extra Cost if Switching to Composition'}</p>
-    <p style="margin:0;font-size:2.5rem;font-weight:800;">${fmt(Math.abs(savings))}</p>
-    <p style="margin:0.5rem 0 0;font-size:0.9rem;opacity:0.9;"><strong>${betterScheme} Scheme</strong> is better for your business</p>
-  </div>
-
-  <div style="background:#f8fafc;padding:1rem;border-radius:8px;font-size:0.875rem;">
-    <div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid #e2e8f0;">
-      <span>Output Tax (Sales at ${salesRate}%):</span><span style="font-weight:600;">${fmt(outputTax)}</span>
-    </div>
-    <div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid #e2e8f0;">
-      <span>Input Tax Credit (ITC):</span><span style="font-weight:600;color:#059669;">− ${fmt(inputTax)}</span>
-    </div>
-    <div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid #e2e8f0;">
-      <span style="font-weight:600;">Net Regular Tax:</span><span style="font-weight:700;">${fmt(netRegularTax)}</span>
-    </div>
-    <div style="display:flex;justify-content:space-between;padding:0.4rem 0;">
-      <span style="font-weight:600;">Composition Tax (${compRate}%):</span><span style="font-weight:700;">${fmt(compTax)}</span>
-    </div>
-  </div>
-
-  ${savings > 0 && eligible ? `<div class="info-box blue"><div class="info-box-content"><p style="margin:0;"><strong>Before opting:</strong> Confirm you do NOT make inter-state sales and do NOT sell on e-commerce platforms — both are disqualifying conditions.</p></div></div>` : ''}
-
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a href="index.html#tools" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="blog/index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
 </div>
-```
 
-`;
+<!-- JAVASCRIPT -->
+<script>
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
 
-document.getElementById(‘result’).style.display = ‘block’;
-document.getElementById(‘result’).scrollIntoView({ behavior: ‘smooth’ });
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+
+// Checkbox enables button
+document.getElementById('acceptance').addEventListener('change', function() {
+  document.getElementById('submitBtn').disabled = !this.checked;
+});
+
+// Initialize button as disabled
+document.getElementById('submitBtn').disabled = true;
+
+function calculate(e) {
+  e.preventDefault();
+  
+  const turnover = parseFloat(document.getElementById('turnover').value);
+  const businessType = document.getElementById('businessType').value;
+  const interstate = document.getElementById('interstate').value;
+  const ecommerce = document.getElementById('ecommerce').value;
+  
+  if (!turnover || !businessType || !interstate || !ecommerce) {
+    alert('Please fill all fields');
+    return;
+  }
+  
+  const turnoverLimit = 15000000; // ₹1.5 Crore
+  const reasons = [];
+  
+  // Check eligibility
+  let isEligible = true;
+  let taxRate = 0;
+  
+  // Turnover check
+  if (turnover > turnoverLimit) {
+    isEligible = false;
+    reasons.push(`Turnover (₹${(turnover/100000).toFixed(2)}L) exceeds ₹1.5 Cr limit`);
+  } else {
+    reasons.push(`Turnover within ₹1.5 Cr limit ✓`);
+  }
+  
+  // Inter-state check
+  if (interstate === 'yes') {
+    isEligible = false;
+    reasons.push('Inter-state supply not allowed in composition scheme');
+  } else {
+    reasons.push('Only intra-state supply ✓');
+  }
+  
+  // E-commerce check
+  if (ecommerce === 'yes') {
+    isEligible = false;
+    reasons.push('E-commerce sellers cannot opt for composition scheme');
+  } else {
+    reasons.push('Not selling via e-commerce ✓');
+  }
+  
+  // Determine tax rate
+  if (isEligible) {
+    if (businessType === 'manufacturer' || businessType === 'trader') {
+      taxRate = 1;
+    } else if (businessType === 'restaurant') {
+      taxRate = 5;
+    } else if (businessType === 'services') {
+      taxRate = 6;
+    }
+    reasons.push(`Tax rate: ${taxRate}% on turnover`);
+  }
+  
+  // Calculate annual tax
+  const annualTax = isEligible ? (turnover * taxRate / 100) : 0;
+  
+  // Display result
+  const resultDiv = document.getElementById('result');
+  const verdict = document.getElementById('verdict');
+  const reasonList = document.getElementById('reasonList');
+  const taxGrid = document.getElementById('taxGrid');
+  
+  if (isEligible) {
+    resultDiv.className = 'result eligible';
+    verdict.className = 'verdict eligible';
+    document.getElementById('verdictIcon').textContent = '✓';
+    document.getElementById('verdictTitle').textContent = 'ELIGIBLE';
+    document.getElementById('verdictSubtitle').textContent = 'You can opt for composition scheme';
+    
+    // Show tax calculation
+    taxGrid.style.display = 'grid';
+    document.getElementById('turnoverDisplay').textContent = '₹' + (turnover/100000).toFixed(2) + 'L';
+    document.getElementById('taxRate').textContent = taxRate + '%';
+    document.getElementById('annualTax').textContent = '₹' + annualTax.toFixed(2);
+  } else {
+    resultDiv.className = 'result not-eligible';
+    verdict.className = 'verdict not-eligible';
+    document.getElementById('verdictIcon').textContent = '✗';
+    document.getElementById('verdictTitle').textContent = 'NOT ELIGIBLE';
+    document.getElementById('verdictSubtitle').textContent = 'You cannot opt for composition scheme';
+    taxGrid.style.display = 'none';
+  }
+  
+  reasonList.innerHTML = reasons.map(r => `<li>${r}</li>`).join('');
+  
+  resultDiv.style.display = 'block';
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function resetForm() {
+  document.getElementById('compositionForm').reset();
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('submitBtn').disabled = true;
 }
 </script>
-
-<script src="main.js"></script>
-
-<!-- MOBILE ACTION BAR -->
-
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn active" onclick="window.location.href='index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='return-deadlines.html'">
-      <span class="icon">📅</span>
-      <span>Deadlines</span>
-    </button>
-  </div>
-</div>
 
 </body>
 </html>
