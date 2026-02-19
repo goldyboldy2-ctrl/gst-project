@@ -1,294 +1,858 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What is GST in India? Complete Guide 2026 | GST Compliance Pro</title>
-  <meta name="description" content="Learn what GST is in India, how it works, types of GST (CGST, SGST, IGST), tax rates, and benefits. Complete guide for businesses and individuals in 2026.">
-
-  <!-- Fonts -->
-
+  <title>What is GST in India? Complete Guide 2026 | MyGSTIndia</title>
+  <meta name="description" content="Complete guide to GST in India. Learn what is GST, how it works, tax rates, registration process, and filing returns. Updated for 2026.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-
-  <link rel="stylesheet" href="../master-style.css">
-  <link rel="stylesheet" href="../knowledge-hub.css">
-
-  <!-- OpenGraph -->
-
-  <meta property="og:title" content="What is GST in India? Complete Guide 2026">
-  <meta property="og:description" content="Understanding GST - types, rates, benefits, and how it works in India. Essential guide for businesses and taxpayers.">
-  <meta property="og:type" content="article">
-
-  <!-- Schema.org -->
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "What is GST in India? Complete Guide 2026",
-    "description": "Comprehensive guide to GST in India - types, rates, benefits, registration requirements, and how it works.",
-    "datePublished": "2026-02-08",
-    "dateModified": "2026-02-16",
-    "author": {
-      "@type": "Organization",
-      "name": "GST Compliance Pro"
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
     }
-  }
-  </script>
-
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3, h4 { 
+      font-family: 'Poppins', sans-serif; 
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    /* BREADCRUMB */
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    /* ARTICLE */
+    .article-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .article-header {
+      margin-bottom: 2rem;
+    }
+    
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+    
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .article-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .article-excerpt {
+      font-size: 1.25rem;
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+    }
+    
+    .article-content {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .article-content h2 {
+      font-size: 1.875rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--blue);
+    }
+    
+    .article-content h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .article-content h4 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .article-content p {
+      margin-bottom: 1.25rem;
+      color: var(--gray-700);
+      line-height: 1.8;
+    }
+    
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: 1.25rem;
+      padding-left: 2rem;
+    }
+    
+    .article-content li {
+      margin-bottom: 0.5rem;
+      color: var(--gray-700);
+    }
+    
+    .article-content strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+    
+    .article-content a {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+    
+    .article-content a:hover {
+      color: var(--blue-dark);
+    }
+    
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: linear-gradient(135deg, #eff6ff, #dbeafe);
+      border-left: 4px solid var(--blue);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .highlight-box h4 {
+      margin-top: 0;
+      color: var(--blue-dark);
+    }
+    
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* INFO BOX */
+    .info-box {
+      background: #fef3c7;
+      border-left: 4px solid var(--orange);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .info-box h4 {
+      margin-top: 0;
+      color: #92400e;
+    }
+    
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* TABLE */
+    .article-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+    }
+    
+    .article-content th {
+      background: var(--blue);
+      color: white;
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    .article-content td {
+      padding: 0.75rem;
+      border: 1px solid var(--gray-200);
+    }
+    
+    .article-content tr:nth-child(even) {
+      background: var(--gray-50);
+    }
+    
+    /* CTA BOX */
+    .cta-box {
+      background: linear-gradient(135deg, var(--navy), var(--gray-700));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .cta-box h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-box p {
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background: var(--orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    
+    .btn:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+    
+    /* RELATED ARTICLES */
+    .related-articles {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--gray-200);
+    }
+    
+    .related-articles h3 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .related-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .related-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+    
+    .related-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .related-card h4 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    
+    .related-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: white;
+    }
+    
+    .footer ul {
+      list-style: none;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    
+    .footer a:hover { color: white; }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+    
+    .mobile-nav-btn.active {
+      color: var(--blue);
+    }
+    
+    .mobile-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .article-container { margin: 3rem auto; }
+      .article-content { padding: 4rem 3rem; }
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Reading Progress Bar -->
-
-<div class="reading-progress-bar"></div>
-
-<!-- Navbar -->
-
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="../index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-
-```
-<button class="mobile-menu-toggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-
-<ul class="nav-links">
-  <li><a href="../index.html">Home</a></li>
-  <li><a href="../index.html#tools">Tools</a></li>
-  <li><a href="index.html" class="active">Blog</a></li>
-</ul>
-```
-
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">Tools</a></li>
+      <li><a href="index.html">Blog</a></li>
+    </ul>
   </div>
 </nav>
 
-<!-- Article -->
-
-<article class="blog-post">
-  <div class="blog-container">
-
-```
-<!-- Breadcrumb -->
+<!-- BREADCRUMB -->
 <div class="breadcrumb">
-  <a href="../index.html">Home</a>
-  <span class="sep">›</span>
-  <a href="index.html">Blog</a>
-  <span class="sep">›</span>
-  <span>What is GST</span>
-</div>
-
-<!-- Header -->
-<header class="blog-header">
-  <h1>What is GST in India? Complete Guide 2026</h1>
-  <div class="blog-meta">
-    <span>📅 Published: February 8, 2026</span>
-    <span>⏱️ 8 min read</span>
-  </div>
-</header>
-
-<!-- Quick Summary -->
-<div class="callout info">
-  <div class="callout-icon">💡</div>
-  <div class="callout-content">
-    <h4>Quick Summary</h4>
-    <p>GST (Goods and Services Tax) is India's unified indirect tax system that replaced 17 different taxes. Implemented in 2017, it simplifies taxation with rates of 0%, 5%, 12%, 18%, and 28%.</p>
+  <div class="breadcrumb-container">
+    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › What is GST in India?
   </div>
 </div>
 
-<!-- Content -->
-<section>
-  <h2 id="what-is-gst">What is GST?</h2>
-  <p><strong>GST (Goods and Services Tax)</strong> is a comprehensive indirect tax levied on the supply of goods and services in India. Introduced on July 1, 2017, GST replaced multiple cascading taxes charged by central and state governments.</p>
-  <p>Think of GST as a single tax that covers everything from manufacturing to final sale. Instead of paying different taxes at each stage (excise duty during manufacturing, VAT during sale, service tax for services), businesses now pay one unified tax.</p>
+<!-- ARTICLE -->
+<article class="article-container">
   
-  <div class="info-box green">
-    <div class="info-box-icon">📊</div>
-    <div class="info-box-content">
-      <h4>GST Full Form</h4>
-      <p><strong>Goods and Services Tax</strong> - A destination-based tax on consumption of goods and services.</p>
+  <header class="article-header">
+    <div class="article-meta">
+      <div class="article-meta-item">
+        <span>📅</span>
+        <span>Updated: February 2026</span>
+      </div>
+      <div class="article-meta-item">
+        <span>⏱️</span>
+        <span>8 min read</span>
+      </div>
+      <div class="article-meta-item">
+        <span>📚</span>
+        <span>Beginner's Guide</span>
+      </div>
     </div>
-  </div>
-</section>
-
-<section>
-  <h2 id="types-of-gst">Types of GST in India</h2>
-  <p>GST is divided into three types based on the nature of the transaction:</p>
+    <h1 class="article-title">What is GST in India? Complete Guide 2026</h1>
+    <p class="article-excerpt">
+      GST (Goods and Services Tax) is India's unified indirect tax system that replaced multiple taxes. Learn everything about GST rates, registration, and how it works.
+    </p>
+  </header>
   
-  <h3>1. CGST (Central GST)</h3>
-  <p>Collected by the Central Government on intra-state sales (within the same state).</p>
-  <p><strong>Example:</strong> Sale in Mumbai to Pune (both Maharashtra) attracts CGST + SGST</p>
-  
-  <h3>2. SGST (State GST)</h3>
-  <p>Collected by the State Government on intra-state sales.</p>
-  <p><strong>Example:</strong> Same transaction above - State gets SGST portion</p>
-  
-  <h3>3. IGST (Integrated GST)</h3>
-  <p>Collected by the Central Government on inter-state sales (between different states).</p>
-  <p><strong>Example:</strong> Sale from Delhi to Mumbai attracts IGST only</p>
-</section>
-
-<section>
-  <h2 id="gst-rates">GST Tax Rates in India (2026)</h2>
-  <p>GST has five tax slabs to ensure essential items remain affordable while luxury items are taxed higher:</p>
-  
-  <div class="table-responsive">
+  <div class="article-content">
+    
+    <h2>What is GST?</h2>
+    <p>
+      <strong>GST (Goods and Services Tax)</strong> is a comprehensive indirect tax levied on the supply of goods and services in India. Introduced on <strong>July 1, 2017</strong>, GST replaced multiple indirect taxes like VAT, Service Tax, Excise Duty, and more.
+    </p>
+    
+    <p>
+      GST operates on a <strong>"One Nation, One Tax"</strong> principle, making India a unified market. It's a destination-based tax, meaning tax is collected where goods/services are consumed, not where they're produced.
+    </p>
+    
+    <div class="highlight-box">
+      <h4>💡 Key Takeaway</h4>
+      <p>GST simplified India's tax structure by combining 17+ indirect taxes into one unified system, reducing cascading tax effects and making compliance easier for businesses.</p>
+    </div>
+    
+    <h2>Types of GST in India</h2>
+    
+    <h3>1. CGST (Central GST)</h3>
+    <p>Tax collected by the Central Government on intra-state supplies (within same state). For example, if you sell goods in Maharashtra to a buyer in Maharashtra, CGST applies.</p>
+    
+    <h3>2. SGST (State GST)</h3>
+    <p>Tax collected by State Governments on intra-state supplies. SGST is always equal to CGST and collected simultaneously.</p>
+    
+    <h3>3. IGST (Integrated GST)</h3>
+    <p>Tax collected by the Central Government on inter-state supplies (between different states) and imports. IGST = CGST + SGST.</p>
+    
+    <h3>4. UGST (Union Territory GST)</h3>
+    <p>Similar to SGST but applicable in Union Territories without legislatures (like Andaman & Nicobar).</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Tax Type</th>
+          <th>Collected By</th>
+          <th>When Applicable</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CGST</td>
+          <td>Central Govt</td>
+          <td>Within same state</td>
+        </tr>
+        <tr>
+          <td>SGST</td>
+          <td>State Govt</td>
+          <td>Within same state</td>
+        </tr>
+        <tr>
+          <td>IGST</td>
+          <td>Central Govt</td>
+          <td>Between states / Imports</td>
+        </tr>
+        <tr>
+          <td>UGST</td>
+          <td>UT Govt</td>
+          <td>Within UTs</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>GST Rate Slabs in India</h2>
+    <p>GST has <strong>five tax slabs</strong>: 0%, 5%, 12%, 18%, and 28%. Essential items are taxed lower, while luxury goods attract higher rates.</p>
+    
     <table>
       <thead>
         <tr>
           <th>GST Rate</th>
-          <th>Products/Services</th>
           <th>Examples</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong style="color: #22c55e;">0%</strong></td>
-          <td>Essential items</td>
-          <td>Fresh vegetables, milk, eggs, bread, salt</td>
+          <td><strong>0%</strong></td>
+          <td>Rice, milk, vegetables, education, healthcare</td>
         </tr>
         <tr>
-          <td><strong style="color: #3b82f6;">5%</strong></td>
-          <td>Common necessities</td>
-          <td>Sugar, tea, coffee, edible oils, domestic LPG</td>
+          <td><strong>5%</strong></td>
+          <td>Sugar, tea, coffee, edible oils, medicines</td>
         </tr>
         <tr>
-          <td><strong style="color: #f59e0b;">12%</strong></td>
-          <td>Standard goods</td>
-          <td>Computers (up to ₹40k), processed food, mobiles</td>
+          <td><strong>12%</strong></td>
+          <td>Computers, processed food, umbrellas</td>
         </tr>
         <tr>
-          <td><strong style="color: #f97316;">18%</strong></td>
-          <td>Most goods & services</td>
-          <td>Laptops, AC, refrigerator, financial services</td>
+          <td><strong>18%</strong></td>
+          <td>Soaps, toothpaste, industrial intermediaries</td>
         </tr>
         <tr>
-          <td><strong style="color: #ef4444;">28%</strong></td>
-          <td>Luxury & sin goods</td>
-          <td>Cars, tobacco, aerated drinks, luxury items</td>
+          <td><strong>28%</strong></td>
+          <td>Cars, cigarettes, luxury items, aerated drinks</td>
         </tr>
       </tbody>
     </table>
-  </div>
-</section>
-
-<section>
-  <h2 id="how-gst-works">How Does GST Work?</h2>
-  <p>GST follows the Input Tax Credit (ITC) mechanism, which eliminates the cascading effect of taxes:</p>
-  
-  <div class="callout success">
-    <div class="callout-icon">🔄</div>
-    <div class="callout-content">
-      <h4>Input Tax Credit Example</h4>
-      <p><strong>Manufacturer:</strong> Buys raw materials for ₹10,000 + ₹1,800 GST (18%) = ₹11,800</p>
-      <p><strong>Sells product for:</strong> ₹20,000 + ₹3,600 GST (18%) = ₹23,600</p>
-      <p><strong>Tax to pay:</strong> ₹3,600 - ₹1,800 (credit) = ₹1,800 only</p>
-      <p><em>The manufacturer gets credit for GST already paid on inputs!</em></p>
+    
+    <p>
+      <strong>Special rates:</strong> Gold attracts 3%, and rough diamonds 0.25%.
+    </p>
+    
+    <h2>Who Needs GST Registration?</h2>
+    <p>GST registration is mandatory if:</p>
+    <ul>
+      <li>Your annual turnover exceeds <strong>₹40 lakh</strong> (₹20 lakh for special category states)</li>
+      <li>You supply goods/services inter-state</li>
+      <li>You're an e-commerce seller</li>
+      <li>You're engaged in casual/non-resident taxable supply</li>
+      <li>You want to claim Input Tax Credit (ITC)</li>
+    </ul>
+    
+    <div class="info-box">
+      <h4>⚠️ Registration Threshold 2026</h4>
+      <p><strong>₹40 lakh</strong> for goods suppliers (₹20 lakh for services). Special category states: ₹10-20 lakh. Check if registration is mandatory using our <a href="../registration-checker.html" style="color:#92400e;font-weight:600;">Registration Checker</a>.</p>
     </div>
-  </div>
-</section>
-
-<section>
-  <h2 id="registration">Who Needs to Register for GST?</h2>
-  <p>GST registration is mandatory if:</p>
-  <ul>
-    <li>Annual turnover exceeds ₹40 lakhs (₹20 lakhs for service providers)</li>
-    <li>Annual turnover exceeds ₹20 lakhs in special category states</li>
-    <li>You're engaged in inter-state supply (even with ₹1 turnover)</li>
-    <li>You're an e-commerce seller</li>
-    <li>You operate under reverse charge mechanism</li>
-    <li>You're a casual taxable person or non-resident taxable person</li>
-  </ul>
-  
-  <div class="callout info">
-    <div class="callout-icon">💡</div>
-    <div class="callout-content">
-      <p><strong>Pro Tip:</strong> Even if not mandatory, voluntary GST registration helps claim input tax credit and builds business credibility.</p>
+    
+    <h2>How Does GST Work?</h2>
+    <p>GST operates on the <strong>Value Addition</strong> principle. Tax is levied at each stage of production/distribution, but businesses can claim Input Tax Credit (ITC) for taxes paid on purchases.</p>
+    
+    <h3>Example:</h3>
+    <ol>
+      <li><strong>Manufacturer</strong> buys raw materials for ₹1,000 + 18% GST (₹180) = ₹1,180</li>
+      <li>Sells finished goods for ₹2,000 + 18% GST (₹360) = ₹2,360</li>
+      <li>Pays to Govt: ₹360 (output tax) - ₹180 (ITC) = <strong>₹180</strong></li>
+    </ol>
+    
+    <p>This eliminates <strong>cascading tax</strong> (tax on tax) that existed in the old system.</p>
+    
+    <h2>GST Return Filing</h2>
+    <p>Registered taxpayers must file periodic GST returns:</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Return Type</th>
+          <th>Frequency</th>
+          <th>Due Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>GSTR-1</strong></td>
+          <td>Monthly</td>
+          <td>11th of next month</td>
+        </tr>
+        <tr>
+          <td><strong>GSTR-3B</strong></td>
+          <td>Monthly</td>
+          <td>20th of next month</td>
+        </tr>
+        <tr>
+          <td><strong>GSTR-9</strong></td>
+          <td>Annual</td>
+          <td>December 31</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <p>Late filing attracts penalties and interest. Use our <a href="../penalty-calculator.html">Penalty Calculator</a> to check late fees.</p>
+    
+    <h2>Benefits of GST</h2>
+    <ul>
+      <li><strong>Simplified tax structure</strong> - One tax instead of 17+</li>
+      <li><strong>Eliminated cascading</strong> - No tax on tax</li>
+      <li><strong>Lower prices</strong> - Reduced tax burden on end consumers</li>
+      <li><strong>Ease of compliance</strong> - Online filing via GST portal</li>
+      <li><strong>Unified market</strong> - No state border tax barriers</li>
+      <li><strong>Increased tax base</strong> - More businesses came under tax net</li>
+    </ul>
+    
+    <h2>Common GST Terms</h2>
+    <ul>
+      <li><strong>GSTIN:</strong> 15-digit GST registration number</li>
+      <li><strong>ITC:</strong> Input Tax Credit - tax paid on purchases</li>
+      <li><strong>HSN Code:</strong> Harmonized System of Nomenclature - product classification code</li>
+      <li><strong>SAC Code:</strong> Services Accounting Code - service classification code</li>
+      <li><strong>E-Way Bill:</strong> Electronic waybill for goods transport above ₹50,000</li>
+      <li><strong>Reverse Charge:</strong> Receiver pays tax instead of supplier</li>
+    </ul>
+    
+    <div class="cta-box">
+      <h3>🧮 Use Free GST Tools</h3>
+      <p>Calculate GST, find HSN codes, check penalties, and more with our free calculators.</p>
+      <a href="../index.html#tools" class="btn">View All Tools →</a>
     </div>
+    
+    <h2>Frequently Asked Questions</h2>
+    
+    <h4>Is GST registration free?</h4>
+    <p>Yes, GST registration is completely free on the official GST portal. No fees are charged by the government.</p>
+    
+    <h4>Can I cancel GST registration?</h4>
+    <p>Yes, if your turnover falls below the threshold or you close business, you can apply for cancellation.</p>
+    
+    <h4>What is the penalty for not registering under GST?</h4>
+    <p>10% of tax due or ₹10,000, whichever is higher. Plus interest at 18% p.a.</p>
+    
+    <h4>Do small businesses need GST registration?</h4>
+    <p>Only if turnover exceeds ₹40 lakh (goods) or ₹20 lakh (services). Below that, registration is optional.</p>
+    
+    <div class="related-articles">
+      <h3>📚 Related Articles</h3>
+      <div class="related-grid">
+        <a href="gst-registration-process.html" class="related-card">
+          <h4>GST Registration Process 2026</h4>
+          <p>Step-by-step guide to register for GST online</p>
+        </a>
+        <a href="how-to-file-gst-return.html" class="related-card">
+          <h4>How to File GST Returns</h4>
+          <p>Complete walkthrough of GSTR-1 and GSTR-3B filing</p>
+        </a>
+        <a href="input-tax-credit-guide.html" class="related-card">
+          <h4>Input Tax Credit (ITC) Guide</h4>
+          <p>Learn how to claim ITC and avoid common mistakes</p>
+        </a>
+        <a href="gst-rates-india-2026.html" class="related-card">
+          <h4>GST Rates in India 2026</h4>
+          <p>Complete list of GST rates for all goods and services</p>
+        </a>
+      </div>
+    </div>
+    
   </div>
-</section>
-
-<section>
-  <h2 id="benefits">Benefits of GST</h2>
-  <ul>
-    <li><strong>Simplified Tax Structure:</strong> One tax replaces 17 different indirect taxes</li>
-    <li><strong>Reduced Tax Burden:</strong> Input tax credit eliminates cascading taxes</li>
-    <li><strong>Online Compliance:</strong> Everything online - registration, filing, payments</li>
-    <li><strong>Uniform Tax Rates:</strong> Same rates across India - promotes unity</li>
-    <li><strong>Lower Prices:</strong> Tax credit reduces final product costs</li>
-    <li><strong>Increased Revenue:</strong> Better compliance and wider tax base</li>
-  </ul>
-</section>
-
-<!-- Related Tools -->
-<div class="related-tools">
-  <h3>Related Tools</h3>
-  <div class="related-tools-grid">
-    <a href="../gst-calculator.html" class="related-tool-card">
-      <h4>🧮 GST Calculator</h4>
-      <p>Calculate GST on your invoices</p>
-      <span class="arrow">Calculate →</span>
-    </a>
-    <a href="../hsn-finder.html" class="related-tool-card">
-      <h4>🔍 HSN Finder</h4>
-      <p>Find HSN codes with GST rates</p>
-      <span class="arrow">Search →</span>
-    </a>
-    <a href="../itc-calculator.html" class="related-tool-card">
-      <h4>💰 ITC Calculator</h4>
-      <p>Calculate input tax credit</p>
-      <span class="arrow">Calculate →</span>
-    </a>
-  </div>
-</div>
-```
-
-  </div>
+  
 </article>
 
-<!-- Footer -->
-
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <h4>GST Compliance Pro</h4>
-      <p>India's free GST toolkit for MSMEs.</p>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyGSTIndia</h4>
+        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="../gst-calculator.html">GST Calculator</a></li>
+          <li><a href="../hsn-finder.html">HSN Finder</a></li>
+          <li><a href="../penalty-calculator.html">Penalty Calculator</a></li>
+          <li><a href="../itc-calculator.html">ITC Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="index.html">Blog</a></li>
+          <li><a href="../disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../disclaimer.html">Legal Disclaimer</a></li>
+          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h4>Tools</h4>
-      <ul>
-        <li><a href="../gst-calculator.html">GST Calculator</a></li>
-        <li><a href="../hsn-finder.html">HSN Finder</a></li>
-        <li><a href="../penalty-calculator.html">Penalty Calculator</a></li>
-      </ul>
+    
+    <div class="footer-bottom">
+      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
     </div>
-    <div>
-      <h4>Resources</h4>
-      <ul>
-        <li><a href="index.html">Blog</a></li>
-        <li><a href="../disclaimer.html">Disclaimer</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2026 GST Compliance Pro
   </div>
 </footer>
 
-<!-- JavaScript -->
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a href="../index.html#tools" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="../index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
+</div>
 
-<script src="../main.js"></script>
+<!-- JAVASCRIPT -->
+<script>
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
 
 </body>
 </html>
