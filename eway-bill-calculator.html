@@ -1,175 +1,739 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Way Bill Validity Calculator - Check EWB Expiry | GST Compliance Pro</title>
-  <meta name="description" content="Calculate e-way bill validity period based on distance. Get exact expiry date and time for your consignment. Free EWB calculator 2026.">
+  <title>E-Way Bill Calculator - Validity Period Calculator 2026 | MyGSTIndia</title>
+  <meta name="description" content="Free E-Way Bill validity calculator. Calculate e-way bill validity period based on distance. Check rules, threshold, and expiry for goods transport in India.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="master-style.css">
-  <link rel="stylesheet" href="tool-hub.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --purple: #8b5cf6;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    /* DISCLAIMER */
+    .disclaimer {
+      background: #fef3c7;
+      border-bottom: 2px solid var(--orange);
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    
+    .disclaimer a {
+      color: #92400e;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    
+    /* BREADCRUMB */
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    /* MAIN CONTENT */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-badge {
+      display: inline-block;
+      background: var(--purple);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+    
+    .page-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* CARD */
+    .card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+    }
+    
+    /* FORM */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    small {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+    }
+    
+    /* RESULT */
+    .result {
+      display: none;
+      background: linear-gradient(135deg, #f3e8ff, white);
+      border: 3px solid var(--purple);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .result h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+      text-align: center;
+    }
+    
+    .result-grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+    }
+    
+    .result-label {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    
+    .result-value {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    
+    .result-total {
+      background: linear-gradient(135deg, var(--purple), #7c3aed);
+      color: white;
+      padding: 1.25rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    
+    .result-total-label {
+      font-size: 0.875rem;
+      opacity: 0.9;
+      margin-bottom: 0.25rem;
+    }
+    
+    .result-total-value {
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .result-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-secondary {
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gray-200);
+    }
+    
+    /* INFO BOX */
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .info-box h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    
+    .info-box p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    .info-box ul {
+      margin: 0.5rem 0 0 1.25rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .footer ul {
+      list-style: none;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    
+    .footer a:hover { color: white; }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+    
+    .mobile-nav-btn.active {
+      color: var(--blue);
+    }
+    
+    .mobile-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .page-header h1 { font-size: 2.5rem; }
+      .container { margin: 3rem auto; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <div class="disclaimer-icon">⚖️</div>
-    <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> Validity calculations are estimates. Always verify on <a href="https://ewaybillgst.gov.in" target="_blank">E-Way Bill portal</a>.
-    </div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> › <a href="index.html#tools">Tools</a> › E-Way Bill Calculator
   </div>
 </div>
-<div class="tool-page">
-  <div class="tool-container">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a><span class="sep">›</span><a href="index.html#tools">Tools</a><span class="sep">›</span><span>E-Way Bill Calculator</span>
-    </div>
-    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
-    <div class="tool-header">
-      <div class="tool-badge">🚚 Calculator</div>
-      <h1>E-Way Bill Validity Calculator</h1>
-      <p>Calculate <strong>validity period</strong> for your e-way bill based on distance. Know exact expiry date and time before transport.</p>
-    </div>
-    <div class="info-box blue">
-      <div class="info-box-icon">💡</div>
-      <div class="info-box-content">
-        <h4>How to Use</h4>
-        <p>Enter distance to be covered and generation date/time. Get instant validity calculation with expiry date.</p>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+  
+  <div class="page-header">
+    <div class="page-badge">🚚 Transport</div>
+    <h1>E-Way Bill Calculator</h1>
+    <p>Calculate e-way bill validity period based on distance traveled.</p>
+  </div>
+  
+  <div class="card">
+    <h2>Calculate Validity Period</h2>
+    
+    <form id="ewayForm" onsubmit="calculate(event)">
+      
+      <div class="form-group">
+        <label for="distance">Distance (Kilometers)</label>
+        <input type="number" id="distance" placeholder="Enter distance in km" step="1" min="0" required>
+        <small>Total distance from origin to destination</small>
       </div>
-    </div>
-    <div class="tool-card-main">
-      <h2>🚚 Calculate Validity</h2>
-      <form id="ewayCalculator" onsubmit="calculateValidity(event)">
-        <div class="form-group">
-          <label for="distance">Distance to be Covered (km)</label>
-          <input type="number" id="distance" placeholder="Enter distance in km" min="1" step="1" required>
-          <small>Approximate road distance from origin to destination</small>
-        </div>
-        <div class="form-group">
-          <label for="generationDate">E-Way Bill Generation Date</label>
-          <input type="date" id="generationDate" required>
-        </div>
-        <div class="form-group">
-          <label for="generationTime">Generation Time</label>
-          <input type="time" id="generationTime" required>
-        </div>
-        <button type="submit" class="btn btn-primary btn-large">Calculate Validity →</button>
-      </form>
-    </div>
-    <div id="result" class="result-card" style="display: none;">
-      <div class="result-header">
-        <span class="result-icon">📅</span>
-        <h3>Validity Period</h3>
+      
+      <div class="form-group">
+        <label for="transportMode">Mode of Transport</label>
+        <select id="transportMode" required>
+          <option value="">Select Transport Mode</option>
+          <option value="road">Road</option>
+          <option value="rail">Rail / Air / Ship</option>
+        </select>
+        <small>Validity rules differ by transport mode</small>
       </div>
-      <div class="result-body" id="resultBody"></div>
+      
+      <div class="form-group">
+        <label for="invoiceValue">Invoice Value (₹)</label>
+        <input type="number" id="invoiceValue" placeholder="Enter invoice value" step="0.01" min="0" required>
+        <small>E-way bill mandatory for consignments above ₹50,000</small>
+      </div>
+      
+      <button type="submit" class="btn">Calculate Validity →</button>
+      
+    </form>
+    
+    <div id="result" class="result">
+      <h3>E-Way Bill Validity</h3>
+      <div class="result-grid">
+        <div class="result-item">
+          <span class="result-label">Distance</span>
+          <span class="result-value" id="distanceDisplay">0 km</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Transport Mode</span>
+          <span class="result-value" id="modeDisplay">-</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">E-Way Bill Required?</span>
+          <span class="result-value" id="required">-</span>
+        </div>
+      </div>
+      <div class="result-total">
+        <div class="result-total-label">Validity Period</div>
+        <div class="result-total-value" id="validity">0 days</div>
+      </div>
+      
+      <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:1rem;border-radius:8px;margin-top:1.5rem;">
+        <p style="margin:0;font-size:0.875rem;color:#92400e;">
+          <strong>⚠️ Estimate only.</strong> Actual e-way bill validity may vary based on specific circumstances, state rules, and transport conditions. Always verify on <a href="https://ewaybillgst.gov.in" target="_blank" style="color:#92400e;text-decoration:underline;font-weight:600;">ewaybillgst.gov.in</a> before transport. Extensions may be available in certain cases.
+        </p>
+      </div>
+      
       <div class="result-actions">
-        <button onclick="location.reload()" class="btn btn-secondary">Calculate Again</button>
-        <a href="blog/eway-bill-rules-2026.html" class="btn btn-primary">E-Way Bill Guide →</a>
+        <button class="btn btn-secondary" onclick="resetForm()">Calculate Again</button>
+        <button class="btn" onclick="window.open('https://ewaybillgst.gov.in', '_blank')">Generate E-Way Bill →</button>
       </div>
     </div>
-    <div class="info-section">
-      <h3>📊 Validity Rules</h3>
-      <div class="comparison-table">
-        <table>
-          <thead>
-            <tr><th>Distance</th><th>Validity</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Up to 100 km</td><td>1 day</td></tr>
-            <tr><td>100 - 300 km</td><td>3 days</td></tr>
-            <tr><td>300 - 500 km</td><td>5 days</td></tr>
-            <tr><td>500 - 1000 km</td><td>10 days</td></tr>
-            <tr><td>Above 1000 km</td><td>15 days</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="margin-top: 1rem;"><strong>Note:</strong> For every additional 100 km beyond 100 km, add 1 day validity.</p>
-    </div>
+    
   </div>
+  
+  <div class="info-box">
+    <h4>💡 E-Way Bill Rules (2026)</h4>
+    <ul>
+      <li><strong>Threshold:</strong> Mandatory for goods worth ₹50,000 or more (inter-state & intra-state)</li>
+      <li><strong>Validity (Road):</strong> 1 day for first 200 km, +1 day for every additional 200 km</li>
+      <li><strong>Validity (Rail/Air/Ship):</strong> 1 day for first 100 km, +1 day for every additional 100 km</li>
+      <li><strong>Extension:</strong> Can be extended if goods cannot reach destination within validity</li>
+      <li><strong>Exemptions:</strong> Certain goods like petroleum, alcohol, newspapers are exempt</li>
+      <li><strong>Generate:</strong> On the official <a href="https://ewaybillgst.gov.in" target="_blank">E-Way Bill Portal</a></li>
+    </ul>
+  </div>
+  
 </div>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-grid">
-    <div><h4>GST Compliance Pro</h4></div>
-    <div><h4>Tools</h4><ul><li><a href="gst-calculator.html">GST Calculator</a></li></ul></div>
-    <div><h4>Resources</h4><ul><li><a href="blog/index.html">Blog</a></li></ul></div>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyGSTIndia</h4>
+        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="gst-calculator.html">GST Calculator</a></li>
+          <li><a href="hsn-finder.html">HSN Finder</a></li>
+          <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+          <li><a href="itc-calculator.html">ITC Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="disclaimer.html">Legal Disclaimer</a></li>
+          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
+    </div>
   </div>
-  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
 </footer>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a href="index.html#tools" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="blog/index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
+</div>
+
+<!-- JAVASCRIPT -->
 <script>
-function calculateValidity(e) {
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+
+function calculate(e) {
   e.preventDefault();
+  
   const distance = parseFloat(document.getElementById('distance').value);
-  const genDate = document.getElementById('generationDate').value;
-  const genTime = document.getElementById('generationTime').value;
-
-let validityDays = 0;
-if (distance <= 100) validityDays = 1;
-else if (distance <= 300) validityDays = 3;
-else if (distance <= 500) validityDays = 5;
-else if (distance <= 1000) validityDays = 10;
-else validityDays = 15;
-
-const startDateTime = new Date(`${genDate}T${genTime}`);
-const expiryDateTime = new Date(startDateTime.getTime() + (validityDays * 24 * 60 * 60 * 1000));
-
-const options = { year: ‘numeric’, month: ‘long’, day: ‘numeric’, hour: ‘2-digit’, minute: ‘2-digit’ };
-const expiryString = expiryDateTime.toLocaleDateString(‘en-IN’, options);
-
-const now = new Date();
-const hoursRemaining = Math.floor((expiryDateTime - now) / (1000 * 60 * 60));
-const isExpired = expiryDateTime < now;
-
-const body = document.getElementById(‘resultBody’);
-body.innerHTML = `<div style="display: grid; gap: 1rem;"> <div> <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.25rem;">Distance</p> <p style="font-size: 1.25rem; font-weight: 700; color: var(--navy-900);">${distance} km</p> </div> <div> <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.25rem;">Validity Period</p> <p style="font-size: 1.25rem; font-weight: 700; color: var(--indigo-primary);">${validityDays} ${validityDays === 1 ? 'day' : 'days'}</p> </div> <div> <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.25rem;">Generated On</p> <p style="font-size: 1rem; font-weight: 600;">${startDateTime.toLocaleDateString('en-IN', options)}</p> </div> <div style="background: ${isExpired ? 'var(--red-50)' : 'var(--green-50)'}; padding: 1rem; border-radius: 8px; border-left: 4px solid ${isExpired ? 'var(--red-500)' : 'var(--green-500)'};"> <p style="font-size: 0.875rem; color: var(--slate-600); margin-bottom: 0.25rem;">Expires On</p> <p style="font-size: 1.25rem; font-weight: 700; color: ${isExpired ? 'var(--red-600)' : 'var(--green-600)'};">${expiryString}</p> ${!isExpired ?`<p style="font-size: 0.875rem; color: var(--slate-600); margin-top: 0.5rem;">${hoursRemaining} hours remaining</p>`: '<p style="font-size: 0.875rem; color: var(--red-600); margin-top: 0.5rem; font-weight: 600;">⚠️ E-Way Bill has expired!</p>'} </div> </div> ${!isExpired ? '<div class="info-box blue" style="margin-top: 1rem;"><div class="info-box-content"><p style="margin: 0;"><strong>Tip:</strong> If you expect delays, update Part-B with new vehicle number before expiry to extend validity.</p></div></div>' : '<div class="info-box red" style="margin-top: 1rem;"><div class="info-box-content"><p style="margin: 0;"><strong>Action Required:</strong> Generate a new e-way bill immediately. Moving goods with expired EWB = ₹10,000 or 100% of tax penalty.</p></div></div>'}`;
-
-document.getElementById(‘result’).style.display = ‘block’;
-document.getElementById(‘result’).scrollIntoView({ behavior: ‘smooth’ });
+  const mode = document.getElementById('transportMode').value;
+  const invoiceValue = parseFloat(document.getElementById('invoiceValue').value);
+  
+  if (!distance || !mode || !invoiceValue) {
+    alert('Please fill all fields');
+    return;
+  }
+  
+  // Check if e-way bill is required
+  const required = invoiceValue >= 50000;
+  
+  // Calculate validity period
+  let validityDays;
+  
+  if (mode === 'road') {
+    // Road: 1 day for first 200km, +1 day per 200km
+    validityDays = 1 + Math.floor(Math.max(0, distance - 200) / 200);
+  } else {
+    // Rail/Air/Ship: 1 day for first 100km, +1 day per 100km
+    validityDays = 1 + Math.floor(Math.max(0, distance - 100) / 100);
+  }
+  
+  // Display results
+  document.getElementById('distanceDisplay').textContent = distance.toFixed(0) + ' km';
+  document.getElementById('modeDisplay').textContent = mode === 'road' ? 'Road' : 'Rail / Air / Ship';
+  document.getElementById('required').textContent = required ? 'Yes (≥₹50,000)' : 'No (<₹50,000)';
+  document.getElementById('validity').textContent = validityDays + (validityDays === 1 ? ' day' : ' days');
+  
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// Set default to today
-document.addEventListener(‘DOMContentLoaded’, function() {
-const today = new Date();
-document.getElementById(‘generationDate’).valueAsDate = today;
-document.getElementById(‘generationTime’).value = today.toTimeString().slice(0,5);
-});
+function resetForm() {
+  document.getElementById('ewayForm').reset();
+  document.getElementById('result').style.display = 'none';
+}
 </script>
-
-<!-- MOBILE ACTION BAR -->
-
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn active" onclick="window.location.href='index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='return-deadlines.html'">
-      <span class="icon">📅</span>
-      <span>Deadlines</span>
-    </button>
-  </div>
-</div>
 
 </body>
 </html>
