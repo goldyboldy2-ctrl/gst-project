@@ -1,164 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GST Rates in India 2026 - Complete Tax Slab Guide | GST Compliance Pro</title>
-  <meta name="description" content="Complete GST rates guide - 0%, 5%, 12%, 18%, 28% slabs with examples.">
+  <title>GST Rates India 2026 - Complete Tax Slab Guide | MyGSTIndia</title>
+  <meta name="description" content="Complete GST rates list 2026. All tax slabs: 0%, 5%, 12%, 18%, 28%. Product categories, exemptions, cess. Updated GST rate structure India.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../master-style.css">
-  <link rel="stylesheet" href="../knowledge-hub.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #1e293b; --blue: #3b82f6; --blue-dark: #2563eb; --orange: #f59e0b;
+      --orange-dark: #d97706; --green: #10b981; --red: #ef4444; --gray-50: #f8fafc;
+      --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-600: #475569; --gray-700: #334155; --gray-900: #0f172a;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-900); line-height: 1.7; background: var(--gray-50); padding-bottom: 80px; }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; line-height: 1.3; margin-bottom: 1rem; color: var(--navy); }
+    .navbar { background: white; border-bottom: 1px solid var(--gray-200); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
+    .logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, var(--orange), var(--orange-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; font-family: 'Poppins', sans-serif; }
+    .logo-text { color: var(--blue); }
+    .nav-links { display: none; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--gray-700); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .hamburger { width: 32px; height: 24px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; background: none; border: none; padding: 0; }
+    .hamburger span { display: block; width: 100%; height: 3px; background: var(--navy); border-radius: 2px; }
+    .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid var(--gray-200); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    @media (min-width: 768px) { .hamburger { display: none; } .nav-links { display: flex; } .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; } }
+    .breadcrumb { background: white; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); }
+    .breadcrumb-container { max-width: 800px; margin: 0 auto; padding: 0 1rem; font-size: 0.875rem; color: var(--gray-600); }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .article { max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-meta { display: flex; gap: 1rem; font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; flex-wrap: wrap; }
+    .article h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+    .article h2 { font-size: 1.75rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--blue); }
+    .article h3 { font-size: 1.375rem; margin-top: 2rem; }
+    .article p { margin-bottom: 1.25rem; }
+    .article ul, .article ol { margin: 1.25rem 0 1.25rem 1.5rem; }
+    .article li { margin-bottom: 0.75rem; }
+    .highlight-box { background: #eff6ff; border-left: 4px solid var(--blue); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .info-box { background: #fef3c7; border-left: 4px solid var(--orange); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .rate-box { background: white; border: 2px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .rate-box h3 { margin-top: 0; }
+    .cta-box { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 3rem 0; }
+    .cta-box h3 { color: white; margin-bottom: 1rem; }
+    .cta-box a { display: inline-block; background: white; color: var(--blue); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: transform 0.2s; }
+    .cta-box a:hover { transform: translateY(-2px); }
+    table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    th { background: var(--blue); color: white; padding: 1rem; text-align: left; font-weight: 600; }
+    td { padding: 1rem; border-bottom: 1px solid var(--gray-200); }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--gray-200); }
+    .related h3 { margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+    .related-card { background: white; border: 2px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; transition: all 0.2s; }
+    .related-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    .related-card h4 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+    .related-card p { font-size: 0.875rem; color: var(--gray-600); margin: 0; }
+    .footer { background: var(--navy); color: white; padding: 2rem 1rem; margin-top: 4rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .mobile-nav { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid var(--gray-200); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 90; }
+    .mobile-nav-btn { flex: 1; padding: 0.75rem; text-align: center; text-decoration: none; color: var(--gray-600); font-size: 0.75rem; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+    .mobile-nav-btn.active { color: var(--blue); }
+    .mobile-nav-icon { font-size: 1.5rem; }
+    @media (min-width: 768px) { .mobile-nav { display: none; } }
+  </style>
 </head>
 <body>
-<div class="reading-progress-bar"></div>
+
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="../index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-    <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
-    <ul class="nav-links">
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="../index.html">Home</a></li>
       <li><a href="../index.html#tools">Tools</a></li>
-      <li><a href="index.html" class="active">Blog</a></li>
+      <li><a href="index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
-<article class="blog-post">
-  <div class="blog-container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-    <div class="breadcrumb">
-      <a href="../index.html">Home</a><span class="sep">›</span>
-      <a href="index.html">Blog</a><span class="sep">›</span>
-      <span>GST Rates</span>
-    </div>
-    <header class="blog-header">
-      <h1>GST Rates in India 2026</h1>
-      <div class="blog-meta">
-        <span>📅 February 18, 2026</span>
-        <span>⏱️ 6 min read</span>
-      </div>
-    </header>
-    <div class="callout info">
-      <div class="callout-icon">💡</div>
-      <div class="callout-content">
-        <h4>Quick Summary</h4>
-        <p>5 GST slabs: 0%, 5%, 12%, 18%, 28%. Essentials taxed lower, luxury items higher.</p>
-      </div>
-    </div>
-    <section>
-      <h2>GST Rate Slabs 2026</h2>
-      <div class="table-responsive">
-        <table>
-          <tr><th>Rate</th><th>Type</th><th>Examples</th></tr>
-          <tr><td style="color:#22c55e"><strong>0%</strong></td><td>Essentials</td><td>Milk, eggs, bread, vegetables</td></tr>
-          <tr><td style="color:#3b82f6"><strong>5%</strong></td><td>Necessities</td><td>Sugar, tea, coffee, edible oils</td></tr>
-          <tr><td style="color:#f59e0b"><strong>12%</strong></td><td>Standard goods</td><td>Computers, processed food</td></tr>
-          <tr><td style="color:#f97316"><strong>18%</strong></td><td>Most items</td><td>Laptops, AC, services</td></tr>
-          <tr><td style="color:#ef4444"><strong>28%</strong></td><td>Luxury</td><td>Cars, tobacco, aerated drinks</td></tr>
-        </table>
-      </div>
-    </section>
-    <section>
-      <h2>0% GST Items</h2>
-      <ul>
-        <li>Fresh vegetables, fruits</li>
-        <li>Milk, curd, paneer</li>
-        <li>Eggs, fresh meat</li>
-        <li>Bread, salt</li>
-        <li>Educational services</li>
-        <li>Healthcare services</li>
-      </ul>
-    </section>
-    <section>
-      <h2>5% GST Items</h2>
-      <ul>
-        <li>Sugar, tea, coffee</li>
-        <li>Edible oils</li>
-        <li>Domestic LPG</li>
-        <li>Footwear < ₹500</li>
-        <li>Small restaurants</li>
-      </ul>
-    </section>
-    <section>
-      <h2>12% GST Items</h2>
-      <ul>
-        <li>Computers (up to ₹40k)</li>
-        <li>Processed food</li>
-        <li>Mobile phones</li>
-        <li>Butter, cheese</li>
-      </ul>
-    </section>
-    <section>
-      <h2>18% GST Items</h2>
-      <ul>
-        <li>Laptops, tablets</li>
-        <li>AC, refrigerator</li>
-        <li>Most services</li>
-        <li>Financial services</li>
-      </ul>
-    </section>
-    <section>
-      <h2>28% GST Items</h2>
-      <ul>
-        <li>Automobiles</li>
-        <li>Tobacco products</li>
-        <li>Aerated drinks</li>
-        <li>Luxury items</li>
-      </ul>
-    </section>
-    <div class="related-tools">
-      <h3>Related Tools</h3>
-      <div class="related-tools-grid">
-        <a href="../hsn-finder.html" class="related-tool-card">
-          <h4>🔍 HSN Finder</h4>
-          <p>Find rates for 22K+ items</p>
-          <span class="arrow">Search →</span>
-        </a>
-        <a href="../gst-calculator.html" class="related-tool-card">
-          <h4>🧮 GST Calculator</h4>
-          <p>Calculate GST</p>
-          <span class="arrow">Calculate →</span>
-        </a>
-        <a href="../itc-calculator.html" class="related-tool-card">
-          <h4>💰 ITC Calculator</h4>
-          <p>Calculate ITC</p>
-          <span class="arrow">Calculate →</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</article>
-<footer class="footer">
-  <div class="footer-grid">
-    <div><h4>GST Compliance Pro</h4></div>
-    <div><h4>Tools</h4><ul><li><a href="../gst-calculator.html">GST Calculator</a></li></ul></div>
-    <div><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
-</footer>
-<script src="../main.js"></script>
 
-<!-- MOBILE ACTION BAR -->
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn active" onclick="window.location.href='index.html'">
-      <span class="icon">📚</span>
-      <span>Blog</span>
-    </button>
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › GST Rates 2026
   </div>
 </div>
 
-<script src="../main.js"></script>
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>📅 February 20, 2026</span>
+      <span>⏱️ 8 min read</span>
+      <span>📂 Rates & Codes</span>
+    </div>
+    <h1>GST Rates India 2026: Complete Guide to All Tax Slabs</h1>
+  </header>
+
+  <p>GST in India has five tax slabs: 0%, 5%, 12%, 18%, and 28%. Understanding which products and services fall under which slab is crucial for accurate compliance and invoicing.</p>
+
+  <h2>GST Tax Slabs Overview</h2>
+
+  <table>
+    <tr>
+      <th>Tax Slab</th>
+      <th>Category</th>
+      <th>Examples</th>
+    </tr>
+    <tr>
+      <td>0% (Nil)</td>
+      <td>Exempted</td>
+      <td>Fresh vegetables, milk, bread, education, healthcare</td>
+    </tr>
+    <tr>
+      <td>5%</td>
+      <td>Essential items</td>
+      <td>Edible oil, tea, coffee, spices, packaged food</td>
+    </tr>
+    <tr>
+      <td>12%</td>
+      <td>Standard goods</td>
+      <td>Computers, processed food, mobile phones</td>
+    </tr>
+    <tr>
+      <td>18%</td>
+      <td>Most goods/services</td>
+      <td>Electronics, IT services, restaurants, soap</td>
+    </tr>
+    <tr>
+      <td>28%</td>
+      <td>Luxury/sin goods</td>
+      <td>Cars, AC, cigarettes, aerated drinks + cess</td>
+    </tr>
+  </table>
+
+  <div class="highlight-box">
+    <h4>💡 Key Principle</h4>
+    <p>Essential items → Lower tax. Luxury items → Higher tax. This ensures GST is progressive and affordable for common people.</p>
+  </div>
+
+  <h2>0% GST (Exempted Items)</h2>
+
+  <div class="rate-box">
+    <h3>Zero-rated / Exempted (No GST)</h3>
+    <p><strong>Food Items:</strong></p>
+    <ul>
+      <li>Fresh vegetables, fruits, meat, fish</li>
+      <li>Milk, curd, lassi (not packaged)</li>
+      <li>Fresh bread (not branded)</li>
+      <li>Cereals, rice, wheat, flour</li>
+      <li>Salt, jaggery</li>
+    </ul>
+    <p><strong>Services:</strong></p>
+    <ul>
+      <li>Education (schools, colleges)</li>
+      <li>Healthcare (hospitals, clinics)</li>
+      <li>Agricultural services</li>
+      <li>Public transport (railways, metro, buses)</li>
+    </ul>
+  </div>
+
+  <h2>5% GST Rate</h2>
+
+  <div class="rate-box">
+    <h3>Essential & Basic Items (5%)</h3>
+    <p><strong>Food & Groceries:</strong></p>
+    <ul>
+      <li>Edible oil (mustard, sunflower, palm)</li>
+      <li>Tea, coffee</li>
+      <li>Sugar, spices</li>
+      <li>Packaged food items (below ₹1,000/kg)</li>
+      <li>Milk (packed), paneer, cream</li>
+    </ul>
+    <p><strong>Other Items:</strong></p>
+    <ul>
+      <li>Coal, natural gas</li>
+      <li>Medicines, drugs</li>
+      <li>Life-saving drugs</li>
+      <li>Footwear (up to ₹500)</li>
+      <li>Apparel (up to ₹1,000)</li>
+    </ul>
+  </div>
+
+  <h2>12% GST Rate</h2>
+
+  <div class="rate-box">
+    <h3>Standard Goods & Services (12%)</h3>
+    <p><strong>Goods:</strong></p>
+    <ul>
+      <li>Computers, laptops, printers</li>
+      <li>Processed food items</li>
+      <li>Butter, ghee, cheese</li>
+      <li>Dry fruits in packaged form</li>
+      <li>Apparel (above ₹1,000)</li>
+      <li>Ayurvedic medicines</li>
+      <li>Mobile phones</li>
+      <li>Bicycles</li>
+    </ul>
+    <p><strong>Services:</strong></p>
+    <ul>
+      <li>Non-AC restaurants</li>
+      <li>Business class air travel</li>
+      <li>Work contracts</li>
+    </ul>
+  </div>
+
+  <h2>18% GST Rate</h2>
+
+  <div class="rate-box">
+    <h3>Most Common Rate (18%)</h3>
+    <p><strong>Goods:</strong></p>
+    <ul>
+      <li>FMCG products (soap, toothpaste, shampoo)</li>
+      <li>Electronics (TV, refrigerator, washing machine)</li>
+      <li>Furniture, fixtures</li>
+      <li>Footwear (above ₹500)</li>
+      <li>Stationery items</li>
+      <li>Industrial intermediaries</li>
+    </ul>
+    <p><strong>Services:</strong></p>
+    <ul>
+      <li>IT services, software</li>
+      <li>Telecom services</li>
+      <li>AC restaurants</li>
+      <li>Financial services</li>
+      <li>Professional services</li>
+      <li>Hotel rooms (₹1,000-₹7,500)</li>
+    </ul>
+  </div>
+
+  <h2>28% GST Rate</h2>
+
+  <div class="rate-box">
+    <h3>Luxury & Sin Goods (28%)</h3>
+    <p><strong>Luxury Items:</strong></p>
+    <ul>
+      <li>Motor vehicles (cars, bikes)</li>
+      <li>Air conditioners</li>
+      <li>Refrigerators (large)</li>
+      <li>Dishwashers</li>
+      <li>Hotel rooms (>₹7,500)</li>
+      <li>High-end consumer durables</li>
+    </ul>
+    <p><strong>Sin Goods (28% + Cess):</strong></p>
+    <ul>
+      <li>Cigarettes, tobacco products (+ cess)</li>
+      <li>Aerated drinks, soft drinks (+ 12% cess)</li>
+      <li>Pan masala (+ cess)</li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h3>Calculate GST on Your Products</h3>
+    <p>Use our free GST Calculator to compute tax at any rate instantly.</p>
+    <a href="../gst-calculator.html">Calculate Now →</a>
+  </div>
+
+  <h2>GST Cess</h2>
+
+  <p>Cess is an additional tax levied on top of GST for luxury and sin goods:</p>
+
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>GST Rate</th>
+      <th>Cess</th>
+      <th>Total Tax</th>
+    </tr>
+    <tr>
+      <td>Small petrol cars (<1200cc)</td>
+      <td>28%</td>
+      <td>1%</td>
+      <td>29%</td>
+    </tr>
+    <tr>
+      <td>Mid-size cars (1200-1500cc)</td>
+      <td>28%</td>
+      <td>15%</td>
+      <td>43%</td>
+    </tr>
+    <tr>
+      <td>Large cars/SUVs (>1500cc)</td>
+      <td>28%</td>
+      <td>20%</td>
+      <td>48%</td>
+    </tr>
+    <tr>
+      <td>Aerated drinks</td>
+      <td>28%</td>
+      <td>12%</td>
+      <td>40%</td>
+    </tr>
+    <tr>
+      <td>Cigarettes</td>
+      <td>28%</td>
+      <td>Up to 290%</td>
+      <td>Varies</td>
+    </tr>
+  </table>
+
+  <h2>Service-Specific GST Rates</h2>
+
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>GST Rate</th>
+    </tr>
+    <tr>
+      <td>Restaurants (non-AC)</td>
+      <td>5% (no ITC)</td>
+    </tr>
+    <tr>
+      <td>Restaurants (AC / licensed)</td>
+      <td>18%</td>
+    </tr>
+    <tr>
+      <td>Hotels (<₹1,000/night)</td>
+      <td>Nil</td>
+    </tr>
+    <tr>
+      <td>Hotels (₹1,000-₹2,500)</td>
+      <td>12%</td>
+    </tr>
+    <tr>
+      <td>Hotels (₹2,500-₹7,500)</td>
+      <td>18%</td>
+    </tr>
+    <tr>
+      <td>Hotels (>₹7,500)</td>
+      <td>28%</td>
+    </tr>
+    <tr>
+      <td>Movie tickets (<₹100)</td>
+      <td>18%</td>
+    </tr>
+    <tr>
+      <td>Movie tickets (>₹100)</td>
+      <td>28%</td>
+    </tr>
+    <tr>
+      <td>Telecom services</td>
+      <td>18%</td>
+    </tr>
+    <tr>
+      <td>Banking / Insurance</td>
+      <td>18%</td>
+    </tr>
+  </table>
+
+  <h2>How to Find GST Rate for Your Product?</h2>
+
+  <ol>
+    <li><strong>Identify HSN Code:</strong> Every product has a Harmonized System of Nomenclature code</li>
+    <li><strong>Check GST rate:</strong> Each HSN code has a specific GST rate</li>
+    <li><strong>Use HSN Finder:</strong> Search on GST portal or use our tool</li>
+  </ol>
+
+  <div class="info-box">
+    <h4>⚠️ HSN Code Matters</h4>
+    <p>Similar products can have different GST rates based on HSN classification. Always verify the correct HSN code! Use our <a href="../hsn-finder.html">HSN Finder Tool</a> for accurate rates.</p>
+  </div>
+
+  <h2>Recent Changes in GST Rates (2024-2026)</h2>
+
+  <ul>
+    <li>Online gaming, casinos, horse racing: 28% (full value)</li>
+    <li>Notebooks, exercise books: 12%</li>
+    <li>Unbranded pre-packaged food: 5%</li>
+    <li>Electric vehicles: 5% (from 12%)</li>
+  </ul>
+
+  <h2>Inverted Duty Structure</h2>
+
+  <p>When <strong>input tax rate > output tax rate</strong>, it creates inverted duty:</p>
+
+  <div class="highlight-box">
+    <h4>Example</h4>
+    <p>Purchase raw material @ 18% GST</p>
+    <p>Sell finished product @ 12% GST</p>
+    <p>Result: ITC accumulates (can claim refund)</p>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Can GST rates change during the year?</h3>
+  <p>Yes. GST Council meets periodically and can change rates. Changes are notified and effective from specified dates.</p>
+
+  <h3>What if my product fits multiple categories?</h3>
+  <p>Use the most specific HSN code. If still unclear, consult the GST portal's classification or a tax expert.</p>
+
+  <h3>Are GST rates uniform across India?</h3>
+  <p>Yes. GST rates are the same in all states (CGST + SGST = IGST).</p>
+
+  <h3>Where can I check the latest GST rates?</h3>
+  <p>Official GST portal (gst.gov.in) has the latest rate schedule. Our HSN Finder tool also has updated rates.</p>
+
+  <div class="related">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+      <a href="hsn-code-complete-guide.html" class="related-card">
+        <h4>HSN Code Guide</h4>
+        <p>Understanding HSN codes</p>
+      </a>
+      <a href="what-is-gst-in-india.html" class="related-card">
+        <h4>What is GST?</h4>
+        <p>Beginner's guide</p>
+      </a>
+      <a href="how-to-file-gst-return.html" class="related-card">
+        <h4>File GST Returns</h4>
+        <p>Complete guide</p>
+      </a>
+      <a href="input-tax-credit-guide.html" class="related-card">
+        <h4>Input Tax Credit</h4>
+        <p>Master ITC</p>
+      </a>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses</p>
+  </div>
+</footer>
+
+<div class="mobile-nav">
+  <a href="../index.html#tools" class="mobile-nav-btn"><div class="mobile-nav-icon">🧮</div><div>Tools</div></a>
+  <a href="../index.html" class="mobile-nav-btn"><div class="mobile-nav-icon">🔍</div><div>Search</div></a>
+  <a href="index.html" class="mobile-nav-btn active"><div class="mobile-nav-icon">📚</div><div>Blog</div></a>
+</div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target')) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
 </body>
 </html>
