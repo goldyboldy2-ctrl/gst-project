@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSTIN Verification - Validate GST Number Format 2026 | MyGSTIndia</title>
+  <meta name="description" content="Free GSTIN verification tool. Validate GST number format, check state code, PAN, entity type. Verify GSTIN structure India 2026.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --red: #ef4444;
+      --violet: #8b5cf6;
+      --violet-dark: #7c3aed;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    /* DISCLAIMER */
+    .disclaimer {
+      background: #fef3c7;
+      border-bottom: 2px solid var(--orange);
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    
+    .disclaimer a {
+      color: #92400e;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    
+    /* BREADCRUMB */
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    /* MAIN CONTENT */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-badge {
+      display: inline-block;
+      background: var(--violet);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+    
+    .page-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* CARD */
+    .card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+    }
+    
+    /* FORM */
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+      text-transform: uppercase;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    small {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+    }
+    
+    /* RESULT */
+    .result {
+      display: none;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    .result.valid {
+      background: linear-gradient(135deg, #d1fae5, white);
+      border: 3px solid var(--green);
+    }
+    
+    .result.invalid {
+      background: linear-gradient(135deg, #fee2e2, white);
+      border: 3px solid var(--red);
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .result h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+      text-align: center;
+    }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .status-badge.valid {
+      background: var(--green);
+      color: white;
+    }
+    
+    .status-badge.invalid {
+      background: var(--red);
+      color: white;
+    }
+    
+    .result-grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+    }
+    
+    .result-label {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    
+    .result-value {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    
+    .result-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-secondary {
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gray-200);
+    }
+    
+    /* INFO BOX */
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .info-box h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    
+    .info-box p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    .info-box ul {
+      margin: 0.5rem 0 0 1.25rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .footer ul {
+      list-style: none;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    
+    .footer a:hover { color: white; }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+    
+    .mobile-nav-btn.active {
+      color: var(--blue);
+    }
+    
+    .mobile-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .page-header h1 { font-size: 2.5rem; }
+      .container { margin: 3rem auto; }
+    }
+  </style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- DISCLAIMER -->
+
+<div class="disclaimer">
+  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
+</div>
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> › <a href="index.html#tools">Tools</a> › GSTIN Verification
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="container">
+
+  <div class="page-header">
+    <div class="page-badge">🔍 Verify</div>
+    <h1>GSTIN Verification</h1>
+    <p>Verify GST number format and extract state, PAN, entity details.</p>
+  </div>
+
+  <div class="card">
+    <h2>Verify GSTIN</h2>
+
+```
+<form id="gstinForm" onsubmit="verify(event)">
+  
+  <div class="form-group">
+    <label for="gstin">Enter GSTIN</label>
+    <input type="text" id="gstin" placeholder="29XXXXXXXXXXXZ1" maxlength="15" required>
+    <small>15-character GST Identification Number</small>
+  </div>
+  
+  <button type="submit" class="btn">Verify GSTIN →</button>
+  
+</form>
+
+<div id="result" class="result">
+  <h3>Verification Result</h3>
+  <div style="text-align:center;">
+    <span class="status-badge" id="statusBadge"></span>
+  </div>
+  <div class="result-grid" id="resultGrid"></div>
+  
+  <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:1rem;border-radius:8px;margin-top:1.5rem;">
+    <p style="margin:0;font-size:0.875rem;color:#92400e;">
+      <strong>⚠️ Format check only.</strong> This verifies GSTIN structure, not active status. For official verification, check <a href="https://services.gst.gov.in/services/searchtp" target="_blank" style="color:#92400e;text-decoration:underline;font-weight:600;">GST Portal</a>.
+    </p>
+  </div>
+  
+  <div class="result-actions">
+    <button class="btn btn-secondary" onclick="resetForm()">Verify Another</button>
+    <button class="btn" onclick="window.open('https://services.gst.gov.in/services/searchtp', '_blank')">Official Verification →</button>
+  </div>
+</div>
+```
+
+  </div>
+
+  <div class="info-box">
+    <h4>💡 GSTIN Structure (15 Characters)</h4>
+    <ul>
+      <li><strong>Positions 1-2:</strong> State Code (29 = Karnataka, 27 = Maharashtra)</li>
+      <li><strong>Positions 3-12:</strong> PAN of business entity</li>
+      <li><strong>Position 13:</strong> Entity number (1-9, A-Z)</li>
+      <li><strong>Position 14:</strong> Default 'Z'</li>
+      <li><strong>Position 15:</strong> Check digit</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyGSTIndia</h4>
+        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
+      </div>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="gst-calculator.html">GST Calculator</a></li>
+          <li><a href="hsn-finder.html">HSN Finder</a></li>
+          <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+          <li><a href="itc-calculator.html">ITC Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="disclaimer.html">Legal Disclaimer</a></li>
+          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+        </ul>
+      </div>
+    </div>
+
+```
+<div class="footer-bottom">
+  © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
+</div>
+```
+
+  </div>
+</footer>
+
+<!-- MOBILE NAV -->
+
+<div class="mobile-nav">
+  <a href="index.html#tools" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="blog/index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+
+// State codes
+const stateCodes = {
+  '01': 'Jammu and Kashmir', '02': 'Himachal Pradesh', '03': 'Punjab',
+  '04': 'Chandigarh', '05': 'Uttarakhand', '06': 'Haryana',
+  '07': 'Delhi', '08': 'Rajasthan', '09': 'Uttar Pradesh',
+  '10': 'Bihar', '11': 'Sikkim', '12': 'Arunachal Pradesh',
+  '13': 'Nagaland', '14': 'Manipur', '15': 'Mizoram',
+  '16': 'Tripura', '17': 'Meghalaya', '18': 'Assam',
+  '19': 'West Bengal', '20': 'Jharkhand', '21': 'Odisha',
+  '22': 'Chhattisgarh', '23': 'Madhya Pradesh', '24': 'Gujarat',
+  '27': 'Maharashtra', '29': 'Karnataka', '32': 'Kerala', 
+  '33': 'Tamil Nadu', '36': 'Telangana'
+};
+
+function verify(e) {
+  e.preventDefault();
+  
+  const gstin = document.getElementById('gstin').value.toUpperCase().trim();
+  
+  // Basic format validation
+  const gstinRegex = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+  const isValid = gstinRegex.test(gstin);
+  
+  const resultDiv = document.getElementById('result');
+  const statusBadge = document.getElementById('statusBadge');
+  const resultGrid = document.getElementById('resultGrid');
+  
+  if (isValid) {
+    // Extract details
+    const stateCode = gstin.substring(0, 2);
+    const pan = gstin.substring(2, 12);
+    const entityNumber = gstin.substring(12, 13);
+    const checkDigit = gstin.substring(14, 15);
+    
+    const stateName = stateCodes[stateCode] || 'Unknown State';
+    
+    // Display valid result
+    resultDiv.className = 'result valid';
+    statusBadge.className = 'status-badge valid';
+    statusBadge.textContent = '✓ Valid Format';
+    
+    resultGrid.innerHTML = `
+      <div class="result-item">
+        <span class="result-label">GSTIN</span>
+        <span class="result-value">${gstin}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">State</span>
+        <span class="result-value">${stateName}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">State Code</span>
+        <span class="result-value">${stateCode}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">PAN</span>
+        <span class="result-value">${pan}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Entity Number</span>
+        <span class="result-value">${entityNumber}</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Check Digit</span>
+        <span class="result-value">${checkDigit}</span>
+      </div>
+    `;
+  } else {
+    // Display invalid result
+    resultDiv.className = 'result invalid';
+    statusBadge.className = 'status-badge invalid';
+    statusBadge.textContent = '✗ Invalid Format';
+    
+    resultGrid.innerHTML = `
+      <div class="result-item">
+        <span class="result-label">Entered GSTIN</span>
+        <span class="result-value">${gstin}</span>
+      </div>
+      <div style="background:#fee2e2;padding:1rem;border-radius:8px;border-left:4px solid #ef4444;margin-top:1rem;">
+        <p style="margin:0;font-size:0.875rem;color:#991b1b;">
+          <strong>Invalid GSTIN:</strong> Check for typos, verify all 15 characters.
+        </p>
+      </div>
+    `;
+  }
+  
+  resultDiv.style.display = 'block';
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function resetForm() {
+  document.getElementById('gstinForm').reset();
+  document.getElementById('result').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
