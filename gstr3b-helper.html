@@ -1,247 +1,774 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GSTR-3B Helper - Calculate Tax Liability | GST Compliance Pro</title>
-  <meta name="description" content="Calculate GSTR-3B tax liability. Enter sales, ITC, and get instant output tax, input credit, and net tax payable. Free helper tool.">
+  <title>GSTR-3B Helper - Calculate Tax Liability 2026 | MyGSTIndia</title>
+  <meta name="description" content="Free GSTR-3B calculator. Calculate tax liability, ITC available, net tax payable. Simplify GSTR-3B filing with automatic calculations India 2026.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="master-style.css">
-  <link rel="stylesheet" href="tool-hub.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --cyan: #06b6d4;
+      --cyan-dark: #0891b2;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    /* NAVBAR */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    /* DISCLAIMER */
+    .disclaimer {
+      background: #fef3c7;
+      border-bottom: 2px solid var(--orange);
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    
+    .disclaimer a {
+      color: #92400e;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    
+    /* BREADCRUMB */
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    /* MAIN CONTENT */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .page-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .page-badge {
+      display: inline-block;
+      background: var(--cyan);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .page-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+    
+    .page-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* CARD */
+    .card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+    }
+    
+    /* FORM */
+    .section-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+    
+    input[type="number"] {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    small {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+    }
+    
+    /* RESULT */
+    .result {
+      display: none;
+      background: linear-gradient(135deg, #cffafe, white);
+      border: 3px solid var(--cyan);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+      animation: slideIn 0.3s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .result h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+      text-align: center;
+    }
+    
+    .result-grid {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+    }
+    
+    .result-label {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    
+    .result-value {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    
+    .result-total {
+      background: linear-gradient(135deg, var(--cyan), var(--cyan-dark));
+      color: white;
+      padding: 1.25rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    
+    .result-total-label {
+      font-size: 0.875rem;
+      opacity: 0.9;
+      margin-bottom: 0.25rem;
+    }
+    
+    .result-total-value {
+      font-size: 2rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .result-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-secondary {
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--gray-200);
+    }
+    
+    /* INFO BOX */
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+    
+    .info-box h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+    
+    .info-box p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    .info-box ul {
+      margin: 0.5rem 0 0 1.25rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    /* FOOTER */
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .footer ul {
+      list-style: none;
+    }
+    
+    .footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    
+    .footer a:hover { color: white; }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+    
+    .mobile-nav-btn.active {
+      color: var(--blue);
+    }
+    
+    .mobile-nav-icon {
+      font-size: 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+      .page-header h1 { font-size: 2.5rem; }
+      .container { margin: 3rem auto; }
+    }
+  </style>
 </head>
 <body>
+
+<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <div class="disclaimer-icon">⚖️</div>
-    <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> This is a helper tool. Always verify calculations with your CA and reconcile with GSTR-2B before filing.
-    </div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> › <a href="index.html#tools">Tools</a> › GSTR-3B Helper
   </div>
 </div>
-<div class="tool-page">
-  <div class="tool-container">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a><span class="sep">›</span><a href="index.html#tools">Tools</a><span class="sep">›</span><span>GSTR-3B Helper</span>
-    </div>
-    <a href="index.html#tools" class="back-button">← Back to All Tools</a>
-    <div class="tool-header">
-      <div class="tool-badge">📊 Helper</div>
-      <h1>GSTR-3B Helper</h1>
-      <p>Calculate your <strong>tax liability</strong> for GSTR-3B filing. Enter sales and ITC to get net tax payable instantly.</p>
-    </div>
-    <div class="info-box blue">
-      <div class="info-box-icon">💡</div>
-      <div class="info-box-content">
-        <h4>How to Use</h4>
-        <p>Enter your <strong>total sales</strong> and <strong>eligible ITC</strong> (from GSTR-2B). Get instant calculation of tax payable.</p>
-      </div>
-    </div>
-    <div class="tool-card-main">
-      <h2>📊 Calculate Tax Liability</h2>
-      <form id="gstr3bCalculator" onsubmit="calculateGSTR3B(event)">
-        <h3 style="margin-top: 0;">Table 3.1 - Outward Supplies</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="cgstSales">CGST on Sales</label>
-            <div class="input-with-prefix">
-              <span class="prefix">₹</span>
-              <input type="number" id="cgstSales" placeholder="0" min="0" step="0.01" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="sgstSales">SGST on Sales</label>
-            <div class="input-with-prefix">
-              <span class="prefix">₹</span>
-              <input type="number" id="sgstSales" placeholder="0" min="0" step="0.01" required>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="igstSales">IGST on Sales</label>
-          <div class="input-with-prefix">
-            <span class="prefix">₹</span>
-            <input type="number" id="igstSales" placeholder="0" min="0" step="0.01" required>
-          </div>
-        </div>
 
-```
-    <h3 style="margin-top: 2rem;">Table 4 - Eligible ITC</h3>
-    <div class="form-row">
+<!-- MAIN CONTENT -->
+<div class="container">
+  
+  <div class="page-header">
+    <div class="page-badge">📊 Returns</div>
+    <h1>GSTR-3B Helper</h1>
+    <p>Calculate tax liability and net payable amount for GSTR-3B filing.</p>
+  </div>
+  
+  <div class="card">
+    <h2>Calculate Tax Liability</h2>
+    
+    <form id="gstr3bForm" onsubmit="calculate(event)">
+      
+      <div class="section-title">📈 Output Liability (Sales)</div>
+      
       <div class="form-group">
-        <label for="cgstITC">CGST ITC</label>
-        <div class="input-with-prefix">
-          <span class="prefix">₹</span>
-          <input type="number" id="cgstITC" placeholder="0" min="0" step="0.01" required>
+        <label for="igst">IGST (Inter-state sales) - ₹</label>
+        <input type="number" id="igst" placeholder="0.00" step="0.01" min="0" value="0">
+        <small>GST on sales to other states</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="cgst">CGST (Intra-state sales) - ₹</label>
+        <input type="number" id="cgst" placeholder="0.00" step="0.01" min="0" value="0">
+        <small>Central GST on sales within state</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="sgst">SGST (Intra-state sales) - ₹</label>
+        <input type="number" id="sgst" placeholder="0.00" step="0.01" min="0" value="0">
+        <small>State GST on sales within state</small>
+      </div>
+      
+      <div class="section-title">💰 Input Tax Credit (Purchases)</div>
+      
+      <div class="form-group">
+        <label for="itcIGST">ITC - IGST - ₹</label>
+        <input type="number" id="itcIGST" placeholder="0.00" step="0.01" min="0" value="0">
+        <small>Input credit on inter-state purchases</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="itcCGST">ITC - CGST - ₹</label>
+        <input type="number" id="itcCGST" placeholder="0.00" step="0.01" min="0" value="0">
+        <small>Input credit on intra-state purchases</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="itcSGST">ITC - SGST - ₹</label>
+        <input type="number" id="itcSGST" placeholder="0.00" step="0.01" min="0" value="0">
+        <small>Input credit on intra-state purchases</small>
+      </div>
+      
+      <button type="submit" class="btn">Calculate Liability →</button>
+      
+    </form>
+    
+    <div id="result" class="result">
+      <h3>Tax Liability Summary</h3>
+      <div class="result-grid">
+        <div class="result-item">
+          <span class="result-label">Total Output Tax</span>
+          <span class="result-value" id="totalOutput">₹0.00</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">Total ITC Available</span>
+          <span class="result-value" id="totalITC">₹0.00</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">IGST Payable</span>
+          <span class="result-value" id="igstPayable">₹0.00</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">CGST Payable</span>
+          <span class="result-value" id="cgstPayable">₹0.00</span>
+        </div>
+        <div class="result-item">
+          <span class="result-label">SGST Payable</span>
+          <span class="result-value" id="sgstPayable">₹0.00</span>
         </div>
       </div>
-      <div class="form-group">
-        <label for="sgstITC">SGST ITC</label>
-        <div class="input-with-prefix">
-          <span class="prefix">₹</span>
-          <input type="number" id="sgstITC" placeholder="0" min="0" step="0.01" required>
-        </div>
+      <div class="result-total">
+        <div class="result-total-label">Net Tax Payable</div>
+        <div class="result-total-value" id="netPayable">₹0.00</div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="igstITC">IGST ITC</label>
-      <div class="input-with-prefix">
-        <span class="prefix">₹</span>
-        <input type="number" id="igstITC" placeholder="0" min="0" step="0.01" required>
+      
+      <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:1rem;border-radius:8px;margin-top:1.5rem;">
+        <p style="margin:0;font-size:0.875rem;color:#92400e;">
+          <strong>⚠️ Estimate only.</strong> Actual GSTR-3B liability depends on auto-populated data from GSTR-1, GSTR-2B, reversals, and adjustments. Always verify with <a href="https://www.gst.gov.in" target="_blank" style="color:#92400e;text-decoration:underline;font-weight:600;">gst.gov.in</a> portal data before filing.
+        </p>
       </div>
-      <small>Enter ITC as per GSTR-2B only</small>
+      
+      <div class="result-actions">
+        <button class="btn btn-secondary" onclick="resetForm()">Calculate Again</button>
+        <button class="btn" onclick="window.print()">Print Summary</button>
+      </div>
     </div>
     
-    <button type="submit" class="btn btn-primary btn-large">Calculate Tax Payable →</button>
-  </form>
-</div>
-<div id="result" class="result-card" style="display: none;">
-  <div class="result-header">
-    <span class="result-icon">📊</span>
-    <h3>Tax Liability Summary</h3>
   </div>
-  <div class="result-body" id="resultBody"></div>
-  <div class="result-actions">
-    <button onclick="location.reload()" class="btn btn-secondary">Calculate Again</button>
-    <a href="blog/how-to-file-gst-return.html" class="btn btn-primary">Filing Guide →</a>
+  
+  <div class="info-box">
+    <h4>💡 GSTR-3B - Monthly Summary Return (2026)</h4>
+    <ul>
+      <li><strong>Due Date:</strong> 20th of the following month</li>
+      <li><strong>Purpose:</strong> Declare output tax, claim ITC, pay net tax liability</li>
+      <li><strong>Tables:</strong> 3.1 (output), 4 (ITC), 6.1 (net payable)</li>
+      <li><strong>ITC Set-off:</strong> IGST → CGST → SGST in sequence</li>
+      <li><strong>Late Fee:</strong> ₹50/day (₹20/day for < ₹1.5 Cr turnover)</li>
+    </ul>
   </div>
+  
 </div>
-```
 
-  </div>
-</div>
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-grid">
-    <div><h4>GST Compliance Pro</h4></div>
-    <div><h4>Tools</h4><ul><li><a href="gst-calculator.html">GST Calculator</a></li></ul></div>
-    <div><h4>Resources</h4><ul><li><a href="blog/index.html">Blog</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
-</footer>
-<script>
-function calculateGSTR3B(e) {
-  e.preventDefault();
-
-const cgstSales = parseFloat(document.getElementById(‘cgstSales’).value) || 0;
-const sgstSales = parseFloat(document.getElementById(‘sgstSales’).value) || 0;
-const igstSales = parseFloat(document.getElementById(‘igstSales’).value) || 0;
-
-const cgstITC = parseFloat(document.getElementById(‘cgstITC’).value) || 0;
-const sgstITC = parseFloat(document.getElementById(‘sgstITC’).value) || 0;
-const igstITC = parseFloat(document.getElementById(‘igstITC’).value) || 0;
-
-// Set-off logic (simplified)
-let cgstPayable = Math.max(0, cgstSales - cgstITC);
-let sgstPayable = Math.max(0, sgstSales - sgstITC);
-let igstPayable = Math.max(0, igstSales - igstITC);
-
-// IGST can be set-off against CGST/SGST
-const totalITC = cgstITC + sgstITC + igstITC;
-const totalOutput = cgstSales + sgstSales + igstSales;
-
-const netTax = Math.max(0, totalOutput - totalITC);
-
-const body = document.getElementById(‘resultBody’);
-body.innerHTML = `
-<div style="display: grid; gap: 1.5rem;">
-<div>
-<h4 style="margin: 0 0 0.5rem 0; color: var(--slate-600); font-size: 0.875rem; text-transform: uppercase;">Output Tax (Sales)</h4>
-<div style="display: grid; gap: 0.5rem;">
-<div style="display: flex; justify-content: space-between;">
-<span>CGST:</span>
-<span style="font-weight: 600;">₹${cgstSales.toLocaleString(‘en-IN’, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
-</div>
-<div style="display: flex; justify-content: space-between;">
-<span>SGST:</span>
-<span style="font-weight: 600;">₹${sgstSales.toLocaleString(‘en-IN’, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
-</div>
-<div style="display: flex; justify-content: space-between;">
-<span>IGST:</span>
-<span style="font-weight: 600;">₹${igstSales.toLocaleString(‘en-IN’, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
-</div>
-<div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 2px solid var(--slate-200);">
-<span style="font-weight: 600;">Total Output Tax:</span>
-<span style="font-weight: 700; font-size: 1.125rem; color: var(--indigo-primary);">₹${totalOutput.toLocaleString(‘en-IN’, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
-</div>
-</div>
-</div>
-
-```
-  <div>
-    <h4 style="margin: 0 0 0.5rem 0; color: var(--slate-600); font-size: 0.875rem; text-transform: uppercase;">Input Tax Credit</h4>
-    <div style="display: grid; gap: 0.5rem;">
-      <div style="display: flex; justify-content: space-between;">
-        <span>CGST:</span>
-        <span style="font-weight: 600;">₹${cgstITC.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyGSTIndia</h4>
+        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
       </div>
-      <div style="display: flex; justify-content: space-between;">
-        <span>SGST:</span>
-        <span style="font-weight: 600;">₹${sgstITC.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+      <div>
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="gst-calculator.html">GST Calculator</a></li>
+          <li><a href="hsn-finder.html">HSN Finder</a></li>
+          <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
+          <li><a href="itc-calculator.html">ITC Calculator</a></li>
+        </ul>
       </div>
-      <div style="display: flex; justify-content: space-between;">
-        <span>IGST:</span>
-        <span style="font-weight: 600;">₹${igstITC.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="disclaimer.html">Disclaimer</a></li>
+        </ul>
       </div>
-      <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 2px solid var(--slate-200);">
-        <span style="font-weight: 600;">Total ITC:</span>
-        <span style="font-weight: 700; font-size: 1.125rem; color: var(--green-success);">₹${totalITC.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="disclaimer.html">Legal Disclaimer</a></li>
+          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+        </ul>
       </div>
     </div>
+    
+    <div class="footer-bottom">
+      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
+    </div>
   </div>
-  
-  <div style="background: linear-gradient(135deg, var(--indigo-50) 0%, var(--blue-50) 100%); padding: 1.5rem; border-radius: 12px; border: 2px solid var(--indigo-200);">
-    <h4 style="margin: 0 0 0.75rem 0; color: var(--indigo-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Net Tax Payable</h4>
-    <p style="margin: 0; font-size: 2rem; font-weight: 800; color: var(--indigo-primary);">₹${netTax.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
-    <p style="margin: 0.5rem 0 0 0; font-size: 0.875rem; color: var(--slate-600);">Amount to pay via cash ledger</p>
-  </div>
-  
-  ${netTax > 0 ? '<div class="info-box blue"><div class="info-box-content"><p style="margin: 0;"><strong>Next Step:</strong> Pay this amount via challan before filing GSTR-3B. After payment, file return on GST portal.</p></div></div>' : '<div class="info-box green"><div class="info-box-content"><p style="margin: 0;"><strong>No payment required!</strong> Your ITC covers the output tax. File GSTR-3B directly.</p></div></div>'}
+</footer>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a href="index.html#tools" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="blog/index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
 </div>
-```
 
-`;
+<!-- JAVASCRIPT -->
+<script>
+// Hamburger menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
 
-document.getElementById(‘result’).style.display = ‘block’;
-document.getElementById(‘result’).scrollIntoView({ behavior: ‘smooth’ });
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+
+function calculate(e) {
+  e.preventDefault();
+  
+  // Get output tax values
+  const igst = parseFloat(document.getElementById('igst').value) || 0;
+  const cgst = parseFloat(document.getElementById('cgst').value) || 0;
+  const sgst = parseFloat(document.getElementById('sgst').value) || 0;
+  
+  // Get ITC values
+  const itcIGST = parseFloat(document.getElementById('itcIGST').value) || 0;
+  const itcCGST = parseFloat(document.getElementById('itcCGST').value) || 0;
+  const itcSGST = parseFloat(document.getElementById('itcSGST').value) || 0;
+  
+  // Calculate totals
+  const totalOutput = igst + cgst + sgst;
+  const totalITC = itcIGST + itcCGST + itcSGST;
+  
+  // Calculate payable after ITC set-off (simplified)
+  // In real scenario: IGST can be used to set off CGST/SGST in sequence
+  let igstPayable = Math.max(0, igst - itcIGST);
+  let cgstPayable = Math.max(0, cgst - itcCGST);
+  let sgstPayable = Math.max(0, sgst - itcSGST);
+  
+  const netPayable = igstPayable + cgstPayable + sgstPayable;
+  
+  // Display results
+  document.getElementById('totalOutput').textContent = '₹' + totalOutput.toFixed(2);
+  document.getElementById('totalITC').textContent = '₹' + totalITC.toFixed(2);
+  document.getElementById('igstPayable').textContent = '₹' + igstPayable.toFixed(2);
+  document.getElementById('cgstPayable').textContent = '₹' + cgstPayable.toFixed(2);
+  document.getElementById('sgstPayable').textContent = '₹' + sgstPayable.toFixed(2);
+  document.getElementById('netPayable').textContent = '₹' + netPayable.toFixed(2);
+  
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function resetForm() {
+  document.getElementById('gstr3bForm').reset();
+  document.getElementById('result').style.display = 'none';
 }
 </script>
-
-<!-- MOBILE ACTION BAR -->
-
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn active" onclick="window.location.href='index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='return-deadlines.html'">
-      <span class="icon">📅</span>
-      <span>Deadlines</span>
-    </button>
-  </div>
-</div>
 
 </body>
 </html>
