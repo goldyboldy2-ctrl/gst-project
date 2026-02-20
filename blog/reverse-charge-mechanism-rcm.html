@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Charge Mechanism (RCM) Under GST 2026 | MyGSTIndia</title>
+  <meta name="description" content="Complete guide to Reverse Charge Mechanism. Learn when RCM applies, services covered, payment process, compliance. RCM explained 2026.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --purple: #8b5cf6;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3, h4 { 
+      font-family: 'Poppins', sans-serif; 
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    .article {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    
+    .article-header {
+      margin-bottom: 2rem;
+    }
+    
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .article h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .article h2 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--blue);
+    }
+    
+    .article h3 {
+      font-size: 1.375rem;
+      margin-top: 2rem;
+    }
+    
+    .article p {
+      margin-bottom: 1.25rem;
+    }
+    
+    .article ul, .article ol {
+      margin: 1.25rem 0 1.25rem 1.5rem;
+    }
+    
+    .article li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    
+    .info-box {
+      background: #fef3c7;
+      border-left: 4px solid var(--orange);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    
+    .example-box {
+      background: #f3e8ff;
+      border-left: 4px solid var(--purple);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    
+    .cta-box {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .cta-box h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-box a {
+      display: inline-block;
+      background: white;
+      color: var(--blue);
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: transform 0.2s;
+    }
+    
+    .cta-box a:hover {
+      transform: translateY(-2px);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    th {
+      background: var(--blue);
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .related {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--gray-200);
+    }
+    
+    .related h3 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .related-card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+    
+    .related-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    
+    .related-card h4 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .related-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .mobile-nav-btn.active { color: var(--blue); }
+    
+    .mobile-nav-icon { font-size: 1.5rem; }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+    }
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">Tools</a></li>
+      <li><a href="index.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › Reverse Charge Mechanism
+  </div>
+</div>
+
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>📅 February 20, 2026</span>
+      <span>⏱️ 7 min read</span>
+      <span>📂 Advanced</span>
+    </div>
+    <h1>Reverse Charge Mechanism (RCM) Under GST: Complete Guide</h1>
+  </header>
+
+  <p>Reverse Charge Mechanism (RCM) flips the normal GST payment rule. Instead of the supplier paying tax, YOU (the recipient) must pay the tax to the government. Understanding RCM is crucial to avoid penalties.</p>
+
+  <h2>What is Reverse Charge Mechanism?</h2>
+
+  <p>Normally, the <strong>supplier</strong> collects GST from you and pays it to the government. Under RCM, this is reversed - <strong>you</strong> pay the GST directly to the government on behalf of the supplier.</p>
+
+  <div class="highlight-box">
+    <h4>📊 Normal vs Reverse Charge</h4>
+    <p><strong>Normal Charge:</strong> Supplier charges ₹10,000 + ₹1,800 GST → Supplier pays ₹1,800 to government → You pay ₹11,800 to supplier</p>
+    <p><strong>Reverse Charge:</strong> Supplier charges only ₹10,000 (no GST) → You pay ₹10,000 to supplier → YOU pay ₹1,800 GST directly to government</p>
+  </div>
+
+  <h2>When Does RCM Apply?</h2>
+
+  <p>RCM applies in two main scenarios:</p>
+
+  <h3>1. Specified Services (Section 9(3))</h3>
+  <p>Certain services are always under RCM, regardless of supplier's status:</p>
+
+  <table>
+    <tr>
+      <th>Service</th>
+      <th>Supplier</th>
+      <th>Recipient (You)</th>
+    </tr>
+    <tr>
+      <td>Goods Transport Agency (GTA)</td>
+      <td>Any GTA</td>
+      <td>Any registered person</td>
+    </tr>
+    <tr>
+      <td>Legal Services</td>
+      <td>Advocate/Legal firm</td>
+      <td>Any business</td>
+    </tr>
+    <tr>
+      <td>Sponsorship Services</td>
+      <td>Any sponsor</td>
+      <td>Any business</td>
+    </tr>
+    <tr>
+      <td>Security Services</td>
+      <td>Individual/Partnership/Proprietorship</td>
+      <td>Any business</td>
+    </tr>
+    <tr>
+      <td>Director Services</td>
+      <td>Director</td>
+      <td>Company</td>
+    </tr>
+  </table>
+
+  <h3>2. Purchases from Unregistered Persons (Section 9(4))</h3>
+  <p>If you buy goods/services worth <strong>more than ₹5,000/day</strong> from an unregistered supplier:</p>
+  <ul>
+    <li>You must pay GST under RCM</li>
+    <li>Threshold is ₹5,000 per day per supplier</li>
+    <li>Applies only to registered persons buying from unregistered</li>
+  </ul>
+
+  <div class="info-box">
+    <h4>⚠️ Important: ₹5,000 Limit</h4>
+    <p>Purchase from unregistered vendor: ₹4,000 → No RCM (below threshold)</p>
+    <p>Purchase from unregistered vendor: ₹6,000 → RCM applies on full ₹6,000</p>
+  </div>
+
+  <h2>How to Pay RCM</h2>
+
+  <h3>Step 1: Identify RCM Transaction</h3>
+  <p>Check if supplier is unregistered OR if service falls under notified RCM categories.</p>
+
+  <h3>Step 2: Calculate Tax</h3>
+  <p>Apply applicable GST rate on the transaction value (same rate as if it were normal supply).</p>
+
+  <h3>Step 3: Report in GSTR-3B</h3>
+  <p>Declare in <strong>Table 3.1(d)</strong> - "Inward supplies liable to reverse charge"</p>
+
+  <h3>Step 4: Pay Tax</h3>
+  <p>Pay GST in cash (cannot use ITC for RCM tax payment)</p>
+
+  <h3>Step 5: Claim ITC (if eligible)</h3>
+  <p>Claim ITC in same month's GSTR-3B Table 4 (if you're eligible for ITC)</p>
+
+  <div class="example-box">
+    <h4>💡 Example: GTA Service</h4>
+    <p><strong>Scenario:</strong> You hire a transport company to move goods. Invoice: ₹20,000 (no GST charged)</p>
+    <ol>
+      <li>Identify: GTA service = RCM applicable</li>
+      <li>Calculate: ₹20,000 × 5% = ₹1,000 GST</li>
+      <li>Pay transport company: ₹20,000 (no GST)</li>
+      <li>Pay government: ₹1,000 (in GSTR-3B Table 3.1(d))</li>
+      <li>Claim ITC: ₹1,000 (in same GSTR-3B Table 4, if eligible)</li>
+      <li>Net effect: Zero (paid ₹1,000, claimed ₹1,000 back)</li>
+    </ol>
+  </div>
+
+  <h2>ITC Under RCM</h2>
+
+  <p>Good news: You can claim ITC on RCM tax paid (if you're eligible for ITC):</p>
+
+  <ul>
+    <li>Pay RCM tax in Table 3.1(d)</li>
+    <li>Claim ITC in Table 4(A)(3) in the <strong>same month</strong></li>
+    <li>Net effect = zero (if full ITC eligible)</li>
+  </ul>
+
+  <div class="highlight-box">
+    <h4>✓ Important Point</h4>
+    <p>Since you pay and claim ITC in the same month, RCM often results in zero net outflow (if you're fully eligible for ITC). But you MUST follow the process - can't simply ignore RCM!</p>
+  </div>
+
+  <h2>Common RCM Scenarios</h2>
+
+  <h3>Scenario 1: Advocate Fees (Legal Services)</h3>
+  <ul>
+    <li>You: Registered business</li>
+    <li>Supplier: Lawyer/Advocate</li>
+    <li>Invoice: ₹50,000 (no GST charged by lawyer)</li>
+    <li>Your action: Pay ₹50,000 to lawyer + Pay ₹9,000 GST (18%) to govt under RCM</li>
+  </ul>
+
+  <h3>Scenario 2: Security Guard Services</h3>
+  <ul>
+    <li>You: Company needing security</li>
+    <li>Supplier: Security agency (individual/partnership)</li>
+    <li>Invoice: ₹1,00,000 (no GST)</li>
+    <li>Your action: Pay ₹1,00,000 to agency + Pay ₹18,000 GST (18%) under RCM</li>
+  </ul>
+
+  <h3>Scenario 3: Purchase from Unregistered Supplier</h3>
+  <ul>
+    <li>You: GST registered trader</li>
+    <li>Supplier: Local vendor (not GST registered)</li>
+    <li>Purchase: ₹10,000 worth goods</li>
+    <li>Your action: Pay ₹10,000 to vendor + Pay applicable GST under RCM (if >₹5,000/day)</li>
+  </ul>
+
+  <h2>Exemptions from RCM</h2>
+
+  <p>RCM does NOT apply when:</p>
+  <ul>
+    <li>Supplier is composition dealer (they pay nominal tax)</li>
+    <li>You're also a composition dealer (composition dealers don't deal with RCM)</li>
+    <li>Transaction value is below ₹5,000/day (for unregistered supplier purchases)</li>
+    <li>Service/goods are exempt from GST</li>
+  </ul>
+
+  <h2>Penalties for Non-Compliance</h2>
+
+  <p>Not paying RCM when required:</p>
+  <ul>
+    <li><strong>Tax dues:</strong> Full tax amount + 18% interest from due date</li>
+    <li><strong>Penalty:</strong> 10% of tax or ₹10,000 (whichever is higher)</li>
+    <li><strong>Notices:</strong> System-generated demands and notices</li>
+  </ul>
+
+  <div class="cta-box">
+    <h3>Calculate Your Tax Liability</h3>
+    <p>Use our GSTR-3B Helper to calculate output tax including RCM liability.</p>
+    <a href="../gstr3b-helper.html">Calculate Now →</a>
+  </div>
+
+  <h2>Reporting RCM in Returns</h2>
+
+  <table>
+    <tr>
+      <th>Return</th>
+      <th>Where to Report</th>
+      <th>What to Report</th>
+    </tr>
+    <tr>
+      <td>GSTR-1</td>
+      <td>Not applicable</td>
+      <td>RCM purchases not reported here</td>
+    </tr>
+    <tr>
+      <td>GSTR-3B</td>
+      <td>Table 3.1(d)</td>
+      <td>Tax liability under RCM</td>
+    </tr>
+    <tr>
+      <td>GSTR-3B</td>
+      <td>Table 4(A)(3)</td>
+      <td>ITC on RCM (if eligible)</td>
+    </tr>
+  </table>
+
+  <h2>Key Takeaways</h2>
+
+  <ul>
+    <li>RCM = You pay supplier's GST to government</li>
+    <li>Applies to: Specified services (GTA, legal, security) + Unregistered supplier purchases >₹5,000/day</li>
+    <li>Process: Pay supplier (no GST) → Pay GST to govt → Claim ITC back (if eligible)</li>
+    <li>Report in GSTR-3B Table 3.1(d) and claim ITC in Table 4(A)(3)</li>
+    <li>Must pay in cash, then claim ITC</li>
+    <li>Net effect often zero if full ITC eligible, but compliance is mandatory</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Do I need to issue invoice under RCM?</h3>
+  <p>No. The supplier issues invoice (without GST). You self-assess and pay GST. You may issue a payment voucher for your records.</p>
+
+  <h3>Can I pay RCM using my ITC ledger?</h3>
+  <p>No. RCM tax must be paid in CASH first. Then you can claim it as ITC in the same month.</p>
+
+  <h3>What if I forget to pay RCM?</h3>
+  <p>Pay immediately with interest (18% p.a. from due date). Report in next month's GSTR-3B with interest payment.</p>
+
+  <div class="related">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+      <a href="input-tax-credit-guide.html" class="related-card">
+        <h4>Input Tax Credit Guide</h4>
+        <p>Master ITC claims</p>
+      </a>
+      <a href="how-to-file-gst-return.html" class="related-card">
+        <h4>How to File GST Returns</h4>
+        <p>Complete filing guide</p>
+      </a>
+      <a href="gstr1-vs-gstr3b-differences.html" class="related-card">
+        <h4>GSTR-1 vs GSTR-3B</h4>
+        <p>Key differences</p>
+      </a>
+      <a href="common-gst-mistakes.html" class="related-card">
+        <h4>Common GST Mistakes</h4>
+        <p>Avoid RCM errors</p>
+      </a>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses</p>
+  </div>
+</footer>
+
+<div class="mobile-nav">
+  <a href="../index.html#tools" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="../index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
+</div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>
