@@ -1,139 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TDS Under GST - Section 51 Guide 2026 | GST Compliance Pro</title>
-  <meta name="description" content="TDS under GST Section 51 - who deducts, rate, compliance, filing.">
+  <title>TDS Under GST Section 51 Complete Guide 2026 | MyGSTIndia</title>
+  <meta name="description" content="Complete TDS under GST guide. Learn Section 51, who deducts, rates, filing GSTR-7, claiming credit. TDS explained 2026.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../master-style.css">
-  <link rel="stylesheet" href="../knowledge-hub.css">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #1e293b; --blue: #3b82f6; --blue-dark: #2563eb; --orange: #f59e0b;
+      --orange-dark: #d97706; --green: #10b981; --gray-50: #f8fafc; --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0; --gray-600: #475569; --gray-700: #334155; --gray-900: #0f172a;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-900); line-height: 1.7; background: var(--gray-50); padding-bottom: 80px; }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; line-height: 1.3; margin-bottom: 1rem; color: var(--navy); }
+    .navbar { background: white; border-bottom: 1px solid var(--gray-200); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
+    .logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, var(--orange), var(--orange-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; font-family: 'Poppins', sans-serif; }
+    .logo-text { color: var(--blue); }
+    .nav-links { display: none; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--gray-700); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .hamburger { width: 32px; height: 24px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; background: none; border: none; padding: 0; }
+    .hamburger span { display: block; width: 100%; height: 3px; background: var(--navy); border-radius: 2px; }
+    .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid var(--gray-200); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    @media (min-width: 768px) { .hamburger { display: none; } .nav-links { display: flex; } .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; } }
+    .breadcrumb { background: white; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); }
+    .breadcrumb-container { max-width: 800px; margin: 0 auto; padding: 0 1rem; font-size: 0.875rem; color: var(--gray-600); }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .article { max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-meta { display: flex; gap: 1rem; font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; flex-wrap: wrap; }
+    .article h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+    .article h2 { font-size: 1.75rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--blue); }
+    .article h3 { font-size: 1.375rem; margin-top: 2rem; }
+    .article p { margin-bottom: 1.25rem; }
+    .article ul, .article ol { margin: 1.25rem 0 1.25rem 1.5rem; }
+    .article li { margin-bottom: 0.75rem; }
+    .highlight-box { background: #eff6ff; border-left: 4px solid var(--blue); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .info-box { background: #fef3c7; border-left: 4px solid var(--orange); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .cta-box { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 3rem 0; }
+    .cta-box h3 { color: white; margin-bottom: 1rem; }
+    .cta-box a { display: inline-block; background: white; color: var(--blue); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: transform 0.2s; }
+    .cta-box a:hover { transform: translateY(-2px); }
+    table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    th { background: var(--blue); color: white; padding: 1rem; text-align: left; font-weight: 600; }
+    td { padding: 1rem; border-bottom: 1px solid var(--gray-200); }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--gray-200); }
+    .related h3 { margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+    .related-card { background: white; border: 2px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; transition: all 0.2s; }
+    .related-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    .related-card h4 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+    .related-card p { font-size: 0.875rem; color: var(--gray-600); margin: 0; }
+    .footer { background: var(--navy); color: white; padding: 2rem 1rem; margin-top: 4rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .mobile-nav { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid var(--gray-200); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 90; }
+    .mobile-nav-btn { flex: 1; padding: 0.75rem; text-align: center; text-decoration: none; color: var(--gray-600); font-size: 0.75rem; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+    .mobile-nav-btn.active { color: var(--blue); }
+    .mobile-nav-icon { font-size: 1.5rem; }
+    @media (min-width: 768px) { .mobile-nav { display: none; } }
+  </style>
 </head>
 <body>
-<div class="reading-progress-bar"></div>
+
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="../index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-    <button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
-    <ul class="nav-links">
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="../index.html">Home</a></li>
       <li><a href="../index.html#tools">Tools</a></li>
-      <li><a href="index.html" class="active">Blog</a></li>
+      <li><a href="index.html">Blog</a></li>
     </ul>
   </div>
 </nav>
-<article class="blog-post">
-  <div class="blog-container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-    <div class="breadcrumb">
-      <a href="../index.html">Home</a><span class="sep">›</span>
-      <a href="index.html">Blog</a><span class="sep">›</span>
-      <span>TDS Under GST</span>
-    </div>
-    <header class="blog-header">
-      <h1>TDS Under GST - Section 51 Complete Guide</h1>
-      <div class="blog-meta">
-        <span>📅 February 17, 2026</span>
-        <span>⏱️ 8 min read</span>
-      </div>
-    </header>
-    <div class="callout info">
-      <div class="callout-icon">💡</div>
-      <div class="callout-content">
-        <h4>Quick Summary</h4>
-        <p>Government departments & specified entities deduct 2% TDS on payments > ₹2.5 lakh under Section 51.</p>
-      </div>
-    </div>
-    <section>
-      <h2>What is TDS Under GST?</h2>
-      <p>Section 51 requires certain entities to deduct 2% GST (1% CGST + 1% SGST or 2% IGST) from payments to suppliers.</p>
-    </section>
-    <section>
-      <h2>Who Deducts TDS?</h2>
-      <ul>
-        <li>Central Government departments</li>
-        <li>State Government departments</li>
-        <li>Local authorities</li>
-        <li>Government agencies</li>
-        <li>PSUs (as notified)</li>
-      </ul>
-    </section>
-    <section>
-      <h2>When to Deduct?</h2>
-      <p><strong>Threshold:</strong> Total contract value > ₹2.5 lakh</p>
-      <p><strong>Rate:</strong> 2% (1% CGST + 1% SGST or 2% IGST)</p>
-      <p><strong>On:</strong> Payment amount (excluding GST)</p>
-    </section>
-    <section>
-      <h2>How It Works</h2>
-      <p><strong>Invoice:</strong> ₹1,00,000 + ₹18,000 GST = ₹1,18,000</p>
-      <p><strong>TDS:</strong> 2% of ₹1,00,000 = ₹2,000</p>
-      <p><strong>Payment:</strong> ₹1,18,000 - ₹2,000 = ₹1,16,000</p>
-      <p><strong>Supplier claims:</strong> ₹2,000 TDS credit</p>
-    </section>
-    <section>
-      <h2>Compliance</h2>
-      <ol>
-        <li>Deduct TDS at time of payment</li>
-        <li>Deposit to government by 10th next month</li>
-        <li>File GSTR-7 monthly</li>
-        <li>Issue TDS certificate (GSTR-7A)</li>
-      </ol>
-    </section>
-    <div class="related-tools">
-      <h3>Related Tools</h3>
-      <div class="related-tools-grid">
-        <a href="../gst-calculator.html" class="related-tool-card">
-          <h4>🧮 GST Calculator</h4>
-          <p>Calculate TDS</p>
-          <span class="arrow">Calculate →</span>
-        </a>
-        <a href="../itc-calculator.html" class="related-tool-card">
-          <h4>💰 ITC Calculator</h4>
-          <p>Calculate ITC</p>
-          <span class="arrow">Calculate →</span>
-        </a>
-        <a href="../penalty-calculator.html" class="related-tool-card">
-          <h4>💸 Penalty Calculator</h4>
-          <p>Check penalties</p>
-          <span class="arrow">Calculate →</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</article>
-<footer class="footer">
-  <div class="footer-grid">
-    <div><h4>GST Compliance Pro</h4></div>
-    <div><h4>Tools</h4><ul><li><a href="../gst-calculator.html">GST Calculator</a></li></ul></div>
-    <div><h4>Resources</h4><ul><li><a href="index.html">Blog</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
-</footer>
-<script src="../main.js"></script>
 
-<!-- MOBILE ACTION BAR -->
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn active" onclick="window.location.href='index.html'">
-      <span class="icon">📚</span>
-      <span>Blog</span>
-    </button>
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › TDS Under GST
   </div>
 </div>
 
-<script src="../main.js"></script>
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>📅 February 20, 2026</span>
+      <span>⏱️ 6 min read</span>
+      <span>📂 Advanced</span>
+    </div>
+    <h1>TDS Under GST (Section 51): Complete Guide</h1>
+  </header>
+
+  <p>TDS (Tax Deducted at Source) under GST requires certain entities to deduct 2% tax when making contract payments. Understanding who deducts, when, and how to claim credit is essential for compliance.</p>
+
+  <h2>What is TDS Under GST?</h2>
+
+  <p>Section 51 of CGST Act mandates specified categories of registered persons to deduct TDS at 2% (1% CGST + 1% SGST or 2% IGST) on payments to suppliers for supply of goods or services.</p>
+
+  <div class="highlight-box">
+    <h4>📊 Example</h4>
+    <p><strong>Contract value:</strong> ₹10,00,000 (taxable value) + ₹1,80,000 GST @ 18%</p>
+    <p><strong>TDS deduction:</strong> ₹10,00,000 × 2% = ₹20,000</p>
+    <p><strong>Payment to supplier:</strong> ₹11,80,000 - ₹20,000 = ₹11,60,000</p>
+    <p><strong>TDS to government:</strong> ₹20,000 (deductor pays)</p>
+    <p><strong>Supplier claims:</strong> ₹20,000 credit in GSTR-2A/2B</p>
+  </div>
+
+  <h2>Who Must Deduct TDS?</h2>
+
+  <p>Only these entities are required to deduct TDS:</p>
+  <ul>
+    <li>Central Government departments</li>
+    <li>State Government departments</li>
+    <li>Local authorities</li>
+    <li>Governmental agencies</li>
+    <li>Public sector undertakings (PSUs)</li>
+    <li>Authorities/Boards set up by Parliament/State Legislature</li>
+    <li>Societies registered under Societies Registration Act, controlled by Central/State Government</li>
+  </ul>
+
+  <div class="info-box">
+    <h4>⚠️ Important</h4>
+    <p>Private companies, LLPs, partnership firms, and proprietors are NOT required to deduct TDS under GST (unlike income tax TDS which applies more broadly).</p>
+  </div>
+
+  <h2>When is TDS Deducted?</h2>
+
+  <h3>Threshold Limit</h3>
+  <p>TDS applies only when:</p>
+  <ul>
+    <li>Total contract value exceeds <strong>₹2.5 lakh</strong></li>
+    <li>Calculated on individual contract basis</li>
+    <li>Excluding GST (on taxable value only)</li>
+  </ul>
+
+  <h3>Timing of Deduction</h3>
+  <p>TDS must be deducted at the time of <strong>payment</strong> to supplier.</p>
+
+  <table>
+    <tr>
+      <th>Contract Value</th>
+      <th>TDS Applicable?</th>
+      <th>Amount to Deduct</th>
+    </tr>
+    <tr>
+      <td>₹2,00,000</td>
+      <td>No</td>
+      <td>Nil (below threshold)</td>
+    </tr>
+    <tr>
+      <td>₹3,00,000</td>
+      <td>Yes</td>
+      <td>₹6,000 (2% of ₹3,00,000)</td>
+    </tr>
+    <tr>
+      <td>₹10,00,000</td>
+      <td>Yes</td>
+      <td>₹20,000 (2% of ₹10,00,000)</td>
+    </tr>
+  </table>
+
+  <h2>How TDS Works</h2>
+
+  <h3>Deductor's Process (Government/PSU)</h3>
+  <ol>
+    <li><strong>Receive invoice</strong> from supplier</li>
+    <li><strong>Calculate TDS:</strong> Taxable value × 2%</li>
+    <li><strong>Deduct TDS</strong> from payment</li>
+    <li><strong>Pay supplier:</strong> Invoice amount - TDS</li>
+    <li><strong>Deposit TDS</strong> to government by 10th of next month</li>
+    <li><strong>File GSTR-7</strong> monthly return</li>
+    <li><strong>Issue TDS certificate</strong> to supplier</li>
+  </ol>
+
+  <h3>Supplier's Process (Receiving TDS Credit)</h3>
+  <ol>
+    <li><strong>Receive payment</strong> with TDS deducted</li>
+    <li><strong>Check GSTR-2A/2B</strong> for TDS credit (auto-populated)</li>
+    <li><strong>Claim credit</strong> in GSTR-3B Table 4(A)(2)</li>
+    <li><strong>Use credit</strong> to pay output GST liability</li>
+  </ol>
+
+  <div class="cta-box">
+    <h3>Calculate TDS on Your Contracts</h3>
+    <p>Use our TDS Calculator to compute TDS deduction on contract payments.</p>
+    <a href="../tds-calculator.html">Calculate TDS →</a>
+  </div>
+
+  <h2>GSTR-7: TDS Return</h2>
+
+  <p>Deductors must file GSTR-7 monthly:</p>
+  <ul>
+    <li><strong>Due date:</strong> 10th of next month</li>
+    <li><strong>Purpose:</strong> Report all TDS deductions and deposits</li>
+    <li><strong>Contents:</strong> Supplier details, invoice details, TDS deducted, TDS deposited</li>
+  </ul>
+
+  <h3>TDS Certificate</h3>
+  <p>After filing GSTR-7, deductor must issue TDS certificate to supplier showing:</p>
+  <ul>
+    <li>Deductee's GSTIN</li>
+    <li>Certificate number</li>
+    <li>Deduction details</li>
+    <li>Amount deducted</li>
+  </ul>
+
+  <h2>Claiming TDS Credit (Supplier)</h2>
+
+  <h3>Where TDS Appears</h3>
+  <ul>
+    <li>GSTR-2A: Auto-populated from deductor's GSTR-7</li>
+    <li>GSTR-2B: Available from 14th of next month</li>
+  </ul>
+
+  <h3>How to Claim</h3>
+  <ol>
+    <li>Download GSTR-2A/2B</li>
+    <li>Verify TDS credit shown</li>
+    <li>Claim in GSTR-3B Table 4(A)(2) - "ITC as per GSTR-2A (including TDS/TCS credit)"</li>
+    <li>Credit automatically available in electronic credit ledger</li>
+  </ol>
+
+  <div class="highlight-box">
+    <h4>💡 Pro Tip</h4>
+    <p>TDS credit appears automatically in GSTR-2A/2B. No manual entry needed. Just claim it in GSTR-3B!</p>
+  </div>
+
+  <h2>Common Scenarios</h2>
+
+  <h3>Scenario 1: Multiple Payments on Same Contract</h3>
+  <p>Contract: ₹10,00,000. Paid in 3 installments of ₹3,33,333 each.</p>
+  <p><strong>TDS:</strong> Deduct on each payment: ₹3,33,333 × 2% = ₹6,666 per installment</p>
+
+  <h3>Scenario 2: Contract Below Threshold</h3>
+  <p>Contract: ₹2,00,000 (below ₹2.5L threshold)</p>
+  <p><strong>TDS:</strong> No TDS deduction required</p>
+
+  <h3>Scenario 3: Inter-state Supply</h3>
+  <p>Government in Maharashtra contracts with supplier in Karnataka</p>
+  <p><strong>TDS:</strong> 2% IGST (not CGST+SGST)</p>
+
+  <h2>Penalties for Non-Compliance</h2>
+
+  <table>
+    <tr>
+      <th>Violation</th>
+      <th>Penalty</th>
+    </tr>
+    <tr>
+      <td>Not deducting TDS</td>
+      <td>18% interest on TDS amount + penalty</td>
+    </tr>
+    <tr>
+      <td>Not depositing TDS</td>
+      <td>18% interest from due date</td>
+    </tr>
+    <tr>
+      <td>Late filing of GSTR-7</td>
+      <td>₹100/day (₹50 CGST + ₹50 SGST), max ₹5,000</td>
+    </tr>
+    <tr>
+      <td>Not issuing TDS certificate</td>
+      <td>₹100 per day per certificate</td>
+    </tr>
+  </table>
+
+  <h2>Key Differences: GST TDS vs Income Tax TDS</h2>
+
+  <table>
+    <tr>
+      <th>Parameter</th>
+      <th>GST TDS (Section 51)</th>
+      <th>Income Tax TDS</th>
+    </tr>
+    <tr>
+      <td>Who deducts</td>
+      <td>Only govt/PSU/local bodies</td>
+      <td>All specified persons</td>
+    </tr>
+    <tr>
+      <td>Rate</td>
+      <td>2% (fixed)</td>
+      <td>Varies (1%, 2%, 5%, 10%)</td>
+    </tr>
+    <tr>
+      <td>Threshold</td>
+      <td>₹2.5 lakh per contract</td>
+      <td>₹30,000 (Section 194C)</td>
+    </tr>
+    <tr>
+      <td>Calculated on</td>
+      <td>Taxable value (excluding GST)</td>
+      <td>Payment value</td>
+    </tr>
+  </table>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Is TDS applicable on advance payments?</h3>
+  <p>No. TDS is deducted only at the time of actual payment against invoice, not on advances.</p>
+
+  <h3>Can supplier refuse payment if TDS not deducted?</h3>
+  <p>No. If deductor doesn't deduct TDS (when required), they face penalty - not the supplier. Supplier gets full payment.</p>
+
+  <h3>What if TDS is wrongly deducted on a contract below ₹2.5L?</h3>
+  <p>Deductor can revise GSTR-7. Supplier can claim the credit anyway (but it's an error).</p>
+
+  <h3>Can TDS credit be used for all tax heads?</h3>
+  <p>Yes. TDS credit can be used to pay IGST, CGST, or SGST liability.</p>
+
+  <div class="related">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+      <a href="input-tax-credit-guide.html" class="related-card">
+        <h4>Input Tax Credit Guide</h4>
+        <p>Master ITC claims</p>
+      </a>
+      <a href="how-to-file-gst-return.html" class="related-card">
+        <h4>How to File Returns</h4>
+        <p>Complete filing guide</p>
+      </a>
+      <a href="reverse-charge-mechanism-rcm.html" class="related-card">
+        <h4>Reverse Charge (RCM)</h4>
+        <p>Understanding RCM</p>
+      </a>
+      <a href="common-gst-mistakes.html" class="related-card">
+        <h4>Common GST Mistakes</h4>
+        <p>Avoid errors</p>
+      </a>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses</p>
+  </div>
+</footer>
+
+<div class="mobile-nav">
+  <a href="../index.html#tools" class="mobile-nav-btn"><div class="mobile-nav-icon">🧮</div><div>Tools</div></a>
+  <a href="../index.html" class="mobile-nav-btn"><div class="mobile-nav-icon">🔍</div><div>Search</div></a>
+  <a href="index.html" class="mobile-nav-btn active"><div class="mobile-nav-icon">📚</div><div>Blog</div></a>
+</div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
 </body>
 </html>
