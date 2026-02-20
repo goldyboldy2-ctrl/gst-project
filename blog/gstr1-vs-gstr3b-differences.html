@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSTR-1 vs GSTR-3B: Key Differences Explained 2026 | MyGSTIndia</title>
+  <meta name="description" content="Understand differences between GSTR-1 and GSTR-3B. Learn filing sequence, deadlines, reconciliation. Complete comparison guide 2026.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+    
+    h1, h2, h3, h4 { 
+      font-family: 'Poppins', sans-serif; 
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    .article {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+    
+    .article-header {
+      margin-bottom: 2rem;
+    }
+    
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .article h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .article h2 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--blue);
+    }
+    
+    .article h3 {
+      font-size: 1.375rem;
+      margin-top: 2rem;
+    }
+    
+    .article p {
+      margin-bottom: 1.25rem;
+    }
+    
+    .article ul, .article ol {
+      margin: 1.25rem 0 1.25rem 1.5rem;
+    }
+    
+    .article li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    
+    .info-box {
+      background: #fef3c7;
+      border-left: 4px solid var(--orange);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .comparison-card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    
+    .comparison-card h3 {
+      color: var(--blue);
+      margin-top: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .cta-box {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .cta-box h3 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-box a {
+      display: inline-block;
+      background: white;
+      color: var(--blue);
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: transform 0.2s;
+    }
+    
+    .cta-box a:hover {
+      transform: translateY(-2px);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    th {
+      background: var(--blue);
+      color: white;
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .related {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--gray-200);
+    }
+    
+    .related h3 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .related-card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+    
+    .related-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    
+    .related-card h4 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .related-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+    
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .mobile-nav-btn.active { color: var(--blue); }
+    
+    .mobile-nav-icon { font-size: 1.5rem; }
+    
+    @media (min-width: 768px) {
+      .mobile-nav { display: none; }
+    }
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">Tools</a></li>
+      <li><a href="index.html">Blog</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › GSTR-1 vs GSTR-3B
+  </div>
+</div>
+
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>📅 February 20, 2026</span>
+      <span>⏱️ 7 min read</span>
+      <span>📂 Returns & Filing</span>
+    </div>
+    <h1>GSTR-1 vs GSTR-3B: Key Differences Explained</h1>
+  </header>
+
+  <p>GSTR-1 and GSTR-3B are the two main monthly returns for regular GST taxpayers. While both are mandatory, they serve different purposes. Understanding these differences is crucial for accurate filing and compliance.</p>
+
+  <div class="comparison-grid">
+    <div class="comparison-card">
+      <h3>GSTR-1</h3>
+      <p><strong>Purpose:</strong> Report outward supplies (sales)</p>
+      <p><strong>Due Date:</strong> 11th of next month</p>
+      <p><strong>Details Level:</strong> Invoice-wise details</p>
+    </div>
+    <div class="comparison-card">
+      <h3>GSTR-3B</h3>
+      <p><strong>Purpose:</strong> Pay tax & declare summary</p>
+      <p><strong>Due Date:</strong> 20th of next month</p>
+      <p><strong>Details Level:</strong> Summary (consolidated)</p>
+    </div>
+  </div>
+
+  <h2>Complete Comparison Table</h2>
+
+  <table>
+    <tr>
+      <th>Parameter</th>
+      <th>GSTR-1</th>
+      <th>GSTR-3B</th>
+    </tr>
+    <tr>
+      <td><strong>Nature</strong></td>
+      <td>Detailed statement of sales</td>
+      <td>Summary return + tax payment</td>
+    </tr>
+    <tr>
+      <td><strong>Filing Date</strong></td>
+      <td>11th of next month</td>
+      <td>20th of next month</td>
+    </tr>
+    <tr>
+      <td><strong>Invoice Details</strong></td>
+      <td>Every invoice separately</td>
+      <td>Only summary totals</td>
+    </tr>
+    <tr>
+      <td><strong>Tax Payment</strong></td>
+      <td>No payment</td>
+      <td>Actual tax payment done here</td>
+    </tr>
+    <tr>
+      <td><strong>ITC Claim</strong></td>
+      <td>Not applicable</td>
+      <td>ITC claimed in Table 4</td>
+    </tr>
+    <tr>
+      <td><strong>Amendment</strong></td>
+      <td>Can amend in next month</td>
+      <td>Cannot amend (only new return)</td>
+    </tr>
+    <tr>
+      <td><strong>Purpose</strong></td>
+      <td>For buyer's ITC</td>
+      <td>For tax liability discharge</td>
+    </tr>
+  </table>
+
+  <h2>What Goes in GSTR-1?</h2>
+
+  <p>GSTR-1 contains invoice-level details of all your sales:</p>
+
+  <h3>Tables in GSTR-1</h3>
+  <ul>
+    <li><strong>Table 4:</strong> B2B invoices (with customer GSTIN)</li>
+    <li><strong>Table 5:</strong> B2C large invoices (>₹2.5 lakh)</li>
+    <li><strong>Table 6:</strong> Exports</li>
+    <li><strong>Table 7:</strong> B2C small invoices (consolidated)</li>
+    <li><strong>Table 9:</strong> Credit/debit notes</li>
+    <li><strong>Table 11:</strong> HSN-wise summary</li>
+  </ul>
+
+  <div class="highlight-box">
+    <h4>💡 Key Point</h4>
+    <p>GSTR-1 data flows to buyer's GSTR-2A/2B. If you don't file GSTR-1, your buyer cannot claim ITC!</p>
+  </div>
+
+  <h2>What Goes in GSTR-3B?</h2>
+
+  <p>GSTR-3B is a summary return where you:</p>
+
+  <h3>Tables in GSTR-3B</h3>
+  <ul>
+    <li><strong>Table 3.1:</strong> Output tax liability (consolidated)</li>
+    <li><strong>Table 4:</strong> Input tax credit available & claimed</li>
+    <li><strong>Table 5:</strong> Interest & late fee (if any)</li>
+    <li><strong>Table 6.1:</strong> Tax payable & paid</li>
+  </ul>
+
+  <h3>Tax Payment Process</h3>
+  <ol>
+    <li>Calculate output tax (Table 3.1)</li>
+    <li>Claim ITC from GSTR-2B (Table 4)</li>
+    <li>Net tax = Output tax - ITC (Table 6.1)</li>
+    <li>Pay using ITC ledger + cash if needed</li>
+  </ol>
+
+  <div class="cta-box">
+    <h3>Calculate GSTR-3B Tax Liability</h3>
+    <p>Use our free GSTR-3B Helper to calculate output tax, ITC, and net payable.</p>
+    <a href="../gstr3b-helper.html">Calculate Now →</a>
+  </div>
+
+  <h2>Filing Sequence: GSTR-1 First, Then GSTR-3B</h2>
+
+  <p>Always follow this sequence:</p>
+
+  <ol>
+    <li><strong>File GSTR-1 (by 11th)</strong> - Upload all sales invoices</li>
+    <li><strong>Wait for supplier GSTR-1 filing</strong> - Your purchase invoices appear in GSTR-2B</li>
+    <li><strong>Download GSTR-2B (from 14th)</strong> - Check available ITC</li>
+    <li><strong>Reconcile purchases</strong> - Match with your records</li>
+    <li><strong>File GSTR-3B (by 20th)</strong> - Claim matched ITC only</li>
+  </ol>
+
+  <div class="info-box">
+    <h4>⚠️ Why Sequence Matters</h4>
+    <p>If you file GSTR-3B before GSTR-1, the figures may not match. System compares both returns. Mismatch triggers notices.</p>
+  </div>
+
+  <h2>Reconciliation: Matching GSTR-1 with GSTR-3B</h2>
+
+  <p>Your GSTR-1 sales figures MUST match GSTR-3B Table 3.1:</p>
+
+  <table>
+    <tr>
+      <th>GSTR-1 Table</th>
+      <th>GSTR-3B Table</th>
+      <th>What to Match</th>
+    </tr>
+    <tr>
+      <td>Table 4, 5, 6, 7</td>
+      <td>Table 3.1(a)</td>
+      <td>Taxable outward supplies</td>
+    </tr>
+    <tr>
+      <td>Table 6 (Exports)</td>
+      <td>Table 3.1(c)</td>
+      <td>Zero-rated supplies</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>Table 3.1(d)</td>
+      <td>Inward supplies (RCM)</td>
+    </tr>
+  </table>
+
+  <h3>Common Mismatch Reasons</h3>
+  <ul>
+    <li>Forgetting to include some invoices in GSTR-1</li>
+    <li>Rounding errors in tax calculation</li>
+    <li>Wrong table selection in GSTR-1</li>
+    <li>Amendments not reflected properly</li>
+  </ul>
+
+  <h2>Amendments & Corrections</h2>
+
+  <h3>In GSTR-1</h3>
+  <ul>
+    <li>Can amend previous month's invoices in current month's GSTR-1</li>
+    <li>Use amendment tables (9A, 9B, 9C)</li>
+    <li>Can add forgotten invoices</li>
+    <li>Can correct wrong details</li>
+  </ul>
+
+  <h3>In GSTR-3B</h3>
+  <ul>
+    <li>Cannot amend once filed</li>
+    <li>Corrections done in next month's GSTR-3B</li>
+    <li>Increase tax liability → Pay in next month with interest</li>
+    <li>Decrease tax liability → Reduce next month's liability</li>
+  </ul>
+
+  <h2>Penalties for Non-Filing or Late Filing</h2>
+
+  <table>
+    <tr>
+      <th>Return</th>
+      <th>Late Fee</th>
+      <th>Interest</th>
+    </tr>
+    <tr>
+      <td>GSTR-1</td>
+      <td>₹50/day (₹20/day if <₹1.5 Cr), max ₹10,000</td>
+      <td>No interest</td>
+    </tr>
+    <tr>
+      <td>GSTR-3B</td>
+      <td>₹50/day (₹20/day if <₹1.5 Cr), max ₹5,000</td>
+      <td>18% p.a. on unpaid tax</td>
+    </tr>
+  </table>
+
+  <div class="highlight-box">
+    <h4>💡 Pro Tip: File Nil Returns</h4>
+    <p>Even with zero transactions, file nil returns for both GSTR-1 and GSTR-3B. System won't let you skip months.</p>
+  </div>
+
+  <h2>Key Takeaways</h2>
+
+  <ul>
+    <li>GSTR-1 = Detailed sales report (no payment)</li>
+    <li>GSTR-3B = Summary return + actual tax payment</li>
+    <li>File GSTR-1 first (11th), then GSTR-3B (20th)</li>
+    <li>Numbers in both must match - system auto-checks</li>
+    <li>GSTR-1 helps your buyers claim ITC</li>
+    <li>GSTR-3B is where you pay your tax liability</li>
+    <li>Both are mandatory - file even if nil</li>
+  </ul>
+
+  <h2>Common Questions</h2>
+
+  <h3>Can I file GSTR-3B without filing GSTR-1?</h3>
+  <p>Yes, technically you can. But it will cause mismatches and notices from GST department. Always file GSTR-1 first.</p>
+
+  <h3>What if my GSTR-1 and GSTR-3B don't match?</h3>
+  <p>You'll receive system-generated notices. Respond with explanation or file amendment. Correct in next month if possible.</p>
+
+  <h3>Can I revise filed GSTR-3B?</h3>
+  <p>No. Once filed, GSTR-3B cannot be revised. Corrections must be done in subsequent month's return.</p>
+
+  <div class="related">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+      <a href="how-to-file-gst-return.html" class="related-card">
+        <h4>How to File GST Returns</h4>
+        <p>Complete filing guide</p>
+      </a>
+      <a href="input-tax-credit-guide.html" class="related-card">
+        <h4>Input Tax Credit Guide</h4>
+        <p>Master ITC claims</p>
+      </a>
+      <a href="common-gst-mistakes.html" class="related-card">
+        <h4>Common GST Mistakes</h4>
+        <p>Avoid filing errors</p>
+      </a>
+      <a href="gst-penalty-calculator-guide.html" class="related-card">
+        <h4>Penalty Calculator Guide</h4>
+        <p>Calculate late fees</p>
+      </a>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses</p>
+  </div>
+</footer>
+
+<div class="mobile-nav">
+  <a href="../index.html#tools" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="../index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
+</div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>
