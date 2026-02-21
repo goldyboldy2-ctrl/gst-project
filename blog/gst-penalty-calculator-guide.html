@@ -1,311 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GST Penalty Calculator Guide - Late Fees & Interest 2026 | GST Compliance Pro</title>
-<meta name="description" content="Complete guide to GST penalties - late fees, interest calculation, rationalized caps by turnover. Avoid costly mistakes in 2026.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../master-style.css">
-<link rel="stylesheet" href="../knowledge-hub.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Penalties & Late Fees Complete Guide 2026 | MyGSTIndia</title>
+  <meta name="description" content="Complete GST penalty guide. Late filing fees, interest, non-compliance penalties. Calculate GST penalties India 2026.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --navy: #1e293b; --blue: #3b82f6; --blue-dark: #2563eb; --orange: #f59e0b; --orange-dark: #d97706; --green: #10b981; --red: #ef4444; --gray-50: #f8fafc; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-600: #475569; --gray-700: #334155; --gray-900: #0f172a; }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-900); line-height: 1.7; background: var(--gray-50); padding-bottom: 80px; }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; line-height: 1.3; margin-bottom: 1rem; color: var(--navy); }
+    .navbar { background: white; border-bottom: 1px solid var(--gray-200); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
+    .logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, var(--orange), var(--orange-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; font-family: 'Poppins', sans-serif; }
+    .logo-text { color: var(--blue); }
+    .nav-links { display: none; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--gray-700); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .hamburger { width: 32px; height: 24px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; background: none; border: none; padding: 0; }
+    .hamburger span { display: block; width: 100%; height: 3px; background: var(--navy); border-radius: 2px; }
+    .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid var(--gray-200); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    @media (min-width: 768px) { .hamburger { display: none; } .nav-links { display: flex; } .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; } }
+    .breadcrumb { background: white; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); }
+    .breadcrumb-container { max-width: 800px; margin: 0 auto; padding: 0 1rem; font-size: 0.875rem; color: var(--gray-600); }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .article { max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-meta { display: flex; gap: 1rem; font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; flex-wrap: wrap; }
+    .article h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+    .article h2 { font-size: 1.75rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--blue); }
+    .article h3 { font-size: 1.375rem; margin-top: 2rem; }
+    .article p { margin-bottom: 1.25rem; }
+    .article ul, .article ol { margin: 1.25rem 0 1.25rem 1.5rem; }
+    .article li { margin-bottom: 0.75rem; }
+    .highlight-box { background: #eff6ff; border-left: 4px solid var(--blue); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .info-box { background: #fef3c7; border-left: 4px solid var(--orange); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .error-box { background: #fef2f2; border-left: 4px solid var(--red); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .cta-box { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 3rem 0; }
+    .cta-box h3 { color: white; margin-bottom: 1rem; }
+    .cta-box a { display: inline-block; background: white; color: var(--blue); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: transform 0.2s; }
+    .cta-box a:hover { transform: translateY(-2px); }
+    table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    th { background: var(--blue); color: white; padding: 1rem; text-align: left; font-weight: 600; }
+    td { padding: 1rem; border-bottom: 1px solid var(--gray-200); }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--gray-200); }
+    .related h3 { margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+    .related-card { background: white; border: 2px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; transition: all 0.2s; }
+    .related-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    .related-card h4 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+    .related-card p { font-size: 0.875rem; color: var(--gray-600); margin: 0; }
+    .footer { background: var(--navy); color: white; padding: 2rem 1rem; margin-top: 4rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .mobile-nav { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid var(--gray-200); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 90; }
+    .mobile-nav-btn { flex: 1; padding: 0.75rem; text-align: center; text-decoration: none; color: var(--gray-600); font-size: 0.75rem; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+    .mobile-nav-btn.active { color: var(--blue); }
+    .mobile-nav-icon { font-size: 1.5rem; }
+    @media (min-width: 768px) { .mobile-nav { display: none; } }
+  </style>
 </head>
 <body>
-<div class="reading-progress-bar"></div>
+
 <nav class="navbar">
-<div class="navbar-container">
-<a href="../index.html" class="nav-logo">
-<div class="logo-mark">G</div>
-<span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
-</a>
-<button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
-<ul class="nav-links">
-<li><a href="../index.html">Home</a></li>
-<li><a href="../index.html#tools">Tools</a></li>
-<li><a href="index.html" class="active">Blog</a></li>
-</ul>
-</div>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">Tools</a></li>
+      <li><a href="index.html">Blog</a></li>
+    </ul>
+  </div>
 </nav>
-<article class="blog-post">
-<div class="blog-container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+
 <div class="breadcrumb">
-<a href="../index.html">Home</a><span class="sep">›</span>
-<a href="index.html">Blog</a><span class="sep">›</span>
-<span>GST Penalties</span>
-</div>
-<header class="blog-header">
-<h1>GST Penalty Calculator Guide - Late Fees & Interest 2026</h1>
-<div class="blog-meta">
-<span>📅 Published: February 19, 2026</span>
-<span>⏱️ 9 min read</span>
-</div>
-</header>
-
-<div class="callout warning">
-<div class="callout-icon">⚠️</div>
-<div class="callout-content">
-<h4>Important Update</h4>
-<p>GST late fees were <strong>rationalized in June 2021</strong> to reduce burden on small businesses. Lower caps now apply based on your annual turnover. Read on to understand the new penalty structure.</p>
-</div>
-</div>
-
-<section>
-<h2 id="late-fee-structure">Late Fee Structure (Post-June 2021)</h2>
-<p>The government introduced <strong>turnover-based late fee caps</strong> to make GST compliance more affordable for MSMEs. Earlier, all businesses faced the same ₹10,000 cap regardless of size.</p>
-
-<h3>Current Late Fee Caps by Turnover</h3>
-<div class="table-responsive">
-<table>
-<thead>
-<tr>
-<th>Annual Turnover</th>
-<th>Maximum Late Fee per Return</th>
-<th>Daily Rate</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Nil Return</td>
-<td>₹500 (₹250 CGST + ₹250 SGST)</td>
-<td>₹50/day</td>
-</tr>
-<tr>
-<td>Less than ₹1.5 Crore</td>
-<td>₹2,000 maximum</td>
-<td>₹50/day (capped)</td>
-</tr>
-<tr>
-<td>₹1.5 Crore to ₹5 Crore</td>
-<td>₹5,000 maximum</td>
-<td>₹50/day (capped)</td>
-</tr>
-<tr>
-<td>Above ₹5 Crore</td>
-<td>₹10,000 maximum</td>
-<td>₹50/day (capped)</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<div class="callout success">
-<div class="callout-icon">💡</div>
-<div class="callout-content">
-<h4>Example</h4>
-<p><strong>Business with ₹80 lakh turnover:</strong> Files GSTR-3B 60 days late</p>
-<p>Calculation: 60 days × ₹50/day = ₹3,000</p>
-<p>But turnover < ₹1.5 Cr, so <strong>cap applies: Only ₹2,000 payable</strong></p>
-<p><strong>Savings: ₹1,000</strong> due to rationalized caps!</p>
-</div>
-</div>
-</section>
-
-<section>
-<h2 id="interest-calculation">Interest on Late Payment of Tax</h2>
-<p>Besides late fees for delayed filing, you also pay <strong>interest on unpaid tax</strong>. This is calculated separately.</p>
-
-<h3>Interest Rate</h3>
-<ul>
-<li><strong>Rate:</strong> 18% per annum</li>
-<li><strong>Calculated on:</strong> Tax amount (not on total invoice value)</li>
-<li><strong>From:</strong> Due date of payment</li>
-<li><strong>To:</strong> Actual date of payment</li>
-</ul>
-
-<h3>Interest Calculation Formula</h3>
-<div class="callout info">
-<div class="callout-icon">🧮</div>
-<div class="callout-content">
-<p><strong>Interest = (Tax Amount × 18% × Number of Days) ÷ 365</strong></p>
-<p><strong>Example:</strong> ₹1,00,000 tax paid 30 days late</p>
-<p>Interest = (₹1,00,000 × 18% × 30) ÷ 365 = <strong>₹1,479</strong></p>
-</div>
-</div>
-
-<p>Use our <a href="../penalty-calculator.html" style="color: var(--indigo-primary); font-weight: 600;">Penalty Calculator →</a> to get exact figures for your situation.</p>
-</section>
-
-<section>
-<h2 id="special-cases">Special Cases & Exceptions</h2>
-
-<h3>GSTR-1 Has No Interest</h3>
-<p>This is a common confusion point. <strong>GSTR-1 attracts late fees but NO interest</strong> because:</p>
-<ul>
-<li>GSTR-1 only reports sales (outward supplies)</li>
-<li>Actual tax payment happens through GSTR-3B</li>
-<li>Since no tax payment in GSTR-1, no interest applies</li>
-<li>You only pay late fees for delayed filing</li>
-</ul>
-
-<h3>GSTR-4 (Composition Dealers)</h3>
-<p>Composition scheme dealers have a <strong>fixed cap of ₹2,000</strong> for GSTR-4 late filing, regardless of turnover. This is because composition dealers are by definition small businesses (turnover < ₹1.5 Cr).</p>
-
-<h3>Section 50 - Interest Only on Cash Portion</h3>
-<p>If you've paid tax using both cash and Input Tax Credit (ITC):</p>
-<ul>
-<li>Interest calculated <strong>only on cash portion</strong></li>
-<li>No interest on ITC utilized portion</li>
-<li>Example: Tax liability ₹50,000 (₹30,000 cash + ₹20,000 ITC)</li>
-<li>Interest applies only on ₹30,000, not full ₹50,000</li>
-</ul>
-</section>
-
-<section>
-<h2 id="other-penalties">Other Common GST Penalties</h2>
-
-<h3>Wrong Invoice/No Invoice</h3>
-<ul>
-<li><strong>Not issuing invoice:</strong> 100% of tax amount as penalty</li>
-<li><strong>Wrong invoice details:</strong> ₹25,000 penalty</li>
-<li><strong>Fake invoicing:</strong> 100% of tax + prosecution</li>
-</ul>
-
-<h3>Late Registration</h3>
-<ul>
-<li><strong>Delay in registration:</strong> ₹10,000 or 10% of turnover (whichever is higher)</li>
-<li><strong>Operating without registration:</strong> Heavy penalties + prosecution possible</li>
-</ul>
-
-<h3>Tax Evasion</h3>
-<ul>
-<li><strong>Fraud/willful evasion:</strong> 100% of tax amount as penalty</li>
-<li><strong>Plus interest</strong> at 18% per annum</li>
-<li><strong>Prosecution possible</strong> for amounts > ₹5 Crore</li>
-</ul>
-</section>
-
-<section>
-<h2 id="how-to-avoid">How to Avoid Penalties</h2>
-
-<h3>File on Time - Every Time</h3>
-<ul>
-<li>Set calendar reminders <strong>3 days before</strong> due dates</li>
-<li>Use mobile apps for GST return due date alerts</li>
-<li>File even nil returns to avoid ₹500 penalty</li>
-</ul>
-
-<h3>Pay Tax Before Filing</h3>
-<ul>
-<li>Payment must be made before filing return</li>
-<li>Check cash ledger balance before filing</li>
-<li>If short on funds, pay at least partial to reduce interest</li>
-</ul>
-
-<h3>Use Our Penalty Calculator</h3>
-<ul>
-<li>Calculate exact late fees and interest</li>
-<li>Plan your compliance better</li>
-<li>Understand impact of delays</li>
-<li>Free to use, no signup needed</li>
-</ul>
-
-<h3>Voluntary Compliance</h3>
-<p>If you realize you've filed late or paid wrong tax:</p>
-<ul>
-<li>File immediately and pay penalty</li>
-<li>Voluntary payment shows good faith</li>
-<li>Reduces chances of higher scrutiny</li>
-<li>Avoids best-judgment assessments</li>
-</ul>
-</section>
-
-<section>
-<h2 id="recent-changes">Recent Changes (2024-2026)</h2>
-
-<h3>Amnesty Schemes</h3>
-<p>Government periodically announces amnesty schemes where late fees and interest are waived or reduced. Stay updated through:</p>
-<ul>
-<li>Official GST portal notifications</li>
-<li>Chartered accountant updates</li>
-<li>Our blog updates section</li>
-</ul>
-
-<h3>Rationalized Structure</h3>
-<p>The current turnover-based caps introduced in 2021 remain in effect. This represents an <strong>80% reduction</strong> for businesses under ₹1.5 Cr turnover (from ₹10,000 to ₹2,000).</p>
-</section>
-
-<section>
-<h2 id="faqs">Common Questions</h2>
-
-<h3>Q: Do I pay penalty even if there's no tax to pay?</h3>
-<p><strong>A:</strong> Yes, even for nil returns. Late fee is ₹50/day (₹25 CGST + ₹25 SGST) capped at ₹500 for nil returns.</p>
-
-<h3>Q: Can penalty be paid through ITC?</h3>
-<p><strong>A:</strong> No. Late fees and interest must be paid in cash only. ITC cannot be used.</p>
-
-<h3>Q: Is there penalty for late annual return (GSTR-9)?</h3>
-<p><strong>A:</strong> Yes, ₹200/day (₹100 CGST + ₹100 SGST) with no upper cap for GSTR-9 delays.</p>
-
-<h3>Q: How to check penalty amount on GST portal?</h3>
-<p><strong>A:</strong> Login → Returns → File Returns → Select return type → Portal shows exact late fee before filing.</p>
-</section>
-
-<div class="callout warning">
-<div class="callout-icon">💡</div>
-<div class="callout-content">
-<h4>Pro Tip</h4>
-<p>Set up your GST portal login on mobile. Most late filings happen because people forget deadlines. Mobile notifications help you stay on track and avoid penalties completely.</p>
-</div>
-</div>
-
-<div class="related-tools">
-<h3>Related Tools</h3>
-<div class="related-tools-grid">
-<a href="../penalty-calculator.html" class="related-tool-card">
-<h4>💸 Penalty Calculator</h4>
-<p>Calculate exact late fees and interest for your situation</p>
-<span class="arrow">Calculate →</span>
-</a>
-<a href="../gst-calculator.html" class="related-tool-card">
-<h4>🧮 GST Calculator</h4>
-<p>Calculate GST on invoices</p>
-<span class="arrow">Calculate →</span>
-</a>
-<a href="../itc-calculator.html" class="related-tool-card">
-<h4>💰 ITC Calculator</h4>
-<p>Calculate eligible ITC</p>
-<span class="arrow">Calculate →</span>
-</a>
-</div>
-</div>
-</div>
-</article>
-<footer class="footer">
-<div class="footer-grid">
-<div><h4>GST Compliance Pro</h4><p>India's free GST toolkit for MSMEs.</p></div>
-<div><h4>Tools</h4><ul>
-<li><a href="../gst-calculator.html">GST Calculator</a></li>
-<li><a href="../penalty-calculator.html">Penalty Calculator</a></li>
-<li><a href="../hsn-finder.html">HSN Finder</a></li>
-</ul></div>
-<div><h4>Resources</h4><ul>
-<li><a href="index.html">Blog</a></li>
-<li><a href="../disclaimer.html">Disclaimer</a></li>
-</ul></div>
-</div>
-<div class="footer-bottom">© 2026 GST Compliance Pro</div>
-</footer>
-<script src="../main.js"></script>
-
-<!-- MOBILE ACTION BAR -->
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn active" onclick="window.location.href='index.html'">
-      <span class="icon">📚</span>
-      <span>Blog</span>
-    </button>
+  <div class="breadcrumb-container">
+    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › Penalty Guide
   </div>
 </div>
 
-<script src="../main.js"></script>
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>📅 February 20, 2026</span>
+      <span>⏱️ 6 min read</span>
+      <span>📂 Compliance</span>
+    </div>
+    <h1>GST Penalties & Late Fees: Complete Guide 2026</h1>
+  </header>
+
+  <p>Understanding GST penalties helps you avoid costly mistakes. From late filing fees to interest on delayed tax payment, here's everything you need to know about GST penalties in 2026.</p>
+
+  <h2>Late Filing Penalties</h2>
+
+  <h3>GSTR-1 (Sales Return)</h3>
+  <table>
+    <tr>
+      <th>Turnover</th>
+      <th>Late Fee Per Day</th>
+      <th>Maximum Penalty</th>
+    </tr>
+    <tr>
+      <td>Above ₹1.5 Crore</td>
+      <td>₹100/day (₹50 CGST + ₹50 SGST)</td>
+      <td>₹10,000</td>
+    </tr>
+    <tr>
+      <td>Up to ₹1.5 Crore</td>
+      <td>₹50/day (₹25 CGST + ₹25 SGST)</td>
+      <td>₹10,000</td>
+    </tr>
+    <tr>
+      <td>Nil Return</td>
+      <td>₹20/day (₹10 CGST + ₹10 SGST)</td>
+      <td>₹500</td>
+    </tr>
+  </table>
+
+  <h3>GSTR-3B (Summary Return)</h3>
+  <table>
+    <tr>
+      <th>Turnover</th>
+      <th>Late Fee Per Day</th>
+      <th>Maximum Penalty</th>
+    </tr>
+    <tr>
+      <td>Above ₹1.5 Crore</td>
+      <td>₹50/day (₹25 CGST + ₹25 SGST)</td>
+      <td>₹5,000</td>
+    </tr>
+    <tr>
+      <td>Up to ₹1.5 Crore</td>
+      <td>₹20/day (₹10 CGST + ₹10 SGST)</td>
+      <td>₹2,000</td>
+    </tr>
+    <tr>
+      <td>Nil Return</td>
+      <td>₹20/day (₹10 CGST + ₹10 SGST)</td>
+      <td>₹500</td>
+    </tr>
+  </table>
+
+  <div class="error-box">
+    <h4>❌ Example: Late Filing Cost</h4>
+    <p><strong>Scenario:</strong> Turnover ₹2 Crore, filed GSTR-3B 15 days late</p>
+    <p><strong>Penalty:</strong> ₹50 × 15 days = ₹750</p>
+    <p><strong>Plus:</strong> 18% interest on unpaid tax for those 15 days</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Calculate Your Penalty</h3>
+    <p>Use our Penalty Calculator to estimate late filing fees and interest.</p>
+    <a href="../penalty-calculator.html">Calculate Penalty →</a>
+  </div>
+
+  <h2>Interest on Delayed Tax Payment</h2>
+
+  <p><strong>Rate:</strong> 18% per annum (calculated daily)</p>
+  <p><strong>Applies to:</strong> Any GST not paid by due date</p>
+
+  <h3>Interest Calculation</h3>
+  <p><strong>Formula:</strong> (Tax Amount × 18% × Number of Days) ÷ 365</p>
+
+  <div class="highlight-box">
+    <h4>📊 Example</h4>
+    <p>Tax due: ₹1,00,000</p>
+    <p>Delay: 30 days</p>
+    <p>Interest = (1,00,000 × 18% × 30) ÷ 365 = ₹1,479</p>
+  </div>
+
+  <h2>Non-Compliance Penalties (Section 122)</h2>
+
+  <table>
+    <tr>
+      <th>Offense</th>
+      <th>Penalty</th>
+    </tr>
+    <tr>
+      <td>Supply without invoice / incorrect invoice</td>
+      <td>10% of tax or ₹10,000 (whichever higher)</td>
+    </tr>
+    <tr>
+      <td>Tax evasion</td>
+      <td>100% of tax evaded or ₹10,000 (whichever higher)</td>
+    </tr>
+    <tr>
+      <td>Wrong ITC claim</td>
+      <td>100% of wrongly claimed ITC or ₹10,000 (whichever higher)</td>
+    </tr>
+    <tr>
+      <td>Not paying collected tax</td>
+      <td>10% of tax or ₹10,000 (whichever higher)</td>
+    </tr>
+    <tr>
+      <td>Transporting goods without e-way bill</td>
+      <td>100% of tax or ₹10,000 (whichever higher) + seizure</td>
+    </tr>
+    <tr>
+      <td>Obstruction during inspection</td>
+      <td>₹25,000</td>
+    </tr>
+  </table>
+
+  <h2>Registration Penalties</h2>
+
+  <table>
+    <tr>
+      <th>Violation</th>
+      <th>Penalty</th>
+    </tr>
+    <tr>
+      <td>Operating without registration (when required)</td>
+      <td>10% of tax or ₹10,000 (whichever higher)</td>
+    </tr>
+    <tr>
+      <td>Not canceling registration within 30 days of cessation</td>
+      <td>₹10,000</td>
+    </tr>
+  </table>
+
+  <h2>Document & Record Penalties</h2>
+
+  <table>
+    <tr>
+      <th>Violation</th>
+      <th>Penalty</th>
+    </tr>
+    <tr>
+      <td>Not maintaining books of accounts</td>
+      <td>₹25,000</td>
+    </tr>
+    <tr>
+      <td>Not issuing invoice</td>
+      <td>10% of tax or ₹10,000 (whichever higher)</td>
+    </tr>
+    <tr>
+      <td>Fake invoices</td>
+      <td>100% of tax + criminal prosecution</td>
+    </tr>
+  </table>
+
+  <h2>How to Pay Penalty</h2>
+
+  <ol>
+    <li>Login to GST Portal</li>
+    <li>Services → Payments → Create Challan</li>
+    <li>Select "Tax" for late filing fee</li>
+    <li>Select "Interest" for delayed tax interest</li>
+    <li>Select "Penalty" for other penalties</li>
+    <li>Generate challan and pay online</li>
+  </ol>
+
+  <h2>Penalty Waiver & Reduction</h2>
+
+  <h3>When Penalty Can Be Reduced</h3>
+  <ul>
+    <li><strong>Voluntary disclosure:</strong> Pay tax + interest before notice = 15% penalty (instead of 100%)</li>
+    <li><strong>After notice, before determination:</strong> 25% penalty (instead of 100%)</li>
+    <li><strong>After determination:</strong> 50% penalty (instead of 100%)</li>
+  </ul>
+
+  <h3>Amnesty Schemes</h3>
+  <p>Government occasionally announces amnesty schemes waiving late fees. Stay updated via GST portal notifications.</p>
+
+  <div class="info-box">
+    <h4>⚠️ Best Practice</h4>
+    <p>Set calendar reminders 5 days before return due dates. File even nil returns on time. Prevention is better than paying penalties!</p>
+  </div>
+
+  <h2>Criminal Prosecution</h2>
+
+  <p>Serious offenses can lead to imprisonment:</p>
+
+  <table>
+    <tr>
+      <th>Tax Amount</th>
+      <th>Punishment</th>
+    </tr>
+    <tr>
+      <td>₹1-5 Crore evasion</td>
+      <td>Up to 5 years + fine</td>
+    </tr>
+    <tr>
+      <td>> ₹5 Crore evasion</td>
+      <td>Up to 5 years + fine (compoundable)</td>
+    </tr>
+  </table>
+
+  <h2>How to Avoid Penalties</h2>
+
+  <ol>
+    <li><strong>File on time:</strong> Set reminders for 11th (GSTR-1) and 20th (GSTR-3B)</li>
+    <li><strong>Pay tax on time:</strong> Ensure sufficient cash/ITC balance before due date</li>
+    <li><strong>Maintain records:</strong> Keep all invoices, bills for 6 years</li>
+    <li><strong>Reconcile regularly:</strong> Match GSTR-2B with books monthly</li>
+    <li><strong>Verify invoices:</strong> Check customer GSTIN before issuing invoice</li>
+    <li><strong>Generate e-way bills:</strong> For all movements >₹50,000</li>
+    <li><strong>Respond to notices:</strong> Don't ignore GST department communications</li>
+  </ol>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Can I file return after paying penalty?</h3>
+  <p>Yes. Pay penalty first, then file return. Penalty is automatically calculated when you file late.</p>
+
+  <h3>Is there any time limit to pay penalty?</h3>
+  <p>Pay immediately after filing late return. Delaying penalty payment attracts further interest.</p>
+
+  <h3>Can penalty be paid using ITC?</h3>
+  <p>No. Penalty and late fees must be paid in CASH only. Cannot use ITC balance.</p>
+
+  <h3>What if I disagree with the penalty?</h3>
+  <p>File appeal before appellate authority within 3 months of penalty order. Deposit 10% of disputed penalty amount.</p>
+
+  <div class="related">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+      <a href="how-to-file-gst-return.html" class="related-card">
+        <h4>File GST Returns</h4>
+        <p>Complete guide</p>
+      </a>
+      <a href="common-gst-mistakes.html" class="related-card">
+        <h4>Common Mistakes</h4>
+        <p>Avoid these errors</p>
+      </a>
+      <a href="eway-bill-complete-guide.html" class="related-card">
+        <h4>E-Way Bill Rules</h4>
+        <p>Avoid transport penalties</p>
+      </a>
+      <a href="gst-registration-process.html" class="related-card">
+        <h4>GST Registration</h4>
+        <p>Get registered</p>
+      </a>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses</p>
+  </div>
+</footer>
+
+<div class="mobile-nav">
+  <a href="../index.html#tools" class="mobile-nav-btn"><div class="mobile-nav-icon">🧮</div><div>Tools</div></a>
+  <a href="../index.html" class="mobile-nav-btn"><div class="mobile-nav-icon">🔍</div><div>Search</div></a>
+  <a href="index.html" class="mobile-nav-btn active"><div class="mobile-nav-icon">📚</div><div>Blog</div></a>
+</div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
 </body>
 </html>
