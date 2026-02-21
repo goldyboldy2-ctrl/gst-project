@@ -1,453 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E-Invoicing Under GST 2026 - Complete Implementation Guide | GST Compliance Pro</title>
-<meta name="description" content="Complete e-invoicing guide 2026 - mandatory for ₹5 Cr+ turnover. Learn IRP registration, IRN generation, implementation steps, benefits.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../master-style.css">
-<link rel="stylesheet" href="../knowledge-hub.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Invoicing Under GST Complete Guide 2026 | MyGSTIndia</title>
+  <meta name="description" content="Complete e-invoicing guide. Learn applicability, IRP, IRN generation, format, compliance. E-invoice India 2026.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --navy: #1e293b; --blue: #3b82f6; --blue-dark: #2563eb; --orange: #f59e0b; --orange-dark: #d97706; --green: #10b981; --purple: #8b5cf6; --gray-50: #f8fafc; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-600: #475569; --gray-700: #334155; --gray-900: #0f172a; }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-900); line-height: 1.7; background: var(--gray-50); padding-bottom: 80px; }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; line-height: 1.3; margin-bottom: 1rem; color: var(--navy); }
+    .navbar { background: white; border-bottom: 1px solid var(--gray-200); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
+    .logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, var(--orange), var(--orange-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; font-family: 'Poppins', sans-serif; }
+    .logo-text { color: var(--blue); }
+    .nav-links { display: none; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--gray-700); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue); }
+    .hamburger { width: 32px; height: 24px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; background: none; border: none; padding: 0; }
+    .hamburger span { display: block; width: 100%; height: 3px; background: var(--navy); border-radius: 2px; }
+    .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid var(--gray-200); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    @media (min-width: 768px) { .hamburger { display: none; } .nav-links { display: flex; } .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; } }
+    .breadcrumb { background: white; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); }
+    .breadcrumb-container { max-width: 800px; margin: 0 auto; padding: 0 1rem; font-size: 0.875rem; color: var(--gray-600); }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .article { max-width: 800px; margin: 3rem auto; padding: 0 1rem; }
+    .article-header { margin-bottom: 2rem; }
+    .article-meta { display: flex; gap: 1rem; font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; flex-wrap: wrap; }
+    .article h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+    .article h2 { font-size: 1.75rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--blue); }
+    .article h3 { font-size: 1.375rem; margin-top: 2rem; }
+    .article p { margin-bottom: 1.25rem; }
+    .article ul, .article ol { margin: 1.25rem 0 1.25rem 1.5rem; }
+    .article li { margin-bottom: 0.75rem; }
+    .highlight-box { background: #eff6ff; border-left: 4px solid var(--blue); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .info-box { background: #fef3c7; border-left: 4px solid var(--orange); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .success-box { background: #d1fae5; border-left: 4px solid var(--green); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .cta-box { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 3rem 0; }
+    .cta-box h3 { color: white; margin-bottom: 1rem; }
+    .cta-box a { display: inline-block; background: white; color: var(--blue); padding: 0.875rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-top: 1rem; transition: transform 0.2s; }
+    .cta-box a:hover { transform: translateY(-2px); }
+    table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    th { background: var(--blue); color: white; padding: 1rem; text-align: left; font-weight: 600; }
+    td { padding: 1rem; border-bottom: 1px solid var(--gray-200); }
+    tr:last-child td { border-bottom: none; }
+    .related { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--gray-200); }
+    .related h3 { margin-bottom: 1.5rem; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+    .related-card { background: white; border: 2px solid var(--gray-200); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: inherit; transition: all 0.2s; }
+    .related-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    .related-card h4 { font-size: 1.125rem; margin-bottom: 0.5rem; }
+    .related-card p { font-size: 0.875rem; color: var(--gray-600); margin: 0; }
+    .footer { background: var(--navy); color: white; padding: 2rem 1rem; margin-top: 4rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .mobile-nav { display: flex; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid var(--gray-200); box-shadow: 0 -2px 10px rgba(0,0,0,0.1); z-index: 90; }
+    .mobile-nav-btn { flex: 1; padding: 0.75rem; text-align: center; text-decoration: none; color: var(--gray-600); font-size: 0.75rem; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+    .mobile-nav-btn.active { color: var(--blue); }
+    .mobile-nav-icon { font-size: 1.5rem; }
+    @media (min-width: 768px) { .mobile-nav { display: none; } }
+  </style>
 </head>
 <body>
-<div class="reading-progress-bar"></div>
+
 <nav class="navbar">
-<div class="navbar-container">
-<a href="../index.html" class="nav-logo">
-<div class="logo-mark">G</div>
-<span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
-</a>
-<button class="mobile-menu-toggle"><span></span><span></span><span></span></button>
-<ul class="nav-links">
-<li><a href="../index.html">Home</a></li>
-<li><a href="../index.html#tools">Tools</a></li>
-<li><a href="index.html" class="active">Blog</a></li>
-</ul>
-</div>
+  <div class="nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#tools">Tools</a></li>
+      <li><a href="index.html">Blog</a></li>
+    </ul>
+  </div>
 </nav>
-<article class="blog-post">
-<div class="blog-container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+
 <div class="breadcrumb">
-<a href="../index.html">Home</a><span class="sep">›</span>
-<a href="index.html">Blog</a><span class="sep">›</span>
-<span>E-Invoicing</span>
-</div>
-<header class="blog-header">
-<h1>E-Invoicing Under GST 2026 - Complete Implementation Guide</h1>
-<div class="blog-meta">
-<span>📅 Published: February 21, 2026</span>
-<span>⏱️ 12 min read</span>
-</div>
-</header>
-
-<div class="callout info">
-<div class="callout-icon">💡</div>
-<div class="callout-content">
-<h4>Quick Summary</h4>
-<p>E-Invoicing is <strong>mandatory for businesses with turnover > ₹5 Crore</strong>. It means reporting B2B invoices to Invoice Registration Portal (IRP) in real-time to get IRN (Invoice Reference Number). Major benefits: auto-populated GSTR-1, reduced errors, e-way bill integration.</p>
-</div>
-</div>
-
-<section>
-<h2 id="what-is-einvoicing">What is E-Invoicing?</h2>
-<p><strong>E-Invoicing</strong> (Electronic Invoicing) is a system where B2B invoices are electronically authenticated by GSTN for further use on the common GST portal.</p>
-
-<h3>How It's Different from Regular Invoicing</h3>
-<ul>
-<li><strong>Regular invoice:</strong> Generate → Give to customer → Manually enter in GSTR-1</li>
-<li><strong>E-Invoice:</strong> Generate → Upload to IRP → Get IRN → Auto-populated in GSTR-1</li>
-</ul>
-
-<p>The physical/PDF invoice still exists - e-invoicing just adds a reporting layer to government systems.</p>
-
-<h3>Key Components</h3>
-<ul>
-<li><strong>IRP (Invoice Registration Portal):</strong> Government portal for invoice reporting</li>
-<li><strong>IRN (Invoice Reference Number):</strong> Unique 64-character hash for each invoice</li>
-<li><strong>QR Code:</strong> Generated with invoice for easy verification</li>
-<li><strong>Digital Signature:</strong> IRP digitally signs your invoice</li>
-</ul>
-</section>
-
-<section>
-<h2 id="who-must-use">Who Must Use E-Invoicing?</h2>
-
-<h3>Current Threshold (2026)</h3>
-<p><strong>Mandatory</strong> for businesses with annual aggregate turnover > <strong>₹5 Crore</strong></p>
-
-<h3>Timeline of Implementation</h3>
-<div class="table-responsive">
-<table>
-<thead>
-<tr>
-<th>Date</th>
-<th>Turnover Threshold</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Oct 2020</td>
-<td>> ₹500 Cr</td>
-</tr>
-<tr>
-<td>Jan 2021</td>
-<td>> ₹100 Cr</td>
-</tr>
-<tr>
-<td>Apr 2021</td>
-<td>> ₹50 Cr</td>
-</tr>
-<tr>
-<td>Apr 2022</td>
-<td>> ₹20 Cr</td>
-</tr>
-<tr>
-<td>Oct 2022</td>
-<td>> ₹10 Cr</td>
-</tr>
-<tr>
-<td>Aug 2023</td>
-<td>> ₹5 Cr</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-<h3>Exemptions</h3>
-<p>E-Invoicing <strong>NOT required</strong> for:</p>
-<ul>
-<li>Special Economic Zone (SEZ) units</li>
-<li>Passenger transportation services</li>
-<li>Admission to exhibition/events</li>
-<li>Services by way of access to road/bridge on payment of toll</li>
-<li>Supplies to unregistered persons (B2C)</li>
-</ul>
-</section>
-
-<section>
-<h2 id="how-it-works">How E-Invoicing Works - Step by Step</h2>
-
-<h3>The Complete Flow</h3>
-
-<h4>Step 1: Generate Invoice in Your System</h4>
-<p>Create invoice in your accounting software/ERP with all mandatory fields (invoice number, date, GSTIN, items, HSN, value, etc.)</p>
-
-<h4>Step 2: Convert to JSON Format</h4>
-<p>Software converts invoice to standard JSON schema prescribed by GSTN. This ensures uniform format.</p>
-
-<h4>Step 3: Upload to IRP</h4>
-<p>JSON payload sent to IRP through:</p>
-<ul>
-<li>API integration (recommended for bulk)</li>
-<li>Direct portal upload (for low volume)</li>
-<li>GST Suvidha Provider (GSP)</li>
-</ul>
-
-<h4>Step 4: IRP Validates & Generates IRN</h4>
-<p>IRP checks:</p>
-<ul>
-<li>GSTIN validity</li>
-<li>Invoice number uniqueness</li>
-<li>Mandatory fields present</li>
-<li>Data format correctness</li>
-</ul>
-<p>If valid → Generates unique 64-character IRN</p>
-
-<h4>Step 5: Digital Signature & QR Code</h4>
-<p>IRP adds:</p>
-<ul>
-<li>Digital signature</li>
-<li>QR code (contains IRN, invoice details)</li>
-<li>Timestamp</li>
-</ul>
-
-<h4>Step 6: Receive Signed Invoice</h4>
-<p>IRP returns signed JSON with IRN and QR code<br>
-Your software embeds this in printable invoice</p>
-
-<h4>Step 7: Auto-Population</h4>
-<p>IRP automatically sends invoice data to:</p>
-<ul>
-<li>GST System (for GSTR-1 auto-population)</li>
-<li>E-Way Bill System (if applicable)</li>
-</ul>
-
-<div class="callout success">
-<div class="callout-icon">✅</div>
-<div class="callout-content">
-<h4>Key Benefit</h4>
-<p><strong>You generate invoice once → It flows to GSTR-1 and E-Way Bill automatically.</strong> No manual data entry, no reconciliation headaches!</p>
-</div>
-</div>
-</section>
-
-<section>
-<h2 id="implementation">How to Implement E-Invoicing</h2>
-
-<h3>Pre-Implementation Checklist</h3>
-
-<h4>1. Check Applicability</h4>
-<p>Is your turnover > ₹5 Cr? Check previous year's GSTR-9 Annual Return.</p>
-
-<h4>2. Register on IRP Portal</h4>
-<p>Visit <a href="https://einvoice1.gst.gov.in" target="_blank" rel="noopener">einvoice1.gst.gov.in</a><br>
-Login with GST credentials<br>
-Complete registration (one-time process)</p>
-
-<h4>3. Choose Implementation Method</h4>
-<p><strong>Option A:</strong> API Integration (for 50+ invoices/month)</p>
-<ul>
-<li>Get API credentials from IRP</li>
-<li>Integrate with your accounting software</li>
-<li>Test in sandbox environment</li>
-</ul>
-
-<p><strong>Option B:</strong> Direct Portal Upload (for < 50 invoices/month)</p>
-<ul>
-<li>Generate invoice in software</li>
-<li>Manually upload JSON to portal</li>
-<li>Download signed invoice</li>
-</ul>
-
-<p><strong>Option C:</strong> Through GSP</p>
-<ul>
-<li>Subscribe to GST Suvidha Provider</li>
-<li>They handle IRP integration</li>
-<li>Usually monthly fee-based</li>
-</ul>
-
-<h4>4. Update Invoice Template</h4>
-<p>Add space for:</p>
-<ul>
-<li>IRN (64-character alphanumeric)</li>
-<li>QR Code (usually bottom-left)</li>
-<li>Ack. No and Date</li>
-</ul>
-
-<h4>5. Train Your Team</h4>
-<ul>
-<li>Accounts team on generation process</li>
-<li>Sales team on what changed</li>
-<li>IT team on troubleshooting</li>
-</ul>
-</section>
-
-<section>
-<h2 id="benefits">Benefits of E-Invoicing</h2>
-
-<h3>For Your Business</h3>
-<ul>
-<li><strong>Reduced errors:</strong> Manual GSTR-1 entry eliminated</li>
-<li><strong>Time savings:</strong> No reconciliation between invoices and returns</li>
-<li><strong>Faster payments:</strong> Buyers can instantly verify invoice authenticity</li>
-<li><strong>E-way bill integration:</strong> Part-A auto-filled from invoice</li>
-<li><strong>Better cash flow:</strong> Quick invoice verification → faster approvals</li>
-</ul>
-
-<h3>For Government</h3>
-<ul>
-<li>Real-time invoice data</li>
-<li>Reduced tax evasion (fake invoicing harder)</li>
-<li>Better compliance tracking</li>
-<li>Automated data matching</li>
-</ul>
-
-<h3>For Your Customers</h3>
-<ul>
-<li>Instant invoice verification via QR code</li>
-<li>Confidence in genuine invoices</li>
-<li>Easy ITC claiming (invoice pre-verified)</li>
-</ul>
-</section>
-
-<section>
-<h2 id="common-challenges">Common Challenges & Solutions</h2>
-
-<h3>Challenge 1: IRN Generation Failed</h3>
-<p><strong>Common Reasons:</strong></p>
-<ul>
-<li>Duplicate invoice number</li>
-<li>Invalid GSTIN</li>
-<li>Missing mandatory fields</li>
-<li>Wrong date format</li>
-</ul>
-<p><strong>Solution:</strong> Check error message, correct the field, regenerate</p>
-
-<h3>Challenge 2: Invoice Already Generated But Customer Wants Change</h3>
-<p><strong>Problem:</strong> Can't modify invoice after IRN generated</p>
-<p><strong>Solution:</strong></p>
-<ul>
-<li>Cancel original e-invoice (within 24 hours)</li>
-<li>Issue credit note if beyond 24 hours</li>
-<li>Generate new invoice with corrections</li>
-</ul>
-
-<h3>Challenge 3: Offline During Invoice Generation</h3>
-<p><strong>Solution:</strong></p>
-<ul>
-<li>Generate invoice in your system</li>
-<li>Upload to IRP when back online</li>
-<li>IRN generation can be done retrospectively (same day)</li>
-</ul>
-
-<h3>Challenge 4: Bulk Upload Rejections</h3>
-<p><strong>Solution:</strong></p>
-<ul>
-<li>Use IRP-provided Excel tool for validation before upload</li>
-<li>Check JSON schema compliance</li>
-<li>Upload in smaller batches to identify error source</li>
-</ul>
-</section>
-
-<section>
-<h2 id="mandatory-fields">Mandatory Fields in E-Invoice</h2>
-
-<p>Your invoice JSON must include:</p>
-
-<h3>Supplier Information</h3>
-<ul>
-<li>Legal name, GSTIN, Address, State Code</li>
-</ul>
-
-<h3>Recipient Information</h3>
-<ul>
-<li>Legal name, GSTIN (for B2B), Address, State Code</li>
-</ul>
-
-<h3>Invoice Details</h3>
-<ul>
-<li>Invoice number (must be unique in FY)</li>
-<li>Invoice date</li>
-<li>Invoice type (Regular/Debit Note/Credit Note)</li>
-</ul>
-
-<h3>Item Details</h3>
-<ul>
-<li>Description</li>
-<li>HSN Code (6 or 8 digit)</li>
-<li>Quantity, Unit</li>
-<li>Rate, Taxable value</li>
-<li>GST Rate and amount</li>
-</ul>
-
-<h3>Value Information</h3>
-<ul>
-<li>Total taxable value</li>
-<li>Total tax (CGST/SGST/IGST)</li>
-<li>Total invoice value</li>
-</ul>
-</section>
-
-<section>
-<h2 id="penalties">Penalties for Non-Compliance</h2>
-
-<h3>Not Implementing When Mandatory</h3>
-<p>If you cross ₹5 Cr turnover threshold:</p>
-<ul>
-<li>Must implement from next month</li>
-<li>Failure to do so = invoices considered invalid</li>
-<li>Buyer can't claim ITC</li>
-<li>Penalty under Section 125: ₹10,000 or 100% of tax amount</li>
-</ul>
-
-<h3>Wrong Information</h3>
-<ul>
-<li>Mismatched GSTIN</li>
-<li>Wrong tax calculation</li>
-<li>Fake invoice with valid IRN</li>
-<li><strong>Penalty:</strong> Same as fake invoicing (100% + prosecution)</li>
-</ul>
-</section>
-
-<section>
-<h2 id="software-options">E-Invoicing Software Options</h2>
-
-<h3>Popular Options</h3>
-<ul>
-<li><strong>Tally ERP 9 / Tally Prime:</strong> Built-in e-invoicing from 2020</li>
-<li><strong>Zoho Books:</strong> Cloud-based with IRP integration</li>
-<li><strong>QuickBooks:</strong> Available in India version</li>
-<li><strong>Busy:</strong> Popular among small businesses</li>
-<li><strong>SAP, Oracle:</strong> For enterprises</li>
-</ul>
-
-<h3>What to Look For</h3>
-<ul>
-<li>Direct IRP API integration</li>
-<li>Bulk upload capability</li>
-<li>Error handling and retry logic</li>
-<li>QR code generation</li>
-<li>Cancellation support</li>
-<li>JSON download option</li>
-</ul>
-</section>
-
-<div class="callout warning">
-<div class="callout-icon">💡</div>
-<div class="callout-content">
-<h4>Pro Tip</h4>
-<p>Start e-invoicing preparation <strong>2 months before</strong> crossing ₹5 Cr turnover. This gives time for software setup, team training, and testing without last-minute rush.</p>
-</div>
-</div>
-
-<div class="related-tools">
-<h3>Related Tools</h3>
-<div class="related-tools-grid">
-<a href="../gst-calculator.html" class="related-tool-card">
-<h4>🧮 GST Calculator</h4>
-<p>Calculate invoice values correctly</p>
-<span class="arrow">Calculate →</span>
-</a>
-<a href="../itc-calculator.html" class="related-tool-card">
-<h4>💰 ITC Calculator</h4>
-<p>Calculate eligible ITC</p>
-<span class="arrow">Calculate →</span>
-</a>
-<a href="../hsn-finder.html" class="related-tool-card">
-<h4>🔍 HSN Finder</h4>
-<p>Find correct HSN codes</p>
-<span class="arrow">Search →</span>
-</a>
-</div>
-</div>
-</div>
-</article>
-<footer class="footer">
-<div class="footer-grid">
-<div><h4>GST Compliance Pro</h4><p>India's free GST toolkit for MSMEs.</p></div>
-<div><h4>Tools</h4><ul>
-<li><a href="../gst-calculator.html">GST Calculator</a></li>
-<li><a href="../hsn-finder.html">HSN Finder</a></li>
-</ul></div>
-<div><h4>Resources</h4><ul>
-<li><a href="index.html">Blog</a></li>
-<li><a href="../disclaimer.html">Disclaimer</a></li>
-</ul></div>
-</div>
-<div class="footer-bottom">© 2026 GST Compliance Pro</div>
-</footer>
-<script src="../main.js"></script>
-
-<!-- MOBILE ACTION BAR -->
-<div class="mobile-action-bar">
-  <div class="mobile-action-buttons">
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🧮</span>
-      <span>Tools</span>
-    </button>
-    <button class="mobile-action-btn" onclick="window.location.href='../index.html#tools'">
-      <span class="icon">🔍</span>
-      <span>Search</span>
-    </button>
-    <button class="mobile-action-btn active" onclick="window.location.href='index.html'">
-      <span class="icon">📚</span>
-      <span>Blog</span>
-    </button>
+  <div class="breadcrumb-container">
+    <a href="../index.html">Home</a> › <a href="index.html">Blog</a> › E-Invoicing Guide
   </div>
 </div>
 
-<script src="../main.js"></script>
+<article class="article">
+  <header class="article-header">
+    <div class="article-meta">
+      <span>📅 February 20, 2026</span>
+      <span>⏱️ 7 min read</span>
+      <span>📂 Compliance</span>
+    </div>
+    <h1>E-Invoicing Under GST: Complete Guide 2026</h1>
+  </header>
+
+  <p>E-Invoicing is mandatory for businesses above specified turnover. Understand what it is, who needs it, how to generate IRN, and compliance requirements.</p>
+
+  <h2>What is E-Invoicing?</h2>
+
+  <p>E-Invoicing is a system where B2B invoices are electronically authenticated by GSTN. Every invoice is uploaded to Invoice Registration Portal (IRP) which generates a unique Invoice Reference Number (IRN) and digitally signs it with QR code.</p>
+
+  <div class="highlight-box">
+    <h4>💡 Key Difference</h4>
+    <p><strong>Regular invoice:</strong> You create and send to buyer directly</p>
+    <p><strong>E-Invoice:</strong> You create → Upload to IRP → IRP validates & generates IRN → You send to buyer with IRN + QR code</p>
+  </div>
+
+  <h2>Who Must Use E-Invoicing?</h2>
+
+  <h3>Turnover-Based Applicability (2026)</h3>
+  <table>
+    <tr>
+      <th>Turnover</th>
+      <th>E-Invoicing Mandatory?</th>
+    </tr>
+    <tr>
+      <td>₹5 Crore and above</td>
+      <td>Yes (from April 2023)</td>
+    </tr>
+    <tr>
+      <td>Below ₹5 Crore</td>
+      <td>No (voluntary)</td>
+    </tr>
+  </table>
+
+  <h3>Exempted from E-Invoicing</h3>
+  <ul>
+    <li>SEZ units/developers</li>
+    <li>Insurance/Banking/Financial institutions (NBFC, GTA, passenger transport)</li>
+    <li>Multiplexes (cinema halls)</li>
+    <li>Composition taxpayers</li>
+  </ul>
+
+  <h2>When is E-Invoice Required?</h2>
+
+  <p><strong>Mandatory for:</strong></p>
+  <ul>
+    <li>B2B supplies (sales to registered persons)</li>
+    <li>Exports</li>
+    <li>Deemed exports</li>
+  </ul>
+
+  <p><strong>NOT required for:</strong></p>
+  <ul>
+    <li>B2C supplies (sales to unregistered/consumers)</li>
+    <li>Credit/debit notes (optional but recommended)</li>
+    <li>RCM invoices</li>
+  </ul>
+
+  <div class="info-box">
+    <h4>⚠️ Important</h4>
+    <p>Even if you're required to do e-invoicing, you still need to issue physical/PDF invoice to buyer. E-invoicing is IN ADDITION to regular invoice, not a replacement.</p>
+  </div>
+
+  <h2>E-Invoice Components</h2>
+
+  <h3>IRN (Invoice Reference Number)</h3>
+  <ul>
+    <li>64-character alphanumeric hash</li>
+    <li>Unique for each invoice</li>
+    <li>Generated by IRP</li>
+    <li>Cannot be changed once generated</li>
+  </ul>
+
+  <h3>QR Code</h3>
+  <ul>
+    <li>Contains invoice summary</li>
+    <li>Generated by IRP along with IRN</li>
+    <li>Must be printed on invoice</li>
+    <li>Enables buyer verification</li>
+  </ul>
+
+  <h3>Digitally Signed JSON</h3>
+  <ul>
+    <li>Complete invoice in JSON format</li>
+    <li>Digitally signed by IRP</li>
+    <li>Tamper-proof</li>
+  </ul>
+
+  <h2>How to Generate E-Invoice</h2>
+
+  <h3>Step 1: Create Invoice in Your System</h3>
+  <p>Generate invoice with all mandatory details as usual</p>
+
+  <h3>Step 2: Prepare JSON/Upload to IRP</h3>
+  <p><strong>Two methods:</strong></p>
+  <ol>
+    <li><strong>API Integration:</strong> Your software directly uploads JSON to IRP</li>
+    <li><strong>Manual Upload:</strong> Login to e-invoice portal, upload JSON/enter details</li>
+  </ol>
+
+  <h3>Step 3: IRP Validates & Generates IRN</h3>
+  <p>IRP checks for errors, validates, generates IRN + QR code + digitally signed JSON</p>
+
+  <h3>Step 4: Download & Send to Buyer</h3>
+  <p>Download IRN, QR code, attach to invoice, send to buyer</p>
+
+  <div class="success-box">
+    <h4>✓ Auto-Populated Benefits</h4>
+    <p>Once e-invoice generated:</p>
+    <ul>
+      <li>Auto-populates buyer's GSTR-2B</li>
+      <li>Auto-generates Part A of e-Way Bill (if applicable)</li>
+      <li>Data flows to your GSTR-1 (you just need to review)</li>
+    </ul>
+  </div>
+
+  <h2>Mandatory Fields in E-Invoice</h2>
+
+  <table>
+    <tr>
+      <th>Section</th>
+      <th>Mandatory Fields</th>
+    </tr>
+    <tr>
+      <td>Supplier Details</td>
+      <td>GSTIN, Name, Address, State, PIN</td>
+    </tr>
+    <tr>
+      <td>Buyer Details</td>
+      <td>GSTIN (if B2B), Name, Address, State, PIN</td>
+    </tr>
+    <tr>
+      <td>Invoice Details</td>
+      <td>Invoice No., Date, Type (INV/DBN/CRN)</td>
+    </tr>
+    <tr>
+      <td>Item Details</td>
+      <td>Description, HSN, Quantity, Rate, Taxable Value, GST Rate</td>
+    </tr>
+    <tr>
+      <td>Value Details</td>
+      <td>Taxable Value, CGST, SGST/IGST, Total Invoice Value</td>
+    </tr>
+  </table>
+
+  <h2>E-Invoice Schema</h2>
+
+  <p>Government provides standard JSON schema (currently version 1.1). Must follow exactly:</p>
+  <ul>
+    <li>Specific field names</li>
+    <li>Data types (text, number, date format)</li>
+    <li>Validations (GSTIN format, PIN code, etc.)</li>
+  </ul>
+
+  <div class="cta-box">
+    <h3>Generate GST-Compliant Invoices</h3>
+    <p>Use our Invoice Generator tool to create properly formatted invoices.</p>
+    <a href="../invoice-generator.html">Create Invoice →</a>
+  </div>
+
+  <h2>E-Invoice Cancellation</h2>
+
+  <p><strong>Time limit:</strong> Can cancel within 24 hours of IRN generation</p>
+  <p><strong>Reason required:</strong> Must provide cancellation reason</p>
+  <p><strong>Cannot reuse IRN:</strong> Once cancelled, that IRN is dead. Generate fresh for new invoice.</p>
+
+  <h3>Cancellation Reasons</h3>
+  <ul>
+    <li>Duplicate generation</li>
+    <li>Data entry error</li>
+    <li>Order cancelled</li>
+    <li>Others</li>
+  </ul>
+
+  <h2>IRP Portal Options</h2>
+
+  <p>Multiple IRPs authorized by GSTN (any one can be used):</p>
+  <ul>
+    <li>IRP by NIC (einvoice1.gst.gov.in)</li>
+    <li>IRP by IRIS (einvoice2.gst.gov.in)</li>
+    <li>IRP by ClearTax (einvoice3.gst.gov.in)</li>
+  </ul>
+
+  <p><strong>All IRPs are equivalent.</strong> Choose based on:  availability, API ease, support</p>
+
+  <h2>E-Invoice with E-Way Bill</h2>
+
+  <p>If goods movement >₹50,000:</p>
+  <ol>
+    <li>Generate e-invoice → Get IRN</li>
+    <li>E-Way Bill Part A auto-populated from e-invoice</li>
+    <li>Just add Part B (vehicle number) on e-Way Bill portal</li>
+    <li>E-Way Bill generated</li>
+  </ol>
+
+  <p><strong>Benefit:</strong> No duplicate data entry!</p>
+
+  <h2>Common Errors & Solutions</h2>
+
+  <table>
+    <tr>
+      <th>Error</th>
+      <th>Solution</th>
+    </tr>
+    <tr>
+      <td>Duplicate IRN</td>
+      <td>Same invoice number already used. Change invoice number or date.</td>
+    </tr>
+    <tr>
+      <td>Invalid GSTIN</td>
+      <td>Buyer GSTIN wrong/inactive. Verify on GST portal.</td>
+    </tr>
+    <tr>
+      <td>Invalid PIN code</td>
+      <td>PIN doesn't match state. Correct PIN or state.</td>
+    </tr>
+    <tr>
+      <td>JSON schema error</td>
+      <td>Field name/format wrong. Use official schema/validator.</td>
+    </tr>
+  </table>
+
+  <h2>Penalties for Non-Compliance</h2>
+
+  <ul>
+    <li><strong>Not generating e-invoice:</strong> Invoice considered invalid for ITC</li>
+    <li><strong>Buyer impact:</strong> Cannot claim ITC if no IRN on invoice</li>
+    <li><strong>Other penalties:</strong> As per Section 122 (₹10,000 or 10% of tax)</li>
+  </ul>
+
+  <h2>Benefits of E-Invoicing</h2>
+
+  <div class="success-box">
+    <h4>✓ Advantages</h4>
+    <ul>
+      <li><strong>Auto-population:</strong> Data flows to GSTR-1, GSTR-2B automatically</li>
+      <li><strong>Reduced errors:</strong> Real-time validation catches mistakes</li>
+      <li><strong>Faster ITC:</strong> Buyer gets invoice in GSTR-2B immediately</li>
+      <li><strong>E-Way Bill integration:</strong> Part A auto-filled</li>
+      <li><strong>Less reconciliation:</strong> Both parties have same authenticated data</li>
+      <li><strong>Reduced fraud:</strong> Tamper-proof invoices</li>
+    </ul>
+  </div>
+
+  <h2>E-Invoice Implementation Checklist</h2>
+
+  <ol>
+    <li>Verify if applicable (turnover >₹5 Cr)</li>
+    <li>Register on e-invoice portal</li>
+    <li>Choose IRP (NIC/IRIS/ClearTax)</li>
+    <li>Integrate accounting software (API) OR use manual upload</li>
+    <li>Test with sample invoices</li>
+    <li>Train team on IRN generation</li>
+    <li>Update invoice template to include QR code space</li>
+    <li>Communicate to buyers (they'll see IRN on invoice)</li>
+  </ol>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Can I generate e-invoice manually without software?</h3>
+  <p>Yes. Login to e-invoice portal, use "Generate E-Invoice" option, enter details manually. Suitable for low volume.</p>
+
+  <h3>Do I need separate software for e-invoicing?</h3>
+  <p>Not necessarily. Most accounting software (Tally, Zoho, etc.) have built-in e-invoice integration. Or use IRP portal directly.</p>
+
+  <h3>What if IRP is down?</h3>
+  <p>Use alternate IRP (there are 3). If all down (rare), government usually extends deadlines.</p>
+
+  <h3>Can I edit e-invoice after generating IRN?</h3>
+  <p>No. Cancel within 24 hours and regenerate. After 24 hours, issue credit/debit note for corrections.</p>
+
+  <div class="related">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+      <a href="eway-bill-complete-guide.html" class="related-card">
+        <h4>E-Way Bill Rules</h4>
+        <p>Transport compliance</p>
+      </a>
+      <a href="how-to-file-gst-return.html" class="related-card">
+        <h4>File GST Returns</h4>
+        <p>Complete guide</p>
+      </a>
+      <a href="common-gst-mistakes.html" class="related-card">
+        <h4>Common Mistakes</h4>
+        <p>Avoid errors</p>
+      </a>
+      <a href="hsn-code-complete-guide.html" class="related-card">
+        <h4>HSN Code Guide</h4>
+        <p>Find HSN codes</p>
+      </a>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses</p>
+  </div>
+</footer>
+
+<div class="mobile-nav">
+  <a href="../index.html#tools" class="mobile-nav-btn"><div class="mobile-nav-icon">🧮</div><div>Tools</div></a>
+  <a href="../index.html" class="mobile-nav-btn"><div class="mobile-nav-icon">🔍</div><div>Search</div></a>
+  <a href="index.html" class="mobile-nav-btn active"><div class="mobile-nav-icon">📚</div><div>Blog</div></a>
+</div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
 </body>
 </html>
