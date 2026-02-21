@@ -1,494 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service - GST Compliance Pro</title>
-  <meta name="description" content="Terms of Service for using GST Compliance Pro tools and services.">
-  <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="master-style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <title>Terms of Service - MyGSTIndia</title>
+  <meta name="description" content="Terms of Service for MyGSTIndia. Rules and guidelines for using our free GST tools and calculators.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #1e293b; --blue: #3b82f6; --orange: #f59e0b; --orange-dark: #d97706;
+      --gray-50: #f8fafc; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-600: #475569;
+      --gray-700: #334155; --gray-900: #0f172a;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-900); line-height: 1.7; background: var(--gray-50); }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.3; color: var(--navy); }
+    .navbar { background: white; border-bottom: 1px solid var(--gray-200); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
+    .logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, var(--orange), var(--orange-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; }
+    .logo-text { color: var(--blue); }
+    .nav-links { display: none; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--gray-700); font-weight: 500; }
+    .nav-links a:hover { color: var(--blue); }
+    .hamburger { width: 32px; height: 24px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; background: none; border: none; }
+    .hamburger span { display: block; width: 100%; height: 3px; background: var(--navy); border-radius: 2px; }
+    .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid var(--gray-200); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    @media (min-width: 768px) { .hamburger { display: none; } .nav-links { display: flex; } .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; } }
+    .breadcrumb { background: white; padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); }
+    .breadcrumb-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; font-size: 0.875rem; color: var(--gray-600); }
+    .breadcrumb a { color: var(--blue); text-decoration: none; }
+    .content { max-width: 900px; margin: 3rem auto; padding: 0 1rem 6rem; }
+    .legal-header { text-align: center; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 2px solid var(--gray-200); }
+    .legal-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .last-updated { color: var(--gray-600); font-size: 0.9rem; }
+    .section { margin-bottom: 2.5rem; }
+    .section h2 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--navy); }
+    .section p, .section li { margin-bottom: 0.75rem; color: var(--gray-700); }
+    .section ul { margin-left: 1.5rem; margin-top: 0.75rem; }
+    .footer { background: var(--navy); color: white; padding: 3rem 1rem 2rem; margin-top: 4rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .footer-section h3 { color: white; margin-bottom: 1rem; font-size: 1.1rem; }
+    .footer-section ul { list-style: none; }
+    .footer-section ul li { margin-bottom: 0.5rem; }
+    .footer-section a { color: #cbd5e1; text-decoration: none; }
+    .footer-section a:hover { color: white; }
+    .footer-bottom { text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 0.9rem; }
+  </style>
 </head>
 <body>
-    <div class="container tool-card-wrapper" style="padding: 4rem 1.5rem;">
-        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 3rem; border-radius: var(--radius-2xl); border: 2px solid var(--gray-200); box-shadow: var(--shadow-lg);">
-            
 
-<!-- USE NEW NAVBAR HERE -->
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <em>Compliance Pro</em></span>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
-    <div class="nav-cta">
-      <a href="registration-checker.html" class="btn-primary-small">Check Registration</a>
-    </div>
   </div>
 </nav>
 
-<div class="container legal-page">
-  <div class="breadcrumb">
-    <a href="index.html">Home</a> › <span>Terms of Service</span>
-  </div>
-
-  <h1>📜 Terms of Service</h1>
-  <p class="last-updated">Last Updated: February 11, 2026</p>
-
-  <div class="legal-content">
-    
-    <div class="acceptance-notice">
-      <strong>⚠️ By using this website, you agree to these terms.</strong>
-      If you do not agree, please do not use our services.
-    </div>
-
-    <section>
-      <h2>1. Acceptance of Terms</h2>
-      <p>
-        Welcome to GST Compliance Pro ("we", "us", "our"). By accessing or using our 
-        website at <a href="https://mygstindia.in">mygstindia.in</a> (the "Site"), 
-        you agree to be bound by these Terms of Service ("Terms").
-      </p>
-      <p>
-        We reserve the right to modify these Terms at any time. Your continued use 
-        after changes constitutes acceptance of the modified Terms.
-      </p>
-    </section>
-
-    <section>
-      <h2>2. Description of Service</h2>
-      <p>GST Compliance Pro provides:</p>
-      <ul>
-        <li>Free GST calculators and tools</li>
-        <li>HSN code database and finder</li>
-        <li>Educational content about GST regulations</li>
-        <li>Information resources for businesses</li>
-      </ul>
-      <p>
-        All services are provided <strong>"as is"</strong> for general informational 
-        purposes only.
-      </p>
-    </section>
-
-    <section>
-      <h2>3. User Eligibility</h2>
-      <p>You must:</p>
-      <ul>
-        <li>Be at least 18 years old</li>
-        <li>Have legal capacity to enter into contracts</li>
-        <li>Comply with all applicable laws</li>
-        <li>Use the Site for lawful purposes only</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>4. Prohibited Uses</h2>
-      <p>You agree NOT to:</p>
-      <ul>
-        <li>❌ Use automated tools to scrape or copy our content</li>
-        <li>❌ Reproduce, redistribute, or sell our database or tools</li>
-        <li>❌ Remove copyright notices or attributions</li>
-        <li>❌ Use our tools for illegal purposes</li>
-        <li>❌ Attempt to hack, disrupt, or overload our servers</li>
-        <li>❌ Impersonate us or misrepresent affiliation</li>
-        <li>❌ Submit false or misleading information</li>
-        <li>❌ Use our content without proper attribution</li>
-      </ul>
-      <p>
-        <strong>Violation may result in:</strong> Access termination, legal action, 
-        and reporting to authorities.
-      </p>
-    </section>
-
-    <section>
-      <h2>5. Intellectual Property Rights</h2>
-      
-      <div class="warning-box">
-        <p>
-          <strong>© 2024-2026 GST Compliance Pro. All Rights Reserved.</strong>
-        </p>
-        <p>
-          All content, including but not limited to:
-        </p>
-        <ul>
-          <li>Website design and layout</li>
-          <li>Calculators and tools (code, logic, formulas)</li>
-          <li>HSN code database (21,000+ entries)</li>
-          <li>Blog posts and articles</li>
-          <li>Images, graphics, and logos</li>
-          <li>Text, data, and documentation</li>
-        </ul>
-        <p>
-          ...is protected by <strong>Indian Copyright Act, 1957</strong> and 
-          international copyright laws.
-        </p>
-      </div>
-
-      <h3>5.1 What You CAN Do:</h3>
-      <ul>
-        <li>✅ Use our tools for personal or business purposes</li>
-        <li>✅ Share links to our website</li>
-        <li>✅ Quote small portions with proper attribution</li>
-      </ul>
-
-      <h3>5.2 What You CANNOT Do:</h3>
-      <ul>
-        <li>❌ Copy our database or tools to your website</li>
-        <li>❌ Republish our content without permission</li>
-        <li>❌ Create derivative works</li>
-        <li>❌ Remove copyright notices</li>
-      </ul>
-
-      <p>
-        <strong>For licensing inquiries:</strong> 
-        <a href="mailto:legal@mygstindia.in">legal@mygstindia.in</a>
-      </p>
-    </section>
-
-    <section>
-      <h2>6. Disclaimer of Warranties</h2>
-      
-      <div class="warning-box red">
-        <p><strong>⚠️ CRITICAL DISCLAIMER:</strong></p>
-        <p>
-          Our services are provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> 
-          without any warranties of any kind, either express or implied, including but not limited to:
-        </p>
-        <ul>
-          <li>Warranties of merchantability</li>
-          <li>Fitness for a particular purpose</li>
-          <li>Non-infringement</li>
-          <li>Accuracy or completeness</li>
-          <li>Reliability or timeliness</li>
-        </ul>
-        <p>
-          We make NO WARRANTY that:
-        </p>
-        <ul>
-          <li>❌ Our tools will meet your requirements</li>
-          <li>❌ Calculations will be error-free or accurate</li>
-          <li>❌ The Site will be uninterrupted or secure</li>
-          <li>❌ Information is current or up-to-date</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>7. Not Professional Advice</h2>
-      
-      <div class="info-box orange">
-        <p><strong>🚨 IMPORTANT:</strong></p>
-        <p>
-          GST Compliance Pro is <strong>NOT</strong>:
-        </p>
-        <ul>
-          <li>❌ A Chartered Accountant (CA) firm</li>
-          <li>❌ A law firm</li>
-          <li>❌ A tax consultancy</li>
-          <li>❌ A financial advisor</li>
-          <li>❌ A substitute for professional services</li>
-        </ul>
-        <p>
-          Our content is for <strong>general informational purposes only</strong> and 
-          does not constitute professional tax, legal, or financial advice.
-        </p>
-        <p>
-          <strong>You MUST:</strong>
-        </p>
-        <ul>
-          <li>✅ Verify all information with official sources</li>
-          <li>✅ Consult a qualified Chartered Accountant</li>
-          <li>✅ Not rely solely on our tools for compliance</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>8. Limitation of Liability</h2>
-      
-      <p>
-        <strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</strong>
-      </p>
-      
-      <div class="warning-box red">
-        <p>
-          GST Compliance Pro, its owners, employees, and contributors shall 
-          <strong>NOT BE LIABLE</strong> for any:
-        </p>
-        <ul>
-          <li>Direct, indirect, incidental, or consequential damages</li>
-          <li>Loss of profits, revenue, or data</li>
-          <li>Tax penalties or interest charges</li>
-          <li>Legal fees or compliance costs</li>
-          <li>Business interruption</li>
-          <li>Financial losses of any kind</li>
-        </ul>
-        <p>
-          ...arising from:
-        </p>
-        <ul>
-          <li>Use or inability to use our services</li>
-          <li>Errors or inaccuracies in our content</li>
-          <li>Reliance on our tools or information</li>
-          <li>Decisions made based on our content</li>
-        </ul>
-        <p>
-          <strong>Even if we have been advised of the possibility of such damages.</strong>
-        </p>
-      </div>
-
-      <p>
-        Some jurisdictions do not allow limitation of liability, so this may not 
-        apply to you.
-      </p>
-    </section>
-
-    <section>
-      <h2>9. Indemnification</h2>
-      <p>
-        You agree to indemnify and hold harmless GST Compliance Pro from any claims, 
-        damages, losses, liabilities, costs, or expenses (including legal fees) arising from:
-      </p>
-      <ul>
-        <li>Your use of our services</li>
-        <li>Your violation of these Terms</li>
-        <li>Your violation of any laws or third-party rights</li>
-        <li>Content you submit or post</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>10. Third-Party Links</h2>
-      <p>
-        Our Site may contain links to external websites (e.g., GST portal, government sites). 
-        We have no control over and assume no responsibility for:
-      </p>
-      <ul>
-        <li>Content on third-party sites</li>
-        <li>Privacy practices of third parties</li>
-        <li>Accuracy of external information</li>
-      </ul>
-      <p>Clicking external links is at your own risk.</p>
-    </section>
-
-    <section>
-      <h2>11. User-Submitted Content</h2>
-      <p>If you submit comments, feedback, or suggestions:</p>
-      <ul>
-        <li>You grant us a non-exclusive, royalty-free license to use it</li>
-        <li>You represent that you own the content</li>
-        <li>You agree not to submit illegal, abusive, or offensive content</li>
-        <li>We reserve the right to remove any content</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>12. Modifications to Service</h2>
-      <p>We reserve the right to:</p>
-      <ul>
-        <li>Modify or discontinue services at any time</li>
-        <li>Change features or functionality</li>
-        <li>Update content and tools</li>
-        <li>Impose usage limits</li>
-      </ul>
-      <p>We are not liable for any modifications, suspensions, or discontinuations.</p>
-    </section>
-
-    <section>
-      <h2>13. Termination</h2>
-      <p>We may terminate or suspend your access immediately, without notice, for:</p>
-      <ul>
-        <li>Violation of these Terms</li>
-        <li>Illegal or harmful activity</li>
-        <li>Any reason at our sole discretion</li>
-      </ul>
-      <p>Upon termination, your right to use the Site ceases immediately.</p>
-    </section>
-
-    <section>
-      <h2>14. Governing Law</h2>
-      <p>
-        These Terms are governed by the laws of <strong>India</strong>, without regard 
-        to conflict of law provisions.
-      </p>
-      <p>
-        Any disputes shall be subject to the exclusive jurisdiction of courts in 
-        <strong>[Your City]</strong>, India.
-      </p>
-    </section>
-
-    <section>
-      <h2>15. Dispute Resolution</h2>
-      <p>
-        Before filing any legal claim, you agree to attempt informal resolution by 
-        contacting us at: <a href="mailto:legal@mygstindia.in">legal@mygstindia.in</a>
-      </p>
-    </section>
-
-    <section>
-      <h2>16. Severability</h2>
-      <p>
-        If any provision of these Terms is found unenforceable, the remaining provisions 
-        remain in full force and effect.
-      </p>
-    </section>
-
-    <section>
-      <h2>17. Entire Agreement</h2>
-      <p>
-        These Terms, along with our Privacy Policy and Disclaimer, constitute the 
-        entire agreement between you and GST Compliance Pro.
-      </p>
-    </section>
-
-    <section>
-      <h2>18. Contact Information</h2>
-      <p>For questions about these Terms:</p>
-      <p>
-        <strong>Email:</strong> <a href="mailto:legal@mygstindia.in">legal@mygstindia.in</a><br>
-        <strong>Website:</strong> <a href="https://mygstindia.in">mygstindia.in</a>
-      </p>
-    </section>
-
-    <div class="final-notice">
-      <h3>⚠️ Final Notice</h3>
-      <p>
-        By using GST Compliance Pro, you acknowledge that you have read, understood, 
-        and agree to be bound by these Terms of Service and all referenced policies.
-      </p>
-      <p>
-        <strong>Last Updated:</strong> February 11, 2026
-      </p>
-    </div>
-
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> › Terms of Service
   </div>
 </div>
 
-<!-- USE FOOTER WITH COPYRIGHT -->
+<div class="content">
+  <div class="legal-header">
+    <h1>📜 Terms of Service</h1>
+    <p class="last-updated">Last Updated: February 21, 2026</p>
+  </div>
 
-<style>
-.legal-page {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 24px;
-}
+  <div class="section">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing and using MyGSTIndia ("Website", "Service"), you accept and agree to be bound by these Terms of Service. If you do not agree, please do not use our Website.</p>
+  </div>
 
-.last-updated {
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  margin-bottom: 32px;
-}
+  <div class="section">
+    <h2>2. Description of Service</h2>
+    <p>MyGSTIndia provides:</p>
+    <ul>
+      <li>Free online GST calculators and tools</li>
+      <li>Educational content about GST in India</li>
+      <li>HSN code database</li>
+      <li>Blog articles and guides</li>
+    </ul>
+    <p>All services are provided free of charge and without registration.</p>
+  </div>
 
-.acceptance-notice {
-  background: #FEF3C7;
-  border: 2px solid #F59E0B;
-  border-left: 6px solid #D97706;
-  padding: 16px 20px;
-  border-radius: 8px;
-  margin-bottom: 32px;
-  color: #92400E;
-  font-size: 1rem;
-}
+  <div class="section">
+    <h2>3. User Responsibilities</h2>
+    <p>By using our Website, you agree to:</p>
+    <ul>
+      <li>Use the Website only for lawful purposes</li>
+      <li>Not use the Website for any illegal or unauthorized purpose</li>
+      <li>Verify all calculations independently</li>
+      <li>Consult qualified professionals for tax decisions</li>
+      <li>Not attempt to hack, disrupt, or damage the Website</li>
+      <li>Not scrape, copy, or republish our content without permission</li>
+    </ul>
+  </div>
 
-.legal-content section {
-  margin-bottom: 40px;
-}
+  <div class="section">
+    <h2>4. Intellectual Property</h2>
+    <p>All content on this Website, including but not limited to:</p>
+    <ul>
+      <li>Text, graphics, logos, and design</li>
+      <li>Calculator algorithms and code</li>
+      <li>HSN database compilation</li>
+      <li>Blog articles and guides</li>
+    </ul>
+    <p>...is protected by Indian Copyright Act, 1957 and international copyright laws. Unauthorized use is prohibited.</p>
+    <h3>Permitted Use:</h3>
+    <ul>
+      <li>Personal, non-commercial use of tools</li>
+      <li>Sharing links to our Website</li>
+      <li>Brief quotations with proper attribution</li>
+    </ul>
+    <h3>Prohibited:</h3>
+    <ul>
+      <li>Copying entire tools or calculators</li>
+      <li>Republishing content without written permission</li>
+      <li>Creating derivative works</li>
+    </ul>
+  </div>
 
-.legal-content h2 {
-  color: var(--navy-900);
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--gray-200);
-}
+  <div class="section">
+    <h2>5. No Warranties</h2>
+    <p>The Website is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either express or implied, including but not limited to:</p>
+    <ul>
+      <li>Accuracy or reliability of information</li>
+      <li>Fitness for a particular purpose</li>
+      <li>Uninterrupted or error-free operation</li>
+      <li>Security of data transmission</li>
+    </ul>
+  </div>
 
-.legal-content h3 {
-  color: var(--navy-800);
-  margin: 24px 0 12px;
-  font-size: 1.125rem;
-}
+  <div class="section">
+    <h2>6. Limitation of Liability</h2>
+    <p>MyGSTIndia shall not be liable for:</p>
+    <ul>
+      <li>Any financial losses from using our tools</li>
+      <li>Tax penalties or interest charges</li>
+      <li>Errors or omissions in content</li>
+      <li>Website downtime or technical issues</li>
+      <li>Decisions made based on our information</li>
+      <li>Any indirect, consequential, or incidental damages</li>
+    </ul>
+    <p>Maximum liability, if any, shall not exceed ₹0 (zero), as all services are free.</p>
+  </div>
 
-.legal-content p {
-  margin-bottom: 16px;
-  line-height: 1.7;
-}
+  <div class="section">
+    <h2>7. External Links</h2>
+    <p>Our Website may contain links to third-party websites (like official GST portal). We are not responsible for the content, privacy practices, or availability of external sites.</p>
+  </div>
 
-.legal-content ul,
-.legal-content ol {
-  margin: 16px 0 16px 24px;
-  line-height: 1.8;
-}
+  <div class="section">
+    <h2>8. User Content</h2>
+    <p>Currently, we do not allow user-generated content (comments, uploads, etc.). If we add such features in the future:</p>
+    <ul>
+      <li>You retain ownership of your content</li>
+      <li>You grant us license to display and distribute it</li>
+      <li>You are responsible for your content</li>
+      <li>We may remove content at our discretion</li>
+    </ul>
+  </div>
 
-.legal-content li {
-  margin-bottom: 8px;
-}
+  <div class="section">
+    <h2>9. Modifications to Service</h2>
+    <p>We reserve the right to:</p>
+    <ul>
+      <li>Modify or discontinue any feature at any time</li>
+      <li>Change these Terms of Service</li>
+      <li>Update calculators and tools</li>
+      <li>Remove or add content</li>
+    </ul>
+    <p>Changes are effective immediately upon posting. Continued use constitutes acceptance.</p>
+  </div>
 
-.warning-box {
-  background: #FEF2F2;
-  border: 2px solid #EF4444;
-  border-left: 6px solid #DC2626;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px 0;
-}
+  <div class="section">
+    <h2>10. Termination</h2>
+    <p>We may terminate or suspend access to our Service immediately, without notice, for any reason, including breach of Terms.</p>
+    <p>You may stop using the Website at any time.</p>
+  </div>
 
-.warning-box p {
-  color: #991B1B;
-  margin-bottom: 12px;
-}
+  <div class="section">
+    <h2>11. Governing Law</h2>
+    <p>These Terms shall be governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in India.</p>
+  </div>
 
-.warning-box strong {
-  color: #7F1D1D;
-}
+  <div class="section">
+    <h2>12. Indemnification</h2>
+    <p>You agree to indemnify and hold MyGSTIndia harmless from any claims, damages, or expenses arising from:</p>
+    <ul>
+      <li>Your use of the Website</li>
+      <li>Your violation of these Terms</li>
+      <li>Your violation of any rights of another party</li>
+    </ul>
+  </div>
 
-.warning-box.red {
-  background: #FEF2F2;
-  border-color: #DC2626;
-}
+  <div class="section">
+    <h2>13. Severability</h2>
+    <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect.</p>
+  </div>
 
-.info-box {
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px 0;
-  border-left: 6px solid;
-}
+  <div class="section">
+    <h2>14. Contact Information</h2>
+    <p>For questions about these Terms of Service:</p>
+    <p><strong>Email:</strong> <a href="mailto:mygstconnect@gmail.com">mygstconnect@gmail.com</a></p>
+  </div>
 
-.info-box.orange {
-  background: #FFF7ED;
-  border-color: #F97316;
-  color: #9A3412;
-}
+  <div class="section">
+    <h2>15. Entire Agreement</h2>
+    <p>These Terms, along with our Privacy Policy and Disclaimer, constitute the entire agreement between you and MyGSTIndia regarding use of the Website.</p>
+  </div>
+</div>
 
-.final-notice {
-  background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
-  border: 2px solid #3B82F6;
-  border-radius: 12px;
-  padding: 24px;
-  margin-top: 40px;
-}
-
-.final-notice h3 {
-  color: #1E40AF;
-  margin-bottom: 16px;
-}
-
-.final-notice p {
-  color: #1E3A8A;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-</style>
-
-
-        </div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>MyGSTIndia</h3>
+      <p>India's most trusted free GST toolkit for MSMEs, freelancers, and small businesses.</p>
     </div>
-    <footer class="footer"></footer>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="dmca.html">DMCA</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <ul>
+        <li>📧 mygstconnect@gmail.com</li>
+        <li>📱 Support (9 AM - 6 PM IST)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><strong>© 2024-2026 MyGSTIndia. All Rights Reserved.</strong></p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+  }
+});
+</script>
+
 </body>
 </html>
