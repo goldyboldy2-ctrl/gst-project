@@ -1,493 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Legal Disclaimer - GST Compliance Pro</title>
-  <meta name="description" content="Legal disclaimer for GST Compliance Pro. Important information about using our GST tools and calculators.">
-  <meta name="robots" content="index, follow">
-  <link rel="stylesheet" href="master-style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+  <title>Legal Disclaimer - MyGSTIndia</title>
+  <meta name="description" content="Legal disclaimer for MyGSTIndia. General information only. Not professional tax advice. Consult qualified CA before making decisions.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      background: var(--gray-50);
+    }
+    
+    h1, h2, h3 { 
+      font-family: 'Poppins', sans-serif; 
+      line-height: 1.3;
+      color: var(--navy);
+    }
+    
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+    
+    .logo-text { color: var(--blue); }
+    
+    .nav-links {
+      display: none;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover { color: var(--blue); }
+    
+    .hamburger {
+      width: 32px;
+      height: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 2px;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    @media (min-width: 768px) {
+      .hamburger { display: none; }
+      .nav-links { display: flex; }
+      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
+    }
+    
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .breadcrumb-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    
+    .content {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem 6rem;
+    }
+    
+    .legal-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    
+    .legal-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .last-updated {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+    
+    .section {
+      margin-bottom: 2.5rem;
+    }
+    
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+    
+    .section p, .section li {
+      margin-bottom: 0.75rem;
+      color: var(--gray-700);
+    }
+    
+    .section ul {
+      margin-left: 1.5rem;
+      margin-top: 0.75rem;
+    }
+    
+    .warning-box {
+      background: #fef3c7;
+      border-left: 4px solid var(--orange);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .warning-box strong {
+      color: var(--orange-dark);
+      font-size: 1.1rem;
+    }
+    
+    .agreement-box {
+      background: #eff6ff;
+      border: 2px solid var(--blue);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 12px;
+    }
+    
+    .agreement-box h3 {
+      color: var(--blue);
+      margin-bottom: 1rem;
+    }
+    
+    .agreement-box ul {
+      list-style: none;
+      margin-left: 0;
+    }
+    
+    .agreement-box li {
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    
+    .agreement-box li:before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+    }
+    
+    .footer {
+      background: var(--navy);
+      color: white;
+      padding: 3rem 1rem 2rem;
+      margin-top: 4rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer-section h3 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+    
+    .footer-section a:hover {
+      color: white;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container tool-card-wrapper" style="padding: 4rem 1.5rem;">
-        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 3rem; border-radius: var(--radius-2xl); border: 2px solid var(--gray-200); box-shadow: var(--shadow-lg);">
-            
 
-<!-- NAVBAR -->
 <nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <em>Compliance Pro</em></span>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
     </a>
-    
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+    <button class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
     </button>
-    
-    <ul class="nav-links">
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
-    
-    <div class="nav-cta">
-      <a href="registration-checker.html" class="btn-primary-small">Check Registration</a>
-    </div>
   </div>
 </nav>
 
-<div class="container legal-page">
-  <div class="breadcrumb">
-    <a href="index.html">Home</a> › <span>Disclaimer</span>
-  </div>
-
-  <h1>⚖️ Legal Disclaimer</h1>
-  <p class="last-updated">Last Updated: February 11, 2026</p>
-
-  <div class="legal-content">
-    
-    <section>
-      <h2>1. General Information Only</h2>
-      <p>
-        GST Compliance Pro ("we", "us", "our") provides this website and its content, 
-        including but not limited to calculators, tools, articles, and databases 
-        <strong>for general informational purposes only</strong>.
-      </p>
-      <p>
-        Nothing on this website constitutes:
-      </p>
-      <ul>
-        <li>Professional tax advice</li>
-        <li>Legal advice</li>
-        <li>Financial advice</li>
-        <li>Accounting services</li>
-        <li>Consultation services</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>2. Not Tax Advisors</h2>
-      <div class="warning-box">
-        <p>
-          <strong>⚠️ IMPORTANT:</strong> We are <strong>NOT</strong> Chartered Accountants, 
-          tax consultants, or licensed professionals. We do not provide personalized tax advice.
-        </p>
-      </div>
-      <p>
-        All information is provided "as is" without any representations or warranties, 
-        express or implied.
-      </p>
-    </section>
-
-    <section>
-      <h2>3. Verify Before Acting</h2>
-      <p>
-        <strong>You must ALWAYS:</strong>
-      </p>
-      <ol>
-        <li>Verify all information with the 
-            <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a></li>
-        <li>Consult a qualified Chartered Accountant (CA) before making any tax-related decisions</li>
-        <li>Review latest GST notifications and circulars</li>
-        <li>Check applicability to your specific situation</li>
-      </ol>
-      <p>
-        Reliance on any information from this website is strictly at your own risk.
-      </p>
-    </section>
-
-    <section>
-      <h2>4. Information May Be Outdated</h2>
-      <p>
-        GST laws, rates, rules, and regulations change frequently. While we strive to keep 
-        information current, we make <strong>no guarantee</strong> that:
-      </p>
-      <ul>
-        <li>Information is up-to-date</li>
-        <li>Information is accurate</li>
-        <li>Information is complete</li>
-        <li>Information is applicable to your situation</li>
-      </ul>
-      <p>
-        We are not responsible for any errors, omissions, or outdated content.
-      </p>
-    </section>
-
-    <section>
-      <h2>5. Calculator & Tool Limitations</h2>
-      <p>
-        Our calculators and tools:
-      </p>
-      <ul>
-        <li>Provide <strong>estimates only</strong></li>
-        <li>Are based on formulas from publicly available information</li>
-        <li>May not account for all variables in your specific situation</li>
-        <li>Should NOT be used as the sole basis for tax filing or payments</li>
-      </ul>
-      <p>
-        <strong>Always verify calculations with official sources or your CA.</strong>
-      </p>
-    </section>
-
-    <section>
-      <h2>6. No Liability</h2>
-      <div class="warning-box">
-        <p>
-          <strong>LIMITATION OF LIABILITY:</strong> To the fullest extent permitted by law, 
-          GST Compliance Pro shall not be liable for:
-        </p>
-        <ul>
-          <li>Any financial loss arising from use of this website</li>
-          <li>Tax penalties or interest charges</li>
-          <li>Legal consequences of relying on our information</li>
-          <li>Errors or omissions in content</li>
-          <li>Decisions made based on our tools or articles</li>
-          <li>Any direct, indirect, incidental, or consequential damages</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>7. External Links</h2>
-      <p>
-        This website may contain links to external websites. We have no control over, 
-        and assume no responsibility for, the content, privacy policies, or practices 
-        of any third-party sites.
-      </p>
-    </section>
-
-    <section>
-      <h2>8. User Responsibility</h2>
-      <p>
-        By using this website, you acknowledge and agree that:
-      </p>
-      <ul>
-        <li>You are solely responsible for your tax compliance</li>
-        <li>You will verify all information independently</li>
-        <li>You will consult qualified professionals before taking action</li>
-        <li>You use this website at your own risk</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>9. No Professional Relationship</h2>
-      <p>
-        Use of this website does not create any professional relationship, including 
-        attorney-client, accountant-client, or consultant-client relationship.
-      </p>
-    </section>
-
-    <section>
-      <h2>10. Changes to Disclaimer</h2>
-      <p>
-        We reserve the right to modify this disclaimer at any time. Changes will be 
-        effective immediately upon posting. Your continued use of the website constitutes 
-        acceptance of the updated disclaimer.
-      </p>
-    </section>
-
-    <section>
-      <h2>11. Governing Law</h2>
-      <p>
-        This disclaimer is governed by the laws of India. Any disputes shall be subject 
-        to the exclusive jurisdiction of courts in India.
-      </p>
-    </section>
-
-    <section>
-      <h2>12. Contact for Corrections</h2>
-      <p>
-        If you find any errors or outdated information, please report them to:
-      </p>
-      <p>
-        <strong>Email:</strong> <a href="mailto:contact@mygstindia.in">contact@mygstindia.in</a>
-      </p>
-      <p>
-        We appreciate your feedback and will review all submissions, though we cannot 
-        guarantee immediate updates.
-      </p>
-    </section>
-
-    <div class="acceptance-box">
-      <h3>⚠️ By Using This Website, You Agree:</h3>
-      <ul>
-        <li>✅ You have read and understood this disclaimer</li>
-        <li>✅ You will not rely solely on this website for tax decisions</li>
-        <li>✅ You will consult qualified professionals</li>
-        <li>✅ You accept all risks associated with using this website</li>
-        <li>✅ You will not hold us liable for any consequences</li>
-      </ul>
-    </div>
-
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a> › Disclaimer
   </div>
 </div>
 
-<!-- FOOTER -->
+<div class="content">
+  <div class="legal-header">
+    <h1>⚖️ Legal Disclaimer</h1>
+    <p class="last-updated">Last Updated: February 21, 2026</p>
+  </div>
 
-        </div>
+  <div class="section">
+    <h2>1. General Information Only</h2>
+    <p>MyGSTIndia ("we", "us", "our") provides this website and its content, including but not limited to calculators, tools, articles, and databases <strong>for general informational purposes only</strong>.</p>
+    <p>Nothing on this website constitutes:</p>
+    <ul>
+      <li>Professional tax advice</li>
+      <li>Legal advice</li>
+      <li>Financial advice</li>
+      <li>Accounting services</li>
+      <li>Consultation services</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>2. Not Tax Advisors</h2>
+    <div class="warning-box">
+      <strong>⚠️ IMPORTANT:</strong> We are <strong>NOT</strong> Chartered Accountants, tax consultants, or licensed professionals. We do not provide personalized tax advice.
     </div>
-    <footer class="footer">
+    <p>All information is provided "as is" without any representations or warranties, express or implied.</p>
+  </div>
+
+  <div class="section">
+    <h2>3. Verify Before Acting</h2>
+    <p><strong>You must ALWAYS:</strong></p>
+    <ol>
+      <li>Verify all information with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a></li>
+      <li>Consult a qualified Chartered Accountant (CA) before making any tax-related decisions</li>
+      <li>Review latest GST notifications and circulars</li>
+      <li>Check applicability to your specific situation</li>
+    </ol>
+    <p>Reliance on any information from this website is strictly at your own risk.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. Information May Be Outdated</h2>
+    <p>GST laws, rates, rules, and regulations change frequently. While we strive to keep information current, we make <strong>no guarantee</strong> that:</p>
+    <ul>
+      <li>Information is up-to-date</li>
+      <li>Information is accurate</li>
+      <li>Information is complete</li>
+      <li>Information is applicable to your situation</li>
+    </ul>
+    <p>We are not responsible for any errors, omissions, or outdated content.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. Calculator & Tool Limitations</h2>
+    <p>Our calculators and tools:</p>
+    <ul>
+      <li>Provide <strong>estimates only</strong></li>
+      <li>Are based on formulas from publicly available information</li>
+      <li>May not account for all variables in your specific situation</li>
+      <li>Should NOT be used as the sole basis for tax filing or payments</li>
+    </ul>
+    <p><strong>Always verify calculations with official sources or your CA.</strong></p>
+  </div>
+
+  <div class="section">
+    <h2>6. No Liability</h2>
+    <p><strong>LIMITATION OF LIABILITY:</strong> To the fullest extent permitted by law, MyGSTIndia shall not be liable for:</p>
+    <ul>
+      <li>Any financial loss arising from use of this website</li>
+      <li>Tax penalties or interest charges</li>
+      <li>Legal consequences of relying on our information</li>
+      <li>Errors or omissions in content</li>
+      <li>Decisions made based on our tools or articles</li>
+      <li>Any direct, indirect, incidental, or consequential damages</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. External Links</h2>
+    <p>This website may contain links to external websites. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party sites.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. User Responsibility</h2>
+    <p>By using this website, you acknowledge and agree that:</p>
+    <ul>
+      <li>You are solely responsible for your tax compliance</li>
+      <li>You will verify all information independently</li>
+      <li>You will consult qualified professionals before taking action</li>
+      <li>You use this website at your own risk</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>9. No Professional Relationship</h2>
+    <p>Use of this website does not create any professional relationship, including attorney-client, accountant-client, or consultant-client relationship.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. Changes to Disclaimer</h2>
+    <p>We reserve the right to modify this disclaimer at any time. Changes will be effective immediately upon posting. Your continued use of the website constitutes acceptance of the updated disclaimer.</p>
+  </div>
+
+  <div class="section">
+    <h2>11. Governing Law</h2>
+    <p>This disclaimer is governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in India.</p>
+  </div>
+
+  <div class="section">
+    <h2>12. Contact for Corrections</h2>
+    <p>If you find any errors or outdated information, please report them to:</p>
+    <p><strong>Email:</strong> <a href="mailto:mygstconnect@gmail.com">mygstconnect@gmail.com</a></p>
+    <p>We appreciate your feedback and will review all submissions, though we cannot guarantee immediate updates.</p>
+  </div>
+
+  <div class="agreement-box">
+    <h3>⚠️ By Using This Website, You Agree:</h3>
+    <ul>
+      <li>You have read and understood this disclaimer</li>
+      <li>You will not rely solely on this website for tax decisions</li>
+      <li>You will consult qualified professionals</li>
+      <li>You accept all risks associated with using this website</li>
+      <li>You will not hold us liable for any consequences</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="footer">
   <div class="footer-container">
-    <div class="footer-grid">
-      <!-- Company Info -->
-      <div class="footer-section">
-        <div class="footer-logo">
-          <div class="logo-mark">G</div>
-          <span>GST Compliance Pro</span>
-        </div>
-        <p>India's most trusted free GST toolkit for MSMEs, freelancers, and small businesses.</p>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#tools">Tools</a></li>
-          <li><a href="blog/index.html">Blog</a></li>
-        </ul>
-      </div>
-
-      <!-- Legal -->
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-          <li><a href="terms-of-service.html">Terms of Service</a></li>
-          <li><a href="disclaimer.html">Disclaimer</a></li>
-          <li><a href="dmca.html">DMCA</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <ul>
-          <li>📧 contact@mygstindia.in</li>
-          <li>📱 Support (9 AM - 6 PM IST)</li>
-        </ul>
-      </div>
+    <div class="footer-section">
+      <h3>MyGSTIndia</h3>
+      <p>India's most trusted free GST toolkit for MSMEs, freelancers, and small businesses.</p>
     </div>
-
-    <!-- COPYRIGHT NOTICE -->
-    <div class="footer-bottom">
-      <div class="copyright">
-        <p>
-          <strong>© 2024-2026 GST Compliance Pro. All Rights Reserved.</strong>
-        </p>
-        <p class="copyright-details">
-          All content, tools, calculators, guides, HSN database, and materials on this website are 
-          <strong>protected by Indian Copyright Act, 1957</strong> and international copyright laws. 
-          Unauthorized reproduction, distribution, or use of any content without written permission is 
-          <strong>strictly prohibited</strong> and may result in legal action.
-        </p>
-      </div>
+    
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+      </ul>
     </div>
+    
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+        <li><a href="dmca.html">DMCA</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <ul>
+        <li>📧 mygstconnect@gmail.com</li>
+        <li>📱 Support (9 AM - 6 PM IST)</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p><strong>© 2024-2026 MyGSTIndia. All Rights Reserved.</strong></p>
+    <p>All content, tools, calculators, guides, HSN database, and materials on this website are protected by Indian Copyright Act, 1957 and international copyright laws. Unauthorized reproduction, distribution, or use of any content without written permission is strictly prohibited and may result in legal action.</p>
   </div>
 </footer>
 
-<style>
-.legal-page {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 24px;
-}
+<script>
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('navLinks').classList.toggle('active');
+});
 
-.breadcrumb {
-  margin-bottom: 24px;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-}
-
-.breadcrumb a {
-  color: var(--blue-600);
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-
-.last-updated {
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  margin-bottom: 32px;
-}
-
-.legal-content section {
-  margin-bottom: 40px;
-}
-
-.legal-content h2 {
-  color: var(--navy-900);
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--gray-200);
-}
-
-.legal-content p {
-  margin-bottom: 16px;
-  line-height: 1.7;
-}
-
-.legal-content ul,
-.legal-content ol {
-  margin: 16px 0 16px 24px;
-  line-height: 1.8;
-}
-
-.legal-content li {
-  margin-bottom: 8px;
-}
-
-.warning-box {
-  background: #FEF2F2;
-  border: 2px solid #EF4444;
-  border-left: 6px solid #DC2626;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.warning-box p {
-  color: #991B1B;
-  margin-bottom: 12px;
-}
-
-.warning-box strong {
-  color: #7F1D1D;
-}
-
-.warning-box ul {
-  color: #991B1B;
-}
-
-.acceptance-box {
-  background: linear-gradient(135deg, #DBEAFE, #BFDBFE);
-  border: 2px solid #3B82F6;
-  border-radius: 12px;
-  padding: 24px;
-  margin-top: 40px;
-}
-
-.acceptance-box h3 {
-  color: #1E40AF;
-  margin-bottom: 16px;
-}
-
-.acceptance-box ul {
-  margin-left: 0;
-  list-style: none;
-}
-
-.acceptance-box li {
-  margin-bottom: 12px;
-  color: #1E3A8A;
-  font-weight: 500;
-}
-
-/* Footer Styles */
-.footer {
-  background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
-  color: white;
-  padding: 60px 24px 24px;
-  margin-top: 80px;
-}
-
-.footer-container {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.footer-logo .logo-mark {
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 1.125rem;
-  color: var(--navy-900);
-}
-
-.footer-section h4 {
-  color: var(--gold-400);
-  margin-bottom: 16px;
-  font-size: 1rem;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
-}
-
-.footer-section ul li a {
-  color: rgba(255,255,255,0.8);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.footer-section ul li a:hover {
-  color: var(--gold-400);
-}
-
-.footer-section p {
-  color: rgba(255,255,255,0.7);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 32px;
-  margin-top: 32px;
-}
-
-.copyright p {
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-.copyright strong {
-  color: var(--gold-400);
-}
-
-.copyright-details {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.7);
-}
-
-@media (max-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+document.addEventListener('click', function(e) {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
   }
-}
-</style>
+});
+</script>
 
 </body>
 </html>
