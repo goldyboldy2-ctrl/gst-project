@@ -2,6 +2,7 @@
 // Authentication Service for MyGSTIndia
 // Handles all auth operations with Firebase
 
+import { firebaseConfig } from './auth-config.js';
 class AuthService {
   constructor() {
     this.user = null;
