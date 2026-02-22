@@ -9,15 +9,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VVBKGDPYBE');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -34,14 +35,6 @@
       --gray-700: #334155;
       --gray-900: #0f172a;
     }
-    <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-
-<!-- Auth System -->
-<script src="auth-config.js"></script>
-<script src="auth-service.js"></script>
     
     body {
       font-family: 'Inter', sans-serif;
@@ -117,6 +110,81 @@
     }
     
     .nav-links a:hover { color: var(--blue); }
+    
+    /* User Menu - NEW */
+    .user-menu {
+      position: relative;
+      display: none;
+    }
+    
+    .user-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    
+    .user-btn:hover { background: var(--gray-100); }
+    
+    .user-photo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+    
+    .user-name {
+      font-weight: 600;
+      color: var(--gray-700);
+      font-size: 0.9rem;
+    }
+    
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      margin-top: 0.5rem;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      min-width: 180px;
+      display: none;
+    }
+    
+    .dropdown.active { display: block; }
+    
+    .dropdown a {
+      display: block;
+      padding: 0.75rem 1rem;
+      color: var(--gray-700);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    
+    .dropdown a:hover { background: var(--gray-50); }
+    
+    /* Login Button - NEW */
+    .login-btn {
+      background: white;
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.9rem;
+    }
+    
+    .login-btn:hover {
+      background: var(--blue);
+      color: white;
+    }
     
     .hamburger {
       width: 32px;
@@ -299,8 +367,8 @@
     }
     
     .stat:nth-child(1) .stat-number { color: var(--blue); }
-    .stat:nth-child(2) .stat-number { color: #10b981; } /* Green */
-    .stat:nth-child(3) .stat-number { color: var(--amber-dark); } /* Amber */
+    .stat:nth-child(2) .stat-number { color: #10b981; }
+    .stat:nth-child(3) .stat-number { color: var(--amber-dark); }
     
     .stat-label {
       font-size: 0.875rem;
@@ -349,7 +417,7 @@
     
     .category-btn:nth-child(1).active { background: var(--blue); border-color: var(--blue); }
     .category-btn:nth-child(2):hover, .category-btn:nth-child(2).active { background: #10b981; border-color: #10b981; }
-    .category-btn:nth-child(3):hover, .category-btn:nth-child(3).active { background: #8b5cf6; border-color: #8b5cf6; } /* Purple */
+    .category-btn:nth-child(3):hover, .category-btn:nth-child(3).active { background: #8b5cf6; border-color: #8b5cf6; }
     .category-btn:nth-child(4):hover, .category-btn:nth-child(4).active { background: var(--amber-dark); border-color: var(--amber-dark); }
     .category-btn:nth-child(5):hover, .category-btn:nth-child(5).active { background: #10b981; border-color: #10b981; }
     
@@ -385,8 +453,8 @@
     }
     
     .tool-card:nth-child(3n+1):hover { border-color: var(--blue); }
-    .tool-card:nth-child(3n+2):hover { border-color: #10b981; } /* Green */
-    .tool-card:nth-child(3n+3):hover { border-color: var(--amber); } /* Amber */
+    .tool-card:nth-child(3n+2):hover { border-color: #10b981; }
+    .tool-card:nth-child(3n+3):hover { border-color: var(--amber); }
     
     .tool-icon {
       font-size: 2.5rem;
@@ -526,6 +594,24 @@
       <li><a href="#tools">Tools</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
+    
+    <!-- User Menu (Logged In) - Hidden by default -->
+    <div class="user-menu" id="userMenu">
+      <button class="user-btn" onclick="toggleUserDropdown()">
+        <img src="" alt="User" class="user-photo" id="userPhoto">
+        <span class="user-name" id="userName">User</span>
+        <span>▾</span>
+      </button>
+      <div class="dropdown" id="userDropdown">
+        <a href="preferences.html">⚙️ Preferences</a>
+        <a href="#" onclick="signOut();return false;">🚪 Sign Out</a>
+      </div>
+    </div>
+    
+    <!-- Login Button (Guest) - Shown by default -->
+    <button class="login-btn" id="loginBtn" onclick="signIn()">
+      🎁 Sign In
+    </button>
   </div>
 </nav>
 
@@ -742,6 +828,15 @@
   </a>
 </div>
 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Auth System -->
+<script src="auth-config.js"></script>
+<script src="auth-service.js"></script>
+
 <!-- JAVASCRIPT -->
 <script>
 // Hamburger menu
@@ -757,6 +852,35 @@ document.addEventListener('click', function(e) {
     nav.classList.remove('active');
   }
 });
+
+// User dropdown
+function toggleUserDropdown() {
+  document.getElementById('userDropdown').classList.toggle('active');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const userMenu = document.getElementById('userMenu');
+  const dropdown = document.getElementById('userDropdown');
+  if (userMenu && !userMenu.contains(e.target)) {
+    dropdown.classList.remove('active');
+  }
+});
+
+// Auth functions
+async function signIn() {
+  if (typeof authService !== 'undefined') {
+    await authService.signInWithGoogle();
+  } else {
+    alert('Loading authentication... Please try again in a moment.');
+  }
+}
+
+async function signOut() {
+  if (typeof authService !== 'undefined') {
+    await authService.signOut();
+  }
+}
 
 // Search data
 const searchData = [
