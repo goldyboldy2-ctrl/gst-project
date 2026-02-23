@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete GST Rates List 2026 - All Items with HSN Codes | MyGSTIndia</title>
+  <meta name="description" content="Complete searchable GST rates list for 2026. Find GST rate for any item. 21,000+ products with HSN codes. 0%, 5%, 12%, 18%, 28% tax slabs covered.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #1e293b; --blue: #3b82f6; --green: #10b981; --amber: #f59e0b;
+      --gray-50: #f8fafc; --gray-100: #f1f5f9; --gray-200: #e2e8f0;
+      --gray-600: #475569; --gray-700: #334155; --gray-900: #0f172a;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-900); line-height: 1.6; background: var(--gray-50); }
+    h1, h2 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    /* Navbar */
+    .navbar { background: white; border-bottom: 1px solid var(--gray-200); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
+    .logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; }
+    .logo-text { background: linear-gradient(135deg, var(--blue), #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    /* Hero */
+    .hero { background: linear-gradient(180deg, #eff6ff 0%, white 100%); padding: 3rem 1rem 2rem; text-align: center; }
+    .hero h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--navy); }
+    .hero p { color: var(--gray-600); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    
+    /* Search */
+    .search-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .search-box { position: relative; margin-bottom: 1.5rem; }
+    .search-input { width: 100%; padding: 1rem 1rem 1rem 3.5rem; font-size: 1rem; border: 3px solid var(--blue); border-radius: 12px; outline: none; }
+    .search-icon { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--blue); }
+    
+    /* Filters */
+    .filters { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .filter-btn { padding: 0.75rem 1.5rem; background: white; border: 2px solid var(--gray-200); border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+    .filter-btn.rate-0.active { background: var(--green); border-color: var(--green); }
+    .filter-btn.rate-5.active { background: #10b981; border-color: #10b981; }
+    .filter-btn.rate-12.active { background: #8b5cf6; border-color: #8b5cf6; }
+    .filter-btn.rate-18.active { background: var(--blue); border-color: var(--blue); }
+    .filter-btn.rate-28.active { background: #ef4444; border-color: #ef4444; }
+    
+    /* Table */
+    .table-container { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto; }
+    .results-count { margin-bottom: 1rem; font-weight: 600; color: var(--gray-700); }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: var(--gray-100); padding: 1rem; text-align: left; font-weight: 700; border-bottom: 2px solid var(--gray-200); position: sticky; top: 60px; z-index: 10; }
+    td { padding: 1rem; border-bottom: 1px solid var(--gray-100); }
+    tr:hover { background: var(--gray-50); }
+    .rate-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 50px; font-weight: 700; font-size: 0.875rem; }
+    .rate-0 { background: #d1fae5; color: #065f46; }
+    .rate-5 { background: #d1fae5; color: #065f46; }
+    .rate-12 { background: #e9d5ff; color: #6b21a8; }
+    .rate-18 { background: #dbeafe; color: #1e40af; }
+    .rate-28 { background: #fee2e2; color: #991b1b; }
+    
+    .loading { text-align: center; padding: 3rem; color: var(--gray-600); }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.5rem; }
+      table { font-size: 0.875rem; }
+      td, th { padding: 0.75rem 0.5rem; }
+    }
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>🇮🇳 Complete GST Rates List 2026</h1>
+  <p>Search 21,000+ items with GST rates and HSN codes. Find the exact GST rate for any product or service instantly.</p>
+</div>
+
+<div class="search-container">
+  <div class="search-box">
+    <div class="search-icon">🔍</div>
+    <input type="text" id="searchInput" class="search-input" placeholder="Search by item name or HSN code (e.g., 'mobile phone' or '8517')..." autocomplete="off">
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterByRate('all')">All Rates</button>
+    <button class="filter-btn rate-0" onclick="filterByRate('0%')">0% GST</button>
+    <button class="filter-btn rate-5" onclick="filterByRate('5%')">5% GST</button>
+    <button class="filter-btn rate-12" onclick="filterByRate('12%')">12% GST</button>
+    <button class="filter-btn rate-18" onclick="filterByRate('18%')">18% GST</button>
+    <button class="filter-btn rate-28" onclick="filterByRate('28%')">28% GST</button>
+  </div>
+
+  <div class="table-container">
+    <div class="results-count" id="resultsCount">Loading data...</div>
+    <div id="loadingMessage" class="loading">Loading 21,000+ items...</div>
+    <table id="ratesTable" style="display:none;">
+      <thead>
+        <tr>
+          <th>HSN Code</th>
+          <th>Item Description</th>
+          <th>GST Rate</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="hsn-data.js"></script>
+
+<script>
+let allData = [];
+let filteredData = [];
+let currentFilter = 'all';
+
+// Load data
+window.addEventListener('DOMContentLoaded', function() {
+  if (typeof hsnDatabase !== 'undefined') {
+    allData = hsnDatabase;
+    filteredData = allData;
+    renderTable(allData.slice(0, 100)); // Show first 100
+    document.getElementById('loadingMessage').style.display = 'none';
+    document.getElementById('ratesTable').style.display = 'table';
+    updateCount(allData.length);
+  }
+});
+
+// Search
+let searchTimeout;
+document.getElementById('searchInput').addEventListener('input', function(e) {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    const query = e.target.value.toLowerCase().trim();
+    
+    if (query.length < 2) {
+      filteredData = currentFilter === 'all' ? allData : allData.filter(item => item.gst === currentFilter);
+      renderTable(filteredData.slice(0, 100));
+      updateCount(filteredData.length);
+      return;
+    }
+    
+    const baseData = currentFilter === 'all' ? allData : allData.filter(item => item.gst === currentFilter);
+    filteredData = baseData.filter(item =>
+      item.description.toLowerCase().includes(query) ||
+      item.code.includes(query)
+    );
+    
+    renderTable(filteredData.slice(0, 100));
+    updateCount(filteredData.length);
+  }, 300);
+});
+
+// Filter by rate
+function filterByRate(rate) {
+  currentFilter = rate;
+  
+  // Update button states
+  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
+  
+  if (rate === 'all') {
+    filteredData = allData;
+  } else {
+    filteredData = allData.filter(item => item.gst === rate);
+  }
+  
+  // Apply search if exists
+  if (searchQuery.length >= 2) {
+    filteredData = filteredData.filter(item =>
+      item.description.toLowerCase().includes(searchQuery) ||
+      item.code.includes(searchQuery)
+    );
+  }
+  
+  renderTable(filteredData.slice(0, 100));
+  updateCount(filteredData.length);
+}
+
+// Render table
+function renderTable(data) {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = data.map(item => {
+    const rateClass = 'rate-' + item.gst.replace('%', '');
+    return `
+      <tr>
+        <td><strong>${item.code}</strong></td>
+        <td>${item.description}</td>
+        <td><span class="rate-badge ${rateClass}">${item.gst}</span></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// Update count
+function updateCount(count) {
+  document.getElementById('resultsCount').textContent = `Showing ${Math.min(count, 100)} of ${count.toLocaleString()} items`;
+}
+
+// Track search in GA
+document.getElementById('searchInput').addEventListener('blur', function() {
+  if (this.value.length >= 2) {
+    gtag('event', 'search', {
+      search_term: this.value
+    });
+  }
+});
+</script>
+
+</body>
+</html>
