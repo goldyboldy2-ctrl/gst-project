@@ -1,6 +1,5 @@
 // Authentication Service for MyGSTIndia
 // Handles all auth operations with Firebase
-import { firebaseConfig } from './auth-config.js';
 
 class AuthService {
   constructor() {
@@ -13,6 +12,12 @@ class AuthService {
     if (this.initialized) return;
     
     try {
+      // Check if firebaseConfig exists
+      if (typeof firebaseConfig === 'undefined') {
+        console.error('❌ Firebase config not found. Please ensure auth-config.js is loaded before auth-service.js');
+        return;
+      }
+      
       // Initialize Firebase with config
       firebase.initializeApp(firebaseConfig);
       
