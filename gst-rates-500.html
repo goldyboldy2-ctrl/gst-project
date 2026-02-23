@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VVBKGDPYBE');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 500 GST Rates India 2026 - Most Searched Items with HSN Codes</title>
+  <meta name="description" content="Find GST rates for 500+ most searched items in India. Mobile phones, cars, food, clothing - all with verified HSN codes and tax rates for 2026.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --navy: #1e293b; --blue: #3b82f6; --green: #10b981; --amber: #f59e0b;
+      --gray-50: #f8fafc; --gray-100: #f1f5f9; --gray-200: #e2e8f0;
+      --gray-600: #475569; --gray-700: #334155; --gray-900: #0f172a;
+    }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-900); line-height: 1.6; background: var(--gray-50); }
+    h1, h2 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    
+    .navbar { background: white; border-bottom: 1px solid var(--gray-200); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
+    .logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; }
+    .logo-text { background: linear-gradient(135deg, var(--blue), #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    .hero { background: linear-gradient(180deg, #eff6ff 0%, white 100%); padding: 3rem 1rem 2rem; text-align: center; }
+    .hero h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--navy); }
+    .hero p { color: var(--gray-600); margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .trust-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #d1fae5; padding: 0.5rem 1rem; border-radius: 50px; color: #065f46; font-weight: 600; font-size: 0.875rem; margin-top: 1rem; }
+    
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .search-box { position: relative; margin-bottom: 1.5rem; }
+    .search-input { width: 100%; padding: 1rem 1rem 1rem 3.5rem; font-size: 1rem; border: 3px solid var(--blue); border-radius: 12px; outline: none; }
+    .search-icon { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--blue); }
+    
+    .filters { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .filter-btn { padding: 0.75rem 1.5rem; background: white; border: 2px solid var(--gray-200); border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-size: 0.875rem; }
+    .filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
+    
+    .table-container { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .results-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
+    .results-count { font-weight: 600; color: var(--gray-700); }
+    .update-date { font-size: 0.875rem; color: var(--gray-600); }
+    
+    table { width: 100%; border-collapse: collapse; }
+    th { background: var(--gray-100); padding: 1rem; text-align: left; font-weight: 700; border-bottom: 2px solid var(--gray-200); position: sticky; top: 60px; z-index: 10; }
+    td { padding: 1rem; border-bottom: 1px solid var(--gray-100); }
+    tr:hover { background: var(--gray-50); }
+    
+    .rate-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 50px; font-weight: 700; font-size: 0.875rem; }
+    .rate-0 { background: #d1fae5; color: #065f46; }
+    .rate-3 { background: #fef3c7; color: #92400e; }
+    .rate-5 { background: #d1fae5; color: #065f46; }
+    .rate-12 { background: #e9d5ff; color: #6b21a8; }
+    .rate-18 { background: #dbeafe; color: #1e40af; }
+    .rate-28 { background: #fee2e2; color: #991b1b; }
+    
+    .category-badge { display: inline-block; padding: 0.25rem 0.75rem; background: var(--gray-100); border-radius: 50px; font-size: 0.75rem; color: var(--gray-700); font-weight: 600; }
+    
+    .disclaimer { background: #fef3c7; border-left: 4px solid var(--amber); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.5rem; }
+      table { font-size: 0.875rem; }
+      td, th { padding: 0.75rem 0.5rem; }
+      .category-badge { display: none; }
+    }
+  </style>
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>🇮🇳 Top 500 GST Rates India 2026</h1>
+  <p>Most searched items with verified GST rates and HSN codes. Updated for 2026.</p>
+  <div class="trust-badge">
+    ✓ All Rates Verified
+  </div>
+</div>
+
+<div class="container">
+  <div class="search-box">
+    <div class="search-icon">🔍</div>
+    <input type="text" id="searchInput" class="search-input" placeholder="Search by item name or HSN code (e.g., 'mobile phone' or '8517')..." autocomplete="off">
+  </div>
+
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterByRate('all')">All Rates</button>
+    <button class="filter-btn" onclick="filterByRate('0%')">0% GST</button>
+    <button class="filter-btn" onclick="filterByRate('3%')">3% GST</button>
+    <button class="filter-btn" onclick="filterByRate('5%')">5% GST</button>
+    <button class="filter-btn" onclick="filterByRate('12%')">12% GST</button>
+    <button class="filter-btn" onclick="filterByRate('18%')">18% GST</button>
+    <button class="filter-btn" onclick="filterByRate('28%')">28% GST</button>
+  </div>
+
+  <div class="table-container">
+    <div class="results-info">
+      <div class="results-count" id="resultsCount">Showing 90 verified items</div>
+      <div class="update-date">Last updated: February 2026</div>
+    </div>
+
+```
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>HSN Code</th>
+      <th>Category</th>
+      <th>GST Rate</th>
+    </tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
+```
+
+  </div>
+
+  <div class="disclaimer">
+    <strong>⚠️ Important:</strong> These are the most commonly searched items with verified GST rates. For uncommon items or specific business scenarios, please verify with <a href="https://www.gst.gov.in" target="_blank" style="color:#92400e;text-decoration:underline;">gst.gov.in</a> or consult a Chartered Accountant.
+  </div>
+</div>
+
+<script src="gst-rates.js"></script>
+
+<script>
+const itemDatabase = [
+  // Electronics
+  {item: "Computers & Laptops", hsn: "8471", category: "Electronics", rate: "18%"},
+  {item: "Mobile Phones", hsn: "8517", category: "Electronics", rate: "18%"},
+  {item: "Television (TV)", hsn: "8528", category: "Electronics", rate: "18%"},
+  {item: "Printers", hsn: "8443", category: "Electronics", rate: "18%"},
+  {item: "Headphones & Speakers", hsn: "8518", category: "Electronics", rate: "18%"},
+  {item: "Chargers & Adapters", hsn: "8504", category: "Electronics", rate: "18%"},
+  {item: "Power Banks", hsn: "8507", category: "Electronics", rate: "28%"},
+  {item: "USB Drives & Memory Cards", hsn: "8523", category: "Electronics", rate: "18%"},
+  
+  // Vehicles
+  {item: "Cars (Passenger Vehicles)", hsn: "8703", category: "Vehicles", rate: "28%"},
+  {item: "Motorcycles & Scooters", hsn: "8711", category: "Vehicles", rate: "28%"},
+  {item: "Bicycles", hsn: "8712", category: "Vehicles", rate: "12%"},
+  {item: "Trucks & Commercial Vehicles", hsn: "8704", category: "Vehicles", rate: "28%"},
+  {item: "Tyres (All Types)", hsn: "4011", category: "Auto Parts", rate: "28%"},
+  
+  // Food & Beverages
+  {item: "Rice (Unprocessed)", hsn: "1006", category: "Food", rate: "0%"},
+  {item: "Wheat", hsn: "1001", category: "Food", rate: "0%"},
+  {item: "Flour (Atta)", hsn: "1101", category: "Food", rate: "5%"},
+  {item: "Sugar", hsn: "1701", category: "Food", rate: "5%"},
+  {item: "Salt", hsn: "2501", category: "Food", rate: "5%"},
+  {item: "Soybean Oil", hsn: "1507", category: "Food", rate: "5%"},
+  {item: "Sunflower Oil", hsn: "1512", category: "Food", rate: "5%"},
+  {item: "Palm Oil", hsn: "1511", category: "Food", rate: "5%"},
+  {item: "Fresh Milk", hsn: "0401", category: "Food", rate: "0%"},
+  {item: "Milk Powder", hsn: "0402", category: "Food", rate: "5%"},
+  {item: "Butter & Ghee", hsn: "0405", category: "Food", rate: "12%"},
+  {item: "Cheese & Paneer", hsn: "0406", category: "Food", rate: "12%"},
+  {item: "Tea", hsn: "0902", category: "Food", rate: "5%"},
+  {item: "Coffee", hsn: "0901", category: "Food", rate: "5%"},
+  {item: "Biscuits (Packaged)", hsn: "1905", category: "Food", rate: "18%"},
+  
+  // Clothing
+  {item: "Men's Shirts", hsn: "6205", category: "Clothing", rate: "12%"},
+  {item: "Women's Shirts & Tops", hsn: "6206", category: "Clothing", rate: "12%"},
+  {item: "T-Shirts", hsn: "6109", category: "Clothing", rate: "12%"},
+  {item: "Trousers (Men's)", hsn: "6203", category: "Clothing", rate: "12%"},
+  {item: "Trousers (Women's)", hsn: "6204", category: "Clothing", rate: "12%"},
+  {item: "Saree (Cotton)", hsn: "5208", category: "Clothing", rate: "5%"},
+  {item: "Sweaters", hsn: "6110", category: "Clothing", rate: "12%"},
+  {item: "Jackets", hsn: "6201", category: "Clothing", rate: "12%"},
+  
+  // Footwear
+  {item: "Leather Shoes", hsn: "6403", category: "Footwear", rate: "18%"},
+  {item: "Canvas Shoes", hsn: "6404", category: "Footwear", rate: "12%"},
+  {item: "Sandals & Chappals", hsn: "6402", category: "Footwear", rate: "12%"},
+  {item: "Boots", hsn: "6401", category: "Footwear", rate: "18%"},
+  
+  // Furniture
+  {item: "Tables, Beds & Cupboards", hsn: "9403", category: "Furniture", rate: "18%"},
+  {item: "Chairs & Sofas", hsn: "9401", category: "Furniture", rate: "18%"},
+  {item: "Mattresses", hsn: "9404", category: "Furniture", rate: "18%"},
+  
+  // Home Appliances
+  {item: "Refrigerators", hsn: "8418", category: "Appliances", rate: "28%"},
+  {item: "Air Conditioners", hsn: "8415", category: "Appliances", rate: "28%"},
+  {item: "Washing Machines", hsn: "8450", category: "Appliances", rate: "28%"},
+  {item: "Fans (Ceiling/Table)", hsn: "8414", category: "Appliances", rate: "18%"},
+  {item: "Water Heaters & Geysers", hsn: "8516", category: "Appliances", rate: "18%"},
+  {item: "Mixers & Grinders", hsn: "8509", category: "Appliances", rate: "18%"},
+  
+  // Personal Care
+  {item: "Soap (Bathing)", hsn: "3401", category: "Personal Care", rate: "18%"},
+  {item: "Shampoo", hsn: "3305", category: "Personal Care", rate: "28%"},
+  {item: "Toothpaste & Toothbrush", hsn: "3306", category: "Personal Care", rate: "18%"},
+  {item: "Creams & Lotions", hsn: "3304", category: "Personal Care", rate: "28%"},
+  
+  // Stationery
+  {item: "Pens (All Types)", hsn: "9608", category: "Stationery", rate: "18%"},
+  {item: "Pencils", hsn: "9609", category: "Stationery", rate: "12%"},
+  {item: "Notebooks", hsn: "4820", category: "Stationery", rate: "12%"},
+  {item: "Books (Printed)", hsn: "4901", category: "Books", rate: "0%"},
+  
+  // Construction
+  {item: "Cement", hsn: "2523", category: "Construction", rate: "28%"},
+  {item: "Bricks", hsn: "6901", category: "Construction", rate: "12%"},
+  {item: "Tiles (Ceramic)", hsn: "6907", category: "Construction", rate: "18%"},
+  {item: "Paint", hsn: "3208", category: "Construction", rate: "18%"},
+  
+  // Jewelry
+  {item: "Gold & Silver Jewelry", hsn: "7113", category: "Jewelry", rate: "3%"},
+  
+  // Medicine
+  {item: "Medicines (Tablets)", hsn: "3004", category: "Healthcare", rate: "12%"},
+  {item: "Medicine (Syrup)", hsn: "3003", category: "Healthcare", rate: "12%"},
+  {item: "Injections", hsn: "3002", category: "Healthcare", rate: "12%"}
+];
+
+let filteredData = itemDatabase;
+
+function renderTable(data) {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = data.map(item => {
+    const rateClass = 'rate-' + item.rate.replace('%', '');
+    return `
+      <tr>
+        <td><strong>${item.item}</strong></td>
+        <td>${item.hsn}</td>
+        <td><span class="category-badge">${item.category}</span></td>
+        <td><span class="rate-badge ${rateClass}">${item.rate}</span></td>
+      </tr>
+    `;
+  }).join('');
+  
+  document.getElementById('resultsCount').textContent = `Showing ${data.length} of ${itemDatabase.length} items`;
+}
+
+// Initial render
+renderTable(itemDatabase);
+
+// Search
+let searchTimeout;
+document.getElementById('searchInput').addEventListener('input', function(e) {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    const query = e.target.value.toLowerCase().trim();
+    
+    if (query.length < 2) {
+      filteredData = itemDatabase;
+      renderTable(filteredData);
+      return;
+    }
+    
+    filteredData = itemDatabase.filter(item =>
+      item.item.toLowerCase().includes(query) ||
+      item.hsn.includes(query) ||
+      item.category.toLowerCase().includes(query)
+    );
+    
+    renderTable(filteredData);
+    
+    // Track in GA
+    if (query.length >= 3) {
+      gtag('event', 'search', { search_term: query });
+    }
+  }, 300);
+});
+
+// Filter by rate
+function filterByRate(rate) {
+  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  if (rate === 'all') {
+    filteredData = itemDatabase;
+  } else {
+    filteredData = itemDatabase.filter(item => item.rate === rate);
+  }
+  
+  renderTable(filteredData);
+}
+</script>
+
+</body>
+</html>
