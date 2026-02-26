@@ -111,7 +111,7 @@
     
     .nav-links a:hover { color: var(--blue); }
     
-    /* User Menu - NEW */
+    /* User Menu */
     .user-menu {
       position: relative;
       display: none;
@@ -168,7 +168,7 @@
     
     .dropdown a:hover { background: var(--gray-50); }
     
-    /* Login Button - NEW */
+    /* Login Button */
     .login-btn {
       background: white;
       border: 2px solid var(--blue);
@@ -478,7 +478,7 @@
     .footer {
       background: var(--navy);
       color: white;
-      padding: 2rem 1rem 1rem;
+      padding: 3rem 1rem 1rem;
       margin-top: 4rem;
     }
     
@@ -510,6 +510,17 @@
     }
     
     .footer a:hover { color: white; }
+    
+    .contact-info {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .contact-info a {
+      display: inline;
+      margin: 0;
+    }
     
     .footer-bottom {
       text-align: center;
@@ -593,7 +604,10 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="#tools">Tools</a></li>
+      <li><a href="gst-rates-500.html">GST Rates</a></li>
       <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
     
     <!-- User Menu (Logged In) - Hidden by default -->
@@ -618,7 +632,7 @@
 
 <!-- DISCLAIMER -->
 <div class="disclaimer">
-  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
+  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank" rel="noopener">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
 </div>
 
 <!-- HERO -->
@@ -647,12 +661,12 @@
   <!-- STATS -->
   <div class="stats">
     <div class="stat">
-      <div class="stat-number">15</div>
+      <div class="stat-number">16</div>
       <div class="stat-label">Free Tools</div>
     </div>
     <div class="stat">
-      <div class="stat-number">21K+</div>
-      <div class="stat-label">HSN Codes</div>
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Verified Rates</div>
     </div>
     <div class="stat">
       <div class="stat-number">100%</div>
@@ -684,7 +698,13 @@
     <a href="hsn-finder.html" class="tool-card" data-category="codes">
       <div class="tool-icon">🔍</div>
       <h3>HSN Code Finder</h3>
-      <p>Search 21,000+ HSN codes with 500+ GST rates.</p>
+      <p>Search 21,000+ HSN codes instantly.</p>
+    </a>
+    
+    <a href="gst-rates-500.html" class="tool-card" data-category="codes">
+      <div class="tool-icon">📊</div>
+      <h3>Top 500 GST Rates</h3>
+      <p>Most searched items with verified rates and HSN codes.</p>
     </a>
     
     <a href="penalty-calculator.html" class="tool-card" data-category="calculators">
@@ -727,12 +747,6 @@
       <div class="tool-icon">📊</div>
       <h3>GST Rates 2026</h3>
       <p>Complete GST rate slabs by category.</p>
-    </a>
-    
-    <a href="gst-rates-500.html" class="tool-card" data-category="codes">
-      <div class="tool-icon">📊</div>
-      <h3>Top 500 GST Rates</h3>
-      <p>Most searched items with verified rates and HSN codes.</p>
     </a>
     
     <a href="eway-bill-calculator.html" class="tool-card" data-category="filing">
@@ -779,43 +793,52 @@
   <div class="footer-grid">
     <div>
       <h4>MyGSTIndia</h4>
-      <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
+      <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs. Compiled reference from public notifications.</p>
+      <div class="contact-info">
+        <p style="margin-bottom:0.5rem;"><strong>Contact Us:</strong></p>
+        <p><a href="mailto:mygstconnect@gmail.com">mygstconnect@gmail.com</a></p>
+      </div>
     </div>
     <div>
       <h4>Tools</h4>
       <ul>
         <li><a href="gst-calculator.html">GST Calculator</a></li>
         <li><a href="hsn-finder.html">HSN Finder</a></li>
+        <li><a href="gst-rates-500.html">Top 500 GST Rates</a></li>
         <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
         <li><a href="itc-calculator.html">ITC Calculator</a></li>
       </ul>
     </div>
     <div>
-      <h4>Resources</h4>
+      <h4>Company</h4>
       <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="blog/index.html">Blog</a></li>
-        <li><a href="disclaimer.html">Disclaimer</a></li>
       </ul>
     </div>
     <div>
       <h4>Legal</h4>
       <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
         <li><a href="disclaimer.html">Legal Disclaimer</a></li>
-        <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
+        <li><a href="https://www.gst.gov.in" target="_blank" rel="noopener">Official GST Portal</a></li>
       </ul>
     </div>
   </div>
   
   <div class="footer-disclaimer">
-    <a href="disclaimer.html">Legal Disclaimer</a> • 
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-of-service.html">Terms of Service</a>
-    <a href="dmca.html">DMCA Policy</a>
-    <a href="https://www.gst.gov.in" target="_blank">GST Portal</a>
+    <a href="about.html">About</a> • 
+    <a href="contact.html">Contact</a> • 
+    <a href="privacy-policy.html">Privacy</a> • 
+    <a href="terms.html">Terms</a> • 
+    <a href="disclaimer.html">Disclaimer</a> • 
+    <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST Portal</a>
   </div>
   
   <div class="footer-bottom">
-    © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
+    © 2026 MyGSTIndia - GST Rate Information Portal | Not affiliated with government bodies
   </div>
 </footer>
 
@@ -832,6 +855,10 @@
   <a href="blog/index.html" class="mobile-nav-btn">
     <div class="mobile-nav-icon">📚</div>
     <div>Blog</div>
+  </a>
+  <a href="contact.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">📧</div>
+    <div>Contact</div>
   </a>
 </div>
 
@@ -905,6 +932,7 @@ async function signOut() {
 const searchData = [
   { name: 'GST Calculator', url: 'gst-calculator.html', keywords: 'calculate gst tax inclusive exclusive' },
   { name: 'HSN Code Finder', url: 'hsn-finder.html', keywords: 'hsn code laptop mobile rice car' },
+  { name: 'Top 500 GST Rates', url: 'gst-rates-500.html', keywords: 'gst rates items verified hsn' },
   { name: 'Penalty Calculator', url: 'penalty-calculator.html', keywords: 'penalty late fee interest fine' },
   { name: 'ITC Calculator', url: 'itc-calculator.html', keywords: 'itc input tax credit' },
   { name: 'Composition Calculator', url: 'composition-calculator.html', keywords: 'composition scheme small business' },
