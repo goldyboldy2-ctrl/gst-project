@@ -9,7 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'G-VVBKGDPYBE');
   </script>
- 
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HSN Code Finder - Search 21,000+ HSN Codes with GST Rates | MyGSTIndia</title>
@@ -18,10 +18,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
- 
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-   
+    
     :root {
       --navy: #1e293b;
       --blue: #3b82f6;
@@ -37,6 +37,43 @@
       --gray-700: #334155;
       --gray-900: #0f172a;
     }
+<script src="hsn-data.js"></script>
+<script src="search-keywords.js"></script>
+    <script>
+  const searchInput = document.getElementById('hsnSearch');
+  const resultsDiv = document.getElementById('hsnResults');
+
+  if (!searchInput || !resultsDiv) {
+    console.error("Search elements not found");
+  }
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
+    
+    if (query.length < 2) {
+      resultsDiv.innerHTML = '<p>Enter 2+ characters to search...</p>';
+      return;
+    }
+
+    // Simple filter on hsnDatabase
+    const matches = hsnDatabase.filter(item =>
+      item.description.toLowerCase().includes(query) ||
+      item.code.includes(query)
+    ).slice(0, 50);  // limit to 50 for speed
+
+    if (matches.length === 0) {
+      resultsDiv.innerHTML = '<p>No matches found.</p>';
+      return;
+    }
+
+    resultsDiv.innerHTML = matches.map(item => `
+      <div style="padding:12px; border-bottom:1px solid #eee; background:#f8fafc; margin-bottom:8px; border-radius:6px;">
+        <strong>${item.description}</strong><br>
+        HSN Code: $$   {item.code} | GST Rate: <strong>   $${item.gst}</strong> | Category: ${item.category}
+      </div>
+    `).join('');
+  });
+</script>
     body {
       font-family: 'Inter', sans-serif;
       color: var(--gray-900);
@@ -44,9 +81,9 @@
       background: var(--gray-50);
       padding-bottom: 80px;
     }
-   
+    
     h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
-   
+    
     /* NAVBAR */
     .navbar {
       background: white;
@@ -57,7 +94,7 @@
       z-index: 100;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-   
+    
     .nav-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -66,7 +103,7 @@
       align-items: center;
       justify-content: space-between;
     }
-   
+    
     .logo {
       display: flex;
       align-items: center;
@@ -76,7 +113,7 @@
       font-weight: 700;
       font-size: 1.25rem;
     }
-   
+    
     .logo-mark {
       width: 48px;
       height: 48px;
@@ -90,24 +127,24 @@
       font-weight: 800;
       font-family: 'Poppins', sans-serif;
     }
-   
+    
     .logo-text { color: var(--blue); }
-   
+    
     .nav-links {
       display: none;
       gap: 2rem;
       list-style: none;
     }
-   
+    
     .nav-links a {
       text-decoration: none;
       color: var(--gray-700);
       font-weight: 500;
       transition: color 0.2s;
     }
-   
+    
     .nav-links a:hover { color: var(--blue); }
-   
+    
     .hamburger {
       width: 32px;
       height: 24px;
@@ -119,7 +156,7 @@
       border: none;
       padding: 0;
     }
-   
+    
     .hamburger span {
       display: block;
       width: 100%;
@@ -128,7 +165,7 @@
       border-radius: 2px;
       transition: all 0.3s;
     }
-   
+    
     .nav-links.active {
       display: flex;
       flex-direction: column;
@@ -141,13 +178,13 @@
       border-bottom: 1px solid var(--gray-200);
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
-   
+    
     @media (min-width: 768px) {
       .hamburger { display: none; }
       .nav-links { display: flex; }
       .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
     }
-   
+    
     /* DISCLAIMER */
     .disclaimer {
       background: #fef3c7;
@@ -156,20 +193,20 @@
       font-size: 0.875rem;
       text-align: center;
     }
-   
+    
     .disclaimer a {
       color: #92400e;
       font-weight: 600;
       text-decoration: underline;
     }
-   
+    
     /* BREADCRUMB */
     .breadcrumb {
       background: white;
       padding: 0.75rem 0;
       border-bottom: 1px solid var(--gray-200);
     }
-   
+    
     .breadcrumb-container {
       max-width: 900px;
       margin: 0 auto;
@@ -177,26 +214,26 @@
       font-size: 0.875rem;
       color: var(--gray-600);
     }
-   
+    
     .breadcrumb a {
       color: var(--blue);
       text-decoration: none;
     }
-   
+    
     .breadcrumb a:hover { text-decoration: underline; }
-   
+    
     /* MAIN CONTENT */
     .container {
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
-   
+    
     .page-header {
       text-align: center;
       margin-bottom: 2rem;
     }
-   
+    
     .page-badge {
       display: inline-block;
       background: var(--purple);
@@ -207,20 +244,20 @@
       font-weight: 600;
       margin-bottom: 1rem;
     }
-   
+    
     .page-header h1 {
       font-size: 2rem;
       margin-bottom: 0.75rem;
       color: var(--navy);
     }
-   
+    
     .page-header p {
       font-size: 1.125rem;
       color: var(--gray-600);
       max-width: 600px;
       margin: 0 auto;
     }
-   
+    
     /* SEARCH BOX */
     .search-box {
       background: white;
@@ -230,11 +267,11 @@
       margin-bottom: 2rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-   
+    
     .search-input-wrapper {
       position: relative;
     }
-   
+    
     .search-icon {
       position: absolute;
       left: 1.25rem;
@@ -243,7 +280,7 @@
       font-size: 1.5rem;
       color: var(--gray-600);
     }
-   
+    
     .search-input {
       width: 100%;
       padding: 1rem 1rem 1rem 3.5rem;
@@ -253,29 +290,29 @@
       transition: all 0.2s;
       font-family: 'Inter', sans-serif;
     }
-   
+    
     .search-input:focus {
       outline: none;
       border-color: var(--purple);
       box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
     }
-   
+    
     .search-examples {
       margin-top: 1rem;
       font-size: 0.875rem;
       color: var(--gray-600);
       text-align: center;
     }
-   
+    
     .search-examples strong {
       color: var(--navy);
     }
-   
+    
     /* RESULTS */
     #results {
       display: none;
     }
-   
+    
     .result-card {
       background: white;
       border: 2px solid var(--gray-200);
@@ -285,13 +322,13 @@
       transition: all 0.2s;
       cursor: pointer;
     }
-   
+    
     .result-card:hover {
       border-color: var(--purple);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
     }
-   
+    
     .result-header {
       display: flex;
       justify-content: space-between;
@@ -299,14 +336,14 @@
       margin-bottom: 1rem;
       gap: 1rem;
     }
-   
+    
     .hsn-code {
       font-size: 1.5rem;
       font-weight: 800;
       color: var(--purple);
       font-family: 'Poppins', sans-serif;
     }
-   
+    
     .gst-rate {
       background: linear-gradient(135deg, var(--green), #059669);
       color: white;
@@ -315,14 +352,14 @@
       font-weight: 700;
       font-size: 1.125rem;
     }
-   
+    
     .result-description {
       color: var(--gray-700);
       font-size: 1rem;
       line-height: 1.6;
       margin-bottom: 1rem;
     }
-   
+    
     .result-meta {
       display: flex;
       flex-wrap: wrap;
@@ -330,24 +367,24 @@
       font-size: 0.875rem;
       color: var(--gray-600);
     }
-   
+    
     .result-meta-item {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-   
+    
     .no-results {
       text-align: center;
       padding: 3rem 1rem;
       color: var(--gray-600);
     }
-   
+    
     .no-results-icon {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
-   
+    
     /* LOADING */
     .loading {
       display: none;
@@ -355,7 +392,7 @@
       padding: 2rem;
       color: var(--gray-600);
     }
-   
+    
     .loading-spinner {
       display: inline-block;
       width: 40px;
@@ -365,11 +402,11 @@
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
-   
+    
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
-   
+    
     /* INFO BOX */
     .info-box {
       background: #eff6ff;
@@ -378,25 +415,25 @@
       border-radius: 8px;
       margin: 2rem 0;
     }
-   
+    
     .info-box h4 {
       font-size: 1rem;
       margin-bottom: 0.5rem;
       color: var(--navy);
     }
-   
+    
     .info-box p {
       font-size: 0.875rem;
       color: var(--gray-600);
       margin: 0;
     }
-   
+    
     .info-box ul {
       margin: 0.5rem 0 0 1.25rem;
       font-size: 0.875rem;
       color: var(--gray-600);
     }
-   
+    
     /* FOOTER */
     .footer {
       background: var(--navy);
@@ -404,28 +441,28 @@
       padding: 2rem 1rem 1rem;
       margin-top: 4rem;
     }
-   
+    
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
     }
-   
+    
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
       margin-bottom: 2rem;
     }
-   
+    
     .footer h4 {
       margin-bottom: 1rem;
       font-size: 1rem;
     }
-   
+    
     .footer ul {
       list-style: none;
     }
-   
+    
     .footer a {
       color: rgba(255,255,255,0.8);
       text-decoration: none;
@@ -434,9 +471,9 @@
       margin-bottom: 0.5rem;
       transition: color 0.2s;
     }
-   
+    
     .footer a:hover { color: white; }
-   
+    
     .footer-bottom {
       text-align: center;
       padding-top: 1.5rem;
@@ -444,18 +481,18 @@
       font-size: 0.875rem;
       color: rgba(255,255,255,0.7);
     }
-   
+    
     .footer-disclaimer {
       text-align: center;
       padding: 1rem 0;
       font-size: 0.875rem;
     }
-   
+    
     .footer-disclaimer a {
       display: inline;
       margin: 0 0.5rem;
     }
-   
+    
     /* MOBILE NAV */
     .mobile-nav {
       display: flex;
@@ -468,7 +505,7 @@
       box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
       z-index: 90;
     }
-   
+    
     .mobile-nav-btn {
       flex: 1;
       padding: 0.75rem;
@@ -483,27 +520,24 @@
       gap: 0.25rem;
       transition: all 0.2s;
     }
-   
+    
     .mobile-nav-btn.active {
       color: var(--blue);
     }
-   
+    
     .mobile-nav-icon {
       font-size: 1.5rem;
     }
-   
+    
     @media (min-width: 768px) {
       .mobile-nav { display: none; }
       .page-header h1 { font-size: 2.5rem; }
       .container { margin: 3rem auto; }
     }
   </style>
-
-  <!-- IMPORTANT: Load data files here -->
-  <script src="hsn-data.js"></script>
-  <script src="search-keywords.js"></script>
 </head>
 <body>
+
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
@@ -523,31 +557,34 @@
     </ul>
   </div>
 </nav>
+
 <!-- DISCLAIMER -->
 <div class="disclaimer">
   ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
 </div>
+
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
   <div class="breadcrumb-container">
     <a href="index.html">Home</a> › <a href="index.html#tools">Tools</a> › HSN Code Finder
   </div>
 </div>
+
 <!-- MAIN CONTENT -->
 <div class="container">
- 
+  
   <div class="page-header">
     <div class="page-badge">🔍 Search</div>
     <h1>HSN Code Finder</h1>
     <p>Search 21,000+ HSN codes with GST rates. Find HSN for any product instantly.</p>
   </div>
- 
+  
   <div class="search-box">
     <div class="search-input-wrapper">
       <div class="search-icon">🔍</div>
-      <input
-        type="text"
-        id="searchInput"
+      <input 
+        type="text" 
+        id="searchInput" 
         class="search-input"
         placeholder="Search for product (e.g., laptop, rice, mobile phone, car)"
         autocomplete="off"
@@ -557,14 +594,14 @@
       <strong>Try:</strong> laptop, mobile phone, rice, sugar, cement, car, textile, gold
     </div>
   </div>
- 
+  
   <div class="loading" id="loading">
     <div class="loading-spinner"></div>
     <p>Searching HSN database...</p>
   </div>
- 
+  
   <div id="results"></div>
- 
+  
   <div class="info-box">
     <h4>💡 What is HSN Code?</h4>
     <p><strong>HSN (Harmonized System of Nomenclature)</strong> is a 6-8 digit code that classifies products for GST purposes.</p>
@@ -575,8 +612,9 @@
       <li>Updated regularly by CBIC (Central Board of Indirect Taxes)</li>
     </ul>
   </div>
- 
+  
 </div>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
@@ -609,17 +647,18 @@
         </ul>
       </div>
     </div>
-   
+    
     <div class="footer-disclaimer">
-      <a href="disclaimer.html">Legal Disclaimer</a> •
+      <a href="disclaimer.html">Legal Disclaimer</a> • 
       <a href="https://www.gst.gov.in" target="_blank">GST Portal</a>
     </div>
-   
+    
     <div class="footer-bottom">
       © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
     </div>
   </div>
 </footer>
+
 <!-- MOBILE NAV -->
 <div class="mobile-nav">
   <a href="index.html#tools" class="mobile-nav-btn active">
@@ -635,12 +674,14 @@
     <div>Blog</div>
   </a>
 </div>
+
 <!-- JAVASCRIPT -->
 <script>
-// Hamburger menu (unchanged)
+// Hamburger menu
 document.getElementById('hamburger').addEventListener('click', function() {
   document.getElementById('navLinks').classList.toggle('active');
 });
+
 document.addEventListener('click', function(e) {
   const nav = document.getElementById('navLinks');
   const hamburger = document.getElementById('hamburger');
@@ -649,89 +690,107 @@ document.addEventListener('click', function(e) {
   }
 });
 
-// IMPROVED: Wait for DOM and data to load
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('searchInput');
-  const resultsDiv = document.getElementById('results');
-  const loadingDiv = document.getElementById('loading');
+// Sample HSN data (in production, this would be loaded from hsn-data.js)
+const sampleHSNData = [
+  { code: '8471', description: 'Automatic data processing machines and units thereof; magnetic or optical readers', rate: 18, category: 'Electronics' },
+  { code: '8517', description: 'Telephone sets, mobile phones and other apparatus for transmission', rate: 18, category: 'Electronics' },
+  { code: '1006', description: 'Rice', rate: 0, category: 'Food' },
+  { code: '1701', description: 'Cane or beet sugar and chemically pure sucrose', rate: 5, category: 'Food' },
+  { code: '8703', description: 'Motor cars and other motor vehicles for transport of persons', rate: 28, category: 'Vehicles' },
+  { code: '5208', description: 'Woven fabrics of cotton', rate: 5, category: 'Textiles' },
+  { code: '7113', description: 'Articles of jewellery of precious metal or of metal clad', rate: 3, category: 'Jewellery' },
+  { code: '2523', description: 'Portland cement, aluminous cement', rate: 28, category: 'Construction' }
+];
 
-  if (!searchInput || !resultsDiv) {
-    console.error("Search elements missing. Check IDs: searchInput and results");
+// Search functionality
+const searchInput = document.getElementById('searchInput');
+const resultsDiv = document.getElementById('results');
+const loadingDiv = document.getElementById('loading');
+
+let searchTimeout;
+
+searchInput.addEventListener('input', function() {
+  clearTimeout(searchTimeout);
+  const query = this.value.trim().toLowerCase();
+  
+  if (query.length < 2) {
+    resultsDiv.style.display = 'none';
     return;
   }
+  
+  // Simulate search delay
+  loadingDiv.style.display = 'block';
+  resultsDiv.style.display = 'none';
+  
+  searchTimeout = setTimeout(() => {
+    performSearch(query);
+  }, 500);
+});
 
-  // Check if data loaded
-  if (typeof hsnDatabase === 'undefined') {
-    resultsDiv.innerHTML = '<p style="color:red; text-align:center;">Error: HSN data not loaded. Check <script src="hsn-data.js"></script></p>';
+function performSearch(query) {
+  // Search in sample data
+  const results = sampleHSNData.filter(item => 
+    item.code.includes(query) || 
+    item.description.toLowerCase().includes(query) ||
+    item.category.toLowerCase().includes(query)
+  );
+  
+  loadingDiv.style.display = 'none';
+  displayResults(results, query);
+}
+
+function displayResults(results, query) {
+  if (results.length === 0) {
+    resultsDiv.innerHTML = `
+      <div class="no-results">
+        <div class="no-results-icon">🔍</div>
+        <h3>No HSN codes found for "${query}"</h3>
+        <p style="margin-top:0.5rem;">Try different keywords like: laptop, mobile, rice, car, cement</p>
+        <p style="margin-top:1rem;font-size:0.875rem;">
+          <strong>Note:</strong> This is a demo with limited data. The full version has 21,000+ HSN codes.
+        </p>
+      </div>
+    `;
+    resultsDiv.style.display = 'block';
     return;
   }
-
-  console.log("HSN data loaded:", hsnDatabase.length, "items");
-
-  // Debounced search
-  let searchTimeout;
-  searchInput.addEventListener('input', function() {
-    clearTimeout(searchTimeout);
-    const query = this.value.toLowerCase().trim();
-
-    if (query.length < 2) {
-      resultsDiv.innerHTML = '';
-      loadingDiv.style.display = 'none';
-      return;
-    }
-
-    loadingDiv.style.display = 'block';
-    resultsDiv.innerHTML = '';
-
-    searchTimeout = setTimeout(() => {
-      performSearch(query);
-    }, 300);
-  });
-
-  function performSearch(query) {
-    const matches = hsnDatabase.filter(item =>
-      (item.description && item.description.toLowerCase().includes(query)) ||
-      (item.code && item.code.includes(query))
-    ).slice(0, 50);
-
-    loadingDiv.style.display = 'none';
-
-    if (matches.length === 0) {
-      resultsDiv.innerHTML = `
-        <div class="no-results">
-          <div class="no-results-icon">🔍</div>
-          <h3>No HSN codes found for "${query}"</h3>
-          <p>Try: laptop, mobile, rice, gold, cement</p>
+  
+  const html = results.map(item => `
+    <div class="result-card" onclick="window.location.href='hsn-${item.code}.html'">
+      <div class="result-header">
+        <div class="hsn-code">HSN ${item.code}</div>
+        <div class="gst-rate">${item.rate}% GST</div>
+      </div>
+      <div class="result-description">${item.description}</div>
+      <div class="result-meta">
+        <div class="result-meta-item">
+          <span>📁</span>
+          <span>${item.category}</span>
         </div>
-      `;
-      return;
-    }
-
-    const html = matches.map(item => `
-      <div class="result-card">
-        <div class="result-header">
-          <div class="hsn-code">HSN ${item.code}</div>
-          <div class="gst-rate">${item.gst}</div>
-        </div>
-        <div class="result-description">${item.description}</div>
-        <div class="result-meta">
-          <div class="result-meta-item">
-            <span>📁</span>
-            <span>${item.category}</span>
-          </div>
+        <div class="result-meta-item">
+          <span>🔢</span>
+          <span>${item.code.length}-digit code</span>
         </div>
       </div>
-    `).join('');
+    </div>
+  `).join('');
+  
+  resultsDiv.innerHTML = html + `
+    <div style="background:#fef3c7;border-left:4px solid #f59e0b;padding:1rem;border-radius:8px;margin-top:1.5rem;">
+      <p style="margin:0;font-size:0.875rem;color:#92400e;">
+        <strong>⚠️ Verify HSN codes.</strong> Always cross-check HSN codes and GST rates with <a href="https://www.gst.gov.in" target="_blank" style="color:#92400e;text-decoration:underline;font-weight:600;">gst.gov.in</a> before use on invoices. Rates may change based on government notifications.
+      </p>
+    </div>
+  `;
+  
+  resultsDiv.style.display = 'block';
+}
 
-    resultsDiv.innerHTML = html;
-    resultsDiv.style.display = 'block';
-  }
-
-  // Auto-focus
-  if (window.innerWidth >= 768) {
-    searchInput.focus();
-  }
-});
+// Auto-focus search input on desktop
+if (window.innerWidth >= 768) {
+  searchInput.focus();
+}
 </script>
+
 </body>
 </html>
