@@ -8,14 +8,17 @@
     gtag('js', new Date());
     gtag('config', 'G-VVBKGDPYBE');
   </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top 500 GST Rates India 2026 - Most Searched Items with HSN Codes</title>
-  <meta name="description" content="Find GST rates for 500+ most searched items in India. Mobile phones, cars, food, clothing - all with verified HSN codes and tax rates for 2026.">
+  <title>GST Rate Information Portal - 500+ Items | MyGSTIndia</title>
+  <meta name="description" content="GST rate reference compiled from public notifications. Scenarios for food items, cess calculation, HSN codes based on Feb 2026 data.">
   <link rel="canonical" href="https://mygstindia.in/gst-rates-500.html">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -25,58 +28,94 @@
     }
     body { font-family: 'Inter', sans-serif; color: var(--gray-900); line-height: 1.6; background: var(--gray-50); }
     h1, h2 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
-   
+    
     .navbar { background: white; border-bottom: 1px solid var(--gray-200); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
     .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; }
     .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--navy); font-weight: 700; font-size: 1.25rem; }
     .logo-mark { width: 48px; height: 48px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; }
     .logo-text { background: linear-gradient(135deg, var(--blue), #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-   
+    
     .hero { background: linear-gradient(180deg, #eff6ff 0%, white 100%); padding: 3rem 1rem 2rem; text-align: center; }
     .hero h1 { font-size: 2rem; margin-bottom: 1rem; color: var(--navy); }
     .hero p { color: var(--gray-600); margin-bottom: 1rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-    .trust-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #d1fae5; padding: 0.5rem 1rem; border-radius: 50px; color: #065f46; font-weight: 600; font-size: 0.875rem; margin-top: 1rem; }
-   
+    .trust-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #dbeafe; padding: 0.5rem 1rem; border-radius: 50px; color: #1e40af; font-weight: 600; font-size: 0.875rem; margin-top: 1rem; }
+    
     .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
     .search-box { position: relative; margin-bottom: 1.5rem; }
     .search-input { width: 100%; padding: 1rem 1rem 1rem 3.5rem; font-size: 1rem; border: 3px solid var(--blue); border-radius: 12px; outline: none; }
     .search-icon { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--blue); }
-   
+    
     .filters { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
     .filter-btn { padding: 0.75rem 1.5rem; background: white; border: 2px solid var(--gray-200); border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-size: 0.875rem; }
     .filter-btn.active { background: var(--blue); color: white; border-color: var(--blue); }
-   
-    .table-container { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .results-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
+    
+    .gst-item { background: white; border-radius: 16px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .item-header { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .item-header h3 { font-size: 1.125rem; color: var(--navy); flex: 1; min-width: 200px; }
+    
+    .hsn-badge { background: var(--gray-100); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.875rem; color: var(--gray-600); font-weight: 600; }
+    .conditional-badge { background: #dbeafe; color: #1e40af; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+    .cess-badge { background: #fef3c7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+    
+    .rate-display { text-align: center; padding: 1rem; }
+    .rate-value { font-size: 2.5rem; font-weight: 700; color: var(--blue); }
+    .rate-label { color: var(--gray-600); margin-top: 0.5rem; }
+    
+    .scenario-label { font-weight: 600; color: var(--gray-600); margin-bottom: 1rem; }
+    .scenarios { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+    .scenario-option { position: relative; }
+    .scenario-option input[type="radio"] { position: absolute; opacity: 0; }
+    .scenario-card { display: flex; flex-direction: column; padding: 1rem; border: 2px solid var(--gray-200); border-radius: 12px; cursor: pointer; transition: all 0.2s; text-align: center; }
+    .scenario-card:hover { border-color: var(--blue); background: #eff6ff; }
+    .scenario-option input[type="radio"]:checked + .scenario-card { border-color: var(--blue); background: #dbeafe; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); }
+    .scenario-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    .scenario-title { font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; font-size: 0.9rem; }
+    .scenario-rate { font-size: 1.25rem; font-weight: 700; color: var(--blue); margin: 0.5rem 0; }
+    .scenario-desc { font-size: 0.8rem; color: var(--gray-600); }
+    
+    .rate-breakdown { background: var(--gray-50); padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+    .breakdown-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--gray-200); }
+    .breakdown-row:last-child { border-bottom: none; }
+    .breakdown-label { color: var(--gray-600); }
+    .breakdown-value { font-weight: 600; color: var(--navy); }
+    .total-row { font-size: 1.125rem; padding-top: 0.75rem; }
+    .total-row .breakdown-value { color: #ef4444; font-size: 1.25rem; }
+    
+    .info-note, .alert-note { padding: 0.75rem 1rem; border-radius: 8px; display: flex; align-items: flex-start; gap: 0.75rem; margin-top: 1rem; font-size: 0.9rem; }
+    .info-note { background: #eff6ff; color: #1e40af; }
+    .alert-note { background: #fef3c7; color: #92400e; }
+    
+    .disclaimer { background: #fef3c7; border-left: 4px solid var(--amber); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
+    .disclaimer h3 { margin-bottom: 1rem; color: #92400e; font-size: 1.25rem; }
+    .disclaimer p { margin-bottom: 1rem; color: #78350f; line-height: 1.7; }
+    .disclaimer strong { color: #92400e; }
+    
+    .legal-section { background: white; border: 2px solid var(--gray-200); padding: 2rem; margin: 2rem 0; border-radius: 12px; }
+    .legal-section h2 { margin-bottom: 1rem; color: var(--navy); }
+    .legal-section p { margin-bottom: 1rem; color: var(--gray-700); line-height: 1.8; }
+    .legal-section .not-advice { background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; font-weight: 600; margin: 1rem 0; }
+    .legal-section .sources { background: var(--gray-50); padding: 1rem; border-radius: 8px; font-size: 0.95rem; color: var(--gray-700); margin-top: 1rem; }
+    
+    .results-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
     .results-count { font-weight: 600; color: var(--gray-700); }
     .update-date { font-size: 0.875rem; color: var(--gray-600); }
-   
-    table { width: 100%; border-collapse: collapse; }
-    th { background: var(--gray-100); padding: 1rem; text-align: left; font-weight: 700; border-bottom: 2px solid var(--gray-200); position: sticky; top: 60px; z-index: 10; }
-    td { padding: 1rem; border-bottom: 1px solid var(--gray-100); }
-    tr:hover { background: var(--gray-50); }
-   
-    .rate-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 50px; font-weight: 700; font-size: 0.875rem; }
-    .rate-0 { background: #d1fae5; color: #065f46; }
-    .rate-3 { background: #fef3c7; color: #92400e; }
-    .rate-5 { background: #d1fae5; color: #065f46; }
-    .rate-12 { background: #e9d5ff; color: #6b21a8; }
-    .rate-18 { background: #dbeafe; color: #1e40af; }
-    .rate-28 { background: #fee2e2; color: #991b1b; }
-   
-    .category-badge { display: inline-block; padding: 0.25rem 0.75rem; background: var(--gray-100); border-radius: 50px; font-size: 0.75rem; color: var(--gray-700); font-weight: 600; }
-   
-    .disclaimer { background: #fef3c7; border-left: 4px solid var(--amber); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
-   
+    
+    footer { background: var(--navy); color: white; padding: 3rem 1rem 1rem; margin-top: 4rem; }
+    .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .footer-section h4 { margin-bottom: 1rem; font-size: 1.1rem; }
+    .footer-section a { color: #cbd5e1; text-decoration: none; display: block; margin-bottom: 0.5rem; }
+    .footer-section a:hover { color: white; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; padding-top: 1rem; text-align: center; color: #94a3b8; }
+    
     @media (max-width: 768px) {
       .hero h1 { font-size: 1.5rem; }
-      table { font-size: 0.875rem; }
-      td, th { padding: 0.75rem 0.5rem; }
-      .category-badge { display: none; }
+      .scenarios { grid-template-columns: 1fr; }
+      .rate-value { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
+
 <nav class="navbar">
   <div class="nav-container">
     <a href="index.html" class="logo">
@@ -85,773 +124,854 @@
     </a>
   </div>
 </nav>
+
 <div class="hero">
-  <h1>🇮🇳 Top 500 GST Rates India 2026</h1>
-  <p>Most searched items with verified GST rates and HSN codes. Updated for 2026.</p>
+  <h1>🇮🇳 GST Rate Information Portal</h1>
+  <p>Compiled GST Rate Reference from Public Notifications. Scenario-based display for food items, cess included where applicable.</p>
   <div class="trust-badge">
-    ✓ All Rates Verified
+    ✓ Based on Latest GST Notifications
   </div>
 </div>
+
 <div class="container">
   <div class="search-box">
     <div class="search-icon">🔍</div>
-    <input type="text" id="searchInput" class="search-input" placeholder="Search by item name or HSN code (e.g., 'mobile phone' or '8517')..." autocomplete="off">
+    <input type="text" id="searchInput" class="search-input" placeholder="Search by item name, HSN code, or category..." autocomplete="off">
   </div>
+  
   <div class="filters">
-    <button class="filter-btn active" onclick="filterByRate('all')">All Rates</button>
+    <button class="filter-btn active" onclick="filterByRate('all')">All Items</button>
     <button class="filter-btn" onclick="filterByRate('0%')">0% GST</button>
-    <button class="filter-btn" onclick="filterByRate('3%')">3% GST</button>
     <button class="filter-btn" onclick="filterByRate('5%')">5% GST</button>
     <button class="filter-btn" onclick="filterByRate('12%')">12% GST</button>
     <button class="filter-btn" onclick="filterByRate('18%')">18% GST</button>
     <button class="filter-btn" onclick="filterByRate('28%')">28% GST</button>
+    <button class="filter-btn" onclick="filterByRate('conditional')">Food (Conditional)</button>
   </div>
-  <div class="table-container">
-    <div class="results-info">
-      <div class="results-count" id="resultsCount">Showing 190 verified items</div>
-      <div class="update-date">Last updated: February 2026</div>
-    </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>HSN Code</th>
-          <th>Category</th>
-          <th>GST Rate</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-    </table>
+  
+  <div class="results-info">
+    <div class="results-count" id="resultsCount">Showing sample items</div>
+    <div class="update-date">Last verified: 25 February 2026</div>
   </div>
+  
+  <div id="itemsContainer">
+    <!-- Items rendered by JavaScript -->
+  </div>
+  
   <div class="disclaimer">
-    <strong>⚠️ Important:</strong> These are the most commonly searched items with verified GST rates. For uncommon items or specific business scenarios, please verify with <a href="https://www.gst.gov.in" target="_blank" style="color:#92400e;text-decoration:underline;">gst.gov.in</a> or consult a Chartered Accountant.
+    <h3>⚠️ Important Compliance Notes</h3>
+    <p>
+      <strong>Food Items:</strong> Pre-packaged items with brand labels attract 5% GST (loose/bulk items may be exempt). 
+      <strong>Beverages:</strong> Energy drinks and aerated beverages: Additional 12% compensation cess applies (total 40%). 
+      <strong>Rate Changes:</strong> Information reflects February 2026 notifications but rates may change.
+    </p>
+    <p>
+      For business-specific scenarios, consult <a href="https://www.gst.gov.in" target="_blank" rel="noopener" style="color:#92400e;text-decoration:underline;">gst.gov.in</a> or a Chartered Accountant.
+    </p>
   </div>
+  
+  <!-- LEGAL DISCLAIMER SECTION -->
+  <div class="legal-section">
+    <h2>Legal Disclaimer</h2>
+    <p>
+      The GST rates and HSN codes displayed on this website are provided for <strong>general informational purposes only</strong>. While efforts are made to keep the information accurate and updated, MyGSTIndia makes no representations or warranties regarding completeness or correctness and shall not be liable for any loss arising from reliance on this data.
+    </p>
+    <p>
+      GST rates are subject to change through government notifications, circulars, and product-specific classifications. Users are <strong>strongly advised to verify applicable rates</strong> from <a href="https://www.gst.gov.in" target="_blank" rel="noopener">gst.gov.in</a> or consult a qualified Chartered Accountant or tax professional before filing returns or issuing invoices.
+    </p>
+    
+    <div class="not-advice">
+      ⚠️ This information does not constitute legal or tax advice.
+    </div>
+    
+    <div class="sources">
+      <strong>Primary sources:</strong> GST Rate Notifications (Central Tax), CBIC circulars, and gst.gov.in public tariff publications.
+    </div>
+  </div>
+  
 </div>
-<script src="gst-rates.js"></script>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>MyGSTIndia</h4>
+      <p style="color:#cbd5e1;">GST Rate Information Portal</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-section">
+      <h4>Legal</h4>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms & Conditions</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+    <div class="footer-section">
+      <h4>Resources</h4>
+      <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST.gov.in</a>
+      <a href="https://cbic-gst.gov.in" target="_blank" rel="noopener">CBIC</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 MyGSTIndia. Information portal - not affiliated with government bodies.
+  </div>
+</footer>
+
+<script src="gst-rates-database.js"></script>
 <script>
-// Complete 500 GST Items Database - Sorted by Category
-// MyGSTIndia.in - Last Updated: February 2026
-// All rates verified from official GST notifications
+// This will load your external database file
+// For now, using sample data
 
-const itemDatabase = [
+const smartDatabase = [
+  {item: "Power Bank", hsn: "8507", category: "Electronics", type: "simple", rate: "18%", note: "Rate reduced from 28% (Feb 2026)"},
+  
+  {item: "Rice (All Types)", hsn: "1006", category: "Food", type: "conditional", scenarios: [{title: "Loose/Bulk", rate: "0%", icon: "📦", desc: "Sold by weight"}, {title: "Pre-packaged", rate: "5%", icon: "🏷️", desc: "With brand label"}], note: "Pre-packaged with brand label attracts 5% GST (July 2022 rule)"},
+  
+  {item: "Honey", hsn: "0409", category: "Food", type: "conditional", scenarios: [{title: "Raw/Natural", rate: "0%", icon: "🍯", desc: "Unpacked, bulk"}, {title: "Branded", rate: "5%", icon: "🏪", desc: "Packaged (Dabur)"}], alert: "Raw honey in bulk is exempt, packaged attracts 5% GST"},
+  
+  {item: "Energy Drinks", hsn: "2202", category: "Food", type: "withCess", baseRate: "28%", cess: "12%", effectiveRate: "40%", alert: "Total effective rate is 40% (28% GST + 12% Compensation Cess)"},
+  
+  {item: "Sunscreen", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%", note: "Skin care reclassified (was 28%)"},
+  
+  {item: "Mobile Phones", hsn: "8517", category: "Electronics", type: "simple", rate: "18%"},
+  {item: "Laptops", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+  {item: "Air Conditioner", hsn: "8415", category: "Appliances", type: "simple", rate: "28%"},
+  {item: "Cement", hsn: "2523", category: "Construction", type: "simple", rate: "28%"},
+  {item: "Gold Jewelry", hsn: "7113", category: "Jewelry", type: "simple", rate: "3%"},
+  {item: "Medicines", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+  {item: "Books", hsn: "4901", category: "Books", type: "simple", rate: "0%"},
+  {item: "Power Bank", hsn: "8507", category: "Electronics", type: "simple", rate: "18%", note: "Rate reduced from 28% (Feb 2026)"},
+{item: "Sunscreen", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%", note: "Skin care reclassified (was 28%)"},
+{item: "Face Cream", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%", note: "Most skin care now 18%"},
+{item: "Moisturizer", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%", note: "Skin care preparations"},
 
-// ============================================
-// ACCESSORIES (20 items)
-// ============================================
-{item: "Backpack/School Bag", hsn: "42021290", category: "Accessories", rate: "18%"},
-{item: "Bags (School Bags)", hsn: "42021290", category: "Accessories", rate: "18%"},
-{item: "Belt (Leather)", hsn: "4203", category: "Accessories", rate: "18%"},
-{item: "Belts (Non-leather)", hsn: "39262090", category: "Accessories", rate: "18%"},
-{item: "Camera Tripod", hsn: "96200000", category: "Accessories", rate: "18%"},
-{item: "Caps / Hats", hsn: "65050090", category: "Accessories", rate: "12%"},
-{item: "Cap / Hat", hsn: "65050090", category: "Accessories", rate: "12%"},
-{item: "Handbag", hsn: "4202", category: "Accessories", rate: "18%"},
-{item: "Leather Belts", hsn: "42033000", category: "Accessories", rate: "18%"},
-{item: "Leather Belt", hsn: "42033000", category: "Accessories", rate: "18%"},
-{item: "Leather Wallet", hsn: "42023120", category: "Accessories", rate: "18%"},
-{item: "Leather Wallets", hsn: "42023120", category: "Accessories", rate: "18%"},
-{item: "Luggage Bags", hsn: "42021290", category: "Accessories", rate: "18%"},
-{item: "Non-Leather Belt", hsn: "39262090", category: "Accessories", rate: "18%"},
-{item: "School Bag", hsn: "42021290", category: "Accessories", rate: "18%"},
-{item: "Travel Luggage", hsn: "42021290", category: "Accessories", rate: "18%"},
-{item: "Tripod", hsn: "9620", category: "Accessories", rate: "18%"},
-{item: "Umbrella", hsn: "6601", category: "Accessories", rate: "12%"},
-{item: "Umbrellas", hsn: "6601", category: "Accessories", rate: "12%"},
-{item: "Wallet", hsn: "4202", category: "Accessories", rate: "18%"},
+// ITEMS WITH CESS
+{item: "Energy Drinks", hsn: "2202", category: "Food", type: "withCess", baseRate: "28%", cess: "12%", effectiveRate: "40%", alert: "Total 40% (28% GST + 12% Cess)"},
+{item: "Soft Drinks (Aerated)", hsn: "2202", category: "Food", type: "withCess", baseRate: "28%", cess: "12%", effectiveRate: "40%", alert: "Aerated beverages attract cess"},
 
-// ============================================
-// AGRICULTURE (30 items)
-// ============================================
-{item: "Combine Harvester", hsn: "84335900", category: "Agriculture", rate: "12%"},
-{item: "Cultivator", hsn: "84322900", category: "Agriculture", rate: "12%"},
-{item: "Diesel Engine", hsn: "84089090", category: "Agriculture", rate: "18%"},
-{item: "Drip Irrigation Pipe", hsn: "39172990", category: "Agriculture", rate: "18%"},
-{item: "Drip Irrigation Pipes", hsn: "39172990", category: "Agriculture", rate: "18%"},
-{item: "Fertilizer (Urea)", hsn: "31021000", category: "Agriculture", rate: "5%"},
-{item: "Fertilizer Spreader", hsn: "84324000", category: "Agriculture", rate: "12%"},
-{item: "Fertilizers", hsn: "31021000", category: "Agriculture", rate: "5%"},
-{item: "Harrow", hsn: "84322100", category: "Agriculture", rate: "12%"},
-{item: "Harvesters", hsn: "84335900", category: "Agriculture", rate: "12%"},
-{item: "Monoblock Pump", hsn: "84137099", category: "Agriculture", rate: "18%"},
-{item: "Pesticide", hsn: "38089199", category: "Agriculture", rate: "18%"},
-{item: "Pesticide Sprayer", hsn: "84248990", category: "Agriculture", rate: "18%"},
-{item: "Pesticides", hsn: "38089199", category: "Agriculture", rate: "18%"},
-{item: "Plough", hsn: "84321000", category: "Agriculture", rate: "12%"},
-{item: "Power Tiller", hsn: "84322900", category: "Agriculture", rate: "12%"},
-{item: "Pumpsets (Submersible)", hsn: "84137010", category: "Agriculture", rate: "18%"},
-{item: "Rotavator", hsn: "84328020", category: "Agriculture", rate: "12%"},
-{item: "Seed Drill", hsn: "84323000", category: "Agriculture", rate: "12%"},
-{item: "Seeds (Vegetable)", hsn: "12099190", category: "Agriculture", rate: "0%"},
-{item: "Solar Water Pump", hsn: "84137099", category: "Agriculture", rate: "12%"},
-{item: "Solar Water Pumps", hsn: "84137099", category: "Agriculture", rate: "12%"},
-{item: "Sprayer Pump", hsn: "84248990", category: "Agriculture", rate: "18%"},
-{item: "Submersible Pump", hsn: "84137010", category: "Agriculture", rate: "18%"},
-{item: "Thresher", hsn: "84335200", category: "Agriculture", rate: "12%"},
-{item: "Tractor", hsn: "87011000", category: "Agriculture", rate: "12%"},
-{item: "Tractor Trolley", hsn: "87168090", category: "Agriculture", rate: "12%"},
-{item: "Tractors", hsn: "87011000", category: "Agriculture", rate: "12%"},
-{item: "Vegetable Seeds", hsn: "12099190", category: "Agriculture", rate: "0%"},
+// CONDITIONAL ITEMS - FOOD (Packaging Matters)
+{item: "Rice (All Types)", hsn: "1006", category: "Food", type: "conditional", scenarios: [{title: "Loose/Bulk", rate: "0%", icon: "&#128230;", desc: "Sold by weight"}, {title: "Pre-packaged", rate: "5%", icon: "&#127991;", desc: "With brand label"}], note: "Pre-packaged with brand label = 5% GST"},
+{item: "Basmati Rice", hsn: "1006", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Brown Rice", hsn: "1006", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Labeled"}]},
+{item: "Wheat", hsn: "1001", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "By weight"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Wheat Flour (Atta)", hsn: "1101", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Labeled"}]},
+{item: "Maida", hsn: "1101", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Besan (Gram Flour)", hsn: "1106", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Labeled"}]},
+{item: "Toor Dal", hsn: "0713", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Moong Dal", hsn: "0713", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Chana Dal", hsn: "0713", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Rajma", hsn: "0713", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Kabuli Chana", hsn: "0713", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Honey", hsn: "0409", category: "Food", type: "conditional", scenarios: [{title: "Raw/Natural", rate: "0%", icon: "&#127855;", desc: "Unpacked"}, {title: "Branded", rate: "5%", icon: "&#127978;", desc: "Packaged"}], alert: "Raw = 0%, Packaged = 5%"},
+{item: "Fresh Vegetables", hsn: "0709", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "By weight"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Pre-packed"}]},
+{item: "Fresh Fruits", hsn: "0804", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "By weight"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Pre-packed"}]},
+{item: "Turmeric Powder", hsn: "0910", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Chilli Powder", hsn: "0904", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Cumin Powder", hsn: "0909", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Coriander Powder", hsn: "0909", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
+{item: "Garam Masala", hsn: "0910", category: "Food", type: "conditional", scenarios: [{title: "Loose", rate: "0%", icon: "&#128230;", desc: "Bulk"}, {title: "Packaged", rate: "5%", icon: "&#127991;", desc: "Branded"}]},
 
-// ============================================
-// APPLIANCES (35 items)
-// ============================================
-{item: "Air Conditioners", hsn: "8415", category: "Appliances", rate: "28%"},
-{item: "Ceiling Fan", hsn: "84145111", category: "Appliances", rate: "18%"},
-{item: "Ceiling Fans", hsn: "84145111", category: "Appliances", rate: "18%"},
-{item: "Electric Iron", hsn: "85164000", category: "Appliances", rate: "18%"},
-{item: "Electric Kettle", hsn: "85161000", category: "Appliances", rate: "18%"},
-{item: "Fans (Ceiling/Table)", hsn: "8414", category: "Appliances", rate: "18%"},
-{item: "Hair Dryer", hsn: "85163100", category: "Appliances", rate: "18%"},
-{item: "Induction Cooker", hsn: "85166000", category: "Appliances", rate: "18%"},
-{item: "Induction Cooktop", hsn: "8516", category: "Appliances", rate: "18%"},
-{item: "Juicer", hsn: "85094090", category: "Appliances", rate: "18%"},
-{item: "Juicer Mixer", hsn: "85094090", category: "Appliances", rate: "18%"},
-{item: "Juicer Mixer Grinder", hsn: "85094090", category: "Appliances", rate: "18%"},
-{item: "Juicer/Mixer Grinder", hsn: "8509", category: "Appliances", rate: "18%"},
-{item: "LPG Stove", hsn: "73211110", category: "Appliances", rate: "18%"},
-{item: "Microwave Oven", hsn: "85165000", category: "Appliances", rate: "18%"},
-{item: "Mixer Grinder", hsn: "85094090", category: "Appliances", rate: "18%"},
-{item: "Mixer Grinders", hsn: "85094090", category: "Appliances", rate: "18%"},
-{item: "Mixers & Grinders", hsn: "8509", category: "Appliances", rate: "18%"},
-{item: "Refrigerators", hsn: "8418", category: "Appliances", rate: "28%"},
-{item: "RO Water Purifier", hsn: "84212190", category: "Appliances", rate: "18%"},
-{item: "Room Heater", hsn: "85162900", category: "Appliances", rate: "18%"},
-{item: "Table Fan", hsn: "84145190", category: "Appliances", rate: "18%"},
-{item: "Table Fans", hsn: "84145190", category: "Appliances", rate: "18%"},
-{item: "Toaster", hsn: "85167200", category: "Appliances", rate: "18%"},
-{item: "Vacuum Cleaner", hsn: "85081100", category: "Appliances", rate: "18%"},
-{item: "Washing Machine", hsn: "84501100", category: "Appliances", rate: "18%"},
-{item: "Washing Machines", hsn: "8450", category: "Appliances", rate: "28%"},
-{item: "Water Heaters & Geysers", hsn: "8516", category: "Appliances", rate: "18%"},
-{item: "Water Purifier", hsn: "84212190", category: "Appliances", rate: "18%"},
-{item: "Water Purifier/RO", hsn: "8421", category: "Appliances", rate: "18%"},
-
-// ============================================
-// AUTOMOTIVE (25 items)
-// ============================================
-{item: "Bike Chain", hsn: "73151210", category: "Automotive", rate: "28%"},
-{item: "Bike Chain Lubricant", hsn: "27101981", category: "Automotive", rate: "18%"},
-{item: "Brake Oil", hsn: "38200000", category: "Automotive", rate: "18%"},
-{item: "Brake Pads", hsn: "68131000", category: "Automotive", rate: "28%"},
-{item: "Car Air Filter", hsn: "84213990", category: "Automotive", rate: "28%"},
-{item: "Car Battery", hsn: "85071000", category: "Automotive", rate: "28%"},
-{item: "Car Floor Mats", hsn: "57032090", category: "Automotive", rate: "28%"},
-{item: "Car Perfume", hsn: "33074900", category: "Automotive", rate: "28%"},
-{item: "Car Polish/Wax", hsn: "34053000", category: "Automotive", rate: "28%"},
-{item: "Car Shampoo", hsn: "34022090", category: "Automotive", rate: "18%"},
-{item: "Car Steering Wheel Cover", hsn: "63039290", category: "Automotive", rate: "28%"},
-{item: "Car Wiper Blades", hsn: "84831090", category: "Automotive", rate: "28%"},
-{item: "Clutch Plate", hsn: "84834090", category: "Automotive", rate: "28%"},
-{item: "Coolant/Antifreeze", hsn: "38200000", category: "Automotive", rate: "18%"},
-{item: "Engine Oil (Synthetic)", hsn: "27101981", category: "Automotive", rate: "18%"},
-{item: "Headlight Bulb", hsn: "85392100", category: "Automotive", rate: "28%"},
-{item: "Helmet Visor", hsn: "39269099", category: "Automotive", rate: "28%"},
-{item: "Motorcycle Battery", hsn: "85071000", category: "Automotive", rate: "28%"},
-{item: "Seat Covers (Car)", hsn: "63039290", category: "Automotive", rate: "28%"},
-{item: "Spark Plug", hsn: "85114000", category: "Automotive", rate: "28%"},
-{item: "Tyres", hsn: "4011", category: "Automotive", rate: "28%"},
-
-// ============================================
-// BABY CARE (10 items)
-// ============================================
-{item: "Baby Cradle", hsn: "94038990", category: "Baby Care", rate: "18%"},
-{item: "Baby Food (Cerelac)", hsn: "19011090", category: "Baby Care", rate: "18%"},
-{item: "Baby Oil", hsn: "33059090", category: "Baby Care", rate: "18%"},
-{item: "Baby Powder", hsn: "33049100", category: "Baby Care", rate: "18%"},
-{item: "Baby Soap", hsn: "34011190", category: "Baby Care", rate: "18%"},
-{item: "Baby Walker", hsn: "95030090", category: "Baby Care", rate: "18%"},
-{item: "Baby Wipes", hsn: "34011190", category: "Baby Care", rate: "18%"},
-{item: "Feeding Bottle", hsn: "39241090", category: "Baby Care", rate: "18%"},
-
-// ============================================
-// CLOTHING (35 items)
-// ============================================
-{item: "Cap / Hat", hsn: "65050090", category: "Clothing", rate: "12%"},
-{item: "Inner Wear", hsn: "6108", category: "Clothing", rate: "12%"},
-{item: "Jackets", hsn: "6201", category: "Clothing", rate: "12%"},
-{item: "Jeans", hsn: "6203", category: "Clothing", rate: "12%"},
-{item: "Jeans (Men's)", hsn: "62034200", category: "Clothing", rate: "12%"},
-{item: "Jeans (Women's)", hsn: "62046200", category: "Clothing", rate: "12%"},
-{item: "Kurta (Men's)", hsn: "6205", category: "Clothing", rate: "5%"},
-{item: "Kurta/Kurti", hsn: "6206", category: "Clothing", rate: "12%"},
-{item: "Kurtas (Ladies)", hsn: "6204", category: "Clothing", rate: "5%"},
-{item: "Kurti (Ladies)", hsn: "6204", category: "Clothing", rate: "5%"},
-{item: "Leggings", hsn: "6115", category: "Clothing", rate: "12%"},
-{item: "Men's Jeans", hsn: "62034200", category: "Clothing", rate: "12%"},
-{item: "Men's shirts", hsn: "6205", category: "Clothing", rate: "12%"},
-{item: "Raincoat", hsn: "62102000", category: "Clothing", rate: "12%"},
-{item: "Raincoats", hsn: "62102000", category: "Clothing", rate: "12%"},
-{item: "Saree (cotton)", hsn: "5208", category: "Clothing", rate: "5%"},
-{item: "Salwar Kameez", hsn: "6204", category: "Clothing", rate: "5%"},
-{item: "Socks", hsn: "6115", category: "Clothing", rate: "5%"},
-{item: "Sportswear/Gym Wear", hsn: "6211", category: "Clothing", rate: "12%"},
-{item: "Sweaters", hsn: "6110", category: "Clothing", rate: "12%"},
-{item: "T-shirts", hsn: "6109", category: "Clothing", rate: "12%"},
-{item: "Track Pants", hsn: "6203", category: "Clothing", rate: "12%"},
-{item: "Trousers", hsn: "6203", category: "Clothing", rate: "12%"},
-{item: "Undergarments", hsn: "6108", category: "Clothing", rate: "5%"},
-{item: "Women's Jeans", hsn: "62046200", category: "Clothing", rate: "12%"},
-{item: "Women's shirts", hsn: "6206", category: "Clothing", rate: "12%"},
-{item: "Women's trousers", hsn: "6204", category: "Clothing", rate: "12%"},
-
-// ============================================
-// CONSTRUCTION (40 items)
-// ============================================
-{item: "Bricks", hsn: "6901", category: "Construction", rate: "12%"},
-{item: "Cement", hsn: "2523", category: "Construction", rate: "28%"},
-{item: "Ceramic Floor Tiles", hsn: "69072100", category: "Construction", rate: "18%"},
-{item: "Ceramic Tiles", hsn: "69072100", category: "Construction", rate: "18%"},
-{item: "CPVC Pipe", hsn: "39172390", category: "Construction", rate: "18%"},
-{item: "Distemper", hsn: "32100090", category: "Construction", rate: "18%"},
-{item: "Distemper Paint", hsn: "32100090", category: "Construction", rate: "18%"},
-{item: "Electric Motor", hsn: "85015190", category: "Construction", rate: "18%"},
-{item: "Electrical Conduit Pipe", hsn: "39174000", category: "Construction", rate: "18%"},
-{item: "Emulsion Paint", hsn: "32091090", category: "Construction", rate: "18%"},
-{item: "GI Pipe", hsn: "73063090", category: "Construction", rate: "18%"},
-{item: "Granite Slabs", hsn: "25161200", category: "Construction", rate: "18%"},
-{item: "Marble Slabs", hsn: "25151210", category: "Construction", rate: "18%"},
-{item: "MCB (Miniature Circuit Breaker)", hsn: "85363090", category: "Construction", rate: "18%"},
-{item: "Paint", hsn: "3208", category: "Construction", rate: "18%"},
-{item: "Paints (Emulsion)", hsn: "32091090", category: "Construction", rate: "18%"},
-{item: "PVC Pipe", hsn: "39172390", category: "Construction", rate: "18%"},
-{item: "Ready Mix Concrete", hsn: "38245090", category: "Construction", rate: "18%"},
-{item: "River Sand", hsn: "25051011", category: "Construction", rate: "5%"},
-{item: "Sand", hsn: "25051011", category: "Construction", rate: "5%"},
-{item: "Switch Board", hsn: "85389000", category: "Construction", rate: "18%"},
-{item: "Tiles", hsn: "6907", category: "Construction", rate: "18%"},
-{item: "TMT Steel Bars", hsn: "72142090", category: "Construction", rate: "18%"},
-{item: "Vitrified Tiles", hsn: "69072300", category: "Construction", rate: "18%"},
-
-// ============================================
 // ELECTRONICS (50 items)
-// ============================================
-{item: "Bluetooth Speaker", hsn: "8518", category: "Electronics", rate: "18%"},
-{item: "Bluetooth Speakers", hsn: "85182100", category: "Electronics", rate: "18%"},
-{item: "Chargers, adapters", hsn: "8504", category: "Electronics", rate: "18%"},
-{item: "Computers, laptops", hsn: "8471", category: "Electronics", rate: "18%"},
-{item: "Desktop Computers", hsn: "84714100", category: "Electronics", rate: "18%"},
-{item: "Diesel Generator", hsn: "85021100", category: "Electronics", rate: "18%"},
-{item: "Digital Camera", hsn: "8525", category: "Electronics", rate: "18%"},
-{item: "Dry Cell Battery", hsn: "85061000", category: "Electronics", rate: "18%"},
-{item: "DSLR Camera", hsn: "85258090", category: "Electronics", rate: "18%"},
-{item: "Earphones / Earbuds", hsn: "85183000", category: "Electronics", rate: "18%"},
-{item: "Electrical Switch", hsn: "85365090", category: "Electronics", rate: "18%"},
-{item: "Electrical Wire", hsn: "85444999", category: "Electronics", rate: "18%"},
-{item: "Extension Board", hsn: "85366990", category: "Electronics", rate: "18%"},
-{item: "External Hard Drive", hsn: "8471", category: "Electronics", rate: "18%"},
-{item: "Gaming Console", hsn: "9504", category: "Electronics", rate: "28%"},
-{item: "Headphones, speakers", hsn: "8518", category: "Electronics", rate: "18%"},
-{item: "Inverter", hsn: "85044090", category: "Electronics", rate: "18%"},
-{item: "Inverter Batteries", hsn: "85072000", category: "Electronics", rate: "18%"},
-{item: "Mechanical Keyboard", hsn: "8471", category: "Electronics", rate: "18%"},
-{item: "Memory Card (SD/MicroSD)", hsn: "8523", category: "Electronics", rate: "18%"},
-{item: "Mobile phones", hsn: "8517", category: "Electronics", rate: "18%"},
-{item: "Monitor (Computer)", hsn: "8528", category: "Electronics", rate: "18%"},
-{item: "Pen Drive/USB Drive", hsn: "8523", category: "Electronics", rate: "18%"},
-{item: "Petrol Generator", hsn: "85022090", category: "Electronics", rate: "18%"},
-{item: "Phone Charger (Fast Charger)", hsn: "8504", category: "Electronics", rate: "18%"},
-{item: "Power banks (batteries)", hsn: "8507", category: "Electronics", rate: "28%"},
-{item: "Printer Ink Cartridges", hsn: "84439990", category: "Electronics", rate: "18%"},
-{item: "Printers", hsn: "8443", category: "Electronics", rate: "18%"},
-{item: "Rechargeable Battery", hsn: "85076000", category: "Electronics", rate: "18%"},
-{item: "Router/Wi-Fi Device", hsn: "8517", category: "Electronics", rate: "18%"},
-{item: "Smart Speaker", hsn: "8518", category: "Electronics", rate: "18%"},
-{item: "Smartwatch", hsn: "8517", category: "Electronics", rate: "18%"},
-{item: "SSD", hsn: "8471", category: "Electronics", rate: "18%"},
-{item: "Tablet", hsn: "8471", category: "Electronics", rate: "18%"},
-{item: "Tablets (iPad etc.)", hsn: "84713090", category: "Electronics", rate: "18%"},
-{item: "TV", hsn: "8528", category: "Electronics", rate: "18%"},
-{item: "TWS Earbuds", hsn: "8518", category: "Electronics", rate: "18%"},
-{item: "UPS Systems", hsn: "85044090", category: "Electronics", rate: "18%"},
-{item: "USB drives, memory cards", hsn: "8523", category: "Electronics", rate: "18%"},
-{item: "Voltage Stabilizer", hsn: "85044090", category: "Electronics", rate: "18%"},
-{item: "Webcam", hsn: "8525", category: "Electronics", rate: "18%"},
-{item: "Wireless Mouse", hsn: "8471", category: "Electronics", rate: "18%"},
+{item: "Mobile Phones", hsn: "8517", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Smartphones", hsn: "8517", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Laptops", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Desktop Computers", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Tablets", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Smartwatch", hsn: "8517", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Television (TV)", hsn: "8528", category: "Electronics", type: "simple", rate: "18%"},
+{item: "LED TV", hsn: "8528", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Smart TV", hsn: "8528", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Printers", hsn: "8443", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Inkjet Printer", hsn: "8443", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Laser Printer", hsn: "8443", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Headphones", hsn: "8518", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Earbuds (TWS)", hsn: "8518", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Bluetooth Speakers", hsn: "8518", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Smart Speaker", hsn: "8518", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Chargers", hsn: "8504", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Phone Charger", hsn: "8504", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Fast Charger", hsn: "8504", category: "Electronics", type: "simple", rate: "18%"},
+{item: "USB Cables", hsn: "8544", category: "Electronics", type: "simple", rate: "18%"},
+{item: "USB Drives", hsn: "8523", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Pen Drive", hsn: "8523", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Memory Cards", hsn: "8523", category: "Electronics", type: "simple", rate: "18%"},
+{item: "SD Card", hsn: "8523", category: "Electronics", type: "simple", rate: "18%"},
+{item: "External Hard Drive", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+{item: "SSD", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Webcam", hsn: "8525", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Wireless Mouse", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Keyboard", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Mechanical Keyboard", hsn: "8471", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Computer Monitor", hsn: "8528", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Router", hsn: "8517", category: "Electronics", type: "simple", rate: "18%"},
+{item: "WiFi Router", hsn: "8517", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Digital Camera", hsn: "8525", category: "Electronics", type: "simple", rate: "18%"},
+{item: "DSLR Camera", hsn: "8525", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Gaming Console", hsn: "9504", category: "Electronics", type: "simple", rate: "28%"},
+{item: "PlayStation", hsn: "9504", category: "Electronics", type: "simple", rate: "28%"},
+{item: "Xbox", hsn: "9504", category: "Electronics", type: "simple", rate: "28%"},
+{item: "Camera Tripod", hsn: "9620", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Selfie Stick", hsn: "9620", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Inverter Battery", hsn: "8507", category: "Electronics", type: "simple", rate: "18%"},
+{item: "UPS", hsn: "8504", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Extension Board", hsn: "8536", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Electrical Switch", hsn: "8536", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Electrical Wire", hsn: "8544", category: "Electronics", type: "simple", rate: "18%"},
+{item: "LED Bulb", hsn: "8539", category: "Electronics", type: "simple", rate: "18%"},
+{item: "CFL Bulb", hsn: "8539", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Tube Light", hsn: "8539", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Voltage Stabilizer", hsn: "8504", category: "Electronics", type: "simple", rate: "18%"},
+{item: "Inverter", hsn: "8504", category: "Electronics", type: "simple", rate: "18%"},
 
-// ============================================
-// FASHION (10 items)
-// ============================================
-{item: "Sunglasses", hsn: "90041000", category: "Fashion", rate: "18%"},
-{item: "Watch (Non-Smart)", hsn: "9101", category: "Fashion", rate: "18%"},
-{item: "Watches", hsn: "9102", category: "Fashion", rate: "18%"},
-{item: "Wrist Watch", hsn: "9102", category: "Fashion", rate: "18%"},
+// APPLIANCES (35 items)
+{item: "Air Conditioner", hsn: "8415", category: "Appliances", type: "simple", rate: "28%"},
+{item: "Split AC", hsn: "8415", category: "Appliances", type: "simple", rate: "28%"},
+{item: "Window AC", hsn: "8415", category: "Appliances", type: "simple", rate: "28%"},
+{item: "Refrigerator", hsn: "8418", category: "Appliances", type: "simple", rate: "28%"},
+{item: "Fridge", hsn: "8418", category: "Appliances", type: "simple", rate: "28%"},
+{item: "Deep Freezer", hsn: "8418", category: "Appliances", type: "simple", rate: "28%"},
+{item: "Washing Machine", hsn: "8450", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Front Load Washing Machine", hsn: "8450", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Top Load Washing Machine", hsn: "8450", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Microwave Oven", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Convection Microwave", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Induction Cooktop", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Electric Kettle", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Toaster", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Mixer Grinder", hsn: "8509", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Juicer", hsn: "8509", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Blender", hsn: "8509", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Food Processor", hsn: "8509", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Ceiling Fan", hsn: "8414", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Table Fan", hsn: "8414", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Pedestal Fan", hsn: "8414", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Exhaust Fan", hsn: "8414", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Electric Iron", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Steam Iron", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Hair Dryer", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Hair Straightener", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Vacuum Cleaner", hsn: "8508", category: "Appliances", type: "simple", rate: "28%"},
+{item: "Air Purifier", hsn: "8421", category: "Appliances", type: "simple", rate: "28%"},
+{item: "Water Purifier", hsn: "8421", category: "Appliances", type: "simple", rate: "18%"},
+{item: "RO Water Purifier", hsn: "8421", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Room Heater", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Geyser (Water Heater)", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Instant Water Heater", hsn: "8516", category: "Appliances", type: "simple", rate: "18%"},
+{item: "LPG Stove", hsn: "7321", category: "Appliances", type: "simple", rate: "18%"},
+{item: "Gas Stove", hsn: "7321", category: "Appliances", type: "simple", rate: "18%"},
 
-// ============================================
-// FITNESS (15 items)
-// ============================================
-{item: "Dumbbell", hsn: "95069190", category: "Fitness", rate: "18%"},
-{item: "Dumbbell Set", hsn: "95069190", category: "Fitness", rate: "18%"},
-{item: "Dumbbells", hsn: "95069190", category: "Fitness", rate: "18%"},
-{item: "Exercise Cycle", hsn: "95069110", category: "Fitness", rate: "18%"},
-{item: "Resistance Band", hsn: "95069190", category: "Fitness", rate: "18%"},
-{item: "Skipping Rope", hsn: "95066990", category: "Fitness", rate: "12%"},
-{item: "Treadmill", hsn: "95069110", category: "Fitness", rate: "18%"},
-{item: "Yoga Block", hsn: "95069190", category: "Fitness", rate: "18%"},
-{item: "Yoga Mat", hsn: "40169100", category: "Fitness", rate: "18%"},
-{item: "Yoga Mats", hsn: "40169100", category: "Fitness", rate: "18%"},
+// FOOD & BEVERAGES (40 items - non-conditional)
+{item: "Sugar", hsn: "1701", category: "Food", type: "simple", rate: "5%"},
+{item: "Salt", hsn: "2501", category: "Food", type: "simple", rate: "5%"},
+{item: "Iodized Salt", hsn: "2501", category: "Food", type: "simple", rate: "5%"},
+{item: "Tea (Packaged)", hsn: "0902", category: "Food", type: "simple", rate: "5%"},
+{item: "Tea Leaves", hsn: "0902", category: "Food", type: "simple", rate: "5%"},
+{item: "Coffee (Packaged)", hsn: "0901", category: "Food", type: "simple", rate: "5%"},
+{item: "Coffee Powder", hsn: "0901", category: "Food", type: "simple", rate: "5%"},
+{item: "Instant Coffee", hsn: "0901", category: "Food", type: "simple", rate: "5%"},
+{item: "Milk (Packaged)", hsn: "0401", category: "Food", type: "simple", rate: "5%"},
+{item: "Toned Milk", hsn: "0401", category: "Food", type: "simple", rate: "5%"},
+{item: "Full Cream Milk", hsn: "0401", category: "Food", type: "simple", rate: "5%"},
+{item: "Milk Powder", hsn: "0402", category: "Food", type: "simple", rate: "5%"},
+{item: "Skimmed Milk Powder", hsn: "0402", category: "Food", type: "simple", rate: "5%"},
+{item: "Butter", hsn: "0405", category: "Food", type: "simple", rate: "12%"},
+{item: "Ghee", hsn: "0405", category: "Food", type: "simple", rate: "12%"},
+{item: "Pure Ghee", hsn: "0405", category: "Food", type: "simple", rate: "12%"},
+{item: "Cheese", hsn: "0406", category: "Food", type: "simple", rate: "12%"},
+{item: "Processed Cheese", hsn: "0406", category: "Food", type: "simple", rate: "12%"},
+{item: "Paneer", hsn: "0406", category: "Food", type: "simple", rate: "12%"},
+{item: "Curd (Packaged)", hsn: "0403", category: "Food", type: "simple", rate: "5%"},
+{item: "Yogurt", hsn: "0403", category: "Food", type: "simple", rate: "5%"},
+{item: "Soybean Oil", hsn: "1507", category: "Food", type: "simple", rate: "5%"},
+{item: "Sunflower Oil", hsn: "1512", category: "Food", type: "simple", rate: "5%"},
+{item: "Refined Oil", hsn: "1512", category: "Food", type: "simple", rate: "5%"},
+{item: "Mustard Oil", hsn: "1514", category: "Food", type: "simple", rate: "5%"},
+{item: "Coconut Oil", hsn: "1513", category: "Food", type: "simple", rate: "5%"},
+{item: "Palm Oil", hsn: "1511", category: "Food", type: "simple", rate: "5%"},
+{item: "Biscuits", hsn: "1905", category: "Food", type: "simple", rate: "18%"},
+{item: "Cookies", hsn: "1905", category: "Food", type: "simple", rate: "18%"},
+{item: "Cream Biscuits", hsn: "1905", category: "Food", type: "simple", rate: "18%"},
+{item: "Bread (Packaged)", hsn: "1905", category: "Food", type: "simple", rate: "0%"},
+{item: "Pav", hsn: "1905", category: "Food", type: "simple", rate: "0%"},
+{item: "Chocolates", hsn: "1806", category: "Food", type: "simple", rate: "28%"},
+{item: "Chocolate Bars", hsn: "1806", category: "Food", type: "simple", rate: "28%"},
+{item: "Dark Chocolate", hsn: "1806", category: "Food", type: "simple", rate: "28%"},
+{item: "Ice Cream", hsn: "2105", category: "Food", type: "simple", rate: "18%"},
+{item: "Kulfi", hsn: "2105", category: "Food", type: "simple", rate: "18%"},
+{item: "Namkeen", hsn: "2106", category: "Food", type: "simple", rate: "12%"},
+{item: "Bhujia", hsn: "2106", category: "Food", type: "simple", rate: "12%"},
+{item: "Mixture", hsn: "2106", category: "Food", type: "simple", rate: "12%"},
+{item: "Potato Chips", hsn: "2005", category: "Food", type: "simple", rate: "12%"},
+{item: "Wafers", hsn: "2005", category: "Food", type: "simple", rate: "12%"},
+{item: "Instant Noodles", hsn: "1902", category: "Food", type: "simple", rate: "12%"},
+{item: "Maggi", hsn: "1902", category: "Food", type: "simple", rate: "12%"},
+{item: "Pasta", hsn: "1902", category: "Food", type: "simple", rate: "12%"},
+{item: "Macaroni", hsn: "1902", category: "Food", type: "simple", rate: "12%"},
+{item: "Corn Flakes", hsn: "1904", category: "Food", type: "simple", rate: "18%"},
+{item: "Breakfast Cereal", hsn: "1904", category: "Food", type: "simple", rate: "18%"},
+{item: "Oats", hsn: "1904", category: "Food", type: "simple", rate: "0%"},
+{item: "Packaged Water", hsn: "2201", category: "Food", type: "simple", rate: "12%"},
+{item: "Packaged Drinking Water", hsn: "2201", category: "Food", type: "simple", rate: "12%"},
+{item: "Mineral Water (Bottled)", hsn: "2201", category: "Food", type: "simple", rate: "18%"},
+{item: "Fruit Juice (Packaged)", hsn: "2009", category: "Food", type: "simple", rate: "12%"},
+{item: "Mango Juice", hsn: "2009", category: "Food", type: "simple", rate: "12%"},
+{item: "Orange Juice", hsn: "2009", category: "Food", type: "simple", rate: "12%"},
+{item: "Protein Powder", hsn: "2106", category: "Food", type: "simple", rate: "18%"},
+{item: "Whey Protein", hsn: "2106", category: "Food", type: "simple", rate: "18%"},
+{item: "Mass Gainer", hsn: "2106", category: "Food", type: "simple", rate: "18%"},
+{item: "Baby Food (Cerelac)", hsn: "1901", category: "Food", type: "simple", rate: "18%"},
+{item: "Baby Milk Powder", hsn: "0402", category: "Food", type: "simple", rate: "5%"},
+{item: "Infant Formula", hsn: "1901", category: "Food", type: "simple", rate: "18%"},
 
-// ============================================
-// FOOD (60 items)
-// ============================================
-{item: "Baby Milk Powder", hsn: "04021000", category: "Food", rate: "5%"},
-{item: "Basmati Rice", hsn: "10063020", category: "Food", rate: "0%"},
-{item: "Besan (Gram Flour)", hsn: "11061000", category: "Food", rate: "0%"},
-{item: "Biscuits", hsn: "1905", category: "Food", rate: "18%"},
-{item: "Biscuits (Cream/Chocolate)", hsn: "1905", category: "Food", rate: "18%"},
-{item: "Biscuits (Sweet)", hsn: "19053100", category: "Food", rate: "18%"},
-{item: "Bread (Packaged)", hsn: "1905", category: "Food", rate: "0%"},
-{item: "Brown Rice", hsn: "1006", category: "Food", rate: "0%"},
-{item: "Butter", hsn: "04051000", category: "Food", rate: "12%"},
-{item: "Butter, ghee", hsn: "0405", category: "Food", rate: "12%"},
-{item: "Chana Dal", hsn: "0713", category: "Food", rate: "0%"},
-{item: "Cheese", hsn: "04063000", category: "Food", rate: "12%"},
-{item: "Cheese, paneer", hsn: "0406", category: "Food", rate: "12%"},
-{item: "Chilli Powder", hsn: "0904", category: "Food", rate: "5%"},
-{item: "Chocolate Bars", hsn: "18069010", category: "Food", rate: "18%"},
-{item: "Chocolates", hsn: "1806", category: "Food", rate: "28%"},
-{item: "Coffee", hsn: "0901", category: "Food", rate: "5%"},
-{item: "Coriander Powder", hsn: "0909", category: "Food", rate: "5%"},
-{item: "Corn Flakes", hsn: "19041000", category: "Food", rate: "18%"},
-{item: "Cumin Powder", hsn: "0909", category: "Food", rate: "5%"},
-{item: "Energy Drinks", hsn: "2202", category: "Food", rate: "28%"},
-{item: "Flour", hsn: "1101", category: "Food", rate: "5%"},
-{item: "Fresh Fruits", hsn: "0804", category: "Food", rate: "0%"},
-{item: "Fresh milk", hsn: "0401", category: "Food", rate: "0%"},
-{item: "Fresh Vegetables", hsn: "0709", category: "Food", rate: "0%"},
-{item: "Fruit Juice (Packaged)", hsn: "2009", category: "Food", rate: "12%"},
-{item: "Garam Masala", hsn: "0910", category: "Food", rate: "5%"},
-{item: "Ghee", hsn: "04059010", category: "Food", rate: "12%"},
-{item: "Honey (Natural)", hsn: "0409", category: "Food", rate: "0%"},
-{item: "Ice Cream", hsn: "21050000", category: "Food", rate: "18%"},
-{item: "Instant Noodles", hsn: "1902", category: "Food", rate: "12%"},
-{item: "Kabuli Chana", hsn: "0713", category: "Food", rate: "0%"},
-{item: "Maida", hsn: "11010000", category: "Food", rate: "5%"},
-{item: "Mass Gainer", hsn: "21061000", category: "Food", rate: "18%"},
-{item: "Milk powder", hsn: "0402", category: "Food", rate: "5%"},
-{item: "Mineral Water", hsn: "22011010", category: "Food", rate: "18%"},
-{item: "Moong Dal", hsn: "0713", category: "Food", rate: "0%"},
-{item: "Namkeen", hsn: "2106", category: "Food", rate: "12%"},
-{item: "Namkeen / Snacks", hsn: "21069099", category: "Food", rate: "12%"},
-{item: "Noodles (Instant)", hsn: "19023010", category: "Food", rate: "18%"},
-{item: "Packaged Curd", hsn: "04031000", category: "Food", rate: "5%"},
-{item: "Packaged Drinking Water", hsn: "22011090", category: "Food", rate: "12%"},
-{item: "Packaged Milk", hsn: "04012000", category: "Food", rate: "5%"},
-{item: "Palm oil", hsn: "1511", category: "Food", rate: "5%"},
-{item: "Paneer", hsn: "04061000", category: "Food", rate: "12%"},
-{item: "Poha (Flattened Rice)", hsn: "11041900", category: "Food", rate: "0%"},
-{item: "Potato Chips", hsn: "2005", category: "Food", rate: "12%"},
-{item: "Protein Powder", hsn: "21061000", category: "Food", rate: "18%"},
-{item: "Pulses (Dal)", hsn: "0713", category: "Food", rate: "0%"},
-{item: "Rajma (Red Kidney Beans)", hsn: "0713", category: "Food", rate: "0%"},
-{item: "Rice", hsn: "1006", category: "Food", rate: "0%"},
-{item: "Salt", hsn: "2501", category: "Food", rate: "5%"},
-{item: "Soft Drinks (Aerated)", hsn: "2202", category: "Food", rate: "28%"},
-{item: "Soybean oil", hsn: "1507", category: "Food", rate: "5%"},
-{item: "Sugar", hsn: "1701", category: "Food", rate: "5%"},
-{item: "Sunflower oil", hsn: "1512", category: "Food", rate: "5%"},
-{item: "Tea", hsn: "0902", category: "Food", rate: "5%"},
-{item: "Toor Dal", hsn: "0713", category: "Food", rate: "0%"},
-{item: "Turmeric Powder", hsn: "0910", category: "Food", rate: "5%"},
-{item: "Wheat", hsn: "1001", category: "Food", rate: "0%"},
-{item: "Wheat Flour (Atta)", hsn: "11010000", category: "Food", rate: "0%"},
-{item: "Whey Protein", hsn: "21061000", category: "Food", rate: "18%"},
+// CONSTRUCTION (40 items)
+{item: "Cement", hsn: "2523", category: "Construction", type: "simple", rate: "28%"},
+{item: "OPC Cement", hsn: "2523", category: "Construction", type: "simple", rate: "28%"},
+{item: "PPC Cement", hsn: "2523", category: "Construction", type: "simple", rate: "28%"},
+{item: "Bricks", hsn: "6901", category: "Construction", type: "simple", rate: "12%"},
+{item: "Red Bricks", hsn: "6901", category: "Construction", type: "simple", rate: "12%"},
+{item: "Fly Ash Bricks", hsn: "6901", category: "Construction", type: "simple", rate: "12%"},
+{item: "Tiles (Ceramic)", hsn: "6907", category: "Construction", type: "simple", rate: "18%"},
+{item: "Ceramic Floor Tiles", hsn: "6907", category: "Construction", type: "simple", rate: "18%"},
+{item: "Ceramic Wall Tiles", hsn: "6907", category: "Construction", type: "simple", rate: "18%"},
+{item: "Vitrified Tiles", hsn: "6907", category: "Construction", type: "simple", rate: "18%"},
+{item: "Porcelain Tiles", hsn: "6907", category: "Construction", type: "simple", rate: "18%"},
+{item: "Paint (Emulsion)", hsn: "3209", category: "Construction", type: "simple", rate: "18%"},
+{item: "Wall Paint", hsn: "3209", category: "Construction", type: "simple", rate: "18%"},
+{item: "Exterior Paint", hsn: "3209", category: "Construction", type: "simple", rate: "18%"},
+{item: "Distemper", hsn: "3210", category: "Construction", type: "simple", rate: "18%"},
+{item: "Primer", hsn: "3209", category: "Construction", type: "simple", rate: "18%"},
+{item: "Enamel Paint", hsn: "3208", category: "Construction", type: "simple", rate: "18%"},
+{item: "TMT Steel Bars", hsn: "7214", category: "Construction", type: "simple", rate: "18%"},
+{item: "Steel Rods", hsn: "7214", category: "Construction", type: "simple", rate: "18%"},
+{item: "Iron Rods", hsn: "7214", category: "Construction", type: "simple", rate: "18%"},
+{item: "Ready Mix Concrete", hsn: "3824", category: "Construction", type: "simple", rate: "18%"},
+{item: "RMC", hsn: "3824", category: "Construction", type: "simple", rate: "18%"},
+{item: "Sand", hsn: "2505", category: "Construction", type: "simple", rate: "5%"},
+{item: "River Sand", hsn: "2505", category: "Construction", type: "simple", rate: "5%"},
+{item: "M-Sand", hsn: "2505", category: "Construction", type: "simple", rate: "5%"},
+{item: "Marble Slabs", hsn: "2515", category: "Construction", type: "simple", rate: "18%"},
+{item: "Italian Marble", hsn: "2515", category: "Construction", type: "simple", rate: "18%"},
+{item: "Granite Slabs", hsn: "2516", category: "Construction", type: "simple", rate: "18%"},
+{item: "Granite Tiles", hsn: "2516", category: "Construction", type: "simple", rate: "18%"},
+{item: "PVC Pipes", hsn: "3917", category: "Construction", type: "simple", rate: "18%"},
+{item: "CPVC Pipes", hsn: "3917", category: "Construction", type: "simple", rate: "18%"},
+{item: "GI Pipes", hsn: "7306", category: "Construction", type: "simple", rate: "18%"},
+{item: "MS Pipes", hsn: "7306", category: "Construction", type: "simple", rate: "18%"},
+{item: "Plywood", hsn: "4412", category: "Construction", type: "simple", rate: "18%"},
+{item: "MDF Board", hsn: "4411", category: "Construction", type: "simple", rate: "18%"},
+{item: "Gypsum Board", hsn: "6809", category: "Construction", type: "simple", rate: "18%"},
+{item: "MCB", hsn: "8536", category: "Construction", type: "simple", rate: "18%"},
+{item: "Switch Board", hsn: "8538", category: "Construction", type: "simple", rate: "18%"},
+{item: "Wires and Cables", hsn: "8544", category: "Construction", type: "simple", rate: "18%"},
+{item: "Electric Motor", hsn: "8501", category: "Construction", type: "simple", rate: "18%"},
 
-// ============================================
+// CLOTHING (35 items)
+{item: "Men's Shirts", hsn: "6205", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Formal Shirts", hsn: "6205", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Casual Shirts", hsn: "6205", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Women's Shirts", hsn: "6206", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Tops", hsn: "6206", category: "Clothing", type: "simple", rate: "12%"},
+{item: "T-Shirts", hsn: "6109", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Polo T-Shirts", hsn: "6109", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Jeans (Men)", hsn: "6203", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Jeans (Women)", hsn: "6204", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Denim Jeans", hsn: "6203", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Trousers", hsn: "6203", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Formal Pants", hsn: "6203", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Chinos", hsn: "6203", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Kurta (Men)", hsn: "6205", category: "Clothing", type: "simple", rate: "5%"},
+{item: "Kurta (Women)", hsn: "6206", category: "Clothing", type: "simple", rate: "5%"},
+{item: "Kurti", hsn: "6206", category: "Clothing", type: "simple", rate: "5%"},
+{item: "Saree (Cotton)", hsn: "5208", category: "Clothing", type: "simple", rate: "5%"},
+{item: "Silk Saree", hsn: "5007", category: "Clothing", type: "simple", rate: "5%"},
+{item: "Salwar Kameez", hsn: "6204", category: "Clothing", type: "simple", rate: "5%"},
+{item: "Churidar", hsn: "6204", category: "Clothing", type: "simple", rate: "5%"},
+{item: "Leggings", hsn: "6115", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Jeggings", hsn: "6115", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Sweaters", hsn: "6110", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Cardigans", hsn: "6110", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Jackets", hsn: "6201", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Blazer", hsn: "6203", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Raincoat", hsn: "6210", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Innerwear", hsn: "6108", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Bra", hsn: "6212", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Panties", hsn: "6108", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Socks", hsn: "6115", category: "Clothing", type: "simple", rate: "5%"},
+{item: "Track Pants", hsn: "6203", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Gym Wear", hsn: "6211", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Sportswear", hsn: "6211", category: "Clothing", type: "simple", rate: "12%"},
+{item: "Shorts", hsn: "6203", category: "Clothing", type: "simple", rate: "12%"},
+
 // FOOTWEAR (10 items)
-// ============================================
-{item: "Boots", hsn: "6401", category: "Footwear", rate: "18%"},
-{item: "Canvas shoes", hsn: "6404", category: "Footwear", rate: "12%"},
-{item: "Formal Shoes", hsn: "6403", category: "Footwear", rate: "18%"},
-{item: "Leather shoes", hsn: "6403", category: "Footwear", rate: "18%"},
-{item: "Sandals, chappals", hsn: "6402", category: "Footwear", rate: "12%"},
-{item: "Sandals & Chappals", hsn: "6402", category: "Footwear", rate: "12%"},
-{item: "Sports Shoes", hsn: "6404", category: "Footwear", rate: "18%"},
+{item: "Sports Shoes", hsn: "6404", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Running Shoes", hsn: "6404", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Sneakers", hsn: "6404", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Formal Shoes", hsn: "6403", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Leather Shoes", hsn: "6403", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Sandals", hsn: "6402", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Chappals", hsn: "6402", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Slippers", hsn: "6402", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Boots", hsn: "6401", category: "Footwear", type: "simple", rate: "12%"},
+{item: "Canvas Shoes", hsn: "6404", category: "Footwear", type: "simple", rate: "12%"},
 
-// ============================================
-// FUEL (2 items)
-// ============================================
-{item: "Cooking Gas Cylinder (Domestic)", hsn: "27111900", category: "Fuel", rate: "0%"},
-
-// ============================================
 // FURNITURE (25 items)
-// ============================================
-{item: "Beds, tables, cupboards", hsn: "9403", category: "Furniture", rate: "18%"},
-{item: "Chairs, sofas", hsn: "9401", category: "Furniture", rate: "18%"},
-{item: "Mattresses", hsn: "9404", category: "Furniture", rate: "18%"},
-{item: "Office Chair", hsn: "94017100", category: "Furniture", rate: "18%"},
-{item: "Office Chairs", hsn: "94017100", category: "Furniture", rate: "18%"},
-{item: "Plastic Chair", hsn: "94037000", category: "Furniture", rate: "18%"},
-{item: "Plastic Chairs", hsn: "94037000", category: "Furniture", rate: "18%"},
-{item: "Plastic Table", hsn: "94037000", category: "Furniture", rate: "18%"},
-{item: "Plastic Tables", hsn: "94037000", category: "Furniture", rate: "18%"},
-{item: "Steel Almirah", hsn: "94032090", category: "Furniture", rate: "18%"},
-{item: "Wooden Bed", hsn: "94035000", category: "Furniture", rate: "18%"},
-{item: "Wooden Furniture", hsn: "94036000", category: "Furniture", rate: "18%"},
+{item: "Wooden Bed", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "King Size Bed", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Single Bed", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Dining Table", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Study Table", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Center Table", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Side Table", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Dining Chairs", hsn: "9401", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Plastic Chairs", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Wooden Chairs", hsn: "9401", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Sofa Set", hsn: "9401", category: "Furniture", type: "simple", rate: "18%"},
+{item: "3 Seater Sofa", hsn: "9401", category: "Furniture", type: "simple", rate: "18%"},
+{item: "L-Shaped Sofa", hsn: "9401", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Recliner", hsn: "9401", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Office Chairs", hsn: "9401", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Ergonomic Chair", hsn: "9401", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Steel Almirah", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Wooden Wardrobe", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Cupboard", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Mattress", hsn: "9404", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Foam Mattress", hsn: "9404", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Spring Mattress", hsn: "9404", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Computer Table", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Office Desk", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
+{item: "Bookshelf", hsn: "9403", category: "Furniture", type: "simple", rate: "18%"},
 
-// ============================================
 // HEALTHCARE (50 items)
-// ============================================
-{item: "Ayurvedic Medicine", hsn: "30039011", category: "Healthcare", rate: "12%"},
-{item: "Back Support Belt", hsn: "90213100", category: "Healthcare", rate: "12%"},
-{item: "Bandage", hsn: "30059090", category: "Healthcare", rate: "12%"},
-{item: "Bandages", hsn: "30059090", category: "Healthcare", rate: "12%"},
-{item: "BiPAP Machine", hsn: "90192090", category: "Healthcare", rate: "12%"},
-{item: "Blood Glucose Test Strip", hsn: "38220019", category: "Healthcare", rate: "12%"},
-{item: "Blood Pressure Monitor", hsn: "90189019", category: "Healthcare", rate: "12%"},
-{item: "Calcium Tablet", hsn: "30045039", category: "Healthcare", rate: "12%"},
-{item: "Catheter", hsn: "90183990", category: "Healthcare", rate: "12%"},
-{item: "Contact Lens", hsn: "90013000", category: "Healthcare", rate: "18%"},
-{item: "Contact Lenses", hsn: "90013000", category: "Healthcare", rate: "18%"},
-{item: "Cough Syrup", hsn: "30049011", category: "Healthcare", rate: "12%"},
-{item: "COVID Test Kit", hsn: "38220090", category: "Healthcare", rate: "12%"},
-{item: "CPAP Machine", hsn: "90192090", category: "Healthcare", rate: "12%"},
-{item: "Crutches", hsn: "90213100", category: "Healthcare", rate: "12%"},
-{item: "CT Scan Machine", hsn: "90221200", category: "Healthcare", rate: "12%"},
-{item: "Dental Chair", hsn: "94021090", category: "Healthcare", rate: "18%"},
-{item: "Dental X-Ray Machine", hsn: "90221300", category: "Healthcare", rate: "12%"},
-{item: "Digital Thermometer", hsn: "90251910", category: "Healthcare", rate: "18%"},
-{item: "Disposable Face Mask", hsn: "63079090", category: "Healthcare", rate: "5%"},
-{item: "ECG Machine", hsn: "90181100", category: "Healthcare", rate: "12%"},
-{item: "Eyeglasses Frame", hsn: "90031900", category: "Healthcare", rate: "18%"},
-{item: "Face Masks (Disposable)", hsn: "63079090", category: "Healthcare", rate: "5%"},
-{item: "Glucometer", hsn: "90181900", category: "Healthcare", rate: "12%"},
-{item: "Hand Sanitizer", hsn: "38089400", category: "Healthcare", rate: "18%"},
-{item: "Hearing Aid", hsn: "90214000", category: "Healthcare", rate: "12%"},
-{item: "Herbal Supplement", hsn: "21069099", category: "Healthcare", rate: "18%"},
-{item: "Homeopathic Medicine", hsn: "30049099", category: "Healthcare", rate: "12%"},
-{item: "Injections", hsn: "3002", category: "Healthcare", rate: "12%"},
-{item: "Insulin Injection", hsn: "30043100", category: "Healthcare", rate: "5%"},
-{item: "Insulin Injections", hsn: "30043100", category: "Healthcare", rate: "5%"},
-{item: "IV Cannula", hsn: "90183990", category: "Healthcare", rate: "12%"},
-{item: "Knee Cap", hsn: "90213100", category: "Healthcare", rate: "12%"},
-{item: "Medical Oxygen Cylinder", hsn: "73110090", category: "Healthcare", rate: "12%"},
-{item: "Medicine (syrup)", hsn: "3003", category: "Healthcare", rate: "12%"},
-{item: "Medicines (tablets)", hsn: "3004", category: "Healthcare", rate: "12%"},
-{item: "MRI Machine", hsn: "90181300", category: "Healthcare", rate: "12%"},
-{item: "Multivitamin Tablet", hsn: "30045090", category: "Healthcare", rate: "12%"},
-{item: "N95 Mask", hsn: "63079090", category: "Healthcare", rate: "12%"},
-{item: "Nebulizer", hsn: "90192090", category: "Healthcare", rate: "12%"},
-{item: "Omega-3 Capsule", hsn: "15042090", category: "Healthcare", rate: "18%"},
-{item: "Ophthalmoscope", hsn: "90185000", category: "Healthcare", rate: "12%"},
-{item: "Orthopedic Belt", hsn: "90213100", category: "Healthcare", rate: "12%"},
-{item: "Otoscope", hsn: "90189090", category: "Healthcare", rate: "12%"},
-{item: "Oxygen Concentrator", hsn: "84196000", category: "Healthcare", rate: "12%"},
-{item: "Paracetamol Tablet", hsn: "30049099", category: "Healthcare", rate: "12%"},
-{item: "Paracetamol Tablets", hsn: "30049099", category: "Healthcare", rate: "12%"},
-{item: "Pregnancy Test Kit", hsn: "38220090", category: "Healthcare", rate: "12%"},
-{item: "Pulse Oximeter", hsn: "90181900", category: "Healthcare", rate: "12%"},
-{item: "Spectacle Lens", hsn: "90013000", category: "Healthcare", rate: "18%"},
-{item: "Spectacles / Frames", hsn: "90031900", category: "Healthcare", rate: "18%"},
-{item: "Sphygmomanometer", hsn: "90189019", category: "Healthcare", rate: "12%"},
-{item: "Stethoscope", hsn: "90189012", category: "Healthcare", rate: "12%"},
-{item: "Surgical Gloves", hsn: "40151100", category: "Healthcare", rate: "12%"},
-{item: "Surgical Mask", hsn: "63079090", category: "Healthcare", rate: "5%"},
-{item: "Syringe", hsn: "90183100", category: "Healthcare", rate: "12%"},
-{item: "Thermometers", hsn: "90251910", category: "Healthcare", rate: "18%"},
-{item: "Ultrasound Machine", hsn: "90181200", category: "Healthcare", rate: "12%"},
-{item: "Vitamin C Tablet", hsn: "30045090", category: "Healthcare", rate: "12%"},
-{item: "Walking Stick", hsn: "66020000", category: "Healthcare", rate: "12%"},
-{item: "Wheelchair", hsn: "87131000", category: "Healthcare", rate: "5%"},
-{item: "X-Ray Machine", hsn: "90221300", category: "Healthcare", rate: "12%"},
+{item: "Paracetamol", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Dolo 650", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Crocin", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Cough Syrup", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Cold Medicine", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Antibiotics", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Insulin", hsn: "3004", category: "Healthcare", type: "simple", rate: "5%"},
+{item: "Diabetes Medicine", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "BP Medicine", hsn: "3004", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Bandages", hsn: "3005", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Cotton Bandage", hsn: "3005", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Gauze", hsn: "3005", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Band-Aid", hsn: "3005", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Hand Sanitizer", hsn: "3808", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Alcohol-Based Sanitizer", hsn: "3808", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Surgical Masks", hsn: "6307", category: "Healthcare", type: "simple", rate: "5%"},
+{item: "3-Ply Mask", hsn: "6307", category: "Healthcare", type: "simple", rate: "5%"},
+{item: "N95 Masks", hsn: "6307", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "KN95 Mask", hsn: "6307", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Disposable Gloves", hsn: "4015", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Surgical Gloves", hsn: "4015", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Thermometer", hsn: "9025", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Digital Thermometer", hsn: "9025", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Infrared Thermometer", hsn: "9025", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Pulse Oximeter", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Glucometer", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Blood Sugar Monitor", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "BP Monitor", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Blood Pressure Machine", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Wheelchair", hsn: "8713", category: "Healthcare", type: "simple", rate: "5%"},
+{item: "Folding Wheelchair", hsn: "8713", category: "Healthcare", type: "simple", rate: "5%"},
+{item: "Walking Stick", hsn: "6602", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Walking Frame", hsn: "9021", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Crutches", hsn: "9021", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Spectacles", hsn: "9003", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Eyeglasses", hsn: "9003", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Reading Glasses", hsn: "9003", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Sunglasses", hsn: "9004", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Contact Lenses", hsn: "9001", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Contact Lens Solution", hsn: "3307", category: "Healthcare", type: "simple", rate: "18%"},
+{item: "Hearing Aid", hsn: "9021", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Digital Hearing Aid", hsn: "9021", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Nebulizer", hsn: "9019", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Steam Inhaler", hsn: "9019", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Oxygen Concentrator", hsn: "8419", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Oxygen Cylinder", hsn: "7311", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Stethoscope", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Syringe", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "IV Cannula", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
+{item: "Medical Catheter", hsn: "9018", category: "Healthcare", type: "simple", rate: "12%"},
 
-// ============================================
-// HOUSEHOLD (25 items)
-// ============================================
-{item: "Air Freshener", hsn: "33074900", category: "Household", rate: "18%"},
-{item: "Broom", hsn: "96039000", category: "Household", rate: "5%"},
-{item: "Brooms", hsn: "96039000", category: "Household", rate: "5%"},
-{item: "Camphor", hsn: "29142990", category: "Household", rate: "18%"},
-{item: "Detergent Powder", hsn: "34022090", category: "Household", rate: "18%"},
-{item: "Dishwash Liquid", hsn: "34013090", category: "Household", rate: "18%"},
-{item: "Doormats", hsn: "5703", category: "Household", rate: "12%"},
-{item: "Earthen Pot (Matka)", hsn: "69120090", category: "Household", rate: "5%"},
-{item: "Floor Cleaner", hsn: "34029099", category: "Household", rate: "18%"},
-{item: "Gas Lighter", hsn: "96138000", category: "Household", rate: "18%"},
-{item: "Glass Cleaner", hsn: "34022090", category: "Household", rate: "18%"},
-{item: "Incense Sticks (Agarbatti)", hsn: "33074100", category: "Household", rate: "5%"},
-{item: "Insect Killer Spray", hsn: "38089199", category: "Household", rate: "18%"},
-{item: "Lunch Box", hsn: "39241090", category: "Household", rate: "18%"},
-{item: "Lunch Boxes", hsn: "39241090", category: "Household", rate: "18%"},
-{item: "Mop", hsn: "96039000", category: "Household", rate: "5%"},
-{item: "Mops", hsn: "96039000", category: "Household", rate: "5%"},
-{item: "Mosquito Coil", hsn: "38089191", category: "Household", rate: "18%"},
-{item: "Mosquito Repellent Machine", hsn: "85437099", category: "Household", rate: "18%"},
-{item: "Plastic Water Bottle", hsn: "39241090", category: "Household", rate: "18%"},
-{item: "Rat Killer", hsn: "38089990", category: "Household", rate: "18%"},
-{item: "Terracotta Items", hsn: "69120090", category: "Household", rate: "5%"},
-{item: "Toilet Cleaner", hsn: "34022090", category: "Household", rate: "18%"},
-{item: "Washing Powder", hsn: "34022090", category: "Household", rate: "18%"},
-{item: "Water Bottles (Plastic)", hsn: "39241090", category: "Household", rate: "18%"},
-
-// ============================================
-// JEWELRY (5 items)
-// ============================================
-{item: "Gold & Silver Jewelry", hsn: "7113", category: "Jewelry", rate: "3%"},
-{item: "Gold Jewelry", hsn: "71131910", category: "Jewelry", rate: "3%"},
-{item: "Silver Jewelry", hsn: "71131100", category: "Jewelry", rate: "3%"},
-
-// ============================================
-// KITCHENWARE (15 items)
-// ============================================
-{item: "Cutlery (Stainless Steel)", hsn: "82159900", category: "Kitchenware", rate: "18%"},
-{item: "Kitchen Knives", hsn: "82119200", category: "Kitchenware", rate: "18%"},
-{item: "Non-Stick Cookware", hsn: "76151030", category: "Kitchenware", rate: "18%"},
-{item: "Pressure Cooker", hsn: "76151030", category: "Kitchenware", rate: "18%"},
-{item: "Pressure Cooker (Aluminum)", hsn: "7615", category: "Kitchenware", rate: "12%"},
-{item: "Stainless Steel Utensils", hsn: "73239390", category: "Kitchenware", rate: "18%"},
-
-// ============================================
-// LAB (5 items)
-// ============================================
-{item: "Lab Beaker", hsn: "70172000", category: "Lab", rate: "18%"},
-{item: "Lab Equipment (Beakers)", hsn: "70172000", category: "Lab", rate: "18%"},
-{item: "Laboratory Chemical", hsn: "38220090", category: "Lab", rate: "18%"},
-{item: "Laboratory Chemicals", hsn: "38220090", category: "Lab", rate: "18%"},
-
-// ============================================
-// LIGHTING (2 items)
-// ============================================
-{item: "LED Bulb", hsn: "85395000", category: "Lighting", rate: "18%"},
-{item: "LED Bulbs", hsn: "85395000", category: "Lighting", rate: "18%"},
-
-// ============================================
-// MUSIC (5 items)
-// ============================================
-{item: "Guitar", hsn: "92029000", category: "Music", rate: "18%"},
-{item: "Musical Keyboard", hsn: "92071000", category: "Music", rate: "18%"},
-{item: "Musical Instruments (Keyboard)", hsn: "92071000", category: "Music", rate: "18%"},
-{item: "Piano", hsn: "92012000", category: "Music", rate: "18%"},
-
-// ============================================
-// OFFICE (15 items)
-// ============================================
-{item: "Binding Machine", hsn: "84733000", category: "Office", rate: "18%"},
-{item: "Computer Table", hsn: "94031090", category: "Office", rate: "18%"},
-{item: "Conference Table", hsn: "94031090", category: "Office", rate: "18%"},
-{item: "Filing Cabinet", hsn: "94032090", category: "Office", rate: "18%"},
-{item: "Laminating Machine", hsn: "84733000", category: "Office", rate: "18%"},
-{item: "Notice Board", hsn: "96100000", category: "Office", rate: "18%"},
-{item: "Office Desk", hsn: "94031090", category: "Office", rate: "18%"},
-{item: "Office Sofa", hsn: "94018090", category: "Office", rate: "18%"},
-{item: "Paper Shredder", hsn: "84721000", category: "Office", rate: "18%"},
-{item: "Revolving Chair", hsn: "94017100", category: "Office", rate: "18%"},
-{item: "Visitor Chair", hsn: "94017190", category: "Office", rate: "18%"},
-{item: "Whiteboard", hsn: "96100000", category: "Office", rate: "18%"},
-
-// ============================================
-// OPTICS (2 items)
-// ============================================
-{item: "Binoculars", hsn: "90051000", category: "Optics", rate: "18%"},
-
-// ============================================
-// PACKAGING (20 items)
-// ============================================
-{item: "Air Bubble Sheet", hsn: "39211390", category: "Packaging", rate: "18%"},
-{item: "Bubble Wrap", hsn: "39211390", category: "Packaging", rate: "18%"},
-{item: "Carton Sealing Tape", hsn: "39191090", category: "Packaging", rate: "18%"},
-{item: "Corrugated Boxes", hsn: "48191090", category: "Packaging", rate: "18%"},
-{item: "Courier Bags", hsn: "39232190", category: "Packaging", rate: "18%"},
-{item: "Jute Bags", hsn: "63051010", category: "Packaging", rate: "5%"},
-{item: "Non-Woven Bags", hsn: "63053300", category: "Packaging", rate: "12%"},
-{item: "Packing Tape (Brown)", hsn: "39191090", category: "Packaging", rate: "18%"},
-{item: "Paper Bags (Kraft)", hsn: "48193000", category: "Packaging", rate: "12%"},
-{item: "Poly Bags (Packaging)", hsn: "39232190", category: "Packaging", rate: "18%"},
-{item: "Strapping Roll (Plastic)", hsn: "39269099", category: "Packaging", rate: "18%"},
-{item: "Stretch Film", hsn: "39209990", category: "Packaging", rate: "18%"},
-{item: "Tamper Proof Bags", hsn: "39232990", category: "Packaging", rate: "18%"},
-{item: "Thermocol Sheet", hsn: "39211990", category: "Packaging", rate: "18%"},
-{item: "Zip Lock Bags", hsn: "39232990", category: "Packaging", rate: "18%"},
-
-// ============================================
 // PERSONAL CARE (30 items)
-// ============================================
-{item: "Body Lotion", hsn: "3304", category: "Personal Care", rate: "28%"},
-{item: "Conditioner", hsn: "3305", category: "Personal Care", rate: "28%"},
-{item: "Creams & Lotions", hsn: "3304", category: "Personal Care", rate: "28%"},
-{item: "Deodorant/Body Spray", hsn: "3307", category: "Personal Care", rate: "28%"},
-{item: "Face Cream", hsn: "33049990", category: "Personal Care", rate: "18%"},
-{item: "Face Wash", hsn: "3401", category: "Personal Care", rate: "18%"},
-{item: "Hair Color", hsn: "3305", category: "Personal Care", rate: "28%"},
-{item: "Hair Gel", hsn: "3305", category: "Personal Care", rate: "28%"},
-{item: "Hair Oil", hsn: "33059090", category: "Personal Care", rate: "18%"},
-{item: "Hand Wash", hsn: "34013019", category: "Personal Care", rate: "18%"},
-{item: "Kajal/Eyeliner", hsn: "3304", category: "Personal Care", rate: "28%"},
-{item: "Lipstick", hsn: "3304", category: "Personal Care", rate: "28%"},
-{item: "Moisturizer/Face Cream", hsn: "3304", category: "Personal Care", rate: "28%"},
-{item: "Nail Polish", hsn: "3304", category: "Personal Care", rate: "28%"},
-{item: "Perfume", hsn: "3303", category: "Personal Care", rate: "28%"},
-{item: "Sanitary Napkin", hsn: "96190010", category: "Personal Care", rate: "12%"},
-{item: "Sanitary Napkins", hsn: "96190010", category: "Personal Care", rate: "12%"},
-{item: "Sanitary Pads", hsn: "9619", category: "Personal Care", rate: "0%"},
-{item: "Shampoo", hsn: "33051090", category: "Personal Care", rate: "18%"},
-{item: "Shampoo (Bottle)", hsn: "33051090", category: "Personal Care", rate: "18%"},
-{item: "Soap", hsn: "3401", category: "Personal Care", rate: "18%"},
-{item: "Sunscreen", hsn: "3304", category: "Personal Care", rate: "28%"},
-{item: "Talcum Powder", hsn: "3304", category: "Personal Care", rate: "28%"},
-{item: "Toothpaste", hsn: "33061010", category: "Personal Care", rate: "18%"},
-{item: "Toothpaste & Toothbrush", hsn: "3306", category: "Personal Care", rate: "18%"},
+{item: "Toothpaste", hsn: "3306", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Toothbrush", hsn: "9603", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Electric Toothbrush", hsn: "9603", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Mouthwash", hsn: "3306", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Dental Floss", hsn: "3306", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Shampoo", hsn: "3305", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Anti-Dandruff Shampoo", hsn: "3305", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Herbal Shampoo", hsn: "3305", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Soap", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Bathing Soap", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Medicated Soap", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Hand Wash", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Liquid Hand Wash", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Body Wash", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Shower Gel", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Hair Oil", hsn: "3305", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Coconut Hair Oil", hsn: "3305", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Almond Hair Oil", hsn: "3305", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Hair Gel", hsn: "3305", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Hair Wax", hsn: "3305", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Hair Serum", hsn: "3305", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Hair Color", hsn: "3305", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Hair Dye", hsn: "3305", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Conditioner", hsn: "3305", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Hair Mask", hsn: "3305", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Deodorant", hsn: "3307", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Body Spray", hsn: "3307", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Antiperspirant", hsn: "3307", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Perfume", hsn: "3303", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Eau De Toilette", hsn: "3303", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Cologne", hsn: "3303", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Body Lotion", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Hand Cream", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Foot Cream", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Talcum Powder", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Baby Powder", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Face Wash", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Facial Cleanser", hsn: "3401", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Scrub", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Lipstick", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Lip Gloss", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Lip Balm", hsn: "3304", category: "Personal Care", type: "simple", rate: "18%"},
+{item: "Kajal", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Eyeliner", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Mascara", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Foundation", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Compact Powder", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "BB Cream", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "CC Cream", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Nail Polish", hsn: "3304", category: "Personal Care", type: "simple", rate: "28%"},
+{item: "Nail Polish Remover", hsn: "3307", category: "Personal Care", type: "simple", rate: "18%"},
 
-// ============================================
-// PET (5 items)
-// ============================================
-{item: "Cat Litter", hsn: "68101990", category: "Pet", rate: "18%"},
-{item: "Dog Collar", hsn: "42010000", category: "Pet", rate: "18%"},
-{item: "Pet Food", hsn: "23091000", category: "Pet", rate: "18%"},
-{item: "Pet Food (Dog/Cat)", hsn: "23091000", category: "Pet", rate: "18%"},
+// ACCESSORIES (20 items)
+{item: "Leather Belt", hsn: "4203", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Belt", hsn: "4203", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Wallet", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Leather Wallet", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Purse", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Handbag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Ladies Handbag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Shoulder Bag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Backpack", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "School Bag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "College Bag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Laptop Bag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Travel Bag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Luggage Bag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Suitcase", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Trolley Bag", hsn: "4202", category: "Accessories", type: "simple", rate: "18%"},
+{item: "Umbrella", hsn: "6601", category: "Accessories", type: "simple", rate: "12%"},
+{item: "Cap", hsn: "6505", category: "Accessories", type: "simple", rate: "12%"},
+{item: "Hat", hsn: "6505", category: "Accessories", type: "simple", rate: "12%"},
+{item: "Watch", hsn: "9102", category: "Accessories", type: "simple", rate: "18%"},
 
-// ============================================
-// RENEWABLE (3 items)
-// ============================================
-{item: "Solar Panel", hsn: "85414011", category: "Renewable", rate: "12%"},
-{item: "Solar Panels", hsn: "85414011", category: "Renewable", rate: "12%"},
-
-// ============================================
-// RESTAURANT (15 items)
-// ============================================
-{item: "Aluminum Foil Roll", hsn: "76071990", category: "Restaurant", rate: "18%"},
-{item: "Apron (Kitchen)", hsn: "63079090", category: "Restaurant", rate: "5%"},
-{item: "Chef Cap", hsn: "65059090", category: "Restaurant", rate: "12%"},
-{item: "Cling Film", hsn: "39209990", category: "Restaurant", rate: "18%"},
-{item: "Disposable Cups (Paper)", hsn: "48236990", category: "Restaurant", rate: "18%"},
-{item: "Disposable Plates (Paper)", hsn: "48236990", category: "Restaurant", rate: "18%"},
-{item: "Food Containers (Plastic)", hsn: "39241090", category: "Restaurant", rate: "18%"},
-{item: "Kitchen Towel Roll", hsn: "48189000", category: "Restaurant", rate: "18%"},
-{item: "Plastic Spoons/Forks", hsn: "39241090", category: "Restaurant", rate: "18%"},
-{item: "Tissue Paper (Table Napkin)", hsn: "48189000", category: "Restaurant", rate: "18%"},
-
-// ============================================
-// SCIENCE (2 items)
-// ============================================
-{item: "Microscope", hsn: "90118000", category: "Science", rate: "18%"},
-
-// ============================================
-// SPORTS (15 items)
-// ============================================
-{item: "Badminton Racket", hsn: "95065910", category: "Sports", rate: "12%"},
-{item: "Badminton Shuttlecock", hsn: "95066990", category: "Sports", rate: "12%"},
-{item: "Board Game", hsn: "95049090", category: "Sports", rate: "12%"},
-{item: "Carrom Board", hsn: "95049090", category: "Sports", rate: "12%"},
-{item: "Carrom Men", hsn: "95049090", category: "Sports", rate: "12%"},
-{item: "Chess Board", hsn: "95049090", category: "Sports", rate: "12%"},
-{item: "Cricket Ball", hsn: "95066910", category: "Sports", rate: "12%"},
-{item: "Cricket Bat", hsn: "95066900", category: "Sports", rate: "12%"},
-{item: "Football", hsn: "95066210", category: "Sports", rate: "12%"},
-{item: "Ludo Board", hsn: "95049090", category: "Sports", rate: "12%"},
-{item: "Playing Cards", hsn: "95044000", category: "Sports", rate: "12%"},
-{item: "Puzzle Games", hsn: "95030060", category: "Sports", rate: "12%"},
-{item: "Table Tennis Bat", hsn: "95064000", category: "Sports", rate: "12%"},
-{item: "Tennis Ball", hsn: "95066940", category: "Sports", rate: "12%"},
-
-// ============================================
 // STATIONERY (20 items)
-// ============================================
-{item: "A4 Paper Ream", hsn: "48025600", category: "Stationery", rate: "12%"},
-{item: "Ball Pen", hsn: "96081010", category: "Stationery", rate: "18%"},
-{item: "Ball Pens", hsn: "96081010", category: "Stationery", rate: "18%"},
-{item: "Books (Printed)", hsn: "4901", category: "Books", rate: "0%"},
-{item: "Exercise Book", hsn: "48202000", category: "Stationery", rate: "12%"},
-{item: "Exercise Books", hsn: "48202000", category: "Stationery", rate: "12%"},
-{item: "Gel Pen", hsn: "96081090", category: "Stationery", rate: "18%"},
-{item: "Gel Pens", hsn: "96081090", category: "Stationery", rate: "18%"},
-{item: "Gift Wrapping Paper", hsn: "48119099", category: "Stationery", rate: "18%"},
-{item: "Notebook", hsn: "48202000", category: "Stationery", rate: "12%"},
-{item: "Notebooks", hsn: "4820", category: "Stationery", rate: "12%"},
-{item: "Notebooks (Ruled)", hsn: "48202000", category: "Stationery", rate: "12%"},
-{item: "Pencil", hsn: "96091000", category: "Stationery", rate: "12%"},
-{item: "Pencils", hsn: "9609", category: "Stationery", rate: "12%"},
-{item: "Pens", hsn: "9608", category: "Stationery", rate: "18%"},
-{item: "Photocopier Paper", hsn: "48025600", category: "Stationery", rate: "12%"},
-{item: "Ruled Notebook", hsn: "48202000", category: "Stationery", rate: "12%"},
-{item: "Sketch Pen", hsn: "96082000", category: "Stationery", rate: "18%"},
-{item: "Sketch Pens", hsn: "96082000", category: "Stationery", rate: "18%"},
+{item: "Pens", hsn: "9608", category: "Stationery", type: "simple", rate: "18%"},
+{item: "Ball Pen", hsn: "9608", category: "Stationery", type: "simple", rate: "18%"},
+{item: "Gel Pen", hsn: "9608", category: "Stationery", type: "simple", rate: "18%"},
+{item: "Fountain Pen", hsn: "9608", category: "Stationery", type: "simple", rate: "18%"},
+{item: "Pencils", hsn: "9609", category: "Stationery", type: "simple", rate: "12%"},
+{item: "HB Pencil", hsn: "9609", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Color Pencils", hsn: "9609", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Sketch Pens", hsn: "9608", category: "Stationery", type: "simple", rate: "18%"},
+{item: "Markers", hsn: "9608", category: "Stationery", type: "simple", rate: "18%"},
+{item: "Highlighters", hsn: "9608", category: "Stationery", type: "simple", rate: "18%"},
+{item: "Notebooks", hsn: "4820", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Ruled Notebook", hsn: "4820", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Exercise Books", hsn: "4820", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Register", hsn: "4820", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Diary", hsn: "4820", category: "Stationery", type: "simple", rate: "12%"},
+{item: "A4 Paper", hsn: "4802", category: "Stationery", type: "simple", rate: "12%"},
+{item: "A4 Ream", hsn: "4802", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Copier Paper", hsn: "4802", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Chart Paper", hsn: "4802", category: "Stationery", type: "simple", rate: "12%"},
+{item: "Gift Wrapping Paper", hsn: "4811", category: "Stationery", type: "simple", rate: "18%"},
 
-// ============================================
-// TOYS (10 items)
-// ============================================
-{item: "Baby Diaper", hsn: "96190020", category: "Toys", rate: "12%"},
-{item: "Board Games", hsn: "95049090", category: "Toys", rate: "12%"},
-{item: "Clay Toys", hsn: "95030090", category: "Toys", rate: "18%"},
-{item: "Diapers", hsn: "96190020", category: "Personal Care", rate: "12%"},
-{item: "Plastic Toy", hsn: "95030090", category: "Toys", rate: "18%"},
-{item: "Plastic Toys", hsn: "95030090", category: "Toys", rate: "18%"},
-{item: "Toys (Plastic)", hsn: "95030090", category: "Toys", rate: "18%"},
-{item: "Wooden Toys", hsn: "95030090", category: "Toys", rate: "18%"},
-
-// ============================================
 // VEHICLES (5 items)
-// ============================================
-{item: "Bicycles", hsn: "8712", category: "Vehicles", rate: "12%"},
-{item: "Cars", hsn: "8703", category: "Vehicles", rate: "28%"},
-{item: "Motorcycles, scooters", hsn: "8711", category: "Vehicles", rate: "28%"},
-{item: "Trucks", hsn: "8704", category: "Vehicles", rate: "28%"},
+{item: "Cars", hsn: "8703", category: "Vehicles", type: "simple", rate: "28%"},
+{item: "Motorcycles", hsn: "8711", category: "Vehicles", type: "simple", rate: "28%"},
+{item: "Scooters", hsn: "8711", category: "Vehicles", type: "simple", rate: "28%"},
+{item: "Bicycles", hsn: "8712", category: "Vehicles", type: "simple", rate: "12%"},
+{item: "Trucks", hsn: "8704", category: "Vehicles", type: "simple", rate: "28%"},
 
+// AUTOMOTIVE (25 items)
+{item: "Car Battery", hsn: "8507", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Motorcycle Battery", hsn: "8507", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Engine Oil", hsn: "2710", category: "Automotive", type: "simple", rate: "18%"},
+{item: "Brake Oil", hsn: "3820", category: "Automotive", type: "simple", rate: "18%"},
+{item: "Coolant", hsn: "3820", category: "Automotive", type: "simple", rate: "18%"},
+{item: "Car Tyres", hsn: "4011", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Bike Tyres", hsn: "4011", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Tubeless Tyres", hsn: "4011", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Car Wiper Blades", hsn: "8483", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Headlight Bulb", hsn: "8539", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Car Air Filter", hsn: "8421", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Brake Pads", hsn: "6813", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Clutch Plate", hsn: "8483", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Spark Plug", hsn: "8511", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Car Polish", hsn: "3405", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Car Shampoo", hsn: "3402", category: "Automotive", type: "simple", rate: "18%"},
+{item: "Car Seat Covers", hsn: "6303", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Car Floor Mats", hsn: "5703", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Steering Wheel Cover", hsn: "6303", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Car Perfume", hsn: "3307", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Bike Chain", hsn: "7315", category: "Automotive", type: "simple", rate: "28%"},
+{item: "Chain Lubricant", hsn: "2710", category: "Automotive", type: "simple", rate: "18%"},
+{item: "Helmet", hsn: "6506", category: "Automotive", type: "simple", rate: "18%"},
+{item: "Bike Helmet", hsn: "6506", category: "Automotive", type: "simple", rate: "18%"},
+{item: "Helmet Visor", hsn: "3926", category: "Automotive", type: "simple", rate: "28%"},
+
+// JEWELRY (5 items)
+{item: "Gold Jewelry", hsn: "7113", category: "Jewelry", type: "simple", rate: "3%"},
+{item: "Gold Chain", hsn: "7113", category: "Jewelry", type: "simple", rate: "3%"},
+{item: "Gold Ring", hsn: "7113", category: "Jewelry", type: "simple", rate: "3%"},
+{item: "Silver Jewelry", hsn: "7113", category: "Jewelry", type: "simple", rate: "3%"},
+{item: "Silver Anklet", hsn: "7113", category: "Jewelry", type: "simple", rate: "3%"},
+
+// HOUSEHOLD (25 items)
+{item: "Detergent Powder", hsn: "3402", category: "Household", type: "simple", rate: "18%"},
+{item: "Washing Powder", hsn: "3402", category: "Household", type: "simple", rate: "18%"},
+{item: "Liquid Detergent", hsn: "3402", category: "Household", type: "simple", rate: "18%"},
+{item: "Dishwash Liquid", hsn: "3401", category: "Household", type: "simple", rate: "18%"},
+{item: "Dishwash Bar", hsn: "3401", category: "Household", type: "simple", rate: "18%"},
+{item: "Floor Cleaner", hsn: "3402", category: "Household", type: "simple", rate: "18%"},
+{item: "Toilet Cleaner", hsn: "3402", category: "Household", type: "simple", rate: "18%"},
+{item: "Glass Cleaner", hsn: "3402", category: "Household", type: "simple", rate: "18%"},
+{item: "Air Freshener", hsn: "3307", category: "Household", type: "simple", rate: "18%"},
+{item: "Room Freshener", hsn: "3307", category: "Household", type: "simple", rate: "18%"},
+{item: "Mosquito Coil", hsn: "3808", category: "Household", type: "simple", rate: "18%"},
+{item: "Mosquito Repellent", hsn: "3808", category: "Household", type: "simple", rate: "18%"},
+{item: "Insect Killer Spray", hsn: "3808", category: "Household", type: "simple", rate: "18%"},
+{item: "Rat Poison", hsn: "3808", category: "Household", type: "simple", rate: "18%"},
+{item: "Broom", hsn: "9603", category: "Household", type: "simple", rate: "5%"},
+{item: "Floor Wiper", hsn: "9603", category: "Household", type: "simple", rate: "5%"},
+{item: "Mop", hsn: "9603", category: "Household", type: "simple", rate: "5%"},
+{item: "Dustbin", hsn: "3924", category: "Household", type: "simple", rate: "18%"},
+{item: "Plastic Bucket", hsn: "3924", category: "Household", type: "simple", rate: "18%"},
+{item: "Water Bottle", hsn: "3924", category: "Household", type: "simple", rate: "18%"},
+{item: "Lunch Box", hsn: "3924", category: "Household", type: "simple", rate: "18%"},
+{item: "Storage Container", hsn: "3924", category: "Household", type: "simple", rate: "18%"},
+{item: "Bedsheet", hsn: "6302", category: "Household", type: "simple", rate: "5%"},
+{item: "Pillow Cover", hsn: "6302", category: "Household", type: "simple", rate: "5%"},
+{item: "Blanket", hsn: "6301", category: "Household", type: "simple", rate: "5%"},
+
+// KITCHENWARE (15 items)
+{item: "Pressure Cooker", hsn: "7615", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Non-Stick Pan", hsn: "7615", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Kadhai", hsn: "7615", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Tawa", hsn: "7615", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Frying Pan", hsn: "7615", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Stainless Steel Utensils", hsn: "7323", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Steel Plates", hsn: "7323", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Steel Bowls", hsn: "7323", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Steel Glasses", hsn: "7323", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Cutlery Set", hsn: "8215", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Kitchen Knives", hsn: "8211", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Chopping Board", hsn: "3924", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Gas Lighter", hsn: "9613", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Water Filter", hsn: "8421", category: "Kitchenware", type: "simple", rate: "18%"},
+{item: "Kitchen Chimney", hsn: "8414", category: "Kitchenware", type: "simple", rate: "18%"},
+
+// SPORTS & FITNESS (15 items)
+{item: "Cricket Bat", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Cricket Ball", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Football", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Basketball", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Volleyball", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Badminton Racket", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Shuttlecock", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Tennis Ball", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Tennis Racket", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Table Tennis Bat", hsn: "9506", category: "Sports", type: "simple", rate: "12%"},
+{item: "Dumbbells", hsn: "9506", category: "Fitness", type: "simple", rate: "18%"},
+{item: "Yoga Mat", hsn: "4016", category: "Fitness", type: "simple", rate: "18%"},
+{item: "Treadmill", hsn: "9506", category: "Fitness", type: "simple", rate: "18%"},
+{item: "Exercise Cycle", hsn: "9506", category: "Fitness", type: "simple", rate: "18%"},
+{item: "Skipping Rope", hsn: "9506", category: "Fitness", type: "simple", rate: "12%"},
+
+// TOYS (10 items)
+{item: "Soft Toys", hsn: "9503", category: "Toys", type: "simple", rate: "12%"},
+{item: "Teddy Bear", hsn: "9503", category: "Toys", type: "simple", rate: "12%"},
+{item: "Plastic Toys", hsn: "9503", category: "Toys", type: "simple", rate: "18%"},
+{item: "Remote Control Car", hsn: "9503", category: "Toys", type: "simple", rate: "18%"},
+{item: "Doll", hsn: "9503", category: "Toys", type: "simple", rate: "18%"},
+{item: "Board Games", hsn: "9504", category: "Toys", type: "simple", rate: "12%"},
+{item: "Carrom Board", hsn: "9504", category: "Toys", type: "simple", rate: "12%"},
+{item: "Chess Board", hsn: "9504", category: "Toys", type: "simple", rate: "12%"},
+{item: "Ludo", hsn: "9504", category: "Toys", type: "simple", rate: "12%"},
+{item: "Playing Cards", hsn: "9504", category: "Toys", type: "simple", rate: "12%"},
+
+// BOOKS (2 items)
+{item: "Books (Printed)", hsn: "4901", category: "Books", type: "simple", rate: "0%"},
+{item: "Textbooks", hsn: "4901", category: "Books", type: "simple", rate: "0%"},
+
+// AGRICULTURE (10 items)
+{item: "Tractor", hsn: "8701", category: "Agriculture", type: "simple", rate: "12%"},
+{item: "Harvester", hsn: "8433", category: "Agriculture", type: "simple", rate: "12%"},
+{item: "Water Pump", hsn: "8413", category: "Agriculture", type: "simple", rate: "18%"},
+{item: "Submersible Pump", hsn: "8413", category: "Agriculture", type: "simple", rate: "18%"},
+{item: "Sprayer", hsn: "8424", category: "Agriculture", type: "simple", rate: "18%"},
+{item: "Fertilizers", hsn: "3102", category: "Agriculture", type: "simple", rate: "5%"},
+{item: "Urea", hsn: "3102", category: "Agriculture", type: "simple", rate: "5%"},
+{item: "Pesticides", hsn: "3808", category: "Agriculture", type: "simple", rate: "18%"},
+{item: "Seeds", hsn: "1209", category: "Agriculture", type: "simple", rate: "0%"},
+{item: "Drip Irrigation Pipes", hsn: "3917", category: "Agriculture", type: "simple", rate: "18%"},
+
+// PACKAGING (15 items)
+{item: "Corrugated Boxes", hsn: "4819", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Carton Boxes", hsn: "4819", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Bubble Wrap", hsn: "3921", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Packing Tape", hsn: "3919", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Brown Tape", hsn: "3919", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Stretch Film", hsn: "3920", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Thermocol Sheet", hsn: "3921", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Poly Bags", hsn: "3923", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Zip Lock Bags", hsn: "3923", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Paper Bags", hsn: "4819", category: "Packaging", type: "simple", rate: "12%"},
+{item: "Jute Bags", hsn: "6305", category: "Packaging", type: "simple", rate: "5%"},
+{item: "Non-Woven Bags", hsn: "6305", category: "Packaging", type: "simple", rate: "12%"},
+{item: "Courier Bags", hsn: "3923", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Strapping Roll", hsn: "3926", category: "Packaging", type: "simple", rate: "18%"},
+{item: "Sealing Machine", hsn: "8422", category: "Packaging", type: "simple", rate: "18%"},
+
+// OFFICE (12 items)
+{item: "Office Desk", hsn: "9403", category: "Office", type: "simple", rate: "18%"},
+{item: "Filing Cabinet", hsn: "9403", category: "Office", type: "simple", rate: "18%"},
+{item: "Whiteboard", hsn: "9610", category: "Office", type: "simple", rate: "18%"},
+{item: "Notice Board", hsn: "9610", category: "Office", type: "simple", rate: "18%"},
+{item: "Paper Shredder", hsn: "8472", category: "Office", type: "simple", rate: "18%"},
+{item: "Laminating Machine", hsn: "8472", category: "Office", type: "simple", rate: "18%"},
+{item: "Binding Machine", hsn: "8472", category: "Office", type: "simple", rate: "18%"},
+{item: "Stapler", hsn: "8305", category: "Office", type: "simple", rate: "18%"},
+{item: "Paper Clips", hsn: "8305", category: "Office", type: "simple", rate: "18%"},
+{item: "File Folders", hsn: "4820", category: "Office", type: "simple", rate: "12%"},
+{item: "Binders", hsn: "3926", category: "Office", type: "simple", rate: "18%"},
+{item: "Calculator", hsn: "8470", category: "Office", type: "simple", rate: "18%"},
 ];
 
-// Export the database
-if (typeof module !== 'undefined' && module.exports) {
-module.exports = itemDatabase;
+function renderItems(items) {
+  const container = document.getElementById('itemsContainer');
+  container.innerHTML = items.map(renderItem).join('');
+  document.getElementById('resultsCount').textContent = `Showing ${items.length} items`;
 }
 
-// ... rest of your original script remains unchanged below
-let filteredData = itemDatabase;
-function renderTable(data) {
-  const tbody = document.getElementById('tableBody');
-  tbody.innerHTML = data.map(item => {
-    const rateClass = 'rate-' + item.rate.replace('%', '');
-    return `
-      <tr>
-        <td><strong>${item.item}</strong></td>
-        <td>${item.hsn}</td>
-        <td><span class="category-badge">${item.category}</span></td>
-        <td><span class="rate-badge ${rateClass}">${item.rate}</span></td>
-      </tr>
-    `;
-  }).join('');
- 
-  document.getElementById('resultsCount').textContent = `Showing ${data.length} of ${itemDatabase.length} items`;
+function renderItem(item) {
+  if (item.type === 'conditional') return renderConditional(item);
+  if (item.type === 'withCess') return renderWithCess(item);
+  return renderSimple(item);
 }
-// Initial render
-renderTable(itemDatabase);
-// Search
-let searchTimeout;
+
+function renderSimple(item) {
+  return `
+    <div class="gst-item simple">
+      <div class="item-header">
+        <h3>${item.item}</h3>
+        <span class="hsn-badge">HSN: ${item.hsn}</span>
+      </div>
+      <div class="rate-display">
+        <div class="rate-value">${item.rate}</div>
+        <div class="rate-label">GST Rate</div>
+      </div>
+      ${item.note ? `<div class="info-note"><span>ℹ️</span><span>${item.note}</span></div>` : ''}
+    </div>
+  `;
+}
+
+function renderConditional(item) {
+  const id = item.hsn.replace(/[^a-z0-9]/gi, '');
+  return `
+    <div class="gst-item conditional">
+      <div class="item-header">
+        <h3>${item.item}</h3>
+        <span class="hsn-badge">HSN: ${item.hsn}</span>
+        <span class="conditional-badge">Depends on packaging</span>
+      </div>
+      <div class="scenario-selector">
+        <div class="scenario-label">Your situation:</div>
+        <div class="scenarios">
+          ${item.scenarios.map((s, i) => `
+            <label class="scenario-option">
+              <input type="radio" name="${id}-scenario" value="${i}" ${i===0?'checked':''}>
+              <div class="scenario-card">
+                <div class="scenario-icon">${s.icon}</div>
+                <div class="scenario-title">${s.title}</div>
+                <div class="scenario-rate">${s.rate}</div>
+                <div class="scenario-desc">${s.desc}</div>
+              </div>
+            </label>
+          `).join('')}
+        </div>
+      </div>
+      ${item.note ? `<div class="info-note"><span>ℹ️</span><span>${item.note}</span></div>` : ''}
+      ${item.alert ? `<div class="alert-note"><span>⚠️</span><span>${item.alert}</span></div>` : ''}
+    </div>
+  `;
+}
+
+function renderWithCess(item) {
+  return `
+    <div class="gst-item with-cess">
+      <div class="item-header">
+        <h3>${item.item}</h3>
+        <span class="hsn-badge">HSN: ${item.hsn}</span>
+        <span class="cess-badge">⚠️ Cess Applicable</span>
+      </div>
+      <div class="rate-breakdown">
+        <div class="breakdown-row">
+          <span class="breakdown-label">Base GST</span>
+          <span class="breakdown-value">${item.baseRate}</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">+ Compensation Cess</span>
+          <span class="breakdown-value">${item.cess}</span>
+        </div>
+        <div class="breakdown-row total-row">
+          <span class="breakdown-label">Effective Rate</span>
+          <span class="breakdown-value">${item.effectiveRate}</span>
+        </div>
+      </div>
+      ${item.alert ? `<div class="alert-note"><span>⚠️</span><span>${item.alert}</span></div>` : ''}
+    </div>
+  `;
+}
+
 document.getElementById('searchInput').addEventListener('input', function(e) {
-  clearTimeout(searchTimeout);
-  searchTimeout = setTimeout(() => {
-    const query = e.target.value.toLowerCase().trim();
-   
-    if (query.length < 2) {
-      filteredData = itemDatabase;
-      renderTable(filteredData);
-      return;
-    }
-   
-    filteredData = itemDatabase.filter(item =>
-      item.item.toLowerCase().includes(query) ||
-      item.hsn.includes(query) ||
-      item.category.toLowerCase().includes(query)
-    );
-   
-    renderTable(filteredData);
-   
-    // Track in GA
-    if (query.length >= 3) {
-      gtag('event', 'search', { search_term: query });
-    }
-  }, 300);
+  const query = e.target.value.toLowerCase().trim();
+  if (query.length < 2) {
+    renderItems(smartDatabase);
+    return;
+  }
+  
+  const filtered = smartDatabase.filter(item =>
+    item.item.toLowerCase().includes(query) ||
+    item.hsn.includes(query) ||
+    item.category.toLowerCase().includes(query)
+  );
+  
+  renderItems(filtered);
 });
-// Filter by rate
+
 function filterByRate(rate) {
   document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
- 
+  
   if (rate === 'all') {
-    filteredData = itemDatabase;
+    renderItems(smartDatabase);
+  } else if (rate === 'conditional') {
+    renderItems(smartDatabase.filter(i => i.type === 'conditional'));
   } else {
-    filteredData = itemDatabase.filter(item => item.rate === rate);
+    renderItems(smartDatabase.filter(i => i.rate === rate || (i.scenarios && i.scenarios.some(s => s.rate === rate))));
   }
- 
-  renderTable(filteredData);
 }
+
+renderItems(smartDatabase);
 </script>
+
 </body>
 </html>
