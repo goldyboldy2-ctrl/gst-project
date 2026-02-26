@@ -37,43 +37,7 @@
       --gray-700: #334155;
       --gray-900: #0f172a;
     }
-<script src="hsn-data.js"></script>
-<script src="search-keywords.js"></script>
-    <script>
-  const searchInput = document.getElementById('hsnSearch');
-  const resultsDiv = document.getElementById('hsnResults');
 
-  if (!searchInput || !resultsDiv) {
-    console.error("Search elements not found");
-  }
-
-  searchInput.addEventListener('input', function() {
-    const query = this.value.toLowerCase().trim();
-    
-    if (query.length < 2) {
-      resultsDiv.innerHTML = '<p>Enter 2+ characters to search...</p>';
-      return;
-    }
-
-    // Simple filter on hsnDatabase
-    const matches = hsnDatabase.filter(item =>
-      item.description.toLowerCase().includes(query) ||
-      item.code.includes(query)
-    ).slice(0, 50);  // limit to 50 for speed
-
-    if (matches.length === 0) {
-      resultsDiv.innerHTML = '<p>No matches found.</p>';
-      return;
-    }
-
-    resultsDiv.innerHTML = matches.map(item => `
-      <div style="padding:12px; border-bottom:1px solid #eee; background:#f8fafc; margin-bottom:8px; border-radius:6px;">
-        <strong>${item.description}</strong><br>
-        HSN Code: $$   {item.code} | GST Rate: <strong>   $${item.gst}</strong> | Category: ${item.category}
-      </div>
-    `).join('');
-  });
-</script>
     body {
       font-family: 'Inter', sans-serif;
       color: var(--gray-900);
@@ -691,10 +655,93 @@ document.addEventListener('click', function(e) {
 });
 </script>
 
-<!-- HSN SEARCH ENGINE FILES -->
+<!-- HSN SEARCH ENGINE -->
 <script src="hsn-data.js"></script>
 <script src="search-keywords.js"></script>
-<script src="hsn-search-engine.js"></script>
 
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+
+if(!window.hsnDatabase){
+console.error("HSN database not loaded");
+return;
+}
+
+const input=document.getElementById("searchInput");
+const results=document.getElementById("results");
+const loading=document.getElementById("loading");
+
+const db=hsnDatabase.map(i=>({
+...i,
+search:(i.description+" "+i.code).toLowerCase()
+}));
+
+let timer;
+
+input.addEventListener("input",function(){
+
+clearTimeout(timer);
+
+const q=this.value.toLowerCase().trim();
+
+if(q.length<2){
+results.style.display="none";
+return;
+}
+
+loading.style.display="block";
+
+timer=setTimeout(()=>runSearch(q),250);
+});
+
+function runSearch(q){
+
+let found=[];
+
+const mapped=findHSNFromKeyword(q);
+
+if(mapped){
+found=db.filter(x=>
+mapped.includes(x.code.substring(0,4))
+);
+}
+
+if(found.length===0){
+found=db.filter(x=>x.search.includes(q));
+}
+
+loading.style.display="none";
+render(found.slice(0,40),q);
+}
+
+function render(list,q){
+
+if(!list.length){
+results.innerHTML=
+`<div class="no-results">
+<h3>No HSN found for "${q}"</h3>
+</div>`;
+results.style.display="block";
+return;
+}
+
+results.innerHTML=list.map(i=>`
+<div class="result-card">
+<div class="result-header">
+<div class="hsn-code">HSN ${i.code}</div>
+<div class="gst-rate">${i.gst}</div>
+</div>
+<div class="result-description">${i.description}</div>
+<div class="result-meta">
+<div class="result-meta-item">📁 ${i.category}</div>
+</div>
+</div>
+`).join("");
+
+results.style.display="block";
+}
+
+});
+</script>
 </body>
 </html>
