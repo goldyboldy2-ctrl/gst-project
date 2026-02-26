@@ -37,7 +37,43 @@
       --gray-700: #334155;
       --gray-900: #0f172a;
     }
+<script src="hsn-data.js"></script>
+<script src="search-keywords.js"></script>
+    <script>
+  const searchInput = document.getElementById('hsnSearch');
+  const resultsDiv = document.getElementById('hsnResults');
+
+  if (!searchInput || !resultsDiv) {
+    console.error("Search elements not found");
+  }
+
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase().trim();
     
+    if (query.length < 2) {
+      resultsDiv.innerHTML = '<p>Enter 2+ characters to search...</p>';
+      return;
+    }
+
+    // Simple filter on hsnDatabase
+    const matches = hsnDatabase.filter(item =>
+      item.description.toLowerCase().includes(query) ||
+      item.code.includes(query)
+    ).slice(0, 50);  // limit to 50 for speed
+
+    if (matches.length === 0) {
+      resultsDiv.innerHTML = '<p>No matches found.</p>';
+      return;
+    }
+
+    resultsDiv.innerHTML = matches.map(item => `
+      <div style="padding:12px; border-bottom:1px solid #eee; background:#f8fafc; margin-bottom:8px; border-radius:6px;">
+        <strong>${item.description}</strong><br>
+        HSN Code: $$   {item.code} | GST Rate: <strong>   $${item.gst}</strong> | Category: ${item.category}
+      </div>
+    `).join('');
+  });
+</script>
     body {
       font-family: 'Inter', sans-serif;
       color: var(--gray-900);
