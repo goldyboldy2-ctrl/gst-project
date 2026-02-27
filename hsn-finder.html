@@ -485,6 +485,11 @@
                 
                 // Search through database
                 hsnDatabase.forEach((item, index) => {
+                    // Safety check - skip if no description
+                    if (!item || !item.description || typeof item.description !== 'string') {
+                        return;
+                    }
+                    
                     const description = item.description.toLowerCase();
                     let score = 0;
                     
