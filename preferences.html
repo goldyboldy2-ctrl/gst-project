@@ -470,5 +470,33 @@ window.addEventListener('load', async () => {
 });
 </script>
 
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+    (function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
+                    mobileNav.style.display = 'block';
+                    mobileMenuBtn.textContent = '✕';
+                } else {
+                    mobileNav.style.display = 'none';
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+            
+            // Close menu when clicking a link
+            const mobileLinks = mobileNav.getElementsByTagName('a');
+            for (let i = 0; i < mobileLinks.length; i++) {
+                mobileLinks[i].addEventListener('click', function() {
+                    mobileNav.style.display = 'none';
+                    mobileMenuBtn.textContent = '☰';
+                });
+            }
+        }
+    })();
+    </script>
 </body>
 </html>

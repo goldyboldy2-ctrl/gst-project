@@ -72,7 +72,8 @@
     .disclaimer { background: #fef3c7; border-left: 4px solid var(--amber); padding: 1.5rem; margin: 2rem 0; border-radius: 8px; }
     
     @media (max-width: 768px) {
-      .hero h1 { font-size: 1.5rem; }
+      .hero h1 { font-size: 1.5rem;     .mobile-menu-btn { display: block !important; }
+}
       table { font-size: 0.875rem; }
       td, th { padding: 0.75rem 0.5rem; }
       .category-badge { display: none; }
@@ -301,5 +302,33 @@ function filterByRate(rate) {
 }
 </script>
 
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+    (function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
+                    mobileNav.style.display = 'block';
+                    mobileMenuBtn.textContent = '✕';
+                } else {
+                    mobileNav.style.display = 'none';
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+            
+            // Close menu when clicking a link
+            const mobileLinks = mobileNav.getElementsByTagName('a');
+            for (let i = 0; i < mobileLinks.length; i++) {
+                mobileLinks[i].addEventListener('click', function() {
+                    mobileNav.style.display = 'none';
+                    mobileMenuBtn.textContent = '☰';
+                });
+            }
+        }
+    })();
+    </script>
 </body>
 </html>

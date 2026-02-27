@@ -108,7 +108,8 @@
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2rem; padding-top: 1rem; text-align: center; color: #94a3b8; }
     
     @media (max-width: 768px) {
-      .hero h1 { font-size: 1.5rem; }
+      .hero h1 { font-size: 1.5rem;     .mobile-menu-btn { display: block !important; }
+}
       .scenarios { grid-template-columns: 1fr; }
       .rate-value { font-size: 2rem; }
     }
@@ -956,5 +957,33 @@ function filterByRate(rate) {
 renderItems(smartDatabase);
 </script>
 
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+    (function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuBtn && mobileNav) {
+            mobileMenuBtn.addEventListener('click', function() {
+                if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
+                    mobileNav.style.display = 'block';
+                    mobileMenuBtn.textContent = '✕';
+                } else {
+                    mobileNav.style.display = 'none';
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+            
+            // Close menu when clicking a link
+            const mobileLinks = mobileNav.getElementsByTagName('a');
+            for (let i = 0; i < mobileLinks.length; i++) {
+                mobileLinks[i].addEventListener('click', function() {
+                    mobileNav.style.display = 'none';
+                    mobileMenuBtn.textContent = '☰';
+                });
+            }
+        }
+    })();
+    </script>
 </body>
 </html>
