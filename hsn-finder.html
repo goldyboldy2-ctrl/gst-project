@@ -402,72 +402,43 @@
     
     <script src="hsn-data.js"></script>
     <script>
+        // Check if data loaded
+        console.log('HSN Database loaded:', typeof hsnDatabase !== 'undefined' ? 'Yes' : 'No');
+        console.log('Total HSN codes:', typeof hsnDatabase !== 'undefined' ? hsnDatabase.length : 0);
+        
         // Enhanced keyword mapping for better search
         const keywordMap = {
             // Mobile & Electronics
-            'mobile': ['mobile phone', 'cell phone', 'smartphone', 'cellular', 'handset'],
-            'phone': ['mobile phone', 'telephone', 'cell phone', 'smartphone'],
-            'smartphone': ['mobile phone', 'cell phone'],
-            'laptop': ['computer', 'notebook', 'portable computer'],
-            'computer': ['laptop', 'pc', 'desktop'],
+            'mobile': ['telephone', 'cellular'],
+            'phone': ['telephone', 'cellular'],
+            'smartphone': ['telephone', 'cellular'],
+            'laptop': ['computer', 'automatic data processing'],
+            'computer': ['automatic data processing', 'laptop'],
             
             // Construction
-            'cement': ['portland cement', 'building cement'],
-            'steel': ['iron', 'metal', 'stainless steel'],
-            'iron': ['steel', 'metal'],
+            'cement': ['portland', 'clinker'],
+            'steel': ['iron', 'stainless'],
+            'iron': ['steel', 'ferrous'],
             
             // Textiles
-            'cloth': ['textile', 'fabric', 'cotton', 'garment'],
-            'fabric': ['textile', 'cloth', 'material'],
-            'cotton': ['textile', 'cloth'],
-            'garment': ['clothing', 'apparel', 'dress'],
+            'cloth': ['textile', 'fabric', 'woven'],
+            'fabric': ['textile', 'woven'],
+            'cotton': ['textile'],
+            'garment': ['clothing', 'apparel', 'wear'],
             
             // Food
-            'rice': ['grain', 'paddy', 'basmati'],
-            'wheat': ['grain', 'flour'],
-            'sugar': ['sweetener', 'sucrose'],
+            'rice': ['grain', 'paddy', 'cereal'],
+            'wheat': ['grain', 'cereal'],
+            'sugar': ['cane sugar', 'beet sugar'],
             
             // Services
-            'consulting': ['advisory', 'consultancy', 'professional service'],
-            'software': ['programming', 'application', 'IT service'],
-            'lawyer': ['legal', 'attorney', 'advocate'],
-            'doctor': ['medical', 'physician', 'healthcare'],
+            'consulting': ['advisory', 'professional'],
+            'software': ['computer programme', 'information technology'],
+            'lawyer': ['legal', 'advocate'],
+            'doctor': ['medical', 'physician'],
         };
         
-        // Fuzzy search helper - Levenshtein distance
-        function levenshtein(a, b) {
-            const matrix = [];
-            for (let i = 0; i <= b.length; i++) {
-                matrix[i] = [i];
-            }
-            for (let j = 0; j <= a.length; j++) {
-                matrix[0][j] = j;
-            }
-            for (let i = 1; i <= b.length; i++) {
-                for (let j = 1; j <= a.length; j++) {
-                    if (b.charAt(i - 1) === a.charAt(j - 1)) {
-                        matrix[i][j] = matrix[i - 1][j - 1];
-                    } else {
-                        matrix[i][j] = Math.min(
-                            matrix[i - 1][j - 1] + 1,
-                            matrix[i][j - 1] + 1,
-                            matrix[i - 1][j] + 1
-                        );
-                    }
-                }
-            }
-            return matrix[b.length][a.length];
-        }
-        
-        // Fuzzy matching threshold
-        function fuzzyMatch(searchTerm, text, threshold = 0.7) {
-            const distance = levenshtein(searchTerm.toLowerCase(), text.toLowerCase());
-            const maxLength = Math.max(searchTerm.length, text.length);
-            const similarity = 1 - (distance / maxLength);
-            return similarity >= threshold;
-        }
-        
-        // Search function
+        // Simple search - no complex fuzzy matching to keep it fast
         function searchHSN() {
             const searchInput = document.getElementById('searchInput');
             const query = searchInput.value.trim().toLowerCase();
@@ -477,71 +448,81 @@
                 return;
             }
             
+            // Check if data is loaded
+            if (typeof hsnDatabase === 'undefined' || !hsnDatabase || hsnDatabase.length === 0) {
+                alert('Database not loaded. Please refresh the page.');
+                return;
+            }
+            
             // Show loading
             document.getElementById('btnText').style.display = 'none';
             document.getElementById('btnLoading').style.display = 'inline-block';
             document.getElementById('searchBtn').disabled = true;
             
-            // Simulate async search (to show loading state)
+            // Use setTimeout to prevent UI blocking
             setTimeout(() => {
                 performSearch(query);
-            }, 300);
+            }, 100);
         }
         
         function performSearch(query) {
-            const results = [];
-            const queryWords = query.split(' ').filter(w => w.length > 1);
-            
-            // Expand query with synonyms
-            let expandedTerms = [...queryWords];
-            queryWords.forEach(word => {
-                if (keywordMap[word]) {
-                    expandedTerms = [...expandedTerms, ...keywordMap[word]];
-                }
-            });
-            
-            // Search through database
-            hsnDatabase.forEach(item => {
-                const description = item.description.toLowerCase();
-                let score = 0;
+            try {
+                const results = [];
+                const queryWords = query.split(' ').filter(w => w.length > 1);
                 
-                // Exact match gets highest score
-                if (description.includes(query)) {
-                    score = 100;
-                }
-                // Check each word
-                else {
-                    expandedTerms.forEach(term => {
-                        if (description.includes(term)) {
-                            score += 10;
-                        }
-                        // Fuzzy match for typos
-                        else {
-                            const words = description.split(' ');
-                            words.forEach(word => {
-                                if (word.length > 3 && term.length > 3 && fuzzyMatch(term, word, 0.75)) {
-                                    score += 5;
-                                }
-                            });
-                        }
-                    });
-                }
+                console.log('Searching for:', query);
+                console.log('Search terms:', queryWords);
                 
-                if (score > 0) {
-                    results.push({ ...item, score });
-                }
-            });
-            
-            // Sort by score
-            results.sort((a, b) => b.score - a.score);
-            
-            // Display results
-            displayResults(results.slice(0, 50)); // Show top 50
-            
-            // Hide loading
-            document.getElementById('btnText').style.display = 'inline';
-            document.getElementById('btnLoading').style.display = 'none';
-            document.getElementById('searchBtn').disabled = false;
+                // Expand query with synonyms
+                let expandedTerms = new Set([...queryWords]);
+                queryWords.forEach(word => {
+                    if (keywordMap[word]) {
+                        keywordMap[word].forEach(syn => expandedTerms.add(syn));
+                    }
+                });
+                
+                console.log('Expanded terms:', Array.from(expandedTerms));
+                
+                // Search through database
+                hsnDatabase.forEach((item, index) => {
+                    const description = item.description.toLowerCase();
+                    let score = 0;
+                    
+                    // Exact match gets highest score
+                    if (description.includes(query)) {
+                        score = 100;
+                    }
+                    // Check each expanded term
+                    else {
+                        expandedTerms.forEach(term => {
+                            if (description.includes(term)) {
+                                score += 10;
+                            }
+                        });
+                    }
+                    
+                    if (score > 0) {
+                        results.push({ ...item, score });
+                    }
+                });
+                
+                console.log('Found results:', results.length);
+                
+                // Sort by score
+                results.sort((a, b) => b.score - a.score);
+                
+                // Display results
+                displayResults(results.slice(0, 50)); // Show top 50
+                
+            } catch (error) {
+                console.error('Search error:', error);
+                alert('Search error: ' + error.message);
+            } finally {
+                // Hide loading
+                document.getElementById('btnText').style.display = 'inline';
+                document.getElementById('btnLoading').style.display = 'none';
+                document.getElementById('searchBtn').disabled = false;
+            }
         }
         
         function displayResults(results) {
@@ -587,6 +568,13 @@
         // Focus on input on load
         window.addEventListener('load', () => {
             document.getElementById('searchInput').focus();
+            
+            // Show data status
+            if (typeof hsnDatabase !== 'undefined' && hsnDatabase.length > 0) {
+                console.log('✅ Database ready with', hsnDatabase.length, 'codes');
+            } else {
+                console.error('❌ Database not loaded!');
+            }
         });
     </script>
 </body>
