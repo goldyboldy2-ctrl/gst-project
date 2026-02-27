@@ -329,7 +329,7 @@
         
         /* Desktop navigation hover */
         .desktop-nav a:hover {
-            opacity: 0.8;
+            color: #667eea;
         }
         
         /* Smooth scroll */
@@ -340,39 +340,41 @@
 </head>
 <body>
     <!-- Header with Mobile Navigation -->
-    <header style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;">
+    <header style="background: white; color: #333; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #667eea;">
         <div class="header-content" style="max-width: 1200px; margin: 0 auto; padding: 0.8rem 20px; display: flex; justify-content: space-between; align-items: center;">
             
-            <!-- Logo -->
-            <a href="index.html" class="logo" style="font-size: 1.5rem; font-weight: 700; text-decoration: none; color: white; display: flex; align-items: center;">
-                <span style="margin-right: 0.5rem;">🧾</span>
-                MyGSTIndia
+            <!-- Logo - Orange M + Blue Text (Matches Your Actual Site) -->
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                <div style="background: linear-gradient(135deg, #ff9933 0%, #ff8800 100%); width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem; box-shadow: 0 2px 8px rgba(255, 153, 51, 0.3);">
+                    <span style="color: white; font-size: 1.6rem; font-weight: 800;">M</span>
+                </div>
+                <span style="font-size: 1.5rem; font-weight: 700; color: #4285f4;">MyGSTIndia</span>
             </a>
             
             <!-- Desktop Navigation -->
             <nav class="desktop-nav" style="display: flex; align-items: center; gap: 1.5rem;">
-                <a href="index.html" style="color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s;">Home</a>
-                <a href="gst-rates-500.html" style="color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s;">GST Rates</a>
-                <a href="blog.html" style="color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s;">Blog</a>
-                <a href="about.html" style="color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s;">About</a>
-                <a href="contact.html" style="color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s;">Contact</a>
+                <a href="index.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">Home</a>
+                <a href="gst-rates-500.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">GST Rates</a>
+                <a href="blog.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">Blog</a>
+                <a href="about.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">About</a>
+                <a href="contact.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">Contact</a>
             </nav>
             
             <!-- Mobile Menu Toggle -->
-            <button id="mobileMenuBtn" class="mobile-menu-btn" style="display: none; background: rgba(255,255,255,0.2); border: none; color: white; font-size: 1.5rem; padding: 0.5rem 0.8rem; border-radius: 6px; cursor: pointer;">
+            <button id="mobileMenuBtn" class="mobile-menu-btn" style="display: none; background: #f5f5f5; border: 1px solid #ddd; color: #333; font-size: 1.5rem; padding: 0.5rem 0.8rem; border-radius: 6px; cursor: pointer;">
                 ☰
             </button>
         </div>
         
         <!-- Mobile Navigation -->
-        <nav id="mobileNav" class="mobile-nav" style="display: none; background: rgba(118, 75, 162, 0.98); backdrop-filter: blur(10px); padding: 1rem 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <a href="index.html" style="display: block; color: white; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 500;">🏠 Home</a>
-            <a href="gst-rates-500.html" style="display: block; color: white; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 500;">📊 GST Rates</a>
-            <a href="hsn-finder.html" style="display: block; color: white; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 500;">🔍 HSN Finder</a>
-            <a href="gst-calculator.html" style="display: block; color: white; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 500;">🧮 GST Calculator</a>
-            <a href="blog.html" style="display: block; color: white; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 500;">📝 Blog</a>
-            <a href="about.html" style="display: block; color: white; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-weight: 500;">ℹ️ About</a>
-            <a href="contact.html" style="display: block; color: white; text-decoration: none; padding: 0.8rem 0; font-weight: 500;">✉️ Contact</a>
+        <nav id="mobileNav" class="mobile-nav" style="display: none; background: white; padding: 1rem 20px; border-top: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <a href="index.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">🏠 Home</a>
+            <a href="gst-rates-500.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">📊 GST Rates</a>
+            <a href="hsn-finder.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">🔍 HSN Finder</a>
+            <a href="gst-calculator.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">🧮 GST Calculator</a>
+            <a href="blog.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">📝 Blog</a>
+            <a href="about.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">ℹ️ About</a>
+            <a href="contact.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; font-weight: 500;">✉️ Contact</a>
         </nav>
     </header>
     
@@ -469,7 +471,7 @@
             <div class="footer-section">
                 <h4>Company</h4>
                 <p>MyGSTIndia - Free GST tools and resources for Indian businesses.</p>
-                <p style="margin-top: 1rem;">📧 mygstindia001@gmail.com</p>
+                <p style="margin-top: 1rem;">📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddb0a4baaea9b4b3b9b4bcededec9dbab0bcb4b1f3beb2b0">[email&#160;protected]</a></p>
             </div>
             <div class="footer-section">
                 <h4>Tools</h4>
@@ -495,7 +497,7 @@
         </div>
     </footer>
     
-    <script src="hsn-data.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="hsn-data.js"></script>
     <script>
         // Check if data loaded
         console.log('HSN Database loaded:', typeof hsnDatabase !== 'undefined' ? 'Yes' : 'No');
@@ -697,13 +699,4 @@
             // Close menu when clicking a link
             const mobileLinks = mobileNav.getElementsByTagName('a');
             for (let i = 0; i < mobileLinks.length; i++) {
-                mobileLinks[i].addEventListener('click', function() {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                });
-            }
-        }
-    })();
-    </script>
-</body>
-</html>
+                mobileLinks[i
