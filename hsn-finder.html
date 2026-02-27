@@ -1,747 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VVBKGDPYBE');
-  </script>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HSN Code Finder - Search 21,000+ HSN Codes with GST Rates | MyGSTIndia</title>
-  <meta name="description" content="Free HSN code finder for India. Search 21,000+ HSN codes with GST rates. Find HSN for laptop, mobile, rice, car, and more. Instant search 2026.">
-  <link rel="canonical" href="https://mygstindia.in/hsn-finder.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
-  
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    :root {
-      --navy: #1e293b;
-      --blue: #3b82f6;
-      --blue-dark: #2563eb;
-      --orange: #f59e0b;
-      --orange-dark: #d97706;
-      --green: #10b981;
-      --purple: #8b5cf6;
-      --gray-50: #f8fafc;
-      --gray-100: #f1f5f9;
-      --gray-200: #e2e8f0;
-      --gray-600: #475569;
-      --gray-700: #334155;
-      --gray-900: #0f172a;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--gray-900);
-      line-height: 1.6;
-      background: var(--gray-50);
-      padding-bottom: 80px;
-    }
-    
-    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
-    
-    /* NAVBAR */
-    .navbar {
-      background: white;
-      border-bottom: 1px solid var(--gray-200);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 1.25rem;
-    }
-    
-    .logo-mark {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 800;
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .logo-text { color: var(--blue); }
-    
-    .nav-links {
-      display: none;
-      gap: 2rem;
-      list-style: none;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: var(--gray-700);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    
-    .nav-links a:hover { color: var(--blue); }
-    
-    .hamburger {
-      width: 32px;
-      height: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-    
-    .hamburger span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background: var(--navy);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-    
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: white;
-      padding: 1.5rem;
-      border-bottom: 1px solid var(--gray-200);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    
-    @media (min-width: 768px) {
-      .hamburger { display: none; }
-      .nav-links { display: flex; }
-      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
-    }
-    
-    /* DISCLAIMER */
-    .disclaimer {
-      background: #fef3c7;
-      border-bottom: 2px solid var(--orange);
-      padding: 0.625rem 1rem;
-      font-size: 0.875rem;
-      text-align: center;
-    }
-    
-    .disclaimer a {
-      color: #92400e;
-      font-weight: 600;
-      text-decoration: underline;
-    }
-    
-    /* BREADCRUMB */
-    .breadcrumb {
-      background: white;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--gray-200);
-    }
-    
-    .breadcrumb-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 1rem;
-      font-size: 0.875rem;
-      color: var(--gray-600);
-    }
-    
-    .breadcrumb a {
-      color: var(--blue);
-      text-decoration: none;
-    }
-    
-    .breadcrumb a:hover { text-decoration: underline; }
-    
-    /* MAIN CONTENT */
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    
-    .page-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    .page-badge {
-      display: inline-block;
-      background: var(--purple);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    
-    .page-header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-      color: var(--navy);
-    }
-    
-    .page-header p {
-      font-size: 1.125rem;
-      color: var(--gray-600);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    /* SEARCH BOX */
-    .search-box {
-      background: white;
-      border: 2px solid var(--gray-200);
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .search-input-wrapper {
-      position: relative;
-    }
-    
-    .search-icon {
-      position: absolute;
-      left: 1.25rem;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.5rem;
-      color: var(--gray-600);
-    }
-    
-    .search-input {
-      width: 100%;
-      padding: 1rem 1rem 1rem 3.5rem;
-      border: 2px solid var(--purple);
-      border-radius: 8px;
-      font-size: 1.125rem;
-      transition: all 0.2s;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .search-input:focus {
-      outline: none;
-      border-color: var(--purple);
-      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
-    }
-    
-    .search-examples {
-      margin-top: 1rem;
-      font-size: 0.875rem;
-      color: var(--gray-600);
-      text-align: center;
-    }
-    
-    .search-examples strong {
-      color: var(--navy);
-    }
-    
-    /* RESULTS */
-    #results {
-      display: none;
-    }
-    
-    .result-card {
-      background: white;
-      border: 2px solid var(--gray-200);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-    
-    .result-card:hover {
-      border-color: var(--purple);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
-    }
-    
-    .result-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-      gap: 1rem;
-    }
-    
-    .hsn-code {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--purple);
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .gst-rate {
-      background: linear-gradient(135deg, var(--green), #059669);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1.125rem;
-    }
-    
-    .result-description {
-      color: var(--gray-700);
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-    }
-    
-    .result-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.875rem;
-      color: var(--gray-600);
-    }
-    
-    .result-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .no-results {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: var(--gray-600);
-    }
-    
-    .no-results-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    
-    /* LOADING */
-    .loading {
-      display: none;
-      text-align: center;
-      padding: 2rem;
-      color: var(--gray-600);
-    }
-    
-    .loading-spinner {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border: 4px solid var(--gray-200);
-      border-top-color: var(--purple);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    
-    /* INFO BOX */
-    .info-box {
-      background: #eff6ff;
-      border-left: 4px solid var(--blue);
-      padding: 1rem;
-      border-radius: 8px;
-      margin: 2rem 0;
-    }
-    
-    .info-box h4 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      color: var(--navy);
-    }
-    
-    .info-box p {
-      font-size: 0.875rem;
-      color: var(--gray-600);
-      margin: 0;
-    }
-    
-    .info-box ul {
-      margin: 0.5rem 0 0 1.25rem;
-      font-size: 0.875rem;
-      color: var(--gray-600);
-    }
-    
-    /* FOOTER */
-    .footer {
-      background: var(--navy);
-      color: white;
-      padding: 2rem 1rem 1rem;
-      margin-top: 4rem;
-    }
-    
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .footer h4 {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    
-    .footer ul {
-      list-style: none;
-    }
-    
-    .footer a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.875rem;
-      display: block;
-      margin-bottom: 0.5rem;
-      transition: color 0.2s;
-    }
-    
-    .footer a:hover { color: white; }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.7);
-    }
-    
-    .footer-disclaimer {
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.875rem;
-    }
-    
-    .footer-disclaimer a {
-      display: inline;
-      margin: 0 0.5rem;
-    }
-    
-    /* MOBILE NAV */
-    .mobile-nav {
-      display: flex;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      border-top: 1px solid var(--gray-200);
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-      z-index: 90;
-    }
-    
-    .mobile-nav-btn {
-      flex: 1;
-      padding: 0.75rem;
-      text-align: center;
-      text-decoration: none;
-      color: var(--gray-600);
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.25rem;
-      transition: all 0.2s;
-    }
-    
-    .mobile-nav-btn.active {
-      color: var(--blue);
-    }
-    
-    .mobile-nav-icon {
-      font-size: 1.5rem;
-    }
-    
-    @media (min-width: 768px) {
-      .mobile-nav { display: none; }
-      .page-header h1 { font-size: 2.5rem; }
-      .container { margin: 3rem auto; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSN Code Finder - Find Your Product HSN Code | MyGSTIndia</title>
+    <meta name="description" content="Free HSN code finder with 22,000+ codes. Search by product name with smart fuzzy matching for typos and variations.">
+    <link rel="canonical" href="https://mygstindia.com/hsn-finder.html">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VVBKGDPYBE');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+        
+        /* Search Box */
+        .search-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .search-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .search-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Results */
+        .results-section {
+            display: none;
+        }
+        
+        .results-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .results-header h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .results-count {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid #667eea;
+        }
+        
+        .hsn-code {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hsn-description {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .rate-link {
+            display: inline-block;
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .rate-link:hover {
+            background: #e0e9ff;
+        }
+        
+        .no-results {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .no-results h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .info-box h3 {
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-box p {
+            color: #856404;
+            margin: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem 20px 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .footer-section a {
+            display: block;
+            color: #cbd5e0;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4a5568;
+            color: #cbd5e0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Loading spinner */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">M</div>
-      <span class="logo-text">MyGSTIndia</span>
-    </a>
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- DISCLAIMER -->
-<div class="disclaimer">
-  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
-</div>
-
-<!-- BREADCRUMB -->
-<div class="breadcrumb">
-  <div class="breadcrumb-container">
-    <a href="index.html">Home</a> › <a href="index.html#tools">Tools</a> › HSN Code Finder
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="container">
-  
-  <div class="page-header">
-    <div class="page-badge">🔍 Search</div>
-    <h1>HSN Code Finder</h1>
-    <p>Search 21,000+ HSN codes with GST rates. Find HSN for any product instantly.</p>
-  </div>
-  
-  <div class="search-box">
-    <div class="search-input-wrapper">
-      <div class="search-icon">🔍</div>
-      <input 
-        type="text" 
-        id="searchInput" 
-        class="search-input"
-        placeholder="Search for product (e.g., laptop, rice, mobile phone, car)"
-        autocomplete="off"
-      />
-    </div>
-    <div class="search-examples">
-      <strong>Try:</strong> laptop, mobile phone, rice, sugar, cement, car, textile, gold
-    </div>
-  </div>
-  
-  <div class="loading" id="loading">
-    <div class="loading-spinner"></div>
-    <p>Searching HSN database...</p>
-  </div>
-  
-  <div id="results"></div>
-  
-  <div class="info-box">
-    <h4>💡 What is HSN Code?</h4>
-    <p><strong>HSN (Harmonized System of Nomenclature)</strong> is a 6-8 digit code that classifies products for GST purposes.</p>
-    <ul>
-      <li>Required on all invoices above ₹50 lakh turnover (4-digit) or ₹5 crore (6-digit)</li>
-      <li>Determines the GST rate applicable (0%, 5%, 12%, 18%, 28%)</li>
-      <li>21,000+ codes covering all goods and services</li>
-      <li>Updated regularly by CBIC (Central Board of Indirect Taxes)</li>
-    </ul>
-  </div>
-  
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-grid">
-      <div>
-        <h4>MyGSTIndia</h4>
-        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <ul>
-          <li><a href="gst-calculator.html">GST Calculator</a></li>
-          <li><a href="hsn-finder.html">HSN Finder</a></li>
-          <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
-          <li><a href="itc-calculator.html">ITC Calculator</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="blog/index.html">Blog</a></li>
-          <li><a href="disclaimer.html">Disclaimer</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="disclaimer.html">Legal Disclaimer</a></li>
-          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
-        </ul>
-      </div>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">MyGSTIndia</a>
+            <nav>
+                <a href="gst-rates-500.html">GST Rates</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">🔍 22,000+ HSN Codes</div>
+        <h1>HSN Code Finder</h1>
+        <p>Find the correct HSN code for your products. Smart search with typo correction and keyword matching.</p>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>💡 What is HSN Code?</h3>
+            <p>HSN (Harmonized System of Nomenclature) is a 6-8 digit code used to classify products for GST. Every invoice must include the correct HSN code for your products.</p>
+        </div>
+        
+        <!-- Search Box -->
+        <div class="search-card">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="e.g., mobile phone, cement, cotton, consulting service..."
+                autocomplete="off"
+            >
+            <button id="searchBtn" class="search-btn" onclick="searchHSN()">
+                <span id="btnText">Search HSN Code</span>
+                <span id="btnLoading" style="display:none;" class="loading"></span>
+            </button>
+        </div>
+        
+        <!-- Results Section -->
+        <div id="resultsSection" class="results-section">
+            <div class="results-header">
+                <h2>Search Results</h2>
+                <p class="results-count" id="resultsCount"></p>
+            </div>
+            <div id="resultsContainer"></div>
+        </div>
     </div>
     
-    <div class="footer-disclaimer">
-      <a href="disclaimer.html">Legal Disclaimer</a> • 
-      <a href="https://www.gst.gov.in" target="_blank">GST Portal</a>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <p>MyGSTIndia - Free GST tools and resources for Indian businesses.</p>
+                <p style="margin-top: 1rem;">📧 mygstindia001@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Tools</h4>
+                <a href="gst-calculator.html">GST Calculator</a>
+                <a href="hsn-finder.html">HSN Code Finder</a>
+                <a href="gst-rates-500.html">GST Rates 500</a>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="disclaimer.html">Disclaimer</a>
+                <a href="refund-policy.html">Refund Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MyGSTIndia. All rights reserved.</p>
+        </div>
+    </footer>
     
-    <div class="footer-bottom">
-      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
-    </div>
-  </div>
-</footer>
-
-<!-- MOBILE NAV -->
-<div class="mobile-nav">
-  <a href="index.html#tools" class="mobile-nav-btn active">
-    <div class="mobile-nav-icon">🧮</div>
-    <div>Tools</div>
-  </a>
-  <a href="index.html" class="mobile-nav-btn">
-    <div class="mobile-nav-icon">🔍</div>
-    <div>Search</div>
-  </a>
-  <a href="blog/index.html" class="mobile-nav-btn">
-    <div class="mobile-nav-icon">📚</div>
-    <div>Blog</div>
-  </a>
-</div>
-
-<!-- JAVASCRIPT -->
-<script>
-// Hamburger menu
-document.getElementById('hamburger').addEventListener('click', function() {
-  document.getElementById('navLinks').classList.toggle('active');
-});
-
-document.addEventListener('click', function(e) {
-  const nav = document.getElementById('navLinks');
-  const hamburger = document.getElementById('hamburger');
-  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-    nav.classList.remove('active');
-  }
-});
-</script>
-
-<!-- HSN SEARCH ENGINE -->
-<script src="hsn-data.js"></script>
-<script src="search-keywords.js"></script>
-
-<script>
-window.addEventListener("DOMContentLoaded", function () {
-
-if(!window.hsnDatabase){
-console.error("HSN database not loaded");
-return;
-}
-
-const input=document.getElementById("searchInput");
-const results=document.getElementById("results");
-const loading=document.getElementById("loading");
-
-const db=hsnDatabase.map(i=>({
-...i,
-search:(i.description+" "+i.code).toLowerCase()
-}));
-
-let timer;
-
-input.addEventListener("input",function(){
-
-clearTimeout(timer);
-
-const q=this.value.toLowerCase().trim();
-
-if(q.length<2){
-results.style.display="none";
-return;
-}
-
-loading.style.display="block";
-
-timer=setTimeout(()=>runSearch(q),250);
-});
-
-function runSearch(q){
-
-let found=[];
-
-const mapped=findHSNFromKeyword(q);
-
-if(mapped){
-found=db.filter(x=>
-mapped.includes(x.code.substring(0,4))
-);
-}
-
-if(found.length===0){
-found=db.filter(x=>x.search.includes(q));
-}
-
-loading.style.display="none";
-render(found.slice(0,40),q);
-}
-
-function render(list,q){
-
-if(!list.length){
-results.innerHTML=
-`<div class="no-results">
-<h3>No HSN found for "${q}"</h3>
-</div>`;
-results.style.display="block";
-return;
-}
-
-results.innerHTML=list.map(i=>`
-<div class="result-card">
-<div class="result-header">
-<div class="hsn-code">HSN ${i.code}</div>
-<div class="gst-rate">${i.gst}</div>
-</div>
-<div class="result-description">${i.description}</div>
-<div class="result-meta">
-<div class="result-meta-item">📁 ${i.category}</div>
-</div>
-</div>
-`).join("");
-
-results.style.display="block";
-}
-
-});
-</script>
+    <script src="hsn-data.js"></script>
+    <script>
+        // Enhanced keyword mapping for better search
+        const keywordMap = {
+            // Mobile & Electronics
+            'mobile': ['mobile phone', 'cell phone', 'smartphone', 'cellular', 'handset'],
+            'phone': ['mobile phone', 'telephone', 'cell phone', 'smartphone'],
+            'smartphone': ['mobile phone', 'cell phone'],
+            'laptop': ['computer', 'notebook', 'portable computer'],
+            'computer': ['laptop', 'pc', 'desktop'],
+            
+            // Construction
+            'cement': ['portland cement', 'building cement'],
+            'steel': ['iron', 'metal', 'stainless steel'],
+            'iron': ['steel', 'metal'],
+            
+            // Textiles
+            'cloth': ['textile', 'fabric', 'cotton', 'garment'],
+            'fabric': ['textile', 'cloth', 'material'],
+            'cotton': ['textile', 'cloth'],
+            'garment': ['clothing', 'apparel', 'dress'],
+            
+            // Food
+            'rice': ['grain', 'paddy', 'basmati'],
+            'wheat': ['grain', 'flour'],
+            'sugar': ['sweetener', 'sucrose'],
+            
+            // Services
+            'consulting': ['advisory', 'consultancy', 'professional service'],
+            'software': ['programming', 'application', 'IT service'],
+            'lawyer': ['legal', 'attorney', 'advocate'],
+            'doctor': ['medical', 'physician', 'healthcare'],
+        };
+        
+        // Fuzzy search helper - Levenshtein distance
+        function levenshtein(a, b) {
+            const matrix = [];
+            for (let i = 0; i <= b.length; i++) {
+                matrix[i] = [i];
+            }
+            for (let j = 0; j <= a.length; j++) {
+                matrix[0][j] = j;
+            }
+            for (let i = 1; i <= b.length; i++) {
+                for (let j = 1; j <= a.length; j++) {
+                    if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                        matrix[i][j] = matrix[i - 1][j - 1];
+                    } else {
+                        matrix[i][j] = Math.min(
+                            matrix[i - 1][j - 1] + 1,
+                            matrix[i][j - 1] + 1,
+                            matrix[i - 1][j] + 1
+                        );
+                    }
+                }
+            }
+            return matrix[b.length][a.length];
+        }
+        
+        // Fuzzy matching threshold
+        function fuzzyMatch(searchTerm, text, threshold = 0.7) {
+            const distance = levenshtein(searchTerm.toLowerCase(), text.toLowerCase());
+            const maxLength = Math.max(searchTerm.length, text.length);
+            const similarity = 1 - (distance / maxLength);
+            return similarity >= threshold;
+        }
+        
+        // Search function
+        function searchHSN() {
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.trim().toLowerCase();
+            
+            if (query.length < 2) {
+                alert('Please enter at least 2 characters');
+                return;
+            }
+            
+            // Show loading
+            document.getElementById('btnText').style.display = 'none';
+            document.getElementById('btnLoading').style.display = 'inline-block';
+            document.getElementById('searchBtn').disabled = true;
+            
+            // Simulate async search (to show loading state)
+            setTimeout(() => {
+                performSearch(query);
+            }, 300);
+        }
+        
+        function performSearch(query) {
+            const results = [];
+            const queryWords = query.split(' ').filter(w => w.length > 1);
+            
+            // Expand query with synonyms
+            let expandedTerms = [...queryWords];
+            queryWords.forEach(word => {
+                if (keywordMap[word]) {
+                    expandedTerms = [...expandedTerms, ...keywordMap[word]];
+                }
+            });
+            
+            // Search through database
+            hsnDatabase.forEach(item => {
+                const description = item.description.toLowerCase();
+                let score = 0;
+                
+                // Exact match gets highest score
+                if (description.includes(query)) {
+                    score = 100;
+                }
+                // Check each word
+                else {
+                    expandedTerms.forEach(term => {
+                        if (description.includes(term)) {
+                            score += 10;
+                        }
+                        // Fuzzy match for typos
+                        else {
+                            const words = description.split(' ');
+                            words.forEach(word => {
+                                if (word.length > 3 && term.length > 3 && fuzzyMatch(term, word, 0.75)) {
+                                    score += 5;
+                                }
+                            });
+                        }
+                    });
+                }
+                
+                if (score > 0) {
+                    results.push({ ...item, score });
+                }
+            });
+            
+            // Sort by score
+            results.sort((a, b) => b.score - a.score);
+            
+            // Display results
+            displayResults(results.slice(0, 50)); // Show top 50
+            
+            // Hide loading
+            document.getElementById('btnText').style.display = 'inline';
+            document.getElementById('btnLoading').style.display = 'none';
+            document.getElementById('searchBtn').disabled = false;
+        }
+        
+        function displayResults(results) {
+            const resultsSection = document.getElementById('resultsSection');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const resultsCount = document.getElementById('resultsCount');
+            
+            resultsSection.style.display = 'block';
+            
+            if (results.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="no-results">
+                        <h3>No Results Found</h3>
+                        <p>Try different keywords or check the spelling. You can also browse our <a href="gst-rates-500.html" style="color: #667eea;">GST Rates page</a> for common products.</p>
+                    </div>
+                `;
+                resultsCount.textContent = '0 results found';
+            } else {
+                resultsCount.textContent = `${results.length} result${results.length > 1 ? 's' : ''} found`;
+                
+                resultsContainer.innerHTML = results.map(item => `
+                    <div class="result-card">
+                        <div class="hsn-code">HSN ${item.code}</div>
+                        <div class="hsn-description">${item.description}</div>
+                        <a href="gst-rates-500.html" class="rate-link">
+                            📊 Check GST Rate →
+                        </a>
+                    </div>
+                `).join('');
+            }
+            
+            // Scroll to results
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Enter key support
+        document.getElementById('searchInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchHSN();
+            }
+        });
+        
+        // Focus on input on load
+        window.addEventListener('load', () => {
+            document.getElementById('searchInput').focus();
+        });
+    </script>
 </body>
 </html>
