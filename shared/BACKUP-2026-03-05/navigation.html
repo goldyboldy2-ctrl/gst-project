@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/index.html" class="logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">MyGSTIndia</span>
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/index.html#tools">Tools</a></li>
+      <li><a href="/gst-rates-500.html">GST Rates</a></li>
+      <li><a href="/blog/index.html">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    
+    <!-- User Menu (Logged In) - Hidden by default -->
+    <div class="user-menu" id="userMenu">
+      <button class="user-btn" onclick="toggleUserDropdown()">
+        <img src="" alt="User" class="user-photo" id="userPhoto">
+        <span class="user-name" id="userName">User</span>
+        <span>v</span>
+      </button>
+      <div class="dropdown" id="userDropdown">
+        <a href="/preferences.html">Preferences</a>
+        <a href="#" onclick="signOut();return false;">Sign Out</a>
+      </div>
+    </div>
+    
+    <!-- Login Button (Guest) - Shown by default -->
+    <button class="login-btn" id="loginBtn" onclick="signIn()">
+      Sign In
+    </button>
+  </div>
+</nav>
