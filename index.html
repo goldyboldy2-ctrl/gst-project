@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -18,7 +18,8 @@
     gtag('js', new Date());
     gtag('config', 'G-VVBKGDPYBE');
   </script>
-  
+  <link rel="stylesheet" href="shared/global.css">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -590,55 +591,17 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">M</div>
-      <span class="logo-text">MyGSTIndia</span>
-    </a>
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#tools">Tools</a></li>
-      <li><a href="gst-rates-500.html">GST Rates</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    
-    <!-- User Menu (Logged In) - Hidden by default -->
-    <div class="user-menu" id="userMenu">
-      <button class="user-btn" onclick="toggleUserDropdown()">
-        <img src="" alt="User" class="user-photo" id="userPhoto">
-        <span class="user-name" id="userName">User</span>
-        <span>▾</span>
-      </button>
-      <div class="dropdown" id="userDropdown">
-        <a href="preferences.html">⚙️ Preferences</a>
-        <a href="#" onclick="signOut();return false;">🚪 Sign Out</a>
-      </div>
-    </div>
-    
-    <!-- Login Button (Guest) - Shown by default -->
-    <button class="login-btn" id="loginBtn" onclick="signIn()">
-      🎁 Sign In
-    </button>
-  </div>
-</nav>
+<div id="shared-navbar"></div>
 
 <!-- DISCLAIMER -->
 <div class="disclaimer">
-  ⚠️ <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank" rel="noopener">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer →</a>
+    <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank" rel="noopener">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer </a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="trust-badge">
-    <div class="trust-icon">✓</div>
+    <div class="trust-icon"></div>
     <span style="font-weight:600;color:#334155;">Trusted by 50,000+ Indian Businesses</span>
   </div>
   
@@ -647,7 +610,7 @@
   
   <!-- SEARCH -->
   <div class="search-box">
-    <div class="search-icon">🔍</div>
+    <div class="search-icon"></div>
     <input 
       type="text" 
       id="globalSearch" 
@@ -678,11 +641,11 @@
 <!-- CATEGORIES -->
 <div class="container">
   <div class="categories">
-    <button class="category-btn active" onclick="filterTools('all')">🎯 All Tools</button>
-    <button class="category-btn" onclick="filterTools('calculators')">🧮 Calculators</button>
-    <button class="category-btn" onclick="filterTools('codes')">🔢 Codes & Rates</button>
-    <button class="category-btn" onclick="filterTools('filing')">📅 Filing</button>
-    <button class="category-btn" onclick="filterTools('verification')">✅ Verification</button>
+    <button class="category-btn active" onclick="filterTools('all')"> All Tools</button>
+    <button class="category-btn" onclick="filterTools('calculators')"> Calculators</button>
+    <button class="category-btn" onclick="filterTools('codes')"> Codes & Rates</button>
+    <button class="category-btn" onclick="filterTools('filing')"> Filing</button>
+    <button class="category-btn" onclick="filterTools('verification')"> Verification</button>
   </div>
 
   <!-- TOOLS -->
@@ -690,97 +653,97 @@
   <div class="tools-grid" id="toolsGrid">
     
     <a href="gst-calculator.html" class="tool-card" data-category="calculators">
-      <div class="tool-icon">🧮</div>
+      <div class="tool-icon"></div>
       <h3>GST Calculator</h3>
       <p>Calculate GST inclusive/exclusive prices instantly.</p>
     </a>
     
     <a href="hsn-finder.html" class="tool-card" data-category="codes">
-      <div class="tool-icon">🔍</div>
+      <div class="tool-icon"></div>
       <h3>HSN Code Finder</h3>
       <p>Search 21,000+ HSN codes instantly.</p>
     </a>
     
     <a href="gst-rates-500.html" class="tool-card" data-category="codes">
-      <div class="tool-icon">📊</div>
+      <div class="tool-icon"></div>
       <h3>Top 500 GST Rates</h3>
       <p>Most searched items with verified rates and HSN codes.</p>
     </a>
     
     <a href="penalty-calculator.html" class="tool-card" data-category="calculators">
-      <div class="tool-icon">💸</div>
+      <div class="tool-icon"></div>
       <h3>Penalty Calculator</h3>
       <p>Calculate late filing fees and interest.</p>
     </a>
     
     <a href="itc-calculator.html" class="tool-card" data-category="calculators">
-      <div class="tool-icon">💰</div>
+      <div class="tool-icon"></div>
       <h3>ITC Calculator</h3>
       <p>Calculate Input Tax Credit eligibility.</p>
     </a>
     
     <a href="composition-calculator.html" class="tool-card" data-category="calculators">
-      <div class="tool-icon">📦</div>
+      <div class="tool-icon"></div>
       <h3>Composition Calculator</h3>
       <p>Check eligibility for composition scheme.</p>
     </a>
     
     <a href="invoice.html" class="tool-card" data-category="filing">
-      <div class="tool-icon">📄</div>
+      <div class="tool-icon"></div>
       <h3>Invoice Generator</h3>
       <p>Create GST-compliant invoices instantly.</p>
     </a>
     
     <a href="gstin-verification.html" class="tool-card" data-category="verification">
-      <div class="tool-icon">✅</div>
+      <div class="tool-icon"></div>
       <h3>GSTIN Verification</h3>
       <p>Verify GST numbers instantly.</p>
     </a>
     
     <a href="return-deadlines.html" class="tool-card" data-category="filing">
-      <div class="tool-icon">📅</div>
+      <div class="tool-icon"></div>
       <h3>Return Deadlines</h3>
       <p>Check GSTR-1, GSTR-3B due dates.</p>
     </a>
     
     <a href="blog/gst-rates-india-2026.html" class="tool-card" data-category="codes">
-      <div class="tool-icon">📊</div>
+      <div class="tool-icon"></div>
       <h3>GST Rates 2026</h3>
       <p>Complete GST rate slabs by category.</p>
     </a>
     
     <a href="eway-bill-calculator.html" class="tool-card" data-category="filing">
-      <div class="tool-icon">🚚</div>
+      <div class="tool-icon"></div>
       <h3>E-Way Bill Calculator</h3>
       <p>Calculate e-way bill validity period.</p>
     </a>
     
     <a href="tds-calculator.html" class="tool-card" data-category="calculators">
-      <div class="tool-icon">💳</div>
+      <div class="tool-icon"></div>
       <h3>TDS Calculator</h3>
       <p>Calculate TDS under GST (Section 51).</p>
     </a>
     
     <a href="registration-checker.html" class="tool-card" data-category="verification">
-      <div class="tool-icon">🔐</div>
+      <div class="tool-icon"></div>
       <h3>Registration Checker</h3>
       <p>Check if GST registration is mandatory.</p>
     </a>
     
     <a href="gstr3b-helper.html" class="tool-card" data-category="filing">
-      <div class="tool-icon">📊</div>
+      <div class="tool-icon"></div>
       <h3>GSTR-3B Helper</h3>
       <p>Calculate tax liability for filing.</p>
     </a>
     
     <a href="refund-calculator.html" class="tool-card" data-category="calculators">
-      <div class="tool-icon">💵</div>
+      <div class="tool-icon"></div>
       <h3>Refund Calculator</h3>
       <p>Calculate GST refund eligibility.</p>
     </a>
     
     <a href="tcs-calculator.html" class="tool-card" data-category="calculators">
-      <div class="tool-icon">💼</div>
+      <div class="tool-icon"></div>
       <h3>TCS Calculator</h3>
       <p>Calculate TCS for e-commerce (Section 52).</p>
     </a>
@@ -789,75 +752,24 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <h4>MyGSTIndia</h4>
-      <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs. Compiled reference from public notifications.</p>
-      <div class="contact-info">
-        <p style="margin-bottom:0.5rem;"><strong>Contact Us:</strong></p>
-        <p><a href="mailto:mygstconnect@gmail.com">mygstconnect@gmail.com</a></p>
-      </div>
-    </div>
-    <div>
-      <h4>Tools</h4>
-      <ul>
-        <li><a href="gst-calculator.html">GST Calculator</a></li>
-        <li><a href="hsn-finder.html">HSN Finder</a></li>
-        <li><a href="gst-rates-500.html">Top 500 GST Rates</a></li>
-        <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
-        <li><a href="itc-calculator.html">ITC Calculator</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Company</h4>
-      <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-        <li><a href="disclaimer.html">Legal Disclaimer</a></li>
-        <li><a href="https://www.gst.gov.in" target="_blank" rel="noopener">Official GST Portal</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="footer-disclaimer">
-    <a href="about.html">About</a> • 
-    <a href="contact.html">Contact</a> • 
-    <a href="privacy-policy.html">Privacy</a> • 
-    <a href="terms.html">Terms</a> • 
-    <a href="disclaimer.html">Disclaimer</a> • 
-    <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST Portal</a>
-  </div>
-  
-  <div class="footer-bottom">
-    © 2026 MyGSTIndia - GST Rate Information Portal | Not affiliated with government bodies
-  </div>
-</footer>
+<div id="shared-footer"></div>
 
 <!-- MOBILE BOTTOM NAV -->
 <div class="mobile-nav">
   <a href="#tools" class="mobile-nav-btn active">
-    <div class="mobile-nav-icon">🧮</div>
+    <div class="mobile-nav-icon"></div>
     <div>Tools</div>
   </a>
   <a href="#" class="mobile-nav-btn" onclick="document.getElementById('globalSearch').focus(); return false;">
-    <div class="mobile-nav-icon">🔍</div>
+    <div class="mobile-nav-icon"></div>
     <div>Search</div>
   </a>
   <a href="blog/index.html" class="mobile-nav-btn">
-    <div class="mobile-nav-icon">📚</div>
+    <div class="mobile-nav-icon"></div>
     <div>Blog</div>
   </a>
   <a href="contact.html" class="mobile-nav-btn">
-    <div class="mobile-nav-icon">📧</div>
+    <div class="mobile-nav-icon"></div>
     <div>Contact</div>
   </a>
 </div>
@@ -1005,34 +917,64 @@ function filterTools(category) {
   });
 }
 </script>
+  <script>
+  function ensureSharedNavigationCss() {
+    if (document.getElementById('shared-navigation-css')) return;
+    const link = document.createElement('link');
+    link.id = 'shared-navigation-css';
+    link.rel = 'stylesheet';
+    link.href = 'shared/navigation.css';
+    document.head.appendChild(link);
+  }
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-    (function() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', function() {
-                if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
-                    mobileNav.style.display = 'block';
-                    mobileMenuBtn.textContent = '✕';
-                } else {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                }
-            });
-            
-            // Close menu when clicking a link
-            const mobileLinks = mobileNav.getElementsByTagName('a');
-            for (let i = 0; i < mobileLinks.length; i++) {
-                mobileLinks[i].addEventListener('click', function() {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                });
-            }
+  async function loadSharedNavigation() {
+    const mountPoint = document.getElementById('shared-navbar');
+    if (!mountPoint) return;
+    try {
+      ensureSharedNavigationCss();
+      const response = await fetch('shared/navigation.html');
+      if (!response.ok) throw new Error('Navigation load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+      initNavbarBehavior();
+    } catch (error) {
+      console.error('Unable to load shared navigation:', error);
+    }
+  }
+
+  async function loadSharedFooter() {
+    const mountPoint = document.getElementById('shared-footer');
+    if (!mountPoint) return;
+    try {
+      const response = await fetch('shared/footer.html');
+      if (!response.ok) throw new Error('Footer load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+    } catch (error) {
+      console.error('Unable to load shared footer:', error);
+    }
+  }
+
+  function initNavbarBehavior() {
+    const nav = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    if (nav && hamburger) {
+      hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          nav.classList.remove('active');
         }
-    })();
-    </script>
+      });
+    }
+  }
+
+  loadSharedNavigation();
+  loadSharedFooter();
+  </script>
 </body>
 </html>
+
+
+
