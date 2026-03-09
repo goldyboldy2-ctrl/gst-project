@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -9,6 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'G-VVBKGDPYBE');
   </script>
+  <link rel="stylesheet" href="shared/global.css">
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -562,24 +563,7 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">M</div>
-      <span class="logo-text">MyGSTIndia</span>
-    </a>
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
-    </ul>
-  </div>
-</nav>
+<div id="shared-navbar"></div>
 
 <!-- DISCLAIMER -->
 <div class="disclaimer">
@@ -769,43 +753,7 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-grid">
-      <div>
-        <h4>MyGSTIndia</h4>
-        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <ul>
-          <li><a href="gst-calculator.html">GST Calculator</a></li>
-          <li><a href="hsn-finder.html">HSN Finder</a></li>
-          <li><a href="penalty-calculator.html">Penalty Calculator</a></li>
-          <li><a href="itc-calculator.html">ITC Calculator</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="blog/index.html">Blog</a></li>
-          <li><a href="disclaimer.html">Disclaimer</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="disclaimer.html">Legal Disclaimer</a></li>
-          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
-    </div>
-  </div>
-</footer>
+<div id="shared-footer"></div>
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav">
@@ -933,5 +881,63 @@ function resetForm() {
         }
     })();
     </script>
+
+  <script>
+  function ensureSharedNavigationCss() {
+    if (document.getElementById('shared-navigation-css')) return;
+    const link = document.createElement('link');
+    link.id = 'shared-navigation-css';
+    link.rel = 'stylesheet';
+    link.href = 'shared/navigation.css';
+    document.head.appendChild(link);
+  }
+
+  async function loadSharedNavigation() {
+    const mountPoint = document.getElementById('shared-navbar');
+    if (!mountPoint) return;
+    try {
+      ensureSharedNavigationCss();
+      const response = await fetch('shared/navigation.html');
+      if (!response.ok) throw new Error('Navigation load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+      initNavbarBehavior();
+    } catch (error) {
+      console.error('Unable to load shared navigation:', error);
+    }
+  }
+
+  async function loadSharedFooter() {
+    const mountPoint = document.getElementById('shared-footer');
+    if (!mountPoint) return;
+    try {
+      const response = await fetch('shared/footer.html');
+      if (!response.ok) throw new Error('Footer load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+    } catch (error) {
+      console.error('Unable to load shared footer:', error);
+    }
+  }
+
+  function initNavbarBehavior() {
+    const nav = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    if (nav && hamburger) {
+      hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          nav.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  loadSharedNavigation();
+  loadSharedFooter();
+  </script>
 </body>
 </html>
+

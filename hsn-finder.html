@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,7 @@
       gtag('js', new Date());
       gtag('config', 'G-VVBKGDPYBE');
     </script>
+    <link rel="stylesheet" href="shared/global.css">
     
     <style>
         * {
@@ -339,46 +340,8 @@
     </style>
 </head>
 <body>
-    <!-- Header with Mobile Navigation -->
-    <!-- Header with Mobile Navigation -->
-    <header style="background: white; color: #333; padding: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #667eea;">
-        <div class="header-content" style="max-width: 1200px; margin: 0 auto; padding: 0.8rem 20px; display: flex; justify-content: space-between; align-items: center;">
-            
-            <!-- Logo - Orange M + Blue Text -->
-            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
-                <div style="background: linear-gradient(135deg, #ff9933 0%, #ff8800 100%); width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 0.8rem; box-shadow: 0 2px 8px rgba(255, 153, 51, 0.3);">
-                    <span style="color: white; font-size: 1.6rem; font-weight: 800;">M</span>
-                </div>
-                <span style="font-size: 1.5rem; font-weight: 700; color: #4285f4;">MyGSTIndia</span>
-            </a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="desktop-nav" style="display: flex; align-items: center; gap: 1.5rem;">
-                <a href="index.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">Home</a>
-                <a href="gst-rates-500.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">GST Rates</a>
-                <a href="blog.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">Blog</a>
-                <a href="about.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">About</a>
-                <a href="contact.html" style="color: #333; text-decoration: none; font-weight: 500; transition: color 0.3s;">Contact</a>
-            </nav>
-            
-            <!-- Mobile Menu Toggle -->
-            <button id="mobileMenuBtn" class="mobile-menu-btn" style="display: none; background: #f5f5f5; border: 1px solid #ddd; color: #333; font-size: 1.5rem; padding: 0.5rem 0.8rem; border-radius: 6px; cursor: pointer;">
-                ☰
-            </button>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <nav id="mobileNav" class="mobile-nav" style="display: none; background: white; padding: 1rem 20px; border-top: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <a href="index.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">🏠 Home</a>
-            <a href="gst-rates-500.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">📊 GST Rates</a>
-            <a href="hsn-finder.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">🔍 HSN Finder</a>
-            <a href="gst-calculator.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">🧮 GST Calculator</a>
-            <a href="invoice-generator.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">📄 Invoice Generator</a>
-            <a href="blog.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">📝 Blog</a>
-            <a href="about.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; font-weight: 500;">ℹ️ About</a>
-            <a href="contact.html" style="display: block; color: #333; text-decoration: none; padding: 0.8rem 0; font-weight: 500;">✉️ Contact</a>
-        </nav>
-    </header>
+    <!-- NAVBAR -->
+    <div id="shared-navbar"></div>
     
     <!-- Breadcrumbs -->
     <div class="breadcrumbs" style="max-width: 1200px; margin: 0 auto; padding: 1rem 20px; font-size: 0.9rem; color: #666;">
@@ -467,37 +430,8 @@
         </div>
     </section>
     
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Company</h4>
-                <p>MyGSTIndia - Free GST tools and resources for Indian businesses.</p>
-                <p style="margin-top: 1rem;">📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddb0a4baaea9b4b3b9b4bcededec9dbab0bcb4b1f3beb2b0">[email&#160;protected]</a></p>
-            </div>
-            <div class="footer-section">
-                <h4>Tools</h4>
-                <a href="gst-calculator.html">GST Calculator</a>
-                <a href="hsn-finder.html">HSN Code Finder</a>
-                <a href="gst-rates-500.html">GST Rates 500</a>
-            </div>
-            <div class="footer-section">
-                <h4>Company</h4>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-of-service.html">Terms of Service</a>
-                <a href="disclaimer.html">Disclaimer</a>
-                <a href="refund-policy.html">Refund Policy</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 MyGSTIndia. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- FOOTER -->
+<div id="shared-footer"></div>
     
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="hsn-data.js"></script>
     <script>
@@ -681,24 +615,64 @@
             }
         });
     </script>
-    <!-- Mobile Menu Toggle Script -->
+    <!-- FOOTER -->
+    <div id="shared-footer"></div>
     <script>
-    (function() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', function() {
-                if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
-                    mobileNav.style.display = 'block';
-                    mobileMenuBtn.textContent = '✕';
-                } else {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                }
-            });
-            
-            // Close menu when clicking a link
-            const mobileLinks = mobileNav.getElementsByTagName('a');
-            for (let i = 0; i < mobileLinks.length; i++) {
-                mobileLinks[i
+    function ensureSharedNavigationCss() {
+      if (document.getElementById('shared-navigation-css')) return;
+      const link = document.createElement('link');
+      link.id = 'shared-navigation-css';
+      link.rel = 'stylesheet';
+      link.href = 'shared/navigation.css';
+      document.head.appendChild(link);
+    }
+
+    async function loadSharedNavigation() {
+      const mountPoint = document.getElementById('shared-navbar');
+      if (!mountPoint) return;
+      try {
+        ensureSharedNavigationCss();
+        const response = await fetch('shared/navigation.html');
+        if (!response.ok) throw new Error('Navigation load failed');
+        const html = await response.text();
+        mountPoint.innerHTML = html;
+        initNavbarBehavior();
+      } catch (error) {
+        console.error('Unable to load shared navigation:', error);
+      }
+    }
+
+    async function loadSharedFooter() {
+      const mountPoint = document.getElementById('shared-footer');
+      if (!mountPoint) return;
+      try {
+        const response = await fetch('shared/footer.html');
+        if (!response.ok) throw new Error('Footer load failed');
+        const html = await response.text();
+        mountPoint.innerHTML = html;
+      } catch (error) {
+        console.error('Unable to load shared footer:', error);
+      }
+    }
+
+    function initNavbarBehavior() {
+      const nav = document.getElementById('navLinks');
+      const hamburger = document.getElementById('hamburger');
+      if (nav && hamburger) {
+        hamburger.addEventListener('click', function() {
+          nav.classList.toggle('active');
+        });
+        document.addEventListener('click', function(e) {
+          if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+            nav.classList.remove('active');
+          }
+        });
+      }
+    }
+
+    loadSharedNavigation();
+    loadSharedFooter();
+    </script>
+</body>
+</html>
+

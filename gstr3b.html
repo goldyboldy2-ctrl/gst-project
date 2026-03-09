@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,24 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="master-style-v3.css">
   <link rel="stylesheet" href="tool-hub.css">
+  <link rel="stylesheet" href="shared/global.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-mark">G</div>
-      <span class="logo-text">GST <span class="text-gradient">Compliance Pro</span></span>
-    </a>
-    <button class="mobile-menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
-    </ul>
-  </div>
-</nav>
+<!-- NAVBAR -->
+<div id="shared-navbar"></div>
 <div class="legal-disclaimer-banner">
   <div class="disclaimer-container">
     <div class="disclaimer-icon">⚖️</div>
@@ -125,14 +112,8 @@
     </div>
   </div>
 </div>
-<footer class="footer">
-  <div class="footer-grid">
-    <div><h4>GST Compliance Pro</h4></div>
-    <div><h4>Tools</h4><ul><li><a href="gst-calculator.html">GST Calculator</a></li></ul></div>
-    <div><h4>Resources</h4><ul><li><a href="blog/index.html">Blog</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">© 2026 GST Compliance Pro</div>
-</footer>
+<!-- FOOTER -->
+<div id="shared-footer"></div>
 <script>
 function calculateGSTR3B(e) {
   e.preventDefault();
@@ -245,6 +226,64 @@ function calculateGSTR3B(e) {
         }
     })();
     </script>
+
+  <script>
+  function ensureSharedNavigationCss() {
+    if (document.getElementById('shared-navigation-css')) return;
+    const link = document.createElement('link');
+    link.id = 'shared-navigation-css';
+    link.rel = 'stylesheet';
+    link.href = 'shared/navigation.css';
+    document.head.appendChild(link);
+  }
+
+  async function loadSharedNavigation() {
+    const mountPoint = document.getElementById('shared-navbar');
+    if (!mountPoint) return;
+    try {
+      ensureSharedNavigationCss();
+      const response = await fetch('shared/navigation.html');
+      if (!response.ok) throw new Error('Navigation load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+      initNavbarBehavior();
+    } catch (error) {
+      console.error('Unable to load shared navigation:', error);
+    }
+  }
+
+  async function loadSharedFooter() {
+    const mountPoint = document.getElementById('shared-footer');
+    if (!mountPoint) return;
+    try {
+      const response = await fetch('shared/footer.html');
+      if (!response.ok) throw new Error('Footer load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+    } catch (error) {
+      console.error('Unable to load shared footer:', error);
+    }
+  }
+
+  function initNavbarBehavior() {
+    const nav = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    if (nav && hamburger) {
+      hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          nav.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  loadSharedNavigation();
+  loadSharedFooter();
+  </script>
 </body>
 </html>
+
 

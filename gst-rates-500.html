@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
@@ -114,17 +114,12 @@
       .rate-value { font-size: 2rem; }
     }
   </style>
+  <link rel="stylesheet" href="shared/global.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">M</div>
-      <span class="logo-text">MyGSTIndia</span>
-    </a>
-  </div>
-</nav>
+<!-- NAVBAR -->
+<div id="shared-navbar"></div>
 
 <div class="hero">
   <h1>GST Rate Information Portal</h1>
@@ -192,34 +187,8 @@
   
 </div>
 
-<footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>MyGSTIndia</h4>
-      <p style="color:#cbd5e1;">GST Rate Information Portal</p>
-    </div>
-    <div class="footer-section">
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div class="footer-section">
-      <h4>Legal</h4>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms-and-conditions.html">Terms & Conditions</a>
-      <a href="disclaimer.html">Disclaimer</a>
-    </div>
-    <div class="footer-section">
-      <h4>Resources</h4>
-      <a href="https://www.gst.gov.in" target="_blank" rel="noopener">GST.gov.in</a>
-      <a href="https://cbic-gst.gov.in" target="_blank" rel="noopener">CBIC</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2026 MyGSTIndia. Information portal - not affiliated with government bodies.
-  </div>
-</footer>
+<!-- FOOTER -->
+<div id="shared-footer"></div>
 
 <script src="gst-rates-database.js"></script>
 <script>
@@ -985,5 +954,63 @@ renderItems(smartDatabase);
         }
     })();
     </script>
+
+  <script>
+  function ensureSharedNavigationCss() {
+    if (document.getElementById('shared-navigation-css')) return;
+    const link = document.createElement('link');
+    link.id = 'shared-navigation-css';
+    link.rel = 'stylesheet';
+    link.href = 'shared/navigation.css';
+    document.head.appendChild(link);
+  }
+
+  async function loadSharedNavigation() {
+    const mountPoint = document.getElementById('shared-navbar');
+    if (!mountPoint) return;
+    try {
+      ensureSharedNavigationCss();
+      const response = await fetch('shared/navigation.html');
+      if (!response.ok) throw new Error('Navigation load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+      initNavbarBehavior();
+    } catch (error) {
+      console.error('Unable to load shared navigation:', error);
+    }
+  }
+
+  async function loadSharedFooter() {
+    const mountPoint = document.getElementById('shared-footer');
+    if (!mountPoint) return;
+    try {
+      const response = await fetch('shared/footer.html');
+      if (!response.ok) throw new Error('Footer load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+    } catch (error) {
+      console.error('Unable to load shared footer:', error);
+    }
+  }
+
+  function initNavbarBehavior() {
+    const nav = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    if (nav && hamburger) {
+      hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          nav.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  loadSharedNavigation();
+  loadSharedFooter();
+  </script>
 </body>
 </html>
+

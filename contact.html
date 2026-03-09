@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -24,14 +24,12 @@
     a { color: #3b82f6; text-decoration: none; }
     a:hover { text-decoration: underline; }
   </style>
+  <link rel="stylesheet" href="shared/global.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">MyGSTIndia</a>
-  </div>
-</nav>
+<!-- NAVBAR -->
+<div id="shared-navbar"></div>
 
 <div class="container">
   <h1>Contact Us</h1>
@@ -74,38 +72,65 @@
   <p style="margin-top: 2rem;">We appreciate your help in keeping our information accurate and up-to-date.</p>
 </div>
 
-<div class="footer">
-  <p><a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="privacy-policy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
-  <p style="margin-top: 1rem; color: #94a3b8;">&copy; 2026 MyGSTIndia - Information portal, not affiliated with government bodies</p>
-</div>
+<!-- FOOTER -->
+<div id="shared-footer"></div>
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-    (function() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', function() {
-                if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
-                    mobileNav.style.display = 'block';
-                    mobileMenuBtn.textContent = '✕';
-                } else {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                }
-            });
-            
-            // Close menu when clicking a link
-            const mobileLinks = mobileNav.getElementsByTagName('a');
-            for (let i = 0; i < mobileLinks.length; i++) {
-                mobileLinks[i].addEventListener('click', function() {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                });
-            }
+  <script>
+  function ensureSharedNavigationCss() {
+    if (document.getElementById('shared-navigation-css')) return;
+    const link = document.createElement('link');
+    link.id = 'shared-navigation-css';
+    link.rel = 'stylesheet';
+    link.href = 'shared/navigation.css';
+    document.head.appendChild(link);
+  }
+
+  async function loadSharedNavigation() {
+    const mountPoint = document.getElementById('shared-navbar');
+    if (!mountPoint) return;
+    try {
+      ensureSharedNavigationCss();
+      const response = await fetch('shared/navigation.html');
+      if (!response.ok) throw new Error('Navigation load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+      initNavbarBehavior();
+    } catch (error) {
+      console.error('Unable to load shared navigation:', error);
+    }
+  }
+
+  async function loadSharedFooter() {
+    const mountPoint = document.getElementById('shared-footer');
+    if (!mountPoint) return;
+    try {
+      const response = await fetch('shared/footer.html');
+      if (!response.ok) throw new Error('Footer load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+    } catch (error) {
+      console.error('Unable to load shared footer:', error);
+    }
+  }
+
+  function initNavbarBehavior() {
+    const nav = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    if (nav && hamburger) {
+      hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          nav.classList.remove('active');
         }
-    })();
-    </script>
+      });
+    }
+  }
+
+  loadSharedNavigation();
+  loadSharedFooter();
+  </script>
 </body>
 </html>
+

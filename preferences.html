@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -9,6 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'G-VVBKGDPYBE');
   </script>
+  <link rel="stylesheet" href="shared/global.css">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,41 +115,8 @@
 
 </head>
 <body>
-
-<!-- Navbar -->
-
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">M</div>
-      <span class="logo-text">MyGSTIndia</span>
-    </a>
-
-```
-<!-- User Menu (Logged In) -->
-<div class="user-menu" id="userMenu" style="display: none;">
-  <button class="user-btn" onclick="toggleDropdown()">
-    <img src="https://via.placeholder.com/32" alt="User" class="user-photo" id="userPhoto">
-    <span class="user-name" id="userName">User</span>
-    <span>▾</span>
-  </button>
-  <div class="dropdown" id="userDropdown">
-    <a href="preferences.html">⚙️ Preferences</a>
-    <a href="dashboard.html">📊 Dashboard</a>
-    <a href="favorites.html">⭐ Favorites</a>
-    <hr>
-    <a href="#" onclick="signOut()">🚪 Sign Out</a>
-  </div>
-</div>
-
-<!-- Login Button (Guest) -->
-<button class="login-btn" id="loginBtn" onclick="signIn()">
-  🎁 Sign In
-</button>
-```
-
-  </div>
-</nav>
+  <!-- NAVBAR -->
+  <div id="shared-navbar"></div>
 
 <!-- Main Content -->
 
@@ -498,5 +466,66 @@ window.addEventListener('load', async () => {
         }
     })();
     </script>
+
+  <!-- FOOTER -->
+  <div id="shared-footer"></div>
+
+  <script>
+  function ensureSharedNavigationCss() {
+    if (document.getElementById('shared-navigation-css')) return;
+    const link = document.createElement('link');
+    link.id = 'shared-navigation-css';
+    link.rel = 'stylesheet';
+    link.href = 'shared/navigation.css';
+    document.head.appendChild(link);
+  }
+
+  async function loadSharedNavigation() {
+    const mountPoint = document.getElementById('shared-navbar');
+    if (!mountPoint) return;
+    try {
+      ensureSharedNavigationCss();
+      const response = await fetch('shared/navigation.html');
+      if (!response.ok) throw new Error('Navigation load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+      initNavbarBehavior();
+    } catch (error) {
+      console.error('Unable to load shared navigation:', error);
+    }
+  }
+
+  async function loadSharedFooter() {
+    const mountPoint = document.getElementById('shared-footer');
+    if (!mountPoint) return;
+    try {
+      const response = await fetch('shared/footer.html');
+      if (!response.ok) throw new Error('Footer load failed');
+      const html = await response.text();
+      mountPoint.innerHTML = html;
+    } catch (error) {
+      console.error('Unable to load shared footer:', error);
+    }
+  }
+
+  function initNavbarBehavior() {
+    const nav = document.getElementById('navLinks');
+    const hamburger = document.getElementById('hamburger');
+    if (nav && hamburger) {
+      hamburger.addEventListener('click', function() {
+        nav.classList.toggle('active');
+      });
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+          nav.classList.remove('active');
+        }
+      });
+    }
+  }
+
+  loadSharedNavigation();
+  loadSharedFooter();
+  </script>
 </body>
 </html>
+
