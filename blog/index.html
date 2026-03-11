@@ -9,6 +9,8 @@
     gtag('js', new Date());
     gtag('config', 'G-VVBKGDPYBE');
   </script>
+  <link rel="stylesheet" href="../shared/global.css">
+  <link rel="stylesheet" href="../shared/blog.css">
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,453 +21,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    :root {
-      --navy: #1e293b;
-      --blue: #3b82f6;
-      --blue-dark: #2563eb;
-      --orange: #f59e0b;
-      --orange-dark: #d97706;
-      --green: #10b981;
-      --gray-50: #f8fafc;
-      --gray-100: #f1f5f9;
-      --gray-200: #e2e8f0;
-      --gray-600: #475569;
-      --gray-700: #334155;
-      --gray-900: #0f172a;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--gray-900);
-      line-height: 1.6;
-      background: var(--gray-50);
-      padding-bottom: 80px;
-    }
-    
-    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
-    
-    /* NAVBAR */
-    .navbar {
-      background: white;
-      border-bottom: 1px solid var(--gray-200);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 1.25rem;
-    }
-    
-    .logo-mark {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, var(--orange), var(--orange-dark));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 800;
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .logo-text { color: var(--blue); }
-    
-    .nav-links {
-      display: none;
-      gap: 2rem;
-      list-style: none;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: var(--gray-700);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--blue); }
-    
-    .hamburger {
-      width: 32px;
-      height: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 0;
-    }
-    
-    .hamburger span {
-      display: block;
-      width: 100%;
-      height: 3px;
-      background: var(--navy);
-      border-radius: 2px;
-    }
-    
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: white;
-      padding: 1.5rem;
-      border-bottom: 1px solid var(--gray-200);
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    
-    @media (min-width: 768px) {
-      .hamburger { display: none; }
-      .nav-links { display: flex; }
-      .nav-links.active { position: static; padding: 0; border: none; box-shadow: none; }
-    }
-    
-    /* HERO */
-    .hero {
-      background: linear-gradient(180deg, #eff6ff 0%, white 100%);
-      padding: 3rem 1rem;
-      text-align: center;
-    }
-    
-    .hero-badge {
-      display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--navy);
-    }
-    
-    .hero h1 em {
-      font-style: italic;
-      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .hero p {
-      font-size: 1.125rem;
-      color: var(--gray-600);
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    
-    .stat {
-      text-align: center;
-    }
-    
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--blue);
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .stat-label {
-      font-size: 0.875rem;
-      color: var(--gray-600);
-      font-weight: 600;
-    }
-    
-    /* CONTAINER */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 1rem;
-    }
-    
-    /* SECTION */
-    .section {
-      margin-bottom: 4rem;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
-    .section-badge {
-      display: inline-block;
-      background: var(--gray-100);
-      color: var(--gray-700);
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--navy);
-    }
-    
-    .section h2 em {
-      font-style: italic;
-      color: var(--blue);
-    }
-    
-    /* BLOG GRID */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .blog-card {
-      background: white;
-      border: 2px solid var(--gray-200);
-      border-radius: 16px;
-      padding: 1.5rem;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.3s;
-      display: block;
-    }
-    
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      border-color: var(--blue);
-    }
-    
-    .blog-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .blog-card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
-      color: var(--navy);
-    }
-    
-    .blog-card p {
-      font-size: 0.875rem;
-      color: var(--gray-600);
-      margin: 0;
-      line-height: 1.6;
-    }
-    
-    .blog-meta {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-      font-size: 0.75rem;
-      color: var(--gray-600);
-    }
-    
-    .featured-card {
-      grid-column: span 2;
-      background: linear-gradient(135deg, #eff6ff, #dbeafe);
-      border-color: var(--blue);
-    }
-    
-    @media (max-width: 768px) {
-      .featured-card {
-        grid-column: span 1;
-          .mobile-menu-btn { display: block !important; }
-}
-    }
-    
-    /* CTA */
-    .cta-section {
-      background: linear-gradient(135deg, var(--navy), var(--gray-700));
-      color: white;
-      padding: 3rem 2rem;
-      border-radius: 16px;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    
-    .cta-section h2 {
-      color: white;
-      margin-bottom: 1rem;
-    }
-    
-    .cta-section h2 em {
-      color: var(--orange);
-    }
-    
-    .cta-section p {
-      font-size: 1.125rem;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 1.5rem;
-    }
-    
-    .btn {
-      display: inline-block;
-      padding: 0.875rem 2rem;
-      background: var(--orange);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-    
-    .btn:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-    }
-    
-    /* FOOTER */
-    .footer {
-      background: var(--navy);
-      color: white;
-      padding: 2rem 1rem 1rem;
-      margin-top: 4rem;
-    }
-    
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .footer h4 {
-      margin-bottom: 1rem;
-      font-size: 1rem;
-    }
-    
-    .footer ul {
-      list-style: none;
-    }
-    
-    .footer a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.875rem;
-      display: block;
-      margin-bottom: 0.5rem;
-      transition: color 0.2s;
-    }
-    
-    .footer a:hover { color: white; }
-    
-    .footer-bottom {
-      text-align: center;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.7);
-    }
-    
-    /* MOBILE NAV */
-    .mobile-nav {
-      display: flex;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      border-top: 1px solid var(--gray-200);
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-      z-index: 90;
-    }
-    
-    .mobile-nav-btn {
-      flex: 1;
-      padding: 0.75rem;
-      text-align: center;
-      text-decoration: none;
-      color: var(--gray-600);
-      font-size: 0.75rem;
-      font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.25rem;
-      transition: all 0.2s;
-    }
-    
-    .mobile-nav-btn.active {
-      color: var(--blue);
-    }
-    
-    .mobile-nav-icon {
-      font-size: 1.5rem;
-    }
-    
-    @media (min-width: 768px) {
-      .mobile-.desktop-nav { display: none !important; } }
-      .hero h1 { font-size: 3rem; }
-    }
-  </style>
+  
 </head>
 <body>
+<!-- NAVBAR -->
+<div id="shared-navbar"></div>
 
 <!-- NAVBAR -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="../index.html" class="logo">
-      <div class="logo-mark">M</div>
-      <span class="logo-text">MyGSTIndia</span>
-    </a>
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../index.html#tools">Tools</a></li>
-      <li><a href="index.html" class="active">Blog</a></li>
-    </ul>
-  </div>
-</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -690,103 +252,65 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-grid">
-      <div>
-        <h4>MyGSTIndia</h4>
-        <p style="color:rgba(255,255,255,0.8);font-size:0.875rem;">Free GST toolkit for Indian MSMEs.</p>
-      </div>
-      <div>
-        <h4>Tools</h4>
-        <ul>
-          <li><a href="../gst-calculator.html">GST Calculator</a></li>
-          <li><a href="../hsn-finder.html">HSN Finder</a></li>
-          <li><a href="../penalty-calculator.html">Penalty Calculator</a></li>
-          <li><a href="../itc-calculator.html">ITC Calculator</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="index.html">Blog</a></li>
-          <li><a href="../disclaimer.html">Disclaimer</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="../disclaimer.html">Legal Disclaimer</a></li>
-          <li><a href="https://www.gst.gov.in" target="_blank">Official GST Portal</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      © 2026 MyGSTIndia | Free GST Toolkit for Indian Businesses
-    </div>
-  </div>
-</footer>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav">
-  <a href="../index.html#tools" class="mobile-nav-btn">
-    <div class="mobile-nav-icon">🧮</div>
-    <div>Tools</div>
-  </a>
-  <a href="../index.html" class="mobile-nav-btn">
-    <div class="mobile-nav-icon">🔍</div>
-    <div>Search</div>
-  </a>
-  <a href="index.html" class="mobile-nav-btn active">
-    <div class="mobile-nav-icon">📚</div>
-    <div>Blog</div>
-  </a>
-</div>
-
-<!-- JAVASCRIPT -->
+    <!-- FOOTER -->
+<div id="shared-footer"></div>
 <script>
-// Hamburger menu
-document.getElementById('hamburger').addEventListener('click', function() {
-  document.getElementById('navLinks').classList.toggle('active');
-});
+function ensureSharedNavigationCss() {
+  if (document.getElementById('shared-navigation-css')) return;
+  const link = document.createElement('link');
+  link.id = 'shared-navigation-css';
+  link.rel = 'stylesheet';
+  link.href = '../shared/navigation.css';
+  document.head.appendChild(link);
+}
 
-document.addEventListener('click', function(e) {
+async function loadSharedNavigation() {
+  const mountPoint = document.getElementById('shared-navbar');
+  if (!mountPoint) return;
+  try {
+    ensureSharedNavigationCss();
+    const response = await fetch('../shared/navigation.html');
+    if (!response.ok) throw new Error('Navigation load failed');
+    const html = await response.text();
+    mountPoint.innerHTML = html;
+    initNavbarBehavior();
+  } catch (error) {
+    console.error('Unable to load shared navigation:', error);
+  }
+}
+
+async function loadSharedFooter() {
+  const mountPoint = document.getElementById('shared-footer');
+  if (!mountPoint) return;
+  try {
+    const response = await fetch('../shared/footer.html');
+    if (!response.ok) throw new Error('Footer load failed');
+    const html = await response.text();
+    mountPoint.innerHTML = html;
+  } catch (error) {
+    console.error('Unable to load shared footer:', error);
+  }
+}
+
+function initNavbarBehavior() {
   const nav = document.getElementById('navLinks');
   const hamburger = document.getElementById('hamburger');
-  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-    nav.classList.remove('active');
+  if (nav && hamburger) {
+    hamburger.addEventListener('click', function() {
+      nav.classList.toggle('active');
+    });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
   }
-});
-</script>
+}
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-    (function() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', function() {
-                if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
-                    mobileNav.style.display = 'block';
-                    mobileMenuBtn.textContent = '✕';
-                } else {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                }
-            });
-            
-            // Close menu when clicking a link
-            const mobileLinks = mobileNav.getElementsByTagName('a');
-            for (let i = 0; i < mobileLinks.length; i++) {
-                mobileLinks[i].addEventListener('click', function() {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                });
-            }
-        }
-    })();
-    </script>
+loadSharedNavigation();
+loadSharedFooter();
+</script>
 </body>
 </html>
+
