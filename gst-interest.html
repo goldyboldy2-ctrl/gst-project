@@ -1,14 +1,26 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST Interest Calculator — 18% Interest on Late Payment | MyGSTIndia</title>
+  <meta name="description" content="Free GST interest calculator. Calculate 18% p.a. interest on delayed GST payment. Know exact penalty for late tax payment.">
   <link rel="canonical" href="https://mygstindia.in/gst-interest.html">
-  <title>GST Interest Calculator — 18% Interest on Late Payment | My GST India</title>
-  <meta name="description" content="Free GST interest calculator. Calculate 18% p.a. interest on delayed GST payment. Know exact penalty for late tax payment." />
-  <link rel="stylesheet" href="master-style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/global.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MyGSTIndia">
+  <meta property="og:url" content="https://mygstindia.in/gst-interest.html">
+  <meta property="og:title" content="GST Interest Calculator — 18% Interest on Late Payment | MyGSTIndia">
+  <meta property="og:description" content="Free GST interest calculator. Calculate 18% p.a. interest on delayed GST payment. Know exact penalty for late tax payment.">
+  <meta property="og:image" content="https://mygstindia.in/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mygstindia">
+  <meta name="twitter:title" content="GST Interest Calculator — 18% Interest on Late Payment | MyGSTIndia">
+  <meta name="twitter:description" content="Free GST interest calculator. Calculate 18% p.a. interest on delayed GST payment. Know exact penalty for late tax payment.">
+  <meta name="twitter:image" content="https://mygstindia.in/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVBKGDPYBE"></script>
   <script>
@@ -17,128 +29,498 @@
     gtag('js', new Date());
     gtag('config', 'G-VVBKGDPYBE');
   </script>
+  <link rel="stylesheet" href="shared/global.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1e293b;
+      --blue: #3b82f6;
+      --blue-dark: #2563eb;
+      --orange: #f59e0b;
+      --orange-dark: #d97706;
+      --green: #10b981;
+      --red: #ef4444;
+      --red-dark: #dc2626;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-900: #0f172a;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--gray-900);
+      line-height: 1.6;
+      background: var(--gray-50);
+      padding-bottom: 80px;
+    }
+
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      background: #fef3c7;
+      border-bottom: 2px solid var(--orange);
+      padding: 0.625rem 1rem;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+
+    .disclaimer a {
+      color: #92400e;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* BREADCRUMB */
+    .breadcrumb {
+      background: white;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .breadcrumb-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    .breadcrumb a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .page-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+
+    .page-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* CARD */
+    .card {
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--navy);
+    }
+
+    /* FORM */
+    .form-group { margin-bottom: 1.5rem; }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    input[type="number"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+    }
+
+    small {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--gray-600);
+    }
+
+    /* BUTTON */
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(59,130,246,0.3);
+    }
+
+    .btn-secondary {
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gray-200);
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* INFO BOX */
+    .info-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--blue);
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .info-box.orange {
+      background: #fffbeb;
+      border-left-color: var(--orange);
+    }
+
+    .info-box h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--navy);
+    }
+
+    .info-box p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* RESULT */
+    #resultBox {
+      margin-top: 1.5rem;
+    }
+
+    .result-box {
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 1rem;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    .result-box.safe {
+      background: linear-gradient(135deg, #f0fdf4, white);
+      border: 3px solid var(--green);
+    }
+
+    .result-box.danger {
+      background: linear-gradient(135deg, #fef2f2, white);
+      border: 3px solid var(--red);
+    }
+
+    .result-box h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* STEP BOX */
+    .step-box {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .step-num {
+      background: var(--blue);
+      color: white;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+
+    .step-content h4 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+      color: var(--navy);
+    }
+
+    .step-content p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+
+    /* TABLE */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .styled-table th {
+      background: var(--navy);
+      color: white;
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    .styled-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+    }
+
+    .styled-table tr:nth-child(even) td { background: var(--gray-50); }
+
+    /* RELATED TOOLS */
+    .related-tools {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .related-tools h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--navy);
+    }
+
+    .related-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .related-tool-card {
+      display: block;
+      background: white;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 1rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+
+    .related-tool-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .related-tool-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+      color: var(--navy);
+    }
+
+    .related-tool-card p {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      margin: 0 0 0.5rem;
+    }
+
+    .related-tool-card .arrow {
+      font-size: 0.8rem;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .section-title em {
+      color: var(--blue);
+      font-style: normal;
+    }
+
+    /* RESULT ACTIONS */
+    .result-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    /* MOBILE NAV */
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      z-index: 90;
+    }
+
+    .mobile-nav-btn {
+      flex: 1;
+      padding: 0.75rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--gray-600);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      transition: all 0.2s;
+    }
+
+    .mobile-nav-btn.active { color: var(--blue); }
+    .mobile-nav-icon { font-size: 1.5rem; }
+
+    @media (min-width: 768px) {
+      .mobile-nav { display: none !important; }
+      .page-header h1 { font-size: 2.5rem; }
+      .container { margin: 3rem auto; }
+    }
+  </style>
 </head>
 <body>
-    <!-- NAVBAR -->
-<!-- ENHANCED NAVBAR WITH DROPDOWN -->
+
 <!-- NAVBAR -->
 <div id="shared-navbar"></div>
 
-<!-- LEGAL DISCLAIMER BANNER -->
-<div class="legal-disclaimer-banner">
-  <div class="disclaimer-container">
-    <div class="disclaimer-icon">⚖️</div>
-    <div class="disclaimer-content">
-      <strong>Legal Disclaimer:</strong> 
-      This website provides <strong>general information only</strong> and is 
-      <strong>not professional tax or legal advice</strong>. GST rules change frequently. 
-      Always verify with the <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> 
-      and <strong>consult a qualified Chartered Accountant</strong> before making any decisions. 
-      We accept no liability for errors, omissions, or consequences of using this information.
-      <a href="disclaimer.html" class="learn-more">Read Full Disclaimer →</a>
-    </div>
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+   <strong>General estimates only.</strong> Verify on <a href="https://www.gst.gov.in" target="_blank" rel="noopener">gst.gov.in</a> & consult CA. <a href="disclaimer.html">Full Disclaimer </a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="breadcrumb-container">
+    <a href="index.html">Home</a>  <a href="index.html#tools">Tools</a>  GST Interest Calculator
   </div>
 </div>
 
+<!-- MAIN CONTENT -->
+<div class="container">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge anim-up">📊 Interest Calculator</div>
-  <h1 class="anim-up delay-1">GST Interest <em>Calculator</em></h1>
-  <p class="anim-up delay-2">Calculate 18% per annum interest on delayed GST payment. Know the exact penalty amount.</p>
-  <div class="hero-meta anim-up delay-3">Section 50 of CGST Act • Compounded Monthly</div>
-</section>
-
-<div class="container-sm" style="padding: 48px 40px;">
-    <!-- BREADCRUMB NAVIGATION -->
-  <div class="breadcrumb">
-    <a href="index.html">Home</a><span class="sep">›</span>
-    <a href="index.html#tools">Tools</a><span class="sep">›</span>
-    <span>Interest Calculator</span>
+  <div class="page-header">
+    <div class="page-badge">📊 Interest Calculator</div>
+    <h1>GST Interest Calculator</h1>
+    <p>Calculate 18% per annum interest on delayed GST payment under Section 50 of CGST Act.</p>
   </div>
 
-  <!-- BACK BUTTON -->
-  <a href="index.html#tools" class="back-button">
-    ← Back to All Tools
-  </a>
+  <div class="info-box">
+    <h4>ℹ GST Interest Rules</h4>
+    <p>Under <strong>Section 50 of CGST Act</strong>, if you pay GST late, you must pay interest at <strong>18% per annum</strong>. Interest is calculated from the due date to actual payment date.</p>
+  </div>
 
+  <div class="card">
+    <h2>Calculate Interest on Delayed GST Payment</h2>
 
-
-  <div class="info-box blue">
-    <div class="info-box-icon">ℹ️</div>
-    <div class="info-box-content">
-      <h4>GST Interest Rules</h4>
-      <p>Under <strong>Section 50 of CGST Act</strong>, if you pay GST late, you must pay interest at <strong>18% per annum</strong>. Interest is calculated from the due date to actual payment date. It is compounded monthly but we'll show simple interest for quick estimation.</p>
+    <div class="form-group">
+      <label>💰 Tax Amount Paid Late (₹)</label>
+      <input type="number" id="taxAmount" placeholder="Enter GST amount" min="0" step="0.01" value="50000" />
+      <small>Enter the GST amount you paid late (CGST + SGST or IGST)</small>
     </div>
-  </div>
 
-  <!-- CALCULATOR -->
-  <div class="card" style="margin-top: 28px;">
-    <div class="card-body">
-      <h2 style="margin-top:0;">Calculate Interest on Delayed GST Payment</h2>
-      
-      <div class="form-group">
-        <label>💰 Tax Amount Paid Late (₹)</label>
-        <input type="number" id="taxAmount" placeholder="Enter GST amount" min="0" step="0.01" value="50000" />
-        <small style="color:var(--muted); display:block; margin-top:4px;">Enter the GST amount you paid late (CGST + SGST or IGST)</small>
-      </div>
-
-      <div class="form-group">
-        <label>📅 Due Date for Payment</label>
-        <input type="date" id="dueDate" />
-      </div>
-
-      <div class="form-group">
-        <label>📆 Actual Payment Date</label>
-        <input type="date" id="paymentDate" />
-        <small style="color:var(--muted); display:block; margin-top:4px;">Leave blank to calculate till today</small>
-      </div>
-
-      <div class="form-group">
-        <label>📊 Interest Rate (% per annum)</label>
-        <input type="number" id="interestRate" value="18" step="0.01" min="0" max="50" />
-        <small style="color:var(--muted); display:block; margin-top:4px;">Default: 18% as per GST law</small>
-      </div>
-
-      
-<!-- TOOL DISCLAIMER -->
-<div class="tool-disclaimer">
-  <div class="disclaimer-box warning">
-    <h4>⚠️ Important Legal Notice</h4>
-    <ul>
-      <li>This tool provides <strong>estimates only</strong> based on information you provide.</li>
-      <li>GST rates, rules, and penalties change frequently. Results may not reflect latest updates.</li>
-      <li>We are <strong>NOT tax advisors or Chartered Accountants</strong>.</li>
-      <li><strong>Always verify</strong> with the 
-          <a href="https://www.gst.gov.in" target="_blank" rel="noopener">official GST portal</a> 
-          or consult a qualified CA before filing returns or making payments.</li>
-      <li>We are not liable for any financial loss, penalties, or legal consequences arising from 
-          use of this tool.</li>
-    </ul>
-    <p class="disclaimer-footer">
-      <strong>By using this tool, you acknowledge this disclaimer.</strong>
-    </p>
-  </div>
-</div>
-
-<button class="btn btn-primary" onclick="calculateInterest()" style="width:100%; justify-content:center;">
-        Calculate Interest
-      </button>
+    <div class="form-group">
+      <label>📅 Due Date for Payment</label>
+      <input type="date" id="dueDate" />
     </div>
+
+    <div class="form-group">
+      <label>📆 Actual Payment Date</label>
+      <input type="date" id="paymentDate" />
+      <small>Leave blank to calculate till today</small>
+    </div>
+
+    <div class="form-group">
+      <label>📊 Interest Rate (% per annum)</label>
+      <input type="number" id="interestRate" value="18" step="0.01" min="0" max="50" />
+      <small>Default: 18% as per GST law (Section 50 CGST Act)</small>
+    </div>
+
+    <button class="btn" onclick="calculateInterest()">Calculate Interest </button>
   </div>
 
   <!-- RESULT -->
-  <div id="resultBox" style="display:none; margin-top:28px;"></div>
+  <div id="resultBox"></div>
 
-  <!-- INFO SECTIONS -->
-  <div style="margin-top:48px;">
+  <!-- HOW IT WORKS -->
+  <div style="margin-top:2rem;">
     <h2 class="section-title">How Interest is <em>Calculated</em></h2>
-    
+
     <div class="step-box">
       <div class="step-num">1</div>
       <div class="step-content">
         <h4>Interest Rate</h4>
-        <p>GST law mandates <strong>18% per annum</strong> interest on delayed payment under Section 50 of CGST Act. This rate is fixed and applies to both CGST, SGST, and IGST.</p>
+        <p>GST law mandates <strong>18% per annum</strong> interest on delayed payment under Section 50 of CGST Act. This rate applies to CGST, SGST, and IGST.</p>
       </div>
     </div>
 
@@ -154,83 +536,56 @@
       <div class="step-num">3</div>
       <div class="step-content">
         <h4>Formula</h4>
-        <p><strong>Simple Interest:</strong> Interest = (Tax Amount × Rate × Days) / (365 × 100)<br>
-        <strong>Compound Interest:</strong> Calculated monthly for exact amount (use this calculator for estimate)</p>
+        <p><strong>Simple Interest:</strong> Interest = (Tax Amount  Rate  Days) / (365  100)</p>
       </div>
     </div>
   </div>
 
-  <div style="margin-top:48px;">
+  <!-- COMMON SCENARIOS -->
+  <div style="margin-top:2rem;">
     <h2 class="section-title">Common <em>Scenarios</em></h2>
-    
     <table class="styled-table">
       <tr>
         <th>Tax Amount</th>
         <th>Days Late</th>
         <th>Interest @ 18%</th>
       </tr>
-      <tr>
-        <td>₹10,000</td>
-        <td>10 days</td>
-        <td>₹49</td>
-      </tr>
-      <tr>
-        <td>₹50,000</td>
-        <td>30 days</td>
-        <td>₹739</td>
-      </tr>
-      <tr>
-        <td>₹1,00,000</td>
-        <td>60 days</td>
-        <td>₹2,959</td>
-      </tr>
-      <tr>
-        <td>₹5,00,000</td>
-        <td>90 days</td>
-        <td>₹22,192</td>
-      </tr>
+      <tr><td>₹10,000</td><td>10 days</td><td>₹49</td></tr>
+      <tr><td>₹50,000</td><td>30 days</td><td>₹739</td></tr>
+      <tr><td>₹1,00,000</td><td>60 days</td><td>₹2,959</td></tr>
+      <tr><td>₹5,00,000</td><td>90 days</td><td>₹22,192</td></tr>
     </table>
   </div>
 
-  <div class="info-box orange" style="margin-top:32px;">
-    <div class="info-box-icon">⚠️</div>
-    <div class="info-box-content">
-      <h4>Important Notes</h4>
-      <p>
-        💡 Interest is <strong>automatically calculated</strong> on GST portal when you file returns<br>
-        💰 You must pay interest <strong>along with delayed tax</strong><br>
-        📅 Interest applies from due date, not filing date<br>
-        🔄 For multiple months delay, interest compounds monthly<br>
-        ❌ Interest is <strong>NOT tax deductible</strong> as business expense
-      </p>
-    </div>
+  <div class="info-box orange" style="margin-top:1.5rem;">
+    <h4> Important Notes</h4>
+    <p>
+      💡 Interest is <strong>automatically calculated</strong> on GST portal when you file returns<br>
+      💰 You must pay interest <strong>along with delayed tax</strong><br>
+      📅 Interest applies from due date, not filing date<br>
+      🔄 For multiple months delay, interest compounds monthly<br>
+       Interest is <strong>NOT tax deductible</strong> as business expense
+    </p>
   </div>
 
-  <!-- CTA -->
-  <div class="cta-section">
-    <h2>Avoid Interest — Check Your <em>Compliance</em></h2>
-    <p>Use our Risk Auditor to identify pending issues before they attract interest.</p>
-    <a href="index.html#auditor" class="btn btn-primary">🛡️ Run Free Audit</a>
-  </div>
-
-  <!-- RELATED TOOLS SECTION -->
+  <!-- RELATED TOOLS -->
   <div class="related-tools">
     <h3>You Might Also Need</h3>
     <div class="related-tools-grid">
       <a href="penalty-calculator.html" class="related-tool-card">
         <h4>Penalty Calculator</h4>
         <p>Calculate GST late fees and penalties.</p>
-        <span class="arrow">Try now →</span>
+        <span class="arrow">Try now </span>
       </a>
       <a href="gstr3b.html" class="related-tool-card">
-        <h4>GSTR-3B Fee</h4>
-        <p>Calculate GSTR-3B late filing fees.</p>
-        <span class="arrow">Try now →</span>
+        <h4>GSTR-3B Helper</h4>
+        <p>Calculate GSTR-3B tax liability.</p>
+        <span class="arrow">Try now </span>
       </a>
       <a href="return-deadlines.html" class="related-tool-card">
         <h4>Return Deadlines</h4>
         <p>Track all filing dates with countdown.</p>
-        <span class="arrow">Try now →</span>
+        <span class="arrow">Try now </span>
       </a>
     </div>
   </div>
@@ -239,6 +594,22 @@
 
 <!-- FOOTER -->
 <div id="shared-footer"></div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <a href="index.html#tools" class="mobile-nav-btn active">
+    <div class="mobile-nav-icon">🧮</div>
+    <div>Tools</div>
+  </a>
+  <a href="index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">🔍</div>
+    <div>Search</div>
+  </a>
+  <a href="blog/index.html" class="mobile-nav-btn">
+    <div class="mobile-nav-icon">📚</div>
+    <div>Blog</div>
+  </a>
+</div>
 
 <script>
 function calculateInterest() {
@@ -254,206 +625,113 @@ function calculateInterest() {
 
   const due = new Date(dueDate);
   const paid = paymentDate ? new Date(paymentDate) : new Date();
-
-  // Calculate days late
   const timeDiff = paid - due;
   const daysLate = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
+  const resultBox = document.getElementById('resultBox');
+
   if (daysLate <= 0) {
-    const resultBox = document.getElementById('resultBox');
-    resultBox.className = 'result-box safe';
     resultBox.innerHTML = `
-      <div class="result-icon">✅</div>
-      <h3>No Interest Payable</h3>
-      <p>Payment was made on or before the due date. No interest is applicable.</p>
-      <div style="background:white; border-radius:8px; padding:20px; margin-top:16px;">
-        <table style="width:100%; border-collapse:collapse;">
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0; font-weight:600;">Tax Amount:</td>
-            <td style="padding:12px 0; text-align:right;">₹${taxAmount.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0; font-weight:600;">Due Date:</td>
-            <td style="padding:12px 0; text-align:right;">${due.toLocaleDateString('en-IN')}</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:12px 0; font-weight:600;">Payment Date:</td>
-            <td style="padding:12px 0; text-align:right;">${paid.toLocaleDateString('en-IN')}</td>
-          </tr>
-          <tr style="background:rgba(34,197,94,0.1);">
-            <td style="padding:14px 0; font-weight:700;">Interest:</td>
-            <td style="padding:14px 0; text-align:right; font-weight:700; color:var(--green);">₹0.00</td>
-          </tr>
-        </table>
-      </div>
-    `;
-    resultBox.style.display = 'block';
-    resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+      <div class="result-box safe">
+        <h3> No Interest Payable</h3>
+        <p style="text-align:center;color:var(--gray-600);">Payment was made on or before the due date. No interest is applicable.</p>
+        <div style="background:white;border-radius:8px;padding:1.25rem;margin-top:1rem;border:1px solid var(--gray-200);">
+          <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--gray-200);"><span style="font-weight:600;">Tax Amount:</span><span>₹${taxAmount.toLocaleString('en-IN',{minimumFractionDigits:2})}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--gray-200);"><span style="font-weight:600;">Due Date:</span><span>${due.toLocaleDateString('en-IN')}</span></div>
+          <div style="display:flex;justify-content:space-between;padding:0.75rem 0;"><span style="font-weight:700;">Interest:</span><span style="font-weight:700;color:var(--green);">₹0.00</span></div>
+        </div>
+      </div>`;
     return;
   }
 
-  // Calculate interest (simple interest for estimation)
   const interest = (taxAmount * rate * daysLate) / (365 * 100);
   const totalPayable = taxAmount + interest;
 
-  const resultBox = document.getElementById('resultBox');
-  resultBox.className = 'result-box danger';
   resultBox.innerHTML = `
-    <div class="result-icon">💰</div>
-    <h3>Interest Payable on Delayed GST</h3>
-    <div style="background:white; border-radius:8px; padding:24px; margin-top:20px;">
-      <table style="width:100%; border-collapse:collapse;">
-        <tr style="border-bottom:2px solid var(--border);">
-          <td style="padding:14px 0; font-weight:600;">Tax Amount Paid Late:</td>
-          <td style="padding:14px 0; text-align:right; font-size:1.1rem;">₹${taxAmount.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Due Date:</td>
-          <td style="padding:12px 0; text-align:right;">${due.toLocaleDateString('en-IN')}</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Payment Date:</td>
-          <td style="padding:12px 0; text-align:right;">${paid.toLocaleDateString('en-IN')}</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Days Late:</td>
-          <td style="padding:12px 0; text-align:right; color:var(--red); font-weight:600;">${daysLate} days</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Interest Rate:</td>
-          <td style="padding:12px 0; text-align:right;">${rate}% per annum</td>
-        </tr>
-        <tr style="border-bottom:2px solid var(--border);">
-          <td style="padding:12px 0; font-weight:600;">Interest Calculation:</td>
-          <td style="padding:12px 0; text-align:right; font-size:0.9rem; color:var(--muted);">₹${taxAmount.toLocaleString('en-IN')} × ${rate}% × ${daysLate} days / 365</td>
-        </tr>
-        <tr style="border-bottom:2px solid var(--border);">
-          <td style="padding:14px 0; font-weight:700; color:var(--red);">Interest Payable:</td>
-          <td style="padding:14px 0; text-align:right; font-weight:700; font-size:1.2rem; color:var(--red);">₹${interest.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-        </tr>
-        <tr style="background:rgba(239,68,68,0.1);">
-          <td style="padding:16px 0; font-weight:700; font-size:1.1rem;">Total to Pay (Tax + Interest):</td>
-          <td style="padding:16px 0; text-align:right; font-weight:700; font-size:1.4rem; color:var(--red);">₹${totalPayable.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2})}</td>
-        </tr>
-      </table>
-    </div>
-    <div style="background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:16px; margin-top:20px;">
-      <h4 style="margin:0 0 8px; color:#856404;">⚠️ Important:</h4>
-      <p style="margin:0; color:#856404; font-size:0.9rem;">
-        This is a <strong>simple interest estimate</strong>. The GST portal calculates compound interest (monthly compounding) which may be slightly higher. Use this for quick estimation only. Always verify the exact amount on the GST portal before payment.
-      </p>
-    </div>
-    ${daysLate > 30 ? `
-    <div style="background:#fee2e2; border:1px solid #ef4444; border-radius:8px; padding:16px; margin-top:16px;">
-      <h4 style="margin:0 0 8px; color:#991b1b;">🚨 Delayed Payment Alert:</h4>
-      <p style="margin:0; color:#991b1b; font-size:0.9rem;">
-        Payment is delayed by <strong>${daysLate} days</strong>. The interest is accruing daily. Pay immediately to stop further interest charges. For delays > 90 days, you may also face late fees and potential penalty under Section 73.
-      </p>
-    </div>
-    ` : ''}
-  `;
-
-  resultBox.style.display = 'block';
-  resultBox.scrollIntoView({behavior:'smooth', block:'center'});
+    <div class="result-box danger">
+      <h3>💰 Interest Payable on Delayed GST</h3>
+      <div style="background:white;border-radius:8px;padding:1.25rem;margin-top:1rem;border:1px solid var(--gray-200);">
+        <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--gray-200);"><span style="font-weight:600;">Tax Amount Paid Late:</span><span>₹${taxAmount.toLocaleString('en-IN',{minimumFractionDigits:2})}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--gray-200);"><span style="font-weight:600;">Due Date:</span><span>${due.toLocaleDateString('en-IN')}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--gray-200);"><span style="font-weight:600;">Payment Date:</span><span>${paid.toLocaleDateString('en-IN')}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--gray-200);"><span style="font-weight:600;">Days Late:</span><span style="color:var(--red);font-weight:600;">${daysLate} days</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--gray-200);"><span style="font-weight:600;">Interest Rate:</span><span>${rate}% per annum</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:2px solid var(--gray-200);"><span style="font-weight:700;color:var(--red);">Interest Payable:</span><span style="font-weight:700;font-size:1.1rem;color:var(--red);">₹${interest.toLocaleString('en-IN',{minimumFractionDigits:2})}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:0.875rem 0;background:rgba(239,68,68,0.08);border-radius:6px;padding:0.875rem;margin-top:0.5rem;"><span style="font-weight:700;font-size:1.05rem;">Total to Pay (Tax + Interest):</span><span style="font-weight:800;font-size:1.25rem;color:var(--red);">₹${totalPayable.toLocaleString('en-IN',{minimumFractionDigits:2})}</span></div>
+      </div>
+      <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:1rem;margin-top:1rem;">
+        <p style="margin:0;font-size:0.875rem;color:#856404;"><strong> Estimate only.</strong> The GST portal calculates compound interest (monthly compounding) which may be slightly higher. Always verify on gst.gov.in before payment.</p>
+      </div>
+      <div class="result-actions">
+        <button class="btn btn-secondary" onclick="document.getElementById('resultBox').innerHTML=''">Calculate Again</button>
+      </div>
+    </div>`;
 }
 
-// Set default dates
 window.addEventListener('load', () => {
   const today = new Date();
   const thirtyDaysAgo = new Date(today);
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-  
   document.getElementById('dueDate').value = thirtyDaysAgo.toISOString().split('T')[0];
   document.getElementById('paymentDate').value = today.toISOString().split('T')[0];
 });
 </script>
 
-    <!-- Mobile Menu Toggle Script -->
-    <script>
-    (function() {
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        if (mobileMenuBtn && mobileNav) {
-            mobileMenuBtn.addEventListener('click', function() {
-                if (mobileNav.style.display === 'none' || mobileNav.style.display === '') {
-                    mobileNav.style.display = 'block';
-                    mobileMenuBtn.textContent = '✕';
-                } else {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                }
-            });
-            
-            // Close menu when clicking a link
-            const mobileLinks = mobileNav.getElementsByTagName('a');
-            for (let i = 0; i < mobileLinks.length; i++) {
-                mobileLinks[i].addEventListener('click', function() {
-                    mobileNav.style.display = 'none';
-                    mobileMenuBtn.textContent = '☰';
-                });
-            }
-        }
-    })();
-    </script>
+<script>
+function ensureSharedNavigationCss() {
+  if (document.getElementById('shared-navigation-css')) return;
+  const link = document.createElement('link');
+  link.id = 'shared-navigation-css';
+  link.rel = 'stylesheet';
+  link.href = 'shared/navigation.css';
+  document.head.appendChild(link);
+}
 
-  <script>
-  function ensureSharedNavigationCss() {
-    if (document.getElementById('shared-navigation-css')) return;
-    const link = document.createElement('link');
-    link.id = 'shared-navigation-css';
-    link.rel = 'stylesheet';
-    link.href = 'shared/navigation.css';
-    document.head.appendChild(link);
+async function loadSharedNavigation() {
+  const mountPoint = document.getElementById('shared-navbar');
+  if (!mountPoint) return;
+  try {
+    ensureSharedNavigationCss();
+    const response = await fetch('shared/navigation.html');
+    if (!response.ok) throw new Error('Navigation load failed');
+    const html = await response.text();
+    mountPoint.innerHTML = html;
+    initNavbarBehavior();
+  } catch (error) {
+    console.error('Unable to load shared navigation:', error);
   }
+}
 
-  async function loadSharedNavigation() {
-    const mountPoint = document.getElementById('shared-navbar');
-    if (!mountPoint) return;
-    try {
-      ensureSharedNavigationCss();
-      const response = await fetch('shared/navigation.html');
-      if (!response.ok) throw new Error('Navigation load failed');
-      const html = await response.text();
-      mountPoint.innerHTML = html;
-      initNavbarBehavior();
-    } catch (error) {
-      console.error('Unable to load shared navigation:', error);
-    }
+async function loadSharedFooter() {
+  const mountPoint = document.getElementById('shared-footer');
+  if (!mountPoint) return;
+  try {
+    const response = await fetch('shared/footer.html');
+    if (!response.ok) throw new Error('Footer load failed');
+    const html = await response.text();
+    mountPoint.innerHTML = html;
+  } catch (error) {
+    console.error('Unable to load shared footer:', error);
   }
+}
 
-  async function loadSharedFooter() {
-    const mountPoint = document.getElementById('shared-footer');
-    if (!mountPoint) return;
-    try {
-      const response = await fetch('shared/footer.html');
-      if (!response.ok) throw new Error('Footer load failed');
-      const html = await response.text();
-      mountPoint.innerHTML = html;
-    } catch (error) {
-      console.error('Unable to load shared footer:', error);
-    }
+function initNavbarBehavior() {
+  const nav = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  if (nav && hamburger) {
+    hamburger.addEventListener('click', function() {
+      nav.classList.toggle('active');
+    });
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
   }
+}
 
-  function initNavbarBehavior() {
-    const nav = document.getElementById('navLinks');
-    const hamburger = document.getElementById('hamburger');
-    if (nav && hamburger) {
-      hamburger.addEventListener('click', function() {
-        nav.classList.toggle('active');
-      });
-      document.addEventListener('click', function(e) {
-        if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
-          nav.classList.remove('active');
-        }
-      });
-    }
-  }
-
-  loadSharedNavigation();
-  loadSharedFooter();
-  </script>
+loadSharedNavigation();
+loadSharedFooter();
+</script>
 </body>
 </html>
-
-
