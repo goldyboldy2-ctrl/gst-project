@@ -109,11 +109,13 @@
       background-clip: text;
     }
     
-    .nav-links {
-      display: none;
-      gap: 2rem;
-      list-style: none;
-    }
+      .nav-links {
+        display: none;
+        gap: 2rem;
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
     
     .nav-links a {
       text-decoration: none;
@@ -308,11 +310,12 @@
     }
     
     /* SEARCH */
-    .search-box {
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      position: relative;
-    }
+      .search-box {
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        position: relative;
+        z-index: 50;
+      }
     
     .search-input {
       width: 100%;
@@ -333,20 +336,22 @@
       color: var(--blue);
     }
     
-    #searchResults {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
+      #searchResults {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
       right: 0;
       background: white;
       border: 2px solid var(--blue);
       border-radius: 12px;
       margin-top: 0.5rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-      max-height: 400px;
-      overflow-y: auto;
-    }
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        max-height: 400px;
+        overflow-y: auto;
+        z-index: 200;
+        text-align: left;
+      }
     
     .search-result {
       display: block;
@@ -612,42 +617,11 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="trust-badge">
-    <div class="trust-icon"></div>
-    <span style="font-weight:600;color:#334155;">Trusted by 50,000+ Indian Businesses</span>
-  </div>
   
   <h1>Free GST Tools for <span class="highlight">Indian Businesses</span></h1>
-  <p class="hero-desc">Calculate GST, find HSN codes, check penalties. Fast, accurate, always free.</p>
+    <p class="hero-desc">Calculate GST, find HSN codes, check penalties. Fast and always free.</p>
   
-  <!-- SEARCH -->
-  <div class="search-box">
-    <div class="search-icon"></div>
-    <input 
-      type="text" 
-      id="globalSearch" 
-      class="search-input"
-      placeholder="Search tools, HSN codes, or guides... (Try: 'laptop HSN' or 'penalty')"
-      autocomplete="off"
-    />
-    <div id="searchResults"></div>
-  </div>
   
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-number">16</div>
-      <div class="stat-label">Free Tools</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">500+</div>
-      <div class="stat-label">Verified Rates</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">100%</div>
-      <div class="stat-label">Always Free</div>
-    </div>
-  </div>
 </section>
 
 <!-- CATEGORIES -->
@@ -754,11 +728,29 @@
       <p>Calculate GST refund eligibility.</p>
     </a>
     
-    <a href="tcs-calculator.html" class="tool-card" data-category="calculators">
-      <div class="tool-icon"></div>
-      <h3>TCS Calculator</h3>
-      <p>Calculate TCS for e-commerce (Section 52).</p>
-    </a>
+      <a href="tcs-calculator.html" class="tool-card" data-category="calculators">
+        <div class="tool-icon"></div>
+        <h3>TCS Calculator</h3>
+        <p>Calculate TCS for e-commerce (Section 52).</p>
+      </a>
+
+      <a href="gst-interest.html" class="tool-card" data-category="calculators">
+        <div class="tool-icon"></div>
+        <h3>GST Interest Calculator</h3>
+        <p>Calculate 18% interest on delayed GST payment.</p>
+      </a>
+
+      <a href="msme-payment-calculator.html" class="tool-card" data-category="calculators">
+        <div class="tool-icon"></div>
+        <h3>MSME Payment Calculator</h3>
+        <p>Calculate interest penalty on delayed MSME payments.</p>
+      </a>
+
+      <a href="gstr3b.html" class="tool-card" data-category="filing">
+        <div class="tool-icon"></div>
+        <h3>GSTR-3B Calculator</h3>
+        <p>Calculate tax liability for GSTR-3B filing.</p>
+      </a>
     
   </div>
 </div>
@@ -869,7 +861,10 @@ const searchData = [
   { name: 'Registration Checker', url: 'registration-checker.html', keywords: 'registration mandatory' },
   { name: 'GSTR-3B Helper', url: 'gstr3b-helper.html', keywords: 'gstr3b filing tax liability' },
   { name: 'Refund Calculator', url: 'refund-calculator.html', keywords: 'refund export itc' },
-  { name: 'TCS Calculator', url: 'tcs-calculator.html', keywords: 'tcs section 52 ecommerce' }
+    { name: 'TCS Calculator', url: 'tcs-calculator.html', keywords: 'tcs section 52 ecommerce' },
+    { name: 'GST Interest Calculator', url: 'gst-interest.html', keywords: 'interest 18% delayed payment section 50' },
+    { name: 'MSME Payment Calculator', url: 'msme-payment-calculator.html', keywords: 'msme 45 day payment interest penalty' },
+    { name: 'GSTR-3B Calculator', url: 'gstr3b.html', keywords: 'gstr3b tax liability cgst sgst igst itc' }
 ];
 
 // Search functionality
@@ -902,12 +897,13 @@ searchInput.addEventListener('input', function() {
   }
 });
 
-// Close search results when clicking outside
-document.addEventListener('click', function(e) {
-  if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-    searchResults.style.display = 'none';
-  }
-});
+  // Close search results when clicking outside
+  document.addEventListener('click', function(e) {
+    const searchBox = document.querySelector('.search-box');
+    if (searchBox && !searchBox.contains(e.target)) {
+      searchResults.style.display = 'none';
+    }
+  });
 
 // Filter tools
 function filterTools(category) {
