@@ -572,4 +572,64 @@
     }
     
     /* UTILITY */
-    .hidden { display: none; }
+      .hidden { display: none; }
+
+      /* PRINT STYLES — hides everything except result */
+      @media print {
+        .navbar,
+        #shared-navbar,
+        #shared-footer,
+        .disclaimer,
+        .breadcrumb,
+        .breadcrumb-container,
+        .mobile-nav,
+        .mobile-nav-btn,
+        .page-header,
+        .page-badge,
+        .card h2,
+        form,
+        .form-group,
+        .btn,
+        .result-actions,
+        .info-box,
+        .related-tools,
+        .acceptance-box,
+        .legal-disclaimer-banner,
+        .back-button,
+        .section-title,
+        .step-box,
+        .styled-table,
+        .categories,
+        .tools-grid,
+        .hero,
+        .container > .page-header {
+          display: none !important;
+        }
+
+        body {
+          background: white !important;
+          padding: 0 !important;
+        }
+
+        .result,
+        #result,
+        #resultBox,
+        .result-box,
+        .result-card {
+          display: block !important;
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+
+        .container {
+          max-width: 100% !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+
+        @page {
+          margin: 1cm;
+        }
+      }
