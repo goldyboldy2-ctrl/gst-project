@@ -620,7 +620,14 @@
   
   <h1>Free GST Tools for <span class="highlight">Indian Businesses</span></h1>
     <p class="hero-desc">Calculate GST, find HSN codes, check penalties. Fast and always free.</p>
-  
+
+    <!-- SEARCH -->
+    <div class="search-box" style="max-width:640px;margin:1.5rem auto 0;position:relative;">
+      <input type="text" id="globalSearch" class="search-input" placeholder="Search tools, HSN codes, blog guides... (Try: laptop, penalty, ITC)" autocomplete="off" style="width:100%;padding:0.9rem 1rem 0.9rem 3rem;font-size:1rem;border:2px solid #3b82f6;border-radius:12px;outline:none;font-family:inherit;" />
+      <span style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);font-size:1.2rem;">&#128269;</span>
+      <div id="searchResults" style="display:none;position:absolute;top:100%;left:0;right:0;background:white;border:2px solid #3b82f6;border-radius:12px;margin-top:0.5rem;box-shadow:0 8px 24px rgba(0,0,0,0.15);max-height:360px;overflow-y:auto;z-index:200;text-align:left;"></div>
+    </div>
+
   
 </section>
 
@@ -867,43 +874,113 @@ const searchData = [
     { name: 'GSTR-3B Calculator', url: 'gstr3b.html', keywords: 'gstr3b tax liability cgst sgst igst itc' }
 ];
 
-// Search functionality
+//  SEARCH DATA 
+const searchData = [
+  // TOOLS
+  { name: 'GST Calculator', url: 'gst-calculator.html', type: 'tool', keywords: 'gst calculate tax amount inclusive exclusive' },
+  { name: 'HSN Code Finder', url: 'hsn-finder.html', type: 'tool', keywords: 'hsn code finder product search 21000' },
+  { name: 'Top 500 GST Rates', url: 'gst-rates-500.html', type: 'tool', keywords: 'gst rates items list food electronics clothing' },
+  { name: 'Penalty Calculator', url: 'penalty-calculator.html', type: 'tool', keywords: 'penalty late filing fees interest gstr' },
+  { name: 'ITC Calculator', url: 'itc-calculator.html', type: 'tool', keywords: 'itc input tax credit eligibility section 17 blocked' },
+  { name: 'Composition Calculator', url: 'composition-calculator.html', type: 'tool', keywords: 'composition scheme eligibility turnover limit' },
+  { name: 'Invoice Generator', url: 'invoice.html', type: 'tool', keywords: 'invoice generator gst ready tax bill create' },
+  { name: 'GSTIN Verification', url: 'gstin-verification.html', type: 'tool', keywords: 'gstin verify gst number check valid' },
+  { name: 'Return Deadlines', url: 'return-deadlines.html', type: 'tool', keywords: 'gstr1 gstr3b due date deadline filing calendar' },
+  { name: 'E-Way Bill Calculator', url: 'eway-bill-calculator.html', type: 'tool', keywords: 'eway bill distance transport goods movement' },
+  { name: 'Refund Calculator', url: 'refund-calculator.html', type: 'tool', keywords: 'gst refund export itc claim' },
+  { name: 'TCS Calculator', url: 'tcs-calculator.html', type: 'tool', keywords: 'tcs section 52 ecommerce tax collected source' },
+  { name: 'GST Interest Calculator', url: 'gst-interest.html', type: 'tool', keywords: 'interest 18% delayed payment section 50' },
+  { name: 'MSME Payment Calculator', url: 'msme-payment-calculator.html', type: 'tool', keywords: 'msme 45 day payment interest penalty delayed' },
+  { name: 'GSTR-3B Calculator', url: 'gstr3b.html', type: 'tool', keywords: 'gstr3b tax liability cgst sgst igst itc filing' },
+  // BLOG
+  { name: 'What is GST?', url: 'blog/what-is-gst.html', type: 'blog', keywords: 'what is gst goods services tax india basics' },
+  { name: 'How to File GST Returns', url: 'blog/how-to-file-gst-returns.html', type: 'blog', keywords: 'file gst returns gstr steps process' },
+  { name: 'ITC Guide', url: 'blog/itc-guide.html', type: 'blog', keywords: 'input tax credit guide how to claim itc' },
+  { name: 'GST Registration Process', url: 'blog/gst-registration-process.html', type: 'blog', keywords: 'gst registration how to apply process documents' },
+  { name: 'Common GST Mistakes', url: 'blog/common-gst-mistakes.html', type: 'blog', keywords: 'common mistakes gst errors avoid filing' },
+  { name: 'Composition Scheme Guide', url: 'blog/composition-scheme.html', type: 'blog', keywords: 'composition scheme small business turnover' },
+  { name: 'E-Invoicing Guide', url: 'blog/e-invoicing.html', type: 'blog', keywords: 'e-invoicing einvoice mandatory threshold irp' },
+  { name: 'E-Way Bill Rules', url: 'blog/eway-bill-rules.html', type: 'blog', keywords: 'eway bill rules distance goods transport' },
+  { name: 'GST Amendments', url: 'blog/gst-amendments.html', type: 'blog', keywords: 'gst amendments changes notifications updates' },
+  { name: 'GST Audit Process', url: 'blog/gst-audit-process.html', type: 'blog', keywords: 'gst audit process department scrutiny' },
+  { name: 'GST Rates India', url: 'blog/gst-rates-india-2026.html', type: 'blog', keywords: 'gst rates india 2026 slabs 5 12 18 28' },
+  { name: 'GSTR-1 vs GSTR-3B', url: 'blog/gstr1-vs-gstr3b.html', type: 'blog', keywords: 'gstr1 gstr3b difference comparison filing' },
+  { name: 'HSN Code Guide', url: 'blog/hsn-code-guide.html', type: 'blog', keywords: 'hsn code guide how to find sac services' },
+  { name: 'Reverse Charge Mechanism', url: 'blog/reverse-charge-mechanism.html', type: 'blog', keywords: 'reverse charge rcm gst liability recipient' },
+  { name: 'TDS Under GST', url: 'blog/tds-under-gst.html', type: 'blog', keywords: 'tds gst tax deducted source section 51' },
+  { name: 'GST for Freelancers', url: 'blog/gst-for-freelancers.html', type: 'blog', keywords: 'gst freelancers self employed consultants services' },
+  { name: 'GST Registration Threshold', url: 'blog/gst-registration-threshold.html', type: 'blog', keywords: 'registration threshold turnover limit 20 40 lakh' },
+  { name: 'How to Claim GST Refund', url: 'blog/how-to-claim-gst-refund.html', type: 'blog', keywords: 'gst refund claim export itc process' },
+  { name: 'GST for E-commerce Sellers', url: 'blog/gst-ecommerce-sellers.html', type: 'blog', keywords: 'ecommerce amazon flipkart gst seller tcs' },
+  { name: 'GSTR-9 Annual Return', url: 'blog/gstr9-annual-return.html', type: 'blog', keywords: 'gstr9 annual return filing reconciliation' },
+  { name: 'Real Estate GST', url: 'blog/real-estate-gst.html', type: 'blog', keywords: 'real estate property construction gst rates' },
+  { name: 'GST Exempt Goods List', url: 'blog/gst-exempt-goods.html', type: 'blog', keywords: 'exempt goods nil rated zero rated list' },
+  { name: 'Food & Restaurants GST', url: 'blog/food-restaurants-gst.html', type: 'blog', keywords: 'food restaurant hotel gst rate 5 18' },
+  { name: 'Works Contract GST', url: 'blog/works-contract-gst.html', type: 'blog', keywords: 'works contract construction service gst 18' },
+  { name: 'Place of Supply Rules', url: 'blog/place-of-supply.html', type: 'blog', keywords: 'place of supply igst cgst sgst interstate intrastate' },
+  { name: 'Import of Services GST', url: 'blog/import-of-services-gst.html', type: 'blog', keywords: 'import services gst rcm foreign payment' },
+  { name: 'E-Invoicing Threshold', url: 'blog/e-invoicing-threshold.html', type: 'blog', keywords: 'e-invoicing threshold turnover mandatory limit' },
+  { name: 'GST Notice Response', url: 'blog/gst-notice-response.html', type: 'blog', keywords: 'gst notice response department reply how to' },
+  { name: 'ITC on Capital Goods', url: 'blog/itc-capital-goods.html', type: 'blog', keywords: 'itc capital goods machinery plant credit' },
+  { name: 'GST on Salary & Employees', url: 'blog/gst-salary-employees.html', type: 'blog', keywords: 'gst salary employees payroll hr perquisites' },
+  // HSN CODES (common ones)
+  { name: 'HSN 8517 — Mobile Phones (18%)', url: 'hsn-finder.html', type: 'hsn', keywords: 'mobile phone smartphone hsn 8517 18%' },
+  { name: 'HSN 8471 — Laptops & Computers (18%)', url: 'hsn-finder.html', type: 'hsn', keywords: 'laptop computer hsn 8471 18%' },
+  { name: 'HSN 1006 — Rice (0% / 5%)', url: 'hsn-finder.html', type: 'hsn', keywords: 'rice basmati hsn 1006 0% 5%' },
+  { name: 'HSN 6205 — Men\'s Shirts (12%)', url: 'hsn-finder.html', type: 'hsn', keywords: 'shirt clothing hsn 6205 12%' },
+  { name: 'HSN 8528 — Television (18%)', url: 'hsn-finder.html', type: 'hsn', keywords: 'tv television led hsn 8528 18%' },
+  { name: 'HSN 3004 — Medicines (5% / 12%)', url: 'hsn-finder.html', type: 'hsn', keywords: 'medicine pharma drugs hsn 3004 5% 12%' },
+  { name: 'HSN 8703 — Cars (28% + Cess)', url: 'hsn-finder.html', type: 'hsn', keywords: 'car automobile vehicle hsn 8703 28%' },
+  { name: 'HSN 6403 — Leather Shoes (12%)', url: 'hsn-finder.html', type: 'hsn', keywords: 'shoes footwear leather hsn 6403 12%' },
+];
+
+//  SEARCH LOGIC 
 const searchInput = document.getElementById('globalSearch');
 const searchResults = document.getElementById('searchResults');
 
-searchInput.addEventListener('input', function() {
-  const query = this.value.toLowerCase().trim();
-  
-  if (query.length < 2) {
-    searchResults.style.display = 'none';
-    return;
-  }
-  
-  const results = searchData.filter(item => 
-    item.name.toLowerCase().includes(query) || 
-    item.keywords.toLowerCase().includes(query)
-  );
-  
-  if (results.length > 0) {
-    searchResults.innerHTML = results.map(item => `
-      <a href="${item.url}" class="search-result">
-        <strong>${item.name}</strong>
-      </a>
-    `).join('');
-    searchResults.style.display = 'block';
-  } else {
-    searchResults.innerHTML = '<div style="padding:1rem;text-align:center;color:#64748b;">No results found</div>';
-    searchResults.style.display = 'block';
-  }
-});
+function getTypeLabel(type) {
+  if (type === 'tool') return '&#128300; Tool';
+  if (type === 'blog') return '&#128214; Blog';
+  if (type === 'hsn') return '&#128203; HSN';
+  return '';
+}
 
-  // Close search results when clicking outside
-  document.addEventListener('click', function(e) {
-    const searchBox = document.querySelector('.search-box');
-    if (searchBox && !searchBox.contains(e.target)) {
-      searchResults.style.display = 'none';
+function runSearch(query) {
+  query = query.trim().toLowerCase();
+  if (query.length < 2) { searchResults.style.display = 'none'; return; }
+
+  const results = searchData.filter(item =>
+    item.name.toLowerCase().includes(query) ||
+    item.keywords.toLowerCase().includes(query)
+  ).slice(0, 5);
+
+  if (results.length === 0) {
+    searchResults.innerHTML = '<div style="padding:1rem;color:#64748b;font-size:0.9rem;">No results found. Try: penalty, ITC, invoice, HSN</div>';
+  } else {
+    searchResults.innerHTML = results.map(r =>
+      `<a href="${r.url}" style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1rem;text-decoration:none;color:#1e293b;border-bottom:1px solid #f1f5f9;transition:background 0.15s;" onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='white'">
+        <span style="font-size:0.75rem;background:#dbeafe;color:#1e40af;padding:0.2rem 0.5rem;border-radius:50px;white-space:nowrap;font-weight:600;">${getTypeLabel(r.type)}</span>
+        <span style="font-size:0.95rem;font-weight:500;">${r.name}</span>
+      </a>`
+    ).join('');
+  }
+  searchResults.style.display = 'block';
+}
+
+if (searchInput) {
+  searchInput.addEventListener('input', function() { runSearch(this.value); });
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const first = searchResults.querySelector('a');
+      if (first) window.location.href = first.href;
     }
   });
+}
+
+document.addEventListener('click', function(e) {
+  const box = document.querySelector('.search-box');
+  if (box && !box.contains(e.target)) searchResults.style.display = 'none';
+});
 
 // Filter tools
 function filterTools(category) {
