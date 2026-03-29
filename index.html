@@ -828,29 +828,6 @@ function toggleUserDropdown() {
 }
 
 // Close dropdown when clicking outside
-document.addEventListener('click', function(e) {
-  const userMenu = document.getElementById('userMenu');
-  const dropdown = document.getElementById('userDropdown');
-  if (userMenu && !userMenu.contains(e.target)) {
-    dropdown.classList.remove('active');
-  }
-});
-
-// Auth functions
-async function signIn() {
-  if (typeof authService !== 'undefined') {
-    await authService.signInWithGoogle();
-  } else {
-    alert('Loading authentication... Please try again in a moment.');
-  }
-}
-
-async function signOut() {
-  if (typeof authService !== 'undefined') {
-    await authService.signOut();
-  }
-}
-
 //  SEARCH DATA 
 const searchData = [
   // TOOLS
