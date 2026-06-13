@@ -705,6 +705,24 @@ function calculateMSME() {
           <div style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid var(--gray-200);"><span style="font-weight:600;">Interest Penalty:</span><span style="color:var(--red);font-weight:600;">₹${interest.toLocaleString('en-IN',{minimumFractionDigits:2})}</span></div>
           <div style="display:flex;justify-content:space-between;padding:0.875rem;background:rgba(239,68,68,0.08);border-radius:6px;margin-top:0.5rem;"><span style="font-weight:700;font-size:1.05rem;">Total Amount Due:</span><span style="font-weight:800;font-size:1.25rem;color:var(--red);">₹${totalDue.toLocaleString('en-IN',{minimumFractionDigits:2})}</span></div>
         </div>
+        <a id="whatsapp-share" href="#" target="_blank"
+           style="display:inline-block;margin:16px 0 8px 0;padding:12px 24px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;">
+           Share via WhatsApp
+        </a>
+        <button id="download-pdf"
+           style="display:inline-block;margin:16px 8px 8px 8px;padding:12px 24px;background:#1a472a;color:#fff;border:none;border-radius:8px;font-weight:600;font-size:15px;cursor:pointer;">
+           Download Demand Notice
+        </button>
+        <div style="margin:24px 0;padding:20px;background:#f0faf4;border-left:4px solid #1a472a;border-radius:8px;">
+          <h3 style="margin:0 0 16px 0;color:#1a472a;font-size:16px;">✅ What To Do Next</h3>
+          <div style="line-height:2;font-size:14px;">
+            <div>☐ <strong>Day 1 (Today):</strong> Send this Demand Notice to the buyer by email with read receipt</div>
+            <div>☐ <strong>Day 1:</strong> Send a WhatsApp message to buyer's registered number with payment due details</div>
+            <div>☐ <strong>Day 3:</strong> If no response, send a formal legal notice via registered post</div>
+            <div>☐ <strong>Day 7:</strong> File complaint on <a href="https://samadhaan.msme.gov.in" target="_blank" style="color:#1a472a;">msmesamadhaan.gov.in</a> — free, no court fees</div>
+            <div>☐ <strong>Ongoing:</strong> Keep all invoices, delivery receipts, and communication records</div>
+          </div>
+        </div>
         <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:1rem;margin-top:1rem;">
           <h4 style="margin:0 0 0.5rem;color:#856404;font-size:0.9rem;"> Additional Consequences:</h4>
           <ul style="margin:0;padding-left:1.25rem;color:#856404;font-size:0.875rem;">
@@ -717,6 +735,49 @@ function calculateMSME() {
           <button class="btn btn-secondary" onclick="document.getElementById('resultBox').innerHTML=''">Calculate Again</button>
         </div>
       </div>`;
+    const invoiceAmt = invoiceAmount.toFixed(2);
+    const interestAmt = interest.toFixed(2);
+    const waText = encodeURIComponent(
+      `MSME Payment Overdue Notice\n\nInvoice Amount: ₹${invoiceAmt}\nDays Overdue: ${daysOverdue} days\nInterest Payable (20.25% p.a.): ₹${interestAmt}\n\nCalculated on MyGSTIndia MSME Calculator: https://mygstindia.in/msme-payment-calculator.html`
+    );
+    document.getElementById('whatsapp-share').href = `https://wa.me/?text=${waText}`;
+
+    document.getElementById('download-pdf').onclick = function() {
+      const invoiceAmt = invoiceAmount.toFixed(2);
+      const interestAmt = interest.toFixed(2);
+      const invoiceDate = document.getElementById('invoiceDate').value;
+      const today = new Date().toLocaleDateString('en-IN');
+
+      const printContent = `
+        <html><head><title>MSME Payment Demand Notice</title>
+        <style>
+          body { font-family: Arial, sans-serif; padding: 40px; color: #000; }
+          h2 { color: #1a472a; border-bottom: 2px solid #1a472a; padding-bottom: 8px; }
+          .field { margin: 12px 0; font-size: 15px; }
+          .label { font-weight: bold; }
+          .footer { margin-top: 40px; font-size: 12px; color: #666; border-top: 1px solid #ccc; padding-top: 12px; }
+        </style></head>
+        <body>
+          <h2>MSME Delayed Payment — Demand Notice</h2>
+          <div class="field"><span class="label">Date:</span> ${today}</div>
+          <div class="field"><span class="label">Invoice Date:</span> ${invoiceDate}</div>
+          <div class="field"><span class="label">Invoice Amount:</span> ₹${invoiceAmt}</div>
+          <div class="field"><span class="label">Days Overdue:</span> ${daysOverdue} days</div>
+          <div class="field"><span class="label">Interest Rate:</span> 20.25% per annum (3× RBI Bank Rate of 6.75%)</div>
+          <div class="field"><span class="label">Interest Payable:</span> ₹${interestAmt}</div>
+          <div class="field"><span class="label">Total Amount Due:</span> ₹${(parseFloat(invoiceAmt) + parseFloat(interestAmt)).toFixed(2)}</div>
+          <br>
+          <div class="field">This notice is issued under Section 15 and Section 16 of the Micro, Small and Medium Enterprises Development Act, 2006. Payment is legally due within 45 days of invoice date. Interest at 3× RBI Bank Rate compounded monthly is applicable on all overdue amounts.</div>
+          <div class="field">Please make immediate payment of the total amount due to avoid further interest accrual and legal proceedings under the MSMED Act 2006.</div>
+          <div class="footer">Generated by MyGSTIndia MSME Calculator — mygstindia.in | For legal use, consult a qualified CA or lawyer.</div>
+        </body></html>
+      `;
+
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.print();
+    };
   }
 
   resultBox.scrollIntoView({behavior:'smooth', block:'center'});
