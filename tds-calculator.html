@@ -650,6 +650,7 @@
         <button class="btn btn-secondary" onclick="resetForm()">Calculate Again</button>
         <button class="btn" onclick="window.print()">Print Result</button>
       </div>
+      <a id="tds-wa-share" href="#" target="_blank" style="display:inline-block;margin-top:1rem;padding:12px 24px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;"> Share via WhatsApp</a>
     </div>
     
   </div>
@@ -742,6 +743,12 @@ function calculate(e) {
   
   document.getElementById('result').style.display = 'block';
   document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  const tdsWaText = encodeURIComponent(
+    `GST TDS Calculation (Section 51)\n\nInvoice Amount: ₹${invoiceAmount.toLocaleString('en-IN', {minimumFractionDigits:2})}\nTaxable Value: ₹${taxableValue.toLocaleString('en-IN', {minimumFractionDigits:2})}\nTDS @ 2%: ₹${tdsAmount.toLocaleString('en-IN', {minimumFractionDigits:2})}\n\nCalculated on MyGSTIndia: https://mygstindia.in/tds-calculator.html`
+  );
+  const tdsWaBtn = document.getElementById('tds-wa-share');
+  if (tdsWaBtn) tdsWaBtn.href = `https://wa.me/?text=${tdsWaText}`;
 }
 
 function resetForm() {

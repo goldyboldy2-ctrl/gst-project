@@ -211,9 +211,16 @@ function calculateGSTR3B(e) {
       </div>
       
       ${netTax > 0 ? '<div class="info-box blue"><div class="info-box-content"><p style="margin: 0;"><strong>Next Step:</strong> Pay this amount via challan before filing GSTR-3B. After payment, file return on GST portal.</p></div></div>' : '<div class="info-box green"><div class="info-box-content"><p style="margin: 0;"><strong>No payment required!</strong> Your ITC covers the output tax. File GSTR-3B directly.</p></div></div>'}
+      <a id="gstr3b-wa-share" href="#" target="_blank" style="display:inline-block;margin-top:1rem;padding:12px 24px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;"> Share via WhatsApp</a>
     </div>
   `;
-  
+
+  const gstr3bWaText = encodeURIComponent(
+    `GSTR-3B Tax Summary\n\nTotal Output Tax: ₹${totalOutput.toLocaleString('en-IN', {minimumFractionDigits:2})}\nTotal ITC: ₹${totalITC.toLocaleString('en-IN', {minimumFractionDigits:2})}\nNet Tax Payable: ₹${netTax.toLocaleString('en-IN', {minimumFractionDigits:2})}\n\nCalculated on MyGSTIndia: https://mygstindia.in/gstr3b.html`
+  );
+  const gstr3bWaBtn = document.getElementById('gstr3b-wa-share');
+  if (gstr3bWaBtn) gstr3bWaBtn.href = `https://wa.me/?text=${gstr3bWaText}`;
+
   document.getElementById('result').style.display = 'block';
   document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
 }

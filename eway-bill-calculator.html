@@ -589,6 +589,7 @@
         <button class="btn btn-secondary" onclick="resetForm()">Calculate Again</button>
         <button class="btn" onclick="window.open('https://ewaybillgst.gov.in', '_blank')">Generate E-Way Bill →</button>
       </div>
+      <a id="eway-wa-share" href="#" target="_blank" style="display:inline-block;margin-top:1rem;padding:12px 24px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;"> Share via WhatsApp</a>
     </div>
     
   </div>
@@ -675,6 +676,12 @@ function calculate(e) {
   
   document.getElementById('result').style.display = 'block';
   document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  const ewayWaText = encodeURIComponent(
+    `E-Way Bill Validity\n\nDistance: ${distance} km\nTransport Mode: ${mode}\nInvoice Value: ₹${invoiceValue.toLocaleString('en-IN', {minimumFractionDigits:2})}\nValidity: ${validityDays} days\n\nCalculated on MyGSTIndia: https://mygstindia.in/eway-bill-calculator.html`
+  );
+  const ewayWaBtn = document.getElementById('eway-wa-share');
+  if (ewayWaBtn) ewayWaBtn.href = `https://wa.me/?text=${ewayWaText}`;
 }
 
 function resetForm() {

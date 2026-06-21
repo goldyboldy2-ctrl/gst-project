@@ -756,6 +756,7 @@
         <button class="btn btn-secondary" onclick="resetForm()">Check Again</button>
         <button class="btn" onclick="window.print()">Print Result</button>
       </div>
+      <a id="comp-wa-share" href="#" target="_blank" style="display:inline-block;margin-top:1rem;padding:12px 24px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;"> Share via WhatsApp</a>
     </div>
     
   </div>
@@ -905,6 +906,12 @@ function calculate(e) {
   
   resultDiv.style.display = 'block';
   resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  const compWaText = encodeURIComponent(
+    `GST Composition Scheme Check\n\nTurnover: ₹${turnover.toLocaleString('en-IN', {minimumFractionDigits:2})}\nBusiness Type: ${businessType}\nEligible: ${isEligible ? 'Yes' : 'No'}\nAnnual Tax: ₹${annualTax.toLocaleString('en-IN', {minimumFractionDigits:2})}\n\nCalculated on MyGSTIndia: https://mygstindia.in/composition-calculator.html`
+  );
+  const compWaBtn = document.getElementById('comp-wa-share');
+  if (compWaBtn) compWaBtn.href = `https://wa.me/?text=${compWaText}`;
 }
 
 function resetForm() {

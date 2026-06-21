@@ -592,6 +592,7 @@
       <div class="result-actions">
         <button class="btn btn-secondary" onclick="resetForm()">Calculate Again</button>
         <button class="btn" onclick="window.print()">Print Result</button>
+        <a id="tcs206c-wa-share" href="#" target="_blank" style="display:inline-block;margin-top:1rem;padding:12px 24px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;"> Share via WhatsApp</a>
       </div>
     </div>
 
@@ -975,6 +976,13 @@ function calculate(e) {
   document.getElementById('r_breakdown').innerHTML = breakdownHtml;
 
   document.getElementById('result').style.display = 'block';
+
+  const tcs206cWaText = encodeURIComponent(
+    `TCS Calculation (Section 206C)\n\nTransaction: ${typeLabels[selVal]}\nAmount: ₹${txnAmount.toLocaleString('en-IN', {minimumFractionDigits:2})}\nTCS Amount: ₹${tcsAmount.toLocaleString('en-IN', {minimumFractionDigits:2})}\n\nCalculated on MyGSTIndia: https://mygstindia.in/tcs-206c-calculator.html`
+  );
+  const wa206cBtn = document.getElementById('tcs206c-wa-share');
+  if (wa206cBtn) wa206cBtn.href = `https://wa.me/?text=${tcs206cWaText}`;
+
   document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
