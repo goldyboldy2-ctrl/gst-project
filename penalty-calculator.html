@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GST Penalty Calculator - Late Filing Fees & Interest | MyGSTIndia</title>
-  <meta name="description" content="Calculate GST late filing penalties and interest. GSTR-1, GSTR-3B penalty calculator. Check fees for delayed GST returns in India 2026.">
+  <title>GST Penalty & Late Fee Calculator 2025-26 — GSTR-1, GSTR-3B | MyGSTIndia</title>
+  <meta name="description" content="Free GST penalty calculator for FY 2025-26. Calculate late fees for GSTR-1 and GSTR-3B under Section 47 of CGST Act. Know exact penalty for nil and non-nil returns. Instant results.">
   <link rel="canonical" href="https://mygstindia.in/penalty-calculator.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -595,6 +595,30 @@
         "@type": "Answer",
         "text": "Late fee for GSTR-1 is ₹50 per day (₹25 CGST + ₹25 SGST). For NIL returns, the late fee is ₹20 per day. Maximum late fee is ₹10,000 per return. GSTR-1 must be filed before GSTR-3B can be filed — late GSTR-1 blocks your entire GST filing for that period."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the maximum GST late fee cap for GSTR-3B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The GST Council has capped late fees for GSTR-3B. For nil return filers, the maximum late fee is ₹500 per return (₹250 CGST + ₹250 SGST). For non-nil returns, the maximum late fee is ₹2,000 per return (₹1,000 CGST + ₹1,000 SGST) for taxpayers with annual aggregate turnover up to ₹5 crore, and ₹5,000 per return (₹2,500 CGST + ₹2,500 SGST) for taxpayers with turnover above ₹5 crore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the GST penalty for fraud or wilful misstatement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under Section 74 of the CGST Act, if tax is unpaid due to fraud, wilful misstatement, or suppression of facts, the penalty is 100% of the tax amount. This is in addition to the tax and interest payable. For cases without fraud (Section 73), the penalty is 10% of the tax amount or ₹10,000, whichever is higher."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can GST late fees be waived?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The GST Council periodically announces amnesty schemes that waive or reduce late fees for pending returns. However, these are time-limited. Outside amnesty schemes, late fees cannot be waived — they must be paid in cash (not through ITC) before the return can be filed."
+      }
     }
   ]
 }
@@ -622,7 +646,7 @@
   
   <div class="page-header">
     <div class="page-badge">💸 Penalty</div>
-    <h1>GST Penalty Calculator</h1>
+    <h1>GST Penalty & Late Fee Calculator 2025-26</h1>
     <p>Calculate late filing fees and interest for delayed GST returns. GSTR-1, GSTR-3B penalty calculator.</p>
   </div>
   
@@ -715,6 +739,12 @@
         <button class="btn btn-secondary" onclick="resetForm()">Calculate Again</button>
         <button class="btn" onclick="window.print()">Print Result</button>
       </div>
+      <div style="margin-top:1rem;">
+        <a id="penalty-wa-share" href="#" target="_blank"
+           style="display:inline-block;padding:12px 24px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;">
+           Share via WhatsApp
+        </a>
+      </div>
     </div>
     
   </div>
@@ -728,7 +758,88 @@
       <li><strong>Waiver:</strong> Check for government amnesty schemes on gst.gov.in</li>
     </ul>
   </div>
-  
+
+  <div style="margin-top:2rem;">
+    <h2 class="section-title">GST Late Fee <em>Rate Chart 2025-26</em></h2>
+    <table class="styled-table">
+      <tr>
+        <th>Return Type</th>
+        <th>Nil Return</th>
+        <th>Non-Nil Return</th>
+        <th>Maximum Cap</th>
+      </tr>
+      <tr>
+        <td><strong>GSTR-3B</strong></td>
+        <td>₹20/day (₹10 CGST + ₹10 SGST)</td>
+        <td>₹50/day (₹25 CGST + ₹25 SGST)</td>
+        <td>₹500 / ₹2,000 / ₹5,000*</td>
+      </tr>
+      <tr>
+        <td><strong>GSTR-1</strong></td>
+        <td>₹20/day (₹10 CGST + ₹10 SGST)</td>
+        <td>₹50/day (₹25 CGST + ₹25 SGST)</td>
+        <td>₹500 / ₹2,000 / ₹5,000*</td>
+      </tr>
+      <tr>
+        <td><strong>GSTR-9 (Annual)</strong></td>
+        <td colspan="2">₹200/day (₹100 CGST + ₹100 SGST)</td>
+        <td>0.25% of turnover in state</td>
+      </tr>
+      <tr>
+        <td><strong>GSTR-4 (Composition)</strong></td>
+        <td>₹20/day</td>
+        <td>₹50/day</td>
+        <td>₹2,000</td>
+      </tr>
+    </table>
+    <p style="font-size:0.8rem;color:var(--gray-600);margin-top:0.5rem;">*Cap: ₹500 for nil returns | ₹2,000 for turnover up to ₹5 Cr | ₹5,000 for turnover above ₹5 Cr</p>
+  </div>
+
+  <div style="margin-top:2rem;">
+    <h2 class="section-title">Penalty vs Interest — <em>Key Difference</em></h2>
+    <table class="styled-table">
+      <tr>
+        <th>Parameter</th>
+        <th>Late Fee / Penalty</th>
+        <th>Interest</th>
+      </tr>
+      <tr>
+        <td>Governed by</td>
+        <td>Section 47 CGST Act</td>
+        <td>Section 50 CGST Act</td>
+      </tr>
+      <tr>
+        <td>Rate</td>
+        <td>₹20–₹200 per day (fixed)</td>
+        <td>18% or 24% per annum</td>
+      </tr>
+      <tr>
+        <td>Applicable on</td>
+        <td>Delayed filing of return</td>
+        <td>Delayed payment of tax</td>
+      </tr>
+      <tr>
+        <td>Can be paid via ITC?</td>
+        <td>No — cash only</td>
+        <td>No — cash only</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:2rem;margin-bottom:2rem;">
+    <h2 class="section-title">What Happens If <em>Penalty Not Paid?</em></h2>
+    <div class="info-box orange">
+      <h4>⚠️ Consequences of Non-Payment</h4>
+      <p>
+         <strong>Return cannot be filed</strong> — GST portal blocks filing until late fee is paid in full<br><br>
+         <strong>ITC blocked for your buyers</strong> — They cannot claim ITC on your supplies if GSTR-1 is not filed<br><br>
+         <strong>Notice under Section 46</strong> — GST department can issue notice to file pending returns<br><br>
+         <strong>Best judgement assessment</strong> — Under Section 62, officer can assess your tax liability if returns not filed for 2 consecutive tax periods<br><br>
+         <strong>Registration cancellation</strong> — Continuous non-filing can lead to GST registration being suspended or cancelled
+      </p>
+    </div>
+  </div>
+
 </div>
 
 <!-- FOOTER -->
@@ -821,6 +932,11 @@ function calculate(e) {
   
   document.getElementById('result').style.display = 'block';
   document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  const penaltyWaText = encodeURIComponent(
+    `GST Late Fee Calculation\n\nReturn Type: ${returnType}\nDays Late: ${daysDelayed} days\nLate Fee: ₹${lateFee.toLocaleString('en-IN', {minimumFractionDigits:2})}\n\nCalculated on MyGSTIndia: https://mygstindia.in/penalty-calculator.html`
+  );
+  document.getElementById('penalty-wa-share').href = `https://wa.me/?text=${penaltyWaText}`;
 }
 
 function resetForm() {

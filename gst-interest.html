@@ -811,7 +811,18 @@ function calculateInterest() {
       <div class="result-actions">
         <button class="btn btn-secondary" onclick="document.getElementById('resultBox').innerHTML=''">Calculate Again</button>
       </div>
+      <div style="margin-top:1rem;">
+        <a id="interest-wa-share" href="#" target="_blank"
+           style="display:inline-block;padding:12px 24px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;">
+           Share via WhatsApp
+        </a>
+      </div>
     </div>`;
+
+  const interestWaText = encodeURIComponent(
+    `GST Interest Calculation\n\nTax Amount: ₹${taxAmount.toLocaleString('en-IN', {minimumFractionDigits:2})}\nDays Late: ${daysLate} days\nInterest @ ${rate}% p.a.: ₹${interest.toLocaleString('en-IN', {minimumFractionDigits:2})}\nTotal Payable: ₹${totalPayable.toLocaleString('en-IN', {minimumFractionDigits:2})}\n\nCalculated on MyGSTIndia: https://mygstindia.in/gst-interest.html`
+  );
+  document.getElementById('interest-wa-share').href = `https://wa.me/?text=${interestWaText}`;
 }
 
 window.addEventListener('load', () => {
