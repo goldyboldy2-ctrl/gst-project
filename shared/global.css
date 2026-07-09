@@ -633,3 +633,13 @@
           margin: 1cm;
         }
       }
+
+      /* AUTHOR NOTE */
+      .author-note {
+        font-style: italic;
+        border-left: 3px solid var(--blue);
+        padding-left: 12px;
+        margin: 16px 0;
+        color: var(--gray-600);
+        font-size: 0.95em;
+      }
